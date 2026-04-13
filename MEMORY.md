@@ -1,0 +1,23 @@
+- [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
+- [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
+- [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
+- [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
+- [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
+- [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
+- [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
+- [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
+- [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
+- [Paper vs Real Trading](feedback_paper_vs_real.md) — PAPER globally; real wallet $17.38
+- [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
+- [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
+- [Win Rate Definition](feedback_reports_win_rate.md) — NEVER count wins via gross_pnl>0; use close_reason LIKE 'TP%' always
+- [Realized PnL Column](project_realized_pnl_column.md) — realized_pnl_usd = total, gross_pnl_usd = final chunk only
+- [Dashboard Settings Tab](project_dashboard_settings_tab.md) — SETTINGS_REGISTRY is source of truth; confirm phrases for REAL/update/clean
+- [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
+- [real_trades Schema](project_real_trades_schema.md) — narrower than simulated_trades; get_alltime_stats crashes on missing columns
+- [Signal Config Path Trap](feedback_signal_bot_config_path.md) — src/ is real, root is orphan; always use env_config.SIGNAL_BOT_CONFIG_PATH
+- [Unversioned Prod State](project_unversioned_prod_state.md) — DB schema drift, Grafana, nginx, /var/www — not in git
+- [No Routine Confirms](feedback_no_routine_confirms.md) — делать текучку сразу без подтверждений
+- [GA Optimizer](project_ga_optimizer.md) — 27-gene GA for CONS+TREND+AGGR; dashboard UI, apply/rollback, weekly schedule
+- [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
+- [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
