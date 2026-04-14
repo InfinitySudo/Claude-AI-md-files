@@ -42,7 +42,7 @@ originSessionId: 13ab97bb-8dfe-4655-b013-e399065cc3ba
 
 ## Key state
 - **PAPER TRADING mode** — `trading_mode.mode = 'PAPER'`
-- Real wallet: ~$17.38 USDT, 0 real open positions
+- Real wallet: ~$100.38 USDT (пополнен 2026-04-14), 0 real open positions
 - GA Rank #1 applied 2026-04-13 16:21 — new strategy params in trading_v3_artem.json
 - Latest git commit: 971000f (pushed 2026-04-13)
 

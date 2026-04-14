@@ -7,7 +7,7 @@
 - [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
-- [Paper vs Real Trading](feedback_paper_vs_real.md) — PAPER globally; real wallet $17.38
+- [Paper vs Real Trading](feedback_paper_vs_real.md) — PAPER globally; real wallet $100.38 (пополнен 14-04)
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
 - [Win Rate Definition](feedback_reports_win_rate.md) — NEVER count wins via gross_pnl>0; use close_reason LIKE 'TP%' always
@@ -19,5 +19,7 @@
 - [Unversioned Prod State](project_unversioned_prod_state.md) — DB schema drift, Grafana, nginx, /var/www — not in git
 - [No Routine Confirms](feedback_no_routine_confirms.md) — делать текучку сразу без подтверждений
 - [GA Optimizer](project_ga_optimizer.md) — 27-gene GA for CONS+TREND+AGGR; dashboard UI, apply/rollback, weekly schedule
+- [GA Apply Full Chain](feedback_ga_apply_full_chain.md) — Where apply writes: signal_json + bot_settings + strategy_parameters; meta-params still hardcoded
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — После каждого push в основной репо — синхронизировать память в Claude-AI-md-files
