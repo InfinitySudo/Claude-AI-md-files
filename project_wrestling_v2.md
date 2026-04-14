@@ -57,6 +57,14 @@ originSessionId: 4bf9c010-6bf6-4410-b91f-d3731633751f
 - RankingsPage: лидерборд с разбивкой баллов по источникам
 - Удалять участников может только coach
 
+### Что добавлено 2026-04-14 (commit de061ab)
+- **Sparrings вместо Tournaments** (только UI, endpoints остались `/api/tournaments` ради backward compat).
+- Атлеты теперь видят вкладку Sparrings (6 иконок в bottom nav с уменьшенным padding).
+- **Start time (HH:MM)** добавлен к training_sessions и tournaments (обе миграции в `ALTER TABLE ... ADD COLUMN IF NOT EXISTS start_time`).
+- **PATCH /api/sessions/{id}** и **PATCH /api/tournaments/{id}** — coach-only, club-scoped, блокируются после наступления `session_date+start_time` (возвращается флаг `editable` в list/get для UI).
+- Members page: тренер видит DOB→возраст, weight_kg, weight_class, фото; при раскрытии — соцсети.
+- Sparring participants: backend JOIN users и сортировка по `weight_kg ASC` (fallback 9999 для без веса); UI показывает kg-бейдж.
+
 **Удаление аккаунта:**
 - Только coach может удалять участников
 - Атлет НЕ может удалить сам себя (убрано по запросу Артёма)
