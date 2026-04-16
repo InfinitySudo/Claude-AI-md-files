@@ -22,4 +22,6 @@
 - [GA Apply Full Chain](feedback_ga_apply_full_chain.md) — Where apply writes: signal_json + bot_settings + strategy_parameters; meta-params still hardcoded
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl
+- [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
 - [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — После каждого push в основной репо — синхронизировать память в Claude-AI-md-files
