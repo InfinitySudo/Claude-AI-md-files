@@ -68,6 +68,28 @@ project_scores(id, project_id, foreman_id, points, breakdown_json, closed_at, is
 - ✅ InstallerHomePage: summary today/week/month + in-memory cache for instant tab switch
 - ✅ Auto-detect языка: `getLang` → navigator.language → uk/ru/en
 
+### Step 5 — Dashboard, Budget Calc, Foreman Team (2026-04-16..17)
+- ✅ **Admin Dashboard** `/dashboard` — active projects, totals, top-workers-week; `/api/dashboard`
+- ✅ **Foreman weekly summary** `/api/foreman/weekly-summary` — crew hours за 7 дней
+- ✅ **Budget threshold alerts** 15/25/50/75/100% — table `project_budget_alerts`, TG push foreman+admins; вызывается из checkout/complete
+- ✅ **QB Exports**: `/api/export/qb-time.csv` (Time Activity) + `/api/export/qb-payroll.csv` (Payroll Summary) — стандартный QuickBooks Online формат
+- ✅ **Labour budget calculator**: `_calc_crew_budget` + `POST /api/projects/budget-preview` + `budget_calc` в enrich_project (admin + primary foreman)
+  - Formula: `days = budget / (sum_rate × 9)`; status ok/tight/impossible
+  - `suggested_deadline = start_date + ceil(days_needed)`
+  - Accepts both user_ids (claimed) и roster_ids (unclaimed — берём hourly_wage из roster)
+- ✅ **Deadline AUTO mode** в ProjectForm — auto-fills `form.deadline` из `suggested_deadline`; ручной ввод переключает в MANUAL; "↻ auto" возвращает
+- ✅ **Payroll OT split**: `_aggregate_payroll` + `_pp_index`; >88h/pay-period paid 1.5×; новые колонки Reg/OT Hours, Reg/OT Pay в обоих CSV
+- ✅ **Foreman team (roster-based)**: `foreman_team(foreman_id, roster_id)`; `/api/whitelist` (admin+foreman read); `/api/foremen/{fid}/team` GET/POST/DELETE
+  - Admin может рулить любой; foreman — своей только если он primary на активном проекте (`_foreman_has_active_project`)
+  - `/api/me` возвращает `can_manage_team`
+  - Unclaimed roster entries учитываются в calc, но при save проекта не попадают в project_installers
+- ✅ **MyCrewPage** `/my-crew` — foreman-only, управление своей команды + whitelist picker
+- ✅ **PATCH /api/projects/{id}/deadline** — admin + primary foreman (Apply suggested deadline)
+- ✅ **Header ужат**: icons-only до lg breakpoint, `!px-2`; лого всегда видно; username на xl
+- ✅ **Constants**: WORKDAY_HOURS=9, OT_THRESHOLD_PER_PP=88, OT_MULTIPLIER=1.5 в main.py
+
+**Git**: commit `c7eabb3` сделан локально, push жду auth от Артёма.
+
 ### Step 4 — (2026-04-15..16)
 - ✅ **TG Bot** (`backend/tg_bot.py`, systemd `ontime-bot.service`): /start /status /checkout; push via `backend/notify.py`
 - ✅ **Login via Telegram**: 6-digit code flow (POST /api/auth/tg/request → POST /api/auth/tg/verify); admin invite code `TSAdmin2026`
@@ -92,13 +114,12 @@ project_scores(id, project_id, foreman_id, points, breakdown_json, closed_at, is
 
 ### Git
 - Remote: https://github.com/InfinitySudo/OnTime.git (private)
-- Latest commit: `710184a` step 4 (2026-04-16)
+- Latest commit: `c7eabb3` step 5 (2026-04-17) — локальный, push pending auth
 
-### Stubbed (step 5+)
-- Team tab content (Артём определит)
+### Stubbed (step 6+)
 - Photo upload from shift stops (reuse project photos infra)
-- Overtime / pay rate calculations
-- Admin dashboard (company overview)
+- Auto-create user for claimed roster entries (чтобы unclaimed попадали в project_installers)
+- Team role defaults when adding mixed-role workers
 
 ### Ключевые файлы
 - `/root/ontime/backend/main.py` — all endpoints
