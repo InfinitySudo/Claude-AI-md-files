@@ -6,7 +6,7 @@ originSessionId: 3c5941a8-e584-46d0-a8e0-72ab5293d0b2
 ---
 The trading system is currently in PAPER mode — `trading_mode.mode = 'PAPER'` in `config/trading_v3_artem.json`. All orders go through `OrderExecutorWrapper` which routes them to `PaperTradingSimulator` and writes to the `simulated_trades` DB table. **No real orders hit Bybit.**
 
-**Exchange state as of 2026-04-14:** real Bybit wallet `totalEquity=$100.38` (пополнен Артёмом 2026-04-14; ранее был $17.38), `real_trades` table empty, **0 open positions on the exchange**.
+**Exchange state as of 2026-04-16:** real Bybit wallet ≈ **$1000** (пополнен Артёмом; ранее $100.38 на 2026-04-14, ещё раньше $17.38). `real_trades` table — проверять текущее состояние перед утверждениями. Активно торгуемый пул — **210 символов** (из общего universe в 426).
 
 **Why:** On 2026-04-10 I proposed a "cautious deployment" that stopped `bybit-tradingbot` during the publicTrade B/S fix observation, worried about real money losses from newly-firing signals. Artem corrected me: "мы же всё равно пока на paper trading режиме, потерять деньги тут невозможно". He was right — I had built a mental model around the $11.16 balance figure without checking `trading_mode`. Small paranoias waste his time.
 
