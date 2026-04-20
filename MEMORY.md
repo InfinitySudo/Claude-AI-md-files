@@ -26,6 +26,8 @@
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
 - [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl
 - [TSA Legacy Server](project_tsa_legacy.md) — 46.8.227.113 старый Django+TG-бот, импортировали 7862 отчёта 2026-04-17, выключим через 2-3 недели
+- [TSA Nightly Legacy-Sync](project_tsa_nightly_sync.md) — cron 02:30 Calgary: scp legacy.db → sync_legacy.py подтягивает TG-бот отчёты в OnTime, выключим вместе с app-bot
+- [Email Register Stub Upgrade](feedback_email_register_stub_upgrade.md) — legacy-импорт создал stub-юзеров (password_hash='!xxx'); email-регистрация апгрейдит их, а не создаёт новых
 - [OnTime Daily Reports](project_tsa_daily_reports.md) — схема отчётов, budget analytics, dual-source часы (отчёт > сессия), WORKDAY_HOURS=9
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
