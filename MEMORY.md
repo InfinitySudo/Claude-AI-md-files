@@ -20,6 +20,9 @@
 - [No Routine Confirms](feedback_no_routine_confirms.md) — делать текучку сразу без подтверждений
 - [GA Optimizer](project_ga_optimizer.md) — 27-gene GA for CONS+TREND+AGGR; dashboard UI, apply/rollback, weekly schedule
 - [GA Apply Full Chain](feedback_ga_apply_full_chain.md) — Where apply writes: signal_json + bot_settings + strategy_parameters; meta-params still hardcoded
+- [GA Symbols Single Source](feedback_ga_symbols_single_source.md) — GA берёт список монет только из Symbols Editor (config/symbols.json); ga_symbols.json удалён
+- [GA Fitness Overfit Guards](feedback_ga_fitness_overfit.md) — MIN_TRADES_REQUIRED=50, MIN_TRADES_FULL=200, MIN_SYMBOL_COVERAGE=0.15 — почему и как тюнить
+- [systemctl TS for JS](feedback_systemctl_timestamp_js.md) — Browser не парсит "Tue ... MDT"; всегда --timestamp=unix → ISO-8601 UTC
 - [Trading Config Live Source](feedback_trading_config_live_source.md) — Артём правит настройки через dashboard; всегда читать актуальные значения из JSON+bot_settings, не из памяти
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
@@ -33,6 +36,9 @@
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
 - [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
 - [OnTime Heartbeat & Time Policy](project_ontime_heartbeat.md) — 4 триггера закрытия (checkout/geofence/force/EOD 17:30) + unpaid lunch 12:00-12:30; bg sweep 60s
+- [OnTime Wage→Cost Burden](project_ontime_wage_cost.md) — `_wage_to_cost()` в main.py; hourly_wage = работнику, cost = компании; bubget/labour используют cost
+- [OnTime Roles Access Matrix](project_tsa_roles_access.md) — `require_management` + `_is_management` расширяют admin до pm/vp/director; destructive остались admin-only
+- [TSA Company Role Overlaps](project_tsa_company_roles.md) — Director также выполняет Purchasing Manager; код fallback'ится на director когда purchasing отсутствует
 - [OnTime Daily Nudge](project_tsa_daily_nudge.md) — 18:00 Calgary cron в uvicorn: кто не сдал daily_report, TG → админ + форман своих проектов
 - [TSA OS Idea (paused)](project_tsa_os_idea.md) — единая платформа поверх OnTime вместо ClickUp+Django+Sheets; 4-фазный план, на паузе 2026-04-16
 - [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)

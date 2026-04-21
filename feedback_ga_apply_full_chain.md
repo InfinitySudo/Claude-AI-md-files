@@ -11,7 +11,7 @@ GA recommended params have 40 fields but live bot reads them from **three differ
 | `spike_ratio`, `bs_ratio`, `volume_threshold` | `src/signal_bot_config.json` (`signal_criteria.*`) | yes |
 | `atr_multiplier`, `tp1/2/3_percent` (legacy) | `bot_settings` DB table | yes |
 | `{c,t,a}_tp*_ratio`, `{c,t,a}_tp*_pct`, `{c,t,a}_be_{activation,offset}` | `config/trading_v3_artem.json.strategy_parameters.{conservative,trend,aggressive}.{tp_ratios,tp_distribution,be_activation_pct,be_price_offset_pct}` | yes (as of 479ea29) |
-| Meta: `atr_daily_bars`, `volume_avg_bars`, `trend_bars`, `cooldown_bars` | **hardcoded** — `trading_bot_bybit.py:53` and `signal_bot_v3_websocket.py:189` | NO — still unreachable |
+| Meta: `atr_daily_bars`, `volume_avg_bars`, `trend_bars`, `cooldown_bars` | `config/trading_v3_artem.json.websocket_config.<field>` (signal_bot re-reads via "Reload Config" or next startup) | yes (as of 2026-04-21) — snapshot key is `websocket_config.<field>` |
 
 BE unit scaling: GA params use fractions (`c_be_activation=0.005`), JSON uses percentages (`be_activation_pct=0.5`). `api_ga_apply` multiplies by 100 before writing.
 
