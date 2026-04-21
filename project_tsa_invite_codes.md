@@ -11,6 +11,7 @@ originSessionId: 7307290c-93f4-4995-a318-269609a49e02
 - `TSA_FOREMAN_INVITE_CODE` → position=foreman
 - `TSA_SERVICE_INVITE_CODE` → position=service
 - `TSA_DELIVERY_INVITE_CODE` → position=delivery
+- `TSA_ACCOUNTANT_INVITE_CODE` → role=accountant (добавлен 2026-04-20; бухгалтер, как и админ, минует roster-проверку; имеет доступ к payroll/QB экспортам через `require_finance`)
 
 **installer/helper** — код не нужен, но регистрация валидирует по `roster` (админ заводит заранее).
 

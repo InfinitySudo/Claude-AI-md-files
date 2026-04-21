@@ -33,6 +33,7 @@
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
 - [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
 - [OnTime Heartbeat & Time Policy](project_ontime_heartbeat.md) — 4 триггера закрытия (checkout/geofence/force/EOD 17:30) + unpaid lunch 12:00-12:30; bg sweep 60s
+- [OnTime Daily Nudge](project_tsa_daily_nudge.md) — 18:00 Calgary cron в uvicorn: кто не сдал daily_report, TG → админ + форман своих проектов
 - [TSA OS Idea (paused)](project_tsa_os_idea.md) — единая платформа поверх OnTime вместо ClickUp+Django+Sheets; 4-фазный план, на паузе 2026-04-16
 - [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)
 - [TG Channel Plan](project_tg_channel_plan.md) — active с 2026-04-16: solo-founder-with-AI, RU, настоящее имя, 4 поста/нед, бюджет $300–500/мес, название @solo_claude
@@ -41,3 +42,6 @@
 - [Claude Telegram Bot repo](project_claude_telegram_bot.md) — `/root/claude-telegram-bot` → `Claude-Telegram-Bot` (не OpenClaw-v3); voice+vision+tools+OAuth
 - [Narrative Before Details](feedback_narrative_before_details.md) — в @solo_claude: сначала origin-story проектов, только потом tech-детали и build-in-public
 - [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — После каждого push в основной репо — синхронизировать память в Claude-AI-md-files
+- [OnTime Extra Work](project_tsa_extra_work.md) — 4-я вкладка: approval workflow + photos + daily-report linkage + TG notify
+- [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
+- [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
