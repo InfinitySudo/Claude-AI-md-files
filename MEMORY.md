@@ -22,6 +22,7 @@
 - [GA Apply Full Chain](feedback_ga_apply_full_chain.md) — Where apply writes: signal_json + bot_settings + strategy_parameters; meta-params still hardcoded
 - [GA Symbols Single Source](feedback_ga_symbols_single_source.md) — GA берёт список монет только из Symbols Editor (config/symbols.json); ga_symbols.json удалён
 - [GA Fitness Overfit Guards](feedback_ga_fitness_overfit.md) — MIN_TRADES_REQUIRED=50, MIN_TRADES_FULL=200, MIN_SYMBOL_COVERAGE=0.15 — почему и как тюнить
+- [GA Baseline Reporting Bug](project_ga_baseline_bug.md) — GA reports baseline TEST trades=5, actual 3225 — Δ metrics untrustworthy, do NOT apply GA results until fixed
 - [systemctl TS for JS](feedback_systemctl_timestamp_js.md) — Browser не парсит "Tue ... MDT"; всегда --timestamp=unix → ISO-8601 UTC
 - [Trading Config Live Source](feedback_trading_config_live_source.md) — Артём правит настройки через dashboard; всегда читать актуальные значения из JSON+bot_settings, не из памяти
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
