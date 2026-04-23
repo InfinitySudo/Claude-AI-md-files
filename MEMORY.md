@@ -51,10 +51,12 @@
 - [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — После каждого push в основной репо — синхронизировать память в Claude-AI-md-files
 - [OnTime Extra Work](project_tsa_extra_work.md) — 4-я вкладка: approval workflow + photos + daily-report linkage + TG notify
 - [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
+- [OnTime Lifts + Refuels](project_tsa_lifts.md) — 11 лифтов catalog, per-refuel log, monthly consumption report; одна роль delivery, sub-task Refuel
+- [OnTime Deliveries](project_tsa_deliveries.md) — delivery-tasks планировщик с checklist, фото, TG-briefing 07:30, EW integration
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
-- [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — start_new_session=True for any long Popen child of dashboard-api; otherwise systemctl restart kills it
+- [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
 - [Per-Mode Dup Rule](feedback_per_mode_dup_rule.md) — dup-symbol check in process_signal filters by pos['mode']; paper-CONS doesn't block real-TREND
 - [Dashboard PAPER/REAL Split](project_dashboard_split.md) — / → paper, /real.html → real; ?source param on stats endpoints
 - [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
