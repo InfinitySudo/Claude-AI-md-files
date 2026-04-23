@@ -57,3 +57,4 @@
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — start_new_session=True for any long Popen child of dashboard-api; otherwise systemctl restart kills it
 - [Per-Mode Dup Rule](feedback_per_mode_dup_rule.md) — dup-symbol check in process_signal filters by pos['mode']; paper-CONS doesn't block real-TREND
 - [Dashboard PAPER/REAL Split](project_dashboard_split.md) — / → paper, /real.html → real; ?source param on stats endpoints
+- [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
