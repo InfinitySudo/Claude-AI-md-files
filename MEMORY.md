@@ -7,10 +7,10 @@
 - [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
-- [Paper vs Real Trading](feedback_paper_vs_real.md) — PAPER globally; real wallet $100.38 (пополнен 14-04)
+- [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
-- [Win Rate Definition](feedback_reports_win_rate.md) — NEVER count wins via gross_pnl>0; use close_reason LIKE 'TP%' always
+- [Win Rate Definition](feedback_reports_win_rate.md) — WR = (realized_pnl − fees) > 0 (money-based, since 2026-04-22)
 - [Realized PnL Column](project_realized_pnl_column.md) — realized_pnl_usd = total, gross_pnl_usd = final chunk only
 - [Dashboard Settings Tab](project_dashboard_settings_tab.md) — SETTINGS_REGISTRY is source of truth; confirm phrases for REAL/update/clean
 - [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
@@ -22,7 +22,7 @@
 - [GA Apply Full Chain](feedback_ga_apply_full_chain.md) — Where apply writes: signal_json + bot_settings + strategy_parameters; meta-params still hardcoded
 - [GA Symbols Single Source](feedback_ga_symbols_single_source.md) — GA берёт список монет только из Symbols Editor (config/symbols.json); ga_symbols.json удалён
 - [GA Fitness Overfit Guards](feedback_ga_fitness_overfit.md) — MIN_TRADES_REQUIRED=50, MIN_TRADES_FULL=200, MIN_SYMBOL_COVERAGE=0.15 — почему и как тюнить
-- [GA Baseline Reporting Bug](project_ga_baseline_bug.md) — GA reports baseline TEST trades=5, actual 3225 — Δ metrics untrustworthy, do NOT apply GA results until fixed
+- [GA Baseline Bug — RESOLVED](project_ga_baseline_bug.md) — fixed 2026-04-23 (silent excepts + rate-limit + cache); pre-fix files unreliable
 - [systemctl TS for JS](feedback_systemctl_timestamp_js.md) — Browser не парсит "Tue ... MDT"; всегда --timestamp=unix → ISO-8601 UTC
 - [Trading Config Live Source](feedback_trading_config_live_source.md) — Артём правит настройки через dashboard; всегда читать актуальные значения из JSON+bot_settings, не из памяти
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
@@ -52,3 +52,8 @@
 - [OnTime Extra Work](project_tsa_extra_work.md) — 4-я вкладка: approval workflow + photos + daily-report linkage + TG notify
 - [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
+- [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
+- [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
+- [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — start_new_session=True for any long Popen child of dashboard-api; otherwise systemctl restart kills it
+- [Per-Mode Dup Rule](feedback_per_mode_dup_rule.md) — dup-symbol check in process_signal filters by pos['mode']; paper-CONS doesn't block real-TREND
+- [Dashboard PAPER/REAL Split](project_dashboard_split.md) — / → paper, /real.html → real; ?source param on stats endpoints

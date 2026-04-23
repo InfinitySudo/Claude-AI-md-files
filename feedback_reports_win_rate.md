@@ -1,40 +1,46 @@
 ---
-name: Report metrics must use close_reason, not gross_pnl
-description: BE trades leak into pnl-based "wins"; always define win rate as TP-only close_reason across hourly/24h/status reports
+name: Win Rate = realized_pnl_usd > 0 (money-based, not TP-based)
+description: Correct WR for partial-close strategy — count trades that netted positive money across all chunks, not trades where "a TP hit"
 type: feedback
-originSessionId: aa3b97ed-792c-4424-94e6-e7fb1991e40f
+originSessionId: 140ba16f-5e2e-494a-890b-d8dc107dddde
 ---
-Reports and stats queries in this codebase historically used
-`gross_pnl_usd > 0` as the "win" criterion. This is subtly wrong:
+On 2026-04-22 Artem reviewed the dashboard and called the WR definition
+misleading. Background: the bot closes in chunks (CONS = 50/30/20 on
+TP1/TP2/TP3). A trade can hit TP1 and then hand back the remaining qty at
+SL, ending net-negative but with `close_reason LIKE 'TP%'`. A trade can
+also close at BE with a tiny positive residual from the +offset_pct BE
+price.
 
-A BE close is NOT a zero-pnl event in the DB. BE triggers after at
-least one TP has partially closed, and `simulated_trades.gross_pnl_usd`
-in the current schema holds only the **final chunk's** PnL (the
-remaining qty closed at BE). That last chunk is typically slightly
-positive because BE is set to entry + 0.5% (CONS) or entry + 1% (TREND).
-Result: BE trades with a tiny residual positive pnl get counted as
-wins, inflating win rate above the real TP-reaching rate.
+**Canonical definition from now on:**
 
-Concrete example from 2026-04-10: the "Win Rate: 9.7%" in the 24h
-Telegram report was hiding the real fact that **0 out of 64 closed
-trades had ever reached TP1**. 19 were BE (neutral), 45 were SL. The
-bot was losing money on every cohort and nobody knew.
+- **Win**: `realized_pnl_usd > 0` — actual money made across all chunks
+- **Loss**: `realized_pnl_usd < 0`
+- **Scratch**: `realized_pnl_usd = 0` (rare, basically exact BE with no prior TPs)
+- **Win rate**: `wins / closed * 100`
 
-**Why:** The pnl-based win criterion silently misclassifies BE trades
-when the schema keeps only final-chunk PnL.
+`realized_pnl_usd` (not `gross_pnl_usd`) is the correct column — it
+contains the SUM across all close chunks. `gross_pnl_usd` only holds the
+final chunk and is unsafe for WR. See `project_realized_pnl_column.md`.
 
-**How to apply:** When writing or reviewing ANY stats query or report:
+**Why this supersedes the old "close_reason LIKE 'TP%'" rule:**
 
-- Wins: `COUNT(*) FILTER (WHERE close_reason LIKE 'TP%')`
-- BE neutral: `COUNT(*) FILTER (WHERE close_reason = 'BE')` — report separately, don't fold into wins or losses
-- Losses: `COUNT(*) FILTER (WHERE close_reason = 'SL')`
-- Closed: `COUNT(*) FILTER (WHERE status = 'closed')` — the denominator
-- Win rate: `wins / closed * 100`, with a one-line note "TP only, BE = neutral"
+The old rule overcounted: TP1-then-SL = "win" because a TP label exists,
+even though net PnL is negative. That's what Artem saw and objected to.
+`realized_pnl_usd > 0` answers the only question that matters: *did the
+trade make money*.
 
-Three Telegram reports have been fixed to this rule: `hourly_reporter._generate_and_send_report`, `control_bot_stats_extended.StatsManager.get_stats`, `control_bot_simple_v3.get_stats`. Any NEW report must use the same definition or the two will disagree and one will lie.
+**How to apply:**
 
-Related: when the denominator for TP/SL/BE percentages comes from a
-different time window than the numerator, you can get percentages >
-100% (happened in hourly report: "SL: 7 trades (175%)"). Use the SAME
-window/filter for both. For close-reason counts the natural window is
-`status = 'closed' AND updated_at BETWEEN start AND end`.
+- Use in ALL stats queries: period, strategy, symbol, alltime, hourly
+  reports, control bot `/stats`, dashboard API.
+- `close_reason` stays as a SEPARATE "trade outcome" metric: show the
+  distribution (TP1-only / TP1+TP2 / TP3 / BE / SL) as a parallel table,
+  not folded into WR. It answers "how did the trade close" which is a
+  different question than "did I make money".
+- Keep showing **Profit Factor** (gross_profit / gross_loss) and
+  **avg realized_pnl_usd per closed trade** alongside WR — WR alone hides
+  huge wins/tiny losses or vice versa.
+
+**Do NOT** rely on BE-vs-loss classification for WR. A BE trade with
+`realized_pnl_usd = +$0.03` is a (tiny) win; with `realized_pnl_usd =
+-$1.20` it's a loss. The pnl column decides.

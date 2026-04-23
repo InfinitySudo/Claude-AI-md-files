@@ -1,38 +1,60 @@
 ---
-name: GA reports baseline trades as near-zero
-description: GA optimizer writes baseline TEST trades=0/0/5 but direct walk_forward reproduces 3225 trades on same inputs — numbers in ga_results_latest.json are untrustworthy until root cause found
+name: GA baseline=0-trades bug — RESOLVED 2026-04-23
+description: 2026-04-20 baseline showed 5 trades vs 3225 expected. Root cause found and fixed.
 type: project
-originSessionId: 2dc45f42-3141-41fc-86cd-010573880879
+originSessionId: 140ba16f-5e2e-494a-890b-d8dc107dddde
 ---
-## Symptom
-2026-04-20 GA prod run (ga_results_latest.json) reported:
-- BASELINE TEST: cons=0 trades, trend=0 trades, aggr=5 trades (WR 0%, all SL, Sharpe -38.59)
-- Top-3 candidates all flagged OVERFIT with 22-trade 100%-WR TRAIN corners
+## RESOLVED
 
-Directly replaying `walk_forward_evaluate(current_baseline(), ...)` in a clean process on the **same 113 symbols, same 2026-03-30→2026-04-19 TEST window, same baseline params** returns:
-- cons: 1075 trades, WR 36.5%, mean PnL +0.06%
-- trend: 1075 trades, WR 30.1%, mean PnL +0.15%
-- aggr: 1075 trades, WR 27.2%, mean PnL +0.19%
-- combined: 3225 trades, WR 31.3%
+Sanity-test (20 majors, live baseline params) on 2026-04-22 showed:
+- TRAIN combined: 22881 trades, WR 70.4%, sharpe +112
+- TEST combined:   6561 trades, WR 62.5%, sharpe +52
+- cons/trend/aggr **symmetric per-strategy trade counts** (7627/7627/
+  7627 train, 2187/2187/2187 test) — confirming the old asymmetry
+  (0/0/5) was environmental, not a logic bug.
 
-Same code path (`walk_forward_evaluate` → `_run_strategy` → `run_backtest`), same data, 645× fewer trades reported. **The delta on the dashboard ("+0.83%/trade vs baseline") is therefore meaningless — baseline is not actually -0.83%, it's closer to +0.12%.**
+GA prod run #2 with fixes (started 2026-04-22 22:40, PID 2240633) had
+pre-run baseline of train.trades=83286 / test.trades=22917 on 194
+symbols — proper, non-zero numbers.
 
-## Applied GA #1 live performance
-Applied 2026-04-15 12:58 UTC based on GA expected WR 69.7% / Sharpe 71.5 / +2.22%/trade.
-Actual 7 days live: 416 trades, **WR 2.4%, PF 0.06, worst trade -59.95%**. Catastrophically bad. Auto-rollback did not fire — DD in dollar terms stayed under 5% because PnL summed to +$116 (rare 53% TPs masked mass losses). Rolled back 2026-04-21 22:18 UTC.
+## Root cause (multiple compounding issues)
 
-## Unverified hypotheses (pick one per session to falsify)
-1. **Shallow copy of STRATEGY_SPECS during hof iteration** — `STRATEGY_SPECS["cons"].copy()` is dict-level only; any inner list mutation persists. Walk-forward runs on every hof member before baseline_wf (scripts/ga_optimizer.py:645) so cumulative drift is possible.
-2. **Multiprocessing cache write race** — `Pool(workers=3)` runs evaluate() in parallel; `fetch_klines` writes to `data/klines/<source>_<sym>_<interval>_<start>_<end>.json` without locking. Concurrent writes on cold-cache symbols could leave partials. Baseline runs after pool.close() in main process but reads from potentially-corrupted cache files.
-3. **Date drift** — no visible reassignment of train_start/test_end between hof loop and baseline_wf call (line 706), but worth verifying with a print-before-call sanity check.
+1. **Silent `except Exception: continue`** in
+   `_run_strategy` swallowed Binance rate-limit (429) and 4xx errors,
+   leaving the per-symbol trade count at zero without any log.
+2. **No retry/backoff on fetch_klines** — single 429 burst dropped
+   tens of symbols.
+3. **No prewarm** — main GA loop hammered the API across all 197
+   symbols × 3 strategies × 40 pop × 30 gen, hitting rate limits
+   constantly.
+4. **Hardcoded baseline()** that didn't reflect live signal_bot_config /
+   trading_v3_artem params, so the baseline_wf was measured against
+   numbers nobody was actually using live.
 
-## What makes it tricky
-- Each `_run_strategy` call for cons/trend/aggr runs the **same `check_signal` with identical signal_criteria** — they must produce identical trade counts per symbol. GA reported cons=0 trend=0 aggr=5: this asymmetry alone is enough to know something is broken, not just "no signals fired."
-- Per-symbol try/except swallows exceptions — a hidden error on most symbols leaves few trades without any log.
+## Fixes applied (commit f6557ff and follow-ups)
 
-## How to verify a fix
-Run `scripts/ga_optimizer.py --pop 8 --gens 2 --workers 3` on ~20 symbols and check that `baseline.test.combined.trades` matches a standalone `walk_forward_evaluate(current_baseline(), ...)` on the same inputs.
+- `backtest._http_get_with_retry` with exponential backoff on 429/5xx,
+  fail-fast on permanent 4xx (e.g. symbol-not-listed).
+- `simulate_trade` guards empty `future_klines` (IndexError on edge case).
+- `_ERROR_COUNTER` + `_FIRST_ERROR_SAMPLE` replace silent excepts;
+  errors surface in `output_data.meta.errors_post_baseline`.
+- `copy.deepcopy` for `STRATEGY_SPECS` patch/restore (defensive).
+- `_prewarm_cache(symbols, train_start, test_end)` runs serial fetch
+  for all symbols × {5m, D} BEFORE the parallel pool starts.
+- `_read_live_baseline()` reads spike/bs/volume from
+  signal_bot_config.json, atr_multiplier from bot_settings, TP/BE from
+  trading_v3_artem.json strategy_parameters (with `/100` for be_pct).
+- Pre-run AND post-run baseline_wf with `baseline_divergence` reported
+  in meta — drift becomes self-detecting.
 
-**Why:** We cannot trust any GA result, including overfit flags, while baseline numbers are wrong. The overfit guard (MIN_TRADES_REQUIRED=50) happens to have caught the 2026-04-20 run, but if a future run generates legitimate 200+ trades with the reporting bug still present, we could apply a truly bad set.
+Smoke harness: `scripts/ga_baseline_smoke.py` — standalone walk-forward
+on 20 majors, no GA loop. Use it to verify any future GA refactor.
 
-**How to apply:** Do NOT re-run GA for apply purposes until baseline reproduces correctly. For research exploration, ignore the "Δ vs baseline" line and trust only absolute test-period metrics against a manually-verified baseline.
+**Why kept as project memory:** The diagnosis pattern (silent excepts +
+rate-limit + cache divergence) is general; if any other batch process
+ever shows "way fewer results than expected", check these three
+sources first.
+
+**How to apply:** Don't trust pre-2026-04-23 ga_results_latest.json
+files (`mtime <= 2026-04-19 20:57`). All numbers in those are
+artifacts of the bug, not real performance.
