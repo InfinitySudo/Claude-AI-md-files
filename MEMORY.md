@@ -59,3 +59,4 @@
 - [Dashboard PAPER/REAL Split](project_dashboard_split.md) — / → paper, /real.html → real; ?source param on stats endpoints
 - [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
 - [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
+- [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
