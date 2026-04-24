@@ -53,6 +53,7 @@
 - [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
 - [OnTime Lifts + Refuels](project_tsa_lifts.md) — 11 лифтов catalog, per-refuel log, monthly consumption report; одна роль delivery, sub-task Refuel
 - [OnTime Deliveries](project_tsa_deliveries.md) — delivery-tasks планировщик с checklist, фото, TG-briefing 07:30, EW integration
+- [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
