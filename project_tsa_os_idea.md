@@ -1,40 +1,41 @@
 ---
-name: TSA OS — Unified Company Platform (on hold)
-description: Idea paused 2026-04-16. Build own company management system on top of OnTime core, replacing ClickUp + Django admin + Telegram+Sheets; keep STACK and Kojo as satellites. Return to when Artem revisits.
+name: TSA OS — Unified Company Platform (active)
+description: Reactivated 2026-04-24. OnTime becomes the single app for TSA — replacing Kojo (procurement) AND ClickUp (tasks/docs/CRM). Was paused 2026-04-16, now resumed with stricter scope (no more "keep Kojo as satellite").
 type: project
 originSessionId: d17635cc-9fb8-4333-ba35-356494af8a39
 ---
-**Статус:** Идея обсуждалась 2026-04-16, отложена. Артём попросил запомнить и вернуться позже.
 
-**Исходный контекст (стек TSA на момент разговора):**
-- STACK — estimating (SaaS, закрытый)
-- ClickUp — info storage, задачи, доки (SaaS)
-- Kojo — BOM + закупка у поставщиков (SaaS)
-- Telegram-бот + Excel/Sheets — подсчёт выполненных работ вручную
-- Django admin panel — зарплаты, сотрудники, бюджеты (не на этом VPS, у Артёма/бухгалтера)
-- **OnTime** (наш, /root/ontime) — GPS time-tracking, смены, проекты, foreman scoring
+**Статус:** Активна с 2026-04-24. Артём: «хочу убрать Kojo, ClickUp из компании, хочу пользоваться только OnTime app для всех нужд».
 
-**Команда:** бухгалтер, VP of construction, 2 PM, 7 foreman, 40–50 работников.
+**Изменение стратегии vs 2026-04-16:**
+- Было «Hub + connectors, Kojo остаётся сателлитом» → стало **«OnTime ест всё»**. Kojo выключаем полностью, не интегрируем.
+- ClickUp всё так же выключаем.
+- STACK (estimating) — не обсуждался в этой сессии, статус неизвестен, вероятно тоже на выход.
 
-**Боль:** 5 источников правды, ручной копипаст между ними. Нет связи estimate→факт, часы→зарплата, BOM заказ→BOM расход.
+**Что уже есть в OnTime (проверено 2026-04-24):**
+- Projects, Daily reports, Extra Work, Deliveries, Lifts/Refuels, Heartbeat/time-tracking
+- Procurement schema: `vendors`, `purchase_orders` (с 3-tier approval draft→purchasing→pm→director→approved→sent→received→paid), `purchase_order_items`, `vendor_materials`, `materials`
+- PO PDF generator через reportlab (80% Kojo parity — не хватает SENT BY/Required Time/Ship Via/Discount/Shipping)
+- Vendor directory v1 (30 Calgary suppliers с categories/brands/quadrant/flags)
+- Roles matrix: admin, pm, vp_construction, director, foreman, purchasing_manager, service_manager, delivery_manager
+- TG bot + web push
 
-**Рекомендованная стратегия (Вариант B «Hub + connectors»):**
-OnTime становится ядром («TSA OS»). STACK и Kojo остаются — тянем их данные через API/импорт. ClickUp и Django admin поэтапно закрываем, функции переезжают в хаб. Telegram остаётся интерфейсом для работников. AI-агенты сверху.
+**Что ещё нужно для полноценной замены (Kojo + ClickUp):**
+1. **PO PDF parity с Kojo** — SENT BY, Required Time, Ship Via, Delivery/Additional Notes, Discount/Shipping линии. ~30 мин.
+2. **Invoice PDF importer** — drag-and-drop Roofmart invoice → парсит line items → upsert в vendor_materials с ценой и датой. ~1 час. Альтернатива Salesforce скрейпингу.
+3. **Materials catalog UI** — в /procurement tab Catalog уже есть, дописать add-material + vendor offers binding. ~1 час.
+4. **Generic tasks** — то, что ClickUp даёт: свободные задачи с assignee/due/status/comments/attachments, не привязанные к project или daily-report. Новая таблица `tasks`, UI как Kanban + list. Это новая большая фича.
+5. **Docs space** — как ClickUp Docs. Простой wiki/notes (Markdown), folder-structure, attachments. Большая фича.
+6. **Automations** — триггеры «when X happens → do Y». Можно отложить.
 
-**Roadmap (4 фазы, 6–8 мес суммарно в вечернем темпе):**
-1. **Payroll bridge + Budget + STACK import** (1–1.5 мес) — самое болезненное сейчас, максимум отдачи.
-2. **Materials loop + Kojo sync + первые AI агенты** (Estimate sanity, Material anomaly).
-3. **ClickUp replacement** — Docs/Tasks/Gantt/CRM light в хабе.
-4. **AI agents layer** — Foreman assistant (Telegram+voice), VP weekly summary, Payroll anomaly, Predictive reorder.
+**How to apply:**
+- Любая фича, обсуждавшаяся раньше в контексте Kojo/ClickUp, теперь делается внутри OnTime, не интегрируется снаружи.
+- Перед большими фичами (tasks, docs) уточнять у Артёма приоритет — эти две огромные.
+- PO/Procurement/Invoice — приоритетная полоса сейчас.
+- Roofmart Salesforce-скрейпинг — deferred. Салесфорс iframe+popup ад, лучше через PDF-импорт.
 
-**Economics:** текущий SaaS ~$500–1500/мес → после ~$100–300/мес (infra + Claude API $50–200). Окупается за месяцы.
-
-**Риски:** я bottleneck; VPS нужно апгрейдить (8GB/4CPU ~$30/мес); зависимость от STACK/Kojo API.
-
-**Открытые вопросы (блокирующие старт):**
-1. Доступ к Django admin (модели Payroll) — скрины/доступ.
-2. STACK API — есть или только PDF/CSV?
-3. Kojo API — есть или scraping?
-4. Приоритет: Payroll bridge предложен как Фаза 1, но Артём не подтверждал.
-
-**How to apply:** Если Артём возвращается к теме — начать с этих 4 вопросов, не с кода. Без ответа на 1 и 4 нельзя проектировать Payroll module.
+**Прошлые открытые вопросы (пересмотреть):**
+1. Django admin доступ — не упоминался 2026-04-24, статус ?
+2. STACK API — не упоминался 2026-04-24.
+3. Kojo API — **не нужен**, выключаем Kojo.
+4. Payroll module — не упоминался 2026-04-24.

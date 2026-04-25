@@ -41,7 +41,9 @@
 - [OnTime Roles Access Matrix](project_tsa_roles_access.md) — `require_management` + `_is_management` расширяют admin до pm/vp/director; destructive остались admin-only
 - [TSA Company Role Overlaps](project_tsa_company_roles.md) — Director также выполняет Purchasing Manager; код fallback'ится на director когда purchasing отсутствует
 - [OnTime Daily Nudge](project_tsa_daily_nudge.md) — 18:00 Calgary cron в uvicorn: кто не сдал daily_report, TG → админ + форман своих проектов
-- [TSA OS Idea (paused)](project_tsa_os_idea.md) — единая платформа поверх OnTime вместо ClickUp+Django+Sheets; 4-фазный план, на паузе 2026-04-16
+- [TSA OS (active)](project_tsa_os_idea.md) — 2026-04-24 реактивирован; OnTime заменяет Kojo + ClickUp полностью, не satellite-model
+- [Salesforce blocked](feedback_salesforce_scraping_blocked.md) — ProZone позволяет только 1 popup за сессию через Playwright; CSV export OK, для PDFs — manual Chrome
+- [Roofmart Catalog Sync](project_roofmart_catalog.md) — работающий pipeline: 92 SKUs из 63/70 invoices в OnTime catalog; weekly cron Sun 03:00
 - [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)
 - [TG Channel Plan](project_tg_channel_plan.md) — active с 2026-04-16: solo-founder-with-AI, RU, настоящее имя, 4 поста/нед, бюджет $300–500/мес, название @solo_claude
 - [solo_claude_bot infra](project_solo_claude_bot.md) — `/root/solo_claude_bot/` CLI для постинга; 2 бота, venv, .env; CHAT_* ждут chat_id
