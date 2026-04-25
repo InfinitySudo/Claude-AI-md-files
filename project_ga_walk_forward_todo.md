@@ -4,45 +4,46 @@ description: Train/test split inside evaluate() — fitness graded on out-of-sam
 type: project
 originSessionId: 5926453b-aa53-449f-9edc-92fc5d971f80
 ---
-Status: **active** since commit 91bbd3a (2026-04-25). Below documents
-what shipped + what's still to refine.
+Status: **active** since 91bbd3a → upgraded to 3-fold + ensemble +
+apply-gate in 99c855f (both 2026-04-25). Below documents what shipped.
 
 ## What ships
 
 `scripts/ga_optimizer.py`:
-- `TRAIN_FRACTION = 0.70` — first 70% of window = TRAIN, last 30% = TEST.
-- `_run_strategy(..., return_with_ts=True)` yields (pnl, ts_ms) tuples
-  so the caller can split. Old float-only signature still works for
-  the existing `walk_forward_evaluate` reporter.
-- `_walk_forward_fitness(pnls_with_ts, ...)` =
-    `test_fit - K * saturating(train_fit - test_fit)`
-  Saturation around 50 keeps overfit-penalty from dominating ranking
-  past where it's decided. Final clamped to [-100, 100].
-- `evaluate()` calls `_walk_forward_fitness` per strategy.
+- `_run_strategy(..., return_with_ts=True)` yields (pnl, ts_ms) tuples.
+- 3-fold expanding-window walk-forward inside `evaluate()`.
+  Folds: train [0..0.47/0.67/0.87], test [0.47..0.67 / 0.67..0.87 /
+  0.87..1.00]. Re-slicing the same `_run_strategy` output → same
+  compute as the single-split version.
+- Ensemble per fold:
+    `0.30 * train_fit + 0.70 * test_fit - K * saturating(train - test)`
+  train/test individually clipped to [-100,100] before combining so
+  unbounded profit-factor on all-win folds can't dominate.
+- Final fitness = mean(fold_scores), clamped to [-100,100].
 
-Synthetic verification:
-- OVERFIT (train +2.3, test -0.5) → -100
-- DECENT  (train +2.0, test +1.5) → +14.1
-- ROBUST  (train +1.8, test +1.7) → +16.5
+`src/dashboard_api_v3.py` `/api/ga/apply` overfit gate refuses if:
+  - test_n == 0 OR train_avg > 1.5 × test_avg
+  - train profitable but test ≤ 0
+  - train_n / test_n > 4.67  (test trade rate dropped)
+  - max(|sharpe_train|, |sharpe_test|) > 50  (noise-fitting tell)
+  - max(dd_train, dd_test) > 100  (>100% loss vs peak)
+  - GA's own overfit_warning flag is true
+Override with `{"force": true}` in payload.
+
+Synthetic ranking (3-fold + ensemble):
+- ROBUST    →  +18.29
+- DECENT    →  +16.33
+- SPARSE    →  -16.72
+- OVERFIT   →  -86.67
+- TINY (<50)→ -100.00
 
 ## What still uses full-window math
 
 `walk_forward_evaluate(ind, train_start, train_end, test_start, test_end, ...)`
 — the dashboard's "show me train/test for this candidate" reporter —
-runs `_run_strategy` twice on caller-provided windows and computes
-plain stats. Untouched. It's a separate analytical view, not the
-fitness path.
-
-## Possible refinements (next pass)
-
-- **3-fold rolling** instead of single 70/30 split. More robust to
-  regime accidents on the boundary. Costs 3x evaluate runtime.
-- **Acceptance gate at apply-time**: dashboard's "Apply Recommended"
-  button refuses if `train_avg / test_avg > 1.5` or
-  `train_trades / test_trades > 2.0` for the chosen rank.
-- **Weighted ensemble of train and test fitness** (e.g. 0.3*train +
-  0.7*test) instead of pure-test, so the GA still gets gradient on
-  trades that were predominantly in TRAIN.
+runs `_run_strategy` twice on caller-provided windows. Untouched.
+That reporter is what populates `train`/`test` blocks in
+`ga_results.json` which the apply-time gate reads.
 
 ## Why this matters
 
