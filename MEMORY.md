@@ -68,4 +68,4 @@
 - [Prop Firm Path](project_prop_firm_path.md) — отложено до proven edge; критерии готовности (30+ real trades, 3 мес +5% net, risk governor, MT5 адаптер)
 - [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
 - [Dashboard UTC](feedback_dashboard_utc.md) — SQL params c datetime.now() (local) тихо отрезают последние UTC_offset часов; всегда utcnow()
-- [GA Walk-Forward TODO](project_ga_walk_forward_todo.md) — план train/test split в GA; пока quick patches (trade-cap, sharpe-cap, min spike=4) держат overfit-corner кандидатов вне топа
+- [GA Walk-Forward](project_ga_walk_forward_todo.md) — ACTIVE с 2026-04-25: 70/30 train/test split в evaluate(), fitness=test−K·saturating(train−test)
