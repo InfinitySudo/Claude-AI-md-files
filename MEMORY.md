@@ -66,3 +66,5 @@
 - [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
 - [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
 - [Prop Firm Path](project_prop_firm_path.md) — отложено до proven edge; критерии готовности (30+ real trades, 3 мес +5% net, risk governor, MT5 адаптер)
+- [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
+- [Dashboard UTC](feedback_dashboard_utc.md) — SQL params c datetime.now() (local) тихо отрезают последние UTC_offset часов; всегда utcnow()
