@@ -69,3 +69,8 @@
 - [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
 - [Dashboard UTC](feedback_dashboard_utc.md) — SQL params c datetime.now() (local) тихо отрезают последние UTC_offset часов; всегда utcnow()
 - [GA Walk-Forward](project_ga_walk_forward_todo.md) — ACTIVE с 2026-04-25: 70/30 train/test split в evaluate(), fitness=test−K·saturating(train−test)
+- [Labor vs Purchase Materials](feedback_ontime_labor_vs_purchase.md) — два РАЗНЫХ вида материалов в OnTime; install rates ≠ vendor prices; не маскировать одно другим
+- [OnTime Delivery Shortages](project_tsa_shortages.md) — short-ship tracking на PO items; wait/reorder/resolved + 7d TG nudge для форменов
+- [BOM replace trap](feedback_ontime_bom_replace_trap.md) — _set_project_materials делает DELETE+INSERT; неполный body стирает BOM
+- [Material canonical_id alias](feedback_ontime_canonical_id.md) — old material → new canonical mapping; installed_qty считается через alias union
+- [Service Tasks (Andrei)](project_tsa_service_tasks.md) — kanban + checklist + categorized photos для QA/warranty/callback flow; role 'service'
