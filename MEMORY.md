@@ -28,6 +28,7 @@
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling Camp Payment](project_wrestling_camp_payment.md) — Square checkout + I-Paid/Confirm honor-system flow; Constant default link
 - [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl
 - [TSA Legacy Server](project_tsa_legacy.md) — 46.8.227.113 старый Django+TG-бот, импортировали 7862 отчёта 2026-04-17, выключим через 2-3 недели
 - [TSA Nightly Legacy-Sync](project_tsa_nightly_sync.md) — cron 02:30 Calgary: scp legacy.db → sync_legacy.py подтягивает TG-бот отчёты в OnTime, выключим вместе с app-bot
@@ -74,3 +75,7 @@
 - [BOM replace trap](feedback_ontime_bom_replace_trap.md) — _set_project_materials делает DELETE+INSERT; неполный body стирает BOM
 - [Material canonical_id alias](feedback_ontime_canonical_id.md) — old material → new canonical mapping; installed_qty считается через alias union
 - [Service Tasks (Andrei)](project_tsa_service_tasks.md) — kanban + checklist + categorized photos для QA/warranty/callback flow; role 'service'
+- [Worker Transfer Flow](project_tsa_transfer_flow.md) — 2026-04-27 заменил каскадный auto-detach жёстким blok'ом: перенос между active projects ТОЛЬКО через transfer-request + daily_report по from-bldg
+- [OnTime Scoring](project_tsa_scoring.md) — TIER_BASE поднят 2026-04-27: S=250, M=500, L=1000, XL=2000 (было 50/150/350/700) для баланса с punctuality
+- [Bybit WS Keepalive](feedback_bybit_ws_keepalive.md) — run_forever() без ping_interval = CLOSE_WAIT за 30s; всегда ping_interval=20, ping_timeout=10
+- [SQLite ISO Timestamp Trap](feedback_sqlite_isoformat_trap.md) — datetime('now') = пробел, .isoformat() = T; лексикографически режет записи в день cutoff
