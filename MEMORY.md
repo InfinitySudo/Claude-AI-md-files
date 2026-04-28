@@ -75,6 +75,7 @@
 - [BOM replace trap](feedback_ontime_bom_replace_trap.md) — _set_project_materials делает DELETE+INSERT; неполный body стирает BOM
 - [Material canonical_id alias](feedback_ontime_canonical_id.md) — old material → new canonical mapping; installed_qty считается через alias union
 - [Service Tasks (Andrei)](project_tsa_service_tasks.md) — kanban + checklist + categorized photos для QA/warranty/callback flow; role 'service'
+- [Billable Service Close](feedback_billable_service_close.md) — service guy не может закрыть billable; только to_invoice → accounting → complete с invoice_no
 - [Worker Transfer Flow](project_tsa_transfer_flow.md) — 2026-04-27 заменил каскадный auto-detach жёстким blok'ом: перенос между active projects ТОЛЬКО через transfer-request + daily_report по from-bldg
 - [Report Crew Guard](feedback_ontime_report_crew_guard.md) — с 2026-04-28 POST /api/reports требует crew-членства; 5 bypass-условий и как чинить 403
 - [OnTime Scoring](project_tsa_scoring.md) — TIER_BASE поднят 2026-04-27: S=250, M=500, L=1000, XL=2000 (было 50/150/350/700) для баланса с punctuality
