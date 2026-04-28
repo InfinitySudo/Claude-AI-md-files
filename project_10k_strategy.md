@@ -21,4 +21,12 @@ originSessionId: d17635cc-9fb8-4333-ba35-356494af8a39
 
 **Отложено/запомнить для возврата:** Артём просил вернуться к этому разговору позже — конкретно к connect-the-dots плану (README на 3 главных репо + LinkedIn + шорт-лист Toptal задач). Когда спросит «вернёмся к тому разговору» — это оно.
 
+**Update 2026-04-26:** Артём вернулся, попросил топ-сайтов и kit. Drafts лежат в `/root/freelance/`:
+- `portfolio_readmes/{ontime,trading,wrestling}_README.md` — НЕ перезаписаны в репо, ждут ревью.
+- `cover_letters/0{1..4}*.md` — AI-integration, Python backend, fullstack SaaS, trading/fintech.
+- `leetcode_shortlist.md` — 30 medium, 7-day blitz план.
+- `/root/freelance/README.md` — порядок действий по неделе.
+
+Рекомендованные топ-площадки под senior Python/FastAPI/AI: Toptal, Arc.dev, Turing, Lemon.io, Gun.io (премиум); Contra, YouTeam, Braintrust (mid); Upwork senior-tier как fallback. RU-сегмент (Habr/Kwork/FL.ru) пропускаем — ставки не дотянут.
+
 **How to apply:** Если Артём спросит «чем заняться для денег», напомнить эту иерархию. Если выбирает №1 — первые 30 дней: multi-tenant OnTime + landing + outreach 50 компаний. Не распыляться на 3 пути одновременно без ресурсов.

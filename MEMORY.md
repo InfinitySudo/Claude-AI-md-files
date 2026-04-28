@@ -82,3 +82,4 @@
 - [Foreman Mobile Actions](feedback_ontime_foreman_mobile_actions.md) — primary-action кнопки для форемана дублировать на ProjectsPage+ProjectDetailPage; `hidden lg:inline` = невидимо на телефонe
 - [SQLite ISO Timestamp Trap](feedback_sqlite_isoformat_trap.md) — datetime('now') = пробел, .isoformat() = T; лексикографически режет записи в день cutoff
 - [Invoice Ingestion Pipeline](project_invoice_ingestion.md) — IMAP→DB→UI Inbox готово; backfill в systemd unit invoice-backfill; parsers+grid TODO
+- [No API Keys for Invoice Parsing](feedback_no_api_keys_invoice.md) — invoice pipeline только regex per-vendor; никакого Claude/OpenAI API
