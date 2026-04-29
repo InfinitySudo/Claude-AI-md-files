@@ -78,10 +78,12 @@
 - [Billable Service Close](feedback_billable_service_close.md) — service guy не может закрыть billable; только to_invoice → accounting → complete с invoice_no
 - [Worker Transfer Flow](project_tsa_transfer_flow.md) — 2026-04-27 заменил каскадный auto-detach жёстким blok'ом: перенос между active projects ТОЛЬКО через transfer-request + daily_report по from-bldg
 - [Report Crew Guard](feedback_ontime_report_crew_guard.md) — с 2026-04-28 POST /api/reports требует crew-членства; 5 bypass-условий и как чинить 403
-- [OnTime Scoring](project_tsa_scoring.md) — TIER_BASE поднят 2026-04-27: S=250, M=500, L=1000, XL=2000 (было 50/150/350/700) для баланса с punctuality
+- [OnTime Scoring](project_tsa_scoring.md) — TIER_BASE 250/500/1000/2000 + loss-gate 2026-04-29: проект в убыток = 0 баллов foreman'у
+- [OnTime Archive Semantics](feedback_ontime_archive_semantics.md) — Archive = только мусор/cancelled, НЕ для done; done скрывается через ProjectsPage filter; dashboard YTD фильтрует archived
 - [Bybit WS Keepalive](feedback_bybit_ws_keepalive.md) — run_forever() без ping_interval = CLOSE_WAIT за 30s; всегда ping_interval=20, ping_timeout=10
 - [Foreman Mobile Actions](feedback_ontime_foreman_mobile_actions.md) — primary-action кнопки для форемана дублировать на ProjectsPage+ProjectDetailPage; `hidden lg:inline` = невидимо на телефонe
 - [SQLite ISO Timestamp Trap](feedback_sqlite_isoformat_trap.md) — datetime('now') = пробел, .isoformat() = T; лексикографически режет записи в день cutoff
 - [Invoice Ingestion Pipeline](project_invoice_ingestion.md) — IMAP→DB→UI Inbox готово; backfill в systemd unit invoice-backfill; parsers+grid TODO
 - [No API Keys for Invoice Parsing](feedback_no_api_keys_invoice.md) — invoice pipeline только regex per-vendor; никакого Claude/OpenAI API
 - [Invoice OCR Followup](project_ocr_followup.md) — Tesseract one-shot timer 2026-05-12 10:00 для добивки failed scan-PDF
+- [OnTime Pin Crew Invariant](feedback_ontime_pin_crew_invariant.md) — project_installers — source of truth, legacy не заполнил; auto-pin в /api/reports + digest учитывает overdue

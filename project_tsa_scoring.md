@@ -1,10 +1,10 @@
 ---
 name: OnTime Scoring (points)
-description: Тиры и формула points за completion в OnTime — пересмотрены 2026-04-27 чтобы устранить дисбаланс с punctuality
+description: Тиры + financial loss-gate (2026-04-29) — points=0 если проект закрыт в убыток
 type: project
 originSessionId: 2698e6df-f89c-4d5c-ae55-ba7c1be6f1d9
 ---
-**TIER_BASE** в `main.py:2694` (после ребаланса 2026-04-27):
+**TIER_BASE** (после ребаланса 2026-04-27):
 - S (≤$25k): **250**
 - M ($25–50k): **500**
 - L ($50–100k): **1000**
@@ -12,11 +12,16 @@ originSessionId: 2698e6df-f89c-4d5c-ae55-ba7c1be6f1d9
 
 Старые базы (50/150/350/700) проигрывали punctuality: Igor с 16 рабочими = 352 punctuality/мес против 65 за S-проект — 1 проект ≈ 4 дня дисциплины.
 
-**Формула** (`compute_points`, `main.py:2710`):
-- `points = max(0, base + deadline_adj + hours_adj)`
+**Формула** (`compute_points`, `main.py:2791`):
+- **Loss gate (2026-04-29)**: если `financial_result < 0` (любой убыток) → **points = 0**, независимо от hours/deadline. Артём: foreman не справился с задачей если убыток, баллы не должны начисляться. При деплое обнулено 6 исторических score-rows по 5 убыточным проектам (Sage Walk Bldg 2 −$47k, Pinegate −$23k, Logel Brick −$7k, Sage Walk MASONRY −$5k, ATCO Bldg B −$3k); previous_points сохранены в breakdown_json.
+- Иначе: `points = max(0, base + deadline_adj + hours_adj)`
 - deadline: ≥10 дней раньше → +30% базы; в срок → 0; 1–3 поздно → −20%; 4+ → −40%.
 - hours (actual/budget): ≤0.85 → +20%; 0.85–1.15 → 0; 1.15–1.30 → −20%; >1.30 → −40%.
 - multi-foreman: split пропорционально дням в `project_foreman_history`.
+
+**Financial result source**: `complete_project` тянет `result` через `enrich_project(include_money=True)` — тот же расчёт что на dashboard (`min(earned, budget) − salary` с wage_history). breakdown_json сохраняет `financial_result`, `financial_zero`, `previous_points`.
+
+**Recompute script**: `backend/recompute_loss_scores.py` — one-shot для backfill после изменения логики; обнуляет project_scores где result<0.
 
 **Helpers** (`complete_project`, `main.py:4670`):
 - foreman_helper: 30% от primary points.
