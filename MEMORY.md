@@ -92,3 +92,4 @@
 - [Dust Auto-Sweep](project_dust_sweep.md) — реконсайлер закрывает >=90% filled real_trades через 6h reduceOnly market
 - [BE on Real](feedback_be_on_real.md) — реконсайлер двигает SL→entry±offset когда pnl≥activation; до 2026-04-29 BE на real был статичным TP, никогда не срабатывал
 - [_query Swallow](feedback_query_write_swallow.md) — stats_mgr._query до 2026-04-29 ел INSERTы без commit; workaround: _db_exec из dashboard
+- [TG Keyboard Emoji-Prefix](feedback_telegram_keyboard_emoji.md) — KeyboardButton "📅 /daily" не дёргает CommandHandler (offset != 0); нужен /stop + re-dispatch
