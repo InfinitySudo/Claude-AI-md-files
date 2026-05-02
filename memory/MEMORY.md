@@ -1,0 +1,104 @@
+- [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
+- [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
+- [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
+- [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
+- [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
+- [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
+- [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
+- [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
+- [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
+- [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
+- [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
+- [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
+- [Win Rate Definition](feedback_reports_win_rate.md) — WR = (realized_pnl − fees) > 0 (money-based, since 2026-04-22)
+- [Realized PnL Column](project_realized_pnl_column.md) — realized_pnl_usd = total, gross_pnl_usd = final chunk only
+- [Dashboard Settings Tab](project_dashboard_settings_tab.md) — SETTINGS_REGISTRY is source of truth; confirm phrases for REAL/update/clean
+- [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
+- [real_trades Schema](project_real_trades_schema.md) — narrower than simulated_trades; get_alltime_stats crashes on missing columns
+- [Signal Config Path Trap](feedback_signal_bot_config_path.md) — src/ is real, root is orphan; always use env_config.SIGNAL_BOT_CONFIG_PATH
+- [Unversioned Prod State](project_unversioned_prod_state.md) — DB schema drift, Grafana, nginx, /var/www — not in git
+- [No Routine Confirms](feedback_no_routine_confirms.md) — делать текучку сразу без подтверждений
+- [GA Optimizer](project_ga_optimizer.md) — 27-gene GA for CONS+TREND+AGGR; dashboard UI, apply/rollback, weekly schedule
+- [GA Apply Full Chain](feedback_ga_apply_full_chain.md) — Where apply writes: signal_json + bot_settings + strategy_parameters; meta-params still hardcoded
+- [GA Symbols Single Source](feedback_ga_symbols_single_source.md) — GA берёт список монет только из Symbols Editor (config/symbols.json); ga_symbols.json удалён
+- [GA Fitness Overfit Guards](feedback_ga_fitness_overfit.md) — MIN_TRADES_REQUIRED=50, MIN_TRADES_FULL=200, MIN_SYMBOL_COVERAGE=0.15 — почему и как тюнить
+- [GA Baseline Bug — RESOLVED](project_ga_baseline_bug.md) — fixed 2026-04-23 (silent excepts + rate-limit + cache); pre-fix files unreliable
+- [systemctl TS for JS](feedback_systemctl_timestamp_js.md) — Browser не парсит "Tue ... MDT"; всегда --timestamp=unix → ISO-8601 UTC
+- [Trading Config Live Source](feedback_trading_config_live_source.md) — Артём правит настройки через dashboard; всегда читать актуальные значения из JSON+bot_settings, не из памяти
+- [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
+- [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
+- [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling Camp Payment](project_wrestling_camp_payment.md) — Square checkout + I-Paid/Confirm honor-system flow; Constant default link
+- [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl
+- [TSA Legacy Server](project_tsa_legacy.md) — 46.8.227.113 старый Django+TG-бот, импортировали 7862 отчёта 2026-04-17, выключим через 2-3 недели
+- [TSA Nightly Legacy-Sync](project_tsa_nightly_sync.md) — cron 02:30 Calgary: scp legacy.db → sync_legacy.py подтягивает TG-бот отчёты в OnTime, выключим вместе с app-bot
+- [Email Register Stub Upgrade](feedback_email_register_stub_upgrade.md) — legacy-импорт создал stub-юзеров (password_hash='!xxx'); email-регистрация апгрейдит их, а не создаёт новых
+- [OnTime Daily Reports](project_tsa_daily_reports.md) — схема отчётов, budget analytics, dual-source часы (отчёт > сессия), WORKDAY_HOURS=9
+- [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
+- [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
+- [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
+- [OnTime Heartbeat & Time Policy](project_ontime_heartbeat.md) — 4 триггера закрытия (checkout/geofence/force/EOD 17:30) + unpaid lunch 12:00-12:30; bg sweep 60s
+- [OnTime Wage→Cost Burden](project_ontime_wage_cost.md) — `_wage_to_cost()` в main.py; hourly_wage = работнику, cost = компании; bubget/labour используют cost
+- [OnTime Roles Access Matrix](project_tsa_roles_access.md) — `require_management` + `_is_management` расширяют admin до pm/vp/director; destructive остались admin-only
+- [TSA Company Role Overlaps](project_tsa_company_roles.md) — Director также выполняет Purchasing Manager; код fallback'ится на director когда purchasing отсутствует
+- [OnTime Daily Nudge](project_tsa_daily_nudge.md) — 18:00 Calgary cron в uvicorn: кто не сдал daily_report, TG → админ + форман своих проектов
+- [TSA OS (active)](project_tsa_os_idea.md) — 2026-04-24 реактивирован; OnTime заменяет Kojo + ClickUp полностью, не satellite-model
+- [Salesforce blocked](feedback_salesforce_scraping_blocked.md) — ProZone позволяет только 1 popup за сессию через Playwright; CSV export OK, для PDFs — manual Chrome
+- [Roofmart Catalog Sync](project_roofmart_catalog.md) — работающий pipeline: 92 SKUs из 63/70 invoices в OnTime catalog; weekly cron Sun 03:00
+- [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)
+- [TG Channel Plan](project_tg_channel_plan.md) — active с 2026-04-16: solo-founder-with-AI, RU, настоящее имя, 4 поста/нед, бюджет $300–500/мес, название @solo_claude
+- [solo_claude_bot infra](project_solo_claude_bot.md) — `/root/solo_claude_bot/` CLI для постинга; 2 бота, venv, .env; CHAT_* ждут chat_id
+- [CELPIP Teacher Bots](project_celpip_bots.md) — 2 TG-бота Артёма (CLB 10) и Лилии (CLB 8); voice Whisper+Claude+TTS; `/root/English-Teacher-CELPIP`
+- [Claude Telegram Bot repo](project_claude_telegram_bot.md) — `/root/claude-telegram-bot` → `Claude-Telegram-Bot` (не OpenClaw-v3); voice+vision+tools+OAuth
+- [Narrative Before Details](feedback_narrative_before_details.md) — в @solo_claude: сначала origin-story проектов, только потом tech-детали и build-in-public
+- [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — После каждого push в основной репо — синхронизировать память в Claude-AI-md-files
+- [OnTime Extra Work](project_tsa_extra_work.md) — 4-я вкладка: approval workflow + photos + daily-report linkage + TG notify
+- [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
+- [OnTime Lifts + Refuels](project_tsa_lifts.md) — 11 лифтов catalog, per-refuel log, monthly consumption report; одна роль delivery, sub-task Refuel
+- [OnTime Deliveries](project_tsa_deliveries.md) — delivery-tasks планировщик с checklist, фото, TG-briefing 07:30, EW integration
+- [OnTime Timesheet Tab](project_tsa_timesheet.md) — /timesheet 3-view: Matrix (workers×days), By Allocation, Anomalies; require_finance
+- [Billable Hours Dedup](feedback_billable_hours_dedup.md) — `_billable_hours_map`: report wins per (uid,day) — не (uid,pid,day); человек не на двух объектах одновременно
+- [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
+- [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
+- [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
+- [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
+- [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
+- [Per-Mode Dup Rule](feedback_per_mode_dup_rule.md) — dup-symbol check in process_signal filters by pos['mode']; paper-CONS doesn't block real-TREND
+- [Dashboard PAPER/REAL Split](project_dashboard_split.md) — / → paper, /real.html → real; ?source param on stats endpoints
+- [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
+- [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
+- [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
+- [Prop Firm Path](project_prop_firm_path.md) — отложено до proven edge; критерии готовности (30+ real trades, 3 мес +5% net, risk governor, MT5 адаптер)
+- [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
+- [Dashboard UTC](feedback_dashboard_utc.md) — SQL params c datetime.now() (local) тихо отрезают последние UTC_offset часов; всегда utcnow()
+- [GA Walk-Forward](project_ga_walk_forward_todo.md) — ACTIVE с 2026-04-25: 70/30 train/test split в evaluate(), fitness=test−K·saturating(train−test)
+- [Labor vs Purchase Materials](feedback_ontime_labor_vs_purchase.md) — два РАЗНЫХ вида материалов в OnTime; install rates ≠ vendor prices; не маскировать одно другим
+- [OnTime Delivery Shortages](project_tsa_shortages.md) — short-ship tracking на PO items; wait/reorder/resolved + 7d TG nudge для форменов
+- [BOM replace trap](feedback_ontime_bom_replace_trap.md) — _set_project_materials делает DELETE+INSERT; неполный body стирает BOM
+- [Material canonical_id alias](feedback_ontime_canonical_id.md) — old material → new canonical mapping; installed_qty считается через alias union
+- [Service Tasks (Andrei)](project_tsa_service_tasks.md) — kanban + checklist + categorized photos для QA/warranty/callback flow; role 'service'
+- [Billable Service Close](feedback_billable_service_close.md) — service guy не может закрыть billable; только to_invoice → accounting → complete с invoice_no
+- [Worker Transfer Flow](project_tsa_transfer_flow.md) — 2026-04-27 заменил каскадный auto-detach жёстким blok'ом: перенос между active projects ТОЛЬКО через transfer-request + daily_report по from-bldg
+- [Report Crew Guard](feedback_ontime_report_crew_guard.md) — с 2026-04-28 POST /api/reports требует crew-членства; 5 bypass-условий и как чинить 403
+- [OnTime Scoring](project_tsa_scoring.md) — TIER_BASE 250/500/1000/2000 + loss-gate 2026-04-29: проект в убыток = 0 баллов foreman'у
+- [OnTime Archive Semantics](feedback_ontime_archive_semantics.md) — Archive = только мусор/cancelled, НЕ для done; done скрывается через ProjectsPage filter; dashboard YTD фильтрует archived
+- [Bybit WS Keepalive](feedback_bybit_ws_keepalive.md) — run_forever() без ping_interval = CLOSE_WAIT за 30s; всегда ping_interval=20, ping_timeout=10
+- [Foreman Mobile Actions](feedback_ontime_foreman_mobile_actions.md) — primary-action кнопки для форемана дублировать на ProjectsPage+ProjectDetailPage; `hidden lg:inline` = невидимо на телефонe
+- [SQLite ISO Timestamp Trap](feedback_sqlite_isoformat_trap.md) — datetime('now') = пробел, .isoformat() = T; лексикографически режет записи в день cutoff
+- [Invoice Ingestion Pipeline](project_invoice_ingestion.md) — IMAP→DB→UI Inbox готово; backfill в systemd unit invoice-backfill; parsers+grid TODO
+- [No API Keys for Invoice Parsing](feedback_no_api_keys_invoice.md) — invoice pipeline только regex per-vendor; никакого Claude/OpenAI API
+- [Invoice OCR Followup](project_ocr_followup.md) — Tesseract one-shot timer 2026-05-12 10:00 для добивки failed scan-PDF
+- [OnTime Pin Crew Invariant](feedback_ontime_pin_crew_invariant.md) — project_installers — source of truth, legacy не заполнил; auto-pin в /api/reports + digest учитывает overdue
+- [Trading State Soft-Gate](project_trading_state_softgate.md) — /api/trading-state на real.html: LIVE/GATED/PAUSED/DISABLED + pause/resume + scorecard recommend
+- [Bybit Signing Order](feedback_bybit_signing_order.md) — _request("GET") должен подписывать ТОТ ЖЕ qs что и шлёт; sorted ≠ insertion order
+- [Dust Auto-Sweep](project_dust_sweep.md) — реконсайлер закрывает >=90% filled real_trades через 6h reduceOnly market
+- [BE on Real](feedback_be_on_real.md) — реконсайлер двигает SL→entry±offset когда pnl≥activation; до 2026-04-29 BE на real был статичным TP, никогда не срабатывал
+- [_query Swallow](feedback_query_write_swallow.md) — stats_mgr._query до 2026-04-29 ел INSERTы без commit; workaround: _db_exec из dashboard
+- [TG Keyboard Emoji-Prefix](feedback_telegram_keyboard_emoji.md) — KeyboardButton "📅 /daily" не дёргает CommandHandler (offset != 0); нужен /stop + re-dispatch
+- [React Hooks Order](feedback_react_hooks_order.md) — useMemo/useState/useEffect ВСЕГДА выше `if (...) return null`; иначе blank screen
+- [voice-tutor (@AISmartFriendBot)](project_voice_tutor.md) — TG голосовой собеседник + Mini App с continuous VAD/barge-in; voice.constantwrestling.cloud
+- [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
+- [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
+- [Hourly Supervisor (deterministic)](project_hourly_supervisor.md) — заменил opus-агент Python-скриптом; haiku только при events/anomalies
+- [OAuth Rate Limits](feedback_oauth_rate_limits.md) — никогда не блокируй fallback chain жёстко; 5h cap на opus/sonnet жгут фоновые agents
+- [systemd OnCalendar Local Time](feedback_systemd_oncalendar_local_time.md) — server в America/Edmonton; OnCalendar по умолчанию local, не UTC
