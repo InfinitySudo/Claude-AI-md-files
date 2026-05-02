@@ -102,3 +102,4 @@
 - [Hourly Supervisor (deterministic)](project_hourly_supervisor.md) — заменил opus-агент Python-скриптом; haiku только при events/anomalies
 - [OAuth Rate Limits](feedback_oauth_rate_limits.md) — никогда не блокируй fallback chain жёстко; 5h cap на opus/sonnet жгут фоновые agents
 - [systemd OnCalendar Local Time](feedback_systemd_oncalendar_local_time.md) — server в America/Edmonton; OnCalendar по умолчанию local, не UTC
+- [Auto-push by Default](feedback_auto_push_default.md) — после commit'а сразу push; force-push к master нельзя; trade-off Артёма от 2026-05-02

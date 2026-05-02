@@ -16,8 +16,14 @@ echo "[$TS] sync start" >> "$LOG"
 
 cd "$REPO"
 
-# Sync
+# Sync auto-memory dir
 rsync -a --delete "$SRC" "$DST" >> "$LOG" 2>&1
+
+# Also back up the global MOBILE_RULES.md so it survives a VPS rebuild —
+# it's the anchor every project's CLAUDE.md points to.
+if [ -f /root/.claude/MOBILE_RULES.md ]; then
+    cp /root/.claude/MOBILE_RULES.md "$REPO/MOBILE_RULES.md"
+fi
 
 # Detect changes
 git add -A
