@@ -51,11 +51,15 @@
 - [CELPIP Teacher Bots](project_celpip_bots.md) — 2 TG-бота Артёма (CLB 10) и Лилии (CLB 8); voice Whisper+Claude+TTS; `/root/English-Teacher-CELPIP`
 - [Claude Telegram Bot repo](project_claude_telegram_bot.md) — `/root/claude-telegram-bot` → `Claude-Telegram-Bot` (не OpenClaw-v3); voice+vision+tools+OAuth
 - [Narrative Before Details](feedback_narrative_before_details.md) — в @solo_claude: сначала origin-story проектов, только потом tech-детали и build-in-public
-- [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — После каждого push в основной репо — синхронизировать память в Claude-AI-md-files
+- [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — Каждый push: checkpoint сессии в memory + sync в Claude-AI-md-files
+- [Hourly Report v2](project_hourly_report_v2.md) — Compressed B/C layout + clickable close-reasons → dashboard filter (period/close/strategy + anchors)
+- [Grafana → infinityopenclowbot](project_grafana_alerts.md) — Все Trading Alerts идут в @infinityopenclowbot c 2026-05-03; как откатить
 - [OnTime Extra Work](project_tsa_extra_work.md) — 4-я вкладка: approval workflow + photos + daily-report linkage + TG notify
 - [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
 - [OnTime Lifts + Refuels](project_tsa_lifts.md) — 11 лифтов catalog, per-refuel log, monthly consumption report; одна роль delivery, sub-task Refuel
 - [OnTime Deliveries](project_tsa_deliveries.md) — delivery-tasks планировщик с checklist, фото, TG-briefing 07:30, EW integration
+- [OnTime Timesheet Tab](project_tsa_timesheet.md) — /timesheet 3-view: Matrix (workers×days), By Allocation, Anomalies; require_finance
+- [Billable Hours Dedup](feedback_billable_hours_dedup.md) — `_billable_hours_map`: report wins per (uid,day) — не (uid,pid,day); человек не на двух объектах одновременно
 - [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
@@ -93,3 +97,15 @@
 - [BE on Real](feedback_be_on_real.md) — реконсайлер двигает SL→entry±offset когда pnl≥activation; до 2026-04-29 BE на real был статичным TP, никогда не срабатывал
 - [_query Swallow](feedback_query_write_swallow.md) — stats_mgr._query до 2026-04-29 ел INSERTы без commit; workaround: _db_exec из dashboard
 - [TG Keyboard Emoji-Prefix](feedback_telegram_keyboard_emoji.md) — KeyboardButton "📅 /daily" не дёргает CommandHandler (offset != 0); нужен /stop + re-dispatch
+- [React Hooks Order](feedback_react_hooks_order.md) — useMemo/useState/useEffect ВСЕГДА выше `if (...) return null`; иначе blank screen
+- [voice-tutor (@AISmartFriendBot)](project_voice_tutor.md) — TG голосовой собеседник + Mini App с continuous VAD/barge-in; voice.constantwrestling.cloud
+- [voice-tutor OAuth 500](feedback_voice_tutor_oauth_500.md) — "слушает не отвечает" = первая гипотеза истёкший Claude OAuth; jq expiresAt + grep 401 в web-systemd.log
+- [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
+- [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
+- [Hourly Supervisor (deterministic)](project_hourly_supervisor.md) — заменил opus-агент Python-скриптом; haiku только при events/anomalies
+- [OAuth Rate Limits](feedback_oauth_rate_limits.md) — никогда не блокируй fallback chain жёстко; 5h cap на opus/sonnet жгут фоновые agents
+- [systemd OnCalendar Local Time](feedback_systemd_oncalendar_local_time.md) — server в America/Edmonton; OnCalendar по умолчанию local, не UTC
+- [Auto-push by Default](feedback_auto_push_default.md) — после commit'а сразу push; force-push к master нельзя; trade-off Артёма от 2026-05-02
+- [Split Commits Over Speed](feedback_split_commits.md) — независимые фичи = отдельные коммиты, не bundle ради скорости
+- [React Select Fallback](feedback_react_select_fallback.md) — `<select value=X>` без подходящего option рисует первый; UI начинает врать про роль
+- [Day-off Silence](feedback_dayoff_silence.md) — все cron-уведомления OnTime молчат в дни без чекинов; гейт `_company_had_activity_24h`

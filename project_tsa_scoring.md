@@ -1,6 +1,6 @@
 ---
 name: OnTime Scoring (points)
-description: Тиры + financial loss-gate (2026-04-29) — points=0 если проект закрыт в убыток
+description: Тиры + financial loss-gate (2026-04-29) + foreman-only rule (2026-04-30) — баллы только role=foreman
 type: project
 originSessionId: 2698e6df-f89c-4d5c-ae55-ba7c1be6f1d9
 ---
@@ -24,8 +24,18 @@ originSessionId: 2698e6df-f89c-4d5c-ae55-ba7c1be6f1d9
 **Recompute script**: `backend/recompute_loss_scores.py` — one-shot для backfill после изменения логики; обнуляет project_scores где result<0.
 
 **Helpers** (`complete_project`, `main.py:4670`):
-- foreman_helper: 30% от primary points.
+- foreman_helper: 30% от primary points — **ТОЛЬКО если user.role='foreman'** (rule 2026-04-30).
 - installer_helper: 0.
+- POST `/api/projects/{pid}/helpers` отказывает 400 если role=foreman_helper, а user.role≠foreman.
+
+**Foreman-only primary rule (2026-04-30):** в complete_project spans
+фильтруются по `users.role='foreman'` — installer'ы и helpers в
+project_foreman_history не получают долю points (legacy 2026-04-17 import
+загнал installer'ов как primary, Igor Kurinnye терял 71pt каждому
+Dmytro Kurinnyi на MG84 builds). Если на проекте все spans non-foreman →
+никто не получает баллов. Backfill для existing data:
+`backend/recompute_foreman_only_scores.py` (отработал на 9 проектах
+2026-04-30; +71+71 Igor Kurinnye на MG84 Bldg 17 + Bldg 2).
 
 **Punctuality** (`main.py:5402`): +1 форману per worker per day, окно [shift_start − 30m, shift_start + 5m]. UNIQUE на (project, worker, day). НЕ изменена в ребалансе.
 

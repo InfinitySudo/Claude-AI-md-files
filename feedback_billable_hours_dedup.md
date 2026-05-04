@@ -1,0 +1,19 @@
+---
+name: OnTime Billable Hours Dedup
+description: report wins per (uid, day) — не per (uid, pid, day); человек не может быть на двух объектах одновременно
+type: feedback
+originSessionId: aa5a3209-7b62-49dc-af6d-fb5c255622f9
+---
+OnTime считает часы/cost по проектам и payroll через `_billable_hours_map(conn, company_id, date_from, date_to, project_id?)` в backend/main.py. Правило: если у воркера есть хоть один daily_report в этот день — sessions на ВСЕХ проектах в этот день игнорируются (это forgot-checkout / неотчитанный transfer). Sessions считаются только когда у воркера НЕТ ни одного отчёта в этот день.
+
+**Why:** 2026-05-01 Артём заметил Pavlo Kosts = 17.8h на двух объектах в один день (report 9h на Bldg 600 + забытая session 8.8h на Bldg 700). Раньше правило было per `(uid, pid, day)` — отчёт на проект A не блокировал сессию на проект B. Это переплачивало воркерам в payroll и завышало labor cost проектов B.
+
+**How to apply:**
+- Хелпер: `_billable_hours_map` возвращает `{(uid, pid, day) -> hours}`. Все потребители часов/cost должны использовать его (НЕ ходить отдельно в `daily_reports` + `work_sessions`).
+- Уже переведены: `_dashboard_period_totals`, `admin_dashboard` (project loop + top_workers_week), `enrich_project`, `project_budget`, `_aggregate_payroll` (значит payroll.csv + qb-payroll.csv), `timesheet/matrix` + `timesheet/by-allocation`, `team-history` (через SQL правку).
+- НЕ переведены и не должны: `export_hours_csv` + `qb-time.csv` (это сырой sessions log, не money calc), `_find_missing_reports` (digest), `foremen/{fid}/team` weekly (просто session count под форменом).
+- Открытые сессии: helper считает live минуты только если started_at сегодня. Если открыта со вчера или раньше — 0 минут (forgot-checkout, не биллим).
+- Anomaly `session_other_project` в `/api/timesheet/anomalies` ловит именно такие случаи (session с >30 мин на проект A в день когда воркер сдал report на B).
+- Cost = hours × `_wage_to_cost(_wage_for_user_on(uid, day), day)` — оба хелпера тоже в main.py рядом с `_billable_hours_map`.
+
+**Известное последствие:** total hours/salary slightly UP (~0.3%) после фикса — в случаях где report.hours > session minutes (воркер сдал больше часов чем зафиксировал QR), report теперь truth. Раньше session перекрывал. Это правильное поведение: report = truth.

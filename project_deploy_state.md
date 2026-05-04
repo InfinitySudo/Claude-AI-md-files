@@ -1,76 +1,113 @@
 ---
 name: Current deploy state on VPS
-description: Which processes run where, ports, nginx config, auth, hybrid trading mode — the live production setup as of 2026-04-23
+description: Which services run where, ports, nginx routing, project directories — live production setup as of 2026-04-30 post-reboot
 type: project
-originSessionId: 140ba16f-5e2e-494a-890b-d8dc107dddde
+originSessionId: a86c82dd-a6d1-4564-8fcb-d5685124b663
 ---
-## Running processes (VPS)
-- **SignalBot** — `bybit-signalbot.service` (telegram_bot_runner_v3.py +
-  WebSocket scanner)
-- **TradingBot** — `bybit-tradingbot.service` (main_bot_v3.py + order
-  execution)
-- **StrategySwitcher** — `bybit-strategy-switcher.service` (CONS↔TREND
-  hourly check); currently in MANUAL mode
-- **ControlBot** — `bybit-control-bot.service` (Telegram management UI)
-- **Dashboard API** — `dashboard-api.service` on :8000
+## Running services (systemd, all enabled+active)
 
-## Ports / nginx
-- **:8080** — nginx → serves HTML from `/var/www/dashboard/`, proxies
-  `/api/` to :8000. **HTTP Basic Auth** (login `artem`,
-  htpasswd at `/etc/nginx/.htpasswd`).
-- **:8000** — dashboard_api_v3.py (Flask, localhost only via nginx).
-- **:3000** — Grafana, **:9090** Prometheus, **:9100** node_exporter.
+### Trading stack (`/root/4BotsBybit-Trading`)
+- `bybit-signalbot` — telegram_bot_runner_v3 + WS scanner
+- `bybit-tradingbot` — main_bot_v3 + order execution
+- `bybit-control-bot` — Telegram management UI
+- `bybit-strategy-switcher` — CONS↔TREND hourly check
+- `dashboard-api` — Flask API на :8000
 
-## Dashboard pages (split 2026-04-23)
-- `/` (or `/index.html`) → 📒 PAPER view (default)
+### OnTime (`/root/ontime`)
+- `ontime-api` — FastAPI uvicorn :8002 (127.0.0.1 only)
+- `ontime-bot` — Telegram bot
+
+### Wrestling (`/root/Wrestling-Performance-Tracker`)
+- `wrestling-api` — FastAPI :8001
+
+### Telegram-bots
+- `claude-telegram-bot` (`/root/claude-telegram-bot`) — Anthropic API bridge
+- `celpip-bot@artem` + `celpip-bot@liliia` (`/root/English-Teacher-CELPIP`)
+- `solo-claude-approve` (`/root/solo_claude_bot`) — draft approval listener
+
+### Infrastructure
+- `nginx`, `postgresql@16-main`, `docker`, `grafana-server`,
+  `prometheus`, `prometheus-node-exporter`, `ssh`
+
+## Listening ports
+
+| Port | Process | Notes |
+|------|---------|-------|
+| 22   | sshd    | |
+| 80   | nginx   | HTTP (redirects/Certbot) |
+| 443  | nginx   | HTTPS (ontime.management, constantwrestling.cloud) |
+| 3000 | grafana | |
+| 5432 | postgres | localhost |
+| 8000 | dashboard-api | Flask, exposed (но фронт через 8080 nginx) |
+| 8001 | wrestling-api | FastAPI |
+| 8002 | ontime-api    | FastAPI, localhost only |
+| 8080 | nginx → :8000 | Trading dashboard, HTTP Basic Auth |
+| 8090 | nginx → :8001 | Wrestling alt port |
+| 8443 | nginx → :8001 | Wrestling SSL alt port |
+| 9090 | prometheus | |
+| 9100 | node_exporter | |
+| 18789, 18791 | openclaw-gateway | parallel agent — НЕ трогать |
+
+## Nginx sites (`/etc/nginx/sites-enabled/`)
+
+- **`dashboard`** :8080 → root `/var/www/dashboard`, `/api/` → :8000.
+  HTTP Basic Auth `artem` / htpasswd at `/etc/nginx/.htpasswd`.
+- **`ontime`** ontime.management :443 (Certbot) → root `/root/ontime/dist`,
+  `/api/` → :8002.
+- **`wrestling`** constantwrestling.cloud :443 (Certbot) + :8090/:8443 →
+  root `/root/Wrestling-Performance-Tracker/dist`, `/api/` → :8001.
+
+## Trading state (live снимок)
+
+- Hybrid mode: `global=PAPER`, `per_strategy={CONS:PAPER, TREND:REAL,
+  AGGRESSIVE:REAL}` — см. `project_hybrid_mode.md`.
+- `strategy_mode=AUTO`, `forced_strategy=CONSERVATIVE` →
+  `effective_route=PAPER` сейчас.
+- Soft-gate scorecard verdict: **STOP** (fail_count=3,
+  recommend_pause=false). См. `project_trading_state_softgate.md`.
+- Daily DD 3.19% / weekly 13.04% / total 0% — пороги 5/15/15%.
+- Bybit mainnet, 0 open позиций, wallet требует свежей проверки
+  (см. `feedback_real_trades_truth.md` — DB лжёт про PnL, всегда
+  через `get_bybit_realized_pnl()`).
+
+## Dashboard pages (split с 2026-04-23)
+
+- `/` или `/index.html` → 📒 PAPER view
 - `/real.html` → 💰 REAL view
-- Top nav switches between them. See `project_dashboard_split.md`.
+- См. `project_dashboard_split.md`, `project_dashboard_apply_chain.md`.
 
-## Trading mode (hybrid since 2026-04-23)
-- `trading_mode.mode = 'PAPER'` (global fallback)
-- `trading_mode.per_strategy = {CONSERVATIVE: PAPER, TREND: REAL,
-   AGGRESSIVE: REAL}` overrides per signal
-- `current_strategy = TREND` (DB), `strategy_mode = MANUAL`
-- See `project_hybrid_mode.md` and `feedback_paper_vs_real.md`.
+## GA optimizer
 
-## Bybit account
-- Mainnet, IP whitelist: VPS 46.8.232.182 + Артёмов 187.77.148.44
-- API permissions: ContractTrade Order+Position, DerivativesTrade
-  (readOnly=0)
-- **Wallet $200.92 USDT** (Артём пополнил с $100.38 → $200.92 на
-  2026-04-23)
-- 0 open positions on exchange (как на момент enabling hybrid)
-- Risk per trade: $1 across all strategies (cons/trend/aggr all = $1)
-- max_concurrent_positions: 100 (drawdown guard 10%/day per strategy is
-  the actual safety net, see `project_hybrid_mode.md`)
+- Последний run: `ga-optimizer-1777498652.service`
+  (started 2026-04-29 15:37 UTC, completed 2026-04-30 04:10).
+- Запускать через systemd-run --unit --slice, **не** Popen — см.
+  `feedback_ga_subprocess_detach.md`.
+- Walk-forward 70/30 split активен — см. `project_ga_walk_forward_todo.md`.
 
-## GA optimizer state
-- **GA run #2 in progress** since 2026-04-22 22:40 UTC (started after
-  the detach fix). PID 2240633, **detached process group** so survives
-  service restarts. Notify watcher PID separate, also detached.
-- ETA ~24h to finish.
-- Dashboard `/api/ga/status` reports running until completion.
-- After finish: `ga_results_latest.json` will overwrite. Apply
-  decision deferred until I review.
+## Disabled orphans (НЕ восстанавливать)
 
-## Where state can drift
-- DB schema, Grafana dashboards, nginx, /var/www, .env — not in git
-  (see `project_unversioned_prod_state.md`).
-- Repo mirrors of dashboard HTML: `TRADING_DASHBOARD.html` (paper),
+- `bybit-dashboard-8080.service` — disabled 2026-04-30 после reboot.
+  Ссылался на `/root/4botsBybit-production` (не существует),
+  спамил журнал каждые 10s. Порт 8080 теперь у nginx.
+
+## Where state drifts
+
+- DB schema, Grafana dashboards, nginx, /var/www, .env, Certbot certs
+  — не в git. См. `project_unversioned_prod_state.md`.
+- Repo mirrors HTML: `TRADING_DASHBOARD.html` (paper),
   `TRADING_DASHBOARD_REAL.html` (real).
-- Active PID files: `data/ga_status.json` (GA process meta).
+- Каждый сервис своя venv внутри своей `WorkingDirectory`.
 
 ## Parallel agent
-- OpenClaw Gateway (`openclaw-gateway.service`, port 18789) runs
-  node.js agents on the same VPS — check before any destructive
-  operation. See `feedback_parallel_agents.md`.
 
-**Why:** Knowing the exact production state prevents breaking things.
-Hybrid mode + real money + live GA all in flight as of this commit.
+- OpenClaw Gateway (`openclaw-gateway`, port 18789/18791) — node.js
+  агенты на той же VPS. Перед destructive ops проверять нет ли его
+  процессов. См. `feedback_parallel_agents.md`.
 
-**How to apply:** Before any deploy/restart/config change:
-1. Check this memory for what's running.
-2. Verify wallet & open positions if touching trading path.
-3. If restarting dashboard-api or signalbot/tradingbot, ensure
-   subprocesses (GA) are detached or check that nothing important is
-   in flight.
+**Why:** один источник правды по тому, что реально крутится. Без него
+после reboot/migration легко пропустить orphan-юнит или сломать
+nginx-маршрут чужого проекта.
+
+**How to apply:** перед любым deploy/restart/migration читать этот
+файл, потом сверяться с `systemctl list-units --state=active` и
+`ss -tlnp` — drift между этой памятью и реальностью обновлять сразу.
