@@ -20,10 +20,20 @@ originSessionId: c0b57883-23e3-4a7e-a819-07a5b403c8f9
 - DB: SQLite `/root/voice-tutor/data/tutor.db` — общая для TG bot и WebApp (TG `initData` валидируется HMAC, user_id матчится)
 - ENV: `/root/voice-tutor/.env` — `VT_BOT_TOKEN`, `VT_OWNER_ID=504609639`, `OPENAI_API_KEY` (общий с CELPIP), `VT_TTS_VOICE=nova`, `VT_PERSONA_GENDER=female`, `VT_WEBAPP_URL=https://voice.constantwrestling.cloud`
 
-**Архитектура памяти (3 слоя):**
+**Архитектура памяти (3 слоя, per-profile с 2026-05-02):**
 1. Live window — последние 24 сообщения as-is
 2. Long-term facts — Haiku в фоне каждые 8 ходов извлекает в `memories` table; идут в system prompt
-3. Rolling summary — когда backlog > 40, oldest 20 → text-сводка (`rolling_summary` table)
+3. Rolling summary — когда backlog > 40, oldest 20 → text-сводка (`profile_summary` table)
+
+**Multi-speaker (2026-05-02):**
+- `profiles(id, name, owner_tg_id, is_default, embedding BLOB, samples)` — каждый голос = 256-d float32 embedding от resemblyzer
+- `messages`, `memories`, `profile_summary` keyed по `profile_id` — контексты полностью изолированы между членами семьи
+- Identification: на каждом /api/turn audio → ffmpeg 16kHz wav → resemblyzer → cosine vs enrolled profiles. Threshold 0.75 (env `VT_SPEAKER_THRESHOLD`)
+- Если ни один профиль не enrolled — fallback на default profile владельца (legacy behaviour сохранён)
+- При unknown speaker — отказ "Не узнаю голос. Зарегистрируй его в настройках профиля." (не пишем в чужой контекст)
+- Endpoints: `GET/POST /api/profiles`, `POST /api/profiles/enroll` (multipart name+audio+optional profile_id), `DELETE /api/profiles/{id}`
+- Legacy user_id-keyed функции в `bot/db.py` обёрнуты вокруг новых `*_p()` через `_default_profile_id(tg_id)` — TG bot не трогали
+- Зависимости: `resemblyzer` + `torch` (CPU) → 1.5GB venv (~50MB модели + torch deps)
 
 **Mini App ключевые фичи:**
 - VAD: RMS-based, default 3000ms тишины, **adaptive 1.5×** после 2с речи (для длинных вопросов)

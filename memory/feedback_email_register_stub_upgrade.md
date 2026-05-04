@@ -13,3 +13,5 @@ originSessionId: 01d3f0af-f97a-467e-bf38-d39ae867510a
 `GET /api/auth/bootstrap` отдаёт `has_users / admin_self_register / invite_gated_roles` — LoginPage прячет поле компании и кнопку admin когда юзеры уже есть.
 
 Диагностический SQL: `SELECT COUNT(*) FROM users WHERE password_hash LIKE '!%'` — сколько stubs осталось неупгрейднутыми.
+
+**Failure mode (2026-05-03 Andrii Mesca):** Upgrade-путь работает только если `roster.id` на email-форме матчится stub'у. Если работник зарегистрировался напрямую (не через roster-picker) с чуть другим написанием имени ("Andrei mesca" vs "Andrii Mesca"), создаётся **новый** user, а stub остаётся orphan'ом. Получаем дубликат: id=40 stub installer + id=90 real service. Лечение: перенести FK refs (daily_reports, project_installers) со stub-id на real-id, потом DELETE stub. SQL шаблон в `/tmp/tsa.db.before-mesca-merge`-эпизоде, схема user-FK колонок выше в этом memory не описана — `pragma_table_info` по всей схеме перед merge'ем чтобы не пропустить ссылку.
