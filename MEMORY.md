@@ -8,6 +8,7 @@
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
 - [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
+- [Trading Guards REAL only](feedback_dd_guard_paper_skip.md) — все risk-гарды (DD, blacklist, time-of-day) только для REAL; paper без блоков
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
 - [Win Rate Definition](feedback_reports_win_rate.md) — WR = (realized_pnl − fees) > 0 (money-based, since 2026-04-22)
@@ -109,3 +110,5 @@
 - [Split Commits Over Speed](feedback_split_commits.md) — независимые фичи = отдельные коммиты, не bundle ради скорости
 - [React Select Fallback](feedback_react_select_fallback.md) — `<select value=X>` без подходящего option рисует первый; UI начинает врать про роль
 - [Day-off Silence](feedback_dayoff_silence.md) — все cron-уведомления OnTime молчат в дни без чекинов; гейт `_company_had_activity_24h`
+- [OnTime Marketing Video](project_ontime_marketing.md) — `/root/ontime/marketing/` pipeline: scenes.py → piper TTS → Playwright → ffmpeg ducking; 25-сцен / 6:45 финал на ontime.management/marketing/
+- [Piper TTS Swallows](feedback_piper_tts_swallows.md) — глотает финальные согласные; всегда apad pad_dur=1.0+ к выходу + перефразировка коротких CTA
