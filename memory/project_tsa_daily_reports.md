@@ -25,7 +25,7 @@ originSessionId: 7307290c-93f4-4995-a318-269609a49e02
 
 **Формулы:**
 - `hours_budget_calc = budget_usd / avg_crew_wage` (не хранится, считается on-the-fly в `_hours_budget_from_crew`). Используется когда `projects.hours_budget = 0`.
-- WORKDAY_HOURS = **9.0** (Alberta), не 8. Критично для любых расчётов дней-нужно.
+- `_workday_hours_for(d)`: Mon-Thu **9.0**, Fri **8.0**, Sat/Sun **0** (TSA standard 44h/week × 2 = 88h/PP = OT_THRESHOLD_PER_PP). `WORKDAY_HOURS=9.0` константа осталась для планирования, но любые weekday-aware расчёты используют helper.
 - `forecast_total = daily_burn_rate × total_days` → overrun если > budget_usd.
 
 **UI:**

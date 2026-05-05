@@ -8,6 +8,7 @@
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
 - [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
+- [Trading Guards REAL only](feedback_dd_guard_paper_skip.md) — все risk-гарды (DD, blacklist, time-of-day) только для REAL; paper без блоков
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
 - [Win Rate Definition](feedback_reports_win_rate.md) — WR = (realized_pnl − fees) > 0 (money-based, since 2026-04-22)
@@ -34,6 +35,9 @@
 - [TSA Nightly Legacy-Sync](project_tsa_nightly_sync.md) — cron 02:30 Calgary: scp legacy.db → sync_legacy.py подтягивает TG-бот отчёты в OnTime, выключим вместе с app-bot
 - [Email Register Stub Upgrade](feedback_email_register_stub_upgrade.md) — legacy-импорт создал stub-юзеров (password_hash='!xxx'); email-регистрация апгрейдит их, а не создаёт новых
 - [OnTime Daily Reports](project_tsa_daily_reports.md) — схема отчётов, budget analytics, dual-source часы (отчёт > сессия), WORKDAY_HOURS=9
+- [OnTime Estimating](project_tsa_estimating.md) — Phase 1 готов 2026-05-04: upload PDF → render → PNG; tracing/AI/BOM ждут реальных blueprints
+- [Estimating без Vision API](feedback_estimating_no_api.md) — extraction только regex + ручной ✏️; Vision не предлагать (решение 2026-05-04)
+- [Estimating Industry Rules](project_estimating_industry_rules.md) — formulas + waste factors + accessory ratios + catalog mapping для BOM engine
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
 - [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
@@ -111,3 +115,6 @@
 - [Day-off Silence](feedback_dayoff_silence.md) — все cron-уведомления OnTime молчат в дни без чекинов; гейт `_company_had_activity_24h`
 - [OnTime Marketing Video](project_ontime_marketing.md) — `/root/ontime/marketing/` pipeline: scenes.py → piper TTS → Playwright → ffmpeg ducking; 25-сцен / 6:45 финал на ontime.management/marketing/
 - [Piper TTS Swallows](feedback_piper_tts_swallows.md) — глотает финальные согласные; всегда apad pad_dur=1.0+ к выходу + перефразировка коротких CTA
+- [Emails Optimization](project_emails_optimization.md) — AI-секретарь для 6 email бизнесов; Gmail+Claude+TG; репо InfinitySudo/emails-optimization
+- [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
+- [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
