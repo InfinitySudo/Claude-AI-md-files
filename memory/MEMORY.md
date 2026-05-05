@@ -118,3 +118,4 @@
 - [Emails Optimization](project_emails_optimization.md) — AI-секретарь для 6 email бизнесов; Gmail+Claude+TG; репо InfinitySudo/emails-optimization
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
+- [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
