@@ -119,3 +119,4 @@
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
+- [Labor Reprice May 2026](project_labor_reprice_may2026.md) — STACK price backfill + 28 legacy mappings + 6 new materials; Jan-2026+ only; full backup chain
