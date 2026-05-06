@@ -35,6 +35,9 @@
 - [TSA Nightly Legacy-Sync](project_tsa_nightly_sync.md) — cron 02:30 Calgary: scp legacy.db → sync_legacy.py подтягивает TG-бот отчёты в OnTime, выключим вместе с app-bot
 - [Email Register Stub Upgrade](feedback_email_register_stub_upgrade.md) — legacy-импорт создал stub-юзеров (password_hash='!xxx'); email-регистрация апгрейдит их, а не создаёт новых
 - [OnTime Daily Reports](project_tsa_daily_reports.md) — схема отчётов, budget analytics, dual-source часы (отчёт > сессия), WORKDAY_HOURS=9
+- [OnTime Estimating](project_tsa_estimating.md) — Phase 1 готов 2026-05-04: upload PDF → render → PNG; tracing/AI/BOM ждут реальных blueprints
+- [Estimating без Vision API](feedback_estimating_no_api.md) — extraction только regex + ручной ✏️; Vision не предлагать (решение 2026-05-04)
+- [Estimating Industry Rules](project_estimating_industry_rules.md) — formulas + waste factors + accessory ratios + catalog mapping для BOM engine
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
 - [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
@@ -66,8 +69,11 @@
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
+- [GA Prewarm 418 Handling](feedback_ga_prewarm_418.md) — Binance 418 = transient ban; retry+Retry-After, prewarm aborts >10% fails, no Bybit-5m fallback
 - [Per-Mode Dup Rule](feedback_per_mode_dup_rule.md) — dup-symbol check in process_signal filters by pos['mode']; paper-CONS doesn't block real-TREND
-- [Dashboard PAPER/REAL Split](project_dashboard_split.md) — / → paper, /real.html → real; ?source param on stats endpoints
+- [Dashboard split DEPRECATED](project_dashboard_split.md) — старый paper/real split мёртв с 2026-05-05; заменён v2
+- [Dashboard V2 Per-Strategy](project_dashboard_v2.md) — /v2.html 6-tab UI: Stats/Charts/Control/GA/Symbols/Settings; /api/v2/* additive
+- [Dashboard v1 vs v2 — DON'T CONFUSE](feedback_dashboard_v1_v2.md) — обе живут параллельно; карта файлов/endpoint'ов перед любой правкой
 - [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
 - [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
 - [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
@@ -112,3 +118,13 @@
 - [Day-off Silence](feedback_dayoff_silence.md) — все cron-уведомления OnTime молчат в дни без чекинов; гейт `_company_had_activity_24h`
 - [OnTime Marketing Video](project_ontime_marketing.md) — `/root/ontime/marketing/` pipeline: scenes.py → piper TTS → Playwright → ffmpeg ducking; 25-сцен / 6:45 финал на ontime.management/marketing/
 - [Piper TTS Swallows](feedback_piper_tts_swallows.md) — глотает финальные согласные; всегда apad pad_dur=1.0+ к выходу + перефразировка коротких CTA
+- [Emails Optimization](project_emails_optimization.md) — AI-секретарь для 6 email бизнесов; Gmail+Claude+TG; репо InfinitySudo/emails-optimization
+- [Emails — Preserve Unread](feedback_emails_preserve_unread.md) — IMAP только readonly + BODY.PEEK, не помечать письма прочитанными
+- [Emails — User Guide Sync](feedback_emails_user_guide.md) — при добавлении фич в emails-opt обновлять docs/tim_user_guide.md (живёт как /help в боте)
+- [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
+- [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
+- [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
+- [Labor Reprice May 2026](project_labor_reprice_may2026.md) — STACK price backfill + 28 legacy mappings + 6 new materials; Jan-2026+ only; full backup chain
+- [MFE/MAE Tracking](project_mfe_mae_tracking.md) — peak/trough_pnl_pct on simulated_trades since 2026-05-06; paper only, real NULL until v2
+- [Real Snapshot Endpoint](project_real_snapshot_endpoint.md) — /api/real-snapshot bundles wallet+open+realized 1h/24h/7d for hourly reports
+- [Morning Briefing — paused](project_morning_briefing_pending.md) — Артём хочет briefing Gmail+Calendar+Drive+Otter; решение отложено до ответа Тима
