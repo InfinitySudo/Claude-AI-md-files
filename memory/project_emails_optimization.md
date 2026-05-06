@@ -13,40 +13,37 @@ originSessionId: f06d9554-9cc1-46e7-aaf0-3f92102afc52
 
 **Onboarding-вопросы Тиму** в `docs/client_questions.md` (отослать 2026-05-07). Ждём от него: project list (Dan case, Jack case, Stonegate, Cassels, ...), key contact emails по каждому, morning digest time.
 
-## Состояние на 2026-05-06 (конец дня сессии)
+## Состояние на 2026-05-06 (вечер — onboarding-волна от Тима)
 
 **Готово и работает в проде:**
-- Stage 1: IMAP pull → SQLite (6749 писем в БД)
-- Stage 2: Claude Haiku 4.5 triage через OAuth (5660 mute · 477 reply · 389 delegate · 223 urgent)
-- Stage 3: TG bot UI (карточки + 6 кнопок: Send/Edit/Delegate/Mute/Snooze/Next)
-- Stage 4: SMTP send-back через App Password в тот же thread
+- Stage 1: IMAP pull → SQLite
+- Stage 2: Claude Haiku 4.5 triage
+- Stage 3: TG bot UI (6 кнопок)
+- Stage 4: SMTP send-back в тот же thread
 - Continuous poller (60s) + systemd
-- Mirror в 2 бота: @TodorovAssistantBot (Артём, TEST_MODE=1) + бот Тима (LIVE)
-- Pinned dashboard message с auto-update
-- /help команда — рендерит docs/tim_user_guide.md как HTML
-- A1 Follow-up tracker (daily 9:00 timer + /followups command)
-- B1 HTML body cleaner (BeautifulSoup fallback)
+- Mirror: @TodorovAssistantBot (Артём, TEST_MODE=1) + бот Тима (LIVE)
+- Pinned dashboard auto-update
+- /help рендерит `docs/tim_user_guide.md`
+- A1 Follow-up tracker (daily 9:00 timer + /followups)
+- B1 HTML body cleaner
 - C2 Snooze 24h button
+- **Stage 6 (2026-05-06):** Project tags из `projects.json` — 4 матера: stonegate (Dan), jack_rentals, cassels_umbrella, couriers_ops + general fallback. Contact emails Bennett Jones (RomaniukP, ivelinaterzieva83, DouglasA) пересекаются Stonegate/Jack — disambiguator по keywords в system prompt.
+- **Stage 7 (2026-05-06):** Urgent subcategories: legal/money/deadline/amazon/tenant/other. Карточка показывает sub-emoji + бейдж только для класса urgent.
+- **Stage 8 (2026-05-06):** Morning digest 07:00 Calgary — `app/morning_digest.py` + systemd timer. Top 10 emails by class priority + recency, single TG message в каждый mirror.
 
 **systemd units (все active):**
 - emails-bot.service (Артём, TEST_MODE=1)
 - emails-bot-tim.service (Тим, LIVE)
-- emails-poller.service (60s pull→triage→notify→dashboard refresh)
+- emails-poller.service (60s)
 - emails-followups.timer (OnCalendar=09:00 daily)
+- emails-morning-digest.timer (OnCalendar=07:00 daily)
 
-**Ещё НЕ сделано — ждёт Тима:**
-- Stage 5: Delegate forwarding к ассистенту (нужен TG_ASSISTANT_USERNAME + чат)
-- Stage 6: Project tags (нужен список Dan/Jack/Stonegate/Cassels + contact emails)
-- Stage 7: Urgent subcategories (legal/money/deadline/amazon/tenant — можно начать без Тима)
-- Stage 8: Morning digest 7/8/9:00 Calgary (можно дефолт 8:00, потом адаптировать)
+**DB schema:** добавлены колонки `project_id`, `urgent_subcategory` (миграция в `db.init()`); индекс `idx_emails_project`. Старые ~6750 писем — без project_id (NULL); только новые получат теги. Можно при желании сделать one-shot re-triage только по pending non-mute (~1089 писем).
 
-**На завтра первым делом:**
-1. Спросить Артёма — отправил ли вопросы Тиму (`docs/client_questions.md`)
-2. Если да и пришли ответы → Stage 5/6 + обновить `businesses.json` или новый `projects.json`
-3. Если нет → продолжить с независимыми Stage 7 (urgent subcategories) или Stage 8 (morning digest with default 8:00)
-4. Посмотреть journalctl для emails-followups.timer — первый раз должен сработать в 9:00 Calgary
+**Ещё НЕ сделано:**
+- Stage 5: Delegate forwarding к ассистенту (нужен TG_ASSISTANT_USERNAME + чат от Тима)
 
-**Последний commit:** `bc4979c` (A1+B1+C2)
+**Последний commit:** `bea2c29` (stages 6/7/8)
 **Репо:** github.com/InfinitySudo/emails-optimization (private)
 **Live VPS пути:** `/root/emails-optimization/`, БД `/root/emails-optimization/emails.db`
 

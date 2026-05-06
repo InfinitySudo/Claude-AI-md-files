@@ -17,3 +17,5 @@ originSessionId: 01d3f0af-f97a-467e-bf38-d39ae867510a
 - Для ручного синка произвольного периода: `python3 sync_legacy.py --from 2026-04-17 --to 2026-04-18 --apply`
 - UNMATCHED WORKERS/PROJECTS в логе = человек или объект в легаси, которого нет в OnTime — требует ручного действия (новые именования проектов; появились парни, которых ещё не импортировали).
 - Когда выключим TG-бот: удалить cron-строку, архивнуть скрипты в `migration/`, закрыть memory.
+
+**2026-05-04 update:** в `sync_legacy.py` добавлены `WORKER_ALIASES` и `PROJECT_ALIASES` dicts (legacy norm() name → ontime norm() name). Без них имена с переставленным порядком ("Korobeinykov Mykola" vs "Mykola Korobeinykov", "Ihor Kyrinnye" vs "Igor Kurinnye") и переименованные проекты ("MG84 Bldg 21 Type A Ihor K 13.04.2026" vs "MG84 Bldg 21 (Type A)") не матчились — потеряли бы reports. Если появится новое расхождение — добавить в эти dicts (lookup_user/lookup_project).

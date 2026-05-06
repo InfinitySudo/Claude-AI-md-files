@@ -1,62 +1,33 @@
 ---
-name: Dashboard split into PAPER + REAL pages
-description: Two URLs, two HTML files, source param on stats endpoints — explicit so paper/real numbers can never be confused
+name: Dashboard split (DEPRECATED)
+description: PAPER/REAL split-page setup is dead since 2026-05-05; replaced by per-strategy v2. Memory kept as historical context only
 type: project
-originSessionId: 140ba16f-5e2e-494a-890b-d8dc107dddde
+originSessionId: adfb2918-d7eb-454d-8326-11f044ee5979
 ---
-After hybrid mode (per_strategy paper/real routing), one dashboard
-mixing both pools made every number ambiguous. Split into two pages
-2026-04-23.
+## ⚠ DEPRECATED — historical only
 
-## URLs
+Split-page setup (`/` → paper, `/real.html` → real) **was dismantled 2026-05-05**:
+- `/var/www/dashboard/real.html` — DELETED
+- `/root/4BotsBybit-Trading/TRADING_DASHBOARD_REAL.html` — DELETED (was 4725-line dead split-page)
 
-- `/` (or `/index.html`) → 📒 **PAPER** view — yellow nav highlight.
-  - Source of data: `simulated_trades`.
-  - Default landing.
-- `/real.html` → 💰 **REAL** view — green nav highlight + red
-  "REAL MONEY" warning.
-  - Source: `real_trades`.
+Replaced by **dashboard v2 per-strategy** (see `project_dashboard_v2`),
+which dissolved the paper/real binary in favor of explicit per-strategy
+hybrid resolution: each strategy tile reads from its own table
+(CONS=simulated_trades, TREND=real_trades_compat, AGGR=fallback).
 
-Top nav present on both, switches between them with one click. Hint
-at right edge: "Hybrid mode: CONS→paper, TREND/AGGR→real".
+## What's still true from the old split
 
-## Backend (`src/dashboard_api_v3.py`)
+- `?source=paper|real` query param still works on `/api/trader-stats`,
+  `/api/funnel-history`, `/api/symbol-breakdown` — kept for v1 compat.
+- `simulated_trades` vs `real_trades`/`real_trades_compat` table choice
+  still matters for any new SQL.
 
-Three endpoints accept `?source=paper|real` (default `paper`):
-- `/api/trader-stats` — main stats endpoint, summary + per-strategy
-  blocks + open positions + recent/all trades + tp_hits + pnl_history
-  all parameterized on the resolved table.
-- `/api/funnel-history`
-- `/api/symbol-breakdown`
+## What's NOT true anymore
 
-Response envelope and `summary` block include `source` and `mode`
-reflecting the requested view (not the bot's global flag).
+- `real.html` does not exist
+- `TRADING_DASHBOARD_REAL.html` does not exist
+- `DASHBOARD_SOURCE` constant only lives on the v1 paper page (and is
+  always `'paper'` there now)
 
-## Frontend wiring
-
-- `window.DASHBOARD_SOURCE = 'real'` set on `real.html`; default
-  `'paper'` on index.
-- All `fetch()` URLs append `&source=${DASHBOARD_SOURCE}`.
-- Hero title and `<title>` differentiate so an open tab is always
-  recognizable at a glance.
-
-## Repo mirrors
-
-`/var/www` is unversioned (see `project_unversioned_prod_state`). Repo
-copies are the canonical source:
-- `TRADING_DASHBOARD.html` → mirror of `/var/www/dashboard/index.html`
-  (paper)
-- `TRADING_DASHBOARD_REAL.html` → mirror of `/var/www/dashboard/real.html`
-  (real)
-
-After editing repo copies, `cp` them into `/var/www/dashboard/`.
-After live-editing `/var/www/dashboard/`, mirror back to repo before
-commit.
-
-**Why:** Money is involved — operators can't afford to misread which
-pool's numbers are on screen.
-
-**How to apply:** Any new stats endpoint must take `?source` param.
-Any new dashboard widget must derive its data via the
-`DASHBOARD_SOURCE` constant, not hardcode `simulated_trades` or
-`real_trades` in JS.
+For current dashboard architecture see `project_dashboard_v2`.
+For "don't break v1 while editing v2" see `feedback_dashboard_v1_v2`.

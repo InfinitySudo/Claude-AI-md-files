@@ -82,6 +82,45 @@ for a Calgary siding company.
 - Research done by background agent via WebSearch (no WebFetch access),
   emails only where publicly advertised
 
+## Catalog bulk-fed from invoices (2026-05-04)
+Артём решил: Catalog — единый прайс-лист по всем vendors, не curated.
+Шаги выполнены:
+1. `scripts/catalog/bulk_import_from_invoices.py --apply` →
+   1618 новых materials + 1746 vendor_materials offers (`source='invoice'`).
+   Group by SKU, regex чистка хвостов ("9 9 0 SKU 10.90 98.10").
+2. `scripts/catalog/auto_categorize.py --apply --overwrite` → keyword rules
+   (siding/trims/fasteners/sealants/underlayment/insulation/paint/masonry/
+   stucco/tools/rentals/eavestrough/flashing/accessories/fees).
+   `category='fees'` (632 шт) + delivery/statement junk → archived=1.
+   359 unkategoryzowanych → category='other'. Покрытие 100%.
+3. `scripts/catalog/auto_canonical.py --apply` → 8 групп склеилось через
+   `canonical_id` (consервативный normalize по name). Кросс-vendor merge
+   слабый без LLM, остальное руками.
+4. UI: `/api/materials/category-counts` endpoint + dropdown показывает
+   "trims (227)" с реальными counts. Expandable rows в Catalog table:
+   клик на row → fetch + inline таблица vendor offers (sorted by price,
+   cheapest зелёным).
+
+Память не помнить значения counts — они меняются с каждым новым invoice;
+читать через categoryCounts API. Cron weekly для refresh цен ещё не сделан
+(deferred).
+
+## Invoice catalog promote-on-demand (2026-05-04)
+- Foreman in PO form has "From invoices" button → opens `InvoiceCatalogPicker`
+  modal with search across `invoice_items` (filtered to PO vendor if picked).
+- Each row: `Add` (one-off line, no Catalog row) or `Promote & add` (creates
+  `materials` row + `vendor_materials` offer with `source='invoice'`, then
+  adds line with `material_id`).
+- Backend: `GET /api/invoice-items/search?q=&vendor_id=&limit=` aggregated by
+  (vendor, sku|description), one row per SKU with last unit_price + n_purchases.
+- Backend: `POST /api/invoice-items/promote` upserts material by case-insensitive
+  name + vendor_materials offer (unique vendor+material).
+- Why: vendor_invoices has 1100+ invoices / 3000+ SKUs, but Catalog stays
+  curated. Foreman pulls from invoice history when curated catalog lacks an
+  item; promotes only what they actually need.
+- Vendor mismatch confirm: if picker item is from different vendor than PO,
+  asks foreman to switch vendor on this PO.
+
 ## Deferred (future phases)
 - Real SMTP email send (currently mailto: only)
 - QuickBooks Online bill sync on status `received` → `paid`

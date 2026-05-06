@@ -26,7 +26,7 @@ marketing/
 └── voices/en_US-ryan-high.* # Piper модель
 ```
 
-**Опубликовано:** `https://ontime.management/marketing/ontime_promo.mp4` (копия из `/root/ontime/dist/marketing/`)
+**Опубликовано:** `https://ontime.management/marketing-video/ontime_promo.mp4` (nginx alias на `/root/ontime/marketing/output/`, добавлен 2026-05-04 в /etc/nginx/sites-enabled/ontime location /marketing-video/). Прямая ссылка для отправки клиентам — не SPA-route, а static. Старый путь `/marketing/ontime_promo.mp4` НЕ работает (uxодит в SPA fallback).
 
 ## Pipeline (как пересобрать)
 

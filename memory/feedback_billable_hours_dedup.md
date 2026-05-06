@@ -17,3 +17,5 @@ OnTime считает часы/cost по проектам и payroll через 
 - Cost = hours × `_wage_to_cost(_wage_for_user_on(uid, day), day)` — оба хелпера тоже в main.py рядом с `_billable_hours_map`.
 
 **Известное последствие:** total hours/salary slightly UP (~0.3%) после фикса — в случаях где report.hours > session minutes (воркер сдал больше часов чем зафиксировал QR), report теперь truth. Раньше session перекрывал. Это правильное поведение: report = truth.
+
+**Update 2026-05-04:** добавлен `UNIQUE INDEX ix_daily_reports_unique_per_day ON daily_reports(user_id, project_id, report_date)` (init+migration). POST `/api/reports` ловит `sqlite3.IntegrityError` → 409 с `{error:'report_exists', existing_report_id}`. Раньше повторный submit копился (Omelchenko 9.8+9.81 = 19.6h на одном проекте). Multi-project в один день (transfer flow) индекс НЕ блокирует — Bahrii 20 апр 9h+9h на двух bldg остаётся возможен.

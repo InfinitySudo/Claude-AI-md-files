@@ -15,6 +15,7 @@ originSessionId: b4e56692-a9c8-43a7-8ec4-f5c05ab54499
   3. `projects.foreman_id == user.id`
   4. `project_installers` row exists
   5. `project_helpers.removed_at IS NULL` row exists
+  6. `work_sessions` за последние 14 дней (с 2026-05-06) — QR-скан = доказательство присутствия, auto-pin внутри create_report допишет в crew
 - Иначе → `HTTP 403 "You are not on this project crew — ask the foreman to add you."`
 
 **Когда отчёт ломается у работника:**
@@ -22,3 +23,7 @@ originSessionId: b4e56692-a9c8-43a7-8ec4-f5c05ab54499
 2. Check `project_helpers WHERE user_id=X AND removed_at IS NULL`
 3. Если был `pending_transfer` от другого проекта — должен сначала закрыть FROM-проект
 4. Bulk-recovery script: см. `INSERT OR IGNORE INTO project_installers SELECT DISTINCT ... FROM daily_reports ...` (использовался 2026-04-28 для backfill 19 пар)
+
+**Также project picker (`/api/projects` для role=installer):**
+- До 2026-05-06 показывал только pinned проекты → если выпинан, проект пропадал из dropdown (prozcherk-bug)
+- С 2026-05-06 (`_scoped_projects`) — добавлены OR-условия: recent work_sessions (14d), recent daily_reports (14d), активный pending_transfer (from или to). Теперь работник, выпинанный с проекта, всё ещё видит его пока есть свежая активность

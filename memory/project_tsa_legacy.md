@@ -17,6 +17,8 @@ originSessionId: 7307290c-93f4-4995-a318-269609a49e02
 
 **Why:** Старая система (Django + TG-бот + Google Sheets для расчётов) заменяется OnTime. План: 2-3 недели параллельная работа (до ~2026-05-08), потом вырубить `app-bot` через `docker compose stop bot` на 46.8.227.113.
 
+**2026-05-04 update:** сервер репурпозен под off-site backup OnTime. `/root/ontime/backend/backup.sh` (cron 03:15 локально) теперь после локального snapshot SCP'ит `tsa-*.db.gz` + `uploads-*.tgz` в `root@46.8.227.113:/root/backups/ontime/`, retention 30 дней с обеих сторон. Не выключать сервер при выводе app-bot — оставить под backup.
+
 **How to apply:**
 - Скрипт импорта одноразовый: `/root/ontime/migration/import_legacy.py`. Копия старой БД: `/root/ontime/migration/legacy.db`.
 - Перед повторным запуском — не запускать без чистки, создаст дубли (idempotency не реализована).
