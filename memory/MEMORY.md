@@ -98,6 +98,7 @@
 - [No API Keys for Invoice Parsing](feedback_no_api_keys_invoice.md) — invoice pipeline только regex per-vendor; никакого Claude/OpenAI API
 - [Invoice OCR Followup](project_ocr_followup.md) — Tesseract one-shot timer 2026-05-12 10:00 для добивки failed scan-PDF
 - [OnTime Pin Crew Invariant](feedback_ontime_pin_crew_invariant.md) — project_installers — source of truth, legacy не заполнил; auto-pin в /api/reports + digest учитывает overdue
+- [OnTime Project/Reports Guard Sync](feedback_ontime_project_guard_sync.md) — GET /api/projects/{pid} и POST /api/reports должны принимать одинаковую crew-evidence; backfill SQL для orphan-проектов
 - [Trading State Soft-Gate](project_trading_state_softgate.md) — /api/trading-state на real.html: LIVE/GATED/PAUSED/DISABLED + pause/resume + scorecard recommend
 - [Bybit Signing Order](feedback_bybit_signing_order.md) — _request("GET") должен подписывать ТОТ ЖЕ qs что и шлёт; sorted ≠ insertion order
 - [Dust Auto-Sweep](project_dust_sweep.md) — реконсайлер закрывает >=90% filled real_trades через 6h reduceOnly market
