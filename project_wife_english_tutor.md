@@ -33,18 +33,26 @@ originSessionId: b0493378-8df7-4334-bf78-c554bd77a27c
 
 **Roadmap:**
 1. ✅ PLAN.md + repo (2026-05-07)
-2. ✅ MVP LLM-ядро (2026-05-08, commit a8e9903): claude_client + teacher persona + DB + CLI smoke test проходит на 4 кейсах
-3. ⏳ TG bot wiring (handlers, voice loop, /level, /mistakes commands)
-4. ⏳ Web PWA (clone из voice-tutor)
-5. ⏳ Mistake log spaced repetition
-6. ⏳ Lesson mode + roleplay
+2. ✅ MVP LLM-ядро (2026-05-08, a8e9903): claude_client + teacher persona + DB + CLI smoke test
+3. ✅ TG bot wiring (2026-05-08, d8b0d08): /start /level /mistakes /reset /help + text + voice handlers; voice-only reply on voice-input + correction в отдельном bubble; openai whisper-1 + tts-1 (shimmer); WET_ALLOWED_TG_IDS allowlist
+4. ✅ Web PWA MVP (2026-05-08, 20fda9b): FastAPI /api/turn /api/state /api/level /api/reset; TG initData HMAC auth; 3-file SPA с light/dark theme; uvicorn 127.0.0.1:8765; voice через web TODO
+5. ⏳ Mistake log spaced repetition (v0.2)
+6. ⏳ Lesson mode + roleplay (v0.3)
+7. ⏳ Pronunciation feedback (v0.3)
 
 **КРИТИЧЕСКИ:** не fork voice-tutor! Извлечь общие модули (STT, TTS, OAuth, speaker, FastAPI базу) в shared package, иначе багфиксы делать в двух местах.
 
 **Текущее состояние shared-кода (2026-05-08):**
-- `bot/claude_client.py` ДУБЛИРУЕТ voice-tutor/bot/llm.py:1-180 (OAuth+fallback). Sonnet→Haiku fallback chain работает, проверено rate-limit-кейсом.
-- TODO когда оба проекта стабильны: переехать в `/root/shared/claude_client.py`, оба проекта импортят оттуда.
-- Schema/persona/TG handlers — app-specific, не делятся.
+- `bot/claude_client.py` ДУБЛИРУЕТ voice-tutor/bot/llm.py:1-180 (OAuth+fallback)
+- `web/auth.py` ДУБЛИРУЕТ voice-tutor/web/auth.py (TG initData HMAC)
+- TODO когда оба проекта стабильны: переехать в `/root/shared/{claude_client,tg_auth}.py`
+- Запуск через voice-tutor venv: `/root/voice-tutor/.venv/bin/python -m bot.tutor_bot` или `... uvicorn web.app:app --port 8765`
+- Schema/persona/TG handlers/static — app-specific, не делятся.
+
+**Endpoints / порт:**
+- TG bot: long polling, нужен WET_TG_TOKEN от BotFather (Артём пока не создал @Teacher1Bot)
+- Web: 127.0.0.1:8765 (nginx reverse proxy сделать на teacher1.constantwrestling.cloud при готовности)
+- Dev escape: WET_DEV_TG_ID=42 в env пропускает HMAC auth для локального теста
 
 **Тестировать через:** `cd /root/wife-english-tutor && /root/voice-tutor/.venv/bin/python -m bot.cli "your sentence"` (используем voice-tutor venv, anthropic 0.97.0).
 
