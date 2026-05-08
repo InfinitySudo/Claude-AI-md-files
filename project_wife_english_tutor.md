@@ -31,14 +31,18 @@ originSessionId: b0493378-8df7-4334-bf78-c554bd77a27c
 - Время daily reminder
 - Платный продукт ли в перспективе (сейчас личный)
 
-**Roadmap:**
+**Roadmap (всё отгружено 2026-05-08 в одну сессию):**
 1. ✅ PLAN.md + repo (2026-05-07)
-2. ✅ MVP LLM-ядро (2026-05-08, a8e9903): claude_client + teacher persona + DB + CLI smoke test
-3. ✅ TG bot wiring (2026-05-08, d8b0d08): /start /level /mistakes /reset /help + text + voice handlers; voice-only reply on voice-input + correction в отдельном bubble; openai whisper-1 + tts-1 (shimmer); WET_ALLOWED_TG_IDS allowlist
-4. ✅ Web PWA MVP (2026-05-08, 20fda9b): FastAPI /api/turn /api/state /api/level /api/reset; TG initData HMAC auth; 3-file SPA с light/dark theme; uvicorn 127.0.0.1:8765; voice через web TODO
-5. ⏳ Mistake log spaced repetition (v0.2)
-6. ⏳ Lesson mode + roleplay (v0.3)
-7. ⏳ Pronunciation feedback (v0.3)
+2. ✅ MVP LLM-ядро (a8e9903): claude_client + teacher persona + DB + CLI smoke test
+3. ✅ TG bot wiring (d8b0d08): text + voice handlers, voice-only reply, allowlist
+4. ✅ Web PWA MVP (20fda9b): FastAPI + 3-file SPA, TG initData HMAC auth
+5. ✅ Push-to-talk голос в PWA (602c7d1): MediaRecorder + /api/voice + auto-play TTS
+6. ✅ Avatar UI (5d551d1): SVG-учительница, состояния idle/listening/thinking/speaking/happy, рот синхронизирован с TTS audio events
+7. ✅ Streaks + reminders + Progress dashboard (f2b543e): hourly cron 8/12/18 local, /api/progress, 14-day strip, category bars
+8. ✅ Achievement badges (35c812e): 10 milestones (turns/streak/fixes/explorer); toast + grid в modal
+9. ✅ Pronunciation feedback (4926d81): difflib word-diff на Whisper-транскрипте; "Practice" кнопка под Note bubble; цветной diff (green/red/dotted)
+10. ✅ Daily digest 21:00 (df9d68d): TG-резюме дня, top 3 категории ошибок, streak-статус
+11. ✅ Vocab spaced repetition (22ff072): Haiku auto-extract из teacher reply, Leitner box 1/3/7/14/30 дней, flashcard UI
 
 **КРИТИЧЕСКИ:** не fork voice-tutor! Извлечь общие модули (STT, TTS, OAuth, speaker, FastAPI базу) в shared package, иначе багфиксы делать в двух местах.
 
@@ -50,9 +54,21 @@ originSessionId: b0493378-8df7-4334-bf78-c554bd77a27c
 - Schema/persona/TG handlers/static — app-specific, не делятся.
 
 **Endpoints / порт:**
-- TG bot: long polling, нужен WET_TG_TOKEN от BotFather (Артём пока не создал @Teacher1Bot)
-- Web: 127.0.0.1:8765 (nginx reverse proxy сделать на teacher1.constantwrestling.cloud при готовности)
-- Dev escape: WET_DEV_TG_ID=42 в env пропускает HMAC auth для локального теста
+- TG bot: **@EnglishTecherTutorBot** (Teacher1Bot был занят), long polling, токен в .env
+- Web: **https://teacher1.constantwrestling.cloud** (Let's Encrypt, certbot auto-renew), nginx → 127.0.0.1:8765
+- MiniApp: кнопка "Open Tutor" уже подцеплена в боте через setChatMenuButton
+- Allowlist: `WET_ALLOWED_TG_IDS=504609639` (только Артём пока, жена добавится по её TG ID)
+- Dev escape: `WET_DEV_TG_ID=42` в env пропускает HMAC auth для локального TestClient
+
+**systemd сервисы:**
+- wife-english-tutor.service — TG bot (long polling)
+- wife-english-tutor-web.service — uvicorn 127.0.0.1:8765
+- wife-english-tutor-reminder.timer — hourly, slot 8/12/18 local
+- wife-english-tutor-digest.timer — hourly, slot 21:00 local
+
+**TG команды:** /start /level /streak /badges /vocab /mistakes /reset /help
+**Web кнопки:** Vocab, Progress, Patterns, Reset chat
+**Аватар:** SVG inline в index.html, состояния через `data-state` на #avatar-stage
 
 **Тестировать через:** `cd /root/wife-english-tutor && /root/voice-tutor/.venv/bin/python -m bot.cli "your sentence"` (используем voice-tutor venv, anthropic 0.97.0).
 
