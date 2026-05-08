@@ -98,6 +98,7 @@
 - [No API Keys for Invoice Parsing](feedback_no_api_keys_invoice.md) — invoice pipeline только regex per-vendor; никакого Claude/OpenAI API
 - [Invoice OCR Followup](project_ocr_followup.md) — Tesseract one-shot timer 2026-05-12 10:00 для добивки failed scan-PDF
 - [OnTime Pin Crew Invariant](feedback_ontime_pin_crew_invariant.md) — project_installers — source of truth, legacy не заполнил; auto-pin в /api/reports + digest учитывает overdue
+- [OnTime Project/Reports Guard Sync](feedback_ontime_project_guard_sync.md) — GET /api/projects/{pid} и POST /api/reports должны принимать одинаковую crew-evidence; backfill SQL для orphan-проектов
 - [Trading State Soft-Gate](project_trading_state_softgate.md) — /api/trading-state на real.html: LIVE/GATED/PAUSED/DISABLED + pause/resume + scorecard recommend
 - [Bybit Signing Order](feedback_bybit_signing_order.md) — _request("GET") должен подписывать ТОТ ЖЕ qs что и шлёт; sorted ≠ insertion order
 - [Dust Auto-Sweep](project_dust_sweep.md) — реконсайлер закрывает >=90% filled real_trades через 6h reduceOnly market
@@ -119,8 +120,13 @@
 - [OnTime Marketing Video](project_ontime_marketing.md) — `/root/ontime/marketing/` pipeline: scenes.py → piper TTS → Playwright → ffmpeg ducking; 25-сцен / 6:45 финал на ontime.management/marketing/
 - [Piper TTS Swallows](feedback_piper_tts_swallows.md) — глотает финальные согласные; всегда apad pad_dur=1.0+ к выходу + перефразировка коротких CTA
 - [Emails Optimization](project_emails_optimization.md) — AI-секретарь для 6 email бизнесов; Gmail+Claude+TG; репо InfinitySudo/emails-optimization
+- [Tim English Only](feedback_tim_english_only.md) — все user-facing для Тима только English, никаких русских слов
+- [Tim Agent Plan](project_tim_agent_plan.md) — расширение emails-opt бота: AI-делегат с approval-flow; план в docs/agent_plan.md
 - [Emails — Preserve Unread](feedback_emails_preserve_unread.md) — IMAP только readonly + BODY.PEEK, не помечать письма прочитанными
 - [Emails — User Guide Sync](feedback_emails_user_guide.md) — при добавлении фич в emails-opt обновлять docs/tim_user_guide.md (живёт как /help в боте)
+- [No Tables for TG Forward](feedback_no_tables_tg_forward.md) — markdown tables ломаются при пересылке Тиму в TG; bullets only в docs/tim_*.md и в чат-ответах
+- [Two Bots One DB](feedback_emails_two_bots_shared_db.md) — emails-bot (Артём, TEST_MODE) + emails-bot-tim (Тим) делят emails.db; всё agent-state нести owner_chat_id
+- [No Names in Action Types](feedback_action_type_no_names.md) — ask_tim → ask_owner; имена людей не лезут в enum/event-name идентификаторы
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
@@ -128,3 +134,17 @@
 - [MFE/MAE Tracking](project_mfe_mae_tracking.md) — peak/trough_pnl_pct on simulated_trades since 2026-05-06; paper only, real NULL until v2
 - [Real Snapshot Endpoint](project_real_snapshot_endpoint.md) — /api/real-snapshot bundles wallet+open+realized 1h/24h/7d for hourly reports
 - [Morning Briefing — paused](project_morning_briefing_pending.md) — Артём хочет briefing Gmail+Calendar+Drive+Otter; решение отложено до ответа Тима
+- [OnTime Notif i18n](project_ontime_notif_i18n.md) — notif_i18n.py + users.lang; EW proposed/vp/pm + digest переведены; rest TODO
+- [OnTime CSS Vars](feedback_ontime_css_vars.md) — Никогда `--tsa-fg` (нет такой); текст `--tsa-text`, тёмный bg `bg-slate-900`
+- [Photo Restoration CPU](project_photo_restoration.md) — GFPGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; работает но очень медленно — кандидат на GPU миграцию
+- [GPU Homelab Plan](project_gpu_homelab_plan.md) — ПК1 ACTIVE: Tailscale + Ollama 7b/14b/32b + voice-tutor wired; ПК2 pending
+- [PC1 для тяжёлого compute](feedback_pc1_for_heavy_compute.md) — Всё тяжёлое (ML/GA/photo/backtests) на ПК1, VPS только для live-сервисов
+- [Baseline V2](project_baseline_v2_2026-05-08.md) — Точка отсчёта новой системы 2026-05-08 19:44 UTC, $189.60; что вошло в rebuild
+- [Meta-labeler V1](project_meta_labeler_v1.md) — XGBoost AUC 0.728 shadow mode; promote после 50+ post-baseline сделок
+- [Risk Officer](project_risk_officer.md) — Hourly LLM defensive auto-pause; LLM-on-CAUTION OFF на 7 дней
+- [Cron-зоопарк](project_cron_zoo_2026-05-08.md) — 10 timer'ов trading-системы, расписание + назначение
+- [BE offset interpretation](feedback_be_offset_pct_meaning.md) — be_price_offset_pct = % от entry; >1.0 = bug; держать 0.05-0.5%
+- [PC1 ssh quirks](feedback_pc1_ssh_quirks.md) — WMI Win32_Process.Create + per-PID logs; Start-Process убивает детей при ssh close
+- [TG ControlBot slash](feedback_tg_controlbot_slash.md) — @ControlByBitTradingBot принимает /status /balance /pause /resume /help
+- [GA GPU Migration](project_ga_gpu_migration.md) — DONE 2026-05-08; canonical schema + dashboard wired; см. project_baseline_v2
+- [Wife English Tutor](project_wife_english_tutor.md) — план готов 2026-05-07, репо InfinitySudo/wife-english-tutor; A1-A2 жена, разработка после fix voice-tutor
