@@ -29,6 +29,7 @@
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling Norm History](feedback_wrestling_norm_attempts.md) — norm_attempts table; norm_standards.actual_value drifted to VARCHAR; regex-filter non-numeric junk
 - [Wrestling Camp Payment](project_wrestling_camp_payment.md) — Square checkout + I-Paid/Confirm honor-system flow; Constant default link
 - [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl
 - [TSA Legacy Server](project_tsa_legacy.md) — 46.8.227.113 старый Django+TG-бот, импортировали 7862 отчёта 2026-04-17, выключим через 2-3 недели
@@ -148,3 +149,9 @@
 - [TG ControlBot slash](feedback_tg_controlbot_slash.md) — @ControlByBitTradingBot принимает /status /balance /pause /resume /help
 - [GA GPU Migration](project_ga_gpu_migration.md) — DONE 2026-05-08; canonical schema + dashboard wired; см. project_baseline_v2
 - [Wife English Tutor](project_wife_english_tutor.md) — план готов 2026-05-07, репо InfinitySudo/wife-english-tutor; A1-A2 жена, разработка после fix voice-tutor
+- [Session Hours Open-Lunch](feedback_session_hours_open_lunch.md) — open session live projection ОБЯЗАН вычитать 12:00-12:30 обед, иначе reports разъезжаются на 30 мин от payroll
+- [Apr 27 Domain Outage](project_ontime_apr27_outage.md) — 26 рабочих 2026-04-27 имеют stored=9.0 как ручная компенсация за outage; не трогать
+- [bmap projects open sessions](feedback_billable_open_session_doublecount.md) — _billable_hours_map уже включает live минуты open sessions; не складывать поверх отдельный today_open
+- [Salaried Roles Excluded](feedback_salaried_roles_excluded_from_payroll.md) — delivery/service на фиксированной ЗП через accounting; wage helpers return None → все cost-loops auto-skip
+- [Foreman Overhead Split](project_foreman_overhead_split.md) — primary foreman cost = company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only role='foreman'
+- [OnTime Big Overhaul 2026-05-09](project_session_2026-05-09_ontime_full_overhaul.md) — single-day rundown: lunch fix → hourly billing → foreman split → canonical_id orphan double-count fix → 2025 dashboard breakdown
