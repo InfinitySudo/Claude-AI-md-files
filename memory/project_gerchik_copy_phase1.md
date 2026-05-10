@@ -82,6 +82,13 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
 - ✅ Time-of-day #10 (skip 23:00-03:00 UTC) + MAE/MFE tracking #13 (migration 003)
 - ✅ Volume confirm #4 + Multi-TF trend #8 (EMA50 4H+D) + Setup grading #9 (migration 004)
 - ✅ FIRST LIVE FILL: sid=4 SOL LONG @96.06 (2026-05-10 22:48 UTC); peak +0.04%, trough -0.21%
+- ✅ Leverage 35x default + per-symbol Bybit max-cap (BILL→20x auto)
+- ✅ Delisted symbol guard (SKYAI status=Closed → skipped)
+- ✅ TOD removed for copy (Артём 2026-05-10): mentor signals валидны вечером
+- ✅ Dashboard Compare tab: 📡 Live positions block с MFE/MAE/grade
+- ✅ Rich wizard #3 — 6 шагов: setup_type/rr_target/time_horizon (migration 005)
+- ✅ Per-signal RR override в copy_executor (Artyom выбирает 1:2/1:3/1:5/1:10)
+- 🎉 12 signals processed end-to-end (3 filled, 5 expired/skipped by guards, 1 pending wizard, 1 delisted)
 
 Accounts разделены (подтверждено 2026-05-10):
 - 4BotsBybit-Trading — main account (key из /root/4BotsBybit-Trading/.env BYBIT_API_KEY)
