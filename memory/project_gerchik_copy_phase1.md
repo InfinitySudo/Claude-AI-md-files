@@ -62,25 +62,32 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
 
 ## Status (2026-05-10)
 
-**IMPLEMENTATION COMPLETE — awaiting Bybit sub-account credentials**
+**PIPELINE LIVE — awaiting first valid signal**
 
 Что готово и запущено:
 - ✅ Migration 002 применена (gerchik_copy_signals, gerchik_copy_trades + state keys)
 - ✅ @GTE_AI_TradingBot живой, systemd `gerchik-signals-bot.service` enabled+running
-- ✅ copy_executor код готов (`src/copy_executor.py`), systemd unit установлен но НЕ запущен
+- ✅ copy_executor **активен**, sub-account auth OK, wallet $50 USDT
 - ✅ Dashboard Compare tab — `index_v2.html` 7-я вкладка ⚖️ Compare (между Charts и Control)
-- ✅ Endpoint `/api/v2/gerchik/comparison` работает (status=ok)
-- ✅ Phase 2 timer enabled — `gerchik-phase2-trigger.timer` запускается 09:00 Calgary daily
+- ✅ Endpoint `/api/v2/gerchik/comparison` работает
+- ✅ Phase 2 timer enabled — `gerchik-phase2-trigger.timer` daily 09:00 Calgary
+- ✅ Risk guards #2 minNotional + #3 TP/SL inversion в `validate_plan()` (16/16 unit tests)
+- ✅ copy_executor: level-breach pre-check (auto-expire signals где SL уже под водой)
+- ✅ RR_TARGET=3.0 в copy_executor (выровнено с Gerchik MIN_RR=3.0; был 2.0)
 
-Pending от Артёма (блокирует запуск copy_executor):
-1. Создать sub-account `gerchik_copy` через Bybit UI
-2. API keys (Read+Trade, no Withdrawal, IP whitelist 187.77.148.44)
-3. Перевод $30-50 USDT main → sub
-4. Передать keys → дописываю в `.env` (BYBIT_GERCHIK_API_KEY/SECRET)
-5. После добавления keys: `systemctl enable --now gerchik-copy-executor.service`
+VPS / Bybit context:
+- Key NVFHinVMJ2w22KZW5Y attached **на main аккаунт** (NOT отдельный sub-account); isMaster=True
+- IP whitelist: `187.77.148.44, 46.8.232.182`; outbound = IPv4 187.77.148.44
+- Position mode: **One-Way** (mode=0), форсирован через /v5/position/switch-mode
+- UTA Pro (unifiedMarginStatus=5)
 
-Git commits:
+Historical signals (pre-pipeline):
+- sid=1, sid=2: skipped manually (user_skip)
+- sid=3 SOLUSDT LONG @96.12: expired — level breached (current 95.26 < auto-SL 95.64)
+
+Git commits (последние):
 - `eac8884` migration + signals_bot
 - `874803c` copy_executor daemon + bybit_client extensions
 - `59c6693` Phase 2 trigger + timer
 - 4BotsBybit `81cf788` Compare tab + endpoint
+- (uncommitted) risk guards #2 #3 + level-breach pre-check + RR_TARGET=3.0

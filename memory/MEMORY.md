@@ -164,7 +164,7 @@
 - [Salaried Roles Excluded](feedback_salaried_roles_excluded_from_payroll.md) — delivery/service на фиксированной ЗП через accounting; wage helpers return None → все cost-loops auto-skip
 - [Foreman Overhead Split](project_foreman_overhead_split.md) — primary foreman cost = company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only role='foreman'
 - [OnTime Big Overhaul 2026-05-09](project_session_2026-05-09_ontime_full_overhaul.md) — single-day rundown: lunch fix → hourly billing → foreman split → canonical_id orphan double-count fix → 2025 dashboard breakdown
-- [Gerchik Copy Phase 1](project_gerchik_copy_phase1.md) — Stream A copy-trade (signals_bot+copy_executor+Compare tab); ждёт Bybit sub-account keys
+- [Gerchik Copy Phase 1](project_gerchik_copy_phase1.md) — Pipeline LIVE 2026-05-10; key на MAIN account ($50, One-Way mode); guards #2/#3 + level-breach auto-expire
 - [Real Cutover Plan 2026-05-10](project_real_cutover_plan_2026-05-10.md) — wait 2-3 дня после baseline V3, чек-лист (PF≥1.5, SL<35%, 200+ trades) перед CONS paper→real
 - [Daily-Driver Git Repos](project_git_repos_daily.md) — все репо InfinitySudo с путями на VPS, GitHub origin, live-сервисами и quick-cd по теме
 - [Bybit empty result truthy-trap](feedback_bybit_empty_result_truthy_trap.md) — Bybit V5 на success отдаёт `{retCode:0, result:{}}`; `if not res` ловит это как failure → проверяй через `is None`
