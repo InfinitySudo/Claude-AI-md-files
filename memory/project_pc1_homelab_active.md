@@ -22,6 +22,35 @@ ssh tkach@100.99.211.123
 | **faster-whisper-server** | `http://100.99.211.123:8001` | STT (OpenAI `/v1/audio/transcriptions`) — также возвращает word-timings | small.en на CUDA float16 |
 | **kokoro-tts-server** | `http://100.99.211.123:8002` | TTS (OpenAI `/v1/audio/speech`) — голоса alloy/echo/fable/onyx/nova/shimmer/coral/ash mapped → kokoro | Kokoro-82M-v1.0 на onnxruntime-gpu |
 
+## Hardware
+- **GPU**: NVIDIA RTX 3090, 24576 MiB VRAM (~23.3 GiB free idle)
+- **Disks**: C: 1 TB OS (~580 GB free), **D: 2 TB DATA (~1.76 TB free)** — для klines/datasets/heavy artifacts
+- **Python**: 3.11.9 в `C:\Program Files\Python311\python.exe`. Tailscale active, hostname `desktop-f836b96`.
+
+## GA Optimizer (RTX 3090) — ACTIVE
+- **PC1 dir**: `C:\Users\tkach\ga_gpu\` (всё там — код, klines cache, results)
+  - `ga_optimizer_gpu.py` — GPU-vectorized GA (~70× быстрее CPU)
+  - `pc1_run_wrapper.py` — обёртка с per-PID logs (Defender lock issue) + ga_run.current pointer file
+  - `kline_loader.py`, `backtest_cpu.py`, `pipeline.py` — engine
+  - `run_ga.ps1` — PowerShell launcher
+  - `klines/` — 5m + D кэш Binance/Bybit
+  - `dashboard_symbols.txt` / `full_symbols.txt` — universe options
+  - `ga_gpu_results.json` — последний результат
+  - `ga_run_<PID>.log` / `.err` — per-run stdout/stderr
+- **VPS endpoint**: `POST /api/ga/run` с `{"target":"pc1"}` (с 2026-05-10 — default везде: HTML radio checked + index_v2 + weekly trigger)
+- **Status sync**: `pc1_status_poller.py` запускается на VPS как `ga-pc1-poller-<ts>.service`, забирает `ga_run.current` и pid log с PC1, пишет в `data/ga_status.json`. Dashboard читает оттуда.
+- **ETA**: ~15-20 минут на 276 symbols × 30 gen × 40 pop (vs ~31 часа на VPS CPU)
+- **Запуск из CLI**:
+  ```bash
+  curl -X POST http://127.0.0.1:8000/api/ga/run \
+    -H 'Content-Type: application/json' \
+    -d '{"target":"pc1","pop":40,"gens":30}'
+  ```
+- **Где смотреть live**:
+  - PC1 stdout: `ssh tkach@100.99.211.123 'type C:\Users\tkach\ga_gpu\ga_run_<PID>.log'`
+  - GPU: `ssh tkach@100.99.211.123 'nvidia-smi'`
+  - VPS: `cat /root/4BotsBybit-Trading/data/ga_status.json` (синхронизируется поллером)
+
 Все **persistent** через `Register-ScheduledTask -AtStartup -Principal SYSTEM`. На boot стартуют, при крэше перезапускаются (RestartCount=5).
 
 ## Где живёт faster-whisper-server

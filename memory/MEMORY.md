@@ -3,6 +3,7 @@
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
+- [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
 - [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
 - [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
@@ -17,6 +18,8 @@
 - [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
 - [real_trades Schema](project_real_trades_schema.md) — narrower than simulated_trades; get_alltime_stats crashes on missing columns
 - [Signal Config Path Trap](feedback_signal_bot_config_path.md) — src/ is real, root is orphan; always use env_config.SIGNAL_BOT_CONFIG_PATH
+- [SignalBot Bar Logic](feedback_signal_bar_logic.md) — confirm=True only, slice по ws_config volume_avg_bars/trend_bars (не [-6:]), REST-warmup 5m
+- [HARD CAP + Dashboard PAPER](feedback_hard_cap_double_count.md) — risk_manager position×leverage = двойной счёт; dashboard _v2_resolve_source хардкод игнорировал per_strategy JSON
 - [Unversioned Prod State](project_unversioned_prod_state.md) — DB schema drift, Grafana, nginx, /var/www — not in git
 - [No Routine Confirms](feedback_no_routine_confirms.md) — делать текучку сразу без подтверждений
 - [GA Optimizer](project_ga_optimizer.md) — 27-gene GA for CONS+TREND+AGGR; dashboard UI, apply/rollback, weekly schedule
@@ -143,6 +146,9 @@
 - [Verify Downloads](feedback_verify_downloads.md) — Перед use внешних файлов: source rep + SHA256 + file-type validation; обязательно во всех сессиях
 - [PC1 для тяжёлого compute](feedback_pc1_for_heavy_compute.md) — Всё тяжёлое (ML/GA/photo/backtests) на ПК1, VPS только для live-сервисов
 - [Baseline V2](project_baseline_v2_2026-05-08.md) — Точка отсчёта новой системы 2026-05-08 19:44 UTC, $189.60; что вошло в rebuild
+- [Baseline V3 (full wipe)](project_baseline_v3_2026-05-10.md) — БД полностью очищена 2026-05-10 05:42:10 UTC после волны фиксов; архивы в *_archive_20260510_baseline_v3_clean
+- [Pre-baseline-v3 = МУСОР](feedback_pre_baseline_v3_data_is_trash.md) — ВСЕГДА фильтровать `entry_time >= stats_baseline_at` при любом запросе к trading-таблицам
+- [Gerchik Trading Agent](project_gerchik_bot.md) — AI agent /root/gerchik-trading-agent (private GH repo); 4-layer self-learning; шарит Bybit+Postgres с 4BotsBybit; Volume Spike blacklist BTC/ETH/SOL
 - [Meta-labeler V1](project_meta_labeler_v1.md) — XGBoost AUC 0.728 shadow mode; promote после 50+ post-baseline сделок
 - [Risk Officer](project_risk_officer.md) — Hourly LLM defensive auto-pause; LLM-on-CAUTION OFF на 7 дней
 - [Cron-зоопарк](project_cron_zoo_2026-05-08.md) — 10 timer'ов trading-системы, расписание + назначение
@@ -158,3 +164,6 @@
 - [Salaried Roles Excluded](feedback_salaried_roles_excluded_from_payroll.md) — delivery/service на фиксированной ЗП через accounting; wage helpers return None → все cost-loops auto-skip
 - [Foreman Overhead Split](project_foreman_overhead_split.md) — primary foreman cost = company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only role='foreman'
 - [OnTime Big Overhaul 2026-05-09](project_session_2026-05-09_ontime_full_overhaul.md) — single-day rundown: lunch fix → hourly billing → foreman split → canonical_id orphan double-count fix → 2025 dashboard breakdown
+- [Gerchik Copy Phase 1](project_gerchik_copy_phase1.md) — Stream A copy-trade (signals_bot+copy_executor+Compare tab); ждёт Bybit sub-account keys
+- [Real Cutover Plan 2026-05-10](project_real_cutover_plan_2026-05-10.md) — wait 2-3 дня после baseline V3, чек-лист (PF≥1.5, SL<35%, 200+ trades) перед CONS paper→real
+- [Daily-Driver Git Repos](project_git_repos_daily.md) — все репо InfinitySudo с путями на VPS, GitHub origin, live-сервисами и quick-cd по теме
