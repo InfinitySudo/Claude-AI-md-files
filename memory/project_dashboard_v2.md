@@ -28,11 +28,11 @@ originSessionId: adfb2918-d7eb-454d-8326-11f044ee5979
 - TREND-real `pnl` = всегда Bybit closed-pnl total (не period-bounded), потому что Bybit endpoint не принимает фильтр стратегии. Унаследовано от `_block()` в `/api/trader-stats`.
 - `tp1_triggered` колонка в `real_trades` редко заполнена — TREND TP-funnel показывает 11/64 а не реальные ~28% wins. Это backfill issue, не dashboard.
 
-**Cutover план (когда Артём подтвердит v2):**
-1. `/var/www/dashboard/index.html` → бекап
-2. `cp /root/4BotsBybit-Trading/index_v2.html /var/www/dashboard/index.html`
-3. (Опционально) удалить `real.html`, `TRADING_DASHBOARD_REAL.html`
-4. Старые endpoint'ы оставить — `/api/trader-stats`, `/api/funnel-history`, `/api/symbol-breakdown` — они нужны settings/GA/прочим консьюмерам
+**Cutover ДОНЕ 2026-05-09 (commit 7bcbfb7):**
+- `/var/www/dashboard/index.html` ← bакап в `v1.html`
+- `cp v2.html → index.html` — `/` теперь отдаёт v2
+- v1↔v2 switcher и footer-link "← Old dashboard (v1)" удалены из source
+- v1 source (TRADING_DASHBOARD.html) и v1-only endpoints (`/api/trader-stats`, `/api/symbol-breakdown`, `/api/divergence`, `/api/slippage`) НЕ удалены — оставлены до явного follow-up; `/api/funnel-history` общий, не трогать
 
 **6 top-level вкладок (с 2026-05-05):**
 1. 📊 Stats — strategy cards + per-symbol breakdown (исходная v2)

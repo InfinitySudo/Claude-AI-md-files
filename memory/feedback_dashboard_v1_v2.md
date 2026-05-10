@@ -4,7 +4,9 @@ description: Two dashboards live in parallel until v2 polished; editing the wron
 type: feedback
 originSessionId: adfb2918-d7eb-454d-8326-11f044ee5979
 ---
-С 2026-05-05 в проде ОДНОВРЕМЕННО работают две версии дашборда. До команды Артёма «cutover» обе live, обе нужны.
+**UPDATED 2026-05-09:** v2 теперь primary на `/` (cutover commit 7bcbfb7). Switcher и footer-link удалены. v1 source (TRADING_DASHBOARD.html) и v1-only endpoints всё ещё в репо/api — не удалены, могут понадобиться откат. Тем не менее основной воркфлоу — править только index_v2.html.
+
+С 2026-05-05 (до cutover) в проде ОДНОВРЕМЕННО работали две версии дашборда. До команды Артёма «cutover» обе live, обе нужны.
 
 **Why:** v2 ещё в полировке. Артём кликает между ними через switcher (правый верх). Если я сломаю одну — потеряет рабочий инструмент посреди торговли.
 

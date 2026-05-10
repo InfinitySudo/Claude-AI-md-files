@@ -29,6 +29,7 @@
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling Norm History](feedback_wrestling_norm_attempts.md) — norm_attempts table; norm_standards.actual_value drifted to VARCHAR; regex-filter non-numeric junk
 - [Wrestling Camp Payment](project_wrestling_camp_payment.md) — Square checkout + I-Paid/Confirm honor-system flow; Constant default link
 - [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl
 - [TSA Legacy Server](project_tsa_legacy.md) — 46.8.227.113 старый Django+TG-бот, импортировали 7862 отчёта 2026-04-17, выключим через 2-3 недели
@@ -120,8 +121,13 @@
 - [OnTime Marketing Video](project_ontime_marketing.md) — `/root/ontime/marketing/` pipeline: scenes.py → piper TTS → Playwright → ffmpeg ducking; 25-сцен / 6:45 финал на ontime.management/marketing/
 - [Piper TTS Swallows](feedback_piper_tts_swallows.md) — глотает финальные согласные; всегда apad pad_dur=1.0+ к выходу + перефразировка коротких CTA
 - [Emails Optimization](project_emails_optimization.md) — AI-секретарь для 6 email бизнесов; Gmail+Claude+TG; репо InfinitySudo/emails-optimization
+- [Tim English Only](feedback_tim_english_only.md) — все user-facing для Тима только English, никаких русских слов
+- [Tim Agent Plan](project_tim_agent_plan.md) — расширение emails-opt бота: AI-делегат с approval-flow; план в docs/agent_plan.md
 - [Emails — Preserve Unread](feedback_emails_preserve_unread.md) — IMAP только readonly + BODY.PEEK, не помечать письма прочитанными
 - [Emails — User Guide Sync](feedback_emails_user_guide.md) — при добавлении фич в emails-opt обновлять docs/tim_user_guide.md (живёт как /help в боте)
+- [No Tables for TG Forward](feedback_no_tables_tg_forward.md) — markdown tables ломаются при пересылке Тиму в TG; bullets only в docs/tim_*.md и в чат-ответах
+- [Two Bots One DB](feedback_emails_two_bots_shared_db.md) — emails-bot (Артём, TEST_MODE) + emails-bot-tim (Тим) делят emails.db; всё agent-state нести owner_chat_id
+- [No Names in Action Types](feedback_action_type_no_names.md) — ask_tim → ask_owner; имена людей не лезут в enum/event-name идентификаторы
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
@@ -131,3 +137,24 @@
 - [Morning Briefing — paused](project_morning_briefing_pending.md) — Артём хочет briefing Gmail+Calendar+Drive+Otter; решение отложено до ответа Тима
 - [OnTime Notif i18n](project_ontime_notif_i18n.md) — notif_i18n.py + users.lang; EW proposed/vp/pm + digest переведены; rest TODO
 - [OnTime CSS Vars](feedback_ontime_css_vars.md) — Никогда `--tsa-fg` (нет такой); текст `--tsa-text`, тёмный bg `bg-slate-900`
+- [Photo Restoration CPU](project_photo_restoration.md) — GFPGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; работает но очень медленно — кандидат на GPU миграцию
+- [GPU Homelab Plan](project_gpu_homelab_plan.md) — ПК1 ACTIVE: Tailscale + Ollama 7b/14b/32b + voice-tutor wired; ПК2 pending
+- [PC1 Homelab ACTIVE](project_pc1_homelab_active.md) — SSH `tkach@100.99.211.123`, Ollama :11434 + faster-whisper :8001 + kokoro-tts :8002 (все CUDA, AtBoot)
+- [Verify Downloads](feedback_verify_downloads.md) — Перед use внешних файлов: source rep + SHA256 + file-type validation; обязательно во всех сессиях
+- [PC1 для тяжёлого compute](feedback_pc1_for_heavy_compute.md) — Всё тяжёлое (ML/GA/photo/backtests) на ПК1, VPS только для live-сервисов
+- [Baseline V2](project_baseline_v2_2026-05-08.md) — Точка отсчёта новой системы 2026-05-08 19:44 UTC, $189.60; что вошло в rebuild
+- [Meta-labeler V1](project_meta_labeler_v1.md) — XGBoost AUC 0.728 shadow mode; promote после 50+ post-baseline сделок
+- [Risk Officer](project_risk_officer.md) — Hourly LLM defensive auto-pause; LLM-on-CAUTION OFF на 7 дней
+- [Cron-зоопарк](project_cron_zoo_2026-05-08.md) — 10 timer'ов trading-системы, расписание + назначение
+- [BE offset interpretation](feedback_be_offset_pct_meaning.md) — be_price_offset_pct = % от entry; >1.0 = bug; держать 0.05-0.5%
+- [PC1 ssh quirks](feedback_pc1_ssh_quirks.md) — WMI Win32_Process.Create + per-PID logs; Start-Process убивает детей при ssh close
+- [TG ControlBot slash](feedback_tg_controlbot_slash.md) — @ControlByBitTradingBot принимает /status /balance /pause /resume /help
+- [GA GPU Migration](project_ga_gpu_migration.md) — DONE 2026-05-08; canonical schema + dashboard wired; см. project_baseline_v2
+- [Wife English Tutor](project_wife_english_tutor.md) — план готов 2026-05-07, репо InfinitySudo/wife-english-tutor; A1-A2 жена, разработка после fix voice-tutor
+- [Wife Tutor Correction-First](project_wife_tutor_correction_first.md) — `[FIX]...[/FIX]` в начале ответа: голос произносит поправку, потом продолжает беседу
+- [Session Hours Open-Lunch](feedback_session_hours_open_lunch.md) — open session live projection ОБЯЗАН вычитать 12:00-12:30 обед, иначе reports разъезжаются на 30 мин от payroll
+- [Apr 27 Domain Outage](project_ontime_apr27_outage.md) — 26 рабочих 2026-04-27 имеют stored=9.0 как ручная компенсация за outage; не трогать
+- [bmap projects open sessions](feedback_billable_open_session_doublecount.md) — _billable_hours_map уже включает live минуты open sessions; не складывать поверх отдельный today_open
+- [Salaried Roles Excluded](feedback_salaried_roles_excluded_from_payroll.md) — delivery/service на фиксированной ЗП через accounting; wage helpers return None → все cost-loops auto-skip
+- [Foreman Overhead Split](project_foreman_overhead_split.md) — primary foreman cost = company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only role='foreman'
+- [OnTime Big Overhaul 2026-05-09](project_session_2026-05-09_ontime_full_overhaul.md) — single-day rundown: lunch fix → hourly billing → foreman split → canonical_id orphan double-count fix → 2025 dashboard breakdown
