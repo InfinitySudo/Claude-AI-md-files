@@ -74,9 +74,18 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
 - ✅ Risk guards #2 minNotional + #3 TP/SL inversion в `validate_plan()` (16/16 unit tests)
 - ✅ copy_executor: level-breach pre-check (auto-expire signals где SL уже под водой)
 - ✅ RR_TARGET=3.0 в copy_executor (выровнено с Gerchik MIN_RR=3.0; был 2.0)
+- ✅ Caption parser pre-fill (СОЛ→SOLUSDT, "пробит→улетим"=LONG); wizard сокращён до 1 step на typed captions
+- ✅ Gap analysis daily TG cron 08:00 Calgary с drilldown (blind/wrong-dir/missed-level)
+- ✅ Level detector lookback 60→180 D-bars (SOL: 0→5, BNB: 0→9 levels)
+- ✅ Correlation cap #5 — max 2 одновременных позиций в группе majors (BTC/ETH/SOL/BNB/XRP)
+
+Accounts разделены (подтверждено 2026-05-10):
+- 4BotsBybit-Trading — main account (key из /root/4BotsBybit-Trading/.env BYBIT_API_KEY)
+- gerchik copy-executor — sub-account `gerchik_copy` (BYBIT_GERCHIK_API_KEY=NVFHinVMJ2w22KZW5Y, $50 USDT)
+- Correlation cap НЕ объединяет positions между accounts; каждый pipeline видит только свои
 
 VPS / Bybit context:
-- Key NVFHinVMJ2w22KZW5Y attached **на main аккаунт** (NOT отдельный sub-account); isMaster=True
+- Key NVFHinVMJ2w22KZW5Y → отдельный sub-account "gerchik_copy"; isMaster=True (master of own sub-wallet)
 - IP whitelist: `187.77.148.44, 46.8.232.182`; outbound = IPv4 187.77.148.44
 - Position mode: **One-Way** (mode=0), форсирован через /v5/position/switch-mode
 - UTA Pro (unifiedMarginStatus=5)
