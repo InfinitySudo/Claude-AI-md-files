@@ -78,6 +78,10 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
 - ✅ Gap analysis daily TG cron 08:00 Calgary с drilldown (blind/wrong-dir/missed-level)
 - ✅ Level detector lookback 60→180 D-bars (SOL: 0→5, BNB: 0→9 levels)
 - ✅ Correlation cap #5 — max 2 одновременных позиций в группе majors (BTC/ETH/SOL/BNB/XRP)
+- ✅ Funding rate guard #6 (skip если платим >0.05%/8h) + Liq buffer #7 (SL должен быть ближе entry чем liq)
+- ✅ Time-of-day #10 (skip 23:00-03:00 UTC) + MAE/MFE tracking #13 (migration 003)
+- ✅ Volume confirm #4 + Multi-TF trend #8 (EMA50 4H+D) + Setup grading #9 (migration 004)
+- ✅ FIRST LIVE FILL: sid=4 SOL LONG @96.06 (2026-05-10 22:48 UTC); peak +0.04%, trough -0.21%
 
 Accounts разделены (подтверждено 2026-05-10):
 - 4BotsBybit-Trading — main account (key из /root/4BotsBybit-Trading/.env BYBIT_API_KEY)
