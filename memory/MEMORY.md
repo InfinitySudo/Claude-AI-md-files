@@ -168,3 +168,4 @@
 - [Real Cutover Plan 2026-05-10](project_real_cutover_plan_2026-05-10.md) — wait 2-3 дня после baseline V3, чек-лист (PF≥1.5, SL<35%, 200+ trades) перед CONS paper→real
 - [Daily-Driver Git Repos](project_git_repos_daily.md) — все репо InfinitySudo с путями на VPS, GitHub origin, live-сервисами и quick-cd по теме
 - [Bybit empty result truthy-trap](feedback_bybit_empty_result_truthy_trap.md) — Bybit V5 на success отдаёт `{retCode:0, result:{}}`; `if not res` ловит это как failure → проверяй через `is None`
+- [Bybit V5 open/close knowledge](project_bybit_v5_open_close_knowledge.md) — verified правила (minNotional $5, sequence, fees/slippage); e2e test `tests/manual/bybit_e2e_open_close.py`
