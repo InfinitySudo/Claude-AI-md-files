@@ -89,6 +89,10 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
 - ✅ Rich wizard #3 — 6 шагов: setup_type/rr_target/time_horizon (migration 005)
 - ✅ Per-signal RR override в copy_executor (Artyom выбирает 1:2/1:3/1:5/1:10)
 - 🎉 12 signals processed end-to-end (3 filled, 5 expired/skipped by guards, 1 pending wizard, 1 delisted)
+- 🔴 Day 1 (2026-05-10): 3 closed trades всё SL, -$9.57 total. MFE peaks 0.45-0.74% retraced. Pipeline lessons:
+  - BE_ACTIVATION_PCT lowered from 1.0% → **0.5%** (1R Gerchik rule)
+  - TRAIL_STEP_PCT 0.5% — каждый +0.5% peak trails SL
+  - DUST_MAX_AGE_HOURS 24h + peak <0.5% → auto market close
 - ✅ Wizard rehydrate from DB on startup (mid-wizard state preserved через restart)
 - ✅ TG slash commands: /status /positions /pnl /help (mobile UX)
 - ✅ Layer 3 scaffold: src/meta_labeler.py + train script + migration 006 (auto-activates at 30+ closed)
