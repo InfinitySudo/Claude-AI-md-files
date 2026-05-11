@@ -89,6 +89,11 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
 - ✅ Rich wizard #3 — 6 шагов: setup_type/rr_target/time_horizon (migration 005)
 - ✅ Per-signal RR override в copy_executor (Artyom выбирает 1:2/1:3/1:5/1:10)
 - 🎉 12 signals processed end-to-end (3 filled, 5 expired/skipped by guards, 1 pending wizard, 1 delisted)
+- ✅ Wizard rehydrate from DB on startup (mid-wizard state preserved через restart)
+- ✅ TG slash commands: /status /positions /pnl /help (mobile UX)
+- ✅ Layer 3 scaffold: src/meta_labeler.py + train script + migration 006 (auto-activates at 30+ closed)
+- ✅ Layer 4 scaffold: weekly_reflector.py + migration 007 + timer Sun 02:00 (auto at 100+ closed + ANTHROPIC_API_KEY)
+- 4-layer self-learning complete на каркасе; ждёт реальных trade outcomes для запуска ML/LLM
 
 Accounts разделены (подтверждено 2026-05-10):
 - 4BotsBybit-Trading — main account (key из /root/4BotsBybit-Trading/.env BYBIT_API_KEY)
