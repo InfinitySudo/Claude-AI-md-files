@@ -93,6 +93,9 @@ Cron 1x/день (Calgary local). При `count(gerchik_copy_trades WHERE status
   - BE_ACTIVATION_PCT lowered from 1.0% → **0.5%** (1R Gerchik rule)
   - TRAIL_STEP_PCT 0.5% — каждый +0.5% peak trails SL
   - DUST_MAX_AGE_HOURS 24h + peak <0.5% → auto market close
+- ✅ 33 tasks closed Day 1; 20 TG commands; 10 systemd units; daily snapshot started; inline keyboards
+- ✅ Production-ready pipeline: caption parser → 6-step wizard → 11 guards → place → BE@0.5% → trail step 0.5% → dust 24h
+- ✅ Dashboard sub-account wallet card + status dot + MFE/MAE histogram + equity curve (1 snapshot at $142.16)
 - ✅ Wizard rehydrate from DB on startup (mid-wizard state preserved через restart)
 - ✅ TG slash commands: /status /positions /pnl /help (mobile UX)
 - ✅ Layer 3 scaffold: src/meta_labeler.py + train script + migration 006 (auto-activates at 30+ closed)
