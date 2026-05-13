@@ -9,6 +9,12 @@ metadata:
 
 Создан 2026-05-13 после того как Артём отверг GA-кандидата с TP в космос (13-48R) при реальном max MFE ~2-5%.
 
+**Applied в проде 2026-05-13 17:48 UTC** (Артём нажал кнопку в дашборде):
+- CONS tp_ratios: 1.5/2.5/4.0 → 1.04/1.10/1.38 (p50/p75/p90 MFE), tp_dist equal 0.33×3
+- TREND tp_ratios: 2.0/4.0/6.0/8.0/10.0 → 1.82/2.57/2.89/2.95/3.16 (p40/p55/p70/p85/p95), tp_dist equal 0.20×5
+- AGGR не применён (n=1, insufficient_data)
+- Коммит `24bf8be` 4BotsBybit-Trading master
+
 **Что есть:**
 - `GET /api/mfe/calibration` — per-strategy: current `tp_ratios`/`tp_distribution`/`be_*`, наблюдённые MFE percentiles (p50/p75/p90/p95/p99/max), median SL distance %, рекомендация = MFE_percentile / median_sl_pct
 - `POST /api/mfe/apply` (confirm_phrase `APPLY MFE`) — пишет в `trading_v3_artem.json` `strategy_parameters[strategy]`, snapshot в `ga_param_history.json`, live bots подбирают на следующем сигнале

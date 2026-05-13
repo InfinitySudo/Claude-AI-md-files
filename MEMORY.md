@@ -89,7 +89,8 @@
 - [GA Walk-Forward](project_ga_walk_forward_todo.md) — ACTIVE с 2026-04-25: 70/30 train/test split в evaluate(), fitness=test−K·saturating(train−test)
 - [GA Unrealistic TPs](feedback_ga_unrealistic_tps.md) — GA выдаёт TP 13-48R, реал MFE ~2%; сверять с MFE до apply, чинить через time-stop+MFE-cap
 - [GA Under Review](project_ga_under_review.md) — 2026-05-13 Артём на грани отказа от GA; не запускать без запроса; fix-vs-kill решение pending
-- [MFE Calibration](project_mfe_calibration.md) — 📐 MFE tab + /api/mfe/* — data-driven TP-тюнинг из реальной peak_pnl_pct; используй вместо GA
+- [MFE Calibration](project_mfe_calibration.md) — 📐 MFE tab + /api/mfe/* — data-driven TP-тюнинг из реальной peak_pnl_pct; используй вместо GA; CONS+TREND applied 2026-05-13
+- [Funnel vs Close Reason](feedback_funnel_vs_close_reason.md) — TP-funnel ячейки overlap (trigger events); mutually exclusive разбивка — только close_reason
 - [Labor vs Purchase Materials](feedback_ontime_labor_vs_purchase.md) — два РАЗНЫХ вида материалов в OnTime; install rates ≠ vendor prices; не маскировать одно другим
 - [OnTime Delivery Shortages](project_tsa_shortages.md) — short-ship tracking на PO items; wait/reorder/resolved + 7d TG nudge для форменов
 - [BOM replace trap](feedback_ontime_bom_replace_trap.md) — _set_project_materials делает DELETE+INSERT; неполный body стирает BOM
