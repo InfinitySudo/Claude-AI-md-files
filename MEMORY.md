@@ -1,3 +1,4 @@
+- [🗂 Projects digest](PROJECTS.md) — START HERE: all 16 projects with status, local paths, services, hosts, DBs, env keys, linked memories. Auto-regenerated every 30 min.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
