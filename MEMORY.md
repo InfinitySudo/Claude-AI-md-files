@@ -57,7 +57,6 @@
 - [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)
 - [TG Channel Plan](project_tg_channel_plan.md) — active с 2026-04-16: solo-founder-with-AI, RU, настоящее имя, 4 поста/нед, бюджет $300–500/мес, название @solo_claude
 - [solo_claude_bot infra](project_solo_claude_bot.md) — `/root/solo_claude_bot/` CLI для постинга; 2 бота, venv, .env; CHAT_* ждут chat_id
-- [CELPIP Teacher Bots](project_celpip_bots.md) — 2 TG-бота Артёма (CLB 10) и Лилии (CLB 8); voice Whisper+Claude+TTS; `/root/English-Teacher-CELPIP`
 - [Claude Telegram Bot repo](project_claude_telegram_bot.md) — `/root/claude-telegram-bot` → `Claude-Telegram-Bot` (не OpenClaw-v3); voice+vision+tools+OAuth
 - [Narrative Before Details](feedback_narrative_before_details.md) — в @solo_claude: сначала origin-story проектов, только потом tech-детали и build-in-public
 - [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — Каждый push: checkpoint сессии в memory + sync в Claude-AI-md-files
@@ -119,6 +118,9 @@
 - [React Hooks Order](feedback_react_hooks_order.md) — useMemo/useState/useEffect ВСЕГДА выше `if (...) return null`; иначе blank screen
 - [voice-tutor (@AISmartFriendBot)](project_voice_tutor.md) — TG голосовой собеседник + Mini App с continuous VAD/barge-in; voice.constantwrestling.cloud
 - [voice-tutor OAuth 500](feedback_voice_tutor_oauth_500.md) — "слушает не отвечает" = первая гипотеза истёкший Claude OAuth; jq expiresAt + grep 401 в web-systemd.log
+- [Tutor TTS/STT wiring](feedback_tutor_tts_wiring.md) — TTS/STT в tutor-ботах ОБЯЗАНЫ идти PC1→PC2→OpenAI; глобальный `openai` без base_url = silent fallback на OpenAI; startup log обязателен
+- [Tutor live tools](project_tutor_live_tools.md) — wife-english-tutor с tool-use: BTC/ETH price (Bybit) + weather (wttr.in); bot/tools.py + call_claude(tools=, tool_runner=)
+- [OAuth force-refresh](feedback_oauth_force_refresh.md) — disk_token_fresh ≠ valid; 401-handler ОБЯЗАН вызывать refresh API через force_refresh=True, не только cache_stale
 - [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
 - [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
 - [Hourly Supervisor (deterministic)](project_hourly_supervisor.md) — заменил opus-агент Python-скриптом; haiku только при events/anomalies
