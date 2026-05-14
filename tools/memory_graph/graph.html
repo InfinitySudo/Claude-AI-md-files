@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memory Graph — Artem's Claude AI</title>
+<script src="https://unpkg.com/cytoscape@3.30.0/dist/cytoscape.min.js"></script>
+<script src="https://unpkg.com/cytoscape-fcose@2.2.0/cytoscape-fcose.js"></script>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin:0; padding:0; height:100%; background:#0e1116; color:#e8ecf1;
+               font:14px/1.4 -apple-system,system-ui,Segoe UI,Roboto,sans-serif; }
+  #app { display:flex; height:100vh; }
+  #sidebar { width:300px; flex-shrink:0; overflow-y:auto; padding:14px 16px; background:#161b22; border-right:1px solid #2a313a; }
+  #sidebar h1 { margin:0 0 4px; font-size:17px; }
+  #sidebar .sub { color:#9ba6b3; font-size:12px; margin-bottom:14px; }
+  #stats { margin-bottom:14px; font-size:12px; color:#cfd6e0; }
+  #stats .row { display:flex; justify-content:space-between; padding:3px 0; }
+  #search { width:100%; padding:8px 10px; background:#0e1116; border:1px solid #2a3852; color:#e8ecf1; border-radius:8px; font:inherit; }
+  .legend { margin:14px 0 6px; }
+  .legend-item { display:flex; align-items:center; gap:8px; padding:4px 0; font-size:13px; cursor:pointer; user-select:none; }
+  .legend-item .dot { width:14px; height:14px; border-radius:50%; }
+  .legend-item.off { opacity:0.35; }
+  .panel { margin-top:18px; padding:12px; background:#1a1f27; border-radius:10px; min-height:80px; }
+  .panel h2 { margin:0 0 6px; font-size:14px; color:#dba24c; }
+  .panel .meta { color:#9ba6b3; font-size:12px; margin-bottom:6px; }
+  .panel .desc { font-size:13px; line-height:1.5; }
+  .panel a { color:#7aa2f7; text-decoration:none; }
+  .panel a:hover { text-decoration:underline; }
+  .links-list { margin:8px 0 0; padding:0; list-style:none; }
+  .links-list li { padding:3px 0; font-size:12px; }
+  #cy { flex:1; background:#0e1116; }
+  #toolbar { position:absolute; top:14px; right:14px; display:flex; gap:8px; z-index:5; }
+  #toolbar button { padding:6px 10px; background:#1a1f27; color:#7aa2f7; border:1px solid #2a3852; border-radius:6px; cursor:pointer; font:inherit; font-size:12px; }
+  #toolbar button:hover { background:#222933; }
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <h1>Memory Graph</h1>
+    <div class="sub">/root/.claude/projects/-root/memory/</div>
+    <input id="search" type="text" placeholder="Search nodes…" autocomplete="off">
+    <div id="stats"></div>
+    <div class="legend" id="legend"></div>
+    <div class="panel" id="panel">
+      <div class="meta">Tap any node to inspect.</div>
+    </div>
+  </aside>
+  <div id="cy"></div>
+  <div id="toolbar">
+    <button id="fit">Fit</button>
+    <button id="layout">Re-layout</button>
+    <button id="orphans">Orphans</button>
+  </div>
+</div>
+
+<script>
+const TYPE_COLOR = {
+  user:      "#a87adb",
+  feedback:  "#e84855",
+  project:   "#56a8f5",
+  reference: "#5db075",
+  memory:    "#dba24c",
+  stub:      "#6c727a",
+  other:     "#9ba6b3",
+};
+
+(async () => {
+  const data = await fetch("graph.json").then(r => r.json());
+
+  // Build elements
+  const elements = [];
+  for (const n of data.nodes) {
+    elements.push({
+      data: {
+        id: n.id, label: n.name, type: n.type, title: n.title,
+        summary: n.summary, file: n.file || "",
+      }
+    });
+  }
+  for (const e of data.edges) {
+    elements.push({ data: { source: e.source, target: e.target } });
+  }
+
+  // Stats
+  const stats = data.stats;
+  document.getElementById("stats").innerHTML =
+    `<div class="row"><span>nodes</span><b>${stats.nodes}</b></div>` +
+    `<div class="row"><span>edges</span><b>${stats.edges}</b></div>` +
+    Object.entries(stats.by_type).sort((a,b) => b[1]-a[1])
+      .map(([t,c]) => `<div class="row"><span>${t}</span><b>${c}</b></div>`).join("");
+
+  // Legend (clickable filters)
+  const hidden = new Set();
+  const legend = document.getElementById("legend");
+  Object.keys(stats.by_type).forEach(t => {
+    const div = document.createElement("div");
+    div.className = "legend-item";
+    div.innerHTML = `<span class="dot" style="background:${TYPE_COLOR[t] || "#888"}"></span><span>${t}</span>`;
+    div.addEventListener("click", () => {
+      if (hidden.has(t)) { hidden.delete(t); div.classList.remove("off"); }
+      else { hidden.add(t); div.classList.add("off"); }
+      cy.nodes().forEach(n => {
+        n.style("display", hidden.has(n.data("type")) ? "none" : "element");
+      });
+    });
+    legend.appendChild(div);
+  });
+
+  // Build graph
+  const cy = cytoscape({
+    container: document.getElementById("cy"),
+    elements,
+    minZoom: 0.1, maxZoom: 3,
+    style: [
+      {
+        selector: "node",
+        style: {
+          "background-color": ele => TYPE_COLOR[ele.data("type")] || "#888",
+          "label": "data(label)",
+          "font-size": 9,
+          "color": "#cfd6e0",
+          "text-outline-color": "#0e1116",
+          "text-outline-width": 2,
+          "width": ele => 14 + (ele.degree() * 4),
+          "height": ele => 14 + (ele.degree() * 4),
+          "text-valign": "bottom",
+          "text-margin-y": 4,
+        }
+      },
+      {
+        selector: "edge",
+        style: {
+          "width": 1.4,
+          "line-color": "#3a4252",
+          "curve-style": "bezier",
+          "target-arrow-shape": "triangle",
+          "target-arrow-color": "#3a4252",
+          "arrow-scale": 0.7,
+        }
+      },
+      { selector: "node:selected", style: { "border-width": 3, "border-color": "#dba24c" } },
+      { selector: "node.faded", style: { "opacity": 0.15 } },
+      { selector: "edge.faded", style: { "opacity": 0.08 } },
+      { selector: "node.match", style: { "border-width": 3, "border-color": "#5db075" } },
+    ],
+    layout: {
+      name: "fcose",
+      animate: true,
+      randomize: true,
+      nodeRepulsion: 9000,
+      idealEdgeLength: 90,
+      gravity: 0.15,
+      padding: 30,
+    },
+  });
+
+  // Hover preview
+  cy.on("tap", "node", evt => {
+    const n = evt.target;
+    const incoming = n.incomers("edge").length;
+    const outgoing = n.outgoers("edge").length;
+    const linked = n.connectedEdges().connectedNodes().filter(x => x !== n);
+    const linkList = linked.map(x => `<li><a href="#" data-id="${x.id()}">${x.data("label")}</a> <small style="color:#777">${x.data("type")}</small></li>`).join("");
+    document.getElementById("panel").innerHTML =
+      `<h2>${n.data("title")}</h2>` +
+      `<div class="meta">type: ${n.data("type")} · in:${incoming} · out:${outgoing}${n.data("file") ? " · " + n.data("file") : ""}</div>` +
+      `<div class="desc">${n.data("summary") || "—"}</div>` +
+      (linkList ? `<ul class="links-list"><b style="font-size:11px;color:#9ba6b3">connected:</b>${linkList}</ul>` : "");
+
+    // Highlight neighborhood
+    cy.elements().addClass("faded");
+    n.removeClass("faded");
+    n.connectedEdges().removeClass("faded");
+    n.connectedEdges().connectedNodes().removeClass("faded");
+
+    document.querySelectorAll("#panel a[data-id]").forEach(a => {
+      a.addEventListener("click", e => {
+        e.preventDefault();
+        const tgt = cy.getElementById(a.dataset.id);
+        if (tgt.length) { cy.center(tgt); tgt.select(); tgt.trigger("tap"); }
+      });
+    });
+  });
+  cy.on("tap", evt => {
+    if (evt.target === cy) {
+      cy.elements().removeClass("faded");
+      document.getElementById("panel").innerHTML = '<div class="meta">Tap any node to inspect.</div>';
+    }
+  });
+
+  // Search
+  document.getElementById("search").addEventListener("input", e => {
+    const q = e.target.value.trim().toLowerCase();
+    cy.nodes().removeClass("match");
+    if (!q) return;
+    const matches = cy.nodes().filter(n =>
+      n.data("label").toLowerCase().includes(q) ||
+      (n.data("summary") || "").toLowerCase().includes(q)
+    );
+    matches.addClass("match");
+    if (matches.length === 1) { cy.center(matches[0]); matches[0].trigger("tap"); }
+  });
+
+  // Toolbar
+  document.getElementById("fit").addEventListener("click", () => cy.fit(null, 40));
+  document.getElementById("layout").addEventListener("click", () =>
+    cy.layout({ name:"fcose", animate:true, randomize:true, nodeRepulsion:9000, idealEdgeLength:90, gravity:0.15 }).run()
+  );
+  document.getElementById("orphans").addEventListener("click", () => {
+    const orphans = cy.nodes().filter(n => n.degree() === 0);
+    cy.elements().addClass("faded");
+    orphans.removeClass("faded");
+    cy.center(orphans);
+    document.getElementById("panel").innerHTML =
+      `<h2>Orphans</h2><div class="meta">${orphans.length} nodes with no links — candidates for cleanup or linking</div>` +
+      `<ul class="links-list">${orphans.map(o => `<li><a href="#" data-id="${o.id()}">${o.data("label")}</a> <small style="color:#777">${o.data("type")}</small></li>`).join("")}</ul>`;
+    document.querySelectorAll("#panel a[data-id]").forEach(a => {
+      a.addEventListener("click", e => {
+        e.preventDefault();
+        const tgt = cy.getElementById(a.dataset.id);
+        if (tgt.length) { cy.elements().removeClass("faded"); cy.center(tgt); tgt.select(); tgt.trigger("tap"); }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
