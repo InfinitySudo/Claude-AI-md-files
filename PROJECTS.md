@@ -1,10 +1,84 @@
 # Projects digest
 
-Generated **2026-05-14T20:30:49+00:00** — load this at the start of a new session for a 30-second overview.
+Generated **2026-05-14T20:34:33+00:00** — load this at the start of a new session for a 30-second overview.
 
 **16 projects** — 🟢 9 live · 🟡 4 dev · 🔴 3 paused
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
+
+## ⏱ Recent activity
+
+- `2026-05-14T14:31` **Claude-AI-md-files** `99a1b26` — sync: PROJECTS.md digest + MEMORY.md index pointer
+- `2026-05-14T14:31` **graph-system** `15891b8` — add: projects_graph — master inventory of all repos + auto-load PROJECTS.md
+- `2026-05-14T14:22` **graph-system** `d9e8c92` — fix: tutor + ontime graphs were silently empty (template assumed trading-only fields)
+- `2026-05-14T14:14` **graph-system** `966deb0` — fix+auto: net pnl (realized − fees), systemd timer rebuilds every 30 min
+- `2026-05-14T13:56` **graph-system** `edbaf49` — fix: drop cytoscape-fcose extension (UMD bundle broken on unpkg)
+- `2026-05-14T13:53` **graph-system** `b019320` — fix: tap+click handler so node inspect works on desktop too
+- `2026-05-14T13:37` **Claude-AI-md-files** `3d39e1e` — tools: mirror memory_graph (Cytoscape graph of this repo)
+- `2026-05-14T13:18` **Claude-AI-md-files** `183b223` — sync: 2026-05-14 tutor session — OAuth fix, live tools, CEFR library, avatar
+- `2026-05-14T13:15` **voice-tutor** `a79faab` — oauth: force-refresh on 401 must hit refresh API, not just reread disk
+- `2026-05-14T13:15` **son-french-tutor** `23983ff` — claude+library+ui: oauth force-refresh + 6 CEFR levels + categories + /read filters
+
+## 🔑 Shared resources (rotate-with-care)
+
+- **`OPENAI_API_KEY`** — used by 5 projects: English-Teacher-CELPIP, emails-optimization, son-french-tutor, voice-tutor, wife-english-tutor
+- **`WET_TG_TOKEN`** — used by 2 projects: son-french-tutor, wife-english-tutor
+
+## 🧠 Recent memory edits
+
+- `2026-05-14T14:31` sync: PROJECTS.md digest + MEMORY.md index pointer — `MEMORY.md`, `PROJECTS.md`
+- `2026-05-14T13:18` sync: 2026-05-14 tutor session — OAuth fix, live tools, CEFR library, avatar — `MEMORY.md`, `feedback_oauth_force_refresh.md`, `feedback_tutor_tts_wiring.md`, `project_session_2026_05_14_tutors.md`, `project_tutor_live_tools.md`
+- `2026-05-14T07:38` memory: session 2026-05-14 final state — PK2 done, photo TG flow live, DeOldify off — `project_session_2026_05_14_emails_perf_photo.md`
+- `2026-05-14T03:10` memory: session 2026-05-14 — emails perf, Calendar OAuth, photo server, tim proposal — `MEMORY.md`, `project_ollama_race_shadow.md`, `project_session_2026_05_14_emails_perf_photo.md`
+
+## ⏲ Scheduled jobs
+
+- `gerchik-health.timer` — next: Thu 2026-05-14 14:34:34
+- `sysstat-collect.timer` — next: Thu 2026-05-14 14:40:00
+- `graph-rebuild.timer` — next: Thu 2026-05-14 14:44:02
+- `prometheus-node-exporter-apt.timer` — next: Thu 2026-05-14 14:44:22
+- `prometheus-node-exporter-nvme.timer` — next: Thu 2026-05-14 14:44:22
+- `prometheus-node-exporter-smartmon.timer` — next: Thu 2026-05-14 14:44:22
+- `bybit-risk-officer.timer` — next: Thu 2026-05-14 15:00:00
+- `wife-english-tutor-digest.timer` — next: Thu 2026-05-14 15:00:00
+- `wife-english-tutor-reminder.timer` — next: Thu 2026-05-14 15:00:00
+- `fwupd-refresh.timer` — next: Thu 2026-05-14 15:07:52
+- `bybit-divergence-monitor.timer` — next: Thu 2026-05-14 16:00:00
+- `gerchik-daily-snapshot.timer` — next: Thu 2026-05-14 17:55:57
+- `bybit-claude-hourly.timer` — next: Thu 2026-05-14 18:00:00
+- `bybit-claude-watchdog.timer` — next: Thu 2026-05-14 18:00:00
+- `gerchik-evening-summary.timer` — next: Thu 2026-05-14 18:00:05
+- `dpkg-db-backup.timer` — next: Fri 2026-05-15 00:00:00
+- `logrotate.timer` — next: Fri 2026-05-15 00:00:00
+- `sysstat-summary.timer` — next: Fri 2026-05-15 00:07:00
+- `man-db.timer` — next: Fri 2026-05-15 00:26:49
+- `update-notifier-download.timer` — next: Fri 2026-05-15 01:09:22
+- `systemd-tmpfiles-clean.timer` — next: Fri 2026-05-15 01:19:07
+- `certbot.timer` — next: Fri 2026-05-15 01:46:36
+- `bybit-db-backup.timer` — next: Fri 2026-05-15 02:00:00
+- `motd-news.timer` — next: Fri 2026-05-15 02:11:33
+- `bybit-auto-blacklist.timer` — next: Fri 2026-05-15 03:00:00
+- `invoice-sync.timer` — next: Fri 2026-05-15 03:04:15
+- `apt-daily.timer` — next: Fri 2026-05-15 04:15:50
+- `bybit-anomaly-detector.timer` — next: Fri 2026-05-15 06:00:00
+- `bybit-daily-summary.timer` — next: Fri 2026-05-15 06:30:00
+- `apt-daily-upgrade.timer` — next: Fri 2026-05-15 06:49:52
+- `emails-morning-digest.timer` — next: Fri 2026-05-15 07:00:00
+- `celpip-reminder@artem.timer` — next: Fri 2026-05-15 08:00:00
+- `celpip-reminder@liliia.timer` — next: Fri 2026-05-15 08:00:00
+- `gerchik-gap-cron.timer` — next: Fri 2026-05-15 08:00:39
+- `emails-followups.timer` — next: Fri 2026-05-15 09:00:00
+- `gerchik-phase2-trigger.timer` — next: Fri 2026-05-15 09:00:57
+- `solo-claude-daily.timer` — next: Fri 2026-05-15 12:00:00
+- `gerchik-weekly-reflector.timer` — next: Sun 2026-05-17 02:01:53
+- `roofmart-weekly.timer` — next: Sun 2026-05-17 03:00:00
+- `e2scrub_all.timer` — next: Sun 2026-05-17 03:10:37
+- `bybit-meta-retrain.timer` — next: Sun 2026-05-17 04:00:00
+- `bybit-ga-weekly.timer` — next: Sun 2026-05-17 17:00:00
+- `fstrim.timer` — next: Mon 2026-05-18 00:47:52
+- `memory-sync.timer` — next: Mon 2026-05-18 09:00:00
+- `update-notifier-motd.timer` — next: Tue 2026-05-19 18:01:55
+- `ocr-followup.timer` — next: —
 
 ## 🟢 Live (9)
 
@@ -24,7 +98,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > AI French tutor for Andrii (Artem's son, A1-A2) — Telegram bot + PWA mini app
 
-- **Local:** `/root/son-french-tutor` (24.5 MB)
+- **Local:** `/root/son-french-tutor` (24.6 MB)
 - **Lang:** Python · **Last push:** 2026-05-14 · **Vis:** PRIVATE
 - **Services:** `son-french-tutor-digest`✗, `son-french-tutor-reminder`✗, `son-french-tutor-web`✓, `son-french-tutor`✓
 - **Hosts:** —
@@ -33,6 +107,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Memory (18):** [[PROJECTS]], [[feedback_avatar_video_calibration]], [[feedback_billable_service_close]], [[feedback_email_register_stub_upgrade]], [[feedback_multi_fix_per_sentence]], [[feedback_oauth_force_refresh]], [[feedback_salaried_roles_excluded_from_payroll]], [[feedback_tg_persistent_keyboard]]…
 
 ### [wife-english-tutor](https://github.com/InfinitySudo/wife-english-tutor)
+
+> Персональный AI-учитель английского языка для русскоязычной начинающей.
 
 - **Local:** `/root/wife-english-tutor` (41.3 MB)
 - **Lang:** Python · **Last push:** 2026-05-14 · **Vis:** PRIVATE
@@ -43,6 +119,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Memory (16):** [[PROJECTS]], [[feedback_multi_fix_per_sentence]], [[feedback_oauth_force_refresh]], [[feedback_tg_persistent_keyboard]], [[feedback_tutor_tts_wiring]], [[feedback_voice_tutor_oauth_500]], [[project_git_repos_daily]], [[project_session_2026_05_14_emails_perf_photo]]…
 
 ### [emails-optimization](https://github.com/InfinitySudo/emails-optimization)
+
+> AI-секретарь для входящей почты. Триаж через Claude, действия через Telegram.
 
 - **Local:** `/root/emails-optimization` (981.9 MB)
 - **Lang:** Python · **Last push:** 2026-05-14 · **Vis:** PRIVATE
@@ -56,7 +134,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > Advanced ByBit Trading Bot with Signal Detection, Risk Management, VARIANT 3 (ATR+Volume), Paper/Real Trading, PostgreSQL Integration
 
-- **Local:** `/root/4BotsBybit-Trading` (53788.0 MB) · CLAUDE.md ✓
+- **Local:** `/root/4BotsBybit-Trading` (53787.2 MB) · CLAUDE.md ✓
 - **Lang:** Python · **Last push:** 2026-05-13 · **Vis:** PRIVATE
 - **Services:** `bybit-anomaly-detector`✗, `bybit-auto-blacklist`✗, `bybit-claude-hourly`✗, `bybit-claude-watchdog`✗, `bybit-control-bot`✓, `bybit-daily-summary`✗, `bybit-db-backup`✗, `bybit-divergence-monitor`✗, `bybit-ga-weekly`✗, `bybit-meta-retrain`✗, `bybit-risk-officer`✗, `bybit-signalbot`✓, `bybit-strategy-switcher`✓, `bybit-tradingbot`✓, `dashboard-api`✓
 - **Hosts:** —
@@ -71,7 +149,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Local:** `/root/ontime` (8198.4 MB) · CLAUDE.md ✓
 - **Lang:** Python · **Last push:** 2026-05-12 · **Vis:** PRIVATE
 - **Services:** `invoice-sync`✗, `ocr-followup`✗, `ontime-api`✓, `ontime-bot`✓, `roofmart-weekly`✗
-- **Hosts:** `ontime.management`, `teacher1.constantwrestling.cloud`
+- **Hosts:** `ontime.management` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)]
 - **DB:** `tsa.db`, `ontime.db`, `backend/tsa.db`, `backend/ontime.db`, `migration/legacy.db`
 - **Memory (68):** [[PROJECTS]], [[feedback_billable_hours_dedup]], [[feedback_dayoff_silence]], [[feedback_email_register_stub_upgrade]], [[feedback_estimating_no_api]], [[feedback_fastapi_route_order]], [[feedback_legacy_db_safety]], [[feedback_narrative_before_details]]…
 
@@ -93,7 +171,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Local:** `/root/Wrestling-Performance-Tracker` (235.4 MB) · CLAUDE.md ✓
 - **Lang:** JavaScript · **Last push:** 2026-05-09 · **Vis:** PRIVATE
 - **Services:** `wrestling-api`✓
-- **Hosts:** `_`, `constantwrestling.cloud`
+- **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)]
 - **Memory (17):** [[PROJECTS]], [[feedback_narrative_before_details]], [[feedback_wrestling_norm_attempts]], [[project_10k_strategy]], [[project_deploy_state]], [[project_git_repos_daily]], [[project_mobile_dev_workflow]], [[project_son_french_tutor]]…
 
 ### [Claude-Telegram-Bot](https://github.com/InfinitySudo/Claude-Telegram-Bot)
@@ -108,16 +186,6 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 ## 🟡 Dev (4)
 
-### [graph-system](https://github.com/InfinitySudo/graph-system)
-
-> Knowledge graphs for memory, trading, tutors, OnTime — start with memory_graph
-
-- **Local:** `/root/graph-system` (0.7 MB)
-- **Lang:** HTML · **Last push:** 2026-05-14 · **Vis:** PRIVATE
-- **Services:** `graph-rebuild`✗
-- **Hosts:** —
-- **Memory (1):** [[PROJECTS]]
-
 ### [Claude-AI-md-files](https://github.com/InfinitySudo/Claude-AI-md-files)
 
 > 4BotsBybit Trading Bot - Complete Project Documentation & Analysis
@@ -128,6 +196,16 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Hosts:** —
 - **Memory (5):** [[PROJECTS]], [[feedback_auto_push_default]], [[feedback_sync_memory_on_commit]], [[project_git_repos_daily]], [[project_mobile_dev_workflow]]
 
+### [graph-system](https://github.com/InfinitySudo/graph-system)
+
+> Knowledge graphs for memory, trading, tutors, OnTime — start with memory_graph
+
+- **Local:** `/root/graph-system` (0.7 MB)
+- **Lang:** HTML · **Last push:** 2026-05-14 · **Vis:** PRIVATE
+- **Services:** `graph-rebuild`✗
+- **Hosts:** —
+- **Memory (1):** [[PROJECTS]]
+
 ### [Solo_Claude_ru](https://github.com/InfinitySudo/Solo_Claude_ru)
 
 > Bilingual draft-to-publish pipeline for @solo_claude (RU) and @Solo_Claude_en (EN) TG channels. Build in public, automated daily post generator, inline-button approval flow.
@@ -135,7 +213,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Local:** `—` (— MB)
 - **Lang:** Python · **Last push:** 2026-05-02 · **Vis:** PRIVATE
 - **Services:** —
-- **Hosts:** `_`, `constantwrestling.cloud`, `ontime.management`, `son.constantwrestling.cloud`, `teacher1.constantwrestling.cloud`, `voice.constantwrestling.cloud`
+- **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
 - **Memory (10):** [[PROJECTS]], [[feedback_narrative_before_details]], [[feedback_oauth_rate_limits]], [[project_deploy_state]], [[project_git_repos_daily]], [[project_gpu_homelab_plan]], [[project_mobile_dev_workflow]], [[project_solo_claude_bot]]…
 
 ### [English-Teacher-CELPIP](https://github.com/InfinitySudo/English-Teacher-CELPIP)
@@ -159,7 +237,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Local:** `—` (— MB)
 - **Lang:** Python · **Last push:** 2026-04-08 · **Vis:** PRIVATE
 - **Services:** —
-- **Hosts:** `_`, `constantwrestling.cloud`, `ontime.management`, `son.constantwrestling.cloud`, `teacher1.constantwrestling.cloud`, `voice.constantwrestling.cloud`
+- **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
 - **Memory (3):** [[PROJECTS]], [[project_claude_telegram_bot]], [[project_git_repos_daily]]
 
 ### [my-openclaw-brain](https://github.com/InfinitySudo/my-openclaw-brain)
@@ -167,7 +245,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Local:** `—` (— MB)
 - **Lang:** — · **Last push:** 2026-04-08 · **Vis:** PRIVATE
 - **Services:** —
-- **Hosts:** `_`, `constantwrestling.cloud`, `ontime.management`, `son.constantwrestling.cloud`, `teacher1.constantwrestling.cloud`, `voice.constantwrestling.cloud`
+- **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
 - **Memory (1):** [[PROJECTS]]
 
 ### [bybit-trading-bot](https://github.com/InfinitySudo/bybit-trading-bot)
@@ -177,5 +255,5 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Local:** `—` (— MB)
 - **Lang:** Python · **Last push:** 2026-03-15 · **Vis:** PRIVATE
 - **Services:** —
-- **Hosts:** `_`, `constantwrestling.cloud`, `ontime.management`, `son.constantwrestling.cloud`, `teacher1.constantwrestling.cloud`, `voice.constantwrestling.cloud`
+- **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
 - **Memory (1):** [[PROJECTS]]
