@@ -47,15 +47,17 @@ metadata:
 
 ## Что осталось open (для завтра)
 
-1. **PK2 Ollama pull** — wait for `.ollama_pull_done` marker. ETA ~50 min с момента 2026-05-14 02:50 local. Когда готово — shadow race реально пойдёт PK1+PK2 параллельно (сейчас PK1 always winning потому что 32b только на PK1).
+1. ~~**PK2 Ollama pull**~~ — **DONE 2026-05-14 03:30 local**. Все 5 моделей на PK2: llava:13b + qwen2.5 7b/14b/32b + qwen2.5-coder:32b = 61.4 GB. PK1/PK2 симметрия достигнута, shadow race теперь реально параллельный.
 
-2. **DeOldify subprocess FAILED_SKIPPED** — диагностить. Возможные причины: deoldify import path, model loading, env activation в subprocess. Тестовый кейс: `D:\photo\samples\Adele_bw.png` → POST `/restore?deoldify=true` → headers покажут какая stage сфейлилась. `D:\photo\deoldify_runner.py` запускается из `D:\photo\deoldify_venv`. Логи в `D:\photo\server.log`.
+2. **DeOldify subprocess отключён** в `D:\photo\server.py` — `_deoldify_colorise` возвращает False с понятным комментом. Причины: fastai 1.0.61 + numpy 1/2 ABI conflict + `torch.from_numpy "Numpy is not available"`. Legacy stack хрупкий. Если действительно нужен colorize — заменить на современный (DDColor / CodeFormer-color / ControlNet с base CUDA 12 wheels), не пытаться чинить DeOldify.
 
-3. **Shadow stats на 32b** — после нескольких дней копится сравнение Claude Haiku vs qwen2.5:32b на triage. Если ≥90% triage_class + 100% business_id на 50+ rows → promote (flip default planner to Ollama, Claude становится fallback). Сейчас 14b давал 40% на triage_class — 32b ожидается лучше.
+3. ~~**Photo TG flow**~~ — **DONE**. `emails-bot` `on_photo`: если caption содержит `/restore` / `restore` / `восстанови` / `оживи` / `почини` — photo bytes forward на `http://100.99.211.123:8004/restore` → return restored PNG + caption (stages + elapsed + shape). Без keyword — обычный agent vision flow. Smoke test: 512×512 → 1024×1024 в 13с cold / ~0.5-1с warm.
 
-4. **Tim proposal** — отправлен Артёму в TG как .md + PDF через @AISmartFriendBot. Артём решает forward Тиму с какой подачей. Tier выбирает Tim → setup в работу.
+4. **Shadow stats на 32b** — после нескольких дней копится сравнение Claude Haiku vs qwen2.5:32b на triage. На момент checkpoint: 6 rows (всё ещё 14b), triage_class match 50%, business_id 100%, project_id 83%. Новые письма пойдут уже на 32b race PK1+PK2. Если ≥90% triage_class + 100% business_id на 50+ rows → promote (flip default planner to Ollama, Claude становится fallback).
 
-5. **Phase 4 finalisation** — VPS-side клиент для PhotoServer (TG бот endpoint который принимает фото → POST на PK1 :8004 → возвращает restored). Пока сервер работает, клиента нет.
+5. **Tim proposal** — отправлен Артёму в TG как .md + PDF через @AISmartFriendBot. Артём решает forward Тиму с какой подачей. Tier выбирает Tim → setup в работу.
+
+6. **PhotoServer надо рестартовать** один раз чтобы GFPGAN загружен warm — после рестарта таска первый restore берёт 13с на VRAM load. Можно сделать prewarm endpoint или просто принять что первый запрос дня будет slower.
 
 ## Ключевые decisions сессии (для контекста на завтра)
 
