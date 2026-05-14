@@ -139,6 +139,8 @@
 - [Two Bots One DB](feedback_emails_two_bots_shared_db.md) — emails-bot (Артём, TEST_MODE) + emails-bot-tim (Тим) делят emails.db; всё agent-state нести owner_chat_id
 - [No Names in Action Types](feedback_action_type_no_names.md) — ask_tim → ask_owner; имена людей не лезут в enum/event-name идентификаторы
 - [Emails 🤖 AI Plan Button](feedback_emails_agent_handle_button.md) — `act:agent:<uid>` на triage card → Claude planner с email body; Gmail/Cal tools ещё stub
+- [Ollama race + shadow triage](project_ollama_race_shadow.md) — PK1+PK2 LLM race helper в emails-bot; shadow vs Claude Haiku; promote если ≥90% совпадение
+- [Session 2026-05-14 checkpoint](project_session_2026_05_14_emails_perf_photo.md) — emails perf tiers 1-4 + Calendar OAuth + /demo + tim_proposal + PK1 photo server :8004 + open items
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
