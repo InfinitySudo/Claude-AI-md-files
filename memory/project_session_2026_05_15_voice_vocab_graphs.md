@@ -62,6 +62,24 @@ metadata:
 - **Graphs Hub stats refresh**: пилюли с числами hardcoded. JSON у каждого графа уже содержит `stats.nodes/edges` — можно сделать async fetch при загрузке hub'а. Не приоритет.
 - **DexClaud скрин не сохранился**: фото от Артёма в @DexClaudCodAIBot уходят в `claude-telegram-bot::handle_photo` → temp file → `os.unlink`. Чтоб сохранить — caption начинается с `save:<name>`, файл ляжет в `/root/incoming/<name>.jpg`. Артёму это объяснено.
 
+## 8. Projects-graph rebuild A+B+D
+Артём посмотрел на новый Hub и сказал «во вкладке Projects хаос». Был прав — визуально то был не Projects-граф а смешанный Projects×Memory×Services×Hosts с 81% edges = `documented_by` (project↔memory). Один ~146-degree хаб (emails-optimization) перетягивал всю физику.
+
+**A.** В builder выкинул блок добавления memory-нод и `documented_by` edges из графа. Memory остаётся в `projects` JSON (для PROJECTS.md и для `memory_count` на project-ноде), но в canvas не идёт.
+**B.** Layout `cose` → `concentric` с custom level: `project=0` (центр), `service=1`, `host=2`. Внутри уровня большая степень тянет к центру. Сразу читается «что где работает».
+**D.** Edge styling по kind: `runs` solid purple (#a87adb), `served_at` dashed orange (#dba24c). Фильтр-чипы в sidebar — по типу нод И по edge kind (отдельные секции).
+
+Также:
+- Drop'нул `host:_` (nginx default catch-all — фейк).
+- Drop unconnected projects — те что в GitHub но не привязаны к local infra (есть в digest, не в canvas).
+- Status border на project-ноде по статусу (live/dev/paused/archived).
+
+**Цифры:** 248→71 нод, 458→81 edges. Топ-хабы теперь по реальной infra coupling: `4BotsBybit-Trading` (15), `voice-tutor` (10), `gerchik-trading-agent` (9), `OnTime` (7), `emails-optimization` (5). До правки emails был 146 — почти всё было «у меня много memory про emails», не «emails запускает много сервисов».
+
+**Паттерн на будущее:** один граф = один вопрос. Если хочется показать другую ось (память, dependencies, deploys, история коммитов) — отдельный граф или filter chip, не вторая ось в том же canvas.
+
+Коммит: `graph-system@f9879d1`.
+
 ## Коммиты этой сессии
 - `voice-tutor@7bc7378`: tts route Russian to OpenAI nova HD; explicit base_url avoids DeepSeek trap
 - `wife-english-tutor@ab3a8f3`: ui: avatar takes top third (33vh)
