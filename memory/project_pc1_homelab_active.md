@@ -19,8 +19,9 @@ ssh tkach@100.99.211.123
 | Task | Endpoint | Что | Models |
 |---|---|---|---|
 | **OllamaServe** | `http://100.99.211.123:11434/v1` | LLM (OpenAI-compatible) | qwen2.5:7b/14b/32b, qwen2.5-coder:32b |
-| **faster-whisper-server** | `http://100.99.211.123:8001` | STT (OpenAI `/v1/audio/transcriptions`) — также возвращает word-timings | small.en на CUDA float16 |
-| **kokoro-tts-server** | `http://100.99.211.123:8002` | TTS (OpenAI `/v1/audio/speech`) — голоса alloy/echo/fable/onyx/nova/shimmer/coral/ash mapped → kokoro | Kokoro-82M-v1.0 на onnxruntime-gpu |
+| **faster-whisper-server** | `http://100.99.211.123:8001` | STT (OpenAI `/v1/audio/transcriptions`) — также возвращает word-timings | large-v3 на CUDA float16 (с 2026-05-13, ранее small.en — переключили чтобы выровнять с PK2) |
+| **kokoro-tts-server** | `http://100.99.211.123:8002` | TTS (OpenAI `/v1/audio/speech`) — голоса alloy/echo/fable/onyx/nova/shimmer/coral/ash mapped → kokoro. **English only.** | Kokoro-82M-v1.0 на onnxruntime-gpu |
+| **silero-tts-server** | `http://100.99.211.123:8005` | TTS (OpenAI `/v1/audio/speech`) — **Russian** with proper stress (Калгари → КА́лгари). voice mapping nova→kseniya и т.д. | silero v4_ru на torch+CUDA |
 
 ## Hardware
 - **GPU**: NVIDIA RTX 3090, 24576 MiB VRAM (~23.3 GiB free idle)
@@ -58,8 +59,23 @@ ssh tkach@100.99.211.123
 - venv: `C:\Users\tkach\fws\venv`
 - Зависимости: `faster-whisper`, `fastapi`, `uvicorn[standard]`, `python-multipart`, `nvidia-cublas-cu12`, `nvidia-cudnn-cu12`
 - ⚠ **Критично**: scheduled task action оборачивает в `cmd /c "set PATH=...nvidia\cublas\bin;...nvidia\cudnn\bin;%PATH% && python ..."`. Без этого `cublas64_12.dll` не найдена.
+- Машинная env `FWS_MODEL=large-v3` (с 2026-05-13). `WHISPER_MODEL=*` machine vars в serve.py НЕ читаются — там `FWS_MODEL/FWS_DEVICE/FWS_COMPUTE_TYPE`, не WHISPER_*.
 - Логи: `C:\Users\tkach\fws\stdout.log`, `stderr.log`
 - Re-register скрипт: `C:\Users\tkach\fws\register_fws_task.ps1`
+
+## Где живёт silero-tts-server (Russian TTS)
+- Код: `C:\Users\tkach\silero-tts\main.py` (FastAPI OpenAI-compatible)
+- venv: `C:\Users\tkach\silero-tts\venv` (torch+CUDA 12.1, torchaudio, omegaconf, fastapi, num2words, soundfile)
+- Модель: `snakers4/silero-models` v4_ru, скачивается в `C:\WINDOWS\system32\config\systemprofile\.cache\torch\hub` при первом запуске SYSTEM-task
+- start.bat env (важно — оба нужны):
+  - `set SILERO_DEFAULT_VOICE=baya` — текущий выбранный голос Артёма (2026-05-14). Сменить голос = только этот var + перерестарт scheduled task.
+  - `set PATH=C:\Users\tkach\AppData\Local\Microsoft\WinGet\Links;%PATH%` — без этого SYSTEM task не находит ffmpeg.
+- Voice mapping: alloy→baya, echo/fable→eugene, onyx→aidar, shimmer→xenia, **nova→DEFAULT_SPEAKER** (т.е. на что бы ни переключили env — клиент шлёт voice="nova" и получит правильный). Доступные: aidar, baya, kseniya, xenia, eugene.
+- Sample rate 48 kHz, put_accent=True/put_yo=True для корректной просодии
+- ⚠ **Цифры**: Silero v4_ru глотает голые digits ("109543" → молчит/обрывает). Поэтому в server.py есть `_expand_numbers()` через `num2words(lang="ru")` ДО синтеза — `109543` → «сто девять тысяч пятьсот сорок три», `$100` → «сто долларов», `25%` → «двадцать пять процентов», `2.5` → «два целых пять». Без этого preprocessing любые числа в TTS-выводе будут пропадать.
+- Smoke-test: `curl -X POST http://100.99.211.123:8005/v1/audio/speech -d '{"voice":"nova","input":"Биткоин 109543","response_format":"mp3"}'`
+- Логи (наш custom format с текстом запроса) в `C:\Users\tkach\silero-tts\stderr.log` (uvicorn перенаправляет logging.StreamHandler в stderr).
+- ⚠ `taskkill /im python.exe` или `/fi "MEMUSAGE gt 500000"` **прибивает все TTS-сервисы сразу** (kokoro+silero оба занимают 800MB+). Всегда таргетить по PID через `wmic ... where "commandline like '%main.py%'"` (не "silero" — путь main.py относительный, не матчится) или останавливать через schtasks.
 
 ## Где живёт kokoro-tts-server
 - Код: `C:\Users\tkach\kts\serve.py`

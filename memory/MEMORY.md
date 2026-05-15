@@ -1,3 +1,5 @@
+- [🗂 Projects digest](PROJECTS.md) — START HERE: all 16 projects with status, local paths, services, hosts, DBs, env keys, linked memories. Auto-regenerated every 30 min.
+- [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto PROJECTS.md digest infra. How to add new modules.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
@@ -16,6 +18,7 @@
 - [Realized PnL Column](project_realized_pnl_column.md) — realized_pnl_usd = total, gross_pnl_usd = final chunk only
 - [Dashboard Settings Tab](project_dashboard_settings_tab.md) — SETTINGS_REGISTRY is source of truth; confirm phrases for REAL/update/clean
 - [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
+- [Toast Pointer Events](feedback_toast_pointer_events.md) — opacity:0 без pointer-events:none молча ест клики по tabs под ним
 - [real_trades Schema](project_real_trades_schema.md) — narrower than simulated_trades; get_alltime_stats crashes on missing columns
 - [Signal Config Path Trap](feedback_signal_bot_config_path.md) — src/ is real, root is orphan; always use env_config.SIGNAL_BOT_CONFIG_PATH
 - [SignalBot Bar Logic](feedback_signal_bar_logic.md) — confirm=True only, slice по ws_config volume_avg_bars/trend_bars (не [-6:]), REST-warmup 5m
@@ -56,12 +59,12 @@
 - [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)
 - [TG Channel Plan](project_tg_channel_plan.md) — active с 2026-04-16: solo-founder-with-AI, RU, настоящее имя, 4 поста/нед, бюджет $300–500/мес, название @solo_claude
 - [solo_claude_bot infra](project_solo_claude_bot.md) — `/root/solo_claude_bot/` CLI для постинга; 2 бота, venv, .env; CHAT_* ждут chat_id
-- [CELPIP Teacher Bots](project_celpip_bots.md) — 2 TG-бота Артёма (CLB 10) и Лилии (CLB 8); voice Whisper+Claude+TTS; `/root/English-Teacher-CELPIP`
 - [Claude Telegram Bot repo](project_claude_telegram_bot.md) — `/root/claude-telegram-bot` → `Claude-Telegram-Bot` (не OpenClaw-v3); voice+vision+tools+OAuth
 - [Narrative Before Details](feedback_narrative_before_details.md) — в @solo_claude: сначала origin-story проектов, только потом tech-детали и build-in-public
 - [Sync Memory on Commit](feedback_sync_memory_on_commit.md) — Каждый push: checkpoint сессии в memory + sync в Claude-AI-md-files
 - [Hourly Report v2](project_hourly_report_v2.md) — Compressed B/C layout + clickable close-reasons → dashboard filter (period/close/strategy + anchors)
 - [Grafana → infinityopenclowbot](project_grafana_alerts.md) — Все Trading Alerts идут в @infinityopenclowbot c 2026-05-03; как откатить
+- [Grafana v13 Resource Table](feedback_grafana_v13_resource_table.md) — дашборды в `resource`, не `dashboard`; SQLite-фикс + restart, формат JSON
 - [OnTime Extra Work](project_tsa_extra_work.md) — 4-я вкладка: approval workflow + photos + daily-report linkage + TG notify
 - [OnTime Roles + Workflow](project_tsa_roles_workflow.md) — 4 новых управленческих роли, линейный EW workflow, notifications bell, director digest
 - [OnTime Lifts + Refuels](project_tsa_lifts.md) — 11 лифтов catalog, per-refuel log, monthly consumption report; одна роль delivery, sub-task Refuel
@@ -85,6 +88,10 @@
 - [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
 - [Dashboard UTC](feedback_dashboard_utc.md) — SQL params c datetime.now() (local) тихо отрезают последние UTC_offset часов; всегда utcnow()
 - [GA Walk-Forward](project_ga_walk_forward_todo.md) — ACTIVE с 2026-04-25: 70/30 train/test split в evaluate(), fitness=test−K·saturating(train−test)
+- [GA Unrealistic TPs](feedback_ga_unrealistic_tps.md) — GA выдаёт TP 13-48R, реал MFE ~2%; сверять с MFE до apply, чинить через time-stop+MFE-cap
+- [GA Under Review](project_ga_under_review.md) — 2026-05-13 Артём на грани отказа от GA; не запускать без запроса; fix-vs-kill решение pending
+- [MFE Calibration](project_mfe_calibration.md) — 📐 MFE tab + /api/mfe/* — data-driven TP-тюнинг из реальной peak_pnl_pct; используй вместо GA; CONS+TREND applied 2026-05-13
+- [Funnel vs Close Reason](feedback_funnel_vs_close_reason.md) — TP-funnel ячейки overlap (trigger events); mutually exclusive разбивка — только close_reason
 - [Labor vs Purchase Materials](feedback_ontime_labor_vs_purchase.md) — два РАЗНЫХ вида материалов в OnTime; install rates ≠ vendor prices; не маскировать одно другим
 - [OnTime Delivery Shortages](project_tsa_shortages.md) — short-ship tracking на PO items; wait/reorder/resolved + 7d TG nudge для форменов
 - [BOM replace trap](feedback_ontime_bom_replace_trap.md) — _set_project_materials делает DELETE+INSERT; неполный body стирает BOM
@@ -109,9 +116,13 @@
 - [BE on Real](feedback_be_on_real.md) — реконсайлер двигает SL→entry±offset когда pnl≥activation; до 2026-04-29 BE на real был статичным TP, никогда не срабатывал
 - [_query Swallow](feedback_query_write_swallow.md) — stats_mgr._query до 2026-04-29 ел INSERTы без commit; workaround: _db_exec из dashboard
 - [TG Keyboard Emoji-Prefix](feedback_telegram_keyboard_emoji.md) — KeyboardButton "📅 /daily" не дёргает CommandHandler (offset != 0); нужен /stop + re-dispatch
+- [TG Persistent Keyboard](feedback_tg_persistent_keyboard.md) — reply_markup=QUICK_KB на free-chat reply, не только /start; MenuButtonWebApp заменяет commands menu
 - [React Hooks Order](feedback_react_hooks_order.md) — useMemo/useState/useEffect ВСЕГДА выше `if (...) return null`; иначе blank screen
 - [voice-tutor (@AISmartFriendBot)](project_voice_tutor.md) — TG голосовой собеседник + Mini App с continuous VAD/barge-in; voice.constantwrestling.cloud
 - [voice-tutor OAuth 500](feedback_voice_tutor_oauth_500.md) — "слушает не отвечает" = первая гипотеза истёкший Claude OAuth; jq expiresAt + grep 401 в web-systemd.log
+- [Tutor TTS/STT wiring](feedback_tutor_tts_wiring.md) — TTS/STT в tutor-ботах ОБЯЗАНЫ идти PC1→PC2→OpenAI; глобальный `openai` без base_url = silent fallback на OpenAI; startup log обязателен
+- [Tutor live tools](project_tutor_live_tools.md) — wife-english-tutor с tool-use: BTC/ETH price (Bybit) + weather (wttr.in); bot/tools.py + call_claude(tools=, tool_runner=)
+- [OAuth force-refresh](feedback_oauth_force_refresh.md) — disk_token_fresh ≠ valid; 401-handler ОБЯЗАН вызывать refresh API через force_refresh=True, не только cache_stale
 - [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
 - [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
 - [Hourly Supervisor (deterministic)](project_hourly_supervisor.md) — заменил opus-агент Python-скриптом; haiku только при events/anomalies
@@ -131,6 +142,10 @@
 - [No Tables for TG Forward](feedback_no_tables_tg_forward.md) — markdown tables ломаются при пересылке Тиму в TG; bullets only в docs/tim_*.md и в чат-ответах
 - [Two Bots One DB](feedback_emails_two_bots_shared_db.md) — emails-bot (Артём, TEST_MODE) + emails-bot-tim (Тим) делят emails.db; всё agent-state нести owner_chat_id
 - [No Names in Action Types](feedback_action_type_no_names.md) — ask_tim → ask_owner; имена людей не лезут в enum/event-name идентификаторы
+- [Emails 🤖 AI Plan Button](feedback_emails_agent_handle_button.md) — `act:agent:<uid>` на triage card → Claude planner с email body; Gmail/Cal tools ещё stub
+- [Ollama race + shadow triage](project_ollama_race_shadow.md) — PK1+PK2 LLM race helper в emails-bot; shadow vs Claude Haiku; promote если ≥90% совпадение
+- [Session 2026-05-14 checkpoint](project_session_2026_05_14_emails_perf_photo.md) — emails perf tiers 1-4 + Calendar OAuth + /demo + tim_proposal + PK1 photo server :8004 + open items
+- [Session 2026-05-15 voice/vocab/graphs](project_session_2026_05_15_voice_vocab_graphs.md) — Silero RU on PC1 + voice-tutor → nova HD + wife/son tutor lookup 28s→1.3s + OnTime Graph orphan fix + Graphs Hub at /graphs/
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
@@ -142,13 +157,22 @@
 - [OnTime CSS Vars](feedback_ontime_css_vars.md) — Никогда `--tsa-fg` (нет такой); текст `--tsa-text`, тёмный bg `bg-slate-900`
 - [Photo Restoration CPU](project_photo_restoration.md) — GFPGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; работает но очень медленно — кандидат на GPU миграцию
 - [GPU Homelab Plan](project_gpu_homelab_plan.md) — ПК1 ACTIVE: Tailscale + Ollama 7b/14b/32b + voice-tutor wired; ПК2 pending
-- [PC1 Homelab ACTIVE](project_pc1_homelab_active.md) — SSH `tkach@100.99.211.123`, Ollama :11434 + faster-whisper :8001 + kokoro-tts :8002 (все CUDA, AtBoot)
+- [PC1 Homelab ACTIVE](project_pc1_homelab_active.md) — SSH `tkach@100.99.211.123`, Ollama :11434 + faster-whisper :8001 + kokoro-tts EN :8002 + silero-tts RU :8005 (все CUDA, AtBoot)
 - [Verify Downloads](feedback_verify_downloads.md) — Перед use внешних файлов: source rep + SHA256 + file-type validation; обязательно во всех сессиях
 - [PC1 для тяжёлого compute](feedback_pc1_for_heavy_compute.md) — Всё тяжёлое (ML/GA/photo/backtests) на ПК1, VPS только для live-сервисов
+- [Tutor Latency Pipeline](project_tutor_latency_pipeline.md) — 4-phase оптимизация /api/voice: Haiku+gather+split+LLM stream+STT race+TTS proxy. 8s→2-4s
+- [PC2 Homelab Active](project_pc2_homelab_active.md) — ПК2 `borys@100.73.22.1` RTX 3090; Ollama 11434, whisper 8001; tutor STT race подключён
+- [GA backtester daily=0](feedback_ga_backtester_daily_zero.md) — Phase 1 sanity script ловит когда daily ATR returns 0 (cache stale on PK1)
+- [GA Realism Overhaul](project_ga_realism_overhaul.md) — Phase 1-4+2.5 в 1 сессии: Sharpe annualised + costs + constraints + blacklist + diff UI + env-overrides
+- [OpenAI base_url shell trap](feedback_openai_base_url_shell.md) — env `OPENAI_BASE_URL` routes to DeepSeek; передавай `base_url=` явно
+- [Avatar Video Calibration](feedback_avatar_video_calibration.md) — OpenCV Haar face-bbox → точный scale+y_pad для photo↔video matched
+- [WET Word Lookup 28s→1s](feedback_wet_word_lookup_slow.md) — `/api/word/lookup` тормозил из-за Ollama JSON-prompt; Claude Haiku first + TTS в фоне thread
+- [DexClaud Bridge Bot](feedback_dexclaud_bridge.md) — @DexClaudCodAIBot уведомления Артёму; token+chat_id из 4BotsBybit .env
 - [Baseline V2](project_baseline_v2_2026-05-08.md) — Точка отсчёта новой системы 2026-05-08 19:44 UTC, $189.60; что вошло в rebuild
 - [Baseline V3 (full wipe)](project_baseline_v3_2026-05-10.md) — БД полностью очищена 2026-05-10 05:42:10 UTC после волны фиксов; архивы в *_archive_20260510_baseline_v3_clean
 - [Pre-baseline-v3 = МУСОР](feedback_pre_baseline_v3_data_is_trash.md) — ВСЕГДА фильтровать `entry_time >= stats_baseline_at` при любом запросе к trading-таблицам
 - [Gerchik Trading Agent](project_gerchik_bot.md) — AI agent /root/gerchik-trading-agent (private GH repo); 4-layer self-learning; шарит Bybit+Postgres с 4BotsBybit; Volume Spike blacklist BTC/ETH/SOL
+- [Gerchik leverage 88× → 35×](feedback_gerchik_leverage_88_too_high.md) — 2026-05-12: liquidation_buffer фильтр душил Layer 1 на 88×; 35× = ~2.85% liq, SL помещаются
 - [Meta-labeler V1](project_meta_labeler_v1.md) — XGBoost AUC 0.728 shadow mode; promote после 50+ post-baseline сделок
 - [Risk Officer](project_risk_officer.md) — Hourly LLM defensive auto-pause; LLM-on-CAUTION OFF на 7 дней
 - [Cron-зоопарк](project_cron_zoo_2026-05-08.md) — 10 timer'ов trading-системы, расписание + назначение
@@ -157,6 +181,8 @@
 - [TG ControlBot slash](feedback_tg_controlbot_slash.md) — @ControlByBitTradingBot принимает /status /balance /pause /resume /help
 - [GA GPU Migration](project_ga_gpu_migration.md) — DONE 2026-05-08; canonical schema + dashboard wired; см. project_baseline_v2
 - [Wife English Tutor](project_wife_english_tutor.md) — план готов 2026-05-07, репо InfinitySudo/wife-english-tutor; A1-A2 жена, разработка после fix voice-tutor
+- [Son French Tutor](project_son_french_tutor.md) — TG bot id 8341136914 для Andrii (11-14yo, A1) fork wife; persona Lucas, onyx, port 8766
+- [Multi-FIX per sentence](feedback_multi_fix_per_sentence.md) — каждое ошибочное предложение свой [FIX]; русский input всегда обрабатывается; ответы 3-5 фраз
 - [Wife Tutor Correction-First](project_wife_tutor_correction_first.md) — `[FIX]...[/FIX]` в начале ответа: голос произносит поправку, потом продолжает беседу
 - [Session Hours Open-Lunch](feedback_session_hours_open_lunch.md) — open session live projection ОБЯЗАН вычитать 12:00-12:30 обед, иначе reports разъезжаются на 30 мин от payroll
 - [Apr 27 Domain Outage](project_ontime_apr27_outage.md) — 26 рабочих 2026-04-27 имеют stored=9.0 как ручная компенсация за outage; не трогать
@@ -169,3 +195,4 @@
 - [Daily-Driver Git Repos](project_git_repos_daily.md) — все репо InfinitySudo с путями на VPS, GitHub origin, live-сервисами и quick-cd по теме
 - [Bybit empty result truthy-trap](feedback_bybit_empty_result_truthy_trap.md) — Bybit V5 на success отдаёт `{retCode:0, result:{}}`; `if not res` ловит это как failure → проверяй через `is None`
 - [Bybit V5 open/close knowledge](project_bybit_v5_open_close_knowledge.md) — verified правила (minNotional $5, sequence, fees/slippage); e2e test `tests/manual/bybit_e2e_open_close.py`
+- [Sophie lip-sync](project_sophie_lipsync.md) — SadTalker on PC1 :8003 для сын/жена/voice-tutor; Wav2Lip миграция pending; PC1 offline = lipsync auto-disabled

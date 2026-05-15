@@ -1,6 +1,6 @@
 ---
 name: Wife English Tutor — план 2026-05-07
-description: Артём заказал AI-учителя английского для жены (A1-A2 → разговорный быт в Канаде); репо создан, разработка после voice-tutor fixes и GPU GA
+description: AI-учитель английского @EnglishTecherTutorBot. Persona Алёна Николаевна (shimmer). Latency pipeline ported 2026-05-12 (Haiku + streaming TTS + STT race). Max_tokens 1200 — развёрнутые ответы (Lilia просила полнее).
 type: project
 originSessionId: b0493378-8df7-4334-bf78-c554bd77a27c
 ---
@@ -18,8 +18,9 @@ originSessionId: b0493378-8df7-4334-bf78-c554bd77a27c
 
 **Платформа:** TG bot + PWA web (общая БД прогресса)
 
-**Stack:**
-- LLM: Claude Sonnet 4.6 для педагогики, Haiku для коротких реплик, qwen2.5 fallback
+**Stack (2026-05-12):**
+- LLM: Claude **Haiku 4.5** для всего (был Sonnet); `reply_for_turn` default переключен. max_tokens **1200** (было 700) — жене нужны развёрнутые ответы (4-6 предложений, до 8 на запрос объяснения). Persona prompt updated.
+- Latency: streaming TTS pipeline = same as son-french-tutor; см. [[project_tutor_latency_pipeline]]. Backend turn ~2-4s.
 - STT: OpenAI Whisper → faster-whisper local после ПК1 готова
 - TTS: OpenAI tts-1 → XTTS-v2 local
 - DB: SQLite (mistakes, vocab, lessons, lesson_progress)

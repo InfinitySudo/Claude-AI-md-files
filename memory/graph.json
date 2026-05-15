@@ -1,0 +1,2907 @@
+{
+  "nodes": [
+    {
+      "file": "project_10k_strategy.md",
+      "id": "$10k/mo Strategy (Artem)",
+      "name": "$10k/mo Strategy (Artem)",
+      "title": "$10K/Mo Strategy (Artem)",
+      "type": "project",
+      "summary": "Ranked paths to $10k+/mo using AI, tailored to Artem's assets. Discussed 2026-04-16. TG channel picked as parallel track; primary product path still OnTime productization.",
+      "size": 2792
+    },
+    {
+      "file": "feedback_action_type_no_names.md",
+      "id": "Action-type identifiers — никаких имён людей в коде",
+      "name": "Action-type identifiers — никаких имён людей в коде",
+      "title": "Action Type Identifiers — Никаких Имён Людей В Коде",
+      "type": "feedback",
+      "summary": "ask_tim → ask_owner; имя в идентификаторе с маленькой буквы выглядит как ошибка в его имени",
+      "size": 787
+    },
+    {
+      "file": "feedback_auto_push_default.md",
+      "id": "Auto-push enabled by default (2026-05-02)",
+      "name": "Auto-push enabled by default (2026-05-02)",
+      "title": "Auto Push Enabled By Default (2026 05 02)",
+      "type": "feedback",
+      "summary": "Артём не хочет пушить руками — Claude-сессии должны делать commit+push сразу, во всех репо включая trading",
+      "size": 1604
+    },
+    {
+      "file": "feedback_be_offset_pct_meaning.md",
+      "id": "BE offset interpreted as % of entry price (NOT % of SL distance)",
+      "name": "BE offset interpreted as % of entry price (NOT % of SL distance)",
+      "title": "Be Offset Interpreted As % Of Entry Price (Not % Of Sl Distance)",
+      "type": "feedback",
+      "summary": "Обнаружено 2026-05-08: be_price_offset_pct=3.0 означало SL → entry+3% на LONG, фактически делало BE второй TP — реальный bug в GA-выводе/коде; правильные значения 0.1-0.5%",
+      "size": 1305
+    },
+    {
+      "file": "feedback_be_on_real.md",
+      "id": "BE на real (move SL→entry)",
+      "name": "BE на real (move SL→entry)",
+      "title": "Be На Real (Move Sl→Entry)",
+      "type": "feedback",
+      "summary": "На real BE-protection реализован отдельным monitor'ом в reconciler — paper держит свою логику, real использует Bybit set_trading_stop",
+      "size": 1214
+    },
+    {
+      "file": "project_backtest_findings.md",
+      "id": "Backtest findings and parameter sensitivity",
+      "name": "Backtest findings and parameter sensitivity",
+      "title": "Backtest Findings And Parameter Sensitivity",
+      "type": "project",
+      "summary": "Key findings from parameter sweeps on CONS strategy — what works, what doesn't, the spike filter result and its limits",
+      "size": 3508
+    },
+    {
+      "file": "project_baseline_v3_2026-05-10.md",
+      "id": "Baseline V3 — 2026-05-10 05:28:55 UTC",
+      "name": "Baseline V3 — 2026-05-10 05:28:55 UTC",
+      "title": "Baseline V3 — 2026 05 10 05:28:55 Utc",
+      "type": "project",
+      "summary": "Чистая точка старта новой статистики после волны фиксов 2026-05-09; всё что до неё — мусор, для решений не использовать",
+      "size": 4061
+    },
+    {
+      "file": "feedback_billable_service_close.md",
+      "id": "Billable service tasks workflow",
+      "name": "Billable service tasks workflow",
+      "title": "Billable Service Tasks Workflow",
+      "type": "feedback",
+      "summary": "Billable service tasks must transit service → to_invoice → (accounting) → complete; service role cannot skip to complete",
+      "size": 1946
+    },
+    {
+      "file": "project_bybit_v5_open_close_knowledge.md",
+      "id": "Bybit V5 open/close — verified knowledge",
+      "name": "Bybit V5 open/close — verified knowledge",
+      "title": "Bybit V5 Open/Close — Verified Knowledge",
+      "type": "project",
+      "summary": "Подтверждённые правила и подводные камни Bybit V5 для market open/close на linear perp; e2e-тест в gerchik-trading-agent/tests/manual/bybit_e2e_open_close.py",
+      "size": 4435
+    },
+    {
+      "file": "feedback_bybit_ws_keepalive.md",
+      "id": "Bybit WS keepalive + supervisor",
+      "name": "Bybit WS keepalive + supervisor",
+      "title": "Bybit Ws Keepalive + Supervisor",
+      "type": "feedback",
+      "summary": "websocket-client run_forever() требует ping_interval + supervisor-loop + idle watchdog — иначе SignalBot периодически замирает silent",
+      "size": 1938
+    },
+    {
+      "file": "feedback_bybit_empty_result_truthy_trap.md",
+      "id": "Bybit empty result truthy-trap",
+      "name": "Bybit empty result truthy-trap",
+      "title": "Bybit Empty Result Truthy Trap",
+      "type": "feedback",
+      "summary": "Bybit V5 endpoints (особенно /position/trading-stop) на success возвращают retCode=0 с result={}; `if not res` интерпретирует это как failure",
+      "size": 1551
+    },
+    {
+      "file": "feedback_bybit_signing_order.md",
+      "id": "Bybit signing order trap",
+      "name": "Bybit signing order trap",
+      "title": "Bybit Signing Order Trap",
+      "type": "feedback",
+      "summary": "bybit_api.py _request(\"GET\") signs sorted params but used to send unsorted — silent 401 on auth-required endpoints with non-alphabetical insertion order",
+      "size": 1069
+    },
+    {
+      "file": "feedback_chartjs_unbounded_height.md",
+      "id": "Chart.js freezes browser without bounded parent height",
+      "name": "Chart.js freezes browser without bounded parent height",
+      "title": "Chart.Js Freezes Browser Without Bounded Parent Height",
+      "type": "feedback",
+      "summary": "Wrap every Chart.js canvas in a fixed-height div, otherwise the responsive resize loop grows the canvas forever",
+      "size": 1385
+    },
+    {
+      "file": "project_claude_telegram_bot.md",
+      "id": "Claude Telegram Bot repo",
+      "name": "Claude Telegram Bot repo",
+      "title": "Claude Telegram Bot Repo",
+      "type": "project",
+      "summary": "Personal \"Bot для общения с тобой\" — /root/claude-telegram-bot, pushes to Claude-Telegram-Bot repo (not OpenClaw-v3)",
+      "size": 1110
+    },
+    {
+      "file": "feedback_controlbot_shutdown_hook.md",
+      "id": "ControlBot при shutdown убивает все торговые боты",
+      "name": "ControlBot при shutdown убивает все торговые боты",
+      "title": "Controlbot При Shutdown Убивает Все Торговые Боты",
+      "type": "feedback",
+      "summary": "Kill старого ControlBot или остановка его через systemd triggers shutdown-хендлер, который шлёт SIGTERM SignalBot+TradingBot+StrategySwitcher",
+      "size": 1003
+    },
+    {
+      "file": "project_deploy_state.md",
+      "id": "Current deploy state on VPS",
+      "name": "Current deploy state on VPS",
+      "title": "Current Deploy State On Vps",
+      "type": "project",
+      "summary": "Which services run where, ports, nginx routing, project directories — live production setup as of 2026-04-30 post-reboot",
+      "size": 4236
+    },
+    {
+      "file": "project_git_repos_daily.md",
+      "id": "Daily-Driver Git Repos",
+      "name": "Daily-Driver Git Repos",
+      "title": "Daily Driver Git Repos",
+      "type": "project",
+      "summary": "Все репо Артёма с которыми я регулярно работаю — пути на VPS, GitHub origin, что внутри, какие сервисы запускают",
+      "size": 4625
+    },
+    {
+      "file": "feedback_dashboard_view_lock.md",
+      "id": "Dashboard 502 от чужой idle-in-transaction",
+      "name": "Dashboard 502 от чужой idle-in-transaction",
+      "title": "Dashboard 502 От Чужой Idle In Transaction",
+      "type": "feedback",
+      "summary": "Dashboard-api виснет на старте если другой бот держит idle-in-transaction lock на real_trades_compat; защищено двумя слоями",
+      "size": 1889
+    },
+    {
+      "file": "feedback_dashboard_startup.md",
+      "id": "Dashboard API startup gotchas",
+      "name": "Dashboard API startup gotchas",
+      "title": "Dashboard Api Startup Gotchas",
+      "type": "feedback",
+      "summary": "Two issues found when dashboard_api_v3.py wasn't serving data — env pollution and nginx double config",
+      "size": 1028
+    },
+    {
+      "file": "feedback_dashboard_utc.md",
+      "id": "Dashboard SQL params must be UTC, not local time",
+      "name": "Dashboard SQL params must be UTC, not local time",
+      "title": "Dashboard Sql Params Must Be Utc, Not Local Time",
+      "type": "feedback",
+      "summary": "PostgreSQL `timestamp without time zone` columns store UTC; passing `datetime.now()` silently drops the most recent UTC_offset hours of data",
+      "size": 1258
+    },
+    {
+      "file": "project_dashboard_settings_tab.md",
+      "id": "Dashboard Settings tab architecture",
+      "name": "Dashboard Settings tab architecture",
+      "title": "Dashboard Settings Tab Architecture",
+      "type": "project",
+      "summary": "How the dashboard's Settings tab is wired up — endpoints, registry, confirm phrases, dual-writer invariant with ControlBot",
+      "size": 3602
+    },
+    {
+      "file": "project_dashboard_v2.md",
+      "id": "Dashboard V2 (per-strategy)",
+      "name": "Dashboard V2 (per-strategy)",
+      "title": "Dashboard V2 (Per Strategy)",
+      "type": "project",
+      "summary": "Unified per-strategy dashboard at /v2.html — kills paper/real split confusion; v1 still live until cutover",
+      "size": 4379
+    },
+    {
+      "file": "project_dashboard_apply_chain.md",
+      "id": "Dashboard settings apply chain (self-sufficient, no ControlBot needed)",
+      "name": "Dashboard settings apply chain (self-sufficient, no ControlBot needed)",
+      "title": "Dashboard Settings Apply Chain (Self Sufficient, No Controlbot Needed)",
+      "type": "project",
+      "summary": "POST /api/settings/<key> teper polnostyu primenyaet nastroiki — obnovlyaet vse tablicy + rebootayet servis. Artem planiruet otkazatsya ot TG ControlBot.",
+      "size": 1889
+    },
+    {
+      "file": "project_dashboard_split.md",
+      "id": "Dashboard split (DEPRECATED)",
+      "name": "Dashboard split (DEPRECATED)",
+      "title": "Dashboard Split (Deprecated)",
+      "type": "project",
+      "summary": "PAPER/REAL split-page setup is dead since 2026-05-05; replaced by per-strategy v2. Memory kept as historical context only",
+      "size": 1163
+    },
+    {
+      "file": "feedback_dashboard_v1_v2.md",
+      "id": "Dashboard v1 vs v2 — don't confuse",
+      "name": "Dashboard v1 vs v2 — don't confuse",
+      "title": "Dashboard V1 Vs V2 — Don'T Confuse",
+      "type": "feedback",
+      "summary": "Two dashboards live in parallel until v2 polished; editing the wrong one or the wrong layer (repo vs deploy) silently breaks prod",
+      "size": 3857
+    },
+    {
+      "file": "feedback_dashboard_first_workflow.md",
+      "id": "Dashboard-First Workflow",
+      "name": "Dashboard-First Workflow",
+      "title": "Dashboard First Workflow",
+      "type": "feedback",
+      "summary": "Артём хочет чтобы ВСЕ изменения настроек и операции делались через dashboard UI/endpoint, не напрямую в файлах/SQL/CLI",
+      "size": 1821
+    },
+    {
+      "file": "feedback_per_mode_dup_rule.md",
+      "id": "Dup-symbol rule is per (symbol, mode), not per symbol",
+      "name": "Dup-symbol rule is per (symbol, mode), not per symbol",
+      "title": "Dup Symbol Rule Is Per (Symbol, Mode), Not Per Symbol",
+      "type": "feedback",
+      "summary": "In hybrid mode paper-CONS and real-TREND on the same symbol can coexist — they're separate books",
+      "size": 1496
+    },
+    {
+      "file": "project_dust_sweep.md",
+      "id": "Dust auto-sweep in reconciler",
+      "name": "Dust auto-sweep in reconciler",
+      "title": "Dust Auto Sweep In Reconciler",
+      "type": "project",
+      "summary": "order_executor_wrapper auto-closes <10% qty residuals from server-side TP rounding to prevent orphan dust forever",
+      "size": 1151
+    },
+    {
+      "file": "project_emails_optimization.md",
+      "id": "Emails Optimization",
+      "name": "Emails Optimization",
+      "title": "Emails Optimization",
+      "type": "project",
+      "summary": "AI-секретарь для входящей почты — триаж Claude + управление через TG; репо emails-optimization",
+      "size": 5361
+    },
+    {
+      "file": "feedback_emails_user_guide.md",
+      "id": "Emails — keep user guide in sync with features",
+      "name": "Emails — keep user guide in sync with features",
+      "title": "Emails — Keep User Guide In Sync With Features",
+      "type": "feedback",
+      "summary": "При добавлении любой новой фичи в emails-optimization обновлять docs/tim_user_guide.md",
+      "size": 1266
+    },
+    {
+      "file": "feedback_emails_preserve_unread.md",
+      "id": "Emails — preserve unread state",
+      "name": "Emails — preserve unread state",
+      "title": "Emails — Preserve Unread State",
+      "type": "feedback",
+      "summary": "При IMAP-чтении не сбрасывать \\Seen — хозяин ящика должен видеть, на что обратить внимание",
+      "size": 846
+    },
+    {
+      "file": "feedback_estimating_no_api.md",
+      "id": "Estimating без Claude API",
+      "name": "Estimating без Claude API",
+      "title": "Estimating Без Claude Api",
+      "type": "feedback",
+      "summary": "regex + ручной edit вместо Vision API для extraction; решено 2026-05-04 после теста на 3 архитекторских PDF",
+      "size": 1137
+    },
+    {
+      "file": "feedback_fastapi_route_order.md",
+      "id": "FastAPI sibling-path collision",
+      "name": "FastAPI sibling-path collision",
+      "title": "Fastapi Sibling Path Collision",
+      "type": "feedback",
+      "summary": "При добавлении endpoints в main.py избегай коллизий с уже существующими {param} путями",
+      "size": 665
+    },
+    {
+      "file": "project_fees_accounting.md",
+      "id": "Fees accounting (paper + real) and historical backfill",
+      "name": "Fees accounting (paper + real) and historical backfill",
+      "title": "Fees Accounting (Paper + Real) And Historical Backfill",
+      "type": "project",
+      "summary": "How fees_paid_usd is computed, persisted, and how the 900-row historical zero was reconstructed",
+      "size": 3120
+    },
+    {
+      "file": "feedback_ga_fitness_overfit.md",
+      "id": "GA Fitness Overfit Guards",
+      "name": "GA Fitness Overfit Guards",
+      "title": "Ga Fitness Overfit Guards",
+      "type": "feedback",
+      "summary": "Fitness function constants that prevent narrow/single-symbol overfit corners from winning evolution",
+      "size": 1445
+    },
+    {
+      "file": "project_ga_gpu_migration.md",
+      "id": "GA GPU миграция — DONE 2026-05-08 (canonical schema + dashboard wired)",
+      "name": "GA GPU миграция — DONE 2026-05-08 (canonical schema + dashboard wired)",
+      "title": "Ga Gpu Миграция — Done 2026 05 08 (Canonical Schema + Dashboard Wired)",
+      "type": "project",
+      "summary": "GPU-port завершён 2026-05-08; canonical schema с train/test buckets; dashboard /api/ga/run target=pc1 + WMI detach + per-PID логи; first apply rank #1 cons+trend",
+      "size": 4239
+    },
+    {
+      "file": "project_ga_optimizer.md",
+      "id": "GA Optimizer for Trading Bot",
+      "name": "GA Optimizer for Trading Bot",
+      "title": "Ga Optimizer For Trading Bot",
+      "type": "project",
+      "summary": "GA parameter optimization system — scripts, dashboard integration, auto-apply workflow, current applied state",
+      "size": 2279
+    },
+    {
+      "file": "feedback_ga_prewarm_418.md",
+      "id": "GA Prewarm IP-Ban Handling",
+      "name": "GA Prewarm IP-Ban Handling",
+      "title": "Ga Prewarm Ip Ban Handling",
+      "type": "feedback",
+      "summary": "Binance returns HTTP 418 (not 429) under sustained load; prewarm now retries with Retry-After + aborts GA if >10% symbols fail",
+      "size": 1307
+    },
+    {
+      "file": "feedback_ga_symbols_single_source.md",
+      "id": "GA Symbols — Single Source is Symbols Editor",
+      "name": "GA Symbols — Single Source is Symbols Editor",
+      "title": "Ga Symbols — Single Source Is Symbols Editor",
+      "type": "feedback",
+      "summary": "GA optimizer reads symbol list live from config/symbols.json (Symbols Editor); no separate GA-symbols store",
+      "size": 911
+    },
+    {
+      "file": "project_ga_walk_forward_todo.md",
+      "id": "GA Walk-Forward Validation (ACTIVE)",
+      "name": "GA Walk-Forward Validation (ACTIVE)",
+      "title": "Ga Walk Forward Validation (Active)",
+      "type": "project",
+      "summary": "Train/test split inside evaluate() — fitness graded on out-of-sample TEST, with saturating penalty when TRAIN diverges",
+      "size": 2142
+    },
+    {
+      "file": "feedback_ga_apply_full_chain.md",
+      "id": "GA apply must update all three live places",
+      "name": "GA apply must update all three live places",
+      "title": "Ga Apply Must Update All Three Live Places",
+      "type": "feedback",
+      "summary": "Where dashboard's Apply GA writes params — miss any of these and GA has zero effect on the live bot",
+      "size": 2312
+    },
+    {
+      "file": "project_ga_baseline_bug.md",
+      "id": "GA baseline=0-trades bug — RESOLVED 2026-04-23",
+      "name": "GA baseline=0-trades bug — RESOLVED 2026-04-23",
+      "title": "Ga Baseline=0 Trades Bug — Resolved 2026 04 23",
+      "type": "project",
+      "summary": "2026-04-20 baseline showed 5 trades vs 3225 expected. Root cause found and fixed.",
+      "size": 2605
+    },
+    {
+      "file": "project_gpu_homelab_plan.md",
+      "id": "GPU homelab plan — 2x RTX 3090 на двух Windows ПК дома (PC1 ACTIVE 2026-05-07)",
+      "name": "GPU homelab plan — 2x RTX 3090 на двух Windows ПК дома (PC1 ACTIVE 2026-05-07)",
+      "title": "Gpu Homelab Plan — 2X Rtx 3090 На Двух Windows Пк Дома (Pc1 Active 2026 05 07)",
+      "type": "project",
+      "summary": "ПК1 настроен: Tailscale 100.99.211.123 + OpenSSH (root@vps→tkach@PC1) + Ollama as SYSTEM ScheduledTask; ПК2 ещё не подключен",
+      "size": 6551
+    },
+    {
+      "file": "project_gerchik_copy_phase1.md",
+      "id": "Gerchik Copy Phase 1",
+      "name": "Gerchik Copy Phase 1",
+      "title": "Gerchik Copy Phase 1",
+      "type": "project",
+      "summary": "Copy-trading pipeline для GTE Pro TG signals — Phase 1 architecture, capital, decisions, file map",
+      "size": 7808
+    },
+    {
+      "file": "project_grafana_alerts.md",
+      "id": "Grafana alerts → @infinityopenclowbot",
+      "name": "Grafana alerts → @infinityopenclowbot",
+      "title": "Grafana Alerts → @Infinityopenclowbot",
+      "type": "project",
+      "summary": "Куда сейчас идут все Grafana trading alerts и как откатить",
+      "size": 1287
+    },
+    {
+      "file": "feedback_hard_cap_double_count.md",
+      "id": "HARD CAP двойной счёт + вид open paper в dashboard",
+      "name": "HARD CAP двойной счёт + вид open paper в dashboard",
+      "title": "Hard Cap Двойной Счёт + Вид Open Paper В Dashboard",
+      "type": "feedback",
+      "summary": "max_position_usd_per_symbol режется через position×leverage; dashboard hardcoded forced_real игнорирует JSON per_strategy",
+      "size": 2158
+    },
+    {
+      "file": "project_hourly_report_v2.md",
+      "id": "Hourly Report v2 (TG → dashboard deep-link)",
+      "name": "Hourly Report v2 (TG → dashboard deep-link)",
+      "title": "Hourly Report V2 (Tg → Dashboard Deep Link)",
+      "type": "project",
+      "summary": "Сжатый layout TG-отчёта + clickable close-reasons → дашборд с фильтром",
+      "size": 1756
+    },
+    {
+      "file": "project_hourly_supervisor.md",
+      "id": "Hourly Supervisor (deterministic)",
+      "name": "Hourly Supervisor (deterministic)",
+      "title": "Hourly Supervisor (Deterministic)",
+      "type": "project",
+      "summary": "2026-05-02 — старый opus/sonnet hourly agent заменён Python-скриптом; Claude (haiku) только при events>=1 или anomalies>=5; quiet час = 0 LLM calls",
+      "size": 1939
+    },
+    {
+      "file": "feedback_paper_vs_real.md",
+      "id": "Hybrid trading mode (CONS=paper, TREND/AGGR=real)",
+      "name": "Hybrid trading mode (CONS=paper, TREND/AGGR=real)",
+      "title": "Hybrid Trading Mode (Cons=Paper, Trend/Aggr=Real)",
+      "type": "feedback",
+      "summary": "2026-04-23 the system runs PER-STRATEGY routing — CONS still paper (until GA delivers profitable params), TREND/AGGR live on Bybit mainnet",
+      "size": 2255
+    },
+    {
+      "file": "project_hybrid_mode.md",
+      "id": "Hybrid trading mode (per-strategy paper/real routing)",
+      "name": "Hybrid trading mode (per-strategy paper/real routing)",
+      "title": "Hybrid Trading Mode (Per Strategy Paper/Real Routing)",
+      "type": "project",
+      "summary": "trading_mode is no longer global — per_strategy map routes each signal to paper_simulator or real_executor based on its strategy",
+      "size": 2677
+    },
+    {
+      "file": "project_invoice_ingestion.md",
+      "id": "Invoice Ingestion Pipeline",
+      "name": "Invoice Ingestion Pipeline",
+      "title": "Invoice Ingestion Pipeline",
+      "type": "project",
+      "summary": "OnTime invoice@threestonesalliance.ca IMAP → DB → Vendor Prices + Canonical Materials grid. 23 regex parsers, 2079/2945 invoices parsed (71%), $2.42M of $3M spend. Daily cron. Updated 2026-04-28.",
+      "size": 5662
+    },
+    {
+      "file": "project_ocr_followup.md",
+      "id": "Invoice OCR Followup (Tesseract)",
+      "name": "Invoice OCR Followup (Tesseract)",
+      "title": "Invoice Ocr Followup (Tesseract)",
+      "type": "project",
+      "summary": "One-shot systemd timer 2026-05-12 10:00 Calgary — Tesseract OCR re-parse over failed vendor_invoices, then canonicalize, TG report",
+      "size": 1769
+    },
+    {
+      "file": "feedback_env_placeholders.md",
+      "id": "JSON-конфиг trading_v3_artem.json содержит плейсхолдеры ${VAR}",
+      "name": "JSON-конфиг trading_v3_artem.json содержит плейсхолдеры ${VAR}",
+      "title": "Json Конфиг Trading V3 Artem.Json Содержит Плейсхолдеры ${Var}",
+      "type": "feedback",
+      "summary": "trading_v3_artem.json хранит секреты как ${DB_PASSWORD}/${BYBIT_API_KEY}; код должен разворачивать их через env_config.expand_env_vars",
+      "size": 1132
+    },
+    {
+      "file": "project_labor_reprice_may2026.md",
+      "id": "Labor Materials Reprice + Legacy Mapping (May 2026)",
+      "name": "Labor Materials Reprice + Legacy Mapping (May 2026)",
+      "title": "Labor Materials Reprice + Legacy Mapping (May 2026)",
+      "type": "project",
+      "summary": "Полная цепочка reprice operations 2026-05-05 — pricing snapshot backfill + canonical mapping для archived legacy labor materials",
+      "size": 3186
+    },
+    {
+      "file": "feedback_legacy_db_safety.md",
+      "id": "Legacy DB не коммитить",
+      "name": "Legacy DB не коммитить",
+      "title": "Legacy Db Не Коммитить",
+      "type": "feedback",
+      "summary": "Production-данные TSA из legacy БД нельзя в публичный репо OnTime",
+      "size": 699
+    },
+    {
+      "file": "feedback_ga_subprocess_detach.md",
+      "id": "Long subprocess from dashboard-api must use systemd-run, NOT start_new_session",
+      "name": "Long subprocess from dashboard-api must use systemd-run, NOT start_new_session",
+      "title": "Long Subprocess From Dashboard Api Must Use Systemd Run, Not Start New Session",
+      "type": "feedback",
+      "summary": "cgroup-kill on dashboard-api restart nukes every child. start_new_session=True does NOT help. Use systemd-run --unit --slice.",
+      "size": 2424
+    },
+    {
+      "file": "project_mfe_mae_tracking.md",
+      "id": "MFE/MAE excursion tracking",
+      "name": "MFE/MAE excursion tracking",
+      "title": "Mfe/Mae Excursion Tracking",
+      "type": "project",
+      "summary": "peak_pnl_pct/trough_pnl_pct columns on simulated_trades+real_trades; paper updates per WS tick, real columns NULL until v2",
+      "size": 2512
+    },
+    {
+      "file": "feedback_sync_memory_on_commit.md",
+      "id": "Memory checkpoint + sync on every commit",
+      "name": "Memory checkpoint + sync on every commit",
+      "title": "Memory Checkpoint + Sync On Every Commit",
+      "type": "feedback",
+      "summary": "Перед/после git push — записать в memory всё новое из сессии, потом синхронизировать в Claude-AI-md-files",
+      "size": 1395
+    },
+    {
+      "file": "project_meta_labeler_v1.md",
+      "id": "Meta-labeler V1 — XGBoost binary classifier для signal-quality",
+      "name": "Meta-labeler V1 — XGBoost binary classifier для signal-quality",
+      "title": "Meta Labeler V1 — Xgboost Binary Classifier Для Signal Quality",
+      "type": "project",
+      "summary": "Активен 2026-05-08, AUC test 0.728, shadow mode (log_only=true); масштабирует position size DOWN-only по P(profitable)",
+      "size": 2499
+    },
+    {
+      "file": "project_mobile_dev_workflow.md",
+      "id": "Mobile-dev workflow (CLAUDE.md per project + MOBILE_RULES.md)",
+      "name": "Mobile-dev workflow (CLAUDE.md per project + MOBILE_RULES.md)",
+      "title": "Mobile Dev Workflow (Claude.Md Per Project + Mobile Rules.Md)",
+      "type": "project",
+      "summary": "2026-05-02 — Артём настроил структурный mobile-dev workflow чтобы избегать OpenClaw-style потерь контекста; CLAUDE.md в каждом активном проекте; общие правила в /root/.claude/MOBILE_RULES.md",
+      "size": 2127
+    },
+    {
+      "file": "project_morning_briefing_pending.md",
+      "id": "Morning Briefing Connectors — на паузе",
+      "name": "Morning Briefing Connectors — на паузе",
+      "title": "Morning Briefing Connectors — На Паузе",
+      "type": "project",
+      "summary": "Артём хочет персональный morning briefing (Gmail+Calendar+Drive+Otter); решение отложено до ответа Тима по emails-optimization",
+      "size": 1264
+    },
+    {
+      "file": "feedback_narrative_before_details.md",
+      "id": "Narrative Before Details (TG content)",
+      "name": "Narrative Before Details (TG content)",
+      "title": "Narrative Before Details (Tg Content)",
+      "type": "feedback",
+      "summary": "При написании постов для @solo_claude всегда сначала выстраивать контекст/историю проекта, только потом нырять в технические детали или апдейты. Новый подписчик не знает что такое OnTime/4BotsBybit/Wr",
+      "size": 1346
+    },
+    {
+      "file": "feedback_no_api_keys_invoice.md",
+      "id": "No API Keys for Invoice Parsing",
+      "name": "No API Keys for Invoice Parsing",
+      "title": "No Api Keys For Invoice Parsing",
+      "type": "feedback",
+      "summary": "В OnTime invoice pipeline НЕ использовать Claude/OpenAI API. Только regex per-vendor parsers как сделали для Roofmart.",
+      "size": 921
+    },
+    {
+      "file": "feedback_no_routine_confirms.md",
+      "id": "No routine confirmations — act, don't ask",
+      "name": "No routine confirmations — act, don't ask",
+      "title": "No Routine Confirmations — Act, Don'T Ask",
+      "type": "feedback",
+      "summary": "Artem wants Claude to just do routine/reversible work without asking \"делаю? да/нет\"; confirmation only for genuinely risky or irreversible actions",
+      "size": 2103
+    },
+    {
+      "file": "feedback_no_tables_tg_forward.md",
+      "id": "No tables in TG-forward content",
+      "name": "No tables in TG-forward content",
+      "title": "No Tables In Tg Forward Content",
+      "type": "feedback",
+      "summary": "Markdown tables render as garbled text when forwarded in Telegram; use bullet lists in any doc Artem will copy/paste to Tim or other clients",
+      "size": 820
+    },
+    {
+      "file": "feedback_oauth_rate_limits.md",
+      "id": "OAuth rate-limits & \"Лимит исчерпан\"",
+      "name": "OAuth rate-limits & \"Лимит исчерпан\"",
+      "title": "Oauth Rate Limits & \"Лимит Исчерпан\"",
+      "type": "feedback",
+      "summary": "Все боты Артёма share один OAuth token; opus/sonnet quotas в 5h окнах; trading_request заблокированный fallback ломал interactive UX; фикс 2026-05-02",
+      "size": 2141
+    },
+    {
+      "file": "project_tsa_timeline.md",
+      "id": "OnTime (TSA)",
+      "name": "OnTime (TSA)",
+      "title": "Ontime (Tsa)",
+      "type": "project",
+      "summary": "PWA для siding-компании TSA — контроль дедлайнов/часов по объектам, соревновательный рейтинг форманов; домен ontime.management",
+      "size": 9641
+    },
+    {
+      "file": "project_ontime_apr27_outage.md",
+      "id": "OnTime 2026-04-27 Domain Outage Compensation",
+      "name": "OnTime 2026-04-27 Domain Outage Compensation",
+      "title": "Ontime 2026 04 27 Domain Outage Compensation",
+      "type": "project",
+      "summary": "27 апреля 2026 утром был отключён домен ontime.management → check-in не работал; всем 26 рабочим вручную проставили 9.0h",
+      "size": 884
+    },
+    {
+      "file": "feedback_ontime_archive_semantics.md",
+      "id": "OnTime Archive = junk only, не для done",
+      "name": "OnTime Archive = junk only, не для done",
+      "title": "Ontime Archive = Junk Only, Не Для Done",
+      "type": "feedback",
+      "summary": "Archive в OnTime означает мусор/cancelled/тест, а не \"спрятать завершённый проект\"",
+      "size": 1196
+    },
+    {
+      "file": "feedback_ontime_bom_replace_trap.md",
+      "id": "OnTime BOM replace trap (project_materials wipe)",
+      "name": "OnTime BOM replace trap (project_materials wipe)",
+      "title": "Ontime Bom Replace Trap (Project Materials Wipe)",
+      "type": "feedback",
+      "summary": "Saving a project with shorter material list silently wipes ALL prior BOM rows on that project — DELETE-then-INSERT pattern in _set_project_materials",
+      "size": 1004
+    },
+    {
+      "file": "feedback_billable_hours_dedup.md",
+      "id": "OnTime Billable Hours Dedup",
+      "name": "OnTime Billable Hours Dedup",
+      "title": "Ontime Billable Hours Dedup",
+      "type": "feedback",
+      "summary": "report wins per (uid, day) — не per (uid, pid, day); человек не может быть на двух объектах одновременно",
+      "size": 3132
+    },
+    {
+      "file": "feedback_ontime_css_vars.md",
+      "id": "OnTime CSS variables — actual names",
+      "name": "OnTime CSS variables — actual names",
+      "title": "Ontime Css Variables — Actual Names",
+      "type": "feedback",
+      "summary": "Frontend CSS-переменные TSA — НЕ пиши --tsa-fg, в проекте --tsa-text",
+      "size": 1015
+    },
+    {
+      "file": "feedback_ontime_checkin_snap.md",
+      "id": "OnTime Check-in Time Policy",
+      "name": "OnTime Check-in Time Policy",
+      "title": "Ontime Check In Time Policy",
+      "type": "feedback",
+      "summary": "Early scans clamped to shift_start + ±15min snap к shift_end для чистых 9h/8h смен",
+      "size": 1592
+    },
+    {
+      "file": "project_tsa_daily_nudge.md",
+      "id": "OnTime Daily Report Nudge",
+      "name": "OnTime Daily Report Nudge",
+      "title": "Ontime Daily Report Nudge",
+      "type": "project",
+      "summary": "Auto-alert 18:00 Calgary: кто работал, кто не подал daily report. Админ + форман своих объектов.",
+      "size": 1573
+    },
+    {
+      "file": "project_tsa_daily_reports.md",
+      "id": "OnTime Daily Reports & Budget Analytics",
+      "name": "OnTime Daily Reports & Budget Analytics",
+      "title": "Ontime Daily Reports & Budget Analytics",
+      "type": "project",
+      "summary": "Архитектура dailу-отчётов, budget analytics, team history в OnTime (после миграции 2026-04-17)",
+      "size": 2363
+    },
+    {
+      "file": "project_tsa_deliveries.md",
+      "id": "OnTime Deliveries (material delivery planner)",
+      "name": "OnTime Deliveries (material delivery planner)",
+      "title": "Ontime Deliveries (Material Delivery Planner)",
+      "type": "project",
+      "summary": "delivery-tasks модуль OnTime — workflow, роли, integration с Extra Work",
+      "size": 2191
+    },
+    {
+      "file": "project_tsa_shortages.md",
+      "id": "OnTime Delivery Shortages",
+      "name": "OnTime Delivery Shortages",
+      "title": "Ontime Delivery Shortages",
+      "type": "project",
+      "summary": "Shortage tracking on PO line items — Foreman flow for short-shipped deliveries with wait/reorder/resolved actions",
+      "size": 1949
+    },
+    {
+      "file": "project_tsa_estimating.md",
+      "id": "OnTime Estimating Module",
+      "name": "OnTime Estimating Module",
+      "title": "Ontime Estimating Module",
+      "type": "project",
+      "summary": "AI-assisted siding takeoff tab — Phase 1 (upload+render) shipped 2026-05-04, Phase 2-3 pending real PDFs",
+      "size": 5460
+    },
+    {
+      "file": "project_tsa_extra_work.md",
+      "id": "OnTime Extra Work tab",
+      "name": "OnTime Extra Work tab",
+      "title": "Ontime Extra Work Tab",
+      "type": "project",
+      "summary": "Добавлена вкладка Extra Work с approval workflow, фото, TG-нотификациями и linkage в daily report",
+      "size": 1708
+    },
+    {
+      "file": "feedback_ontime_foreman_mobile_actions.md",
+      "id": "OnTime Foreman Mobile Actions",
+      "name": "OnTime Foreman Mobile Actions",
+      "title": "Ontime Foreman Mobile Actions",
+      "type": "feedback",
+      "summary": "Форман на мобильном теряет primary-action кнопки — `hidden lg:inline` режет подписи, иконки тонут в шапке",
+      "size": 1079
+    },
+    {
+      "file": "project_foreman_overhead_split.md",
+      "id": "OnTime Foreman Overhead Split (Variant B, since 2026-01)",
+      "name": "OnTime Foreman Overhead Split (Variant B, since 2026-01)",
+      "title": "Ontime Foreman Overhead Split (Variant B, Since 2026 01)",
+      "type": "project",
+      "summary": "Primary-foreman cost вынесен в company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only users.role='foreman'",
+      "size": 3331
+    },
+    {
+      "file": "project_ontime_heartbeat.md",
+      "id": "OnTime Heartbeat & Time Policy",
+      "name": "OnTime Heartbeat & Time Policy",
+      "title": "Ontime Heartbeat & Time Policy",
+      "type": "project",
+      "summary": "OnTime time-tracking model — geofence + explicit checkout + force-checkout + EOD 17:30 safety-net, минус 30 мин unpaid lunch (12:00-12:30 local).",
+      "size": 3660
+    },
+    {
+      "file": "project_tsa_invite_codes.md",
+      "id": "OnTime Invite Codes",
+      "name": "OnTime Invite Codes",
+      "title": "Ontime Invite Codes",
+      "type": "reference",
+      "summary": "Где хранятся коды приглашения для самостоятельной регистрации по ролям и какие точки в коде синхронизировать при добавлении новой роли",
+      "size": 1723
+    },
+    {
+      "file": "feedback_ontime_labor_vs_purchase.md",
+      "id": "OnTime Labor vs Purchase Materials",
+      "name": "OnTime Labor vs Purchase Materials",
+      "title": "Ontime Labor Vs Purchase Materials",
+      "type": "feedback",
+      "summary": "Two distinct kinds of \"materials\" in OnTime — labor install rates vs vendor purchase prices. Never mix them.",
+      "size": 1339
+    },
+    {
+      "file": "project_tsa_lifts.md",
+      "id": "OnTime Lifts + Refuel Tracking",
+      "name": "OnTime Lifts + Refuel Tracking",
+      "title": "Ontime Lifts + Refuel Tracking",
+      "type": "project",
+      "summary": "Delivery driver fuel-tracking feature — 11 lifts catalog, per-refuel log with photo+cost+engine hours, monthly consumption report",
+      "size": 6016
+    },
+    {
+      "file": "project_ontime_marketing.md",
+      "id": "OnTime Marketing Video Pipeline",
+      "name": "OnTime Marketing Video Pipeline",
+      "title": "Ontime Marketing Video Pipeline",
+      "type": "project",
+      "summary": "Полный pipeline для маркетингового видео OnTime — где файлы, как пересобрать, что Артём выбрал в финальной версии.",
+      "size": 4467
+    },
+    {
+      "file": "project_tsa_ot_watch.md",
+      "id": "OnTime Overtime Watch",
+      "name": "OnTime Overtime Watch",
+      "title": "Ontime Overtime Watch",
+      "type": "project",
+      "summary": "PP-hours индикатор и forecast 88h/PP — куда смотреть и как алерт работает",
+      "size": 1544
+    },
+    {
+      "file": "feedback_ontime_pin_crew_invariant.md",
+      "id": "OnTime Pin Crew Invariant",
+      "name": "OnTime Pin Crew Invariant",
+      "title": "Ontime Pin Crew Invariant",
+      "type": "feedback",
+      "summary": "project_installers надо считать source-of-truth для крю; legacy-импорт его не заполнил, авто-pin в /api/reports + backfill закрывают дыру",
+      "size": 1181
+    },
+    {
+      "file": "project_tsa_procurement.md",
+      "id": "OnTime Procurement",
+      "name": "OnTime Procurement",
+      "title": "Ontime Procurement",
+      "type": "project",
+      "summary": "Vendors + Purchase Orders MVP added to OnTime 2026-04-24. Tiered approval by total, foreman self-serve below T1. Kojo replacement.",
+      "size": 6749
+    },
+    {
+      "file": "feedback_ontime_project_guard_sync.md",
+      "id": "OnTime Project/Reports Guard Sync",
+      "name": "OnTime Project/Reports Guard Sync",
+      "title": "Ontime Project/Reports Guard Sync",
+      "type": "feedback",
+      "summary": "GET /api/projects/{pid} installer-guard и POST /api/reports crew-guard ОБЯЗАНЫ принимать одинаковую crew-evidence (pinned ∪ helper ∪ recent QR)",
+      "size": 2161
+    },
+    {
+      "file": "project_tsa_scoring.md",
+      "id": "OnTime Scoring (points)",
+      "name": "OnTime Scoring (points)",
+      "title": "Ontime Scoring (Points)",
+      "type": "project",
+      "summary": "Тиры + financial loss-gate (2026-04-29) + foreman-only rule (2026-04-30) — баллы только role=foreman",
+      "size": 3164
+    },
+    {
+      "file": "project_tsa_service_tasks.md",
+      "id": "OnTime Service Tasks (Andrei Mesca's tab)",
+      "name": "OnTime Service Tasks (Andrei Mesca's tab)",
+      "title": "Ontime Service Tasks (Andrei Mesca'S Tab)",
+      "type": "project",
+      "summary": "QA + warranty + standalone service ticket flow with kanban + checklist + categorized photos",
+      "size": 2912
+    },
+    {
+      "file": "project_tsa_timesheet.md",
+      "id": "OnTime Timesheet Tab",
+      "name": "OnTime Timesheet Tab",
+      "title": "Ontime Timesheet Tab",
+      "type": "project",
+      "summary": "/timesheet — единый контроль часов/cost по workers × days, allocation tree (project/service/delivery), anomalies feed. Доступ — hasFinanceView.",
+      "size": 2000
+    },
+    {
+      "file": "project_tsa_transfer_flow.md",
+      "id": "OnTime Worker Transfer Flow",
+      "name": "OnTime Worker Transfer Flow",
+      "title": "Ontime Worker Transfer Flow",
+      "type": "project",
+      "summary": "Перемещение работника между active projects — три пути: pull-now (one-tap, foreman target), transfer-request (worker сам сдаёт отчёт), и оригинальный 409-блок если caller не имеет прав",
+      "size": 3731
+    },
+    {
+      "file": "feedback_session_hours_open_lunch.md",
+      "id": "OnTime _session_hours_authoritative open-session lunch",
+      "name": "OnTime _session_hours_authoritative open-session lunch",
+      "title": "Ontime  Session Hours Authoritative Open Session Lunch",
+      "type": "feedback",
+      "summary": "Open-session live projection MUST subtract 12:00-12:30 lunch like closed sessions, иначе reports разъезжаются от payroll",
+      "size": 1381
+    },
+    {
+      "file": "feedback_ontime_report_crew_guard.md",
+      "id": "OnTime daily-report crew guard",
+      "name": "OnTime daily-report crew guard",
+      "title": "Ontime Daily Report Crew Guard",
+      "type": "feedback",
+      "summary": "/api/reports rejects 403 if user is not on the project crew; bypass paths and how to debug \"you are not on this project crew\" errors",
+      "size": 1981
+    },
+    {
+      "file": "feedback_email_register_stub_upgrade.md",
+      "id": "OnTime email-register upgrades legacy stubs in place",
+      "name": "OnTime email-register upgrades legacy stubs in place",
+      "title": "Ontime Email Register Upgrades Legacy Stubs In Place",
+      "type": "feedback",
+      "summary": "При регистрации по email stub-юзер из легаси-импорта апгрейдится, а не создаётся новый",
+      "size": 1861
+    },
+    {
+      "file": "project_session_2026-05-09_ontime_full_overhaul.md",
+      "id": "OnTime full hours/finance overhaul (2026-05-09 session)",
+      "name": "OnTime full hours/finance overhaul (2026-05-09 session)",
+      "title": "Ontime Full Hours/Finance Overhaul (2026 05 09 Session)",
+      "type": "project",
+      "summary": "Big-day rundown — что трогали в OnTime 2026-05-09: lunch bug → hourly billing → foreman overhead split → consistency fixes",
+      "size": 4414
+    },
+    {
+      "file": "feedback_ontime_canonical_id.md",
+      "id": "OnTime materials.canonical_id alias chain",
+      "name": "OnTime materials.canonical_id alias chain",
+      "title": "Ontime Materials.Canonical Id Alias Chain",
+      "type": "feedback",
+      "summary": "When labor catalog is replaced wholesale, old archived materials point to new canonical ones via canonical_id; installed_qty queries union both",
+      "size": 1575
+    },
+    {
+      "file": "project_ontime_notif_i18n.md",
+      "id": "OnTime notification i18n",
+      "name": "OnTime notification i18n",
+      "title": "Ontime Notification I18N",
+      "type": "project",
+      "summary": "Per-recipient lang for notifications — где живёт инфра и какие call sites уже переведены",
+      "size": 1493
+    },
+    {
+      "file": "project_tsa_roles_access.md",
+      "id": "OnTime roles + access matrix",
+      "name": "OnTime roles + access matrix",
+      "title": "Ontime Roles + Access Matrix",
+      "type": "project",
+      "summary": "Management (pm/vp_construction/director) получают admin-equivalent capability во всём, кроме destructive и invite-code governance",
+      "size": 4458
+    },
+    {
+      "file": "project_tsa_roles_workflow.md",
+      "id": "OnTime roles + notifications + Extra Work workflow",
+      "name": "OnTime roles + notifications + Extra Work workflow",
+      "title": "Ontime Roles + Notifications + Extra Work Workflow",
+      "type": "project",
+      "summary": "4 новые управленческие роли, линейный approval workflow для Extra Work, persistent notifications с колокольчиком, director digest",
+      "size": 2852
+    },
+    {
+      "file": "feedback_salaried_roles_excluded_from_payroll.md",
+      "id": "OnTime salaried roles excluded from hourly payroll",
+      "name": "OnTime salaried roles excluded from hourly payroll",
+      "title": "Ontime Salaried Roles Excluded From Hourly Payroll",
+      "type": "feedback",
+      "summary": "SALARIED_ROLES={'delivery','service'} — их wage helpers возвращают None, чтобы все cost loops автоматом skipали этих людей",
+      "size": 1142
+    },
+    {
+      "file": "project_ontime_wage_cost.md",
+      "id": "OnTime wage-to-cost burden table",
+      "name": "OnTime wage-to-cost burden table",
+      "title": "Ontime Wage To Cost Burden Table",
+      "type": "project",
+      "summary": "В OnTime `hourly_wage` (roster) — что получает работник; для бюджета и team-activity labour используется loaded cost через `_wage_to_cost(wage)`",
+      "size": 2351
+    },
+    {
+      "file": "feedback_no_confirms_ontime.md",
+      "id": "OnTime — без подтверждений",
+      "name": "OnTime — без подтверждений",
+      "title": "Ontime — Без Подтверждений",
+      "type": "feedback",
+      "summary": "В проекте OnTime Артём разрешает делать всё без согласований, кроме удаления проектов",
+      "size": 576
+    },
+    {
+      "file": "feedback_dayoff_silence.md",
+      "id": "OnTime: silence all nudges on company days off",
+      "name": "OnTime: silence all nudges on company days off",
+      "title": "Ontime: Silence All Nudges On Company Days Off",
+      "type": "feedback",
+      "summary": "0 чекинов за 24ч = выходной → ни digest'ов, ни напоминалок никому. Хардкод-календарей нет, гейт через _company_had_activity_24h",
+      "size": 1627
+    },
+    {
+      "file": "project_pc1_homelab_active.md",
+      "id": "PC1 Homelab — ACTIVE inventory",
+      "name": "PC1 Homelab — ACTIVE inventory",
+      "title": "Pc1 Homelab — Active Inventory",
+      "type": "project",
+      "summary": "Что доступно на ПК1 Артёма (RTX 3090, Tailscale 100.99.211.123) для тяжёлых задач — SSH, Ollama, faster-whisper, autostart",
+      "size": 8327
+    },
+    {
+      "file": "feedback_pc1_ssh_quirks.md",
+      "id": "PC1 ssh→PowerShell→python детач — обязательно WMI Win32_Process.Create + per-PID лог-файлы",
+      "name": "PC1 ssh→PowerShell→python детач — обязательно WMI Win32_Process.Create + per-PID лог-файлы",
+      "title": "Pc1 Ssh→Powershell→Python Детач — Обязательно Wmi Win32 Process.Create + Per Pid Лог Файлы",
+      "type": "feedback",
+      "summary": "Запоминания из 2026-05-08 при wiring PC1 GPU GA: 5 каскадных Windows-quirks; решение через WMI + per-PID log filenames + utf-8 reconfigure",
+      "size": 1562
+    },
+    {
+      "file": "feedback_pc1_for_heavy_compute.md",
+      "id": "PC1 для тяжёлого compute",
+      "name": "PC1 для тяжёлого compute",
+      "title": "Pc1 Для Тяжёлого Compute",
+      "type": "feedback",
+      "summary": "Любая тяжёлая нагрузка (ML training, batch-обработка, GA, рендеринг, photo restoration) идёт на ПК1 (RTX 3090, Tailscale 100.99.211.123, ssh user=tkach) — VPS оставляем для live-сервисов",
+      "size": 1771
+    },
+    {
+      "file": "PROJECTS.md",
+      "id": "PROJECTS",
+      "name": "PROJECTS",
+      "title": "Projects",
+      "type": "other",
+      "summary": "# Projects digest",
+      "size": 17978
+    },
+    {
+      "file": "feedback_parallel_agents.md",
+      "id": "Parallel agents on the VPS",
+      "name": "Parallel agents on the VPS",
+      "title": "Parallel Agents On The Vps",
+      "type": "feedback",
+      "summary": "Artem may run other AI agents (OpenClaw, etc.) in parallel with Claude Code on the same VPS — check before destructive ops",
+      "size": 1285
+    },
+    {
+      "file": "project_photo_restoration.md",
+      "id": "Photo restoration pipeline (CPU-based on VPS, paused)",
+      "name": "Photo restoration pipeline (CPU-based on VPS, paused)",
+      "title": "Photo Restoration Pipeline (Cpu Based On Vps, Paused)",
+      "type": "project",
+      "summary": "Установлен GFPGAN+RealESRGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; pipeline работает на CPU очень медленно — кандидат на миграцию на GPU homelab",
+      "size": 2566
+    },
+    {
+      "file": "feedback_piper_tts_swallows.md",
+      "id": "Piper TTS Swallows Endings",
+      "name": "Piper TTS Swallows Endings",
+      "title": "Piper Tts Swallows Endings",
+      "type": "feedback",
+      "summary": "Piper TTS глотает финальные согласные на коротких фразах; всегда добавляй apad pad_dur=1.0+ к выходу.",
+      "size": 1023
+    },
+    {
+      "file": "feedback_pre_baseline_v3_data_is_trash.md",
+      "id": "Pre-baseline-v3 trading data = мусор, не использовать",
+      "name": "Pre-baseline-v3 trading data = мусор, не использовать",
+      "title": "Pre Baseline V3 Trading Data = Мусор, Не Использовать",
+      "type": "feedback",
+      "summary": "Всё в trading_bot_v3 БД до 2026-05-10 05:42:10 UTC недостоверно из-за каскада багов; для решений брать только post-baseline",
+      "size": 2808
+    },
+    {
+      "file": "project_unversioned_prod_state.md",
+      "id": "Production state not captured by git",
+      "name": "Production state not captured by git",
+      "title": "Production State Not Captured By Git",
+      "type": "project",
+      "summary": "DB schema changes, Grafana alerts, and systemd units that live only on the VPS — if we rebuild, these must be reapplied manually",
+      "size": 3361
+    },
+    {
+      "file": "project_progress.md",
+      "id": "Project Progress - 4BotsBybit-Trading",
+      "name": "Project Progress - 4BotsBybit-Trading",
+      "title": "Project Progress   4Botsbybit Trading",
+      "type": "project",
+      "summary": "Current state of the trading bot project, what's done, what's left to do, key architecture decisions",
+      "size": 30526
+    },
+    {
+      "file": "project_prop_firm_path.md",
+      "id": "Prop firm funding path ($50-150k)",
+      "name": "Prop firm funding path ($50-150k)",
+      "title": "Prop Firm Funding Path ($50 150K)",
+      "type": "project",
+      "summary": "Artem rassmatrivayet prop firm challenge kak path k $10k/mo. 2026-04-23 soglasovano — otlozhit do proven edge, kriterii gotovnosti zafiksirovany.",
+      "size": 2496
+    },
+    {
+      "file": "feedback_react_hooks_order.md",
+      "id": "React hooks must come before early return",
+      "name": "React hooks must come before early return",
+      "title": "React Hooks Must Come Before Early Return",
+      "type": "feedback",
+      "summary": "Adding useMemo/useState/useEffect AFTER `if (!task) return null` blanks the modal — Rules of Hooks violation",
+      "size": 1332
+    },
+    {
+      "file": "feedback_react_select_fallback.md",
+      "id": "React select fallback on missing option",
+      "name": "React select fallback on missing option",
+      "title": "React Select Fallback On Missing Option",
+      "type": "feedback",
+      "summary": "<select value=X> где X не значится в <option> молча показывает первый option — UI начинает врать про данные",
+      "size": 1883
+    },
+    {
+      "file": "project_real_cutover_plan_2026-05-10.md",
+      "id": "Real Cutover Plan 2026-05-10",
+      "name": "Real Cutover Plan 2026-05-10",
+      "title": "Real Cutover Plan 2026 05 10",
+      "type": "project",
+      "summary": "План перехода CONS на real после 2-3 дней paper-наблюдения с baseline V3; чек-лист критериев готовности",
+      "size": 1666
+    },
+    {
+      "file": "feedback_real_trades_orphan.md",
+      "id": "Real position on Bybit with no real_trades row",
+      "name": "Real position on Bybit with no real_trades row",
+      "title": "Real Position On Bybit With No Real Trades Row",
+      "type": "feedback",
+      "summary": "Kogda na Bybit est' real pozicia a v real_trades pusto — znachit place_order_from_signal vernul success=False do insert. Proveryat' cherez ByBit API, vstavlyat' row rukami, chinit' bug.",
+      "size": 1846
+    },
+    {
+      "file": "feedback_real_trades_truth.md",
+      "id": "Real-mode dashboard — Bybit is the only truth",
+      "name": "Real-mode dashboard — Bybit is the only truth",
+      "title": "Real Mode Dashboard — Bybit Is The Only Truth",
+      "type": "feedback",
+      "summary": "6 stacking bugs made the BD-derived real PnL diverge from exchange by $8+. Lessons + how Bybit closed-pnl actually works",
+      "size": 2045
+    },
+    {
+      "file": "project_real_snapshot_endpoint.md",
+      "id": "Real-trading snapshot endpoint",
+      "name": "Real-trading snapshot endpoint",
+      "title": "Real Trading Snapshot Endpoint",
+      "type": "project",
+      "summary": "/api/real-snapshot bundles wallet+open+realized 1h/24h/7d for hourly reports; uses Bybit truth, not DB",
+      "size": 1408
+    },
+    {
+      "file": "project_risk_officer.md",
+      "id": "Risk Officer — hourly LLM defensive auto-pause",
+      "name": "Risk Officer — hourly LLM defensive auto-pause",
+      "title": "Risk Officer — Hourly Llm Defensive Auto Pause",
+      "type": "project",
+      "summary": "Активен 2026-05-08, hybrid scorecard+LLM gate, может только pause/resume через /api/trading-state; LLM-on-CAUTION временно OFF на 7 дней",
+      "size": 2187
+    },
+    {
+      "file": "project_roofmart_catalog.md",
+      "id": "Roofmart Catalog Sync",
+      "name": "Roofmart Catalog Sync",
+      "title": "Roofmart Catalog Sync",
+      "type": "project",
+      "summary": "Working pipeline to scrape Roofmart ProZone invoices and import line items as priced materials. 92 SKUs imported 2026-04-24 covering 63/70 invoices.",
+      "size": 2107
+    },
+    {
+      "file": "feedback_sqlite_isoformat_trap.md",
+      "id": "SQLite ISO timestamp comparison trap",
+      "name": "SQLite ISO timestamp comparison trap",
+      "title": "Sqlite Iso Timestamp Comparison Trap",
+      "type": "feedback",
+      "summary": "SQLite datetime('now') пишет с пробелом, Python datetime.isoformat() пишет с T — лексикографическое сравнение режет записи в день cutoff'а",
+      "size": 1369
+    },
+    {
+      "file": "project_sage600_blueskin_split.md",
+      "id": "Sage Hill 600 Blueskin → SOPRASEAL split (one-time fix)",
+      "name": "Sage Hill 600 Blueskin → SOPRASEAL split (one-time fix)",
+      "title": "Sage Hill 600 Blueskin → Sopraseal Split (One Time Fix)",
+      "type": "project",
+      "summary": "Audit trail of the 2026-05-05 redistribution that moved 78% of legacy \"Blue Skin\" reports into SOPRASEAL labor on Sage Hill Bldg 600",
+      "size": 2198
+    },
+    {
+      "file": "feedback_salesforce_scraping_blocked.md",
+      "id": "Salesforce Experience Cloud — what works and what doesn't",
+      "name": "Salesforce Experience Cloud — what works and what doesn't",
+      "title": "Salesforce Experience Cloud — What Works And What Doesn'T",
+      "type": "feedback",
+      "summary": "ProZone (Salesforce LWC) automation: locator.click(force=True) bypasses visibility checks, but bot-detection blocks new popups after ~50 clicks per session.",
+      "size": 1778
+    },
+    {
+      "file": "project_estimating_industry_rules.md",
+      "id": "Siding Takeoff Industry Rules",
+      "name": "Siding Takeoff Industry Rules",
+      "title": "Siding Takeoff Industry Rules",
+      "type": "project",
+      "summary": "numeric ratios + workflow conventions for OnTime Estimating BOM engine — collected 2026-05-04",
+      "size": 3502
+    },
+    {
+      "file": "feedback_signal_bar_logic.md",
+      "id": "SignalBot бары — confirm-only + ws_config-aware slicing",
+      "name": "SignalBot бары — confirm-only + ws_config-aware slicing",
+      "title": "Signalbot Бары — Confirm Only + Ws Config Aware Slicing",
+      "type": "feedback",
+      "summary": "Три скрытых бага в signal_bot_v3_websocket.py: interim бары как закрытые, hardcoded [-6:] vs ws_config['volume_avg_bars'], недостаточный REST-warmup",
+      "size": 2648
+    },
+    {
+      "file": "feedback_split_commits.md",
+      "id": "Split Commits Over Speed",
+      "name": "Split Commits Over Speed",
+      "title": "Split Commits Over Speed",
+      "type": "feedback",
+      "summary": "Артём предпочитает чистую историю с отдельными коммитами на каждую фичу, даже когда я могу bundle для скорости",
+      "size": 1160
+    },
+    {
+      "file": "project_symbols_list.md",
+      "id": "Symbols List — 4BotsBybit",
+      "name": "Symbols List — 4BotsBybit",
+      "title": "Symbols List — 4Botsbybit",
+      "type": "project",
+      "summary": "Production symbols.json state, tier structure, and full Bybit USDT-perp universe archive",
+      "size": 1816
+    },
+    {
+      "file": "project_baseline_v2_2026-05-08.md",
+      "id": "System Baseline V2 — 2026-05-08 rebuild",
+      "name": "System Baseline V2 — 2026-05-08 rebuild",
+      "title": "System Baseline V2 — 2026 05 08 Rebuild",
+      "type": "project",
+      "summary": "Точка отсчёта новой системы после большого rebuild сессии 2026-05-08; wallet, состав фичей, ключевые проблемы решённые в этой сессии",
+      "size": 2247
+    },
+    {
+      "file": "project_tg_channel_plan.md",
+      "id": "TG Channel Plan (Artem solo-founder)",
+      "name": "TG Channel Plan (Artem solo-founder)",
+      "title": "Tg Channel Plan (Artem Solo Founder)",
+      "type": "project",
+      "summary": "Активный проект с 2026-04-16. RU TG-канал Артёма в нише «solo-founder строит SaaS с AI». Все ключевые решения зафиксированы, название ещё не выбрано.",
+      "size": 6224
+    },
+    {
+      "file": "feedback_tg_controlbot_slash.md",
+      "id": "TG ControlBot slash commands добавлены 2026-05-08",
+      "name": "TG ControlBot slash commands добавлены 2026-05-08",
+      "title": "Tg Controlbot Slash Commands Добавлены 2026 05 08",
+      "type": "feedback",
+      "summary": "@ControlByBitTradingBot теперь принимает /status /balance /pause /resume /help; auth через owner_id; добавлены в src/control_bot_simple_v3.py",
+      "size": 1453
+    },
+    {
+      "file": "feedback_voice_chain_autoplay.md",
+      "id": "TG Voice Chain Autoplay",
+      "name": "TG Voice Chain Autoplay",
+      "title": "Tg Voice Chain Autoplay",
+      "type": "feedback",
+      "summary": "voice-tutor — на голосовой ввод отвечать только voice (без text-эха), чтобы TG автопроигрывал цепочку voice-сообщений в наушниках/CarPlay",
+      "size": 1029
+    },
+    {
+      "file": "project_tsa_legacy.md",
+      "id": "TSA Legacy server (46.8.227.113)",
+      "name": "TSA Legacy server (46.8.227.113)",
+      "title": "Tsa Legacy Server (46.8.227.113)",
+      "type": "project",
+      "summary": "Старый Django+TG-бот сервер TSA, откуда мигрировали данные в OnTime 2026-04-17",
+      "size": 1668
+    },
+    {
+      "file": "project_tsa_os_idea.md",
+      "id": "TSA OS — Unified Company Platform (active)",
+      "name": "TSA OS — Unified Company Platform (active)",
+      "title": "Tsa Os — Unified Company Platform (Active)",
+      "type": "project",
+      "summary": "Reactivated 2026-04-24. OnTime becomes the single app for TSA — replacing Kojo (procurement) AND ClickUp (tasks/docs/CRM). Was paused 2026-04-16, now resumed with stricter scope (no more \"keep Kojo as",
+      "size": 2574
+    },
+    {
+      "file": "project_tsa_company_roles.md",
+      "id": "TSA company role overlaps",
+      "name": "TSA company role overlaps",
+      "title": "Tsa Company Role Overlaps",
+      "type": "project",
+      "summary": "В TSA (company_id=1) Director совмещает функцию Purchasing Manager; Artem Borysiuk одновременно admin+author",
+      "size": 1095
+    },
+    {
+      "file": "project_tsa_nightly_sync.md",
+      "id": "TSA nightly legacy-sync",
+      "name": "TSA nightly legacy-sync",
+      "title": "Tsa Nightly Legacy Sync",
+      "type": "project",
+      "summary": "Каждую ночь подтягивает отчёты из старого Django+TG-бота в OnTime пока идёт параллельная работа",
+      "size": 1638
+    },
+    {
+      "file": "feedback_telegram_keyboard_emoji.md",
+      "id": "Telegram emoji-prefix breaks CommandHandler",
+      "name": "Telegram emoji-prefix breaks CommandHandler",
+      "title": "Telegram Emoji Prefix Breaks Commandhandler",
+      "type": "feedback",
+      "summary": "KeyboardButton \"📅 /daily\" не дёргает CommandHandler в python-telegram-bot, и vocab/quiz-сессия залипает",
+      "size": 1466
+    },
+    {
+      "file": "project_tim_agent_plan.md",
+      "id": "Tim AI Agent — расширение emails-optimization (план + текущее состояние)",
+      "name": "Tim AI Agent — расширение emails-optimization (план + текущее состояние)",
+      "title": "Tim Ai Agent — Расширение Emails Optimization (План + Текущее Состояние)",
+      "type": "project",
+      "summary": "AI-делегат для Тима внутри его TG бота; Week 1+2 production-ready 2026-05-08, остался только Calendar OAuth (Week 3)",
+      "size": 4034
+    },
+    {
+      "file": "feedback_tim_english_only.md",
+      "id": "Tim — английский only",
+      "name": "Tim — английский only",
+      "title": "Tim — Английский Only",
+      "type": "feedback",
+      "summary": "Все материалы, строки бота, документы для Тима — только English. Тим не понимает русский.",
+      "size": 972
+    },
+    {
+      "file": "project_trading_spec.md",
+      "id": "Trading Bot Full Specification",
+      "name": "Trading Bot Full Specification",
+      "title": "Trading Bot Full Specification",
+      "type": "project",
+      "summary": "Complete specification for 4 Bybit futures trading bots - strategies, signal logic, ATR calculation, TP/SL levels, strategy switching, and reporting",
+      "size": 2282
+    },
+    {
+      "file": "feedback_trading_config_live_source.md",
+      "id": "Trading Config Live Source",
+      "name": "Trading Config Live Source",
+      "title": "Trading Config Live Source",
+      "type": "feedback",
+      "summary": "Never assume GA-applied values are still live — Artem retunes via dashboard; always query actual state",
+      "size": 912
+    },
+    {
+      "file": "project_dashboard_ga_section.md",
+      "id": "Trading Dashboard — GA Section + Strategy Filters",
+      "name": "Trading Dashboard — GA Section + Strategy Filters",
+      "title": "Trading Dashboard — Ga Section + Strategy Filters",
+      "type": "project",
+      "summary": "Dashboard features added 2026-04-12: GA optimization UI, strategy wins highlight with status chips, max_drawdown setting",
+      "size": 916
+    },
+    {
+      "file": "feedback_dd_guard_paper_skip.md",
+      "id": "Trading Guards REAL only",
+      "name": "Trading Guards REAL only",
+      "title": "Trading Guards Real Only",
+      "type": "feedback",
+      "summary": "Все risk-гарды в process_signal (main_bot_v3) применяются ТОЛЬКО к REAL-routed стратегиям; PAPER идёт без блоков",
+      "size": 1468
+    },
+    {
+      "file": "project_trading_state_softgate.md",
+      "id": "Trading State Soft-Gate",
+      "name": "Trading State Soft-Gate",
+      "title": "Trading State Soft Gate",
+      "type": "project",
+      "summary": "Unified /api/trading-state widget on real.html for \"is real on?\" — endpoints, semantics, pause/resume mechanics",
+      "size": 2304
+    },
+    {
+      "file": "project_dex_migration.md",
+      "id": "Trading bot DEX migration (Hyperliquid)",
+      "name": "Trading bot DEX migration (Hyperliquid)",
+      "title": "Trading Bot Dex Migration (Hyperliquid)",
+      "type": "project",
+      "summary": "Artem boitsya CEX-custody risk, sprashivayet pro Hyperliquid. Obsuzhdali 2026-04-23 strategiyu security + tech skоp porта.",
+      "size": 2093
+    },
+    {
+      "file": "project_cron_zoo_2026-05-08.md",
+      "id": "Trading bot cron-зоопарк 2026-05-08",
+      "name": "Trading bot cron-зоопарк 2026-05-08",
+      "title": "Trading Bot Cron Зоопарк 2026 05 08",
+      "type": "project",
+      "summary": "Все 10 systemd timer'ов trading-системы после rebuild сессии 2026-05-08 — что запускается, когда, зачем",
+      "size": 2124
+    },
+    {
+      "file": "user_artem.md",
+      "id": "User Profile - Artem",
+      "name": "User Profile - Artem",
+      "title": "User Profile   Artem",
+      "type": "user",
+      "summary": "Artem Borisyuk, crypto trader building automated Bybit futures trading bots",
+      "size": 1096
+    },
+    {
+      "file": "feedback_verify_downloads.md",
+      "id": "Verify downloads before use",
+      "name": "Verify downloads before use",
+      "title": "Verify Downloads Before Use",
+      "type": "feedback",
+      "summary": "Перед использованием/запуском любого файла, скачанного из GitHub releases / HuggingFace / npm / pip / любого внешнего источника — провести базовую проверку на вирусы и валидность",
+      "size": 2777
+    },
+    {
+      "file": "project_wife_english_tutor.md",
+      "id": "Wife English Tutor — план 2026-05-07",
+      "name": "Wife English Tutor — план 2026-05-07",
+      "title": "Wife English Tutor — План 2026 05 07",
+      "type": "project",
+      "summary": "AI-учитель английского @EnglishTecherTutorBot. Persona Алёна Николаевна (shimmer). Latency pipeline ported 2026-05-12 (Haiku + streaming TTS + STT race). Max_tokens 1200 — развёрнутые ответы (Lilia пр",
+      "size": 4772
+    },
+    {
+      "file": "project_wife_tutor_correction_first.md",
+      "id": "Wife Tutor Correction-First Format",
+      "name": "Wife Tutor Correction-First Format",
+      "title": "Wife Tutor Correction First Format",
+      "type": "project",
+      "summary": "@EnglishTecherTutorBot теперь поправляет ошибку В НАЧАЛЕ ответа (тег [FIX]...[/FIX]), потом продолжает беседу — для голоса и текста",
+      "size": 1303
+    },
+    {
+      "file": "feedback_reports_win_rate.md",
+      "id": "Win Rate = realized_pnl_usd > 0 (money-based, not TP-based)",
+      "name": "Win Rate = realized_pnl_usd > 0 (money-based, not TP-based)",
+      "title": "Win Rate = Realized Pnl Usd > 0 (Money Based, Not Tp Based)",
+      "type": "feedback",
+      "summary": "Correct WR for partial-close strategy — count trades that netted positive money across all chunks, not trades where \"a TP hit\"",
+      "size": 1910
+    },
+    {
+      "file": "project_wrestling_v2.md",
+      "id": "Wrestling App v2 — Multi-club + Full Features",
+      "name": "Wrestling App v2 — Multi-club + Full Features",
+      "title": "Wrestling App V2 — Multi Club + Full Features",
+      "type": "project",
+      "summary": "Major v2 rewrite done 2026-04-13; multi-club, proportional norms, analysis, profile with socials, club branding",
+      "size": 3751
+    },
+    {
+      "file": "project_wrestling_camp_payment.md",
+      "id": "Wrestling Camp Payment Flow",
+      "name": "Wrestling Camp Payment Flow",
+      "title": "Wrestling Camp Payment Flow",
+      "type": "project",
+      "summary": "Camp оплата через Square checkout link с двусторонней confirm-flow (без Square Webhooks API)",
+      "size": 1740
+    },
+    {
+      "file": "project_wrestling_tracker.md",
+      "id": "Wrestling Performance Tracker",
+      "name": "Wrestling Performance Tracker",
+      "title": "Wrestling Performance Tracker",
+      "type": "project",
+      "summary": "Mobile-first wrestling club app — training check-in, norms, tournaments, rankings. Live at constantwrestling.cloud",
+      "size": 2799
+    },
+    {
+      "file": "feedback_wrestling_norm_attempts.md",
+      "id": "Wrestling norm history schema",
+      "name": "Wrestling norm history schema",
+      "title": "Wrestling Norm History Schema",
+      "type": "feedback",
+      "summary": "norm_attempts table + drift in norm_standards (VARCHAR not FLOAT despite CREATE statement)",
+      "size": 971
+    },
+    {
+      "file": "feedback_billable_open_session_doublecount.md",
+      "id": "_billable_hours_map already projects open sessions",
+      "name": "_billable_hours_map already projects open sessions",
+      "title": " Billable Hours Map Already Projects Open Sessions",
+      "type": "feedback",
+      "summary": "Не считать today_open отдельно поверх bmap — _session_minutes_safe уже возвращает live минуты для open sessions",
+      "size": 1212
+    },
+    {
+      "file": "feedback_avatar_video_calibration.md",
+      "id": "avatar-video-calibration",
+      "name": "avatar-video-calibration",
+      "title": "Avatar Video Calibration",
+      "type": "memory",
+      "summary": "\"OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на статичной фотке. Recipe — снять frame ffmpeg, detect face bbox в обоих, посчитать `",
+      "size": 2146
+    },
+    {
+      "file": "feedback_dexclaud_bridge.md",
+      "id": "dexclaud-bridge-bot",
+      "name": "dexclaud-bridge-bot",
+      "title": "Dexclaud Bridge Bot",
+      "type": "memory",
+      "summary": "\"TG-бот @DexClaudCodAIBot — bridge для отправки уведомлений Артёму из моих скриптов. Токен в `/root/4BotsBybit-Trading/.env` как `CLAUDE_BRIDGE_BOT_TOKEN`, chat_id Артёма из `CLAUDE_OPERATOR_CHAT_ID` ",
+      "size": 955
+    },
+    {
+      "file": "feedback_emails_agent_handle_button.md",
+      "id": "emails-agent-handle-button",
+      "name": "emails-agent-handle-button",
+      "title": "Emails Agent Handle Button",
+      "type": "memory",
+      "summary": "🤖 AI Plan button on every triage card → fires Claude planner with email thread context; lives in bot.py:_build_keyboard + poller.py:_send_card + agent_handlers.start_email_delegation",
+      "size": 828
+    },
+    {
+      "file": "feedback_emails_two_bots_shared_db.md",
+      "id": "emails-opt — два бота на одной БД, изоляция через owner_chat_id",
+      "name": "emails-opt — два бота на одной БД, изоляция через owner_chat_id",
+      "title": "Emails Opt — Два Бота На Одной Бд, Изоляция Через Owner Chat Id",
+      "type": "feedback",
+      "summary": "emails-bot (Артём mirror, TEST_MODE=1) и emails-bot-tim (продовый Тим) работают через один app.bot и одну emails.db; любые новые таблицы должны нести owner_chat_id",
+      "size": 1276
+    },
+    {
+      "id": "emails-two-bots-shared-db",
+      "name": "emails-two-bots-shared-db",
+      "title": "emails-two-bots-shared-db",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback-chartjs-unbounded-height",
+      "name": "feedback-chartjs-unbounded-height",
+      "title": "feedback-chartjs-unbounded-height",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "feedback_funnel_vs_close_reason.md",
+      "id": "feedback-funnel-vs-close-reason",
+      "name": "feedback-funnel-vs-close-reason",
+      "title": "Feedback Funnel Vs Close Reason",
+      "type": "memory",
+      "summary": "\"TP Funnel cells = trigger events (overlap), а не разбиение closed-trades; сумма funnel'а > closed нормально, mutually exclusive — только close_reason\"",
+      "size": 1511
+    },
+    {
+      "file": "feedback_ga_unrealistic_tps.md",
+      "id": "feedback-ga-unrealistic-tps",
+      "name": "feedback-ga-unrealistic-tps",
+      "title": "Feedback Ga Unrealistic Tps",
+      "type": "memory",
+      "summary": "\"GA рекомендует TP в космосе (13R-48R), хотя реальная MFE доходит максимум ~2%; backtester засчитывает wick-касания на 5m, реал так не работает\"",
+      "size": 1130
+    },
+    {
+      "file": "feedback_grafana_v13_resource_table.md",
+      "id": "feedback-grafana-v13-resource-table",
+      "name": "feedback-grafana-v13-resource-table",
+      "title": "Feedback Grafana V13 Resource Table",
+      "type": "memory",
+      "summary": "\"Grafana 13 хранит дашборды в новой `resource` таблице, не в `dashboard`; SQLite-фикс возможен с restart'ом сервера\"",
+      "size": 2143
+    },
+    {
+      "id": "feedback-real-trades-truth",
+      "name": "feedback-real-trades-truth",
+      "title": "feedback-real-trades-truth",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback-reports-win-rate",
+      "name": "feedback-reports-win-rate",
+      "title": "feedback-reports-win-rate",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "feedback_toast_pointer_events.md",
+      "id": "feedback-toast-pointer-events",
+      "name": "feedback-toast-pointer-events",
+      "title": "Feedback Toast Pointer Events",
+      "type": "memory",
+      "summary": "Toast/snackbar с opacity:0 без pointer-events:none молча съедает клики по элементам под ним",
+      "size": 913
+    },
+    {
+      "id": "feedback_action_type_no_names",
+      "name": "feedback_action_type_no_names",
+      "title": "feedback_action_type_no_names",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_auto_push_default",
+      "name": "feedback_auto_push_default",
+      "title": "feedback_auto_push_default",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_avatar_video_calibration",
+      "name": "feedback_avatar_video_calibration",
+      "title": "feedback_avatar_video_calibration",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_be_on_real",
+      "name": "feedback_be_on_real",
+      "title": "feedback_be_on_real",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_billable_hours_dedup",
+      "name": "feedback_billable_hours_dedup",
+      "title": "feedback_billable_hours_dedup",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_billable_service_close",
+      "name": "feedback_billable_service_close",
+      "title": "feedback_billable_service_close",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_bybit_empty_result_truthy_trap",
+      "name": "feedback_bybit_empty_result_truthy_trap",
+      "title": "feedback_bybit_empty_result_truthy_trap",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_bybit_ws_keepalive",
+      "name": "feedback_bybit_ws_keepalive",
+      "title": "feedback_bybit_ws_keepalive",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_controlbot_shutdown_hook",
+      "name": "feedback_controlbot_shutdown_hook",
+      "title": "feedback_controlbot_shutdown_hook",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_dashboard_first_workflow",
+      "name": "feedback_dashboard_first_workflow",
+      "title": "feedback_dashboard_first_workflow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_dashboard_utc",
+      "name": "feedback_dashboard_utc",
+      "title": "feedback_dashboard_utc",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_dashboard_v1_v2",
+      "name": "feedback_dashboard_v1_v2",
+      "title": "feedback_dashboard_v1_v2",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_dashboard_view_lock",
+      "name": "feedback_dashboard_view_lock",
+      "title": "feedback_dashboard_view_lock",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_dayoff_silence",
+      "name": "feedback_dayoff_silence",
+      "title": "feedback_dayoff_silence",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_dd_guard_paper_skip",
+      "name": "feedback_dd_guard_paper_skip",
+      "title": "feedback_dd_guard_paper_skip",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_email_register_stub_upgrade",
+      "name": "feedback_email_register_stub_upgrade",
+      "title": "feedback_email_register_stub_upgrade",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_estimating_no_api",
+      "name": "feedback_estimating_no_api",
+      "title": "feedback_estimating_no_api",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_fastapi_route_order",
+      "name": "feedback_fastapi_route_order",
+      "title": "feedback_fastapi_route_order",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_ga_apply_full_chain",
+      "name": "feedback_ga_apply_full_chain",
+      "title": "feedback_ga_apply_full_chain",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_ga_backtester_daily_zero",
+      "name": "feedback_ga_backtester_daily_zero",
+      "title": "feedback_ga_backtester_daily_zero",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_ga_fitness_overfit",
+      "name": "feedback_ga_fitness_overfit",
+      "title": "feedback_ga_fitness_overfit",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_gerchik_leverage_88_too_high",
+      "name": "feedback_gerchik_leverage_88_too_high",
+      "title": "feedback_gerchik_leverage_88_too_high",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_legacy_db_safety",
+      "name": "feedback_legacy_db_safety",
+      "title": "feedback_legacy_db_safety",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_multi_fix_per_sentence",
+      "name": "feedback_multi_fix_per_sentence",
+      "title": "feedback_multi_fix_per_sentence",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_narrative_before_details",
+      "name": "feedback_narrative_before_details",
+      "title": "feedback_narrative_before_details",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_oauth_force_refresh",
+      "name": "feedback_oauth_force_refresh",
+      "title": "feedback_oauth_force_refresh",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_oauth_rate_limits",
+      "name": "feedback_oauth_rate_limits",
+      "title": "feedback_oauth_rate_limits",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_openai_base_url_shell",
+      "name": "feedback_openai_base_url_shell",
+      "title": "feedback_openai_base_url_shell",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_openai_base_url_shell_override",
+      "name": "feedback_openai_base_url_shell_override",
+      "title": "feedback_openai_base_url_shell_override",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_pc1_ssh_quirks",
+      "name": "feedback_pc1_ssh_quirks",
+      "title": "feedback_pc1_ssh_quirks",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_salaried_roles_excluded_from_payroll",
+      "name": "feedback_salaried_roles_excluded_from_payroll",
+      "title": "feedback_salaried_roles_excluded_from_payroll",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_sync_memory_on_commit",
+      "name": "feedback_sync_memory_on_commit",
+      "title": "feedback_sync_memory_on_commit",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_telegram_keyboard_emoji",
+      "name": "feedback_telegram_keyboard_emoji",
+      "title": "feedback_telegram_keyboard_emoji",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_tg_persistent_keyboard",
+      "name": "feedback_tg_persistent_keyboard",
+      "title": "feedback_tg_persistent_keyboard",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_tim_english_only",
+      "name": "feedback_tim_english_only",
+      "title": "feedback_tim_english_only",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_tutor_tts_wiring",
+      "name": "feedback_tutor_tts_wiring",
+      "title": "feedback_tutor_tts_wiring",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_voice_chain_autoplay",
+      "name": "feedback_voice_chain_autoplay",
+      "title": "feedback_voice_chain_autoplay",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_voice_tutor_oauth_500",
+      "name": "feedback_voice_tutor_oauth_500",
+      "title": "feedback_voice_tutor_oauth_500",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "feedback_wrestling_norm_attempts",
+      "name": "feedback_wrestling_norm_attempts",
+      "title": "feedback_wrestling_norm_attempts",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "feedback_ga_backtester_daily_zero.md",
+      "id": "ga-backtester-daily-zero-bug",
+      "name": "ga-backtester-daily-zero-bug",
+      "title": "Ga Backtester Daily Zero Bug",
+      "type": "memory",
+      "summary": "\"На ПК1 GA backtester (pipeline.evaluate_strategy) сейчас выдаёт 0 trades при любых params — daily ATR=0 для всех 60k signals. Root cause: arr_d_hl всё нули. Cache stale или loader name-mismatch. Phas",
+      "size": 1924
+    },
+    {
+      "file": "project_ga_realism_overhaul.md",
+      "id": "ga-realism-overhaul-2026-05-13",
+      "name": "ga-realism-overhaul-2026-05-13",
+      "title": "Ga Realism Overhaul 2026 05 13",
+      "type": "memory",
+      "summary": "Overhaul GA backtester (4 фазы + 2.5) сделанный в одной длинной сессии 2026-05-12/13. Sharpe annualised + costs + live constraints + BTC/ETH/SOL blacklist + per-symbol PnL breakdown. GA recommendation",
+      "size": 5231
+    },
+    {
+      "file": "feedback_gerchik_leverage_88_too_high.md",
+      "id": "gerchik-leverage-88-too-high",
+      "name": "gerchik-leverage-88-too-high",
+      "title": "Gerchik Leverage 88 Too High",
+      "type": "memory",
+      "summary": "real_leverage 88× в gerchik душит scanner через liquidation_buffer filter; снижено до 35× 2026-05-12; ожидается рост частоты signals на Layer 1",
+      "size": 1181
+    },
+    {
+      "id": "gerchik-trading-agent",
+      "name": "gerchik-trading-agent",
+      "title": "gerchik-trading-agent",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "project_gerchik_bot.md",
+      "id": "gerchik-trading-agent — AI agent для Bybit на price-action Герчика",
+      "name": "gerchik-trading-agent — AI agent для Bybit на price-action Герчика",
+      "title": "Gerchik Trading Agent — Ai Agent Для Bybit На Price Action Герчика",
+      "type": "project",
+      "summary": "Самообучающийся agent (rule engine + ML scorer + LLM reflector + GA evolution); /root/gerchik-trading-agent; private GitHub repo InfinitySudo/gerchik-trading-agent; шарит Bybit ключ+Postgres с 4BotsBy",
+      "size": 4813
+    },
+    {
+      "file": "project_graph_system.md",
+      "id": "graph-system",
+      "name": "graph-system",
+      "title": "Graph System",
+      "type": "memory",
+      "summary": "\"5 knowledge graphs (memory, trading, tutor, ontime, projects) + auto-generated PROJECTS.md digest; new sessions read PROJECTS.md first via MEMORY.md to load full project context\"",
+      "size": 2987
+    },
+    {
+      "file": "feedback_multi_fix_per_sentence.md",
+      "id": "multi-fix-per-problem-sentence",
+      "name": "multi-fix-per-problem-sentence",
+      "title": "Multi Fix Per Problem Sentence",
+      "type": "memory",
+      "summary": "\"Tutor-боты должны выдавать ОТДЕЛЬНЫЙ [FIX] на каждое ошибочное предложение учащегося, а не схлопывать в один; русский input обрабатывается всегда\"",
+      "size": 1758
+    },
+    {
+      "file": "feedback_oauth_force_refresh.md",
+      "id": "oauth-force-refresh",
+      "name": "oauth-force-refresh",
+      "title": "Oauth Force Refresh",
+      "type": "memory",
+      "summary": "\"When Claude returns 401, the 401-handler must call refresh API even if disk expiresAt is in the future — Anthropic revokes tokens before formal expiry under parallel usage\"",
+      "size": 1538
+    },
+    {
+      "file": "project_ollama_race_shadow.md",
+      "id": "ollama-race-shadow-emails-triage",
+      "name": "ollama-race-shadow-emails-triage",
+      "title": "Ollama Race Shadow Emails Triage",
+      "type": "memory",
+      "summary": "\"PK1+PK2 LLM race helper в emails-bot, shadow-режим против Claude Haiku triage с 2026-05-13\"",
+      "size": 2240
+    },
+    {
+      "file": "feedback_openai_base_url_shell.md",
+      "id": "openai-base-url-shell-override",
+      "name": "openai-base-url-shell-override",
+      "title": "Openai Base Url Shell Override",
+      "type": "memory",
+      "summary": "\"VPS shell env содержит `OPENAI_BASE_URL=https://api.deepseek.com/v1` — OpenAI Python client его подхватывает по умолчанию и роутит на DeepSeek (404 на /audio/speech, /audio/transcriptions). Лечится я",
+      "size": 1628
+    },
+    {
+      "file": "project_pc2_homelab_active.md",
+      "id": "pc2-homelab-active",
+      "name": "pc2-homelab-active",
+      "title": "Pc2 Homelab Active",
+      "type": "memory",
+      "summary": "\"ПК2 (Art, RTX 3090 24GB) подключён 2026-05-12: Tailscale `borys@100.73.22.1`, SSH с ed25519 ключом, Ollama 11434 (qwen2.5:7b), faster-whisper 8001 (large-v3 CUDA), Tailscale firewall открыт. Hostname",
+      "size": 3389
+    },
+    {
+      "id": "project-baseline-v2-2026-05-08",
+      "name": "project-baseline-v2-2026-05-08",
+      "title": "project-baseline-v2-2026-05-08",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project-baseline-v3-2026-05-10",
+      "name": "project-baseline-v3-2026-05-10",
+      "title": "project-baseline-v3-2026-05-10",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project-ga-realism-overhaul",
+      "name": "project-ga-realism-overhaul",
+      "title": "project-ga-realism-overhaul",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "project_ga_under_review.md",
+      "id": "project-ga-under-review",
+      "name": "project-ga-under-review",
+      "title": "Project Ga Under Review",
+      "type": "memory",
+      "summary": "\"GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending\"",
+      "size": 1118
+    },
+    {
+      "id": "project-ga-walk-forward-todo",
+      "name": "project-ga-walk-forward-todo",
+      "title": "project-ga-walk-forward-todo",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project-grafana-alerts",
+      "name": "project-grafana-alerts",
+      "title": "project-grafana-alerts",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "project_mfe_calibration.md",
+      "id": "project-mfe-calibration",
+      "name": "project-mfe-calibration",
+      "title": "Project Mfe Calibration",
+      "type": "memory",
+      "summary": "📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у",
+      "size": 2051
+    },
+    {
+      "id": "project-mfe-mae-tracking",
+      "name": "project-mfe-mae-tracking",
+      "title": "project-mfe-mae-tracking",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project-unversioned-prod-state",
+      "name": "project-unversioned-prod-state",
+      "title": "project-unversioned-prod-state",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_10k_strategy",
+      "name": "project_10k_strategy",
+      "title": "project_10k_strategy",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_backtest_findings",
+      "name": "project_backtest_findings",
+      "title": "project_backtest_findings",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_bybit_v5_open_close_knowledge",
+      "name": "project_bybit_v5_open_close_knowledge",
+      "title": "project_bybit_v5_open_close_knowledge",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_claude_telegram_bot",
+      "name": "project_claude_telegram_bot",
+      "title": "project_claude_telegram_bot",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_dashboard_ga_section",
+      "name": "project_dashboard_ga_section",
+      "title": "project_dashboard_ga_section",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_deploy_state",
+      "name": "project_deploy_state",
+      "title": "project_deploy_state",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_emails_optimization",
+      "name": "project_emails_optimization",
+      "title": "project_emails_optimization",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_fees_accounting",
+      "name": "project_fees_accounting",
+      "title": "project_fees_accounting",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_ga_optimizer",
+      "name": "project_ga_optimizer",
+      "title": "project_ga_optimizer",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_gerchik_bot",
+      "name": "project_gerchik_bot",
+      "title": "project_gerchik_bot",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_gerchik_copy_phase1",
+      "name": "project_gerchik_copy_phase1",
+      "title": "project_gerchik_copy_phase1",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_git_repos_daily",
+      "name": "project_git_repos_daily",
+      "title": "project_git_repos_daily",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_gpu_homelab_plan",
+      "name": "project_gpu_homelab_plan",
+      "title": "project_gpu_homelab_plan",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_hourly_supervisor",
+      "name": "project_hourly_supervisor",
+      "title": "project_hourly_supervisor",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_mobile_dev_workflow",
+      "name": "project_mobile_dev_workflow",
+      "title": "project_mobile_dev_workflow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_ollama_race_shadow",
+      "name": "project_ollama_race_shadow",
+      "title": "project_ollama_race_shadow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_pc1_homelab_active",
+      "name": "project_pc1_homelab_active",
+      "title": "project_pc1_homelab_active",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_pc2_homelab_active",
+      "name": "project_pc2_homelab_active",
+      "title": "project_pc2_homelab_active",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_photo_restoration",
+      "name": "project_photo_restoration",
+      "title": "project_photo_restoration",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_realized_pnl_column",
+      "name": "project_realized_pnl_column",
+      "title": "project_realized_pnl_column",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_session_2026_05_14_emails_perf_photo",
+      "name": "project_session_2026_05_14_emails_perf_photo",
+      "title": "project_session_2026_05_14_emails_perf_photo",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_solo_claude_bot",
+      "name": "project_solo_claude_bot",
+      "title": "project_solo_claude_bot",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_son_french_tutor",
+      "name": "project_son_french_tutor",
+      "title": "project_son_french_tutor",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_sophie_lipsync",
+      "name": "project_sophie_lipsync",
+      "title": "project_sophie_lipsync",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_tutor_latency_pipeline",
+      "name": "project_tutor_latency_pipeline",
+      "title": "project_tutor_latency_pipeline",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_tutor_live_tools",
+      "name": "project_tutor_live_tools",
+      "title": "project_tutor_live_tools",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_voice_tutor",
+      "name": "project_voice_tutor",
+      "title": "project_voice_tutor",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "project_wife_english_tutor",
+      "name": "project_wife_english_tutor",
+      "title": "project_wife_english_tutor",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "real-trades-truth",
+      "name": "real-trades-truth",
+      "title": "real-trades-truth",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "project_real_trades_schema.md",
+      "id": "real_trades table schema differs from simulated_trades",
+      "name": "real_trades table schema differs from simulated_trades",
+      "title": "Real Trades Table Schema Differs From Simulated Trades",
+      "type": "project",
+      "summary": "real_trades is narrower — missing duration_minutes, tp_triggered flags, initial_qty, tp_levels. Aggregates must guard against schema mismatch.",
+      "size": 1515
+    },
+    {
+      "file": "project_realized_pnl_column.md",
+      "id": "realized_pnl_usd column semantics",
+      "name": "realized_pnl_usd column semantics",
+      "title": "Realized Pnl Usd Column Semantics",
+      "type": "project",
+      "summary": "Why simulated_trades has BOTH gross_pnl_usd AND realized_pnl_usd, and which to use for aggregates",
+      "size": 2266
+    },
+    {
+      "file": "project_session_2026_05_14_emails_perf_photo.md",
+      "id": "session-2026-05-14-emails-perf-photo",
+      "name": "session-2026-05-14-emails-perf-photo",
+      "title": "Session 2026 05 14 Emails Perf Photo",
+      "type": "memory",
+      "summary": "\"Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal, фикс tutor-ботов\"",
+      "size": 6859
+    },
+    {
+      "file": "project_session_2026_05_14_tutors.md",
+      "id": "session-2026-05-14-tutors",
+      "name": "session-2026-05-14-tutors",
+      "title": "Session 2026 05 14 Tutors",
+      "type": "memory",
+      "summary": "Big session — wife/son tutor overhaul (OAuth fix + live tools + 6-level CEFR library + EWA-style UI + Alyona avatar + SadTalker on PC1 GPU)",
+      "size": 2563
+    },
+    {
+      "file": "feedback_signal_bot_config_path.md",
+      "id": "signal_bot_config.json — two files, one orphan",
+      "name": "signal_bot_config.json — two files, one orphan",
+      "title": "Signal Bot Config.Json — Two Files, One Orphan",
+      "type": "feedback",
+      "summary": "Canonical signal config path is env_config.SIGNAL_BOT_CONFIG_PATH (src/signal_bot_config.json). The root-level copy is orphaned — writes there do nothing.",
+      "size": 1524
+    },
+    {
+      "file": "project_solo_claude_bot.md",
+      "id": "solo_claude_bot infra",
+      "name": "solo_claude_bot infra",
+      "title": "Solo Claude Bot Infra",
+      "type": "project",
+      "summary": "CLI в /root/solo_claude_bot для постинга в TG-каналы @solo_claude (main) и drafts. Два бота, токены в .env (chmod 600), CHAT_* нужно заполнить после создания каналов.",
+      "size": 1498
+    },
+    {
+      "file": "project_son_french_tutor.md",
+      "id": "son-french-tutor-andrii",
+      "name": "son-french-tutor-andrii",
+      "title": "Son French Tutor Andrii",
+      "type": "memory",
+      "summary": "\"TG-бот для Andrii (~11-14yo) учит французский A1-A2. Persona Sophie (нова voice), avatar talking_loop.mp4, streaming TTS pipeline 2-3s latency. Bot id 8341136914.\"",
+      "size": 3501
+    },
+    {
+      "file": "project_sophie_lipsync.md",
+      "id": "sophie-lip-sync-via-sadtalker-on-pc1-in-progress",
+      "name": "sophie-lip-sync-via-sadtalker-on-pc1-in-progress",
+      "title": "Sophie Lip Sync Via Sadtalker On Pc1 In Progress",
+      "type": "memory",
+      "summary": "\"Live talking avatar для @FrenchTuporBot/@EnglishTecherTutorBot — фотореалистичный портрет + лип-синк MP4 на каждый ответ; pipeline 2026-05-12, Wav2Lip миграция pending\"",
+      "size": 6796
+    },
+    {
+      "file": "feedback_query_write_swallow.md",
+      "id": "stats_mgr._query swallowing INSERTs",
+      "name": "stats_mgr._query swallowing INSERTs",
+      "title": "Stats Mgr. Query Swallowing Inserts",
+      "type": "feedback",
+      "summary": "До 2026-04-29 _query вызывал fetchall() на любой SQL и возвращал [] на ошибке без commit — INSERT/UPDATE тихо откатывались",
+      "size": 935
+    },
+    {
+      "file": "feedback_systemctl_timestamp_js.md",
+      "id": "systemctl timestamps for JS consumption",
+      "name": "systemctl timestamps for JS consumption",
+      "title": "Systemctl Timestamps For Js Consumption",
+      "type": "feedback",
+      "summary": "ActiveEnterTimestamp format trap — always pass --timestamp=unix and convert to ISO-8601 UTC before returning to browser",
+      "size": 1137
+    },
+    {
+      "file": "feedback_systemd_oncalendar_local_time.md",
+      "id": "systemd OnCalendar = local time, не UTC",
+      "name": "systemd OnCalendar = local time, не UTC",
+      "title": "Systemd Oncalendar = Local Time, Не Utc",
+      "type": "feedback",
+      "summary": "2026-05-02 — попался: написал OnCalendar=18:00 думая UTC, systemd интерпретировал как local (Calgary MDT) → срабатывало в 6pm вместо ожидаемого",
+      "size": 1205
+    },
+    {
+      "file": "feedback_tg_persistent_keyboard.md",
+      "id": "tg-persistent-keyboard",
+      "name": "tg-persistent-keyboard",
+      "title": "Tg Persistent Keyboard",
+      "type": "memory",
+      "summary": "\"В TG-ботах с tutor pattern reply_markup=QUICK_KB надо вешать на free-chat ответы, а не только на /start — иначе юзер, который пишет сразу 'привет' без /start, не увидит кнопок\"",
+      "size": 1378
+    },
+    {
+      "id": "tim-agent-plan",
+      "name": "tim-agent-plan",
+      "title": "tim-agent-plan",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "feedback_voice_tutor_oauth_500.md",
+      "id": "tutor-bots OAuth 401 (drop-cache fix 2026-05-12)",
+      "name": "tutor-bots OAuth 401 (drop-cache fix 2026-05-12)",
+      "title": "Tutor Bots Oauth 401 (Drop Cache Fix 2026 05 12)",
+      "type": "feedback",
+      "summary": "voice-tutor / wife-english-tutor / son-french-tutor ловят 401 invalid x-api-key из-за race с DexClaud за общий credentials.json — fix: drop-cache-and-reread (lifted from DexClaud), не force-refresh",
+      "size": 3743
+    },
+    {
+      "file": "project_tutor_latency_pipeline.md",
+      "id": "tutor-latency-pipeline",
+      "name": "tutor-latency-pipeline",
+      "title": "Tutor Latency Pipeline",
+      "type": "memory",
+      "summary": "\"4-фазная оптимизация /api/voice в tutor ботах (son/wife): Haiku + asyncio.gather + sentence split + LLM streaming + STT race + TTS streaming endpoint. 8s → 2-4s.\"",
+      "size": 4267
+    },
+    {
+      "file": "project_tutor_live_tools.md",
+      "id": "tutor-live-tools",
+      "name": "tutor-live-tools",
+      "title": "Tutor Live Tools",
+      "type": "memory",
+      "summary": "\"wife-english-tutor has Anthropic tool-use for live BTC/ETH price (Bybit) and weather (wttr.in); don't let bot answer market/weather from LLM memory\"",
+      "size": 1584
+    },
+    {
+      "file": "feedback_tutor_tts_wiring.md",
+      "id": "tutor-tts-wiring",
+      "name": "tutor-tts-wiring",
+      "title": "Tutor Tts Wiring",
+      "type": "memory",
+      "summary": "Tutor-bot TTS/STT must route to PC1 (Kokoro :8002 / Whisper :8001) with PC2 + OpenAI fallback; never let it silently fall back to OpenAI without a log",
+      "size": 2089
+    },
+    {
+      "id": "user_artem",
+      "name": "user_artem",
+      "title": "user_artem",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "project_voice_tutor.md",
+      "id": "voice-tutor (@AISmartFriendBot)",
+      "name": "voice-tutor (@AISmartFriendBot)",
+      "title": "Voice Tutor (@Aismartfriendbot)",
+      "type": "project",
+      "summary": "Telegram голосовой собеседник + Mini App с continuous voice mode (VAD/barge-in); /root/voice-tutor; 2 systemd units; voice.constantwrestling.cloud",
+      "size": 4528
+    },
+    {
+      "file": "feedback_wet_word_lookup_slow.md",
+      "id": "wet-word-lookup-slow",
+      "name": "wet-word-lookup-slow",
+      "title": "Wet Word Lookup Slow",
+      "type": "memory",
+      "summary": "\"wife-english-tutor `/api/word/lookup` на cache miss занимал 28s — Ollama JSON-prompt медленнее Claude, плюс TTS блокировал ответ. Чинить через Claude-first + background TTS.\"",
+      "size": 1772
+    },
+    {
+      "id": "wiki-link",
+      "name": "wiki-link",
+      "title": "wiki-link",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "id": "wiki-links",
+      "name": "wiki-links",
+      "title": "wiki-links",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0
+    },
+    {
+      "file": "feedback_russian_cyrillic.md",
+      "id": "Отвечать на русском кириллицей",
+      "name": "Отвечать на русском кириллицей",
+      "title": "Отвечать На Русском Кириллицей",
+      "type": "feedback",
+      "summary": "Артём просит общаться на русском языке кириллицей, не транслитом",
+      "size": 398
+    }
+  ],
+  "edges": [
+    {
+      "source": "PROJECTS",
+      "target": "feedback_action_type_no_names"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_auto_push_default"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_avatar_video_calibration"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_be_on_real"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_billable_hours_dedup"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_billable_service_close"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_bybit_empty_result_truthy_trap"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_bybit_ws_keepalive"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_controlbot_shutdown_hook"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_dashboard_first_workflow"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_dashboard_utc"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_dashboard_v1_v2"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_dashboard_view_lock"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_dayoff_silence"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_dd_guard_paper_skip"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_email_register_stub_upgrade"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_estimating_no_api"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_fastapi_route_order"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_gerchik_leverage_88_too_high"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_legacy_db_safety"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_multi_fix_per_sentence"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_narrative_before_details"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_oauth_force_refresh"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_oauth_rate_limits"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_salaried_roles_excluded_from_payroll"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_sync_memory_on_commit"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_telegram_keyboard_emoji"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_tg_persistent_keyboard"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_tutor_tts_wiring"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_voice_chain_autoplay"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_voice_tutor_oauth_500"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "feedback_wrestling_norm_attempts"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_10k_strategy"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_bybit_v5_open_close_knowledge"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_claude_telegram_bot"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_deploy_state"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_gerchik_bot"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_gerchik_copy_phase1"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_git_repos_daily"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_gpu_homelab_plan"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_hourly_supervisor"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_mobile_dev_workflow"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_session_2026_05_14_emails_perf_photo"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_solo_claude_bot"
+    },
+    {
+      "source": "PROJECTS",
+      "target": "project_son_french_tutor"
+    },
+    {
+      "source": "emails-agent-handle-button",
+      "target": "emails-two-bots-shared-db"
+    },
+    {
+      "source": "emails-agent-handle-button",
+      "target": "tim-agent-plan"
+    },
+    {
+      "source": "feedback-funnel-vs-close-reason",
+      "target": "feedback-real-trades-truth"
+    },
+    {
+      "source": "feedback-funnel-vs-close-reason",
+      "target": "feedback-reports-win-rate"
+    },
+    {
+      "source": "feedback-ga-unrealistic-tps",
+      "target": "project-ga-realism-overhaul"
+    },
+    {
+      "source": "feedback-ga-unrealistic-tps",
+      "target": "project-ga-walk-forward-todo"
+    },
+    {
+      "source": "feedback-ga-unrealistic-tps",
+      "target": "project-mfe-mae-tracking"
+    },
+    {
+      "source": "gerchik-leverage-88-too-high",
+      "target": "gerchik-trading-agent"
+    },
+    {
+      "source": "gerchik-leverage-88-too-high",
+      "target": "real-trades-truth"
+    },
+    {
+      "source": "feedback-grafana-v13-resource-table",
+      "target": "project-grafana-alerts"
+    },
+    {
+      "source": "feedback-grafana-v13-resource-table",
+      "target": "project-unversioned-prod-state"
+    },
+    {
+      "source": "oauth-force-refresh",
+      "target": "feedback_oauth_rate_limits"
+    },
+    {
+      "source": "oauth-force-refresh",
+      "target": "feedback_voice_tutor_oauth_500"
+    },
+    {
+      "source": "tg-persistent-keyboard",
+      "target": "feedback_telegram_keyboard_emoji"
+    },
+    {
+      "source": "tg-persistent-keyboard",
+      "target": "project_son_french_tutor"
+    },
+    {
+      "source": "tg-persistent-keyboard",
+      "target": "project_wife_english_tutor"
+    },
+    {
+      "source": "feedback-toast-pointer-events",
+      "target": "feedback-chartjs-unbounded-height"
+    },
+    {
+      "source": "tutor-tts-wiring",
+      "target": "feedback_openai_base_url_shell"
+    },
+    {
+      "source": "tutor-tts-wiring",
+      "target": "project_pc1_homelab_active"
+    },
+    {
+      "source": "wet-word-lookup-slow",
+      "target": "feedback_oauth_rate_limits"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "feedback_ga_apply_full_chain"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "feedback_ga_backtester_daily_zero"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "feedback_ga_fitness_overfit"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "project_backtest_findings"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "project_dashboard_ga_section"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "project_ga_optimizer"
+    },
+    {
+      "source": "ga-realism-overhaul-2026-05-13",
+      "target": "project_pc2_homelab_active"
+    },
+    {
+      "source": "project-ga-under-review",
+      "target": "feedback-ga-unrealistic-tps"
+    },
+    {
+      "source": "project-ga-under-review",
+      "target": "project-baseline-v2-2026-05-08"
+    },
+    {
+      "source": "project-ga-under-review",
+      "target": "project-baseline-v3-2026-05-10"
+    },
+    {
+      "source": "project-ga-under-review",
+      "target": "project-ga-realism-overhaul"
+    },
+    {
+      "source": "project-ga-under-review",
+      "target": "project-ga-walk-forward-todo"
+    },
+    {
+      "source": "graph-system",
+      "target": "project_fees_accounting"
+    },
+    {
+      "source": "graph-system",
+      "target": "project_realized_pnl_column"
+    },
+    {
+      "source": "graph-system",
+      "target": "wiki-link"
+    },
+    {
+      "source": "graph-system",
+      "target": "wiki-links"
+    },
+    {
+      "source": "project-mfe-calibration",
+      "target": "feedback-ga-unrealistic-tps"
+    },
+    {
+      "source": "project-mfe-calibration",
+      "target": "project-ga-under-review"
+    },
+    {
+      "source": "ollama-race-shadow-emails-triage",
+      "target": "project_pc1_homelab_active"
+    },
+    {
+      "source": "ollama-race-shadow-emails-triage",
+      "target": "project_pc2_homelab_active"
+    },
+    {
+      "source": "pc2-homelab-active",
+      "target": "feedback_pc1_ssh_quirks"
+    },
+    {
+      "source": "pc2-homelab-active",
+      "target": "project_pc1_homelab_active"
+    },
+    {
+      "source": "pc2-homelab-active",
+      "target": "project_tutor_latency_pipeline"
+    },
+    {
+      "source": "session-2026-05-14-emails-perf-photo",
+      "target": "project_emails_optimization"
+    },
+    {
+      "source": "session-2026-05-14-emails-perf-photo",
+      "target": "project_ollama_race_shadow"
+    },
+    {
+      "source": "session-2026-05-14-emails-perf-photo",
+      "target": "project_pc1_homelab_active"
+    },
+    {
+      "source": "session-2026-05-14-emails-perf-photo",
+      "target": "project_pc2_homelab_active"
+    },
+    {
+      "source": "session-2026-05-14-emails-perf-photo",
+      "target": "project_photo_restoration"
+    },
+    {
+      "source": "session-2026-05-14-tutors",
+      "target": "feedback_oauth_force_refresh"
+    },
+    {
+      "source": "session-2026-05-14-tutors",
+      "target": "feedback_tim_english_only"
+    },
+    {
+      "source": "session-2026-05-14-tutors",
+      "target": "feedback_tutor_tts_wiring"
+    },
+    {
+      "source": "session-2026-05-14-tutors",
+      "target": "project_tutor_live_tools"
+    },
+    {
+      "source": "son-french-tutor-andrii",
+      "target": "feedback_voice_tutor_oauth_500"
+    },
+    {
+      "source": "son-french-tutor-andrii",
+      "target": "project_sophie_lipsync"
+    },
+    {
+      "source": "son-french-tutor-andrii",
+      "target": "project_tutor_latency_pipeline"
+    },
+    {
+      "source": "son-french-tutor-andrii",
+      "target": "project_voice_tutor"
+    },
+    {
+      "source": "son-french-tutor-andrii",
+      "target": "project_wife_english_tutor"
+    },
+    {
+      "source": "son-french-tutor-andrii",
+      "target": "user_artem"
+    },
+    {
+      "source": "sophie-lip-sync-via-sadtalker-on-pc1-in-progress",
+      "target": "feedback_pc1_ssh_quirks"
+    },
+    {
+      "source": "tutor-latency-pipeline",
+      "target": "feedback_openai_base_url_shell_override"
+    },
+    {
+      "source": "Wife English Tutor — план 2026-05-07",
+      "target": "project_tutor_latency_pipeline"
+    }
+  ],
+  "stats": {
+    "files": 199,
+    "nodes": 283,
+    "edges": 106,
+    "by_type": {
+      "other": 1,
+      "feedback": 81,
+      "memory": 27,
+      "project": 88,
+      "reference": 1,
+      "user": 1,
+      "stub": 84
+    }
+  }
+}
