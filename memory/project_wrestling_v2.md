@@ -6,6 +6,12 @@ originSessionId: 4bf9c010-6bf6-4410-b91f-d3731633751f
 ---
 ## Wrestling Performance Tracker v2
 
+### Стек (актуально на 2026-05-15)
+- Backend: FastAPI :8001, systemd unit `wrestling-api.service`
+- DB: **PostgreSQL** `wrestling_tracker` через `psycopg2.pool.ThreadedConnectionPool(2..30)` — не SQLite (миграция была раньше, старая запись врала)
+- nginx: `/etc/nginx/sites-enabled/wrestling` — `/assets/` immutable 1y + gzip + no-cache на `index.html`/`sw.js`/`manifest.json`
+- Запас по нагрузке: легко 200 активных юзеров на текущем VPS
+
 ### Что сделано (2026-04-13)
 
 **Мультиклуб:**

@@ -19,6 +19,7 @@ metadata:
 
 **Firewall:**
 - Tailscale subnet `100.64.0.0/10` разрешён на портах 11434 и 8001. Если другой порт — `New-NetFirewallRule -DisplayName 'X' -LocalPort N -RemoteAddress 100.64.0.0/10 ...`
+- **2026-05-15 outage:** Windows автоматом создаёт `ollama.exe` Inbound **Block**-правила (приоритет над Allow) когда Ollama стартует и кто-то нажимает Cancel в попап-диалоге. Симптом: tailscale ping/whisper:8001 работает, но `100.73.22.1:11434` closed снаружи (хотя `netstat 11434` LISTENING). Fix: `Get-NetFirewallRule -Enabled True | Where-Object { $_.DisplayName -eq "ollama.exe" -and $_.Action -eq "Block" } | Remove-NetFirewallRule`. Оставить `Ollama Tailscale` Allow rule.
 
 **Известные quirks (mirror PK1):**
 - `Start-Process` от SSH умирает при disconnect — для долгих процессов используй `[wmiclass]'\\.\root\cimv2:Win32_Process'.Create(...)` с stdout-redirect в .log
@@ -38,7 +39,14 @@ metadata:
 - Warning `CUDA path could not be detected` cosmetic — cupy работает (verified arr.sum() on GPU device 0).
 
 **Что НЕ установлено:**
-- SadTalker / Wav2Lip / kokoro-tts — на PK2 нет, эти живут на PK1
+- SadTalker / Wav2Lip — на PK2 нет, эти живут на PK1
+
+**TTS установлен 2026-05-15:**
+- **Kokoro EN** `:8002` — `C:\Users\borys\kts\serve.py` (kokoro-onnx + onnxruntime-gpu + CUDA wheels). Models в `kts\models\`. Scheduled Task `kokoro-tts-server` (AtBoot+AtLogon, restart 999x). Verify: `curl http://100.73.22.1:8002/healthz` → `{"ok":true}`
+- **Silero RU** `:8005` — `C:\Users\borys\silero-tts\main.py` (torch+cu121 + torchaudio + soundfile + num2words + omegaconf). Model auto-download через torch.hub в `C:\Users\borys\.cache\torch\hub\`. Scheduled Task `silero-tts-server`. Verify: `curl -X POST http://100.73.22.1:8005/v1/audio/speech -d '{"input":"тест","voice":"nova","response_format":"mp3"}'` → mp3 96kbps
+- Firewall: `Kokoro TTS Tailscale` + `Silero TTS Tailscale` Allow Inbound for 100.64.0.0/10
+- Установка quirk: torchaudio.save() требует `soundfile` backend, не входит в основной torch+cu121 wheel — separate `pip install soundfile`. Silero `silero_tts` require `omegaconf` отдельно.
+- Wired в voice-tutor `.env`: `VT_TTS_BASE_URL_2=http://100.73.22.1:8002/v1`, `VT_TTS_RU_URL_2=http://100.73.22.1:8005/v1`. Chain: PC1 → PC2 → OpenAI.
 
 **Когда нужно расширять:**
 - Quick-Whisper test: `curl http://100.73.22.1:8001/` → `{"ok":true,"model":"large-v3","device":"cuda"}`

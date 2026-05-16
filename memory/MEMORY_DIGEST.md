@@ -1,0 +1,362 @@
+# Memory digest
+
+Generated **2026-05-16 20:38 UTC**.
+
+**267 nodes** (210 files, 88 edges) — 🗂 88 project · ⚠️ 81 feedback · 📝 57 stub · · 39 memory · 🔗 1 reference · 👤 1 user
+
+Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
+
+## 🌟 Hub nodes (most referenced)
+
+- [[project_pc1_homelab_active]] ← 6 refs · 📝 stub
+- [[project_pc2_homelab_active]] ← 5 refs · 📝 stub
+- [[project_tutor_latency_pipeline]] ← 4 refs · 📝 stub
+- [[project_voice_tutor]] ← 3 refs · 📝 stub
+- [[feedback-bybit-env-symlink]] ← 2 refs · · memory
+- [[feedback-ga-unrealistic-tps]] ← 2 refs · · memory
+- [[feedback-real-trades-truth]] ← 2 refs · 📝 stub
+- [[feedback_oauth_rate_limits]] ← 2 refs · 📝 stub
+- [[feedback_pc1_ssh_quirks]] ← 2 refs · 📝 stub
+- [[feedback_real_trades_truth]] ← 2 refs · 📝 stub
+
+## 📝 Stubs (57) — referenced but not yet written
+
+- [[project_pc1_homelab_active]] ← 6 refs
+- [[project_pc2_homelab_active]] ← 5 refs
+- [[project_tutor_latency_pipeline]] ← 4 refs
+- [[project_voice_tutor]] ← 3 refs
+- [[feedback-real-trades-truth]] ← 2 refs
+- [[feedback_oauth_rate_limits]] ← 2 refs
+- [[feedback_pc1_ssh_quirks]] ← 2 refs
+- [[feedback_real_trades_truth]] ← 2 refs
+- [[feedback_tutor_tts_wiring]] ← 2 refs
+- [[feedback_voice_tutor_oauth_500]] ← 2 refs
+- [[project-ga-realism-overhaul]] ← 2 refs
+- [[project-ga-walk-forward-todo]] ← 2 refs
+- [[project_unversioned_prod_state]] ← 2 refs
+- [[project_wife_english_tutor]] ← 2 refs
+- [[emails-two-bots-shared-db]] ← 1 refs
+
+## 🏝 Orphans (176) — no links in or out
+
+- [[$10k/mo Strategy (Artem)]] · 🗂 project
+- [[Action-type identifiers — никаких имён людей в коде]] · ⚠️ feedback
+- [[Auto-push enabled by default (2026-05-02)]] · ⚠️ feedback
+- [[BE offset interpreted as % of entry price (NOT % of SL distance)]] · ⚠️ feedback
+- [[BE на real (move SL→entry)]] · ⚠️ feedback
+- [[Backtest findings and parameter sensitivity]] · 🗂 project
+- [[Baseline V3 — 2026-05-10 05:28:55 UTC]] · 🗂 project
+- [[Billable service tasks workflow]] · ⚠️ feedback
+- [[Bybit V5 open/close — verified knowledge]] · 🗂 project
+- [[Bybit WS keepalive + supervisor]] · ⚠️ feedback
+- [[Bybit empty result truthy-trap]] · ⚠️ feedback
+- [[Bybit signing order trap]] · ⚠️ feedback
+- [[Chart.js freezes browser without bounded parent height]] · ⚠️ feedback
+- [[Claude Telegram Bot repo]] · 🗂 project
+- [[ControlBot при shutdown убивает все торговые боты]] · ⚠️ feedback
+- … and 161 more
+
+## ⏱ Recently edited
+
+- `2026-05-16 18:45` [[Real-mode dashboard — Bybit is the only truth]] · 🟢 today
+- `2026-05-16 15:54` [[real-trades-fee-semantics]] · 🟢 today
+- `2026-05-16 15:27` [[gerchik-signals-decision-varchar]] · 🟢 today
+- `2026-05-16 05:49` [[graph-system]] · 🟢 today
+- `2026-05-16 05:23` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
+- `2026-05-15 23:40` [[feedback-bybit-migration-bypass]] · 🟢 today
+- `2026-05-15 23:40` [[feedback-bybit-env-symlink]] · 🟢 today
+- `2026-05-15 23:39` [[bybit-3-sub-architecture]] · 🟢 today
+- `2026-05-15 22:43` [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] · 🟢 today
+- `2026-05-15 22:42` [[telegram-webview-aggressively-caches-mini-app-multi-layer-bust-needed]] · 🟢 today
+- `2026-05-15 22:42` [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] · 🟢 today
+- `2026-05-15 19:29` [[pc1-only-model-tags-trap-fallback-chain]] · 🟢 this week
+- `2026-05-15 19:05` [[silero-torchaudio-install-quirks]] · 🟢 this week
+- `2026-05-15 19:01` [[pc2-homelab-active]] · 🟢 this week
+- `2026-05-15 14:11` [[session-wallet-baseline-traps-wallet-transfers]] · 🟢 this week
+
+## 📚 Index by type
+
+### 🗂 project (88)
+
+- [[$10k/mo Strategy (Artem)]] — Ranked paths to $10k+/mo using AI, tailored to Artem's assets. Discussed 2026-04-16. TG channel picked as parallel track
+- [[Backtest findings and parameter sensitivity]] — Key findings from parameter sweeps on CONS strategy — what works, what doesn't, the spike filter result and its limits
+- [[Baseline V3 — 2026-05-10 05:28:55 UTC]] — Чистая точка старта новой статистики после волны фиксов 2026-05-09; всё что до неё — мусор, для решений не использовать
+- [[Bybit V5 open/close — verified knowledge]] — Подтверждённые правила и подводные камни Bybit V5 для market open/close на linear perp; e2e-тест в gerchik-trading-agent
+- [[Claude Telegram Bot repo]] — Personal "Bot для общения с тобой" — /root/claude-telegram-bot, pushes to Claude-Telegram-Bot repo (not OpenClaw-v3)
+- [[Current deploy state on VPS]] — Which services run where, ports, nginx routing, project directories — live production setup as of 2026-04-30 post-reboot
+- [[Daily-Driver Git Repos]] — Все репо Артёма с которыми я регулярно работаю — пути на VPS, GitHub origin, что внутри, какие сервисы запускают
+- [[Dashboard Settings tab architecture]] — How the dashboard's Settings tab is wired up — endpoints, registry, confirm phrases, dual-writer invariant with ControlB
+- [[Dashboard V2 (per-strategy)]] — Unified per-strategy dashboard at /v2.html — kills paper/real split confusion; v1 still live until cutover
+- [[Dashboard settings apply chain (self-sufficient, no ControlBot needed)]] — POST /api/settings/<key> teper polnostyu primenyaet nastroiki — obnovlyaet vse tablicy + rebootayet servis. Artem planir
+- [[Dashboard split (DEPRECATED)]] — PAPER/REAL split-page setup is dead since 2026-05-05; replaced by per-strategy v2. Memory kept as historical context onl
+- [[Dust auto-sweep in reconciler]] — order_executor_wrapper auto-closes <10% qty residuals from server-side TP rounding to prevent orphan dust forever
+- [[Emails Optimization]] — AI-секретарь для входящей почты — триаж Claude + управление через TG; репо emails-optimization
+- [[Fees accounting (paper + real) and historical backfill]] — How fees_paid_usd is computed, persisted, and how the 900-row historical zero was reconstructed
+- [[GA GPU миграция — DONE 2026-05-08 (canonical schema + dashboard wired)]] — GPU-port завершён 2026-05-08; canonical schema с train/test buckets; dashboard /api/ga/run target=pc1 + WMI detach + per
+- [[GA Optimizer for Trading Bot]] — GA parameter optimization system — scripts, dashboard integration, auto-apply workflow, current applied state
+- [[GA Walk-Forward Validation (ACTIVE)]] — Train/test split inside evaluate() — fitness graded on out-of-sample TEST, with saturating penalty when TRAIN diverges
+- [[GA baseline=0-trades bug — RESOLVED 2026-04-23]] — 2026-04-20 baseline showed 5 trades vs 3225 expected. Root cause found and fixed.
+- [[GPU homelab plan — 2x RTX 3090 на двух Windows ПК дома (PC1 ACTIVE 2026-05-07)]] — ПК1 настроен: Tailscale 100.99.211.123 + OpenSSH (root@vps→tkach@PC1) + Ollama as SYSTEM ScheduledTask; ПК2 ещё не подкл
+- [[Gerchik Copy Phase 1]] — Copy-trading pipeline для GTE Pro TG signals — Phase 1 architecture, capital, decisions, file map
+- [[Grafana alerts → @infinityopenclowbot]] — Куда сейчас идут все Grafana trading alerts и как откатить
+- [[Hourly Report v2 (TG → dashboard deep-link)]] — Сжатый layout TG-отчёта + clickable close-reasons → дашборд с фильтром
+- [[Hourly Supervisor (deterministic)]] — 2026-05-02 — старый opus/sonnet hourly agent заменён Python-скриптом; Claude (haiku) только при events>=1 или anomalies>
+- [[Hybrid trading mode (per-strategy paper/real routing)]] — Per-strategy routing machinery still in code, but as of 2026-05-15 ALL three strategies = REAL (full live mode). Hybrid 
+- [[Invoice Ingestion Pipeline]] — OnTime invoice@threestonesalliance.ca IMAP → DB → Vendor Prices + Canonical Materials grid. 23 regex parsers, 2079/2945 
+- [[Invoice OCR Followup (Tesseract)]] — One-shot systemd timer 2026-05-12 10:00 Calgary — Tesseract OCR re-parse over failed vendor_invoices, then canonicalize,
+- [[Labor Materials Reprice + Legacy Mapping (May 2026)]] — Полная цепочка reprice operations 2026-05-05 — pricing snapshot backfill + canonical mapping для archived legacy labor m
+- [[MFE/MAE excursion tracking]] — peak_pnl_pct/trough_pnl_pct columns on simulated_trades+real_trades; paper updates per WS tick, real columns NULL until 
+- [[Meta-labeler V1 — XGBoost binary classifier для signal-quality]] — Активен 2026-05-08, AUC test 0.728, shadow mode (log_only=true); масштабирует position size DOWN-only по P(profitable)
+- [[Mobile-dev workflow (CLAUDE.md per project + MOBILE_RULES.md)]] — 2026-05-02 — Артём настроил структурный mobile-dev workflow чтобы избегать OpenClaw-style потерь контекста; CLAUDE.md в 
+- [[Morning Briefing Connectors — на паузе]] — Артём хочет персональный morning briefing (Gmail+Calendar+Drive+Otter); решение отложено до ответа Тима по emails-optimi
+- [[OnTime (TSA)]] — PWA для siding-компании TSA — контроль дедлайнов/часов по объектам, соревновательный рейтинг форманов; домен ontime.mana
+- [[OnTime 2026-04-27 Domain Outage Compensation]] — 27 апреля 2026 утром был отключён домен ontime.management → check-in не работал; всем 26 рабочим вручную проставили 9.0h
+- [[OnTime Daily Report Nudge]] — Auto-alert 18:00 Calgary: кто работал, кто не подал daily report. Админ + форман своих объектов.
+- [[OnTime Daily Reports & Budget Analytics]] — Архитектура dailу-отчётов, budget analytics, team history в OnTime (после миграции 2026-04-17)
+- [[OnTime Deliveries (material delivery planner)]] — delivery-tasks модуль OnTime — workflow, роли, integration с Extra Work
+- [[OnTime Delivery Shortages]] — Shortage tracking on PO line items — Foreman flow for short-shipped deliveries with wait/reorder/resolved actions
+- [[OnTime Estimating Module]] — AI-assisted siding takeoff tab — Phase 1 (upload+render) shipped 2026-05-04, Phase 2-3 pending real PDFs
+- [[OnTime Extra Work tab]] — Добавлена вкладка Extra Work с approval workflow, фото, TG-нотификациями и linkage в daily report
+- [[OnTime Foreman Overhead Split (Variant B, since 2026-01)]] — Primary-foreman cost вынесен в company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only users.role=
+- [[OnTime Heartbeat & Time Policy]] — OnTime time-tracking model — geofence + explicit checkout + force-checkout + EOD 17:30 safety-net, минус 30 мин unpaid l
+- [[OnTime Lifts + Refuel Tracking]] — Delivery driver fuel-tracking feature — 11 lifts catalog, per-refuel log with photo+cost+engine hours, monthly consumpti
+- [[OnTime Marketing Video Pipeline]] — Полный pipeline для маркетингового видео OnTime — где файлы, как пересобрать, что Артём выбрал в финальной версии.
+- [[OnTime Overtime Watch]] — PP-hours индикатор и forecast 88h/PP — куда смотреть и как алерт работает
+- [[OnTime Procurement]] — Vendors + Purchase Orders MVP added to OnTime 2026-04-24. Tiered approval by total, foreman self-serve below T1. Kojo re
+- [[OnTime Scoring (points)]] — Тиры + financial loss-gate (2026-04-29) + foreman-only rule (2026-04-30) — баллы только role=foreman
+- [[OnTime Service Tasks (Andrei Mesca's tab)]] — QA + warranty + standalone service ticket flow with kanban + checklist + categorized photos
+- [[OnTime Timesheet Tab]] — /timesheet — единый контроль часов/cost по workers × days, allocation tree (project/service/delivery), anomalies feed. Д
+- [[OnTime Worker Transfer Flow]] — Перемещение работника между active projects — три пути: pull-now (one-tap, foreman target), transfer-request (worker сам
+- [[OnTime full hours/finance overhaul (2026-05-09 session)]] — Big-day rundown — что трогали в OnTime 2026-05-09: lunch bug → hourly billing → foreman overhead split → consistency fix
+- [[OnTime notification i18n]] — Per-recipient lang for notifications — где живёт инфра и какие call sites уже переведены
+- [[OnTime roles + access matrix]] — Management (pm/vp_construction/director) получают admin-equivalent capability во всём, кроме destructive и invite-code g
+- [[OnTime roles + notifications + Extra Work workflow]] — 4 новые управленческие роли, линейный approval workflow для Extra Work, persistent notifications с колокольчиком, direct
+- [[OnTime wage-to-cost burden table]] — В OnTime `hourly_wage` (roster) — что получает работник; для бюджета и team-activity labour используется loaded cost чер
+- [[PC1 Homelab — ACTIVE inventory]] — Что доступно на ПК1 Артёма (RTX 3090, Tailscale 100.99.211.123) для тяжёлых задач — SSH, Ollama, faster-whisper, autosta
+- [[Photo restoration pipeline (CPU-based on VPS, paused)]] — Установлен GFPGAN+RealESRGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; pipeline работает на CPU очень медленно — ка
+- [[Production state not captured by git]] — DB schema changes, Grafana alerts, and systemd units that live only on the VPS — if we rebuild, these must be reapplied 
+- [[Project Progress - 4BotsBybit-Trading]] — Current state of the trading bot project, what's done, what's left to do, key architecture decisions
+- [[Prop firm funding path ($50-150k)]] — Artem rassmatrivayet prop firm challenge kak path k $10k/mo. 2026-04-23 soglasovano — otlozhit do proven edge, kriterii 
+- [[Real Cutover Plan 2026-05-10]] — План перехода CONS на real после 2-3 дней paper-наблюдения с baseline V3; чек-лист критериев готовности
+- [[Real-trading snapshot endpoint]] — /api/real-snapshot bundles wallet+open+realized 1h/24h/7d for hourly reports; uses Bybit truth, not DB
+- [[Risk Officer — hourly LLM defensive auto-pause]] — Активен 2026-05-08, hybrid scorecard+LLM gate, может только pause/resume через /api/trading-state; LLM-on-CAUTION времен
+- [[Roofmart Catalog Sync]] — Working pipeline to scrape Roofmart ProZone invoices and import line items as priced materials. 92 SKUs imported 2026-04
+- [[Sage Hill 600 Blueskin → SOPRASEAL split (one-time fix)]] — Audit trail of the 2026-05-05 redistribution that moved 78% of legacy "Blue Skin" reports into SOPRASEAL labor on Sage H
+- [[Siding Takeoff Industry Rules]] — numeric ratios + workflow conventions for OnTime Estimating BOM engine — collected 2026-05-04
+- [[Symbols List — 4BotsBybit]] — Production symbols.json state, tier structure, and full Bybit USDT-perp universe archive
+- [[System Baseline V2 — 2026-05-08 rebuild]] — Точка отсчёта новой системы после большого rebuild сессии 2026-05-08; wallet, состав фичей, ключевые проблемы решённые в
+- [[TG Channel Plan (Artem solo-founder)]] — Активный проект с 2026-04-16. RU TG-канал Артёма в нише «solo-founder строит SaaS с AI». Все ключевые решения зафиксиров
+- [[TSA Legacy server (46.8.227.113)]] — Старый Django+TG-бот сервер TSA, откуда мигрировали данные в OnTime 2026-04-17
+- [[TSA OS — Unified Company Platform (active)]] — Reactivated 2026-04-24. OnTime becomes the single app for TSA — replacing Kojo (procurement) AND ClickUp (tasks/docs/CRM
+- [[TSA company role overlaps]] — В TSA (company_id=1) Director совмещает функцию Purchasing Manager; Artem Borysiuk одновременно admin+author
+- [[TSA nightly legacy-sync]] — Каждую ночь подтягивает отчёты из старого Django+TG-бота в OnTime пока идёт параллельная работа
+- [[Tim AI Agent — расширение emails-optimization (план + текущее состояние)]] — AI-делегат для Тима внутри его TG бота; Week 1+2 production-ready 2026-05-08, остался только Calendar OAuth (Week 3)
+- [[Trading Bot Full Specification]] — Complete specification for 4 Bybit futures trading bots - strategies, signal logic, ATR calculation, TP/SL levels, strat
+- [[Trading Dashboard — GA Section + Strategy Filters]] — Dashboard features added 2026-04-12: GA optimization UI, strategy wins highlight with status chips, max_drawdown setting
+- [[Trading State Soft-Gate]] — Unified /api/trading-state widget on real.html for "is real on?" — endpoints, semantics, pause/resume mechanics
+- [[Trading bot DEX migration (Hyperliquid)]] — Artem boitsya CEX-custody risk, sprashivayet pro Hyperliquid. Obsuzhdali 2026-04-23 strategiyu security + tech skоp porт
+- [[Trading bot cron-зоопарк 2026-05-08]] — Все 10 systemd timer'ов trading-системы после rebuild сессии 2026-05-08 — что запускается, когда, зачем
+- [[Wife English Tutor — план 2026-05-07]] — AI-учитель английского @EnglishTecherTutorBot. Persona Алёна Николаевна (shimmer). Latency pipeline ported 2026-05-12 (H
+- [[Wife Tutor Correction-First Format]] — @EnglishTecherTutorBot теперь поправляет ошибку В НАЧАЛЕ ответа (тег [FIX]...[/FIX]), потом продолжает беседу — для голо
+- [[Wrestling App v2 — Multi-club + Full Features]] — Major v2 rewrite done 2026-04-13; multi-club, proportional norms, analysis, profile with socials, club branding
+- [[Wrestling Camp Payment Flow]] — Camp оплата через Square checkout link с двусторонней confirm-flow (без Square Webhooks API)
+- [[Wrestling Performance Tracker]] — Mobile-first wrestling club app — training check-in, norms, tournaments, rankings. Live at constantwrestling.cloud
+- [[gerchik-trading-agent — AI agent для Bybit на price-action Герчика]] — Самообучающийся agent (rule engine + ML scorer + LLM reflector + GA evolution); /root/gerchik-trading-agent; private Git
+- [[real_trades table schema differs from simulated_trades]] — real_trades is narrower — missing duration_minutes, tp_triggered flags, initial_qty, tp_levels. Aggregates must guard ag
+- [[realized_pnl_usd column semantics]] — Why simulated_trades has BOTH gross_pnl_usd AND realized_pnl_usd, and which to use for aggregates
+- [[solo_claude_bot infra]] — CLI в /root/solo_claude_bot для постинга в TG-каналы @solo_claude (main) и drafts. Два бота, токены в .env (chmod 600), 
+- [[voice-tutor (@AISmartFriendBot)]] — Telegram голосовой собеседник + Mini App с continuous voice mode (VAD/barge-in); /root/voice-tutor; 2 systemd units; voi
+
+### ⚠️ feedback (81)
+
+- [[Action-type identifiers — никаких имён людей в коде]] — ask_tim → ask_owner; имя в идентификаторе с маленькой буквы выглядит как ошибка в его имени
+- [[Auto-push enabled by default (2026-05-02)]] — Артём не хочет пушить руками — Claude-сессии должны делать commit+push сразу, во всех репо включая trading
+- [[BE offset interpreted as % of entry price (NOT % of SL distance)]] — Обнаружено 2026-05-08: be_price_offset_pct=3.0 означало SL → entry+3% на LONG, фактически делало BE второй TP — реальный
+- [[BE на real (move SL→entry)]] — На real BE-protection реализован отдельным monitor'ом в reconciler — paper держит свою логику, real использует Bybit set
+- [[Billable service tasks workflow]] — Billable service tasks must transit service → to_invoice → (accounting) → complete; service role cannot skip to complete
+- [[Bybit WS keepalive + supervisor]] — websocket-client run_forever() требует ping_interval + supervisor-loop + idle watchdog — иначе SignalBot периодически за
+- [[Bybit empty result truthy-trap]] — Bybit V5 endpoints (особенно /position/trading-stop) на success возвращают retCode=0 с result={}; `if not res` интерпрет
+- [[Bybit signing order trap]] — bybit_api.py _request("GET") signs sorted params but used to send unsorted — silent 401 on auth-required endpoints with 
+- [[Chart.js freezes browser without bounded parent height]] — Wrap every Chart.js canvas in a fixed-height div, otherwise the responsive resize loop grows the canvas forever
+- [[ControlBot при shutdown убивает все торговые боты]] — Kill старого ControlBot или остановка его через systemd triggers shutdown-хендлер, который шлёт SIGTERM SignalBot+Tradin
+- [[Dashboard 502 от чужой idle-in-transaction]] — Dashboard-api виснет на старте если другой бот держит idle-in-transaction lock на real_trades_compat; защищено двумя сло
+- [[Dashboard API startup gotchas]] — Two issues found when dashboard_api_v3.py wasn't serving data — env pollution and nginx double config
+- [[Dashboard SQL params must be UTC, not local time]] — PostgreSQL `timestamp without time zone` columns store UTC; passing `datetime.now()` silently drops the most recent UTC_
+- [[Dashboard v1 vs v2 — don't confuse]] — Two dashboards live in parallel until v2 polished; editing the wrong one or the wrong layer (repo vs deploy) silently br
+- [[Dashboard-First Workflow]] — Артём хочет чтобы ВСЕ изменения настроек и операции делались через dashboard UI/endpoint, не напрямую в файлах/SQL/CLI
+- [[Dup-symbol rule is per (symbol, mode), not per symbol]] — In hybrid mode paper-CONS and real-TREND on the same symbol can coexist — they're separate books
+- [[Emails — keep user guide in sync with features]] — При добавлении любой новой фичи в emails-optimization обновлять docs/tim_user_guide.md
+- [[Emails — preserve unread state]] — При IMAP-чтении не сбрасывать \Seen — хозяин ящика должен видеть, на что обратить внимание
+- [[Estimating без Claude API]] — regex + ручной edit вместо Vision API для extraction; решено 2026-05-04 после теста на 3 архитекторских PDF
+- [[FastAPI sibling-path collision]] — При добавлении endpoints в main.py избегай коллизий с уже существующими {param} путями
+- [[Full REAL trading mode (all strategies live since 2026-05-15)]] — 2026-05-15 — Артём флипнул всё в REAL (CONS+TREND+AGGR). Paper заморожен с снапшотом +$137.98 CONS / +$66.59 TREND. Даль
+- [[GA Fitness Overfit Guards]] — Fitness function constants that prevent narrow/single-symbol overfit corners from winning evolution
+- [[GA Prewarm IP-Ban Handling]] — Binance returns HTTP 418 (not 429) under sustained load; prewarm now retries with Retry-After + aborts GA if >10% symbol
+- [[GA Symbols — Single Source is Symbols Editor]] — GA optimizer reads symbol list live from config/symbols.json (Symbols Editor); no separate GA-symbols store
+- [[GA apply must update all three live places]] — Where dashboard's Apply GA writes params — miss any of these and GA has zero effect on the live bot
+- [[HARD CAP двойной счёт + вид open paper в dashboard]] — max_position_usd_per_symbol режется через position×leverage; dashboard hardcoded forced_real игнорирует JSON per_strateg
+- [[JSON-конфиг trading_v3_artem.json содержит плейсхолдеры ${VAR}]] — trading_v3_artem.json хранит секреты как ${DB_PASSWORD}/${BYBIT_API_KEY}; код должен разворачивать их через env_config.e
+- [[Legacy DB не коммитить]] — Production-данные TSA из legacy БД нельзя в публичный репо OnTime
+- [[Long subprocess from dashboard-api must use systemd-run, NOT start_new_session]] — cgroup-kill on dashboard-api restart nukes every child. start_new_session=True does NOT help. Use systemd-run --unit --s
+- [[Memory checkpoint + sync on every commit]] — Перед/после git push — записать в memory всё новое из сессии, потом синхронизировать в Claude-AI-md-files
+- [[Narrative Before Details (TG content)]] — При написании постов для @solo_claude всегда сначала выстраивать контекст/историю проекта, только потом нырять в техниче
+- [[No API Keys for Invoice Parsing]] — В OnTime invoice pipeline НЕ использовать Claude/OpenAI API. Только regex per-vendor parsers как сделали для Roofmart.
+- [[No routine confirmations — act, don't ask]] — Artem wants Claude to just do routine/reversible work without asking "делаю? да/нет"; confirmation only for genuinely ri
+- [[No tables in TG-forward content]] — Markdown tables render as garbled text when forwarded in Telegram; use bullet lists in any doc Artem will copy/paste to 
+- [[OAuth rate-limits & "Лимит исчерпан"]] — Все боты Артёма share один OAuth token; opus/sonnet quotas в 5h окнах; trading_request заблокированный fallback ломал in
+- [[OnTime Archive = junk only, не для done]] — Archive в OnTime означает мусор/cancelled/тест, а не "спрятать завершённый проект"
+- [[OnTime BOM replace trap (project_materials wipe)]] — Saving a project with shorter material list silently wipes ALL prior BOM rows on that project — DELETE-then-INSERT patte
+- [[OnTime Billable Hours Dedup]] — report wins per (uid, day) — не per (uid, pid, day); человек не может быть на двух объектах одновременно
+- [[OnTime CSS variables — actual names]] — Frontend CSS-переменные TSA — НЕ пиши --tsa-fg, в проекте --tsa-text
+- [[OnTime Check-in Time Policy]] — Early scans clamped to shift_start + ±15min snap к shift_end для чистых 9h/8h смен
+- [[OnTime Foreman Mobile Actions]] — Форман на мобильном теряет primary-action кнопки — `hidden lg:inline` режет подписи, иконки тонут в шапке
+- [[OnTime Labor vs Purchase Materials]] — Two distinct kinds of "materials" in OnTime — labor install rates vs vendor purchase prices. Never mix them.
+- [[OnTime Pin Crew Invariant]] — project_installers надо считать source-of-truth для крю; legacy-импорт его не заполнил, авто-pin в /api/reports + backfi
+- [[OnTime Project/Reports Guard Sync]] — GET /api/projects/{pid} installer-guard и POST /api/reports crew-guard ОБЯЗАНЫ принимать одинаковую crew-evidence (pinne
+- [[OnTime _session_hours_authoritative open-session lunch]] — Open-session live projection MUST subtract 12:00-12:30 lunch like closed sessions, иначе reports разъезжаются от payroll
+- [[OnTime daily-report crew guard]] — /api/reports rejects 403 if user is not on the project crew; bypass paths and how to debug "you are not on this project 
+- [[OnTime email-register upgrades legacy stubs in place]] — При регистрации по email stub-юзер из легаси-импорта апгрейдится, а не создаётся новый
+- [[OnTime materials.canonical_id alias chain]] — When labor catalog is replaced wholesale, old archived materials point to new canonical ones via canonical_id; installed
+- [[OnTime salaried roles excluded from hourly payroll]] — SALARIED_ROLES={'delivery','service'} — их wage helpers возвращают None, чтобы все cost loops автоматом skipали этих люд
+- [[OnTime — без подтверждений]] — В проекте OnTime Артём разрешает делать всё без согласований, кроме удаления проектов
+- [[OnTime: silence all nudges on company days off]] — 0 чекинов за 24ч = выходной → ни digest'ов, ни напоминалок никому. Хардкод-календарей нет, гейт через _company_had_activ
+- [[PC1 ssh→PowerShell→python детач — обязательно WMI Win32_Process.Create + per-PID лог-файлы]] — Запоминания из 2026-05-08 при wiring PC1 GPU GA: 5 каскадных Windows-quirks; решение через WMI + per-PID log filenames +
+- [[PC1 для тяжёлого compute]] — Любая тяжёлая нагрузка (ML training, batch-обработка, GA, рендеринг, photo restoration) идёт на ПК1 (RTX 3090, Tailscale
+- [[Parallel agents on the VPS]] — Artem may run other AI agents (OpenClaw, etc.) in parallel with Claude Code on the same VPS — check before destructive o
+- [[Piper TTS Swallows Endings]] — Piper TTS глотает финальные согласные на коротких фразах; всегда добавляй apad pad_dur=1.0+ к выходу.
+- [[Pre-baseline-v3 trading data = мусор, не использовать]] — Всё в trading_bot_v3 БД до 2026-05-10 05:42:10 UTC недостоверно из-за каскада багов; для решений брать только post-basel
+- [[React hooks must come before early return]] — Adding useMemo/useState/useEffect AFTER `if (!task) return null` blanks the modal — Rules of Hooks violation
+- [[React select fallback on missing option]] — <select value=X> где X не значится в <option> молча показывает первый option — UI начинает врать про данные
+- [[Real position on Bybit with no real_trades row]] — Kogda na Bybit est' real pozicia a v real_trades pusto — znachit place_order_from_signal vernul success=False do insert.
+- [[Real-mode dashboard — Bybit is the only truth]] — 6 stacking bugs made the BD-derived real PnL diverge from exchange by $8+. Lessons + how Bybit closed-pnl actually works
+- [[SQLite ISO timestamp comparison trap]] — SQLite datetime('now') пишет с пробелом, Python datetime.isoformat() пишет с T — лексикографическое сравнение режет запи
+- [[Salesforce Experience Cloud — what works and what doesn't]] — ProZone (Salesforce LWC) automation: locator.click(force=True) bypasses visibility checks, but bot-detection blocks new 
+- [[SignalBot бары — confirm-only + ws_config-aware slicing]] — Три скрытых бага в signal_bot_v3_websocket.py: interim бары как закрытые, hardcoded [-6:] vs ws_config['volume_avg_bars'
+- [[Split Commits Over Speed]] — Артём предпочитает чистую историю с отдельными коммитами на каждую фичу, даже когда я могу bundle для скорости
+- [[TG ControlBot slash commands добавлены 2026-05-08]] — @ControlByBitTradingBot теперь принимает /status /balance /pause /resume /help; auth через owner_id; добавлены в src/con
+- [[TG Voice Chain Autoplay]] — voice-tutor — на голосовой ввод отвечать только voice (без text-эха), чтобы TG автопроигрывал цепочку voice-сообщений в 
+- [[Telegram emoji-prefix breaks CommandHandler]] — KeyboardButton "📅 /daily" не дёргает CommandHandler в python-telegram-bot, и vocab/quiz-сессия залипает
+- [[Tim — английский only]] — Все материалы, строки бота, документы для Тима — только English. Тим не понимает русский.
+- [[Trading Config Live Source]] — Never assume GA-applied values are still live — Artem retunes via dashboard; always query actual state
+- [[Trading Guards REAL only]] — Все risk-гарды в process_signal (main_bot_v3) применяются ТОЛЬКО к REAL-routed стратегиям; PAPER идёт без блоков
+- [[Verify downloads before use]] — Перед использованием/запуском любого файла, скачанного из GitHub releases / HuggingFace / npm / pip / любого внешнего ис
+- [[Win Rate = realized_pnl_usd > 0 (money-based, not TP-based)]] — Correct WR for partial-close strategy — count trades that netted positive money across all chunks, not trades where "a T
+- [[Wrestling norm history schema]] — norm_attempts table + drift in norm_standards (VARCHAR not FLOAT despite CREATE statement)
+- [[_billable_hours_map already projects open sessions]] — Не считать today_open отдельно поверх bmap — _session_minutes_safe уже возвращает live минуты для open sessions
+- [[emails-opt — два бота на одной БД, изоляция через owner_chat_id]] — emails-bot (Артём mirror, TEST_MODE=1) и emails-bot-tim (продовый Тим) работают через один app.bot и одну emails.db; люб
+- [[signal_bot_config.json — two files, one orphan]] — Canonical signal config path is env_config.SIGNAL_BOT_CONFIG_PATH (src/signal_bot_config.json). The root-level copy is o
+- [[stats_mgr._query swallowing INSERTs]] — До 2026-04-29 _query вызывал fetchall() на любой SQL и возвращал [] на ошибке без commit — INSERT/UPDATE тихо откатывали
+- [[systemctl timestamps for JS consumption]] — ActiveEnterTimestamp format trap — always pass --timestamp=unix and convert to ISO-8601 UTC before returning to browser
+- [[systemd OnCalendar = local time, не UTC]] — 2026-05-02 — попался: написал OnCalendar=18:00 думая UTC, systemd интерпретировал как local (Calgary MDT) → срабатывало 
+- [[tutor-bots OAuth 401 (drop-cache fix 2026-05-12)]] — voice-tutor / wife-english-tutor / son-french-tutor ловят 401 invalid x-api-key из-за race с DexClaud за общий credentia
+- [[Отвечать на русском кириллицей]] — Артём просит общаться на русском языке кириллицей, не транслитом
+
+### 📝 stub (57)
+
+- [[emails-two-bots-shared-db]] — (not written yet)
+- [[feedback-chartjs-unbounded-height]] — (not written yet)
+- [[feedback-query-write-swallow]] — (not written yet)
+- [[feedback-real-trades-truth]] — (not written yet)
+- [[feedback-reports-win-rate]] — (not written yet)
+- [[feedback_dd_guard_paper_skip]] — (not written yet)
+- [[feedback_ga_apply_full_chain]] — (not written yet)
+- [[feedback_ga_backtester_daily_zero]] — (not written yet)
+- [[feedback_ga_fitness_overfit]] — (not written yet)
+- [[feedback_oauth_force_refresh]] — (not written yet)
+- [[feedback_oauth_rate_limits]] — (not written yet)
+- [[feedback_openai_base_url_shell]] — (not written yet)
+- [[feedback_openai_base_url_shell_override]] — (not written yet)
+- [[feedback_pc1_ssh_quirks]] — (not written yet)
+- [[feedback_real_trades_truth]] — (not written yet)
+- [[feedback_telegram_keyboard_emoji]] — (not written yet)
+- [[feedback_tg_persistent_keyboard]] — (not written yet)
+- [[feedback_tim_english_only]] — (not written yet)
+- [[feedback_tutor_tts_wiring]] — (not written yet)
+- [[feedback_voice_tutor_oauth_500]] — (not written yet)
+- [[feedback_wet_word_lookup_slow]] — (not written yet)
+- [[gerchik-trading-agent]] — (not written yet)
+- [[project-baseline-v2-2026-05-08]] — (not written yet)
+- [[project-baseline-v3-2026-05-10]] — (not written yet)
+- [[project-ga-realism-overhaul]] — (not written yet)
+- [[project-ga-walk-forward-todo]] — (not written yet)
+- [[project-gerchik-bot]] — (not written yet)
+- [[project-grafana-alerts]] — (not written yet)
+- [[project-mfe-mae-tracking]] — (not written yet)
+- [[project-realized-pnl-column]] — (not written yet)
+- [[project-trading-state-softgate]] — (not written yet)
+- [[project-unversioned-prod-state]] — (not written yet)
+- [[project_backtest_findings]] — (not written yet)
+- [[project_dashboard_ga_section]] — (not written yet)
+- [[project_emails_optimization]] — (not written yet)
+- [[project_fees_accounting]] — (not written yet)
+- [[project_ga_optimizer]] — (not written yet)
+- [[project_hybrid_mode]] — (not written yet)
+- [[project_mfe_calibration]] — (not written yet)
+- [[project_ollama_race_shadow]] — (not written yet)
+- [[project_pc1_homelab_active]] — (not written yet)
+- [[project_pc2_homelab_active]] — (not written yet)
+- [[project_photo_restoration]] — (not written yet)
+- [[project_realized_pnl_column]] — (not written yet)
+- [[project_son_french_tutor]] — (not written yet)
+- [[project_sophie_lipsync]] — (not written yet)
+- [[project_trading_state_softgate]] — (not written yet)
+- [[project_tutor_latency_pipeline]] — (not written yet)
+- [[project_tutor_live_tools]] — (not written yet)
+- [[project_unversioned_prod_state]] — (not written yet)
+- [[project_voice_tutor]] — (not written yet)
+- [[project_wife_english_tutor]] — (not written yet)
+- [[real-trades-truth]] — (not written yet)
+- [[tim-agent-plan]] — (not written yet)
+- [[user_artem]] — (not written yet)
+- [[wiki-link]] — (not written yet)
+- [[wiki-links]] — (not written yet)
+
+### · memory (39)
+
+- [[avatar-video-calibration]] — "OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на ста
+- [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] — "Critical bug 2026-05-15. Computing BE-SL from row['entry_price'] (=signal) instead of live_pos.avgPrice (=actual fill) 
+- [[bybit-3-sub-architecture]] — "Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/A
+- [[dexclaud-bridge-bot]] — "TG-бот @DexClaudCodAIBot — bridge для отправки уведомлений Артёму из моих скриптов. Токен в `/root/4BotsBybit-Trading/.
+- [[emails-agent-handle-button]] — 🤖 AI Plan button on every triage card → fires Claude planner with email thread context; lives in bot.py:_build_keyboard 
+- [[feedback-bybit-env-symlink]] — "/root/gerchik-trading-agent/.env is a symlink to /root/4BotsBybit-Trading/.env — same file, two projects. Adding diverg
+- [[feedback-bybit-migration-bypass]] — "CLAUDE.md правила 4BotsBybit-Trading (нет правки .env, нет stop systemd, нет закрытия real-поз) — bypass-имо ТОЛЬКО при
+- [[feedback-funnel-vs-close-reason]] — "TP Funnel cells = trigger events (overlap), а не разбиение closed-trades; сумма funnel'а > closed нормально, mutually e
+- [[feedback-ga-unrealistic-tps]] — "GA рекомендует TP в космосе (13R-48R), хотя реальная MFE доходит максимум ~2%; backtester засчитывает wick-касания на 5
+- [[feedback-grafana-v13-resource-table]] — "Grafana 13 хранит дашборды в новой `resource` таблице, не в `dashboard`; SQLite-фикс возможен с restart'ом сервера"
+- [[feedback-toast-pointer-events]] — Toast/snackbar с opacity:0 без pointer-events:none молча съедает клики по элементам под ним
+- [[ga-backtester-daily-zero-bug]] — "На ПК1 GA backtester (pipeline.evaluate_strategy) сейчас выдаёт 0 trades при любых params — daily ATR=0 для всех 60k si
+- [[ga-realism-overhaul-2026-05-13]] — Overhaul GA backtester (4 фазы + 2.5) сделанный в одной длинной сессии 2026-05-12/13. Sharpe annualised + costs + live c
+- [[gerchik-leverage-88-too-high]] — real_leverage 88× в gerchik душит scanner через liquidation_buffer filter; снижено до 35× 2026-05-12; ожидается рост час
+- [[gerchik-signals-decision-varchar]] — "gerchik_signals.decision = varchar(40) — никогда не пиши туда полный reason, иначе ВСЕ skip-сигналы тихо валятся в log_
+- [[graph-system]] — "5 knowledge graphs (memory, trading, tutor, ontime, projects) + auto-generated PROJECTS.md digest; new sessions read PR
+- [[multi-fix-per-problem-sentence]] — "Tutor-боты должны выдавать ОТДЕЛЬНЫЙ [FIX] на каждое ошибочное предложение учащегося, а не схлопывать в один; русский i
+- [[oauth-force-refresh]] — "When Claude returns 401, the 401-handler must call refresh API even if disk expiresAt is in the future — Anthropic revo
+- [[ollama-race-shadow-emails-triage]] — "PK1+PK2 LLM race helper в emails-bot, shadow-режим против Claude Haiku triage с 2026-05-13"
+- [[openai-base-url-shell-override]] — "VPS shell env содержит `OPENAI_BASE_URL=https://api.deepseek.com/v1` — OpenAI Python client его подхватывает по умолчан
+- [[pc1-only-model-tags-trap-fallback-chain]] — "PC1 имеет custom Ollama model tags (например `qwen2.5:32b-ctx4k`) которых нет на PC2 — fallback chain 404s when configu
+- [[pc2-homelab-active]] — "ПК2 (Art, RTX 3090 24GB) подключён 2026-05-12: Tailscale `borys@100.73.22.1`, SSH с ed25519 ключом, Ollama 11434 (qwen2
+- [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] — "db-backup сервис тихо клал zero-byte dumps 4 дня потому что pg_dump as `trading_bot` user не мог LOCK TABLE на `*_basel
+- [[project-ga-under-review]] — "GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending"
+- [[project-mfe-calibration]] — 📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у
+- [[real-trades-fee-semantics]] — "В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающ
+- [[session-2026-05-14-emails-perf-photo]] — "Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal,
+- [[session-2026-05-14-tutors]] — Big session — wife/son tutor overhaul (OAuth fix + live tools + 6-level CEFR library + EWA-style UI + Alyona avatar + Sa
+- [[session-2026-05-15-voice-vocab-graphs]] — 2026-05-14/15 ночная сессия — Silero RU TTS на ПК1 + voice-tutor на OpenAI nova + wife/son tutor vocab/word-lookup 28s→1
+- [[session-wallet-baseline-traps-wallet-transfers]] — "Drawdown guard сравнивает live wallet с `session_start_wallet_usd` — любой sub-account transfer / withdraw читается как
+- [[silero-torchaudio-install-quirks]] — "Silero + torchaudio require two deps that are NOT pulled in by `pip install torch torchaudio` — install will silently s
+- [[son-french-tutor-andrii]] — "TG-бот для Andrii (~11-14yo) учит французский A1-A2. Persona Sophie (нова voice), avatar talking_loop.mp4, streaming TT
+- [[sophie-lip-sync-via-sadtalker-on-pc1-in-progress]] — "Live talking avatar для @FrenchTuporBot/@EnglishTecherTutorBot — фотореалистичный портрет + лип-синк MP4 на каждый отве
+- [[telegram-webview-aggressively-caches-mini-app-multi-layer-bust-needed]] — TG mobile WebView ignores ?v= query params and weak Last-Modified headers — to force fresh shell reload you need no-stor
+- [[tg-persistent-keyboard]] — "В TG-ботах с tutor pattern reply_markup=QUICK_KB надо вешать на free-chat ответы, а не только на /start — иначе юзер, к
+- [[tutor-latency-pipeline]] — "4-фазная оптимизация /api/voice в tutor ботах (son/wife): Haiku + asyncio.gather + sentence split + LLM streaming + STT
+- [[tutor-live-tools]] — "wife-english-tutor has Anthropic tool-use for live BTC/ETH price (Bybit) and weather (wttr.in); don't let bot answer ma
+- [[tutor-tts-wiring]] — Tutor-bot TTS/STT must route to PC1 (Kokoro :8002 / Whisper :8001) with PC2 + OpenAI fallback; never let it silently fal
+- [[wet-word-lookup-slow]] — "wife-english-tutor `/api/word/lookup` на cache miss занимал 28s — Ollama JSON-prompt медленнее Claude, плюс TTS блокиро
+
+### 🔗 reference (1)
+
+- [[OnTime Invite Codes]] — Где хранятся коды приглашения для самостоятельной регистрации по ролям и какие точки в коде синхронизировать при добавле
+
+### 👤 user (1)
+
+- [[User Profile - Artem]] — Artem Borisyuk, crypto trader building automated Bybit futures trading bots

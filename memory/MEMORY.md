@@ -1,6 +1,13 @@
 - [🗂 Projects digest](PROJECTS.md) — START HERE: all 16 projects with status, local paths, services, hosts, DBs, env keys, linked memories. Auto-regenerated every 30 min.
-- [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto PROJECTS.md digest infra. How to add new modules.
+- [🧠 Memory digest](MEMORY_DIGEST.md) — hubs/stubs/orphans/recent for all memory nodes. Auto every 30 min.
+- [📈 Trading digest](TRADING_DIGEST.md) — net PnL by strategy/close_reason/symbol since baseline. Auto every 30 min.
+- [🏗 OnTime digest](ONTIME_DIGEST.md) — top workers/projects/materials/vendors by hours+qty. Auto every 30 min.
+- [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
+- [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
+- [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
+- [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
+- [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
@@ -12,10 +19,12 @@
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
 - [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
 - [Trading Guards REAL only](feedback_dd_guard_paper_skip.md) — все risk-гарды (DD, blacklist, time-of-day) только для REAL; paper без блоков
+- [Session Baseline Transfers](feedback_session_baseline_transfers.md) — sub-account transfer ловит DD guard как просадку; сбрасывать `session_start_wallet_usd` после трансферов
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
 - [Win Rate Definition](feedback_reports_win_rate.md) — WR = (realized_pnl − fees) > 0 (money-based, since 2026-04-22)
 - [Realized PnL Column](project_realized_pnl_column.md) — realized_pnl_usd = total, gross_pnl_usd = final chunk only
+- [real_trades fee semantics](feedback_real_trades_fee_semantics.md) — real_trades.realized_pnl_usd УЖЕ NET; sim GROSS; не вычитай fees дважды; helper _is_real_table в stats_manager
 - [Dashboard Settings Tab](project_dashboard_settings_tab.md) — SETTINGS_REGISTRY is source of truth; confirm phrases for REAL/update/clean
 - [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
 - [Toast Pointer Events](feedback_toast_pointer_events.md) — opacity:0 без pointer-events:none молча ест клики по tabs под ним
@@ -159,6 +168,11 @@
 - [GPU Homelab Plan](project_gpu_homelab_plan.md) — ПК1 ACTIVE: Tailscale + Ollama 7b/14b/32b + voice-tutor wired; ПК2 pending
 - [PC1 Homelab ACTIVE](project_pc1_homelab_active.md) — SSH `tkach@100.99.211.123`, Ollama :11434 + faster-whisper :8001 + kokoro-tts EN :8002 + silero-tts RU :8005 (все CUDA, AtBoot)
 - [Verify Downloads](feedback_verify_downloads.md) — Перед use внешних файлов: source rep + SHA256 + file-type validation; обязательно во всех сессиях
+- [Silero+torchaudio Quirks](feedback_silero_torchaudio_quirks.md) — Silero нужен `omegaconf`, `torchaudio.save()` нужен `soundfile`; оба молча отсутствуют после pip install torch
+- [PC1-only Model Tags](feedback_pc1_only_models.md) — `qwen2.5:32b-ctx4k` есть только на PC1; fallback chain → PC2 404 → Claude; use only shared tags or `ollama pull` на PC2
+- [BE-on-real avgPrice trap](feedback_be_on_real_avgprice.md) — BE-SL ВСЕГДА считать от `live_pos.avgPrice`, не от DB signal entry; иначе slippage = guaranteed loss; cost $13 в 7h до fix
+- [TG WebView cache layers](feedback_tg_webview_cache.md) — Mini App requires Cache-Control: no-store + ?v= в HTML + bot URL refresh; TG mobile сидит на старом UI пока юзер не Clear Cache
+- [pg_dump baseline perms](feedback_pg_dump_baseline_perms.md) — backup user нужен SELECT на ВСЕ tables в schema; baseline/archive owned by postgres ломали `bybit-db-backup` 4 дня тихо
 - [PC1 для тяжёлого compute](feedback_pc1_for_heavy_compute.md) — Всё тяжёлое (ML/GA/photo/backtests) на ПК1, VPS только для live-сервисов
 - [Tutor Latency Pipeline](project_tutor_latency_pipeline.md) — 4-phase оптимизация /api/voice: Haiku+gather+split+LLM stream+STT race+TTS proxy. 8s→2-4s
 - [PC2 Homelab Active](project_pc2_homelab_active.md) — ПК2 `borys@100.73.22.1` RTX 3090; Ollama 11434, whisper 8001; tutor STT race подключён
@@ -173,6 +187,7 @@
 - [Pre-baseline-v3 = МУСОР](feedback_pre_baseline_v3_data_is_trash.md) — ВСЕГДА фильтровать `entry_time >= stats_baseline_at` при любом запросе к trading-таблицам
 - [Gerchik Trading Agent](project_gerchik_bot.md) — AI agent /root/gerchik-trading-agent (private GH repo); 4-layer self-learning; шарит Bybit+Postgres с 4BotsBybit; Volume Spike blacklist BTC/ETH/SOL
 - [Gerchik leverage 88× → 35×](feedback_gerchik_leverage_88_too_high.md) — 2026-05-12: liquidation_buffer фильтр душил Layer 1 на 88×; 35× = ~2.85% liq, SL помещаются
+- [gerchik_signals.decision varchar(40)](feedback_gerchik_signals_decision_varchar.md) — НЕ пиши полный reason в `decision`; полный текст → `skip_reason` (text); overflow тихо валит ВСЕ INSERT'ы
 - [Meta-labeler V1](project_meta_labeler_v1.md) — XGBoost AUC 0.728 shadow mode; promote после 50+ post-baseline сделок
 - [Risk Officer](project_risk_officer.md) — Hourly LLM defensive auto-pause; LLM-on-CAUTION OFF на 7 дней
 - [Cron-зоопарк](project_cron_zoo_2026-05-08.md) — 10 timer'ов trading-системы, расписание + назначение

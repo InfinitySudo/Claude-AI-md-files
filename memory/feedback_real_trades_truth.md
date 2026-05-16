@@ -51,3 +51,34 @@ party.
 
 **How to apply:** any new real-mode aggregate display goes through the
 exchange-truth helpers, never raw SUM(realized_pnl_usd) FROM real_trades.
+
+## 2026-05-16 — SL vs FORCE split (close_reason honesty)
+
+`close_reason` теперь имеет отдельный 'FORCE' bucket для закрытий, которые НЕ были настоящим Bybit-SL hit. Логика в `_infer_close_reason` (`order_executor_wrapper_v3.py:660`):
+- 'SL' — есть chunk в ±1% от sl_price (настоящий стоп)
+- 'FORCE' — pnl≤0 + ни одного SL-chunk (раньше всё шло в 'SL')
+- TP/BE/LIQ как раньше
+
+Источники FORCE (по наблюдениям 2026-05-16):
+- BE-trail сдвинул Bybit SL на entry±0.5% но не обновил `sl_price` в DB (исправлено: `_maybe_move_be_real` теперь синкает sl_price)
+- Manual close, watchdog, signal-reversal, dust-sweep
+- Высокий slippage в Bybit-SL fill
+
+`close_source` (VARCHAR(32)) на real_trades говорит ОТКУДА классификация: `bybit_sl`, `bybit_tp`, `bybit_liq`, `inferred_be`, `force_inferred`, `force_inferred_backfill`.
+
+**Consequences для метрик:**
+- WR_TP считай как TP / (TP+SL+FORCE) — иначе занижено
+- Strategy switcher: FORCE считается как SL (SQL: `LIKE 'SL%%' OR = 'FORCE'`) — поведение свитчера не менялось
+- Auto-blacklist (5-streak SL → 48h pause): FORCE НЕ ловится через `startswith('SL')` — только настоящие SL стопают символ
+- GA fitness: если используешь real-data, фильтруй FORCE отдельно (overfit на грязных метках был причиной)
+
+**Backfill 2026-05-16:** 46 historic SL rows (60% от 76 total) переразмечены в FORCE. close_source='force_inferred_backfill'.
+
+## 2026-05-16 follow-up — narrowing the DB gap
+
+Reconciler (`order_executor_wrapper_v3.py`, 60s tick) теперь делает две дополнительные вещи каждый tick:
+
+- **Partial-close writeback** (`_writeback_partial_realized`): когда `qty < initial_qty` (TP1/TP2 сработали но позиция ещё открыта), суммирует closed-pnl chunks и пишет в `real_trades.realized_pnl_usd` на open row. До этого realized_pnl был NULL до полного закрытия — отсюда занижение headline на сотни долларов.
+- **Funding tracking**: новая таблица `bybit_funding_settlements` (id, settlement_time, symbol, funding_usd, bybit_tx_id UNIQUE). Пуллится из `/v5/account/transaction-log type=SETTLEMENT`. Surfaced в `/api/v2/overview` как `funding_settled_usd` и в header chip "💱 funding ±$X.XX".
+
+Это закрывает большинство расхождений Wallet Δ vs DB realized sum. Остаточное расхождение после фиксов (если есть) — реальные orphans (exchange position без real_trades row) — расследовать через сверку Bybit closed-pnl chunks vs real_trades trade_id.
