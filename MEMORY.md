@@ -1,8 +1,16 @@
 - [🗂 Projects digest](PROJECTS.md) — START HERE: all 16 projects with status, local paths, services, hosts, DBs, env keys, linked memories. Auto-regenerated every 30 min.
-- [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto PROJECTS.md digest infra. How to add new modules.
+- [🧠 Memory digest](MEMORY_DIGEST.md) — hubs/stubs/orphans/recent for all memory nodes. Auto every 30 min.
+- [📈 Trading digest](TRADING_DIGEST.md) — net PnL by strategy/close_reason/symbol since baseline. Auto every 30 min.
+- [🏗 OnTime digest](ONTIME_DIGEST.md) — top workers/projects/materials/vendors by hours+qty. Auto every 30 min.
+- [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
+- [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
+- [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
+- [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
+- [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
+- [Strict Plan Rules](feedback_strict_plan_rules.md) — план обязателен + прогресс-бар + без болтовни + вопросы только при блоке; инжектится UserPromptSubmit hook'ом
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
 - [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
@@ -12,10 +20,12 @@
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
 - [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
 - [Trading Guards REAL only](feedback_dd_guard_paper_skip.md) — все risk-гарды (DD, blacklist, time-of-day) только для REAL; paper без блоков
+- [Session Baseline Transfers](feedback_session_baseline_transfers.md) — sub-account transfer ловит DD guard как просадку; сбрасывать `session_start_wallet_usd` после трансферов
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
 - [Win Rate Definition](feedback_reports_win_rate.md) — WR = (realized_pnl − fees) > 0 (money-based, since 2026-04-22)
 - [Realized PnL Column](project_realized_pnl_column.md) — realized_pnl_usd = total, gross_pnl_usd = final chunk only
+- [real_trades fee semantics](feedback_real_trades_fee_semantics.md) — real_trades.realized_pnl_usd УЖЕ NET; sim GROSS; не вычитай fees дважды; helper _is_real_table в stats_manager
 - [Dashboard Settings Tab](project_dashboard_settings_tab.md) — SETTINGS_REGISTRY is source of truth; confirm phrases for REAL/update/clean
 - [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
 - [Toast Pointer Events](feedback_toast_pointer_events.md) — opacity:0 без pointer-events:none молча ест клики по tabs под ним
@@ -74,6 +84,8 @@
 - [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
+- [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
+- [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
 - [GA Prewarm 418 Handling](feedback_ga_prewarm_418.md) — Binance 418 = transient ban; retry+Retry-After, prewarm aborts >10% fails, no Bybit-5m fallback
@@ -83,6 +95,7 @@
 - [Dashboard v1 vs v2 — DON'T CONFUSE](feedback_dashboard_v1_v2.md) — обе живут параллельно; карта файлов/endpoint'ов перед любой правкой
 - [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
 - [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
+- [Orphan Residual after Close](feedback_orphan_residual_recovery.md) — sub-case: premature status='closed' + residual = постоянный orphan; recovery recipe (TPs+insert) + code-TODO для PLAN MODE
 - [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
 - [Prop Firm Path](project_prop_firm_path.md) — отложено до proven edge; критерии готовности (30+ real trades, 3 мес +5% net, risk governor, MT5 адаптер)
 - [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
@@ -122,6 +135,9 @@
 - [voice-tutor OAuth 500](feedback_voice_tutor_oauth_500.md) — "слушает не отвечает" = первая гипотеза истёкший Claude OAuth; jq expiresAt + grep 401 в web-systemd.log
 - [Tutor TTS/STT wiring](feedback_tutor_tts_wiring.md) — TTS/STT в tutor-ботах ОБЯЗАНЫ идти PC1→PC2→OpenAI; глобальный `openai` без base_url = silent fallback на OpenAI; startup log обязателен
 - [Tutor live tools](project_tutor_live_tools.md) — wife-english-tutor с tool-use: BTC/ETH price (Bybit) + weather (wttr.in); bot/tools.py + call_claude(tools=, tool_runner=)
+- [WET frontend↔backend drift](feedback_wet_frontend_backend_drift.md) — wife-english-tutor: фронт пишут без endpoints; sweep grep перед debugging; son-french-tutor = reference
+- [@DexClaudCodAIBot plan-first](feedback_dexclaud_plan_first.md) — бот теперь обязан create_plan+update_progress; жёстко Opus 4.7 для code/bug/fix; /sonnet и /haiku игнорируются
+- [Session 2026-05-16 bot modernization](project_session_2026_05_16_bot_modernization.md) — gerchik setup-explainer + wife-english-tutor 3 фикса + DexClaudCodAIBot plan-first/Opus-only/retry-after (6 коммитов pushed)
 - [OAuth force-refresh](feedback_oauth_force_refresh.md) — disk_token_fresh ≠ valid; 401-handler ОБЯЗАН вызывать refresh API через force_refresh=True, не только cache_stale
 - [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
 - [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
@@ -145,6 +161,7 @@
 - [Emails 🤖 AI Plan Button](feedback_emails_agent_handle_button.md) — `act:agent:<uid>` на triage card → Claude planner с email body; Gmail/Cal tools ещё stub
 - [Ollama race + shadow triage](project_ollama_race_shadow.md) — PK1+PK2 LLM race helper в emails-bot; shadow vs Claude Haiku; promote если ≥90% совпадение
 - [Session 2026-05-14 checkpoint](project_session_2026_05_14_emails_perf_photo.md) — emails perf tiers 1-4 + Calendar OAuth + /demo + tim_proposal + PK1 photo server :8004 + open items
+- [Session 2026-05-15 voice/vocab/graphs](project_session_2026_05_15_voice_vocab_graphs.md) — Silero RU on PC1 + voice-tutor → nova HD + wife/son tutor lookup 28s→1.3s + OnTime Graph orphan fix + Graphs Hub at /graphs/
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
@@ -156,8 +173,13 @@
 - [OnTime CSS Vars](feedback_ontime_css_vars.md) — Никогда `--tsa-fg` (нет такой); текст `--tsa-text`, тёмный bg `bg-slate-900`
 - [Photo Restoration CPU](project_photo_restoration.md) — GFPGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; работает но очень медленно — кандидат на GPU миграцию
 - [GPU Homelab Plan](project_gpu_homelab_plan.md) — ПК1 ACTIVE: Tailscale + Ollama 7b/14b/32b + voice-tutor wired; ПК2 pending
-- [PC1 Homelab ACTIVE](project_pc1_homelab_active.md) — SSH `tkach@100.99.211.123`, Ollama :11434 + faster-whisper :8001 + kokoro-tts :8002 (все CUDA, AtBoot)
+- [PC1 Homelab ACTIVE](project_pc1_homelab_active.md) — SSH `tkach@100.99.211.123`, Ollama :11434 + faster-whisper :8001 + kokoro-tts EN :8002 + silero-tts RU :8005 (все CUDA, AtBoot)
 - [Verify Downloads](feedback_verify_downloads.md) — Перед use внешних файлов: source rep + SHA256 + file-type validation; обязательно во всех сессиях
+- [Silero+torchaudio Quirks](feedback_silero_torchaudio_quirks.md) — Silero нужен `omegaconf`, `torchaudio.save()` нужен `soundfile`; оба молча отсутствуют после pip install torch
+- [PC1-only Model Tags](feedback_pc1_only_models.md) — `qwen2.5:32b-ctx4k` есть только на PC1; fallback chain → PC2 404 → Claude; use only shared tags or `ollama pull` на PC2
+- [BE-on-real avgPrice trap](feedback_be_on_real_avgprice.md) — BE-SL ВСЕГДА считать от `live_pos.avgPrice`, не от DB signal entry; иначе slippage = guaranteed loss; cost $13 в 7h до fix
+- [TG WebView cache layers](feedback_tg_webview_cache.md) — Mini App requires Cache-Control: no-store + ?v= в HTML + bot URL refresh; TG mobile сидит на старом UI пока юзер не Clear Cache
+- [pg_dump baseline perms](feedback_pg_dump_baseline_perms.md) — backup user нужен SELECT на ВСЕ tables в schema; baseline/archive owned by postgres ломали `bybit-db-backup` 4 дня тихо
 - [PC1 для тяжёлого compute](feedback_pc1_for_heavy_compute.md) — Всё тяжёлое (ML/GA/photo/backtests) на ПК1, VPS только для live-сервисов
 - [Tutor Latency Pipeline](project_tutor_latency_pipeline.md) — 4-phase оптимизация /api/voice: Haiku+gather+split+LLM stream+STT race+TTS proxy. 8s→2-4s
 - [PC2 Homelab Active](project_pc2_homelab_active.md) — ПК2 `borys@100.73.22.1` RTX 3090; Ollama 11434, whisper 8001; tutor STT race подключён
@@ -165,12 +187,14 @@
 - [GA Realism Overhaul](project_ga_realism_overhaul.md) — Phase 1-4+2.5 в 1 сессии: Sharpe annualised + costs + constraints + blacklist + diff UI + env-overrides
 - [OpenAI base_url shell trap](feedback_openai_base_url_shell.md) — env `OPENAI_BASE_URL` routes to DeepSeek; передавай `base_url=` явно
 - [Avatar Video Calibration](feedback_avatar_video_calibration.md) — OpenCV Haar face-bbox → точный scale+y_pad для photo↔video matched
+- [WET Word Lookup 28s→1s](feedback_wet_word_lookup_slow.md) — `/api/word/lookup` тормозил из-за Ollama JSON-prompt; Claude Haiku first + TTS в фоне thread
 - [DexClaud Bridge Bot](feedback_dexclaud_bridge.md) — @DexClaudCodAIBot уведомления Артёму; token+chat_id из 4BotsBybit .env
 - [Baseline V2](project_baseline_v2_2026-05-08.md) — Точка отсчёта новой системы 2026-05-08 19:44 UTC, $189.60; что вошло в rebuild
 - [Baseline V3 (full wipe)](project_baseline_v3_2026-05-10.md) — БД полностью очищена 2026-05-10 05:42:10 UTC после волны фиксов; архивы в *_archive_20260510_baseline_v3_clean
 - [Pre-baseline-v3 = МУСОР](feedback_pre_baseline_v3_data_is_trash.md) — ВСЕГДА фильтровать `entry_time >= stats_baseline_at` при любом запросе к trading-таблицам
 - [Gerchik Trading Agent](project_gerchik_bot.md) — AI agent /root/gerchik-trading-agent (private GH repo); 4-layer self-learning; шарит Bybit+Postgres с 4BotsBybit; Volume Spike blacklist BTC/ETH/SOL
 - [Gerchik leverage 88× → 35×](feedback_gerchik_leverage_88_too_high.md) — 2026-05-12: liquidation_buffer фильтр душил Layer 1 на 88×; 35× = ~2.85% liq, SL помещаются
+- [gerchik_signals.decision varchar(40)](feedback_gerchik_signals_decision_varchar.md) — НЕ пиши полный reason в `decision`; полный текст → `skip_reason` (text); overflow тихо валит ВСЕ INSERT'ы
 - [Meta-labeler V1](project_meta_labeler_v1.md) — XGBoost AUC 0.728 shadow mode; promote после 50+ post-baseline сделок
 - [Risk Officer](project_risk_officer.md) — Hourly LLM defensive auto-pause; LLM-on-CAUTION OFF на 7 дней
 - [Cron-зоопарк](project_cron_zoo_2026-05-08.md) — 10 timer'ов trading-системы, расписание + назначение
@@ -194,3 +218,13 @@
 - [Bybit empty result truthy-trap](feedback_bybit_empty_result_truthy_trap.md) — Bybit V5 на success отдаёт `{retCode:0, result:{}}`; `if not res` ловит это как failure → проверяй через `is None`
 - [Bybit V5 open/close knowledge](project_bybit_v5_open_close_knowledge.md) — verified правила (minNotional $5, sequence, fees/slippage); e2e test `tests/manual/bybit_e2e_open_close.py`
 - [Sophie lip-sync](project_sophie_lipsync.md) — SadTalker on PC1 :8003 для сын/жена/voice-tutor; Wav2Lip миграция pending; PC1 offline = lipsync auto-disabled
+- [Session 2026-05-16 FORCE/orphan/streams](project_session_2026_05_16_force_orphan_streams.md) — 11 commits: SL/FORCE split, BE-trail sync, orphan safety nets, Sharpe fix, dashboard→real, Stream B AI-agent, gerchik pyramid fix
+- [FORCE bucket + close_source](feedback_force_bucket_close_source.md) — close_reason has 5 values (TP{N}/SL/BE/LIQ/FORCE); FORCE = not real Bybit-SL; 46 historic rows backfilled
+- [Pyramid fix gerchik](project_pyramid_fix_gerchik.md) — one row per (symbol, mode); add-ons aggregate via weighted-avg; root cause: has_open_on_symbol default mode='PAPER'
+- [Orphan safety nets](project_orphan_safety_nets.md) — 4 surfaces: dust filter, reverse-loop orphan detection, SL post-place verify, insert retry+dead-letter
+- [Streams A/B/C terminology](feedback_streams_terminology.md) — A=Gerchik (sub2), B=AI-agent (sub3, Bybit-truth), C=Main TradingBot (sub1, renamed); не путать "our agent"
+- [Dashboard v2 deploy](feedback_dashboard_v2_deploy.md) — bash deploy_dashboard.sh публикует ОБЕ v1+v2; иначе nginx подаёт stale v2.html
+- [Voice input VoiceInk](feedback_voice_input_voiceink_mac.md) — Артём с mac → SSH → claude; VoiceInk локально (НЕ VoiceLine); Right-Option hotkey, авто-paste в Terminal
+- [Logger UTC label](feedback_logger_utc_label.md) — formatter.converter = time.gmtime обязательно; иначе datefmt ' UTC' пишет MDT (6h дрейф)
+- [VPS disk cleanup](feedback_vps_disk_cleanup.md) — главные мусорщики: /var/log/syslog (27GB), pip cache (4GB), /var/crash; klines (53GB) активно нужны GA, не трогать
+- [Migration ghost trades 2026-05-15](feedback_migration_ghost_trades_2026_05_15.md) — 10 main TradingBot trades живут на старом UID (теперь sub3); объясняет $8 от DB-vs-Bybit gap

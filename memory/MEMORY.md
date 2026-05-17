@@ -10,6 +10,7 @@
 - [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
+- [Strict Plan Rules](feedback_strict_plan_rules.md) — план обязателен + прогресс-бар + без болтовни + вопросы только при блоке; инжектится UserPromptSubmit hook'ом
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
 - [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
@@ -83,6 +84,8 @@
 - [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
+- [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
+- [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
 - [GA Prewarm 418 Handling](feedback_ga_prewarm_418.md) — Binance 418 = transient ban; retry+Retry-After, prewarm aborts >10% fails, no Bybit-5m fallback
@@ -92,6 +95,7 @@
 - [Dashboard v1 vs v2 — DON'T CONFUSE](feedback_dashboard_v1_v2.md) — обе живут параллельно; карта файлов/endpoint'ов перед любой правкой
 - [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
 - [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
+- [Orphan Residual after Close](feedback_orphan_residual_recovery.md) — sub-case: premature status='closed' + residual = постоянный orphan; recovery recipe (TPs+insert) + code-TODO для PLAN MODE
 - [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
 - [Prop Firm Path](project_prop_firm_path.md) — отложено до proven edge; критерии готовности (30+ real trades, 3 мес +5% net, risk governor, MT5 адаптер)
 - [Real Trades Truth](feedback_real_trades_truth.md) — DB лжёт по real PnL (orphans + dup chunks); headline metrics брать из get_bybit_realized_pnl(), Bybit fields = closedPnl+openFee+closeFee, partial closes = N entries
@@ -131,6 +135,9 @@
 - [voice-tutor OAuth 500](feedback_voice_tutor_oauth_500.md) — "слушает не отвечает" = первая гипотеза истёкший Claude OAuth; jq expiresAt + grep 401 в web-systemd.log
 - [Tutor TTS/STT wiring](feedback_tutor_tts_wiring.md) — TTS/STT в tutor-ботах ОБЯЗАНЫ идти PC1→PC2→OpenAI; глобальный `openai` без base_url = silent fallback на OpenAI; startup log обязателен
 - [Tutor live tools](project_tutor_live_tools.md) — wife-english-tutor с tool-use: BTC/ETH price (Bybit) + weather (wttr.in); bot/tools.py + call_claude(tools=, tool_runner=)
+- [WET frontend↔backend drift](feedback_wet_frontend_backend_drift.md) — wife-english-tutor: фронт пишут без endpoints; sweep grep перед debugging; son-french-tutor = reference
+- [@DexClaudCodAIBot plan-first](feedback_dexclaud_plan_first.md) — бот теперь обязан create_plan+update_progress; жёстко Opus 4.7 для code/bug/fix; /sonnet и /haiku игнорируются
+- [Session 2026-05-16 bot modernization](project_session_2026_05_16_bot_modernization.md) — gerchik setup-explainer + wife-english-tutor 3 фикса + DexClaudCodAIBot plan-first/Opus-only/retry-after (6 коммитов pushed)
 - [OAuth force-refresh](feedback_oauth_force_refresh.md) — disk_token_fresh ≠ valid; 401-handler ОБЯЗАН вызывать refresh API через force_refresh=True, не только cache_stale
 - [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
 - [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
