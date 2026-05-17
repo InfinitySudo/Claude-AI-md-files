@@ -220,3 +220,4 @@
 - [Voice input VoiceInk](feedback_voice_input_voiceink_mac.md) — Артём с mac → SSH → claude; VoiceInk локально (НЕ VoiceLine); Right-Option hotkey, авто-paste в Terminal
 - [Logger UTC label](feedback_logger_utc_label.md) — formatter.converter = time.gmtime обязательно; иначе datefmt ' UTC' пишет MDT (6h дрейф)
 - [VPS disk cleanup](feedback_vps_disk_cleanup.md) — главные мусорщики: /var/log/syslog (27GB), pip cache (4GB), /var/crash; klines (53GB) активно нужны GA, не трогать
+- [Migration ghost trades 2026-05-15](feedback_migration_ghost_trades_2026_05_15.md) — 10 main TradingBot trades живут на старом UID (теперь sub3); объясняет $8 от DB-vs-Bybit gap
