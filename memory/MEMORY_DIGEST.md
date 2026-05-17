@@ -1,41 +1,41 @@
 # Memory digest
 
-Generated **2026-05-17 01:45 UTC**.
+Generated **2026-05-17 02:16 UTC**.
 
-**298 nodes** (219 files, 120 edges) — 🗂 88 project · ⚠️ 81 feedback · 📝 79 stub · · 48 memory · 🔗 1 reference · 👤 1 user
+**299 nodes** (220 files, 124 edges) — 🗂 88 project · ⚠️ 81 feedback · 📝 79 stub · · 49 memory · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## 🌟 Hub nodes (most referenced)
 
-- [[feedback-real-trades-truth]] ← 6 refs · 📝 stub
+- [[feedback-real-trades-truth]] ← 7 refs · 📝 stub
 - [[project_pc1_homelab_active]] ← 6 refs · 📝 stub
 - [[project_pc2_homelab_active]] ← 5 refs · 📝 stub
+- [[feedback-bybit-env-symlink]] ← 4 refs · · memory
 - [[project_tutor_latency_pipeline]] ← 4 refs · 📝 stub
-- [[feedback-bybit-env-symlink]] ← 3 refs · · memory
+- [[project-bybit-3sub-architecture]] ← 3 refs · 📝 stub
 - [[project-pyramid-fix-gerchik-trading-agent]] ← 3 refs · 📝 stub
 - [[project_voice_tutor]] ← 3 refs · 📝 stub
 - [[feedback-ga-unrealistic-tps]] ← 2 refs · · memory
 - [[feedback-real-trades-orphan]] ← 2 refs · 📝 stub
-- [[feedback_oauth_rate_limits]] ← 2 refs · 📝 stub
 
 ## 📝 Stubs (79) — referenced but not yet written
 
-- [[feedback-real-trades-truth]] ← 6 refs
+- [[feedback-real-trades-truth]] ← 7 refs
 - [[project_pc1_homelab_active]] ← 6 refs
 - [[project_pc2_homelab_active]] ← 5 refs
 - [[project_tutor_latency_pipeline]] ← 4 refs
+- [[project-bybit-3sub-architecture]] ← 3 refs
 - [[project-pyramid-fix-gerchik-trading-agent]] ← 3 refs
 - [[project_voice_tutor]] ← 3 refs
 - [[feedback-real-trades-orphan]] ← 2 refs
+- [[feedback-streams-a-b-c-terminology]] ← 2 refs
 - [[feedback_oauth_rate_limits]] ← 2 refs
 - [[feedback_pc1_ssh_quirks]] ← 2 refs
 - [[feedback_real_trades_truth]] ← 2 refs
 - [[feedback_tutor_tts_wiring]] ← 2 refs
 - [[feedback_voice_tutor_oauth_500]] ← 2 refs
-- [[project-bybit-3sub-architecture]] ← 2 refs
 - [[project-ga-realism-overhaul]] ← 2 refs
-- [[project-ga-walk-forward-todo]] ← 2 refs
 
 ## 🏝 Orphans (176) — no links in or out
 
@@ -58,6 +58,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
+- `2026-05-17 02:10` [[real-trades-fee-semantics]] · 🟢 today
+- `2026-05-17 01:59` [[migration-ghost-trades-2026-05-15]] · 🟢 today
 - `2026-05-17 01:10` [[bybit-3-sub-architecture]] · 🟢 today
 - `2026-05-17 01:10` [[Real-mode dashboard — Bybit is the only truth]] · 🟢 today
 - `2026-05-17 01:10` [[vps-disk-cleanup-pattern]] · 🟢 today
@@ -69,10 +71,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - `2026-05-17 01:07` [[dashboard-v2-deploy-script]] · 🟢 today
 - `2026-05-17 01:07` [[pyramid-fix-gerchik-trading-agent]] · 🟢 today
 - `2026-05-17 01:06` [[session-2026-05-16-force-orphan-streams]] · 🟢 today
-- `2026-05-16 15:54` [[real-trades-fee-semantics]] · 🟢 today
 - `2026-05-16 15:27` [[gerchik-signals-decision-varchar]] · 🟢 today
 - `2026-05-16 05:49` [[graph-system]] · 🟢 today
-- `2026-05-16 05:23` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
 
 ## 📚 Index by type
 
@@ -333,7 +333,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (48)
+### · memory (49)
 
 - [[avatar-video-calibration]] — "OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на ста
 - [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] — "Critical bug 2026-05-15. Computing BE-SL from row['entry_price'] (=signal) instead of live_pos.avgPrice (=actual fill) 
@@ -354,6 +354,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[gerchik-signals-decision-varchar]] — "gerchik_signals.decision = varchar(40) — никогда не пиши туда полный reason, иначе ВСЕ skip-сигналы тихо валятся в log_
 - [[graph-system]] — "5 knowledge graphs (memory, trading, tutor, ontime, projects) + auto-generated PROJECTS.md digest; new sessions read PR
 - [[logger-utc-label-must-match]] — "logger.py — formatter.converter = time.gmtime обязательно, иначе datefmt '... UTC' пишет local time (MDT) под видом UTC
+- [[migration-ghost-trades-2026-05-15]] — 10 main TradingBot trades 2026-05-15 живут на старом UID 539929753 (теперь sub3 AI-agent) — Bybit sub1 их не видит. Объя
 - [[multi-fix-per-problem-sentence]] — "Tutor-боты должны выдавать ОТДЕЛЬНЫЙ [FIX] на каждое ошибочное предложение учащегося, а не схлопывать в один; русский i
 - [[oauth-force-refresh]] — "When Claude returns 401, the 401-handler must call refresh API even if disk expiresAt is in the future — Anthropic revo
 - [[ollama-race-shadow-emails-triage]] — "PK1+PK2 LLM race helper в emails-bot, shadow-режим против Claude Haiku triage с 2026-05-13"

@@ -61,3 +61,41 @@ rows = stats_mgr._query(f"""
 **Это уже ТРЕТЬЕ место** где fee-double-count проявился (statistics_manager_v3.py исправлен 2026-05-16, Grafana resource — 2026-05-17, heatmap endpoint — 2026-05-17). Все из-за inline SQL вместо `_net_pnl_sql` helper.
 
 **Universal rule:** любая агрегация по PnL в SQL → **обязательно** через `_net_pnl_sql(table)`. Если helper-import невозможен (Grafana, внешние скрипты) — копируй expression вручную с явным указанием table-shape.
+
+## 2026-05-17 — финальный sweep (8 коммитов)
+
+Полный inventory fix'ов сегодня:
+
+| # | Где | Файл | Commit |
+|---|---|---|---|
+| 1 | Grafana bots4bybit-live | resource в /var/lib/grafana/grafana.db | manual |
+| 2 | /api/v2/charts/hour-heatmap | dashboard_api_v3.py:5419 | 5185cb8 |
+| 3 | /api/tp1-investigation + /api/hourly-heatmap (v1) | dashboard_api_v3.py:2700,2780 | d1ddfaa |
+| 4 | /api/divergence ._split_stats | dashboard_api_v3.py:3446 | d1ddfaa |
+| 5 | /api/scorecard wr_100 + sharpe + maxdd + weekly | dashboard_api_v3.py:3542,3573,3613,3768 | d1ddfaa |
+| 6 | main_bot weekly DD guard | main_bot_v3.py:490 | 0b60125 |
+| 7 | control_bot stats (WR/wins) | control_bot_stats_extended.py:155 | 0b60125 |
+| 8 | hourly_reporter pool summary | hourly_reporter.py:345 | 0b60125 |
+| 9 | hourly_reporter wins_money | hourly_reporter.py:480 | 34ccec6 |
+| 10 | /api/v2/gerchik/comparison.stream_c | dashboard_api_v3.py:5600 | 97d3306 |
+
+**Что НЕ трогать (paper-only, NET=gross-fees правильно):**
+- `database_v3.py:914-918` (FROM simulated_trades)
+- `ml_meta_labeler.py:143` (FROM simulated_trades)
+- `control_bot_stats_extended.py paper-branch` после моего fix
+- meta_labeler join on `st.realized_pnl_usd` (joins simulated_trades)
+
+**Business impact (sub1 main TradingBot):**
+- Grafana headline: −$13.11 → +$2.73
+- Stream C compare panel: −$13.18 → +$2.70
+- Risk Officer verdict: STOP → CAUTION (MaxDD 7.64% inflated → 4.00% honest)
+- Weekly DD guard в main_bot: больше не false-trip
+
+Ничего не потеряли, всё было accounting illusion. Реальные деньги на Bybit (+$15.79 за 30d за исключением ghost trades) сходятся с DB +$2.73 + ghost-trades-on-sub3 (-$8.01) + dup-attribution residual.
+
+**Grep-чек для будущего PR:**
+```bash
+grep -rE "realized_pnl_usd.*-.*fees_paid_usd|fees_paid_usd.*-.*realized" src \
+  | grep -vE "simulated|_net_pnl_sql|test_|FROM simulated_trades|paper-branch"
+```
+Должен быть пустой — иначе новое место с double-fee bug.

@@ -2331,6 +2331,17 @@
       "mtime": 1778980186.169867
     },
     {
+      "file": "feedback_migration_ghost_trades_2026_05_15.md",
+      "id": "migration-ghost-trades-2026-05-15",
+      "name": "migration-ghost-trades-2026-05-15",
+      "title": "Migration Ghost Trades 2026 05 15",
+      "type": "memory",
+      "summary": "10 main TradingBot trades 2026-05-15 живут на старом UID 539929753 (теперь sub3 AI-agent) — Bybit sub1 их не видит. Объясняет $8 от DB-vs-Bybit gap.",
+      "size": 2652,
+      "status_icon": "🟢",
+      "mtime": 1778983182.9305506
+    },
+    {
       "file": "feedback_multi_fix_per_sentence.md",
       "id": "multi-fix-per-problem-sentence",
       "name": "multi-fix-per-problem-sentence",
@@ -2848,9 +2859,9 @@
       "title": "Real Trades Fee Semantics",
       "type": "memory",
       "summary": "\"В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающий net = realized − fees, на real-таблицах двойной счёт фи.\"",
-      "size": 1692,
+      "size": 4042,
       "status_icon": "🟢",
-      "mtime": 1778946843.3409147
+      "mtime": 1778983822.1559353
     },
     {
       "id": "real-trades-truth",
@@ -3310,6 +3321,22 @@
       "target": "feedback-systemd-oncalendar-local-time"
     },
     {
+      "source": "migration-ghost-trades-2026-05-15",
+      "target": "feedback-bybit-env-symlink"
+    },
+    {
+      "source": "migration-ghost-trades-2026-05-15",
+      "target": "feedback-real-trades-truth"
+    },
+    {
+      "source": "migration-ghost-trades-2026-05-15",
+      "target": "feedback-streams-a-b-c-terminology"
+    },
+    {
+      "source": "migration-ghost-trades-2026-05-15",
+      "target": "project-bybit-3sub-architecture"
+    },
+    {
       "source": "oauth-force-refresh",
       "target": "feedback_oauth_rate_limits"
     },
@@ -3683,12 +3710,12 @@
     }
   ],
   "stats": {
-    "files": 219,
-    "nodes": 298,
-    "edges": 120,
+    "files": 220,
+    "nodes": 299,
+    "edges": 124,
     "by_type": {
       "feedback": 81,
-      "memory": 48,
+      "memory": 49,
       "project": 88,
       "reference": 1,
       "user": 1,

@@ -1,8 +1,8 @@
 # Trading digest
 
-Generated **2026-05-17 01:45 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
+Generated **2026-05-17 02:16 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
 
-**1324 trades** · net PnL **+235.19$** 🟢 · 231 nodes · 887 edges
+**1325 trades** · net PnL **+235.13$** 🟢 · 231 nodes · 887 edges
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
@@ -11,7 +11,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | Strategy | Trades | Net PnL | Avg |
 |---|---:|---:|---:|
 | 🟢 `CONSERVATIVE` | 1149 | **+168.57$** | +0.15$ |
-| 🟢 `TREND` | 163 | **+63.27$** | +0.39$ |
+| 🟢 `TREND` | 164 | **+63.21$** | +0.39$ |
 | 🟡 `AGGRESSIVE` | 12 | **+3.35$** | +0.28$ |
 
 ## 🛑 Close reasons
@@ -29,7 +29,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | 🟡 `TP3` | 3 | **+4.55$** | +1.52$ |
 | 🟡 `TP2` | 4 | **+2.28$** | +0.57$ |
 | 🟠 `FORCE` | 48 | **-14.26$** | -0.30$ |
-| 🔴 `SL` | 551 | **-490.58$** | -0.89$ |
+| 🔴 `SL` | 552 | **-490.64$** | -0.89$ |
 
 ## 🏆 Top 15 winning symbols
 
@@ -92,7 +92,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 |---|---:|---:|
 | 🟢 `BE` ↔ `CONSERVATIVE` | 537 | **+478.91$** |
 | 🔴 `SL` ↔ `CONSERVATIVE` | 451 | **-417.43$** |
-| 🔴 `SL` ↔ `TREND` | 94 | **-67.91$** |
+| 🔴 `SL` ↔ `TREND` | 95 | **-67.98$** |
 | 🟢 `TP3(c)` ↔ `CONSERVATIVE` | 53 | **+73.02$** |
 | 🟠 `FORCE` ↔ `CONSERVATIVE` | 43 | **-13.39$** |
 | 🟡 `BE` ↔ `TREND` | 33 | **+47.26$** |
