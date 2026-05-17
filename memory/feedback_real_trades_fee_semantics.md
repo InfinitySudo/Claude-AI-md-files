@@ -21,3 +21,25 @@ metadata:
 - Если перепишут wrapper и `realized_pnl_usd` в `real_trades` станет gross — обнови helper. Не оставляй асимметрию незадокументированной.
 
 Связано: [[project-realized-pnl-column]] (общее описание колонки), [[feedback-real-trades-truth]] (orphans + dup chunks — про другой класс ошибок, не путать).
+
+## 2026-05-17 — Grafana bots4bybit-live dashboard had the same bug
+
+Sub-bug: Grafana dashboard `bots4bybit-live` (resource в `/var/lib/grafana/grafana.db`) имел 5 panels с `(SUM(realized_pnl_usd) - SUM(fees_paid_usd))` для **real**. Из-за двойного вычета "Total PnL real" показывал −$13.11 при реальной DB-сумме +$2.73 (Δ = fees $15.84).
+
+**Где Grafana queries:**
+```sql
+SELECT value FROM resource WHERE name='bots4bybit-live' AND resource='dashboards';
+```
+Это JSON dashboard spec. Patch pattern для real-only panels:
+```python
+old: "(SUM(COALESCE(realized_pnl_usd, gross_pnl_usd, 0)) - SUM(COALESCE(fees_paid_usd, 0)))"
+new: "SUM(COALESCE(realized_pnl_usd, gross_pnl_usd - fees_paid_usd, 0))"
+
+old: "(COALESCE(realized_pnl_usd, gross_pnl_usd, 0) - COALESCE(fees_paid_usd, 0))"
+new: "COALESCE(realized_pnl_usd, gross_pnl_usd - fees_paid_usd, 0)"
+```
+Применять ТОЛЬКО к panels где `FROM real_trades` (НЕ `simulated_trades`). После UPDATE `resource_version=resource_version+1` и `systemctl restart grafana-server`.
+
+Заплачено: 5 panels fixed 2026-05-17 (Total PnL real, Win Rate real, Cumulative PnL real, Top 10 symbols, Recent real trades).
+
+**Правило для будущих Grafana-панелей:** при добавлении любого panel читающего `real_trades` — НЕ писать `realized - fees`. Использовать `COALESCE(realized_pnl_usd, gross_pnl_usd - fees_paid_usd, 0)`. Для `simulated_trades` — старая формула корректна.

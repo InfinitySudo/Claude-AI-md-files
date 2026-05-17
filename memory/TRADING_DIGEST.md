@@ -1,8 +1,8 @@
 # Trading digest
 
-Generated **2026-05-17 00:44 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
+Generated **2026-05-17 01:45 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
 
-**1321 trades** · net PnL **+235.63$** 🟢 · 231 nodes · 887 edges
+**1324 trades** · net PnL **+235.19$** 🟢 · 231 nodes · 887 edges
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
@@ -10,7 +10,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
 | Strategy | Trades | Net PnL | Avg |
 |---|---:|---:|---:|
-| 🟢 `CONSERVATIVE` | 1146 | **+169.01$** | +0.15$ |
+| 🟢 `CONSERVATIVE` | 1149 | **+168.57$** | +0.15$ |
 | 🟢 `TREND` | 163 | **+63.27$** | +0.39$ |
 | 🟡 `AGGRESSIVE` | 12 | **+3.35$** | +0.28$ |
 
@@ -28,8 +28,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | 🟡 `TP5` | 2 | **+5.40$** | +2.70$ |
 | 🟡 `TP3` | 3 | **+4.55$** | +1.52$ |
 | 🟡 `TP2` | 4 | **+2.28$** | +0.57$ |
-| 🟠 `FORCE` | 46 | **-13.85$** | -0.30$ |
-| 🔴 `SL` | 550 | **-490.56$** | -0.89$ |
+| 🟠 `FORCE` | 48 | **-14.26$** | -0.30$ |
+| 🔴 `SL` | 551 | **-490.58$** | -0.89$ |
 
 ## 🏆 Top 15 winning symbols
 
@@ -38,7 +38,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | 🟢 `SPXUSDT` | 12 | **+9.31$** |
 | 🟢 `SEIUSDT` | 14 | **+7.33$** |
 | 🟢 `JASMYUSDT` | 10 | **+7.32$** |
-| 🟢 `TRUMPUSDT` | 13 | **+7.27$** |
+| 🟢 `TRUMPUSDT` | 14 | **+7.05$** |
 | 🟢 `STXUSDT` | 10 | **+6.66$** |
 | 🟢 `VIRTUALUSDT` | 14 | **+6.34$** |
 | 🟢 `AAVEUSDT` | 16 | **+5.96$** |
@@ -91,10 +91,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | Combo | Trades | Net PnL |
 |---|---:|---:|
 | 🟢 `BE` ↔ `CONSERVATIVE` | 537 | **+478.91$** |
-| 🔴 `SL` ↔ `CONSERVATIVE` | 450 | **-417.40$** |
+| 🔴 `SL` ↔ `CONSERVATIVE` | 451 | **-417.43$** |
 | 🔴 `SL` ↔ `TREND` | 94 | **-67.91$** |
 | 🟢 `TP3(c)` ↔ `CONSERVATIVE` | 53 | **+73.02$** |
-| 🟠 `FORCE` ↔ `CONSERVATIVE` | 41 | **-12.98$** |
+| 🟠 `FORCE` ↔ `CONSERVATIVE` | 43 | **-13.39$** |
 | 🟡 `BE` ↔ `TREND` | 33 | **+47.26$** |
 | 🟡 `MANUAL_MODE_SWITCH_REAL` ↔ `CONSERVATIVE` | 26 | **+14.91$** |
 | 🟢 `TP5(t)` ↔ `TREND` | 23 | **+67.12$** |

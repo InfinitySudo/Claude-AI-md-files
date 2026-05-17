@@ -1327,9 +1327,9 @@
       "title": "Real Mode Dashboard — Bybit Is The Only Truth",
       "type": "feedback",
       "summary": "6 stacking bugs made the BD-derived real PnL diverge from exchange by $8+. Lessons + how Bybit closed-pnl actually works",
-      "size": 4414,
+      "size": 5438,
       "status_icon": "🟢",
-      "mtime": 1778957100.7893982
+      "mtime": 1778980242.7719386
     },
     {
       "file": "project_real_snapshot_endpoint.md",
@@ -1658,7 +1658,7 @@
       "type": "feedback",
       "summary": "Перед использованием/запуском любого файла, скачанного из GitHub releases / HuggingFace / npm / pip / любого внешнего источника — провести базовую проверку на вирусы и валидность",
       "size": 2777,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778374016.4108553
     },
     {
@@ -1778,9 +1778,20 @@
       "title": "Bybit 3 Sub Architecture",
       "type": "memory",
       "summary": "\"Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/AI-agent). UIDs, env var slots, .env symlink trap.\"",
-      "size": 1759,
+      "size": 2300,
       "status_icon": "🟢",
-      "mtime": 1778888398.5081787
+      "mtime": 1778980258.9179626
+    },
+    {
+      "file": "feedback_dashboard_v2_deploy.md",
+      "id": "dashboard-v2-deploy-script",
+      "name": "dashboard-v2-deploy-script",
+      "title": "Dashboard V2 Deploy Script",
+      "type": "memory",
+      "summary": "\"nginx сервит из /var/www/dashboard, не из /root. После правки index_v2.html ОБЯЗАТЕЛЬНО прогон deploy_dashboard.sh — иначе кеш браузера vs stale файл.\"",
+      "size": 1284,
+      "status_icon": "🟢",
+      "mtime": 1778980041.6677916
     },
     {
       "file": "feedback_dexclaud_bridge.md",
@@ -1826,6 +1837,26 @@
       "mtime": 0
     },
     {
+      "id": "feedback-auto-push-default",
+      "name": "feedback-auto-push-default",
+      "title": "feedback-auto-push-default",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-be-on-real",
+      "name": "feedback-be-on-real",
+      "title": "feedback-be-on-real",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_bybit_env_symlink.md",
       "id": "feedback-bybit-env-symlink",
       "name": "feedback-bybit-env-symlink",
@@ -1848,9 +1879,39 @@
       "mtime": 1778888427.693371
     },
     {
+      "id": "feedback-bybit-ws-keepalive",
+      "name": "feedback-bybit-ws-keepalive",
+      "title": "feedback-bybit-ws-keepalive",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback-chartjs-unbounded-height",
       "name": "feedback-chartjs-unbounded-height",
       "title": "feedback-chartjs-unbounded-height",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-dashboard-v1-v2",
+      "name": "feedback-dashboard-v1-v2",
+      "title": "feedback-dashboard-v1-v2",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-dashboard-view-lock",
+      "name": "feedback-dashboard-view-lock",
+      "title": "feedback-dashboard-view-lock",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -1891,9 +1952,39 @@
       "mtime": 1778695706.3432534
     },
     {
+      "id": "feedback-no-routine-confirms",
+      "name": "feedback-no-routine-confirms",
+      "title": "feedback-no-routine-confirms",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback-query-write-swallow",
       "name": "feedback-query-write-swallow",
       "title": "feedback-query-write-swallow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-real-trades-fee-semantics",
+      "name": "feedback-real-trades-fee-semantics",
+      "title": "feedback-real-trades-fee-semantics",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-real-trades-orphan",
+      "name": "feedback-real-trades-orphan",
+      "title": "feedback-real-trades-orphan",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -1921,6 +2012,46 @@
       "mtime": 0
     },
     {
+      "id": "feedback-sqlite-isoformat-trap",
+      "name": "feedback-sqlite-isoformat-trap",
+      "title": "feedback-sqlite-isoformat-trap",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-streams-a-b-c-terminology",
+      "name": "feedback-streams-a-b-c-terminology",
+      "title": "feedback-streams-a-b-c-terminology",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-systemctl-timestamp-js",
+      "name": "feedback-systemctl-timestamp-js",
+      "title": "feedback-systemctl-timestamp-js",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-systemd-oncalendar-local-time",
+      "name": "feedback-systemd-oncalendar-local-time",
+      "title": "feedback-systemd-oncalendar-local-time",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_toast_pointer_events.md",
       "id": "feedback-toast-pointer-events",
       "name": "feedback-toast-pointer-events",
@@ -1930,6 +2061,16 @@
       "size": 913,
       "status_icon": "🟢",
       "mtime": 1778694808.2835047
+    },
+    {
+      "id": "feedback-tutor-tts-wiring",
+      "name": "feedback-tutor-tts-wiring",
+      "title": "feedback-tutor-tts-wiring",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "feedback_dd_guard_paper_skip",
@@ -2092,6 +2233,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_force_bucket_close_source.md",
+      "id": "force-bucket-close-source",
+      "name": "force-bucket-close-source",
+      "title": "Force Bucket Close Source",
+      "type": "memory",
+      "summary": "\"real_trades.close_reason has 5 values now: TP{N}/SL/BE/LIQ/FORCE. close_source column tracks classification origin. FORCE = not real Bybit-SL hit.\"",
+      "size": 2709,
+      "status_icon": "🟢",
+      "mtime": 1778980127.5148165
+    },
+    {
       "file": "feedback_ga_backtester_daily_zero.md",
       "id": "ga-backtester-daily-zero-bug",
       "name": "ga-backtester-daily-zero-bug",
@@ -2168,6 +2320,17 @@
       "mtime": 1778910551.7667353
     },
     {
+      "file": "feedback_logger_utc_label.md",
+      "id": "logger-utc-label-must-match",
+      "name": "logger-utc-label-must-match",
+      "title": "Logger Utc Label Must Match",
+      "type": "memory",
+      "summary": "\"logger.py — formatter.converter = time.gmtime обязательно, иначе datefmt '... UTC' пишет local time (MDT) под видом UTC. 6h дрейф.\"",
+      "size": 1449,
+      "status_icon": "🟢",
+      "mtime": 1778980186.169867
+    },
+    {
       "file": "feedback_multi_fix_per_sentence.md",
       "id": "multi-fix-per-problem-sentence",
       "name": "multi-fix-per-problem-sentence",
@@ -2210,6 +2373,17 @@
       "size": 1628,
       "status_icon": "🟢",
       "mtime": 1778646213.982835
+    },
+    {
+      "file": "project_orphan_safety_nets.md",
+      "id": "orphan-safety-nets",
+      "name": "orphan-safety-nets",
+      "title": "Orphan Safety Nets",
+      "type": "memory",
+      "summary": "4 surfaces preventing orphan positions / missing-SL in main TradingBot (sub1) — added 2026-05-16 after $79 orphan-position incident.",
+      "size": 3230,
+      "status_icon": "🟢",
+      "mtime": 1778980099.3328016
     },
     {
       "file": "feedback_pc1_only_models.md",
@@ -2265,6 +2439,36 @@
       "mtime": 0
     },
     {
+      "id": "project-bybit-3sub-architecture",
+      "name": "project-bybit-3sub-architecture",
+      "title": "project-bybit-3sub-architecture",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-dashboard-v2",
+      "name": "project-dashboard-v2",
+      "title": "project-dashboard-v2",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-ga-optimizer",
+      "name": "project-ga-optimizer",
+      "title": "project-ga-optimizer",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project-ga-realism-overhaul",
       "name": "project-ga-realism-overhaul",
       "title": "project-ga-realism-overhaul",
@@ -2306,9 +2510,29 @@
       "mtime": 0
     },
     {
+      "id": "project-gpu-homelab-plan",
+      "name": "project-gpu-homelab-plan",
+      "title": "project-gpu-homelab-plan",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project-grafana-alerts",
       "name": "project-grafana-alerts",
       "title": "project-grafana-alerts",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-hybrid-mode",
+      "name": "project-hybrid-mode",
+      "title": "project-hybrid-mode",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2337,9 +2561,39 @@
       "mtime": 0
     },
     {
+      "id": "project-orphan-safety-nets",
+      "name": "project-orphan-safety-nets",
+      "title": "project-orphan-safety-nets",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-pyramid-fix-gerchik-trading-agent",
+      "name": "project-pyramid-fix-gerchik-trading-agent",
+      "title": "project-pyramid-fix-gerchik-trading-agent",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project-realized-pnl-column",
       "name": "project-realized-pnl-column",
       "title": "project-realized-pnl-column",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-trading-bot-spec",
+      "name": "project-trading-bot-spec",
+      "title": "project-trading-bot-spec",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2360,6 +2614,16 @@
       "id": "project-unversioned-prod-state",
       "name": "project-unversioned-prod-state",
       "title": "project-unversioned-prod-state",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-voice-tutor",
+      "name": "project-voice-tutor",
+      "title": "project-voice-tutor",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2567,6 +2831,17 @@
       "mtime": 0
     },
     {
+      "file": "project_pyramid_fix_gerchik.md",
+      "id": "pyramid-fix-gerchik-trading-agent",
+      "name": "pyramid-fix-gerchik-trading-agent",
+      "title": "Pyramid Fix Gerchik Trading Agent",
+      "type": "memory",
+      "summary": "\"gerchik-trading-agent: one row per (symbol, mode) — add-on entries aggregate into the open row via weighted-avg, not separate rows. Fix for 2026-05-16 PnL inflation bug.\"",
+      "size": 3736,
+      "status_icon": "🟢",
+      "mtime": 1778980021.3477952
+    },
+    {
       "file": "feedback_real_trades_fee_semantics.md",
       "id": "real-trades-fee-semantics",
       "name": "real-trades-fee-semantics",
@@ -2641,6 +2916,17 @@
       "size": 8527,
       "status_icon": "🟢",
       "mtime": 1778824113.2610633
+    },
+    {
+      "file": "project_session_2026_05_16_force_orphan_streams.md",
+      "id": "session-2026-05-16-force-orphan-streams",
+      "name": "session-2026-05-16-force-orphan-streams",
+      "title": "Session 2026 05 16 Force Orphan Streams",
+      "type": "memory",
+      "summary": "\"Marathon trading-truth session — SL/FORCE bucket, orphan safety nets, scorecard Sharpe fix, dashboard real defaults, gerchik pyramid bug fix, Stream B (AI-agent) added\"",
+      "size": 6423,
+      "status_icon": "🟢",
+      "mtime": 1778979987.4628103
     },
     {
       "file": "feedback_session_baseline_transfers.md",
@@ -2718,6 +3004,17 @@
       "size": 935,
       "status_icon": "🟡",
       "mtime": 1777497891.0743704
+    },
+    {
+      "file": "feedback_streams_terminology.md",
+      "id": "streams-a-b-c-terminology",
+      "name": "streams-a-b-c-terminology",
+      "title": "Streams A B C Terminology",
+      "type": "memory",
+      "summary": "\"Stream A = Gerchik copy (sub2), Stream B = AI-agent (sub3), Stream C = переименован в Main TradingBot (sub1). Не путать!\"",
+      "size": 2012,
+      "status_icon": "🟢",
+      "mtime": 1778980067.6507926
     },
     {
       "file": "feedback_systemctl_timestamp_js.md",
@@ -2828,6 +3125,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_voice_input_voiceink_mac.md",
+      "id": "voice-input-voiceink-on-mac",
+      "name": "voice-input-voiceink-on-mac",
+      "title": "Voice Input Voiceink On Mac",
+      "type": "memory",
+      "summary": "\"Артём на macOS использует VoiceInk (local Whisper) для голосового ввода в SSH-сессию с VPS — не путать с VoiceLine (cloud, требует API key).\"",
+      "size": 2364,
+      "status_icon": "🟢",
+      "mtime": 1778980167.0538478
+    },
+    {
       "file": "project_voice_tutor.md",
       "id": "voice-tutor (@AISmartFriendBot)",
       "name": "voice-tutor (@AISmartFriendBot)",
@@ -2837,6 +3145,17 @@
       "size": 4528,
       "status_icon": "🟡",
       "mtime": 1778195664.2021592
+    },
+    {
+      "file": "feedback_vps_disk_cleanup.md",
+      "id": "vps-disk-cleanup-pattern",
+      "name": "vps-disk-cleanup-pattern",
+      "title": "Vps Disk Cleanup Pattern",
+      "type": "memory",
+      "summary": "\"Hostinger VPS 200GB. Главные мусорщики: /var/log/syslog (растёт без ротации), /root/.cache/pip, /var/crash, ontime backups. 2026-05-16 освободили 32 GB.\"",
+      "size": 2466,
+      "status_icon": "🟢",
+      "mtime": 1778980218.5349054
     },
     {
       "file": "feedback_wet_word_lookup_slow.md",
@@ -2907,12 +3226,32 @@
       "target": "project-trading-state-softgate"
     },
     {
+      "source": "dashboard-v2-deploy-script",
+      "target": "feedback-dashboard-v1-v2"
+    },
+    {
+      "source": "dashboard-v2-deploy-script",
+      "target": "project-dashboard-v2"
+    },
+    {
       "source": "emails-agent-handle-button",
       "target": "emails-two-bots-shared-db"
     },
     {
       "source": "emails-agent-handle-button",
       "target": "tim-agent-plan"
+    },
+    {
+      "source": "force-bucket-close-source",
+      "target": "feedback-be-on-real"
+    },
+    {
+      "source": "force-bucket-close-source",
+      "target": "feedback-real-trades-orphan"
+    },
+    {
+      "source": "force-bucket-close-source",
+      "target": "feedback-real-trades-truth"
     },
     {
       "source": "feedback-funnel-vs-close-reason",
@@ -2959,6 +3298,18 @@
       "target": "project-unversioned-prod-state"
     },
     {
+      "source": "logger-utc-label-must-match",
+      "target": "feedback-sqlite-isoformat-trap"
+    },
+    {
+      "source": "logger-utc-label-must-match",
+      "target": "feedback-systemctl-timestamp-js"
+    },
+    {
+      "source": "logger-utc-label-must-match",
+      "target": "feedback-systemd-oncalendar-local-time"
+    },
+    {
       "source": "oauth-force-refresh",
       "target": "feedback_oauth_rate_limits"
     },
@@ -2995,6 +3346,14 @@
       "target": "project-realized-pnl-column"
     },
     {
+      "source": "Real-mode dashboard — Bybit is the only truth",
+      "target": "project-orphan-safety-nets"
+    },
+    {
+      "source": "Real-mode dashboard — Bybit is the only truth",
+      "target": "project-pyramid-fix-gerchik-trading-agent"
+    },
+    {
       "source": "session-wallet-baseline-traps-wallet-transfers",
       "target": "feedback_dd_guard_paper_skip"
     },
@@ -3009,6 +3368,18 @@
     {
       "source": "silero-torchaudio-install-quirks",
       "target": "project_voice_tutor"
+    },
+    {
+      "source": "streams-a-b-c-terminology",
+      "target": "feedback-real-trades-truth"
+    },
+    {
+      "source": "streams-a-b-c-terminology",
+      "target": "project-bybit-3sub-architecture"
+    },
+    {
+      "source": "streams-a-b-c-terminology",
+      "target": "project-pyramid-fix-gerchik-trading-agent"
     },
     {
       "source": "tg-persistent-keyboard",
@@ -3043,6 +3414,26 @@
       "target": "project_pc1_homelab_active"
     },
     {
+      "source": "voice-input-voiceink-on-mac",
+      "target": "feedback-tutor-tts-wiring"
+    },
+    {
+      "source": "voice-input-voiceink-on-mac",
+      "target": "project-gpu-homelab-plan"
+    },
+    {
+      "source": "voice-input-voiceink-on-mac",
+      "target": "project-voice-tutor"
+    },
+    {
+      "source": "vps-disk-cleanup-pattern",
+      "target": "project-ga-optimizer"
+    },
+    {
+      "source": "vps-disk-cleanup-pattern",
+      "target": "project-trading-bot-spec"
+    },
+    {
       "source": "wet-word-lookup-slow",
       "target": "feedback_oauth_rate_limits"
     },
@@ -3053,6 +3444,14 @@
     {
       "source": "bybit-3-sub-architecture",
       "target": "feedback-bybit-migration-bypass"
+    },
+    {
+      "source": "bybit-3-sub-architecture",
+      "target": "feedback-streams-a-b-c-terminology"
+    },
+    {
+      "source": "bybit-3-sub-architecture",
+      "target": "project-pyramid-fix-gerchik-trading-agent"
     },
     {
       "source": "ga-realism-overhaul-2026-05-13",
@@ -3135,6 +3534,22 @@
       "target": "project_pc2_homelab_active"
     },
     {
+      "source": "orphan-safety-nets",
+      "target": "feedback-bybit-ws-keepalive"
+    },
+    {
+      "source": "orphan-safety-nets",
+      "target": "feedback-real-trades-fee-semantics"
+    },
+    {
+      "source": "orphan-safety-nets",
+      "target": "feedback-real-trades-orphan"
+    },
+    {
+      "source": "orphan-safety-nets",
+      "target": "feedback-real-trades-truth"
+    },
+    {
       "source": "pc2-homelab-active",
       "target": "feedback_pc1_ssh_quirks"
     },
@@ -3199,6 +3614,38 @@
       "target": "project_unversioned_prod_state"
     },
     {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "feedback-auto-push-default"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "feedback-bybit-env-symlink"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "feedback-dashboard-view-lock"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "feedback-no-routine-confirms"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "feedback-real-trades-truth"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "project-bybit-3sub-architecture"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "project-hybrid-mode"
+    },
+    {
+      "source": "session-2026-05-16-force-orphan-streams",
+      "target": "project-mfe-calibration"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -3236,16 +3683,16 @@
     }
   ],
   "stats": {
-    "files": 210,
-    "nodes": 267,
-    "edges": 88,
+    "files": 219,
+    "nodes": 298,
+    "edges": 120,
     "by_type": {
       "feedback": 81,
-      "memory": 39,
+      "memory": 48,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 57
+      "stub": 79
     }
   }
 }

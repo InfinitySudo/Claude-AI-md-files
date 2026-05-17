@@ -1,41 +1,41 @@
 # Memory digest
 
-Generated **2026-05-17 00:44 UTC**.
+Generated **2026-05-17 01:45 UTC**.
 
-**267 nodes** (210 files, 88 edges) — 🗂 88 project · ⚠️ 81 feedback · 📝 57 stub · · 39 memory · 🔗 1 reference · 👤 1 user
+**298 nodes** (219 files, 120 edges) — 🗂 88 project · ⚠️ 81 feedback · 📝 79 stub · · 48 memory · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## 🌟 Hub nodes (most referenced)
 
+- [[feedback-real-trades-truth]] ← 6 refs · 📝 stub
 - [[project_pc1_homelab_active]] ← 6 refs · 📝 stub
 - [[project_pc2_homelab_active]] ← 5 refs · 📝 stub
 - [[project_tutor_latency_pipeline]] ← 4 refs · 📝 stub
+- [[feedback-bybit-env-symlink]] ← 3 refs · · memory
+- [[project-pyramid-fix-gerchik-trading-agent]] ← 3 refs · 📝 stub
 - [[project_voice_tutor]] ← 3 refs · 📝 stub
-- [[feedback-bybit-env-symlink]] ← 2 refs · · memory
 - [[feedback-ga-unrealistic-tps]] ← 2 refs · · memory
-- [[feedback-real-trades-truth]] ← 2 refs · 📝 stub
+- [[feedback-real-trades-orphan]] ← 2 refs · 📝 stub
 - [[feedback_oauth_rate_limits]] ← 2 refs · 📝 stub
-- [[feedback_pc1_ssh_quirks]] ← 2 refs · 📝 stub
-- [[feedback_real_trades_truth]] ← 2 refs · 📝 stub
 
-## 📝 Stubs (57) — referenced but not yet written
+## 📝 Stubs (79) — referenced but not yet written
 
+- [[feedback-real-trades-truth]] ← 6 refs
 - [[project_pc1_homelab_active]] ← 6 refs
 - [[project_pc2_homelab_active]] ← 5 refs
 - [[project_tutor_latency_pipeline]] ← 4 refs
+- [[project-pyramid-fix-gerchik-trading-agent]] ← 3 refs
 - [[project_voice_tutor]] ← 3 refs
-- [[feedback-real-trades-truth]] ← 2 refs
+- [[feedback-real-trades-orphan]] ← 2 refs
 - [[feedback_oauth_rate_limits]] ← 2 refs
 - [[feedback_pc1_ssh_quirks]] ← 2 refs
 - [[feedback_real_trades_truth]] ← 2 refs
 - [[feedback_tutor_tts_wiring]] ← 2 refs
 - [[feedback_voice_tutor_oauth_500]] ← 2 refs
+- [[project-bybit-3sub-architecture]] ← 2 refs
 - [[project-ga-realism-overhaul]] ← 2 refs
 - [[project-ga-walk-forward-todo]] ← 2 refs
-- [[project_unversioned_prod_state]] ← 2 refs
-- [[project_wife_english_tutor]] ← 2 refs
-- [[emails-two-bots-shared-db]] ← 1 refs
 
 ## 🏝 Orphans (176) — no links in or out
 
@@ -58,21 +58,21 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-05-16 18:45` [[Real-mode dashboard — Bybit is the only truth]] · 🟢 today
+- `2026-05-17 01:10` [[bybit-3-sub-architecture]] · 🟢 today
+- `2026-05-17 01:10` [[Real-mode dashboard — Bybit is the only truth]] · 🟢 today
+- `2026-05-17 01:10` [[vps-disk-cleanup-pattern]] · 🟢 today
+- `2026-05-17 01:09` [[logger-utc-label-must-match]] · 🟢 today
+- `2026-05-17 01:09` [[voice-input-voiceink-on-mac]] · 🟢 today
+- `2026-05-17 01:08` [[force-bucket-close-source]] · 🟢 today
+- `2026-05-17 01:08` [[orphan-safety-nets]] · 🟢 today
+- `2026-05-17 01:07` [[streams-a-b-c-terminology]] · 🟢 today
+- `2026-05-17 01:07` [[dashboard-v2-deploy-script]] · 🟢 today
+- `2026-05-17 01:07` [[pyramid-fix-gerchik-trading-agent]] · 🟢 today
+- `2026-05-17 01:06` [[session-2026-05-16-force-orphan-streams]] · 🟢 today
 - `2026-05-16 15:54` [[real-trades-fee-semantics]] · 🟢 today
 - `2026-05-16 15:27` [[gerchik-signals-decision-varchar]] · 🟢 today
 - `2026-05-16 05:49` [[graph-system]] · 🟢 today
 - `2026-05-16 05:23` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
-- `2026-05-15 23:40` [[feedback-bybit-migration-bypass]] · 🟢 this week
-- `2026-05-15 23:40` [[feedback-bybit-env-symlink]] · 🟢 this week
-- `2026-05-15 23:39` [[bybit-3-sub-architecture]] · 🟢 this week
-- `2026-05-15 22:43` [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] · 🟢 this week
-- `2026-05-15 22:42` [[telegram-webview-aggressively-caches-mini-app-multi-layer-bust-needed]] · 🟢 this week
-- `2026-05-15 22:42` [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] · 🟢 this week
-- `2026-05-15 19:29` [[pc1-only-model-tags-trap-fallback-chain]] · 🟢 this week
-- `2026-05-15 19:05` [[silero-torchaudio-install-quirks]] · 🟢 this week
-- `2026-05-15 19:01` [[pc2-homelab-active]] · 🟢 this week
-- `2026-05-15 14:11` [[session-wallet-baseline-traps-wallet-transfers]] · 🟢 this week
 
 ## 📚 Index by type
 
@@ -251,13 +251,26 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[tutor-bots OAuth 401 (drop-cache fix 2026-05-12)]] — voice-tutor / wife-english-tutor / son-french-tutor ловят 401 invalid x-api-key из-за race с DexClaud за общий credentia
 - [[Отвечать на русском кириллицей]] — Артём просит общаться на русском языке кириллицей, не транслитом
 
-### 📝 stub (57)
+### 📝 stub (79)
 
 - [[emails-two-bots-shared-db]] — (not written yet)
+- [[feedback-auto-push-default]] — (not written yet)
+- [[feedback-be-on-real]] — (not written yet)
+- [[feedback-bybit-ws-keepalive]] — (not written yet)
 - [[feedback-chartjs-unbounded-height]] — (not written yet)
+- [[feedback-dashboard-v1-v2]] — (not written yet)
+- [[feedback-dashboard-view-lock]] — (not written yet)
+- [[feedback-no-routine-confirms]] — (not written yet)
 - [[feedback-query-write-swallow]] — (not written yet)
+- [[feedback-real-trades-fee-semantics]] — (not written yet)
+- [[feedback-real-trades-orphan]] — (not written yet)
 - [[feedback-real-trades-truth]] — (not written yet)
 - [[feedback-reports-win-rate]] — (not written yet)
+- [[feedback-sqlite-isoformat-trap]] — (not written yet)
+- [[feedback-streams-a-b-c-terminology]] — (not written yet)
+- [[feedback-systemctl-timestamp-js]] — (not written yet)
+- [[feedback-systemd-oncalendar-local-time]] — (not written yet)
+- [[feedback-tutor-tts-wiring]] — (not written yet)
 - [[feedback_dd_guard_paper_skip]] — (not written yet)
 - [[feedback_ga_apply_full_chain]] — (not written yet)
 - [[feedback_ga_backtester_daily_zero]] — (not written yet)
@@ -277,14 +290,23 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[gerchik-trading-agent]] — (not written yet)
 - [[project-baseline-v2-2026-05-08]] — (not written yet)
 - [[project-baseline-v3-2026-05-10]] — (not written yet)
+- [[project-bybit-3sub-architecture]] — (not written yet)
+- [[project-dashboard-v2]] — (not written yet)
+- [[project-ga-optimizer]] — (not written yet)
 - [[project-ga-realism-overhaul]] — (not written yet)
 - [[project-ga-walk-forward-todo]] — (not written yet)
 - [[project-gerchik-bot]] — (not written yet)
+- [[project-gpu-homelab-plan]] — (not written yet)
 - [[project-grafana-alerts]] — (not written yet)
+- [[project-hybrid-mode]] — (not written yet)
 - [[project-mfe-mae-tracking]] — (not written yet)
+- [[project-orphan-safety-nets]] — (not written yet)
+- [[project-pyramid-fix-gerchik-trading-agent]] — (not written yet)
 - [[project-realized-pnl-column]] — (not written yet)
+- [[project-trading-bot-spec]] — (not written yet)
 - [[project-trading-state-softgate]] — (not written yet)
 - [[project-unversioned-prod-state]] — (not written yet)
+- [[project-voice-tutor]] — (not written yet)
 - [[project_backtest_findings]] — (not written yet)
 - [[project_dashboard_ga_section]] — (not written yet)
 - [[project_emails_optimization]] — (not written yet)
@@ -311,11 +333,12 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (39)
+### · memory (48)
 
 - [[avatar-video-calibration]] — "OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на ста
 - [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] — "Critical bug 2026-05-15. Computing BE-SL from row['entry_price'] (=signal) instead of live_pos.avgPrice (=actual fill) 
 - [[bybit-3-sub-architecture]] — "Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/A
+- [[dashboard-v2-deploy-script]] — "nginx сервит из /var/www/dashboard, не из /root. После правки index_v2.html ОБЯЗАТЕЛЬНО прогон deploy_dashboard.sh — ин
 - [[dexclaud-bridge-bot]] — "TG-бот @DexClaudCodAIBot — bridge для отправки уведомлений Артёму из моих скриптов. Токен в `/root/4BotsBybit-Trading/.
 - [[emails-agent-handle-button]] — 🤖 AI Plan button on every triage card → fires Claude planner with email thread context; lives in bot.py:_build_keyboard 
 - [[feedback-bybit-env-symlink]] — "/root/gerchik-trading-agent/.env is a symlink to /root/4BotsBybit-Trading/.env — same file, two projects. Adding diverg
@@ -324,33 +347,41 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback-ga-unrealistic-tps]] — "GA рекомендует TP в космосе (13R-48R), хотя реальная MFE доходит максимум ~2%; backtester засчитывает wick-касания на 5
 - [[feedback-grafana-v13-resource-table]] — "Grafana 13 хранит дашборды в новой `resource` таблице, не в `dashboard`; SQLite-фикс возможен с restart'ом сервера"
 - [[feedback-toast-pointer-events]] — Toast/snackbar с opacity:0 без pointer-events:none молча съедает клики по элементам под ним
+- [[force-bucket-close-source]] — "real_trades.close_reason has 5 values now: TP{N}/SL/BE/LIQ/FORCE. close_source column tracks classification origin. FOR
 - [[ga-backtester-daily-zero-bug]] — "На ПК1 GA backtester (pipeline.evaluate_strategy) сейчас выдаёт 0 trades при любых params — daily ATR=0 для всех 60k si
 - [[ga-realism-overhaul-2026-05-13]] — Overhaul GA backtester (4 фазы + 2.5) сделанный в одной длинной сессии 2026-05-12/13. Sharpe annualised + costs + live c
 - [[gerchik-leverage-88-too-high]] — real_leverage 88× в gerchik душит scanner через liquidation_buffer filter; снижено до 35× 2026-05-12; ожидается рост час
 - [[gerchik-signals-decision-varchar]] — "gerchik_signals.decision = varchar(40) — никогда не пиши туда полный reason, иначе ВСЕ skip-сигналы тихо валятся в log_
 - [[graph-system]] — "5 knowledge graphs (memory, trading, tutor, ontime, projects) + auto-generated PROJECTS.md digest; new sessions read PR
+- [[logger-utc-label-must-match]] — "logger.py — formatter.converter = time.gmtime обязательно, иначе datefmt '... UTC' пишет local time (MDT) под видом UTC
 - [[multi-fix-per-problem-sentence]] — "Tutor-боты должны выдавать ОТДЕЛЬНЫЙ [FIX] на каждое ошибочное предложение учащегося, а не схлопывать в один; русский i
 - [[oauth-force-refresh]] — "When Claude returns 401, the 401-handler must call refresh API even if disk expiresAt is in the future — Anthropic revo
 - [[ollama-race-shadow-emails-triage]] — "PK1+PK2 LLM race helper в emails-bot, shadow-режим против Claude Haiku triage с 2026-05-13"
 - [[openai-base-url-shell-override]] — "VPS shell env содержит `OPENAI_BASE_URL=https://api.deepseek.com/v1` — OpenAI Python client его подхватывает по умолчан
+- [[orphan-safety-nets]] — 4 surfaces preventing orphan positions / missing-SL in main TradingBot (sub1) — added 2026-05-16 after $79 orphan-positi
 - [[pc1-only-model-tags-trap-fallback-chain]] — "PC1 имеет custom Ollama model tags (например `qwen2.5:32b-ctx4k`) которых нет на PC2 — fallback chain 404s when configu
 - [[pc2-homelab-active]] — "ПК2 (Art, RTX 3090 24GB) подключён 2026-05-12: Tailscale `borys@100.73.22.1`, SSH с ed25519 ключом, Ollama 11434 (qwen2
 - [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] — "db-backup сервис тихо клал zero-byte dumps 4 дня потому что pg_dump as `trading_bot` user не мог LOCK TABLE на `*_basel
 - [[project-ga-under-review]] — "GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending"
 - [[project-mfe-calibration]] — 📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у
+- [[pyramid-fix-gerchik-trading-agent]] — "gerchik-trading-agent: one row per (symbol, mode) — add-on entries aggregate into the open row via weighted-avg, not se
 - [[real-trades-fee-semantics]] — "В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающ
 - [[session-2026-05-14-emails-perf-photo]] — "Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal,
 - [[session-2026-05-14-tutors]] — Big session — wife/son tutor overhaul (OAuth fix + live tools + 6-level CEFR library + EWA-style UI + Alyona avatar + Sa
 - [[session-2026-05-15-voice-vocab-graphs]] — 2026-05-14/15 ночная сессия — Silero RU TTS на ПК1 + voice-tutor на OpenAI nova + wife/son tutor vocab/word-lookup 28s→1
+- [[session-2026-05-16-force-orphan-streams]] — "Marathon trading-truth session — SL/FORCE bucket, orphan safety nets, scorecard Sharpe fix, dashboard real defaults, ge
 - [[session-wallet-baseline-traps-wallet-transfers]] — "Drawdown guard сравнивает live wallet с `session_start_wallet_usd` — любой sub-account transfer / withdraw читается как
 - [[silero-torchaudio-install-quirks]] — "Silero + torchaudio require two deps that are NOT pulled in by `pip install torch torchaudio` — install will silently s
 - [[son-french-tutor-andrii]] — "TG-бот для Andrii (~11-14yo) учит французский A1-A2. Persona Sophie (нова voice), avatar talking_loop.mp4, streaming TT
 - [[sophie-lip-sync-via-sadtalker-on-pc1-in-progress]] — "Live talking avatar для @FrenchTuporBot/@EnglishTecherTutorBot — фотореалистичный портрет + лип-синк MP4 на каждый отве
+- [[streams-a-b-c-terminology]] — "Stream A = Gerchik copy (sub2), Stream B = AI-agent (sub3), Stream C = переименован в Main TradingBot (sub1). Не путать
 - [[telegram-webview-aggressively-caches-mini-app-multi-layer-bust-needed]] — TG mobile WebView ignores ?v= query params and weak Last-Modified headers — to force fresh shell reload you need no-stor
 - [[tg-persistent-keyboard]] — "В TG-ботах с tutor pattern reply_markup=QUICK_KB надо вешать на free-chat ответы, а не только на /start — иначе юзер, к
 - [[tutor-latency-pipeline]] — "4-фазная оптимизация /api/voice в tutor ботах (son/wife): Haiku + asyncio.gather + sentence split + LLM streaming + STT
 - [[tutor-live-tools]] — "wife-english-tutor has Anthropic tool-use for live BTC/ETH price (Bybit) and weather (wttr.in); don't let bot answer ma
 - [[tutor-tts-wiring]] — Tutor-bot TTS/STT must route to PC1 (Kokoro :8002 / Whisper :8001) with PC2 + OpenAI fallback; never let it silently fal
+- [[voice-input-voiceink-on-mac]] — "Артём на macOS использует VoiceInk (local Whisper) для голосового ввода в SSH-сессию с VPS — не путать с VoiceLine (clo
+- [[vps-disk-cleanup-pattern]] — "Hostinger VPS 200GB. Главные мусорщики: /var/log/syslog (растёт без ротации), /root/.cache/pip, /var/crash, ontime back
 - [[wet-word-lookup-slow]] — "wife-english-tutor `/api/word/lookup` на cache miss занимал 28s — Ollama JSON-prompt медленнее Claude, плюс TTS блокиро
 
 ### 🔗 reference (1)
