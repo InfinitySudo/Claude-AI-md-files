@@ -43,3 +43,21 @@ new: "COALESCE(realized_pnl_usd, gross_pnl_usd - fees_paid_usd, 0)"
 Заплачено: 5 panels fixed 2026-05-17 (Total PnL real, Win Rate real, Cumulative PnL real, Top 10 symbols, Recent real trades).
 
 **Правило для будущих Grafana-панелей:** при добавлении любого panel читающего `real_trades` — НЕ писать `realized - fees`. Использовать `COALESCE(realized_pnl_usd, gross_pnl_usd - fees_paid_usd, 0)`. Для `simulated_trades` — старая формула корректна.
+
+## 2026-05-17 — третий случай: hour-heatmap endpoint
+
+`/api/v2/charts/hour-heatmap` (dashboard_api_v3.py:5419) имел тот же bug — `realized - fees` для real → heatmap все cells real-режима казались красными.
+
+Fix: использовать `stats_mgr._net_pnl_sql(table)` helper, а не писать SQL inline. Commit `5185cb8`. Pattern:
+
+```python
+net_sql = stats_mgr._net_pnl_sql(table)  # asymmetry-aware
+rows = stats_mgr._query(f"""
+    SELECT COUNT(*) FILTER (WHERE {net_sql} > 0) AS wins,
+           SUM({net_sql}) AS pnl ...
+""")
+```
+
+**Это уже ТРЕТЬЕ место** где fee-double-count проявился (statistics_manager_v3.py исправлен 2026-05-16, Grafana resource — 2026-05-17, heatmap endpoint — 2026-05-17). Все из-за inline SQL вместо `_net_pnl_sql` helper.
+
+**Universal rule:** любая агрегация по PnL в SQL → **обязательно** через `_net_pnl_sql(table)`. Если helper-import невозможен (Grafana, внешние скрипты) — копируй expression вручную с явным указанием table-shape.
