@@ -74,6 +74,21 @@ exchange-truth helpers, never raw SUM(realized_pnl_usd) FROM real_trades.
 
 **Backfill 2026-05-16:** 46 historic SL rows (60% от 76 total) переразмечены в FORCE. close_source='force_inferred_backfill'.
 
+## 2026-05-16 — Stream B (AI-agent / gerchik_trades) тоже подвержен
+
+`gerchik_trades` (sub3 AI-agent) имел pyramid-bug — каждое add-on entry → отдельная row → PnL inflated 3.4× vs Bybit truth. См. [[project-pyramid-fix-gerchik-trading-agent]].
+
+Дашборд Stream B (`/api/v2/gerchik/comparison.stream_b`) теперь читает **Bybit closed-pnl напрямую** (since 2026-05-15 migration), не из `gerchik_trades`. Pattern: **DB как secondary**, Bybit как primary truth для headline.
+
+## Расхождение DB vs Bybit (sub1 main TradingBot) — accepted as drift
+
+По состоянию 2026-05-16: DB net +$2.91 vs Bybit truth +$16.45. Δ ≈ $13.10. Источники:
+- DB-only "ghost rows" (старые trades за пределами Bybit-окна)
+- Bybit-only profits (orphans, failed inserts)
+- Dup-attribution на TP-partial chunks (AAVEUSDT pattern)
+
+**Решение Артёма**: live indicator (Bybit cross-check string на дашборде) = truth source, DB = per-trade attribution. Не пытаемся backfill — orphan-detection (см. [[project-orphan-safety-nets]]) предотвращает дальнейший drift.
+
 ## 2026-05-16 follow-up — narrowing the DB gap
 
 Reconciler (`order_executor_wrapper_v3.py`, 60s tick) теперь делает две дополнительные вещи каждый tick:

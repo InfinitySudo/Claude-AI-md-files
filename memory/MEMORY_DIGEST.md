@@ -1,6 +1,6 @@
 # Memory digest
 
-Generated **2026-05-16 20:38 UTC**.
+Generated **2026-05-17 00:44 UTC**.
 
 **267 nodes** (210 files, 88 edges) — 🗂 88 project · ⚠️ 81 feedback · 📝 57 stub · · 39 memory · 🔗 1 reference · 👤 1 user
 
@@ -63,12 +63,12 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - `2026-05-16 15:27` [[gerchik-signals-decision-varchar]] · 🟢 today
 - `2026-05-16 05:49` [[graph-system]] · 🟢 today
 - `2026-05-16 05:23` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
-- `2026-05-15 23:40` [[feedback-bybit-migration-bypass]] · 🟢 today
-- `2026-05-15 23:40` [[feedback-bybit-env-symlink]] · 🟢 today
-- `2026-05-15 23:39` [[bybit-3-sub-architecture]] · 🟢 today
-- `2026-05-15 22:43` [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] · 🟢 today
-- `2026-05-15 22:42` [[telegram-webview-aggressively-caches-mini-app-multi-layer-bust-needed]] · 🟢 today
-- `2026-05-15 22:42` [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] · 🟢 today
+- `2026-05-15 23:40` [[feedback-bybit-migration-bypass]] · 🟢 this week
+- `2026-05-15 23:40` [[feedback-bybit-env-symlink]] · 🟢 this week
+- `2026-05-15 23:39` [[bybit-3-sub-architecture]] · 🟢 this week
+- `2026-05-15 22:43` [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] · 🟢 this week
+- `2026-05-15 22:42` [[telegram-webview-aggressively-caches-mini-app-multi-layer-bust-needed]] · 🟢 this week
+- `2026-05-15 22:42` [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] · 🟢 this week
 - `2026-05-15 19:29` [[pc1-only-model-tags-trap-fallback-chain]] · 🟢 this week
 - `2026-05-15 19:05` [[silero-torchaudio-install-quirks]] · 🟢 this week
 - `2026-05-15 19:01` [[pc2-homelab-active]] · 🟢 this week

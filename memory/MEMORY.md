@@ -211,3 +211,12 @@
 - [Bybit empty result truthy-trap](feedback_bybit_empty_result_truthy_trap.md) — Bybit V5 на success отдаёт `{retCode:0, result:{}}`; `if not res` ловит это как failure → проверяй через `is None`
 - [Bybit V5 open/close knowledge](project_bybit_v5_open_close_knowledge.md) — verified правила (minNotional $5, sequence, fees/slippage); e2e test `tests/manual/bybit_e2e_open_close.py`
 - [Sophie lip-sync](project_sophie_lipsync.md) — SadTalker on PC1 :8003 для сын/жена/voice-tutor; Wav2Lip миграция pending; PC1 offline = lipsync auto-disabled
+- [Session 2026-05-16 FORCE/orphan/streams](project_session_2026_05_16_force_orphan_streams.md) — 11 commits: SL/FORCE split, BE-trail sync, orphan safety nets, Sharpe fix, dashboard→real, Stream B AI-agent, gerchik pyramid fix
+- [FORCE bucket + close_source](feedback_force_bucket_close_source.md) — close_reason has 5 values (TP{N}/SL/BE/LIQ/FORCE); FORCE = not real Bybit-SL; 46 historic rows backfilled
+- [Pyramid fix gerchik](project_pyramid_fix_gerchik.md) — one row per (symbol, mode); add-ons aggregate via weighted-avg; root cause: has_open_on_symbol default mode='PAPER'
+- [Orphan safety nets](project_orphan_safety_nets.md) — 4 surfaces: dust filter, reverse-loop orphan detection, SL post-place verify, insert retry+dead-letter
+- [Streams A/B/C terminology](feedback_streams_terminology.md) — A=Gerchik (sub2), B=AI-agent (sub3, Bybit-truth), C=Main TradingBot (sub1, renamed); не путать "our agent"
+- [Dashboard v2 deploy](feedback_dashboard_v2_deploy.md) — bash deploy_dashboard.sh публикует ОБЕ v1+v2; иначе nginx подаёт stale v2.html
+- [Voice input VoiceInk](feedback_voice_input_voiceink_mac.md) — Артём с mac → SSH → claude; VoiceInk локально (НЕ VoiceLine); Right-Option hotkey, авто-paste в Terminal
+- [Logger UTC label](feedback_logger_utc_label.md) — formatter.converter = time.gmtime обязательно; иначе datefmt ' UTC' пишет MDT (6h дрейф)
+- [VPS disk cleanup](feedback_vps_disk_cleanup.md) — главные мусорщики: /var/log/syslog (27GB), pip cache (4GB), /var/crash; klines (53GB) активно нужны GA, не трогать

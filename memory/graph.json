@@ -239,7 +239,7 @@
       "type": "project",
       "summary": "Unified per-strategy dashboard at /v2.html — kills paper/real split confusion; v1 still live until cutover",
       "size": 4379,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778365162.9360774
     },
     {
@@ -272,7 +272,7 @@
       "type": "feedback",
       "summary": "Two dashboards live in parallel until v2 polished; editing the wrong one or the wrong layer (repo vs deploy) silently breaks prod",
       "size": 3857,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778365169.9301088
     },
     {
@@ -679,7 +679,7 @@
       "type": "feedback",
       "summary": "При написании постов для @solo_claude всегда сначала выстраивать контекст/историю проекта, только потом нырять в технические детали или апдейты. Новый подписчик не знает что такое OnTime/4BotsBybit/Wr",
       "size": 1346,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776373162.601112
     },
     {
@@ -734,7 +734,7 @@
       "type": "project",
       "summary": "PWA для siding-компании TSA — контроль дедлайнов/часов по объектам, соревновательный рейтинг форманов; домен ontime.management",
       "size": 9641,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776385970.4234858
     },
     {
@@ -1075,7 +1075,7 @@
       "type": "project",
       "summary": "Big-day rundown — что трогали в OnTime 2026-05-09: lunch bug → hourly billing → foreman overhead split → consistency fixes",
       "size": 4414,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778363528.6704853
     },
     {
@@ -1647,7 +1647,7 @@
       "type": "user",
       "summary": "Artem Borisyuk, crypto trader building automated Bybit futures trading bots",
       "size": 1096,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776373896.3158386
     },
     {
@@ -1680,7 +1680,7 @@
       "type": "project",
       "summary": "@EnglishTecherTutorBot теперь поправляет ошибку В НАЧАЛЕ ответа (тег [FIX]...[/FIX]), потом продолжает беседу — для голоса и текста",
       "size": 1303,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778367109.5122545
     },
     {

@@ -21,6 +21,13 @@ metadata:
 
 **Why:** До миграции TradingBot и AI-agent делили один кошелёк → risk_manager TradingBot'a видел позы AI-agent'a как orphan и пытался их сопровождать через dust-sweep. После — каждый бот изолирован, никакого cross-contamination.
 
+**Dashboard Stream-labels (2026-05-16, см. [[feedback-streams-a-b-c-terminology]]):**
+- 📥 **Stream A — Gerchik copy** = sub2 (DB: `gerchik_copy_trades`)
+- 🤖 **Stream B — AI-agent** = sub3 (DB: `gerchik_trades`; UI читает Bybit-truth напрямую через закрытые-pnl API)
+- 💰 **Main TradingBot (sub1)** = sub1 (DB: `real_trades`) — было "Stream C — our agent", переименовано
+
+**Pyramid fix 2026-05-16 (sub3 only):** см. [[project-pyramid-fix-gerchik-trading-agent]]. До 2026-05-16 коммита `dbea126` AI-agent inflated PnL 3.4× (XRPUSDT incident).
+
 **How to apply:**
 - `/root/gerchik-trading-agent/src/env_config.py:bybit_creds()` читает `BYBIT_AI_AGENT_API_KEY` с fallback на `BYBIT_API_KEY` — не сломать этот fallback.
 - IP whitelist на всех 3 ключах: `187.77.148.44`, `46.8.232.182` (Артём диктовал при создании).
