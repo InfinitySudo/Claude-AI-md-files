@@ -7,6 +7,8 @@ metadata:
   originSessionId: c1d54c6b-9b43-408e-bf0b-0378ebf08875
 ---
 
+**Update 2026-05-16:** этот же бот @DexClaudCodAIBot стал full Claude Code agent (см. [[dexclaud-plan-first]]) — `/root/claude-telegram-bot/claude_bot.py` с tools/vision/voice + create_plan/update_progress. Этот memory описывает ТОЛЬКО bridge-режим (sendMessage из других скриптов без интеракции).
+
 **Что:** Готовый канал слать прогресс/факты Артёму в TG без открывания собственного бота.
 
 **Как:**

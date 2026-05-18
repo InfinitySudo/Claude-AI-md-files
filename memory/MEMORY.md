@@ -30,6 +30,7 @@
 - [Chart.js Height Trap](feedback_chartjs_unbounded_height.md) — wrap every canvas in fixed-height div or browser freezes
 - [Toast Pointer Events](feedback_toast_pointer_events.md) — opacity:0 без pointer-events:none молча ест клики по tabs под ним
 - [real_trades Schema](project_real_trades_schema.md) — narrower than simulated_trades; get_alltime_stats crashes on missing columns
+- [Bybit TP-Limit Quirks](feedback_bybit_tp_limit_quirks.md) — tpLimitPrice required, Full mode только Market, TP должен быть за MarkPrice, аудит через /v5/order/realtime
 - [Signal Config Path Trap](feedback_signal_bot_config_path.md) — src/ is real, root is orphan; always use env_config.SIGNAL_BOT_CONFIG_PATH
 - [SignalBot Bar Logic](feedback_signal_bar_logic.md) — confirm=True only, slice по ws_config volume_avg_bars/trend_bars (не [-6:]), REST-warmup 5m
 - [HARD CAP + Dashboard PAPER](feedback_hard_cap_double_count.md) — risk_manager position×leverage = двойной счёт; dashboard _v2_resolve_source хардкод игнорировал per_strategy JSON

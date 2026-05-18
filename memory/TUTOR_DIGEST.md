@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-05-17 02:16 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-05-18 14:31 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**454 nodes** (465 edges) — 📝 421 word · 📚 16 category · 📖 10 book · 👤 7 learner
+**495 nodes** (507 edges) — 📝 462 word · 📚 16 category · 📖 10 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -33,9 +33,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `exercise` — mastery 0, seen 1×
 - `exercises` — mastery 0, seen 1×
 - `favorite` — mastery 0, seen 1×
-- `hands full` — mastery 0, seen 1×
 - `hard work` — mastery 0, seen 1×
 - `hardest` — mastery 0, seen 1×
+- `help` — mastery 0, seen 1×
 
 ### 📖 Books
 
@@ -67,32 +67,32 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
 | Category | Mistakes (incl. repeats) |
 |---|---:|
-| `other` | **17** |
-| `tenses` | **7** |
+| `other` | **18** |
+| `tenses` | **8** |
 | `vocabulary` | **5** |
 | `word_order` | **5** |
 | `articles` | **2** |
 | `agreement` | **1** |
 
-### 📝 Vocab — 238 words
+### 📝 Vocab — 261 words
 
 **Stuck (lowest mastery):**
 
-- `bond` — mastery 0, seen 1×
-- `comfortable` — mastery 0, seen 1×
-- `complain` — mastery 0, seen 1×
-- `confused` — mastery 0, seen 1×
-- `confusion` — mastery 0, seen 1×
-- `courage` — mastery 0, seen 1×
-- `difficult` — mastery 0, seen 1×
-- `distance` — mastery 0, seen 1×
-- `emotional` — mastery 0, seen 1×
-- `exchange` — mastery 0, seen 1×
-- `fault` — mastery 0, seen 1×
-- `grading` — mastery 0, seen 1×
-- `grief` — mastery 0, seen 1×
-- `hands full` — mastery 0, seen 1×
-- `honestly` — mastery 0, seen 1×
+- `crack` — mastery 0, seen 1×
+- `gets` — mastery 0, seen 1×
+- `hard` — mastery 0, seen 1×
+- `porridge` — mastery 0, seen 1×
+- `someone` — mastery 0, seen 1×
+- `absolutely` — mastery 1, seen 1×
+- `afternoon` — mastery 1, seen 1×
+- `away` — mastery 1, seen 1×
+- `awful` — mastery 1, seen 1×
+- `back` — mastery 1, seen 1×
+- `backyard` — mastery 1, seen 1×
+- `beach` — mastery 1, seen 1×
+- `beef` — mastery 1, seen 1×
+- `bleeding` — mastery 1, seen 1×
+- `body` — mastery 1, seen 1×
 
 ### 📖 Books
 
@@ -112,16 +112,16 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
 | Category | Mistakes (incl. repeats) |
 |---|---:|
-| `vocabulary` | **11** |
+| `vocabulary` | **13** |
+| `prepositions` | **5** |
 | `other` | **4** |
-| `prepositions` | **4** |
+| `tenses` | **3** |
 | `pronunciation` | **2** |
 | `agreement` | **1** |
 | `articles` | **1** |
-| `tenses` | **1** |
 | `word_order` | **1** |
 
-### 📝 Vocab — 139 words
+### 📝 Vocab — 158 words
 
 **Stuck (lowest mastery):**
 
@@ -129,6 +129,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `aider` — mastery 0, seen 1×
 - `allez` — mastery 0, seen 1×
 - `amusant` — mastery 0, seen 1×
+- `amuser` — mastery 0, seen 1×
 - `apprendre` — mastery 0, seen 1×
 - `apprends` — mastery 0, seen 1×
 - `arrête` — mastery 0, seen 1×
@@ -139,7 +140,6 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `aujourd'hui` — mastery 0, seen 1×
 - `autrement` — mastery 0, seen 1×
 - `avoir` — mastery 0, seen 1×
-- `beau` — mastery 0, seen 1×
 
 ### 📖 Books
 

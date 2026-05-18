@@ -74,7 +74,7 @@
       "type": "project",
       "summary": "Чистая точка старта новой статистики после волны фиксов 2026-05-09; всё что до неё — мусор, для решений не использовать",
       "size": 4061,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778391762.6223402
     },
     {
@@ -96,7 +96,7 @@
       "type": "project",
       "summary": "Подтверждённые правила и подводные камни Bybit V5 для market open/close на linear perp; e2e-тест в gerchik-trading-agent/tests/manual/bybit_e2e_open_close.py",
       "size": 4435,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778447122.64431
     },
     {
@@ -118,7 +118,7 @@
       "type": "feedback",
       "summary": "Bybit V5 endpoints (особенно /position/trading-stop) на success возвращают retCode=0 с result={}; `if not res` интерпретирует это как failure",
       "size": 1551,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778446839.2874157
     },
     {
@@ -151,7 +151,7 @@
       "type": "project",
       "summary": "Personal \"Bot для общения с тобой\" — /root/claude-telegram-bot, pushes to Claude-Telegram-Bot repo (not OpenClaw-v3)",
       "size": 1110,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776401634.0610743
     },
     {
@@ -184,7 +184,7 @@
       "type": "project",
       "summary": "Все репо Артёма с которыми я регулярно работаю — пути на VPS, GitHub origin, что внутри, какие сервисы запускают",
       "size": 4625,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778445432.2445555
     },
     {
@@ -195,7 +195,7 @@
       "type": "feedback",
       "summary": "Dashboard-api виснет на старте если другой бот держит idle-in-transaction lock на real_trades_compat; защищено двумя слоями",
       "size": 1889,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778381151.029441
     },
     {
@@ -492,7 +492,7 @@
       "type": "project",
       "summary": "Copy-trading pipeline для GTE Pro TG signals — Phase 1 architecture, capital, decisions, file map",
       "size": 7808,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778473972.5648634
     },
     {
@@ -514,7 +514,7 @@
       "type": "feedback",
       "summary": "max_position_usd_per_symbol режется через position×leverage; dashboard hardcoded forced_real игнорирует JSON per_strategy",
       "size": 2158,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778385796.6535604
     },
     {
@@ -602,7 +602,7 @@
       "type": "feedback",
       "summary": "Production-данные TSA из legacy БД нельзя в публичный репо OnTime",
       "size": 699,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776467206.1218011
     },
     {
@@ -1196,7 +1196,7 @@
       "type": "feedback",
       "summary": "Любая тяжёлая нагрузка (ML training, batch-обработка, GA, рендеринг, photo restoration) идёт на ПК1 (RTX 3090, Tailscale 100.99.211.123, ssh user=tkach) — VPS оставляем для live-сервисов",
       "size": 1771,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778445449.0999713
     },
     {
@@ -1240,7 +1240,7 @@
       "type": "feedback",
       "summary": "Всё в trading_bot_v3 БД до 2026-05-10 05:42:10 UTC недостоверно из-за каскада багов; для решений брать только post-baseline",
       "size": 2808,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778391996.610166
     },
     {
@@ -1306,7 +1306,7 @@
       "type": "project",
       "summary": "План перехода CONS на real после 2-3 дней paper-наблюдения с baseline V3; чек-лист критериев готовности",
       "size": 1666,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778444192.4951544
     },
     {
@@ -1416,7 +1416,7 @@
       "type": "feedback",
       "summary": "Три скрытых бага в signal_bot_v3_websocket.py: interim бары как закрытые, hardcoded [-6:] vs ws_config['volume_avg_bars'], недостаточный REST-warmup",
       "size": 2648,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778383674.0815597
     },
     {
@@ -1460,7 +1460,7 @@
       "type": "project",
       "summary": "Активный проект с 2026-04-16. RU TG-канал Артёма в нише «solo-founder строит SaaS с AI». Все ключевые решения зафиксированы, название ещё не выбрано.",
       "size": 6224,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776474586.0895126
     },
     {
@@ -1783,6 +1783,16 @@
       "mtime": 1778980258.9179626
     },
     {
+      "id": "bybit-signing-order",
+      "name": "bybit-signing-order",
+      "title": "bybit-signing-order",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_dashboard_v2_deploy.md",
       "id": "dashboard-v2-deploy-script",
       "name": "dashboard-v2-deploy-script",
@@ -1800,9 +1810,30 @@
       "title": "Dexclaud Bridge Bot",
       "type": "memory",
       "summary": "\"TG-бот @DexClaudCodAIBot — bridge для отправки уведомлений Артёму из моих скриптов. Токен в `/root/4BotsBybit-Trading/.env` как `CLAUDE_BRIDGE_BOT_TOKEN`, chat_id Артёма из `CLAUDE_OPERATOR_CHAT_ID` ",
-      "size": 955,
+      "size": 1254,
       "status_icon": "🟢",
-      "mtime": 1778646236.6898627
+      "mtime": 1778996389.481562
+    },
+    {
+      "file": "feedback_dexclaud_plan_first.md",
+      "id": "dexclaud-plan-first",
+      "name": "dexclaud-plan-first",
+      "title": "Dexclaud Plan First",
+      "type": "memory",
+      "summary": "claude-telegram-bot (DexClaudCodAIBot) теперь обязан составлять план через create_plan + показывать live progress; Opus 4.7 жёстко для code/bug/fix",
+      "size": 2668,
+      "status_icon": "🟢",
+      "mtime": 1778996357.055341
+    },
+    {
+      "id": "dust-sweep",
+      "name": "dust-sweep",
+      "title": "dust-sweep",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "file": "feedback_emails_agent_handle_button.md",
@@ -1877,6 +1908,17 @@
       "size": 1402,
       "status_icon": "🟢",
       "mtime": 1778888427.693371
+    },
+    {
+      "file": "feedback_bybit_tp_limit_quirks.md",
+      "id": "feedback-bybit-tp-limit-quirks",
+      "name": "feedback-bybit-tp-limit-quirks",
+      "title": "Feedback Bybit Tp Limit Quirks",
+      "type": "memory",
+      "summary": "Подводные камни Bybit set_trading_stop с tpOrderType=Limit и правильный аудит TP-ордеров через /v5/order/realtime",
+      "size": 1912,
+      "status_icon": "🟢",
+      "mtime": 1779061760.3007858
     },
     {
       "id": "feedback-bybit-ws-keepalive",
@@ -2066,6 +2108,26 @@
       "id": "feedback-tutor-tts-wiring",
       "name": "feedback-tutor-tts-wiring",
       "title": "feedback-tutor-tts-wiring",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_be_on_real",
+      "name": "feedback_be_on_real",
+      "title": "feedback_be_on_real",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_bybit_signing_order",
+      "name": "feedback_bybit_signing_order",
+      "title": "feedback_bybit_signing_order",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2266,6 +2328,16 @@
       "mtime": 1778655765.5419695
     },
     {
+      "id": "ga-under-review",
+      "name": "ga-under-review",
+      "title": "ga-under-review",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_gerchik_leverage_88_too_high.md",
       "id": "gerchik-leverage-88-too-high",
       "name": "gerchik-leverage-88-too-high",
@@ -2305,7 +2377,7 @@
       "type": "project",
       "summary": "Самообучающийся agent (rule engine + ML scorer + LLM reflector + GA evolution); /root/gerchik-trading-agent; private GitHub repo InfinitySudo/gerchik-trading-agent; шарит Bybit ключ+Postgres с 4BotsBy",
       "size": 4813,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778398047.05047
     },
     {
@@ -2318,6 +2390,16 @@
       "size": 3755,
       "status_icon": "🟢",
       "mtime": 1778910551.7667353
+    },
+    {
+      "id": "hybrid-mode",
+      "name": "hybrid-mode",
+      "title": "hybrid-mode",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "file": "feedback_logger_utc_label.md",
@@ -2353,6 +2435,36 @@
       "mtime": 1778558340.1844194
     },
     {
+      "id": "narrative-before-details",
+      "name": "narrative-before-details",
+      "title": "narrative-before-details",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "no-routine-confirms",
+      "name": "no-routine-confirms",
+      "title": "no-routine-confirms",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "no-tables-tg-forward",
+      "name": "no-tables-tg-forward",
+      "title": "no-tables-tg-forward",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_oauth_force_refresh.md",
       "id": "oauth-force-refresh",
       "name": "oauth-force-refresh",
@@ -2384,6 +2496,17 @@
       "size": 1628,
       "status_icon": "🟢",
       "mtime": 1778646213.982835
+    },
+    {
+      "file": "feedback_orphan_residual_recovery.md",
+      "id": "orphan-residual-after-premature-close",
+      "name": "orphan-residual-after-premature-close",
+      "title": "Orphan Residual After Premature Close",
+      "type": "memory",
+      "summary": "\"Sub-case of [[real-position-bybit-no-db]] — reconciler ставит status='closed' когда Bybit мгновенно показал size=0, но residual возвращается/остаётся. Dust-sweep уже не помогает (бежит только по open",
+      "size": 3230,
+      "status_icon": "🟢",
+      "mtime": 1778998087.9928215
     },
     {
       "file": "project_orphan_safety_nets.md",
@@ -2762,6 +2885,16 @@
       "mtime": 0
     },
     {
+      "id": "project_session_2026_05_17_full",
+      "name": "project_session_2026_05_17_full",
+      "title": "project_session_2026_05_17_full",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_son_french_tutor",
       "name": "project_son_french_tutor",
       "title": "project_son_french_tutor",
@@ -2853,15 +2986,46 @@
       "mtime": 1778980021.3477952
     },
     {
+      "id": "query-write-swallow",
+      "name": "query-write-swallow",
+      "title": "query-write-swallow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "real-position-bybit-no-db",
+      "name": "real-position-bybit-no-db",
+      "title": "real-position-bybit-no-db",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_real_trades_baseline.md",
+      "id": "real-trades-baseline",
+      "name": "real-trades-baseline",
+      "title": "Real Trades Baseline",
+      "type": "memory",
+      "summary": "План набора REAL сделок и условия переключения анализа/ML с paper на real",
+      "size": 1550,
+      "status_icon": "🟢",
+      "mtime": 1779055908.9273803
+    },
+    {
       "file": "feedback_real_trades_fee_semantics.md",
       "id": "real-trades-fee-semantics",
       "name": "real-trades-fee-semantics",
       "title": "Real Trades Fee Semantics",
       "type": "memory",
       "summary": "\"В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающий net = realized − fees, на real-таблицах двойной счёт фи.\"",
-      "size": 4042,
+      "size": 5985,
       "status_icon": "🟢",
-      "mtime": 1778983822.1559353
+      "mtime": 1778985004.4693084
     },
     {
       "id": "real-trades-truth",
@@ -2883,6 +3047,16 @@
       "size": 1515,
       "status_icon": "🟠",
       "mtime": 1775928849.7449331
+    },
+    {
+      "id": "real_trades-truth",
+      "name": "real_trades-truth",
+      "title": "real_trades-truth",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "file": "project_realized_pnl_column.md",
@@ -2929,6 +3103,17 @@
       "mtime": 1778824113.2610633
     },
     {
+      "file": "project_session_2026_05_16_bot_modernization.md",
+      "id": "session-2026-05-16-bot-modernization",
+      "name": "session-2026-05-16-bot-modernization",
+      "title": "Session 2026 05 16 Bot Modernization",
+      "type": "memory",
+      "summary": "\"Session checkpoint 2026-05-16 — gerchik setup-explainer, wife-english-tutor books/vocab fixes, claude-telegram-bot plan-first + Opus-only modernization\"",
+      "size": 5875,
+      "status_icon": "🟢",
+      "mtime": 1778996330.7641487
+    },
+    {
       "file": "project_session_2026_05_16_force_orphan_streams.md",
       "id": "session-2026-05-16-force-orphan-streams",
       "name": "session-2026-05-16-force-orphan-streams",
@@ -2938,6 +3123,17 @@
       "size": 6423,
       "status_icon": "🟢",
       "mtime": 1778979987.4628103
+    },
+    {
+      "file": "project_session_2026_05_17_full.md",
+      "id": "session-2026-05-17-full",
+      "name": "session-2026-05-17-full",
+      "title": "Session 2026 05 17 Full",
+      "type": "memory",
+      "summary": "\"Большая мульти-проектная сессия 2026-05-17 — strict-rules hook, mobile-app фиксы, trading config, Insights tab, Telethon listener scaffold\"",
+      "size": 5717,
+      "status_icon": "🟢",
+      "mtime": 1779057275.7761471
     },
     {
       "file": "feedback_session_baseline_transfers.md",
@@ -3026,6 +3222,17 @@
       "size": 2012,
       "status_icon": "🟢",
       "mtime": 1778980067.6507926
+    },
+    {
+      "file": "feedback_strict_plan_rules.md",
+      "id": "strict-plan-rules",
+      "name": "strict-plan-rules",
+      "title": "Strict Plan Rules",
+      "type": "memory",
+      "summary": "\"Жёсткие правила работы Артёма — план обязателен, прогресс-бар обязателен, никакой попутной болтовни, вопросы только в крайних случаях\"",
+      "size": 1735,
+      "status_icon": "🟢",
+      "mtime": 1779031214.2501953
     },
     {
       "file": "feedback_systemctl_timestamp_js.md",
@@ -3169,6 +3376,17 @@
       "mtime": 1778980218.5349054
     },
     {
+      "file": "feedback_wet_frontend_backend_drift.md",
+      "id": "wet-frontend-backend-drift",
+      "name": "wet-frontend-backend-drift",
+      "title": "Wet Frontend Backend Drift",
+      "type": "memory",
+      "summary": "\"wife-english-tutor: frontend часто написан с endpoints которых нет на backend; sweep всегда перед \\\"проверкой работы\\\"\"",
+      "size": 1295,
+      "status_icon": "🟢",
+      "mtime": 1778989918.6503181
+    },
+    {
       "file": "feedback_wet_word_lookup_slow.md",
       "id": "wet-word-lookup-slow",
       "name": "wet-word-lookup-slow",
@@ -3237,12 +3455,40 @@
       "target": "project-trading-state-softgate"
     },
     {
+      "source": "feedback-bybit-tp-limit-quirks",
+      "target": "feedback_be_on_real"
+    },
+    {
+      "source": "feedback-bybit-tp-limit-quirks",
+      "target": "feedback_bybit_signing_order"
+    },
+    {
+      "source": "feedback-bybit-tp-limit-quirks",
+      "target": "feedback_real_trades_truth"
+    },
+    {
+      "source": "feedback-bybit-tp-limit-quirks",
+      "target": "project_session_2026_05_17_full"
+    },
+    {
       "source": "dashboard-v2-deploy-script",
       "target": "feedback-dashboard-v1-v2"
     },
     {
       "source": "dashboard-v2-deploy-script",
       "target": "project-dashboard-v2"
+    },
+    {
+      "source": "dexclaud-bridge-bot",
+      "target": "dexclaud-plan-first"
+    },
+    {
+      "source": "dexclaud-plan-first",
+      "target": "dexclaud-bridge-bot"
+    },
+    {
+      "source": "dexclaud-plan-first",
+      "target": "session-2026-05-16-bot-modernization"
     },
     {
       "source": "emails-agent-handle-button",
@@ -3345,6 +3591,18 @@
       "target": "feedback_voice_tutor_oauth_500"
     },
     {
+      "source": "orphan-residual-after-premature-close",
+      "target": "dust-sweep"
+    },
+    {
+      "source": "orphan-residual-after-premature-close",
+      "target": "real-position-bybit-no-db"
+    },
+    {
+      "source": "orphan-residual-after-premature-close",
+      "target": "real_trades-truth"
+    },
+    {
       "source": "pc1-only-model-tags-trap-fallback-chain",
       "target": "project_pc1_homelab_active"
     },
@@ -3407,6 +3665,14 @@
     {
       "source": "streams-a-b-c-terminology",
       "target": "project-pyramid-fix-gerchik-trading-agent"
+    },
+    {
+      "source": "strict-plan-rules",
+      "target": "narrative-before-details"
+    },
+    {
+      "source": "strict-plan-rules",
+      "target": "no-routine-confirms"
     },
     {
       "source": "tg-persistent-keyboard",
@@ -3589,6 +3855,18 @@
       "target": "project_tutor_latency_pipeline"
     },
     {
+      "source": "real-trades-baseline",
+      "target": "ga-under-review"
+    },
+    {
+      "source": "real-trades-baseline",
+      "target": "hybrid-mode"
+    },
+    {
+      "source": "real-trades-baseline",
+      "target": "real-trades-truth"
+    },
+    {
       "source": "session-2026-05-14-emails-perf-photo",
       "target": "project_emails_optimization"
     },
@@ -3641,6 +3919,10 @@
       "target": "project_unversioned_prod_state"
     },
     {
+      "source": "session-2026-05-16-bot-modernization",
+      "target": "wet-frontend-backend-drift"
+    },
+    {
       "source": "session-2026-05-16-force-orphan-streams",
       "target": "feedback-auto-push-default"
     },
@@ -3671,6 +3953,38 @@
     {
       "source": "session-2026-05-16-force-orphan-streams",
       "target": "project-mfe-calibration"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "bybit-signing-order"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "hybrid-mode"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "no-tables-tg-forward"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "oauth-force-refresh"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "query-write-swallow"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "real-trades-baseline"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "real-trades-truth"
+    },
+    {
+      "source": "session-2026-05-17-full",
+      "target": "strict-plan-rules"
     },
     {
       "source": "son-french-tutor-andrii",
@@ -3710,16 +4024,16 @@
     }
   ],
   "stats": {
-    "files": 220,
-    "nodes": 299,
-    "edges": 124,
+    "files": 228,
+    "nodes": 320,
+    "edges": 148,
     "by_type": {
       "feedback": 81,
-      "memory": 49,
+      "memory": 57,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 79
+      "stub": 92
     }
   }
 }
