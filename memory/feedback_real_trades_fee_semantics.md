@@ -99,3 +99,19 @@ grep -rE "realized_pnl_usd.*-.*fees_paid_usd|fees_paid_usd.*-.*realized" src \
   | grep -vE "simulated|_net_pnl_sql|test_|FROM simulated_trades|paper-branch"
 ```
 Должен быть пустой — иначе новое место с double-fee bug.
+
+## 2026-05-18 — 11-е место: _compute_trading_state в dashboard
+
+`dashboard_api_v3.py:3981-3986` в `_compute_trading_state` имел тот же bug:
+inline `SUM(realized_pnl_usd - fees_paid_usd)` на `real_trades`. Это
+fаlse-trip'ило weekly DD-guard (показывало 62.2% при реальной 20.7%) и
+переводило бот в state=GATED, блокируя ВСЕ новые real-сигналы.
+
+Commit `571436b`: заменено на `stats_mgr._net_pnl_sql('real_trades')`.
+
+После fix state=LIVE сразу же восстановился. Это **11-я инкарнация** того же
+sweep'а от 2026-05-17 — sweep не подобрал `_compute_trading_state` потому что
+оно живёт ниже по файлу, чем grep-pattern сторожил.
+
+**Правило**: проверять каждую функцию которая делает aggregation по real_trades,
+не доверять «sweep уже прошёл» — каждый новый PR может добавить ещё одно место.

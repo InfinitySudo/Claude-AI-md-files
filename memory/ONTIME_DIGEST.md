@@ -1,6 +1,6 @@
 # OnTime digest
 
-Generated **2026-05-18 14:31 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-05-19 20:06 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
 **182 nodes** (686 edges) — 🏗 64 project · 👷 62 worker · 📦 56 material
 
@@ -13,15 +13,15 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Oleksandr Poliakov` | installer | **2400.9** |
 | `Maksym Moskalyk` | installer | **2352.5** |
 | `Oleksey Sherbakov` | foreman | **2307.2** |
-| `Pavlo Kosts` | installer | **2303.8** |
+| `Pavlo Kosts` | installer | **2305.1** |
 | `Mykhailo Martynenko` | installer | **2268.3** |
+| `Oleksandr Lopatetskyi` | installer | **2218.3** |
 | `Mykola Korobeinykov` | foreman | **2216.1** |
-| `Oleksandr Lopatetskyi` | installer | **2214.2** |
 | `Artem Huridov` | foreman | **2188.9** |
 | `Stanislav Bodnaruk` | foreman | **2169.3** |
 | `Igor Chekmak` | installer | **2162.8** |
 | `Dmytro Kurinnyi` | installer | **2161.3** |
-| `Serhii Lopatetskyi` | installer | **2109.5** |
+| `Serhii Lopatetskyi` | installer | **2113.6** |
 | `Taras Ivanets` | installer | **2098.2** |
 | `Valerii Stelmakh` | installer | **2078.1** |
 | `Bogdan Tkhoryk` | foreman | **2064.0** |
@@ -41,7 +41,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Sage Hill Commercial Development Bldg 600 ` | **1770.5** | 9 |
 | `Sage Hill Commercial Development Bldg 100 18.08.2025 Nikolay K` | **1496.5** | 6 |
 | `Sage_Hill_Commercial_Development_Bldg_200_20_05_2025_Nikolay_K` | **1461.5** | 5 |
-| `Livingston (Bldg A) ` | **1455.3** | 14 |
+| `Livingston (Bldg A) ` | **1456.6** | 14 |
 | `RimRock` | **1419.0** | 9 |
 | `Logel 3700 Seton Bldg 3 Brick Bogdan 18.11.2025` | **1371.8** | 11 |
 | `Sage Hill Commercial Development Bldg 400` | **1167.4** | 7 |

@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-05-18 14:31 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-05-19 20:06 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**495 nodes** (507 edges) — 📝 462 word · 📚 16 category · 📖 10 book · 👤 7 learner
+**499 nodes** (511 edges) — 📝 466 word · 📚 16 category · 📖 10 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -74,25 +74,25 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 | `articles` | **2** |
 | `agreement` | **1** |
 
-### 📝 Vocab — 261 words
+### 📝 Vocab — 265 words
 
 **Stuck (lowest mastery):**
 
-- `crack` — mastery 0, seen 1×
-- `gets` — mastery 0, seen 1×
-- `hard` — mastery 0, seen 1×
-- `porridge` — mastery 0, seen 1×
-- `someone` — mastery 0, seen 1×
 - `absolutely` — mastery 1, seen 1×
 - `afternoon` — mastery 1, seen 1×
 - `away` — mastery 1, seen 1×
 - `awful` — mastery 1, seen 1×
-- `back` — mastery 1, seen 1×
 - `backyard` — mastery 1, seen 1×
 - `beach` — mastery 1, seen 1×
 - `beef` — mastery 1, seen 1×
-- `bleeding` — mastery 1, seen 1×
-- `body` — mastery 1, seen 1×
+- `bond` — mastery 1, seen 1×
+- `bothering` — mastery 1, seen 1×
+- `brain protecting` — mastery 1, seen 1×
+- `brave` — mastery 1, seen 1×
+- `broken` — mastery 1, seen 1×
+- `build up` — mastery 1, seen 1×
+- `cancer` — mastery 1, seen 1×
+- `carry` — mastery 1, seen 1×
 
 ### 📖 Books
 

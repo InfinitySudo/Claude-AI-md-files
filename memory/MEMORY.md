@@ -6,6 +6,7 @@
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
+- [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
 - [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
 - [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
@@ -163,6 +164,13 @@
 - [Ollama race + shadow triage](project_ollama_race_shadow.md) — PK1+PK2 LLM race helper в emails-bot; shadow vs Claude Haiku; promote если ≥90% совпадение
 - [Session 2026-05-14 checkpoint](project_session_2026_05_14_emails_perf_photo.md) — emails perf tiers 1-4 + Calendar OAuth + /demo + tim_proposal + PK1 photo server :8004 + open items
 - [Session 2026-05-15 voice/vocab/graphs](project_session_2026_05_15_voice_vocab_graphs.md) — Silero RU on PC1 + voice-tutor → nova HD + wife/son tutor lookup 28s→1.3s + OnTime Graph orphan fix + Graphs Hub at /graphs/
+- [Agent Levels Guards Chain](feedback_agent_levels_guards.md) — 9 фильтров place_level (gap/path-to-TP/averaging/HTF/funding/BTC/dedup/RR≥3) + DB колонки + TG-блок
+- [Gerchik Auto-Flipper](project_gerchik_auto_flipper.md) — auto_flipper.py: counter-trend Long→Short при возврате к BE+0.05%; XRP candidate hardcoded
+- [Gerchik Session 2026-05-19](project_gerchik_session_2026_05_19.md) — 9 коммитов agent_levels + BNB ручной Short flip + рыночный downtrend snapshot
+- [Real top-up to $100](project_real_topup_2026_05_18.md) — Артём пополняет sub1 до $100 для чистого fan-out baseline; после top-up обновить session_start_wallet_usd
+- [Clean-start snapshot 2026-05-18](project_clean_start_snapshot_2026_05_18.md) — полный snapshot всех настроек (bot_settings + 2 JSON) на момент fan-out reset; scripts/snapshots/clean_start_2026_05_18.json
+- [Paper BE-close symmetry](feedback_paper_be_close_symmetry.md) — paper закрывает BE на be_price, не peak; до fix paper PnL был 4-5× больше real
+- [Paper BE backfill 2026-05-19](feedback_paper_be_backfill_2026_05_19.md) — 549 paper BE-trades пересчитаны (paper +$564 → ±$0); Grafana 13 panels фильтруют hybrid_baseline
 - [OnTime Check-in Snap](feedback_ontime_checkin_snap.md) — Hard-block раннего checkin'a + ±15min snap к shift_start/shift_end (чистые 9h/8h смены)
 - [OnTime OT Watch](project_tsa_ot_watch.md) — 88h/PP cap, /api/payroll/ot-status, OTPanel + OTChip, TG alert на check-in
 - [Sage 600 Blueskin Split](project_sage600_blueskin_split.md) — one-time 78/22 redistribution Blueskin→SOPRASEAL on Sage Hill 600 (audit + backup path)
@@ -229,3 +237,4 @@
 - [Logger UTC label](feedback_logger_utc_label.md) — formatter.converter = time.gmtime обязательно; иначе datefmt ' UTC' пишет MDT (6h дрейф)
 - [VPS disk cleanup](feedback_vps_disk_cleanup.md) — главные мусорщики: /var/log/syslog (27GB), pip cache (4GB), /var/crash; klines (53GB) активно нужны GA, не трогать
 - [Migration ghost trades 2026-05-15](feedback_migration_ghost_trades_2026_05_15.md) — 10 main TradingBot trades живут на старом UID (теперь sub3); объясняет $8 от DB-vs-Bybit gap
+- [AI Agent Levels 2026-05-18](project_agent_levels_2026_05_18.md) — Bybit pending-orders как горизонтальные линии на чарте; SL/TP atomic + fill-handler + @AI_TradingAgentBot; параметры $50/0.7×ATR_14d/RR 1:2/hour-bucket link_id; first real fill XRP 7.4 @ 1.3797

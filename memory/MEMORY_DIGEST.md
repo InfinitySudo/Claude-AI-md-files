@@ -1,8 +1,8 @@
 # Memory digest
 
-Generated **2026-05-18 14:31 UTC**.
+Generated **2026-05-19 20:06 UTC**.
 
-**320 nodes** (228 files, 148 edges) — 📝 92 stub · 🗂 88 project · ⚠️ 81 feedback · · 57 memory · 🔗 1 reference · 👤 1 user
+**340 nodes** (236 files, 172 edges) — 📝 104 stub · 🗂 88 project · ⚠️ 81 feedback · · 65 memory · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
@@ -14,28 +14,28 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback-bybit-env-symlink]] ← 4 refs · · memory
 - [[project_tutor_latency_pipeline]] ← 4 refs · 📝 stub
 - [[feedback_real_trades_truth]] ← 3 refs · 📝 stub
+- [[hybrid-mode]] ← 3 refs · 📝 stub
 - [[project-bybit-3sub-architecture]] ← 3 refs · 📝 stub
 - [[project-pyramid-fix-gerchik-trading-agent]] ← 3 refs · 📝 stub
-- [[project_voice_tutor]] ← 3 refs · 📝 stub
-- [[real-trades-truth]] ← 3 refs · 📝 stub
+- [[project_bybit_3sub_architecture]] ← 3 refs · 📝 stub
 
-## 📝 Stubs (92) — referenced but not yet written
+## 📝 Stubs (104) — referenced but not yet written
 
 - [[feedback-real-trades-truth]] ← 7 refs
 - [[project_pc1_homelab_active]] ← 6 refs
 - [[project_pc2_homelab_active]] ← 5 refs
 - [[project_tutor_latency_pipeline]] ← 4 refs
 - [[feedback_real_trades_truth]] ← 3 refs
+- [[hybrid-mode]] ← 3 refs
 - [[project-bybit-3sub-architecture]] ← 3 refs
 - [[project-pyramid-fix-gerchik-trading-agent]] ← 3 refs
+- [[project_bybit_3sub_architecture]] ← 3 refs
 - [[project_voice_tutor]] ← 3 refs
 - [[real-trades-truth]] ← 3 refs
+- [[fanout-architecture-2026-05-18]] ← 2 refs
 - [[feedback-real-trades-orphan]] ← 2 refs
 - [[feedback-streams-a-b-c-terminology]] ← 2 refs
-- [[feedback_oauth_rate_limits]] ← 2 refs
-- [[feedback_pc1_ssh_quirks]] ← 2 refs
-- [[feedback_tutor_tts_wiring]] ← 2 refs
-- [[feedback_voice_tutor_oauth_500]] ← 2 refs
+- [[feedback_agent_levels_guards]] ← 2 refs
 
 ## 🏝 Orphans (175) — no links in or out
 
@@ -58,35 +58,37 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-05-17 23:49` [[feedback-bybit-tp-limit-quirks]] · 🟢 today
-- `2026-05-17 22:34` [[session-2026-05-17-full]] · 🟢 today
-- `2026-05-17 22:11` [[real-trades-baseline]] · 🟢 today
-- `2026-05-17 15:20` [[strict-plan-rules]] · 🟢 today
-- `2026-05-17 06:08` [[orphan-residual-after-premature-close]] · 🟢 this week
-- `2026-05-17 05:39` [[dexclaud-bridge-bot]] · 🟢 this week
-- `2026-05-17 05:39` [[dexclaud-plan-first]] · 🟢 this week
-- `2026-05-17 05:38` [[session-2026-05-16-bot-modernization]] · 🟢 this week
-- `2026-05-17 03:51` [[wet-frontend-backend-drift]] · 🟢 this week
-- `2026-05-17 02:30` [[real-trades-fee-semantics]] · 🟢 this week
-- `2026-05-17 01:59` [[migration-ghost-trades-2026-05-15]] · 🟢 this week
-- `2026-05-17 01:10` [[bybit-3-sub-architecture]] · 🟢 this week
-- `2026-05-17 01:10` [[Real-mode dashboard — Bybit is the only truth]] · 🟢 this week
-- `2026-05-17 01:10` [[vps-disk-cleanup-pattern]] · 🟢 this week
-- `2026-05-17 01:09` [[logger-utc-label-must-match]] · 🟢 this week
+- `2026-05-19 17:08` [[gerchik-session-2026-05-19]] · 🟢 today
+- `2026-05-19 17:08` [[gerchik-auto-flipper]] · 🟢 today
+- `2026-05-19 17:07` [[agent-levels-guards-chain]] · 🟢 today
+- `2026-05-19 05:19` [[project-agent-levels-2026-05-18]] · 🟢 today
+- `2026-05-19 02:43` [[paper-be-backfill-2026-05-19]] · 🟢 today
+- `2026-05-19 01:22` [[paper-be-close-symmetry]] · 🟢 today
+- `2026-05-18 23:37` [[project-ga-under-review]] · 🟢 today
+- `2026-05-18 23:30` [[clean-start-snapshot-2026-05-18]] · 🟢 today
+- `2026-05-18 23:12` [[real-topup-2026-05-18]] · 🟢 today
+- `2026-05-18 19:24` [[real-trades-fee-semantics]] · 🟢 this week
+- `2026-05-18 16:16` [[stats_mgr._query swallowing INSERTs]] · 🟢 this week
+- `2026-05-17 23:49` [[feedback-bybit-tp-limit-quirks]] · 🟢 this week
+- `2026-05-17 22:34` [[session-2026-05-17-full]] · 🟢 this week
+- `2026-05-17 22:11` [[real-trades-baseline]] · 🟢 this week
+- `2026-05-17 15:20` [[strict-plan-rules]] · 🟢 this week
 
 ## 📚 Index by type
 
-### 📝 stub (92)
+### 📝 stub (104)
 
 - [[bybit-signing-order]] — (not written yet)
 - [[dust-sweep]] — (not written yet)
 - [[emails-two-bots-shared-db]] — (not written yet)
+- [[fanout-architecture-2026-05-18]] — (not written yet)
 - [[feedback-auto-push-default]] — (not written yet)
 - [[feedback-be-on-real]] — (not written yet)
 - [[feedback-bybit-ws-keepalive]] — (not written yet)
 - [[feedback-chartjs-unbounded-height]] — (not written yet)
 - [[feedback-dashboard-v1-v2]] — (not written yet)
 - [[feedback-dashboard-view-lock]] — (not written yet)
+- [[feedback-emails-agent-handle-button]] — (not written yet)
 - [[feedback-no-routine-confirms]] — (not written yet)
 - [[feedback-query-write-swallow]] — (not written yet)
 - [[feedback-real-trades-fee-semantics]] — (not written yet)
@@ -98,7 +100,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback-systemctl-timestamp-js]] — (not written yet)
 - [[feedback-systemd-oncalendar-local-time]] — (not written yet)
 - [[feedback-tutor-tts-wiring]] — (not written yet)
+- [[feedback_agent_levels_guards]] — (not written yet)
 - [[feedback_be_on_real]] — (not written yet)
+- [[feedback_bybit_env_symlink]] — (not written yet)
 - [[feedback_bybit_signing_order]] — (not written yet)
 - [[feedback_dd_guard_paper_skip]] — (not written yet)
 - [[feedback_ga_apply_full_chain]] — (not written yet)
@@ -118,13 +122,16 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_wet_word_lookup_slow]] — (not written yet)
 - [[ga-under-review]] — (not written yet)
 - [[gerchik-trading-agent]] — (not written yet)
+- [[grafana-v13-resource-table]] — (not written yet)
 - [[hybrid-mode]] — (not written yet)
+- [[mfe-calibration]] — (not written yet)
 - [[narrative-before-details]] — (not written yet)
 - [[no-routine-confirms]] — (not written yet)
 - [[no-tables-tg-forward]] — (not written yet)
 - [[project-baseline-v2-2026-05-08]] — (not written yet)
 - [[project-baseline-v3-2026-05-10]] — (not written yet)
 - [[project-bybit-3sub-architecture]] — (not written yet)
+- [[project-claude-telegram-bot]] — (not written yet)
 - [[project-dashboard-v2]] — (not written yet)
 - [[project-ga-optimizer]] — (not written yet)
 - [[project-ga-realism-overhaul]] — (not written yet)
@@ -142,10 +149,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-unversioned-prod-state]] — (not written yet)
 - [[project-voice-tutor]] — (not written yet)
 - [[project_backtest_findings]] — (not written yet)
+- [[project_bybit_3sub_architecture]] — (not written yet)
 - [[project_dashboard_ga_section]] — (not written yet)
 - [[project_emails_optimization]] — (not written yet)
 - [[project_fees_accounting]] — (not written yet)
 - [[project_ga_optimizer]] — (not written yet)
+- [[project_gerchik_auto_flipper]] — (not written yet)
+- [[project_gerchik_bot]] — (not written yet)
 - [[project_hybrid_mode]] — (not written yet)
 - [[project_mfe_calibration]] — (not written yet)
 - [[project_ollama_race_shadow]] — (not written yet)
@@ -166,7 +176,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[real-position-bybit-no-db]] — (not written yet)
 - [[real-trades-truth]] — (not written yet)
 - [[real_trades-truth]] — (not written yet)
+- [[session-baseline-transfers]] — (not written yet)
 - [[tim-agent-plan]] — (not written yet)
+- [[trading-mode-routing]] — (not written yet)
 - [[user_artem]] — (not written yet)
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
@@ -346,11 +358,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[tutor-bots OAuth 401 (drop-cache fix 2026-05-12)]] — voice-tutor / wife-english-tutor / son-french-tutor ловят 401 invalid x-api-key из-за race с DexClaud за общий credentia
 - [[Отвечать на русском кириллицей]] — Артём просит общаться на русском языке кириллицей, не транслитом
 
-### · memory (57)
+### · memory (65)
 
+- [[agent-levels-guards-chain]] — Полная цепочка фильтров в gerchik-trading-agent place_level() — 9 guards в порядке исполнения + DB колонки + что сохраня
 - [[avatar-video-calibration]] — "OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на ста
 - [[be-on-real-must-use-bybit-avgprice-not-signal-entry]] — "Critical bug 2026-05-15. Computing BE-SL from row['entry_price'] (=signal) instead of live_pos.avgPrice (=actual fill) 
 - [[bybit-3-sub-architecture]] — "Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/A
+- [[clean-start-snapshot-2026-05-18]] — "Полный snapshot всех настроек dashboard на момент чистого старта fan-out эксперимента (CONS-real, TREND-paper, AGGR-pap
 - [[dashboard-v2-deploy-script]] — "nginx сервит из /var/www/dashboard, не из /root. После правки index_v2.html ОБЯЗАТЕЛЬНО прогон deploy_dashboard.sh — ин
 - [[dexclaud-bridge-bot]] — "TG-бот @DexClaudCodAIBot — bridge для отправки уведомлений Артёму из моих скриптов. Токен в `/root/4BotsBybit-Trading/.
 - [[dexclaud-plan-first]] — claude-telegram-bot (DexClaudCodAIBot) теперь обязан составлять план через create_plan + показывать live progress; Opus 
@@ -365,7 +379,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[force-bucket-close-source]] — "real_trades.close_reason has 5 values now: TP{N}/SL/BE/LIQ/FORCE. close_source column tracks classification origin. FOR
 - [[ga-backtester-daily-zero-bug]] — "На ПК1 GA backtester (pipeline.evaluate_strategy) сейчас выдаёт 0 trades при любых params — daily ATR=0 для всех 60k si
 - [[ga-realism-overhaul-2026-05-13]] — Overhaul GA backtester (4 фазы + 2.5) сделанный в одной длинной сессии 2026-05-12/13. Sharpe annualised + costs + live c
+- [[gerchik-auto-flipper]] — "Модуль auto_flipper.py — переворачивает зарегистрированные counter-trend позиции при возврате к BE+комиссии; state, как
 - [[gerchik-leverage-88-too-high]] — real_leverage 88× в gerchik душит scanner через liquidation_buffer filter; снижено до 35× 2026-05-12; ожидается рост час
+- [[gerchik-session-2026-05-19]] — Большая сессия 2026-05-19 — 9 фильтров в agent_levels + auto_flipper + BNB ручной flip; контекст рынка и какие коммиты п
 - [[gerchik-signals-decision-varchar]] — "gerchik_signals.decision = varchar(40) — никогда не пиши туда полный reason, иначе ВСЕ skip-сигналы тихо валятся в log_
 - [[graph-system]] — "5 knowledge graphs (memory, trading, tutor, ontime, projects) + auto-generated PROJECTS.md digest; new sessions read PR
 - [[logger-utc-label-must-match]] — "logger.py — formatter.converter = time.gmtime обязательно, иначе datefmt '... UTC' пишет local time (MDT) под видом UTC
@@ -376,12 +392,16 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[openai-base-url-shell-override]] — "VPS shell env содержит `OPENAI_BASE_URL=https://api.deepseek.com/v1` — OpenAI Python client его подхватывает по умолчан
 - [[orphan-residual-after-premature-close]] — "Sub-case of [[real-position-bybit-no-db]] — reconciler ставит status='closed' когда Bybit мгновенно показал size=0, но 
 - [[orphan-safety-nets]] — 4 surfaces preventing orphan positions / missing-SL in main TradingBot (sub1) — added 2026-05-16 after $79 orphan-positi
+- [[paper-be-backfill-2026-05-19]] — 549 paper BE-trades пересчитаны с be_price вместо peak; Grafana panels получили hybrid_baseline filter
+- [[paper-be-close-symmetry]] — paper-симулятор закрывает BE на be_price (symmetry с real); до 2026-05-19 закрывал на current_price (peak) → 4-5× инфляц
 - [[pc1-only-model-tags-trap-fallback-chain]] — "PC1 имеет custom Ollama model tags (например `qwen2.5:32b-ctx4k`) которых нет на PC2 — fallback chain 404s when configu
 - [[pc2-homelab-active]] — "ПК2 (Art, RTX 3090 24GB) подключён 2026-05-12: Tailscale `borys@100.73.22.1`, SSH с ed25519 ключом, Ollama 11434 (qwen2
 - [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] — "db-backup сервис тихо клал zero-byte dumps 4 дня потому что pg_dump as `trading_bot` user не мог LOCK TABLE на `*_basel
+- [[project-agent-levels-2026-05-18]] — "AI Agent Levels system — Bybit pending-orders as visual chart lines, full SL/TP/fill-handler pipeline + Telegram bot, d
 - [[project-ga-under-review]] — "GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending"
 - [[project-mfe-calibration]] — 📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у
 - [[pyramid-fix-gerchik-trading-agent]] — "gerchik-trading-agent: one row per (symbol, mode) — add-on entries aggregate into the open row via weighted-avg, not se
+- [[real-topup-2026-05-18]] — "Артём планирует пополнить Bybit (sub1, TradingBot) до круглых $100 для CONS-real после чистого старта fan-out"
 - [[real-trades-baseline]] — План набора REAL сделок и условия переключения анализа/ML с paper на real
 - [[real-trades-fee-semantics]] — "В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающ
 - [[session-2026-05-14-emails-perf-photo]] — "Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal,

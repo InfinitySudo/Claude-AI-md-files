@@ -283,7 +283,7 @@
       "type": "feedback",
       "summary": "Артём хочет чтобы ВСЕ изменения настроек и операции делались через dashboard UI/endpoint, не напрямую в файлах/SQL/CLI",
       "size": 1821,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776544065.2516792
     },
     {
@@ -1581,7 +1581,7 @@
       "type": "feedback",
       "summary": "Never assume GA-applied values are still live — Artem retunes via dashboard; always query actual state",
       "size": 912,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776528507.5225496
     },
     {
@@ -1750,6 +1750,17 @@
       "mtime": 1778342571.8714707
     },
     {
+      "file": "feedback_agent_levels_guards.md",
+      "id": "agent-levels-guards-chain",
+      "name": "agent-levels-guards-chain",
+      "title": "Agent Levels Guards Chain",
+      "type": "memory",
+      "summary": "Полная цепочка фильтров в gerchik-trading-agent place_level() — 9 guards в порядке исполнения + DB колонки + что сохраняется",
+      "size": 2950,
+      "status_icon": "🟢",
+      "mtime": 1779210467.9678042
+    },
+    {
       "file": "feedback_avatar_video_calibration.md",
       "id": "avatar-video-calibration",
       "name": "avatar-video-calibration",
@@ -1791,6 +1802,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_clean_start_snapshot_2026_05_18.md",
+      "id": "clean-start-snapshot-2026-05-18",
+      "name": "clean-start-snapshot-2026-05-18",
+      "title": "Clean Start Snapshot 2026 05 18",
+      "type": "memory",
+      "summary": "\"Полный snapshot всех настроек dashboard на момент чистого старта fan-out эксперимента (CONS-real, TREND-paper, AGGR-paper)\"",
+      "size": 2177,
+      "status_icon": "🟢",
+      "mtime": 1779147044.8874695
     },
     {
       "file": "feedback_dashboard_v2_deploy.md",
@@ -1843,7 +1865,7 @@
       "type": "memory",
       "summary": "🤖 AI Plan button on every triage card → fires Claude planner with email thread context; lives in bot.py:_build_keyboard + poller.py:_send_card + agent_handlers.start_email_delegation",
       "size": 828,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778572483.6933634
     },
     {
@@ -1861,6 +1883,16 @@
       "id": "emails-two-bots-shared-db",
       "name": "emails-two-bots-shared-db",
       "title": "emails-two-bots-shared-db",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "fanout-architecture-2026-05-18",
+      "name": "fanout-architecture-2026-05-18",
+      "title": "fanout-architecture-2026-05-18",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -1954,6 +1986,16 @@
       "id": "feedback-dashboard-view-lock",
       "name": "feedback-dashboard-view-lock",
       "title": "feedback-dashboard-view-lock",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-emails-agent-handle-button",
+      "name": "feedback-emails-agent-handle-button",
+      "title": "feedback-emails-agent-handle-button",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2115,9 +2157,29 @@
       "mtime": 0
     },
     {
+      "id": "feedback_agent_levels_guards",
+      "name": "feedback_agent_levels_guards",
+      "title": "feedback_agent_levels_guards",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_be_on_real",
       "name": "feedback_be_on_real",
       "title": "feedback_be_on_real",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_bybit_env_symlink",
+      "name": "feedback_bybit_env_symlink",
+      "title": "feedback_bybit_env_symlink",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2338,6 +2400,17 @@
       "mtime": 0
     },
     {
+      "file": "project_gerchik_auto_flipper.md",
+      "id": "gerchik-auto-flipper",
+      "name": "gerchik-auto-flipper",
+      "title": "Gerchik Auto Flipper",
+      "type": "memory",
+      "summary": "\"Модуль auto_flipper.py — переворачивает зарегистрированные counter-trend позиции при возврате к BE+комиссии; state, как добавлять кандидаты\"",
+      "size": 1626,
+      "status_icon": "🟢",
+      "mtime": 1779210485.7597694
+    },
+    {
       "file": "feedback_gerchik_leverage_88_too_high.md",
       "id": "gerchik-leverage-88-too-high",
       "name": "gerchik-leverage-88-too-high",
@@ -2345,8 +2418,19 @@
       "type": "memory",
       "summary": "real_leverage 88× в gerchik душит scanner через liquidation_buffer filter; снижено до 35× 2026-05-12; ожидается рост частоты signals на Layer 1",
       "size": 1181,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778574021.2624104
+    },
+    {
+      "file": "project_gerchik_session_2026_05_19.md",
+      "id": "gerchik-session-2026-05-19",
+      "name": "gerchik-session-2026-05-19",
+      "title": "Gerchik Session 2026 05 19",
+      "type": "memory",
+      "summary": "Большая сессия 2026-05-19 — 9 фильтров в agent_levels + auto_flipper + BNB ручной flip; контекст рынка и какие коммиты пушнуты",
+      "size": 2424,
+      "status_icon": "🟢",
+      "mtime": 1779210512.9177196
     },
     {
       "file": "feedback_gerchik_signals_decision_varchar.md",
@@ -2381,6 +2465,16 @@
       "mtime": 1778398047.05047
     },
     {
+      "id": "grafana-v13-resource-table",
+      "name": "grafana-v13-resource-table",
+      "title": "grafana-v13-resource-table",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "project_graph_system.md",
       "id": "graph-system",
       "name": "graph-system",
@@ -2413,6 +2507,16 @@
       "mtime": 1778980186.169867
     },
     {
+      "id": "mfe-calibration",
+      "name": "mfe-calibration",
+      "title": "mfe-calibration",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_migration_ghost_trades_2026_05_15.md",
       "id": "migration-ghost-trades-2026-05-15",
       "name": "migration-ghost-trades-2026-05-15",
@@ -2431,7 +2535,7 @@
       "type": "memory",
       "summary": "\"Tutor-боты должны выдавать ОТДЕЛЬНЫЙ [FIX] на каждое ошибочное предложение учащегося, а не схлопывать в один; русский input обрабатывается всегда\"",
       "size": 1758,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778558340.1844194
     },
     {
@@ -2520,6 +2624,28 @@
       "mtime": 1778980099.3328016
     },
     {
+      "file": "feedback_paper_be_backfill_2026_05_19.md",
+      "id": "paper-be-backfill-2026-05-19",
+      "name": "paper-be-backfill-2026-05-19",
+      "title": "Paper Be Backfill 2026 05 19",
+      "type": "memory",
+      "summary": "549 paper BE-trades пересчитаны с be_price вместо peak; Grafana panels получили hybrid_baseline filter",
+      "size": 2303,
+      "status_icon": "🟢",
+      "mtime": 1779158584.709035
+    },
+    {
+      "file": "feedback_paper_be_close_symmetry.md",
+      "id": "paper-be-close-symmetry",
+      "name": "paper-be-close-symmetry",
+      "title": "Paper Be Close Symmetry",
+      "type": "memory",
+      "summary": "paper-симулятор закрывает BE на be_price (symmetry с real); до 2026-05-19 закрывал на current_price (peak) → 4-5× инфляция PnL",
+      "size": 1853,
+      "status_icon": "🟢",
+      "mtime": 1779153747.597286
+    },
+    {
       "file": "feedback_pc1_only_models.md",
       "id": "pc1-only-model-tags-trap-fallback-chain",
       "name": "pc1-only-model-tags-trap-fallback-chain",
@@ -2553,6 +2679,17 @@
       "mtime": 1778884993.6191378
     },
     {
+      "file": "project_agent_levels_2026_05_18.md",
+      "id": "project-agent-levels-2026-05-18",
+      "name": "project-agent-levels-2026-05-18",
+      "title": "Project Agent Levels 2026 05 18",
+      "type": "memory",
+      "summary": "\"AI Agent Levels system — Bybit pending-orders as visual chart lines, full SL/TP/fill-handler pipeline + Telegram bot, deployed 2026-05-18\"",
+      "size": 6331,
+      "status_icon": "🟢",
+      "mtime": 1779167953.9459116
+    },
+    {
       "id": "project-baseline-v2-2026-05-08",
       "name": "project-baseline-v2-2026-05-08",
       "title": "project-baseline-v2-2026-05-08",
@@ -2576,6 +2713,16 @@
       "id": "project-bybit-3sub-architecture",
       "name": "project-bybit-3sub-architecture",
       "title": "project-bybit-3sub-architecture",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-claude-telegram-bot",
+      "name": "project-claude-telegram-bot",
+      "title": "project-claude-telegram-bot",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2619,9 +2766,9 @@
       "title": "Project Ga Under Review",
       "type": "memory",
       "summary": "\"GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending\"",
-      "size": 1118,
+      "size": 2483,
       "status_icon": "🟢",
-      "mtime": 1778693693.5706127
+      "mtime": 1779147474.6753216
     },
     {
       "id": "project-ga-walk-forward-todo",
@@ -2775,6 +2922,16 @@
       "mtime": 0
     },
     {
+      "id": "project_bybit_3sub_architecture",
+      "name": "project_bybit_3sub_architecture",
+      "title": "project_bybit_3sub_architecture",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_dashboard_ga_section",
       "name": "project_dashboard_ga_section",
       "title": "project_dashboard_ga_section",
@@ -2808,6 +2965,26 @@
       "id": "project_ga_optimizer",
       "name": "project_ga_optimizer",
       "title": "project_ga_optimizer",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_gerchik_auto_flipper",
+      "name": "project_gerchik_auto_flipper",
+      "title": "project_gerchik_auto_flipper",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_gerchik_bot",
+      "name": "project_gerchik_bot",
+      "title": "project_gerchik_bot",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3006,6 +3183,17 @@
       "mtime": 0
     },
     {
+      "file": "project_real_topup_2026_05_18.md",
+      "id": "real-topup-2026-05-18",
+      "name": "real-topup-2026-05-18",
+      "title": "Real Topup 2026 05 18",
+      "type": "memory",
+      "summary": "\"Артём планирует пополнить Bybit (sub1, TradingBot) до круглых $100 для CONS-real после чистого старта fan-out\"",
+      "size": 1137,
+      "status_icon": "🟢",
+      "mtime": 1779145958.1754804
+    },
+    {
       "file": "project_real_trades_baseline.md",
       "id": "real-trades-baseline",
       "name": "real-trades-baseline",
@@ -3023,9 +3211,9 @@
       "title": "Real Trades Fee Semantics",
       "type": "memory",
       "summary": "\"В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающий net = realized − fees, на real-таблицах двойной счёт фи.\"",
-      "size": 5985,
+      "size": 6771,
       "status_icon": "🟢",
-      "mtime": 1778985004.4693084
+      "mtime": 1779132248.7527816
     },
     {
       "id": "real-trades-truth",
@@ -3136,6 +3324,16 @@
       "mtime": 1779057275.7761471
     },
     {
+      "id": "session-baseline-transfers",
+      "name": "session-baseline-transfers",
+      "title": "session-baseline-transfers",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_session_baseline_transfers.md",
       "id": "session-wallet-baseline-traps-wallet-transfers",
       "name": "session-wallet-baseline-traps-wallet-transfers",
@@ -3208,9 +3406,9 @@
       "title": "Stats Mgr. Query Swallowing Inserts",
       "type": "feedback",
       "summary": "До 2026-04-29 _query вызывал fetchall() на любой SQL и возвращал [] на ошибке без commit — INSERT/UPDATE тихо откатывались",
-      "size": 935,
-      "status_icon": "🟡",
-      "mtime": 1777497891.0743704
+      "size": 1409,
+      "status_icon": "🟢",
+      "mtime": 1779121016.0778837
     },
     {
       "file": "feedback_streams_terminology.md",
@@ -3275,13 +3473,23 @@
       "type": "memory",
       "summary": "\"В TG-ботах с tutor pattern reply_markup=QUICK_KB надо вешать на free-chat ответы, а не только на /start — иначе юзер, который пишет сразу 'привет' без /start, не увидит кнопок\"",
       "size": 1378,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778559621.2589927
     },
     {
       "id": "tim-agent-plan",
       "name": "tim-agent-plan",
       "title": "tim-agent-plan",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "trading-mode-routing",
+      "name": "trading-mode-routing",
+      "title": "trading-mode-routing",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3430,6 +3638,18 @@
     }
   ],
   "edges": [
+    {
+      "source": "agent-levels-guards-chain",
+      "target": "feedback_bybit_env_symlink"
+    },
+    {
+      "source": "agent-levels-guards-chain",
+      "target": "project_bybit_3sub_architecture"
+    },
+    {
+      "source": "agent-levels-guards-chain",
+      "target": "project_gerchik_auto_flipper"
+    },
     {
       "source": "be-on-real-must-use-bybit-avgprice-not-signal-entry",
       "target": "feedback_real_trades_truth"
@@ -3603,6 +3823,30 @@
       "target": "real_trades-truth"
     },
     {
+      "source": "paper-be-backfill-2026-05-19",
+      "target": "grafana-v13-resource-table"
+    },
+    {
+      "source": "paper-be-backfill-2026-05-19",
+      "target": "paper-be-close-symmetry"
+    },
+    {
+      "source": "paper-be-backfill-2026-05-19",
+      "target": "real-trades-fee-semantics"
+    },
+    {
+      "source": "paper-be-close-symmetry",
+      "target": "fanout-architecture-2026-05-18"
+    },
+    {
+      "source": "paper-be-close-symmetry",
+      "target": "ga-under-review"
+    },
+    {
+      "source": "paper-be-close-symmetry",
+      "target": "real-trades-fee-semantics"
+    },
+    {
       "source": "pc1-only-model-tags-trap-fallback-chain",
       "target": "project_pc1_homelab_active"
     },
@@ -3731,6 +3975,14 @@
       "target": "feedback_oauth_rate_limits"
     },
     {
+      "source": "project-agent-levels-2026-05-18",
+      "target": "feedback-emails-agent-handle-button"
+    },
+    {
+      "source": "project-agent-levels-2026-05-18",
+      "target": "project-claude-telegram-bot"
+    },
+    {
       "source": "bybit-3-sub-architecture",
       "target": "feedback-bybit-env-symlink"
     },
@@ -3745,6 +3997,22 @@
     {
       "source": "bybit-3-sub-architecture",
       "target": "project-pyramid-fix-gerchik-trading-agent"
+    },
+    {
+      "source": "clean-start-snapshot-2026-05-18",
+      "target": "fanout-architecture-2026-05-18"
+    },
+    {
+      "source": "clean-start-snapshot-2026-05-18",
+      "target": "hybrid-mode"
+    },
+    {
+      "source": "clean-start-snapshot-2026-05-18",
+      "target": "real-topup-2026-05-18"
+    },
+    {
+      "source": "clean-start-snapshot-2026-05-18",
+      "target": "trading-mode-routing"
     },
     {
       "source": "ga-realism-overhaul-2026-05-13",
@@ -3780,6 +4048,10 @@
     },
     {
       "source": "project-ga-under-review",
+      "target": "mfe-calibration"
+    },
+    {
+      "source": "project-ga-under-review",
       "target": "project-baseline-v2-2026-05-08"
     },
     {
@@ -3793,6 +4065,30 @@
     {
       "source": "project-ga-under-review",
       "target": "project-ga-walk-forward-todo"
+    },
+    {
+      "source": "gerchik-auto-flipper",
+      "target": "feedback_agent_levels_guards"
+    },
+    {
+      "source": "gerchik-auto-flipper",
+      "target": "project_bybit_3sub_architecture"
+    },
+    {
+      "source": "gerchik-session-2026-05-19",
+      "target": "feedback_agent_levels_guards"
+    },
+    {
+      "source": "gerchik-session-2026-05-19",
+      "target": "project_bybit_3sub_architecture"
+    },
+    {
+      "source": "gerchik-session-2026-05-19",
+      "target": "project_gerchik_auto_flipper"
+    },
+    {
+      "source": "gerchik-session-2026-05-19",
+      "target": "project_gerchik_bot"
     },
     {
       "source": "graph-system",
@@ -3853,6 +4149,14 @@
     {
       "source": "pc2-homelab-active",
       "target": "project_tutor_latency_pipeline"
+    },
+    {
+      "source": "real-topup-2026-05-18",
+      "target": "real-trades-baseline"
+    },
+    {
+      "source": "real-topup-2026-05-18",
+      "target": "session-baseline-transfers"
     },
     {
       "source": "real-trades-baseline",
@@ -4024,16 +4328,16 @@
     }
   ],
   "stats": {
-    "files": 228,
-    "nodes": 320,
-    "edges": 148,
+    "files": 236,
+    "nodes": 340,
+    "edges": 172,
     "by_type": {
       "feedback": 81,
-      "memory": 57,
+      "memory": 65,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 92
+      "stub": 104
     }
   }
 }
