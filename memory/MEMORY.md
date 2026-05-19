@@ -88,6 +88,8 @@
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
 - [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
+- [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
+- [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
 - [GA Prewarm 418 Handling](feedback_ga_prewarm_418.md) — Binance 418 = transient ban; retry+Retry-After, prewarm aborts >10% fails, no Bybit-5m fallback

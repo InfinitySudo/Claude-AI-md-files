@@ -83,5 +83,16 @@ originSessionId: 4bf9c010-6bf6-4410-b91f-d3731633751f
 - URL: constantwrestling.cloud
 - API: port 8001, systemd: wrestling-api
 
+### Что добавлено 2026-05-19 (commit ddeee40) — Coach Toolkit
+- **Club policy** — `club_policies` + `policy_acceptances`; коуч редактирует на `/policy`, версия растёт → атлет re-signs. Default Constant policy seeded.
+- **User groups** — `user_groups` + `users.group_id` + CRUD endpoints; chip-фильтр и inline assign в Team.
+- **Password reset** — `/api/auth/reset-request` + `/auth/reset-confirm`, токен 1h. `WPT_SMTP_*` env (на prod не настроено — токен в journald).
+- **Live sparring scoring** — `sparring_scores` + `POST /api/tournaments/{tid}/score`; быстрые +/- кнопки во вкладке спарринга; учёт в leaderboard.
+- **Birthday reminder daemon** — background-thread в FastAPI, 14:00–15:00 UTC ежедневно; уведомляет атлета + коучей через `_wp_notify`. Manual: `POST /api/admin/birthday-sweep`.
+- **i18n** — react-i18next с EN/RU/PL; `LanguageSwitcher` в login footer.
+- **Coach NormsPage** — отдельный matrix-таб (athletes × norms) + create + history; убрал inline-список с CoachDashboard.
+- **RankingsWidget** — top-5 на CoachDashboard с разбивкой N/S/A/An.
+- **Подробности**: см. [[session-2026-05-19-wrestling-coach-toolkit]].
+
 **Why:** Артём — тренер wrestling клуба Constant Calgary Wrestling Club, приложение для управления клубом и мотивации спортсменов.
 **How to apply:** nginx проксирует /api/ на :8001; `npm run build` деплоит в dist/; `sudo systemctl restart wrestling-api` для бэкенда.
