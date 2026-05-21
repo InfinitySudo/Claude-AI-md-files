@@ -360,7 +360,7 @@
       "type": "feedback",
       "summary": "При добавлении endpoints в main.py избегай коллизий с уже существующими {param} путями",
       "size": 665,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776746244.5991058
     },
     {
@@ -393,7 +393,7 @@
       "type": "feedback",
       "summary": "Fitness function constants that prevent narrow/single-symbol overfit corners from winning evolution",
       "size": 1445,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776796386.9388251
     },
     {
@@ -437,7 +437,7 @@
       "type": "feedback",
       "summary": "GA optimizer reads symbol list live from config/symbols.json (Symbols Editor); no separate GA-symbols store",
       "size": 911,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776795513.1264138
     },
     {
@@ -459,7 +459,7 @@
       "type": "feedback",
       "summary": "Where dashboard's Apply GA writes params — miss any of these and GA has zero effect on the live bot",
       "size": 2312,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776796757.145372
     },
     {
@@ -811,7 +811,7 @@
       "type": "project",
       "summary": "Auto-alert 18:00 Calgary: кто работал, кто не подал daily report. Админ + форман своих объектов.",
       "size": 1573,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776727101.3113108
     },
     {
@@ -866,7 +866,7 @@
       "type": "project",
       "summary": "Добавлена вкладка Extra Work с approval workflow, фото, TG-нотификациями и linkage в daily report",
       "size": 1708,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776746267.3831778
     },
     {
@@ -899,7 +899,7 @@
       "type": "project",
       "summary": "OnTime time-tracking model — geofence + explicit checkout + force-checkout + EOD 17:30 safety-net, минус 30 мин unpaid lunch (12:00-12:30 local).",
       "size": 3660,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776705379.1073058
     },
     {
@@ -1119,7 +1119,7 @@
       "type": "project",
       "summary": "4 новые управленческие роли, линейный approval workflow для Extra Work, persistent notifications с колокольчиком, director digest",
       "size": 2852,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776748241.387773
     },
     {
@@ -1515,7 +1515,7 @@
       "type": "project",
       "summary": "В TSA (company_id=1) Director совмещает функцию Purchasing Manager; Artem Borysiuk одновременно admin+author",
       "size": 1095,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776805655.8791695
     },
     {
@@ -1669,7 +1669,7 @@
       "type": "project",
       "summary": "AI-учитель английского @EnglishTecherTutorBot. Persona Алёна Николаевна (shimmer). Latency pipeline ported 2026-05-12 (Haiku + streaming TTS + STT race). Max_tokens 1200 — развёрнутые ответы (Lilia пр",
       "size": 4772,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778646173.1537929
     },
     {
@@ -1701,9 +1701,9 @@
       "title": "Wrestling App V2 — Multi Club + Full Features",
       "type": "project",
       "summary": "Major v2 rewrite done 2026-04-13; multi-club, proportional norms, analysis, profile with socials, club branding",
-      "size": 4191,
+      "size": 5322,
       "status_icon": "🟢",
-      "mtime": 1778909011.4070582
+      "mtime": 1779234922.359175
     },
     {
       "file": "project_wrestling_camp_payment.md",
@@ -1761,6 +1761,17 @@
       "mtime": 1779210467.9678042
     },
     {
+      "file": "feedback_agent_levels_tg_dedup.md",
+      "id": "agent-levels-tg-dedup",
+      "name": "agent-levels-tg-dedup",
+      "title": "Agent Levels Tg Dedup",
+      "type": "memory",
+      "summary": "\"gerchik-trading-agent — любой новый caller place_level() ОБЯЗАН использовать tg_notified_at gate перед send_level_notification, иначе TG спамится дублями.\"",
+      "size": 1457,
+      "status_icon": "🟢",
+      "mtime": 1779221612.5235474
+    },
+    {
       "file": "feedback_avatar_video_calibration.md",
       "id": "avatar-video-calibration",
       "name": "avatar-video-calibration",
@@ -1768,7 +1779,7 @@
       "type": "memory",
       "summary": "\"OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на статичной фотке. Recipe — снять frame ffmpeg, detect face bbox в обоих, посчитать `",
       "size": 2146,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778646229.1368532
     },
     {
@@ -1792,6 +1803,16 @@
       "size": 2300,
       "status_icon": "🟢",
       "mtime": 1778980258.9179626
+    },
+    {
+      "id": "bybit-3sub-architecture",
+      "name": "bybit-3sub-architecture",
+      "title": "bybit-3sub-architecture",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "bybit-signing-order",
@@ -2010,7 +2031,7 @@
       "type": "memory",
       "summary": "\"TP Funnel cells = trigger events (overlap), а не разбиение closed-trades; сумма funnel'а > closed нормально, mutually exclusive — только close_reason\"",
       "size": 1511,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778696175.9423335
     },
     {
@@ -2021,7 +2042,7 @@
       "type": "memory",
       "summary": "\"GA рекомендует TP в космосе (13R-48R), хотя реальная MFE доходит максимум ~2%; backtester засчитывает wick-касания на 5m, реал так не работает\"",
       "size": 1130,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778693684.7086225
     },
     {
@@ -2032,8 +2053,19 @@
       "type": "memory",
       "summary": "\"Grafana 13 хранит дашборды в новой `resource` таблице, не в `dashboard`; SQLite-фикс возможен с restart'ом сервера\"",
       "size": 2143,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778695706.3432534
+    },
+    {
+      "file": "feedback_nginx_uploads_regex_trap.md",
+      "id": "feedback-nginx-uploads-regex-trap",
+      "name": "feedback-nginx-uploads-regex-trap",
+      "title": "Feedback Nginx Uploads Regex Trap",
+      "type": "memory",
+      "summary": "\"nginx `location ~* \\\\.(jpg|png|jpeg)$ {try_files $uri =404}` перехватывает /uploads/*.jpg и 404'ит — нужен `location ^~ /uploads/`\"",
+      "size": 890,
+      "status_icon": "🟢",
+      "mtime": 1779238759.9091337
     },
     {
       "id": "feedback-no-routine-confirms",
@@ -2044,6 +2076,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_pwa_stale_bundle.md",
+      "id": "feedback-pwa-stale-bundle",
+      "name": "feedback-pwa-stale-bundle",
+      "title": "Feedback Pwa Stale Bundle",
+      "type": "memory",
+      "summary": "Wrestling PWA сбрасывает кэш через CACHE bump в sw.js. НЕ делать auto-reload по controllerchange/sw-activated (loop). Self-heal через React Query onError с TTL gate.",
+      "size": 2089,
+      "status_icon": "🟢",
+      "mtime": 1779255323.6405852
     },
     {
       "id": "feedback-query-write-swallow",
@@ -2143,7 +2186,7 @@
       "type": "memory",
       "summary": "Toast/snackbar с opacity:0 без pointer-events:none молча съедает клики по элементам под ним",
       "size": 913,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778694808.2835047
     },
     {
@@ -2177,6 +2220,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_billable_hours_dedup",
+      "name": "feedback_billable_hours_dedup",
+      "title": "feedback_billable_hours_dedup",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_bybit_env_symlink",
       "name": "feedback_bybit_env_symlink",
       "title": "feedback_bybit_env_symlink",
@@ -2190,6 +2243,16 @@
       "id": "feedback_bybit_signing_order",
       "name": "feedback_bybit_signing_order",
       "title": "feedback_bybit_signing_order",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_dashboard_startup",
+      "name": "feedback_dashboard_startup",
+      "title": "feedback_dashboard_startup",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2237,6 +2300,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_nginx_uploads_regex_trap",
+      "name": "feedback_nginx_uploads_regex_trap",
+      "title": "feedback_nginx_uploads_regex_trap",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_oauth_force_refresh",
       "name": "feedback_oauth_force_refresh",
       "title": "feedback_oauth_force_refresh",
@@ -2250,6 +2323,26 @@
       "id": "feedback_oauth_rate_limits",
       "name": "feedback_oauth_rate_limits",
       "title": "feedback_oauth_rate_limits",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_ontime_foreman_mobile_actions",
+      "name": "feedback_ontime_foreman_mobile_actions",
+      "title": "feedback_ontime_foreman_mobile_actions",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_ontime_pin_crew_invariant",
+      "name": "feedback_ontime_pin_crew_invariant",
+      "title": "feedback_ontime_pin_crew_invariant",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2280,6 +2373,26 @@
       "id": "feedback_pc1_ssh_quirks",
       "name": "feedback_pc1_ssh_quirks",
       "title": "feedback_pc1_ssh_quirks",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_react_hooks_order",
+      "name": "feedback_react_hooks_order",
+      "title": "feedback_react_hooks_order",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_react_select_fallback",
+      "name": "feedback_react_select_fallback",
+      "title": "feedback_react_select_fallback",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2375,7 +2488,7 @@
       "type": "memory",
       "summary": "\"На ПК1 GA backtester (pipeline.evaluate_strategy) сейчас выдаёт 0 trades при любых params — daily ATR=0 для всех 60k signals. Root cause: arr_d_hl всё нули. Cache stale или loader name-mismatch. Phas",
       "size": 1924,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778653923.310657
     },
     {
@@ -2386,7 +2499,7 @@
       "type": "memory",
       "summary": "Overhaul GA backtester (4 фазы + 2.5) сделанный в одной длинной сессии 2026-05-12/13. Sharpe annualised + costs + live constraints + BTC/ETH/SOL blacklist + per-symbol PnL breakdown. GA recommendation",
       "size": 5231,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778655765.5419695
     },
     {
@@ -2576,7 +2689,7 @@
       "type": "memory",
       "summary": "\"When Claude returns 401, the 401-handler must call refresh API even if disk expiresAt is in the future — Anthropic revokes tokens before formal expiry under parallel usage\"",
       "size": 1538,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778784781.2098856
     },
     {
@@ -2587,7 +2700,7 @@
       "type": "memory",
       "summary": "\"PK1+PK2 LLM race helper в emails-bot, shadow-режим против Claude Haiku triage с 2026-05-13\"",
       "size": 2240,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778730710.8662417
     },
     {
@@ -2598,7 +2711,7 @@
       "type": "memory",
       "summary": "\"VPS shell env содержит `OPENAI_BASE_URL=https://api.deepseek.com/v1` — OpenAI Python client его подхватывает по умолчанию и роутит на DeepSeek (404 на /audio/speech, /audio/transcriptions). Лечится я",
       "size": 1628,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778646213.982835
     },
     {
@@ -2828,7 +2941,7 @@
       "type": "memory",
       "summary": "📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у",
       "size": 2051,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778696164.2623062
     },
     {
@@ -2910,6 +3023,50 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_wrestling_i18n_9langs.md",
+      "id": "project-wrestling-i18n-9langs",
+      "name": "project-wrestling-i18n-9langs",
+      "title": "Project Wrestling I18N 9Langs",
+      "type": "memory",
+      "summary": "Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода",
+      "size": 1823,
+      "status_icon": "🟢",
+      "mtime": 1779246783.7827795
+    },
+    {
+      "file": "project_wrestling_pill_nav.md",
+      "id": "project-wrestling-pill-nav",
+      "name": "project-wrestling-pill-nav",
+      "title": "Project Wrestling Pill Nav",
+      "type": "memory",
+      "summary": "\"Wrestling bottom-nav — pill-индикатор (framer-motion layoutId), горизонтальный скролл, safe-area-inset, авто-скролл активного таба\"",
+      "size": 1319,
+      "status_icon": "🟢",
+      "mtime": 1779241180.8374972
+    },
+    {
+      "file": "project_wrestling_super_admin.md",
+      "id": "project-wrestling-super-admin",
+      "name": "project-wrestling-super-admin",
+      "title": "Project Wrestling Super Admin",
+      "type": "memory",
+      "summary": "Cross-club super_admin view в wrestling app — Artem Borysiuk (id=17) + Art Papritskii (id=13)",
+      "size": 2195,
+      "status_icon": "🟢",
+      "mtime": 1779255303.3083954
+    },
+    {
+      "file": "project_wrestling_uww_scoreboard.md",
+      "id": "project-wrestling-uww-scoreboard",
+      "name": "project-wrestling-uww-scoreboard",
+      "title": "Project Wrestling Uww Scoreboard",
+      "type": "memory",
+      "summary": "\"UWW Heracles-style live scoreboard в wrestling app — count-down, P shot-clock, FALL/VSU/VPO, INJ-time, cast to TV\"",
+      "size": 3371,
+      "status_icon": "🟢",
+      "mtime": 1779255283.9822147
     },
     {
       "id": "project_backtest_findings",
@@ -3022,6 +3179,26 @@
       "mtime": 0
     },
     {
+      "id": "project_ontime_heartbeat",
+      "name": "project_ontime_heartbeat",
+      "title": "project_ontime_heartbeat",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_ontime_wage_cost",
+      "name": "project_ontime_wage_cost",
+      "title": "project_ontime_wage_cost",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_pc1_homelab_active",
       "name": "project_pc1_homelab_active",
       "title": "project_pc1_homelab_active",
@@ -3102,6 +3279,26 @@
       "mtime": 0
     },
     {
+      "id": "project_tsa_timeline",
+      "name": "project_tsa_timeline",
+      "title": "project_tsa_timeline",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_tsa_timesheet",
+      "name": "project_tsa_timesheet",
+      "title": "project_tsa_timesheet",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_tutor_latency_pipeline",
       "name": "project_tutor_latency_pipeline",
       "title": "project_tutor_latency_pipeline",
@@ -3145,6 +3342,56 @@
       "id": "project_wife_english_tutor",
       "name": "project_wife_english_tutor",
       "title": "project_wife_english_tutor",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_wrestling_i18n_9langs",
+      "name": "project_wrestling_i18n_9langs",
+      "title": "project_wrestling_i18n_9langs",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_wrestling_pill_nav",
+      "name": "project_wrestling_pill_nav",
+      "title": "project_wrestling_pill_nav",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_wrestling_super_admin",
+      "name": "project_wrestling_super_admin",
+      "title": "project_wrestling_super_admin",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_wrestling_uww_scoreboard",
+      "name": "project_wrestling_uww_scoreboard",
+      "title": "project_wrestling_uww_scoreboard",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_wrestling_v2",
+      "name": "project_wrestling_v2",
+      "title": "project_wrestling_v2",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3265,7 +3512,7 @@
       "type": "memory",
       "summary": "\"Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal, фикс tutor-ботов\"",
       "size": 6859,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778765885.0915382
     },
     {
@@ -3276,7 +3523,7 @@
       "type": "memory",
       "summary": "Big session — wife/son tutor overhaul (OAuth fix + live tools + 6-level CEFR library + EWA-style UI + Alyona avatar + SadTalker on PC1 GPU)",
       "size": 2563,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778786295.3761096
     },
     {
@@ -3322,6 +3569,28 @@
       "size": 5717,
       "status_icon": "🟢",
       "mtime": 1779057275.7761471
+    },
+    {
+      "file": "project_session_2026_05_19_ontime_polish.md",
+      "id": "session-2026-05-19-ontime-polish",
+      "name": "session-2026-05-19-ontime-polish",
+      "title": "Session 2026 05 19 Ontime Polish",
+      "type": "memory",
+      "summary": "\"OnTime UX polish + accounting fixes session — 9 features pushed, key invariants for crew planning, billing hours, address links\"",
+      "size": 4071,
+      "status_icon": "🟢",
+      "mtime": 1779233367.0278718
+    },
+    {
+      "file": "project_session_2026_05_19_wrestling_coach_toolkit.md",
+      "id": "session-2026-05-19-wrestling-coach-toolkit",
+      "name": "session-2026-05-19-wrestling-coach-toolkit",
+      "title": "Session 2026 05 19 Wrestling Coach Toolkit",
+      "type": "memory",
+      "summary": "\"Wrestling app — club policy, groups, password reset, live sparring scoring, EN/RU/PL i18n, birthday reminder daemon (commit ddeee40)\"",
+      "size": 4469,
+      "status_icon": "🟢",
+      "mtime": 1779234904.982106
     },
     {
       "id": "session-baseline-transfers",
@@ -3385,7 +3654,7 @@
       "type": "memory",
       "summary": "\"TG-бот для Andrii (~11-14yo) учит французский A1-A2. Persona Sophie (нова voice), avatar talking_loop.mp4, streaming TTS pipeline 2-3s latency. Bot id 8341136914.\"",
       "size": 3501,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778646166.555787
     },
     {
@@ -3396,7 +3665,7 @@
       "type": "memory",
       "summary": "\"Live talking avatar для @FrenchTuporBot/@EnglishTecherTutorBot — фотореалистичный портрет + лип-синк MP4 на каждый ответ; pipeline 2026-05-12, Wav2Lip миграция pending\"",
       "size": 6796,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778641430.9165013
     },
     {
@@ -3440,7 +3709,7 @@
       "type": "feedback",
       "summary": "ActiveEnterTimestamp format trap — always pass --timestamp=unix and convert to ISO-8601 UTC before returning to browser",
       "size": 1137,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776796886.1269593
     },
     {
@@ -3497,6 +3766,16 @@
       "mtime": 0
     },
     {
+      "id": "trading-spec",
+      "name": "trading-spec",
+      "title": "trading-spec",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_voice_tutor_oauth_500.md",
       "id": "tutor-bots OAuth 401 (drop-cache fix 2026-05-12)",
       "name": "tutor-bots OAuth 401 (drop-cache fix 2026-05-12)",
@@ -3504,7 +3783,7 @@
       "type": "feedback",
       "summary": "voice-tutor / wife-english-tutor / son-french-tutor ловят 401 invalid x-api-key из-за race с DexClaud за общий credentials.json — fix: drop-cache-and-reread (lifted from DexClaud), не force-refresh",
       "size": 3743,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778623869.0550544
     },
     {
@@ -3515,7 +3794,7 @@
       "type": "memory",
       "summary": "\"4-фазная оптимизация /api/voice в tutor ботах (son/wife): Haiku + asyncio.gather + sentence split + LLM streaming + STT race + TTS streaming endpoint. 8s → 2-4s.\"",
       "size": 4267,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778655010.0975795
     },
     {
@@ -3526,7 +3805,7 @@
       "type": "memory",
       "summary": "\"wife-english-tutor has Anthropic tool-use for live BTC/ETH price (Bybit) and weather (wttr.in); don't let bot answer market/weather from LLM memory\"",
       "size": 1584,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778775596.9601917
     },
     {
@@ -3649,6 +3928,14 @@
     {
       "source": "agent-levels-guards-chain",
       "target": "project_gerchik_auto_flipper"
+    },
+    {
+      "source": "agent-levels-tg-dedup",
+      "target": "bybit-3sub-architecture"
+    },
+    {
+      "source": "agent-levels-tg-dedup",
+      "target": "trading-spec"
     },
     {
       "source": "be-on-real-must-use-bybit-avgprice-not-signal-entry",
@@ -3803,6 +4090,14 @@
       "target": "project-bybit-3sub-architecture"
     },
     {
+      "source": "feedback-nginx-uploads-regex-trap",
+      "target": "feedback_dashboard_startup"
+    },
+    {
+      "source": "feedback-nginx-uploads-regex-trap",
+      "target": "project_wrestling_v2"
+    },
+    {
       "source": "oauth-force-refresh",
       "target": "feedback_oauth_rate_limits"
     },
@@ -3865,6 +4160,14 @@
     {
       "source": "pg-dump-baseline-tables-require-grant-to-non-postgres-role",
       "target": "project_unversioned_prod_state"
+    },
+    {
+      "source": "feedback-pwa-stale-bundle",
+      "target": "project_wrestling_super_admin"
+    },
+    {
+      "source": "feedback-pwa-stale-bundle",
+      "target": "project_wrestling_v2"
     },
     {
       "source": "real-trades-fee-semantics",
@@ -4291,6 +4594,42 @@
       "target": "strict-plan-rules"
     },
     {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "feedback_billable_hours_dedup"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "feedback_ontime_foreman_mobile_actions"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "feedback_ontime_pin_crew_invariant"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "feedback_react_hooks_order"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "feedback_react_select_fallback"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "project_ontime_heartbeat"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "project_ontime_wage_cost"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "project_tsa_timeline"
+    },
+    {
+      "source": "session-2026-05-19-ontime-polish",
+      "target": "project_tsa_timesheet"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -4325,19 +4664,63 @@
     {
       "source": "Wife English Tutor — план 2026-05-07",
       "target": "project_tutor_latency_pipeline"
+    },
+    {
+      "source": "project-wrestling-i18n-9langs",
+      "target": "feedback_nginx_uploads_regex_trap"
+    },
+    {
+      "source": "project-wrestling-i18n-9langs",
+      "target": "project_wrestling_v2"
+    },
+    {
+      "source": "project-wrestling-pill-nav",
+      "target": "project_wrestling_i18n_9langs"
+    },
+    {
+      "source": "project-wrestling-pill-nav",
+      "target": "project_wrestling_v2"
+    },
+    {
+      "source": "project-wrestling-super-admin",
+      "target": "feedback_react_hooks_order"
+    },
+    {
+      "source": "project-wrestling-super-admin",
+      "target": "project_wrestling_uww_scoreboard"
+    },
+    {
+      "source": "project-wrestling-super-admin",
+      "target": "project_wrestling_v2"
+    },
+    {
+      "source": "project-wrestling-uww-scoreboard",
+      "target": "feedback_react_hooks_order"
+    },
+    {
+      "source": "project-wrestling-uww-scoreboard",
+      "target": "project_wrestling_pill_nav"
+    },
+    {
+      "source": "project-wrestling-uww-scoreboard",
+      "target": "project_wrestling_v2"
+    },
+    {
+      "source": "Wrestling App v2 — Multi-club + Full Features",
+      "target": "session-2026-05-19-wrestling-coach-toolkit"
     }
   ],
   "stats": {
-    "files": 236,
-    "nodes": 340,
-    "edges": 172,
+    "files": 245,
+    "nodes": 367,
+    "edges": 198,
     "by_type": {
       "feedback": 81,
-      "memory": 65,
+      "memory": 74,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 104
+      "stub": 122
     }
   }
 }

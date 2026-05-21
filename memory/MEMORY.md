@@ -13,6 +13,7 @@
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
 - [Strict Plan Rules](feedback_strict_plan_rules.md) — план обязателен + прогресс-бар + без болтовни + вопросы только при блоке; инжектится UserPromptSubmit hook'ом
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
+- [nginx /uploads/ regex trap](feedback_nginx_uploads_regex_trap.md) — голый `location /uploads/` пожирается regex `\.(jpg|png)$` → 404; нужен `^~ /uploads/`
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
 - [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
 - [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
@@ -47,6 +48,11 @@
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling i18n 10 langs](project_wrestling_i18n_10langs.md) — en/ru/uk/pl/ar/fa/zh/ja/pa/es + RTL + header dropdown; sub-components нуждаются в собственном useTranslation
+- [Wrestling pill bottom-nav](project_wrestling_pill_nav.md) — framer-motion layoutId pill + scroll + safe-area + auto-scroll active
+- [Wrestling UWW Scoreboard](project_wrestling_uww_scoreboard.md) — Heracles-style live table: count-down, P shot-clock, FALL/VSU/VPO, INJ, cast TV
+- [Wrestling super-admin](project_wrestling_super_admin.md) — users.is_super_admin для id=17 Artem + id=13 Art; cross-club People sheet
+- [PWA stale-bundle recovery](feedback_pwa_stale_bundle.md) — НЕ делать auto-reload по controllerchange/sw-activated; React Query onError + 10min cooldown
 - [Wrestling Norm History](feedback_wrestling_norm_attempts.md) — norm_attempts table; norm_standards.actual_value drifted to VARCHAR; regex-filter non-numeric junk
 - [Wrestling Camp Payment](project_wrestling_camp_payment.md) — Square checkout + I-Paid/Confirm honor-system flow; Constant default link
 - [OnTime (TSA)](project_tsa_timeline.md) — PWA ontime.management для siding-компании TSA; admin/foreman/installer + соревновательный рейтинг; /root/ontime, port 8002, nginx+ssl

@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-05-19 20:06 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-05-21 22:37 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**499 nodes** (511 edges) — 📝 466 word · 📚 16 category · 📖 10 book · 👤 7 learner
+**523 nodes** (537 edges) — 📝 489 word · 📚 16 category · 📖 11 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -29,13 +29,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `decent` — mastery 0, seen 1×
 - `discipline` — mastery 0, seen 1×
 - `downtown` — mastery 0, seen 1×
-- `exam` — mastery 0, seen 1×
 - `exercise` — mastery 0, seen 1×
 - `exercises` — mastery 0, seen 1×
 - `favorite` — mastery 0, seen 1×
 - `hard work` — mastery 0, seen 1×
 - `hardest` — mastery 0, seen 1×
 - `help` — mastery 0, seen 1×
+- `lithuanian` — mastery 0, seen 1×
 
 ### 📖 Books
 
@@ -67,14 +67,14 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
 | Category | Mistakes (incl. repeats) |
 |---|---:|
-| `other` | **18** |
-| `tenses` | **8** |
-| `vocabulary` | **5** |
+| `other` | **19** |
+| `tenses` | **9** |
+| `vocabulary` | **7** |
 | `word_order` | **5** |
 | `articles` | **2** |
 | `agreement` | **1** |
 
-### 📝 Vocab — 265 words
+### 📝 Vocab — 290 words
 
 **Stuck (lowest mastery):**
 
@@ -91,8 +91,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `brave` — mastery 1, seen 1×
 - `broken` — mastery 1, seen 1×
 - `build up` — mastery 1, seen 1×
+- `buried` — mastery 1, seen 1×
 - `cancer` — mastery 1, seen 1×
-- `carry` — mastery 1, seen 1×
 
 ### 📖 Books
 
@@ -149,6 +149,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 | `Alice au pays des merveilles` | 1 |
 | `Boucle d'or et les trois ours` | 1 |
 | `Cendrillon` | 1 |
+| `Le Comte de Monte-Cristo` | 1 |
 
 ## 🇫🇷 Andrii (FR)
 
