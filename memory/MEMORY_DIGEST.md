@@ -1,6 +1,6 @@
 # Memory digest
 
-Generated **2026-05-21 22:37 UTC**.
+Generated **2026-05-21 23:08 UTC**.
 
 **367 nodes** (245 files, 198 edges) — 📝 122 stub · 🗂 88 project · ⚠️ 81 feedback · · 74 memory · 🔗 1 reference · 👤 1 user
 
@@ -58,10 +58,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
+- `2026-05-21 22:49` [[project-wrestling-i18n-10langs]] · 🟢 today
 - `2026-05-20 05:35` [[feedback-pwa-stale-bundle]] · 🟢 this week
 - `2026-05-20 05:35` [[project-wrestling-super-admin]] · 🟢 this week
 - `2026-05-20 05:34` [[project-wrestling-uww-scoreboard]] · 🟢 this week
-- `2026-05-20 03:13` [[project-wrestling-i18n-9langs]] · 🟢 this week
 - `2026-05-20 01:39` [[project-wrestling-pill-nav]] · 🟢 this week
 - `2026-05-20 00:59` [[feedback-nginx-uploads-regex-trap]] · 🟢 this week
 - `2026-05-19 23:55` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 this week
@@ -421,7 +421,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-agent-levels-2026-05-18]] — "AI Agent Levels system — Bybit pending-orders as visual chart lines, full SL/TP/fill-handler pipeline + Telegram bot, d
 - [[project-ga-under-review]] — "GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending"
 - [[project-mfe-calibration]] — 📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у
-- [[project-wrestling-i18n-9langs]] — Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода
+- [[project-wrestling-i18n-10langs]] — Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода
 - [[project-wrestling-pill-nav]] — "Wrestling bottom-nav — pill-индикатор (framer-motion layoutId), горизонтальный скролл, safe-area-inset, авто-скролл акт
 - [[project-wrestling-super-admin]] — Cross-club super_admin view в wrestling app — Artem Borysiuk (id=17) + Art Papritskii (id=13)
 - [[project-wrestling-uww-scoreboard]] — "UWW Heracles-style live scoreboard в wrestling app — count-down, P shot-clock, FALL/VSU/VPO, INJ-time, cast to TV"

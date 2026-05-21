@@ -1,6 +1,6 @@
 # Tutor digest
 
-Generated **2026-05-21 22:37 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-05-21 23:08 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
 **523 nodes** (537 edges) — 📝 489 word · 📚 16 category · 📖 11 book · 👤 7 learner
 

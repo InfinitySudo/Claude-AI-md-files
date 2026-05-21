@@ -1,6 +1,6 @@
 # OnTime digest
 
-Generated **2026-05-21 22:37 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-05-21 23:08 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
 **183 nodes** (818 edges) — 🏗 65 project · 👷 62 worker · 📦 56 material
 
@@ -12,7 +12,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 |---|---|---:|
 | `Oleksandr Poliakov` | installer | **2416.7** |
 | `Maksym Moskalyk` | installer | **2371.3** |
-| `Oleksey Sherbakov` | foreman | **2325.2** |
+| `Oleksey Sherbakov` | foreman | **2334.2** |
 | `Pavlo Kosts` | installer | **2321.4** |
 | `Mykhailo Martynenko` | installer | **2295.3** |
 | `Oleksandr Lopatetskyi` | installer | **2237.4** |
@@ -24,7 +24,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Serhii Lopatetskyi` | installer | **2132.7** |
 | `Taras Ivanets` | installer | **2116.2** |
 | `Valerii Stelmakh` | installer | **2103.2** |
-| `Bogdan Tkhoryk` | foreman | **2082.0** |
+| `Bogdan Tkhoryk` | foreman | **2091.0** |
 
 ## 🏗 Top projects (by labour hours)
 
@@ -32,14 +32,14 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 |---|---:|---:|
 | `Broward_26_05_2025_Oleksii_Sh` | **8486.5** | 30 |
 | `Magna Bldg 1` | **7774.7** | 35 |
-| `Magna Bldg 2` | **6931.5** | 42 |
+| `Magna Bldg 2` | **6940.5** | 42 |
 | `Sage Walk Bldg 2 Nikolay K 15.12.2025` | **5034.0** | 31 |
 | `Arabella-Ophelia Mike K 04.09.2025` | **3843.0** | 13 |
 | `Sage_Hill_Commercial_Development_Bldg_500_05_05_2025_Nikolay_K` | **2031.5** | 7 |
 | `Cornerview_Bldg_1-13_BRICK_06_02_2025_Vasilii_V` | **2026.4** | 6 |
 | `Pinegate Park Ihor K 04.02.2026` | **1794.0** | 8 |
 | `Sage Hill Commercial Development Bldg 600 ` | **1770.5** | 9 |
-| `Livingston (Bldg A) ` | **1680.7** | 14 |
+| `Livingston (Bldg A) ` | **1689.7** | 14 |
 | `Sage Hill Commercial Development Bldg 100 18.08.2025 Nikolay K` | **1496.5** | 6 |
 | `RimRock` | **1493.1** | 9 |
 | `Sage_Hill_Commercial_Development_Bldg_200_20_05_2025_Nikolay_K` | **1461.5** | 5 |

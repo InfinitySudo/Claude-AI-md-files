@@ -3025,15 +3025,15 @@
       "mtime": 0
     },
     {
-      "file": "project_wrestling_i18n_9langs.md",
-      "id": "project-wrestling-i18n-9langs",
-      "name": "project-wrestling-i18n-9langs",
-      "title": "Project Wrestling I18N 9Langs",
+      "file": "project_wrestling_i18n_10langs.md",
+      "id": "project-wrestling-i18n-10langs",
+      "name": "project-wrestling-i18n-10langs",
+      "title": "Project Wrestling I18N 10Langs",
       "type": "memory",
       "summary": "Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода",
-      "size": 1823,
+      "size": 1818,
       "status_icon": "🟢",
-      "mtime": 1779246783.7827795
+      "mtime": 1779403768.2569566
     },
     {
       "file": "project_wrestling_pill_nav.md",
@@ -4666,11 +4666,11 @@
       "target": "project_tutor_latency_pipeline"
     },
     {
-      "source": "project-wrestling-i18n-9langs",
+      "source": "project-wrestling-i18n-10langs",
       "target": "feedback_nginx_uploads_regex_trap"
     },
     {
-      "source": "project-wrestling-i18n-9langs",
+      "source": "project-wrestling-i18n-10langs",
       "target": "project_wrestling_v2"
     },
     {
