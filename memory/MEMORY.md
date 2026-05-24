@@ -22,6 +22,7 @@
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
 - [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
 - [Trading Guards REAL only](feedback_dd_guard_paper_skip.md) — все risk-гарды (DD, blacklist, time-of-day) только для REAL; paper без блоков
+- [Signalbot dead PG conn](feedback_signalbot_dead_pg_conn.md) — после ~1.5d uptime _save_signal_to_db падает; сигналы в TG идут но в БД 0 → tradingbot ничего не открывает; fix: рестарт signalbot; TODO: reconnect в коде
 - [Session Baseline Transfers](feedback_session_baseline_transfers.md) — sub-account transfer ловит DD guard как просадку; сбрасывать `session_start_wallet_usd` после трансферов
 - [Backtest Findings](project_backtest_findings.md) — spike=6 +42% on BTC+ETH but −13% median across top-100; uneven edge by symbol
 - [Symbols List](project_symbols_list.md) — 426 symbols in 3 tiers; full 539 archive at config/bybit_usdt_perp_universe.json
@@ -75,6 +76,12 @@
 - [Salesforce blocked](feedback_salesforce_scraping_blocked.md) — ProZone позволяет только 1 popup за сессию через Playwright; CSV export OK, для PDFs — manual Chrome
 - [Roofmart Catalog Sync](project_roofmart_catalog.md) — работающий pipeline: 92 SKUs из 63/70 invoices в OnTime catalog; weekly cron Sun 03:00
 - [$10k/mo Strategy](project_10k_strategy.md) — ранжирование путей: OnTime product (primary), RU-SMB agency (bridge), TG channel (compound)
+- [Toptal Waitlist](project_toptal_waitlist.md) — 2026-05-22 Toptal в waitlist; канал закрыт 1-3 мес, не предлагать
+- [RU-SMB Agency Plan](project_ru_smb_agency_plan.md) — пошаговый план первого контракта: ICP, оффер, каналы, скрипт, ценник, 30/60/90d milestones
+- [Agency Landing](project_agency_landing.md) — ontime.management/agency: 7 пакетов, форма-POST, 3 кейс-видео, кликабельные карточки
+- [MAI Assistant](project_mai_assistant.md) — @solo_inboxBot + mai-{api,poller,bot,morning-digest}; 3 IMAP-ящика, отдельная БД от Тимы
+- [MAI Video Pipeline](project_mai_video_pipeline.md) — gpt-4o-mini-tts + Playwright + ffmpeg + STT-validation для 3 case-видео
+- [TTS PC1 Mandarin](feedback_tts_pc1_mandarin.md) — PC1:8002 ≠ настоящий nova; для product-видео всегда cloud OpenAI
 - [TG Channel Plan](project_tg_channel_plan.md) — active с 2026-04-16: solo-founder-with-AI, RU, настоящее имя, 4 поста/нед, бюджет $300–500/мес, название @solo_claude
 - [solo_claude_bot infra](project_solo_claude_bot.md) — `/root/solo_claude_bot/` CLI для постинга; 2 бота, venv, .env; CHAT_* ждут chat_id
 - [Claude Telegram Bot repo](project_claude_telegram_bot.md) — `/root/claude-telegram-bot` → `Claude-Telegram-Bot` (не OpenClaw-v3); voice+vision+tools+OAuth
@@ -96,6 +103,9 @@
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
+- [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
+- [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor
+- [BE Per-Strategy A/B/C](project_be_per_strategy_experiment.md) — CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5 + shadow=no-BE; не трогать 30d, выбрать победителя по PF/net
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
 - [GA Prewarm 418 Handling](feedback_ga_prewarm_418.md) — Binance 418 = transient ban; retry+Retry-After, prewarm aborts >10% fails, no Bybit-5m fallback
@@ -104,6 +114,7 @@
 - [Dashboard V2 Per-Strategy](project_dashboard_v2.md) — /v2.html 6-tab UI: Stats/Charts/Control/GA/Symbols/Settings; /api/v2/* additive
 - [Dashboard v1 vs v2 — DON'T CONFUSE](feedback_dashboard_v1_v2.md) — обе живут параллельно; карта файлов/endpoint'ов перед любой правкой
 - [Dashboard Apply Chain](project_dashboard_apply_chain.md) — POST /api/settings применяет ВСЁ: БД + JSON + auto-restart; forced_strategy теперь обновляет current_strategy
+- [Dashboard BE/SL Tabs](project_dashboard_be_sl_tabs.md) — 2026-05-21 /v2.html: ⚖️ BE compare (main vs shadow + rule-based recommend + Apply) и 🛡 SL analysis (MAE, adverse-R, top SL-magnets)
 - [Real Trades Orphan](feedback_real_trades_orphan.md) — позиция на Bybit без real_trades row = BE-fail в wrapper сожрал insert; как поймать и вставить руками
 - [Orphan Residual after Close](feedback_orphan_residual_recovery.md) — sub-case: premature status='closed' + residual = постоянный orphan; recovery recipe (TPs+insert) + code-TODO для PLAN MODE
 - [DEX Migration](project_dex_migration.md) — Артём боится CEX custody; Hyperliquid candidate; pending решение, рекомендовано cold-storage 90%+ вместо полной миграции
@@ -149,8 +160,12 @@
 - [@DexClaudCodAIBot plan-first](feedback_dexclaud_plan_first.md) — бот теперь обязан create_plan+update_progress; жёстко Opus 4.7 для code/bug/fix; /sonnet и /haiku игнорируются
 - [Session 2026-05-16 bot modernization](project_session_2026_05_16_bot_modernization.md) — gerchik setup-explainer + wife-english-tutor 3 фикса + DexClaudCodAIBot plan-first/Opus-only/retry-after (6 коммитов pushed)
 - [OAuth force-refresh](feedback_oauth_force_refresh.md) — disk_token_fresh ≠ valid; 401-handler ОБЯЗАН вызывать refresh API через force_refresh=True, не только cache_stale
+- [Anthropic OAuth → auth_token](feedback_anthropic_oauth_authtoken.md) — OAuth-токены идут через auth_token= (Bearer), НЕ api_key= (x-api-key); иначе 401 "invalid x-api-key"
 - [Voice Chain Autoplay](feedback_voice_chain_autoplay.md) — на voice-input — только voice без text-эха; TG chain-plays подряд voice-сообщения
 - [Mobile-dev Workflow](project_mobile_dev_workflow.md) — MOBILE_RULES.md + CLAUDE.md в каждом проекте; якорь чтобы не терять контекст как с OpenClaw
+- [Space_Live cockpit](project_space_live.md) — Bloomberg/Matrix trader cockpit; /root/Space_Live → /var/www/dashboard/cockpit.html :8080; static HTML, polls /api/v2/*
+- [Paper-в-real_trades](feedback_paper_in_real_trades.md) — paper CONS/TREND писались в real_trades, ложно тригерили weekly DD; чистка только archive+DELETE, ack не работает для weekly
+- [/api/v2/wallets-all](project_wallets_all_endpoint.md) — endpoint всех 3 sub-кошельков Bybit (sub1=Trading 563399107, sub2=Copy 563470305, sub3=AI 539929753); подключён к cockpit и v2 header
 - [Hourly Supervisor (deterministic)](project_hourly_supervisor.md) — заменил opus-агент Python-скриптом; haiku только при events/anomalies
 - [OAuth Rate Limits](feedback_oauth_rate_limits.md) — никогда не блокируй fallback chain жёстко; 5h cap на opus/sonnet жгут фоновые agents
 - [systemd OnCalendar Local Time](feedback_systemd_oncalendar_local_time.md) — server в America/Edmonton; OnCalendar по умолчанию local, не UTC
