@@ -250,7 +250,7 @@
       "type": "project",
       "summary": "POST /api/settings/<key> teper polnostyu primenyaet nastroiki — obnovlyaet vse tablicy + rebootayet servis. Artem planiruet otkazatsya ot TG ControlBot.",
       "size": 1889,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776923496.5617125
     },
     {
@@ -294,7 +294,7 @@
       "type": "feedback",
       "summary": "In hybrid mode paper-CONS and real-TREND on the same symbol can coexist — they're separate books",
       "size": 1496,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776919746.8643785
     },
     {
@@ -371,7 +371,7 @@
       "type": "project",
       "summary": "How fees_paid_usd is computed, persisted, and how the 900-row historical zero was reconstructed",
       "size": 3120,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776919710.8872457
     },
     {
@@ -382,7 +382,7 @@
       "type": "feedback",
       "summary": "2026-05-15 — Артём флипнул всё в REAL (CONS+TREND+AGGR). Paper заморожен с снапшотом +$137.98 CONS / +$66.59 TREND. Дальше real.",
       "size": 2571,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778853931.506967
     },
     {
@@ -470,7 +470,7 @@
       "type": "project",
       "summary": "2026-04-20 baseline showed 5 trades vs 3225 expected. Root cause found and fixed.",
       "size": 2605,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776919828.562681
     },
     {
@@ -547,7 +547,7 @@
       "type": "project",
       "summary": "Per-strategy routing machinery still in code, but as of 2026-05-15 ALL three strategies = REAL (full live mode). Hybrid mechanism kept for future paper-shadowing.",
       "size": 3173,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778853911.48087
     },
     {
@@ -613,7 +613,7 @@
       "type": "feedback",
       "summary": "cgroup-kill on dashboard-api restart nukes every child. start_new_session=True does NOT help. Use systemd-run --unit --slice.",
       "size": 2424,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776959108.885402
     },
     {
@@ -833,7 +833,7 @@
       "type": "project",
       "summary": "delivery-tasks модуль OnTime — workflow, роли, integration с Extra Work",
       "size": 2191,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776973691.8900971
     },
     {
@@ -910,7 +910,7 @@
       "type": "reference",
       "summary": "Где хранятся коды приглашения для самостоятельной регистрации по ролям и какие точки в коде синхронизировать при добавлении новой роли",
       "size": 1723,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777050510.1930685
     },
     {
@@ -932,7 +932,7 @@
       "type": "project",
       "summary": "Delivery driver fuel-tracking feature — 11 lifts catalog, per-refuel log with photo+cost+engine hours, monthly consumption report",
       "size": 6016,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776963363.7135699
     },
     {
@@ -1174,7 +1174,7 @@
       "type": "project",
       "summary": "Что доступно на ПК1 Артёма (RTX 3090, Tailscale 100.99.211.123) для тяжёлых задач — SSH, Ollama, faster-whisper, autostart",
       "size": 8327,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778811617.9377737
     },
     {
@@ -1273,7 +1273,7 @@
       "type": "project",
       "summary": "Artem rassmatrivayet prop firm challenge kak path k $10k/mo. 2026-04-23 soglasovano — otlozhit do proven edge, kriterii gotovnosti zafiksirovany.",
       "size": 2496,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776927761.4164565
     },
     {
@@ -1317,7 +1317,7 @@
       "type": "feedback",
       "summary": "Kogda na Bybit est' real pozicia a v real_trades pusto — znachit place_order_from_signal vernul success=False do insert. Proveryat' cherez ByBit API, vstavlyat' row rukami, chinit' bug.",
       "size": 1846,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776924736.9259458
     },
     {
@@ -1328,7 +1328,7 @@
       "type": "feedback",
       "summary": "6 stacking bugs made the BD-derived real PnL diverge from exchange by $8+. Lessons + how Bybit closed-pnl actually works",
       "size": 5438,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980242.7719386
     },
     {
@@ -1504,7 +1504,7 @@
       "type": "project",
       "summary": "Reactivated 2026-04-24. OnTime becomes the single app for TSA — replacing Kojo (procurement) AND ClickUp (tasks/docs/CRM). Was paused 2026-04-16, now resumed with stricter scope (no more \"keep Kojo as",
       "size": 2574,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777083425.9447467
     },
     {
@@ -1625,7 +1625,7 @@
       "type": "project",
       "summary": "Artem boitsya CEX-custody risk, sprashivayet pro Hyperliquid. Obsuzhdali 2026-04-23 strategiyu security + tech skоp porта.",
       "size": 2093,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776927099.9667573
     },
     {
@@ -1691,7 +1691,7 @@
       "type": "feedback",
       "summary": "Correct WR for partial-close strategy — count trades that netted positive money across all chunks, not trades where \"a TP hit\"",
       "size": 1910,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1776912528.0855045
     },
     {
@@ -1750,6 +1750,17 @@
       "mtime": 1778342571.8714707
     },
     {
+      "file": "project_agency_landing.md",
+      "id": "agency-landing",
+      "name": "agency-landing",
+      "title": "Agency Landing",
+      "type": "memory",
+      "summary": "\"Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущен 2026-05-22.\"",
+      "size": 2066,
+      "status_icon": "🟢",
+      "mtime": 1779492347.257408
+    },
+    {
       "file": "feedback_agent_levels_guards.md",
       "id": "agent-levels-guards-chain",
       "name": "agent-levels-guards-chain",
@@ -1790,7 +1801,7 @@
       "type": "memory",
       "summary": "\"Critical bug 2026-05-15. Computing BE-SL from row['entry_price'] (=signal) instead of live_pos.avgPrice (=actual fill) locks slippage as guaranteed loss on every trade with unfavourable fill. Cost ~$",
       "size": 1761,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778884960.1829991
     },
     {
@@ -1801,7 +1812,7 @@
       "type": "memory",
       "summary": "\"Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/AI-agent). UIDs, env var slots, .env symlink trap.\"",
       "size": 2300,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980258.9179626
     },
     {
@@ -1843,7 +1854,7 @@
       "type": "memory",
       "summary": "\"nginx сервит из /var/www/dashboard, не из /root. После правки index_v2.html ОБЯЗАТЕЛЬНО прогон deploy_dashboard.sh — иначе кеш браузера vs stale файл.\"",
       "size": 1284,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980041.6677916
     },
     {
@@ -1854,7 +1865,7 @@
       "type": "memory",
       "summary": "\"TG-бот @DexClaudCodAIBot — bridge для отправки уведомлений Артёму из моих скриптов. Токен в `/root/4BotsBybit-Trading/.env` как `CLAUDE_BRIDGE_BOT_TOKEN`, chat_id Артёма из `CLAUDE_OPERATOR_CHAT_ID` ",
       "size": 1254,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778996389.481562
     },
     {
@@ -1865,7 +1876,7 @@
       "type": "memory",
       "summary": "claude-telegram-bot (DexClaudCodAIBot) теперь обязан составлять план через create_plan + показывать live progress; Opus 4.7 жёстко для code/bug/fix",
       "size": 2668,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778996357.055341
     },
     {
@@ -1921,6 +1932,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_anthropic_oauth_authtoken.md",
+      "id": "feedback-anthropic-oauth-authtoken",
+      "name": "feedback-anthropic-oauth-authtoken",
+      "title": "Feedback Anthropic Oauth Authtoken",
+      "type": "memory",
+      "summary": "anthropic.Anthropic(api_key=...) шлёт x-api-key; OAuth работает ТОЛЬКО через auth_token=. SDK 0.97.0+",
+      "size": 1353,
+      "status_icon": "🟢",
+      "mtime": 1779560583.4185252
+    },
+    {
       "id": "feedback-auto-push-default",
       "name": "feedback-auto-push-default",
       "title": "feedback-auto-push-default",
@@ -1948,7 +1970,7 @@
       "type": "memory",
       "summary": "\"/root/gerchik-trading-agent/.env is a symlink to /root/4BotsBybit-Trading/.env — same file, two projects. Adding diverging keys requires either breaking the symlink or introducing differently-named e",
       "size": 1013,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778888410.5612586
     },
     {
@@ -1959,7 +1981,7 @@
       "type": "memory",
       "summary": "\"CLAUDE.md правила 4BotsBybit-Trading (нет правки .env, нет stop systemd, нет закрытия real-поз) — bypass-имо ТОЛЬКО при явном разрешении Артёма на конкретную миграционную задачу.\"",
       "size": 1402,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778888427.693371
     },
     {
@@ -1970,7 +1992,7 @@
       "type": "memory",
       "summary": "Подводные камни Bybit set_trading_stop с tpOrderType=Limit и правильный аудит TP-ордеров через /v5/order/realtime",
       "size": 1912,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779061760.3007858
     },
     {
@@ -2078,6 +2100,27 @@
       "mtime": 0
     },
     {
+      "file": "feedback_paper_in_real_trades.md",
+      "id": "feedback-paper-in-real-trades",
+      "name": "feedback-paper-in-real-trades",
+      "title": "Feedback Paper In Real Trades",
+      "type": "memory",
+      "summary": "\"real_trades таблица содержала paper-trades CONS/TREND из hybrid-режима — false-tripped weekly DD guard. Чистка через archive+DELETE, не через ack-session-start.\"",
+      "size": 1282,
+      "status_icon": "🟢",
+      "mtime": 1779557358.3414097
+    },
+    {
+      "id": "feedback-per-mode-dup-rule",
+      "name": "feedback-per-mode-dup-rule",
+      "title": "feedback-per-mode-dup-rule",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_pwa_stale_bundle.md",
       "id": "feedback-pwa-stale-bundle",
       "name": "feedback-pwa-stale-bundle",
@@ -2139,6 +2182,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_signalbot_dead_pg_conn.md",
+      "id": "feedback-signalbot-dead-pg-conn",
+      "name": "feedback-signalbot-dead-pg-conn",
+      "title": "Feedback Signalbot Dead Pg Conn",
+      "type": "memory",
+      "summary": "\"psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_queue/accepted_signals/signal-обработка тихо теряются → бот не торгует. Fix задепло",
+      "size": 4490,
+      "status_icon": "🟢",
+      "mtime": 1779432973.793575
+    },
+    {
       "id": "feedback-sqlite-isoformat-trap",
       "name": "feedback-sqlite-isoformat-trap",
       "title": "feedback-sqlite-isoformat-trap",
@@ -2188,6 +2242,16 @@
       "size": 913,
       "status_icon": "🟡",
       "mtime": 1778694808.2835047
+    },
+    {
+      "id": "feedback-tts-pc1-mandarin",
+      "name": "feedback-tts-pc1-mandarin",
+      "title": "feedback-tts-pc1-mandarin",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "feedback-tutor-tts-wiring",
@@ -2243,6 +2307,16 @@
       "id": "feedback_bybit_signing_order",
       "name": "feedback_bybit_signing_order",
       "title": "feedback_bybit_signing_order",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_bybit_ws_keepalive",
+      "name": "feedback_bybit_ws_keepalive",
+      "title": "feedback_bybit_ws_keepalive",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2380,6 +2454,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_query_write_swallow",
+      "name": "feedback_query_write_swallow",
+      "title": "feedback_query_write_swallow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_react_hooks_order",
       "name": "feedback_react_hooks_order",
       "title": "feedback_react_hooks_order",
@@ -2477,7 +2561,7 @@
       "type": "memory",
       "summary": "\"real_trades.close_reason has 5 values now: TP{N}/SL/BE/LIQ/FORCE. close_source column tracks classification origin. FORCE = not real Bybit-SL hit.\"",
       "size": 2709,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980127.5148165
     },
     {
@@ -2553,7 +2637,7 @@
       "type": "memory",
       "summary": "\"gerchik_signals.decision = varchar(40) — никогда не пиши туда полный reason, иначе ВСЕ skip-сигналы тихо валятся в log_signal с overflow\"",
       "size": 1637,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778945247.3425162
     },
     {
@@ -2595,7 +2679,7 @@
       "type": "memory",
       "summary": "\"5 knowledge graphs (memory, trading, tutor, ontime, projects) + auto-generated PROJECTS.md digest; new sessions read PROJECTS.md first via MEMORY.md to load full project context\"",
       "size": 3755,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778910551.7667353
     },
     {
@@ -2616,8 +2700,30 @@
       "type": "memory",
       "summary": "\"logger.py — formatter.converter = time.gmtime обязательно, иначе datefmt '... UTC' пишет local time (MDT) под видом UTC. 6h дрейф.\"",
       "size": 1449,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980186.169867
+    },
+    {
+      "file": "project_mai_assistant.md",
+      "id": "mai-assistant",
+      "name": "mai-assistant",
+      "title": "Mai Assistant",
+      "type": "memory",
+      "summary": "MyPersonalAIassistent — личный AI-ассистент Артёма (отдельный от Тимы). 3 ящика + лендинг-заявки в @solo_inboxBot. https://github.com/InfinitySudo/MypersonalAIassistent",
+      "size": 2425,
+      "status_icon": "🟢",
+      "mtime": 1779492368.268421
+    },
+    {
+      "file": "project_mai_video_pipeline.md",
+      "id": "mai-video-pipeline",
+      "name": "mai-video-pipeline",
+      "title": "Mai Video Pipeline",
+      "type": "memory",
+      "summary": "Как генерируются 3 кейс-видео для ontime.management/agency. gpt-4o-mini-tts + Playwright + ffmpeg + STT-validation.",
+      "size": 3210,
+      "status_icon": "🟢",
+      "mtime": 1779492398.9834442
     },
     {
       "id": "mfe-calibration",
@@ -2637,7 +2743,7 @@
       "type": "memory",
       "summary": "10 main TradingBot trades 2026-05-15 живут на старом UID 539929753 (теперь sub3 AI-agent) — Bybit sub1 их не видит. Объясняет $8 от DB-vs-Bybit gap.",
       "size": 2652,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778983182.9305506
     },
     {
@@ -2722,7 +2828,7 @@
       "type": "memory",
       "summary": "\"Sub-case of [[real-position-bybit-no-db]] — reconciler ставит status='closed' когда Bybit мгновенно показал size=0, но residual возвращается/остаётся. Dust-sweep уже не помогает (бежит только по open",
       "size": 3230,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778998087.9928215
     },
     {
@@ -2733,7 +2839,7 @@
       "type": "memory",
       "summary": "4 surfaces preventing orphan positions / missing-SL in main TradingBot (sub1) — added 2026-05-16 after $79 orphan-position incident.",
       "size": 3230,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980099.3328016
     },
     {
@@ -2766,7 +2872,7 @@
       "type": "memory",
       "summary": "\"PC1 имеет custom Ollama model tags (например `qwen2.5:32b-ctx4k`) которых нет на PC2 — fallback chain 404s when configured with PC1-only model name\"",
       "size": 1617,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778873362.950483
     },
     {
@@ -2777,7 +2883,7 @@
       "type": "memory",
       "summary": "\"ПК2 (Art, RTX 3090 24GB) подключён 2026-05-12: Tailscale `borys@100.73.22.1`, SSH с ed25519 ключом, Ollama 11434 (qwen2.5:7b), faster-whisper 8001 (large-v3 CUDA), Tailscale firewall открыт. Hostname",
       "size": 4952,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778871709.160666
     },
     {
@@ -2788,7 +2894,7 @@
       "type": "memory",
       "summary": "\"db-backup сервис тихо клал zero-byte dumps 4 дня потому что pg_dump as `trading_bot` user не мог LOCK TABLE на `*_baseline_v3_snapshot` / `*_archive_*` tables owned by postgres. systemd показывал fai",
       "size": 1632,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778884993.6191378
     },
     {
@@ -2823,6 +2929,17 @@
       "mtime": 0
     },
     {
+      "file": "project_be_per_strategy_experiment.md",
+      "id": "project-be-per-strategy-experiment",
+      "name": "project-be-per-strategy-experiment",
+      "title": "Project Be Per Strategy Experiment",
+      "type": "memory",
+      "summary": "\"2026-05-21 — Артём руками выставил 3 РАЗНЫХ BE-конфига (CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5) как параллельный A/B/C-тест. После 30+ дней данных выбрать «победителя» и унифицировать.\"",
+      "size": 3914,
+      "status_icon": "🟢",
+      "mtime": 1779415089.0427432
+    },
+    {
       "id": "project-bybit-3sub-architecture",
       "name": "project-bybit-3sub-architecture",
       "title": "project-bybit-3sub-architecture",
@@ -2841,6 +2958,27 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "id": "project-dashboard-apply-chain",
+      "name": "project-dashboard-apply-chain",
+      "title": "project-dashboard-apply-chain",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_dashboard_be_sl_tabs.md",
+      "id": "project-dashboard-be-sl-tabs",
+      "name": "project-dashboard-be-sl-tabs",
+      "title": "Project Dashboard Be Sl Tabs",
+      "type": "memory",
+      "summary": "\"2026-05-21 — добавлены 2 новых toptab в v2 dashboard: BE A/B/C comparison + SL-analysis + rule-based BE recommendation engine. /api/v2/be-compare, /api/v2/be-recommend, /api/v2/be-apply, /api/v2/sl-a",
+      "size": 4302,
+      "status_icon": "🟢",
+      "mtime": 1779416090.7447832
     },
     {
       "id": "project-dashboard-v2",
@@ -2975,6 +3113,27 @@
       "mtime": 0
     },
     {
+      "file": "project_real_global_guard_limitation.md",
+      "id": "project-real-global-guard-limitation",
+      "name": "project-real-global-guard-limitation",
+      "title": "Project Real Global Guard Limitation",
+      "type": "memory",
+      "summary": "REAL dup-check глобален (любая страта на символе блочит другую) с 2026-05-24 — Bybit One-Way agg. При переходе на multi-strategy-real нужна виртуальная per-strategy книга поверх агрегированной Bybit-п",
+      "size": 1341,
+      "status_icon": "🟢",
+      "mtime": 1779642344.2789426
+    },
+    {
+      "id": "project-real-trades-baseline",
+      "name": "project-real-trades-baseline",
+      "title": "project-real-trades-baseline",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project-realized-pnl-column",
       "name": "project-realized-pnl-column",
       "title": "project-realized-pnl-column",
@@ -2983,6 +3142,28 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_space_live.md",
+      "id": "project-space-live",
+      "name": "project-space-live",
+      "title": "Project Space Live",
+      "type": "memory",
+      "summary": "\"Trader cockpit — единая Bloomberg/Matrix-стиль панель 4BotsBybit + Gerchik + Copy + GA. Static HTML на :8080. /root/Space_Live, InfinitySudo/Space_Live, deploy → /var/www/dashboard/cockpit.html\"",
+      "size": 4615,
+      "status_icon": "🟢",
+      "mtime": 1779600433.6015902
+    },
+    {
+      "file": "project_tp_shadow_ladder.md",
+      "id": "project-tp-shadow-ladder",
+      "name": "project-tp-shadow-ladder",
+      "title": "Project Tp Shadow Ladder",
+      "type": "memory",
+      "summary": "TODO — мониторинг «куда доходят сигналы» после перехода на 100% close TP1=2R. Shadow ladder + MFE peak tracker + weekly auto-promote. Дизайн для будущей реализации.",
+      "size": 3310,
+      "status_icon": "🟢",
+      "mtime": 1779411400.491935
     },
     {
       "id": "project-trading-bot-spec",
@@ -3023,6 +3204,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_wallets_all_endpoint.md",
+      "id": "project-wallets-all-endpoint",
+      "name": "project-wallets-all-endpoint",
+      "title": "Project Wallets All Endpoint",
+      "type": "memory",
+      "summary": "/api/v2/wallets-all — параллельно пуллит wallet для всех 3 sub-аккаунтов Bybit (TradingBot/Copy/AI). Подключён к cockpit COMMAND CENTER и v2.html header.",
+      "size": 2336,
+      "status_icon": "🟢",
+      "mtime": 1779600406.2185
     },
     {
       "file": "project_wrestling_i18n_10langs.md",
@@ -3069,6 +3261,16 @@
       "mtime": 1779255283.9822147
     },
     {
+      "id": "project_10k_strategy",
+      "name": "project_10k_strategy",
+      "title": "project_10k_strategy",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_backtest_findings",
       "name": "project_backtest_findings",
       "title": "project_backtest_findings",
@@ -3092,6 +3294,16 @@
       "id": "project_dashboard_ga_section",
       "name": "project_dashboard_ga_section",
       "title": "project_dashboard_ga_section",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_dashboard_v2",
+      "name": "project_dashboard_v2",
+      "title": "project_dashboard_v2",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3142,6 +3354,16 @@
       "id": "project_gerchik_bot",
       "name": "project_gerchik_bot",
       "title": "project_gerchik_bot",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_hourly_supervisor",
+      "name": "project_hourly_supervisor",
+      "title": "project_hourly_supervisor",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3239,6 +3461,16 @@
       "mtime": 0
     },
     {
+      "id": "project_ru_smb_agency_plan",
+      "name": "project_ru_smb_agency_plan",
+      "title": "project_ru_smb_agency_plan",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_session_2026_05_17_full",
       "name": "project_session_2026_05_17_full",
       "title": "project_session_2026_05_17_full",
@@ -3262,6 +3494,36 @@
       "id": "project_sophie_lipsync",
       "name": "project_sophie_lipsync",
       "title": "project_sophie_lipsync",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_space_live",
+      "name": "project_space_live",
+      "title": "project_space_live",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_tg_channel_plan",
+      "name": "project_tg_channel_plan",
+      "title": "project_tg_channel_plan",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_toptal_waitlist",
+      "name": "project_toptal_waitlist",
+      "title": "project_toptal_waitlist",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3339,6 +3601,16 @@
       "mtime": 0
     },
     {
+      "id": "project_wallets_all_endpoint",
+      "name": "project_wallets_all_endpoint",
+      "title": "project_wallets_all_endpoint",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_wife_english_tutor",
       "name": "project_wife_english_tutor",
       "title": "project_wife_english_tutor",
@@ -3406,7 +3678,7 @@
       "type": "memory",
       "summary": "\"gerchik-trading-agent: one row per (symbol, mode) — add-on entries aggregate into the open row via weighted-avg, not separate rows. Fix for 2026-05-16 PnL inflation bug.\"",
       "size": 3736,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980021.3477952
     },
     {
@@ -3448,7 +3720,7 @@
       "type": "memory",
       "summary": "План набора REAL сделок и условия переключения анализа/ML с paper на real",
       "size": 1550,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779055908.9273803
     },
     {
@@ -3505,6 +3777,17 @@
       "mtime": 1775926839.7734272
     },
     {
+      "file": "project_ru_smb_agency_plan.md",
+      "id": "ru-smb-agency-plan",
+      "name": "ru-smb-agency-plan",
+      "title": "Ru Smb Agency Plan",
+      "type": "memory",
+      "summary": "Пошаговый план первого контракта через RU-SMB agency (AI-automation для русскоязычных SMB в Canada/US). Создан 2026-05-22 после Toptal waitlist.",
+      "size": 4968,
+      "status_icon": "🟢",
+      "mtime": 1779471682.9905457
+    },
+    {
       "file": "project_session_2026_05_14_emails_perf_photo.md",
       "id": "session-2026-05-14-emails-perf-photo",
       "name": "session-2026-05-14-emails-perf-photo",
@@ -3534,7 +3817,7 @@
       "type": "memory",
       "summary": "2026-05-14/15 ночная сессия — Silero RU TTS на ПК1 + voice-tutor на OpenAI nova + wife/son tutor vocab/word-lookup 28s→1.3s + OnTime Graph crash fix + Graphs Hub",
       "size": 8527,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778824113.2610633
     },
     {
@@ -3545,7 +3828,7 @@
       "type": "memory",
       "summary": "\"Session checkpoint 2026-05-16 — gerchik setup-explainer, wife-english-tutor books/vocab fixes, claude-telegram-bot plan-first + Opus-only modernization\"",
       "size": 5875,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778996330.7641487
     },
     {
@@ -3556,7 +3839,7 @@
       "type": "memory",
       "summary": "\"Marathon trading-truth session — SL/FORCE bucket, orphan safety nets, scorecard Sharpe fix, dashboard real defaults, gerchik pyramid bug fix, Stream B (AI-agent) added\"",
       "size": 6423,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778979987.4628103
     },
     {
@@ -3567,7 +3850,7 @@
       "type": "memory",
       "summary": "\"Большая мульти-проектная сессия 2026-05-17 — strict-rules hook, mobile-app фиксы, trading config, Insights tab, Telethon listener scaffold\"",
       "size": 5717,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779057275.7761471
     },
     {
@@ -3593,6 +3876,17 @@
       "mtime": 1779234904.982106
     },
     {
+      "file": "project_session_2026_05_21_tp_redesign.md",
+      "id": "session-2026-05-21-tp-redesign",
+      "name": "session-2026-05-21-tp-redesign",
+      "title": "Session 2026 05 21 Tp Redesign",
+      "type": "memory",
+      "summary": "\"2026-05-21 переход всех 3 стратегий на 100% close на TP1=2R + BE off на CONS/TREND + EMA Gate 1H/200 on. Reasoning, метрики до, что мониторить дальше.\"",
+      "size": 2609,
+      "status_icon": "🟢",
+      "mtime": 1779412616.1098402
+    },
+    {
       "id": "session-baseline-transfers",
       "name": "session-baseline-transfers",
       "title": "session-baseline-transfers",
@@ -3610,7 +3904,7 @@
       "type": "memory",
       "summary": "\"Drawdown guard сравнивает live wallet с `session_start_wallet_usd` — любой sub-account transfer / withdraw читается как просадка и блокирует ордера\"",
       "size": 1358,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778854303.2456908
     },
     {
@@ -3632,7 +3926,7 @@
       "type": "memory",
       "summary": "\"Silero + torchaudio require two deps that are NOT pulled in by `pip install torch torchaudio` — install will silently succeed but runtime fails on first request\"",
       "size": 1849,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778871923.3755612
     },
     {
@@ -3687,7 +3981,7 @@
       "type": "memory",
       "summary": "\"Stream A = Gerchik copy (sub2), Stream B = AI-agent (sub3), Stream C = переименован в Main TradingBot (sub1). Не путать!\"",
       "size": 2012,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980067.6507926
     },
     {
@@ -3698,7 +3992,7 @@
       "type": "memory",
       "summary": "\"Жёсткие правила работы Артёма — план обязателен, прогресс-бар обязателен, никакой попутной болтовни, вопросы только в крайних случаях\"",
       "size": 1735,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779031214.2501953
     },
     {
@@ -3731,7 +4025,7 @@
       "type": "memory",
       "summary": "TG mobile WebView ignores ?v= query params and weak Last-Modified headers — to force fresh shell reload you need no-store HTTP header AND ?v= on script src AND per-render URL parameter on WebApp butto",
       "size": 2356,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778884978.7130759
     },
     {
@@ -3756,6 +4050,17 @@
       "mtime": 0
     },
     {
+      "file": "project_toptal_waitlist.md",
+      "id": "toptal-waitlist",
+      "name": "toptal-waitlist",
+      "title": "Toptal Waitlist",
+      "type": "memory",
+      "summary": "\"Toptal поставил Артёма в waitlist 2026-05-22 — канал закрыт на 1-3 мес, не дёргать. Альтернативы в [[project_10k_strategy]].\"",
+      "size": 904,
+      "status_icon": "🟢",
+      "mtime": 1779471616.5921612
+    },
+    {
       "id": "trading-mode-routing",
       "name": "trading-mode-routing",
       "title": "trading-mode-routing",
@@ -3774,6 +4079,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_tts_pc1_mandarin.md",
+      "id": "tts-pc1-mandarin",
+      "name": "tts-pc1-mandarin",
+      "title": "Tts Pc1 Mandarin",
+      "type": "memory",
+      "summary": "\"PC1:8002 TTS — НЕ настоящий OpenAI, локальная модель с китайско-английским уклоном на русском. Для product-видео всегда cloud OpenAI.\"",
+      "size": 1204,
+      "status_icon": "🟢",
+      "mtime": 1779492413.6444569
     },
     {
       "file": "feedback_voice_tutor_oauth_500.md",
@@ -3816,7 +4132,7 @@
       "type": "memory",
       "summary": "Tutor-bot TTS/STT must route to PC1 (Kokoro :8002 / Whisper :8001) with PC2 + OpenAI fallback; never let it silently fall back to OpenAI without a log",
       "size": 2089,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778813906.8441975
     },
     {
@@ -3837,7 +4153,7 @@
       "type": "memory",
       "summary": "\"Артём на macOS использует VoiceInk (local Whisper) для голосового ввода в SSH-сессию с VPS — не путать с VoiceLine (cloud, требует API key).\"",
       "size": 2364,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980167.0538478
     },
     {
@@ -3859,7 +4175,7 @@
       "type": "memory",
       "summary": "\"Hostinger VPS 200GB. Главные мусорщики: /var/log/syslog (растёт без ротации), /root/.cache/pip, /var/crash, ontime backups. 2026-05-16 освободили 32 GB.\"",
       "size": 2466,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778980218.5349054
     },
     {
@@ -3870,7 +4186,7 @@
       "type": "memory",
       "summary": "\"wife-english-tutor: frontend часто написан с endpoints которых нет на backend; sweep всегда перед \\\"проверкой работы\\\"\"",
       "size": 1295,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778989918.6503181
     },
     {
@@ -3881,7 +4197,7 @@
       "type": "memory",
       "summary": "\"wife-english-tutor `/api/word/lookup` на cache miss занимал 28s — Ollama JSON-prompt медленнее Claude, плюс TTS блокировал ответ. Чинить через Claude-first + background TTS.\"",
       "size": 1772,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1778814986.7118044
     },
     {
@@ -3936,6 +4252,18 @@
     {
       "source": "agent-levels-tg-dedup",
       "target": "trading-spec"
+    },
+    {
+      "source": "feedback-anthropic-oauth-authtoken",
+      "target": "feedback_oauth_force_refresh"
+    },
+    {
+      "source": "feedback-anthropic-oauth-authtoken",
+      "target": "feedback_tutor_tts_wiring"
+    },
+    {
+      "source": "feedback-anthropic-oauth-authtoken",
+      "target": "feedback_voice_tutor_oauth_500"
     },
     {
       "source": "be-on-real-must-use-bybit-avgprice-not-signal-entry",
@@ -4142,6 +4470,14 @@
       "target": "real-trades-fee-semantics"
     },
     {
+      "source": "feedback-paper-in-real-trades",
+      "target": "feedback_real_trades_truth"
+    },
+    {
+      "source": "feedback-paper-in-real-trades",
+      "target": "project_hybrid_mode"
+    },
+    {
       "source": "pc1-only-model-tags-trap-fallback-chain",
       "target": "project_pc1_homelab_active"
     },
@@ -4192,6 +4528,18 @@
     {
       "source": "session-wallet-baseline-traps-wallet-transfers",
       "target": "project_trading_state_softgate"
+    },
+    {
+      "source": "feedback-signalbot-dead-pg-conn",
+      "target": "feedback_bybit_ws_keepalive"
+    },
+    {
+      "source": "feedback-signalbot-dead-pg-conn",
+      "target": "feedback_query_write_swallow"
+    },
+    {
+      "source": "feedback-signalbot-dead-pg-conn",
+      "target": "project_hourly_supervisor"
     },
     {
       "source": "silero-torchaudio-install-quirks",
@@ -4246,6 +4594,10 @@
       "target": "feedback-chartjs-unbounded-height"
     },
     {
+      "source": "tts-pc1-mandarin",
+      "target": "feedback_tutor_tts_wiring"
+    },
+    {
       "source": "tutor-tts-wiring",
       "target": "feedback_openai_base_url_shell"
     },
@@ -4278,12 +4630,24 @@
       "target": "feedback_oauth_rate_limits"
     },
     {
+      "source": "agency-landing",
+      "target": "mai-assistant"
+    },
+    {
+      "source": "agency-landing",
+      "target": "mai-video-pipeline"
+    },
+    {
       "source": "project-agent-levels-2026-05-18",
       "target": "feedback-emails-agent-handle-button"
     },
     {
       "source": "project-agent-levels-2026-05-18",
       "target": "project-claude-telegram-bot"
+    },
+    {
+      "source": "project-be-per-strategy-experiment",
+      "target": "project-tp-shadow-ladder"
     },
     {
       "source": "bybit-3-sub-architecture",
@@ -4316,6 +4680,18 @@
     {
       "source": "clean-start-snapshot-2026-05-18",
       "target": "trading-mode-routing"
+    },
+    {
+      "source": "project-dashboard-be-sl-tabs",
+      "target": "project-be-per-strategy-experiment"
+    },
+    {
+      "source": "project-dashboard-be-sl-tabs",
+      "target": "project-real-trades-baseline"
+    },
+    {
+      "source": "project-dashboard-be-sl-tabs",
+      "target": "project-tp-shadow-ladder"
     },
     {
       "source": "ga-realism-overhaul-2026-05-13",
@@ -4410,6 +4786,14 @@
       "target": "wiki-links"
     },
     {
+      "source": "mai-video-pipeline",
+      "target": "agency-landing"
+    },
+    {
+      "source": "mai-video-pipeline",
+      "target": "feedback-tts-pc1-mandarin"
+    },
+    {
       "source": "project-mfe-calibration",
       "target": "feedback-ga-unrealistic-tps"
     },
@@ -4454,6 +4838,18 @@
       "target": "project_tutor_latency_pipeline"
     },
     {
+      "source": "project-real-global-guard-limitation",
+      "target": "feedback-per-mode-dup-rule"
+    },
+    {
+      "source": "project-real-global-guard-limitation",
+      "target": "project-dashboard-apply-chain"
+    },
+    {
+      "source": "project-real-global-guard-limitation",
+      "target": "project-hybrid-mode"
+    },
+    {
       "source": "real-topup-2026-05-18",
       "target": "real-trades-baseline"
     },
@@ -4472,6 +4868,18 @@
     {
       "source": "real-trades-baseline",
       "target": "real-trades-truth"
+    },
+    {
+      "source": "ru-smb-agency-plan",
+      "target": "project_10k_strategy"
+    },
+    {
+      "source": "ru-smb-agency-plan",
+      "target": "project_tg_channel_plan"
+    },
+    {
+      "source": "ru-smb-agency-plan",
+      "target": "project_toptal_waitlist"
     },
     {
       "source": "session-2026-05-14-emails-perf-photo",
@@ -4630,6 +5038,22 @@
       "target": "project_tsa_timesheet"
     },
     {
+      "source": "session-2026-05-21-tp-redesign",
+      "target": "feedback-funnel-vs-close-reason"
+    },
+    {
+      "source": "session-2026-05-21-tp-redesign",
+      "target": "project-be-per-strategy-experiment"
+    },
+    {
+      "source": "session-2026-05-21-tp-redesign",
+      "target": "project-dashboard-apply-chain"
+    },
+    {
+      "source": "session-2026-05-21-tp-redesign",
+      "target": "project-tp-shadow-ladder"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -4658,8 +5082,48 @@
       "target": "feedback_pc1_ssh_quirks"
     },
     {
+      "source": "project-space-live",
+      "target": "project_bybit_3sub_architecture"
+    },
+    {
+      "source": "project-space-live",
+      "target": "project_dashboard_v2"
+    },
+    {
+      "source": "project-space-live",
+      "target": "project_gerchik_bot"
+    },
+    {
+      "source": "project-space-live",
+      "target": "project_wallets_all_endpoint"
+    },
+    {
+      "source": "toptal-waitlist",
+      "target": "project_ru_smb_agency_plan"
+    },
+    {
+      "source": "project-tp-shadow-ladder",
+      "target": "project-dashboard-apply-chain"
+    },
+    {
+      "source": "project-tp-shadow-ladder",
+      "target": "project-ga-under-review"
+    },
+    {
       "source": "tutor-latency-pipeline",
       "target": "feedback_openai_base_url_shell_override"
+    },
+    {
+      "source": "project-wallets-all-endpoint",
+      "target": "project_bybit_3sub_architecture"
+    },
+    {
+      "source": "project-wallets-all-endpoint",
+      "target": "project_dashboard_v2"
+    },
+    {
+      "source": "project-wallets-all-endpoint",
+      "target": "project_space_live"
     },
     {
       "source": "Wife English Tutor — план 2026-05-07",
@@ -4711,16 +5175,16 @@
     }
   ],
   "stats": {
-    "files": 245,
-    "nodes": 367,
-    "edges": 198,
+    "files": 261,
+    "nodes": 397,
+    "edges": 235,
     "by_type": {
       "feedback": 81,
-      "memory": 74,
+      "memory": 90,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 122
+      "stub": 136
     }
   }
 }

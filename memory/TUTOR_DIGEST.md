@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-05-21 23:08 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-05-25 04:37 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**523 nodes** (537 edges) — 📝 489 word · 📚 16 category · 📖 11 book · 👤 7 learner
+**599 nodes** (616 edges) — 📝 563 word · 📚 16 category · 📖 13 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -67,32 +67,33 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
 | Category | Mistakes (incl. repeats) |
 |---|---:|
-| `other` | **19** |
-| `tenses` | **9** |
-| `vocabulary` | **7** |
+| `other` | **20** |
+| `tenses` | **10** |
+| `vocabulary` | **8** |
 | `word_order` | **5** |
-| `articles` | **2** |
+| `articles` | **4** |
 | `agreement` | **1** |
+| `prepositions` | **1** |
 
-### 📝 Vocab — 290 words
+### 📝 Vocab — 366 words
 
 **Stuck (lowest mastery):**
 
-- `absolutely` — mastery 1, seen 1×
-- `afternoon` — mastery 1, seen 1×
-- `away` — mastery 1, seen 1×
-- `awful` — mastery 1, seen 1×
-- `backyard` — mastery 1, seen 1×
-- `beach` — mastery 1, seen 1×
-- `beef` — mastery 1, seen 1×
-- `bond` — mastery 1, seen 1×
-- `bothering` — mastery 1, seen 1×
-- `brain protecting` — mastery 1, seen 1×
-- `brave` — mastery 1, seen 1×
-- `broken` — mastery 1, seen 1×
-- `build up` — mastery 1, seen 1×
-- `buried` — mastery 1, seen 1×
-- `cancer` — mastery 1, seen 1×
+- `accident` — mastery 0, seen 1×
+- `amazing` — mastery 0, seen 1×
+- `atmosphere` — mastery 0, seen 1×
+- `balance` — mastery 0, seen 1×
+- `bartender` — mastery 0, seen 1×
+- `bilingual` — mastery 0, seen 1×
+- `brain` — mastery 0, seen 1×
+- `break` — mastery 0, seen 1×
+- `busy` — mastery 0, seen 1×
+- `by accident` — mastery 0, seen 1×
+- `calm` — mastery 0, seen 1×
+- `caring` — mastery 0, seen 1×
+- `catch` — mastery 0, seen 1×
+- `celebrate` — mastery 0, seen 1×
+- `chatting` — mastery 0, seen 1×
 
 ### 📖 Books
 
@@ -150,6 +151,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 | `Boucle d'or et les trois ours` | 1 |
 | `Cendrillon` | 1 |
 | `Le Comte de Monte-Cristo` | 1 |
+| `Les Aventures de Tom Sawyer` | 1 |
+| `Le Tour du monde en 80 jours` | 1 |
 
 ## 🇫🇷 Andrii (FR)
 

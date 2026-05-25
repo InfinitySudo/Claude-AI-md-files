@@ -99,6 +99,12 @@
 - [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
+- [REAL global-guard limit](project_real_global_guard_limitation.md) — с 2026-05-24 любая real-pos на символе блочит другую страту; при multi-strategy-real напомнить про виртуальную per-strategy книгу
+- [Paper double-count RESOLVED](project_paper_double_count_resolved.md) — _partial_close с close_pct=1 удваивал realized; пофикшено commit cf6e594 + backfill 195 rows
+- [Real_trades consolidation done](project_real_trades_consolidation_done.md) — script consolidate_real_aggregated_rows.py, 25 phantom rows → 7 master + 12 CONSOLIDATED + 6 ORPHAN
+- [Cockpit unversioned](feedback_cockpit_unversioned.md) — /var/www/dashboard/cockpit.html не в git; backup перед правкой; classifier требует allow от Артёма
+- [Cockpit zen-mode + planets](project_cockpit_zen_mode.md) — Z/C хоткеи для скрытия панелей; эллиптические орбиты планет по всему экрану; .stage растянута, фикс clamp
+- [Wrestling mobile launch](project_wrestling_mobile_launch.md) — Capacitor v7 + signed AAB готов на VPS; iOS через Codemagic без Mac; от Артёма Apple Dev $99 + Google Play $25
 - [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels

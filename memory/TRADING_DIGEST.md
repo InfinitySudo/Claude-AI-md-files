@@ -1,8 +1,8 @@
 # Trading digest
 
-Generated **2026-05-21 23:08 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
+Generated **2026-05-25 04:37 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
 
-**2245 trades** · net PnL **-451.61$** 🔴 · 235 nodes · 1021 edges
+**2547 trades** · net PnL **-458.93$** 🔴 · 238 nodes · 1141 edges
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
@@ -10,99 +10,102 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
 | Strategy | Trades | Net PnL | Avg |
 |---|---:|---:|---:|
-| 🔴 `AGGRESSIVE` | 271 | **-94.36$** | -0.35$ |
-| 🔴 `TREND` | 399 | **-97.69$** | -0.24$ |
-| 🔴 `CONSERVATIVE` | 1575 | **-259.56$** | -0.16$ |
+| 🔴 `TREND` | 590 | **-96.91$** | -0.16$ |
+| 🔴 `AGGRESSIVE` | 473 | **-108.98$** | -0.23$ |
+| 🔴 `CONSERVATIVE` | 1484 | **-253.04$** | -0.17$ |
 
 ## 🛑 Close reasons
 
 | Reason | Trades | Net PnL | Avg |
 |---|---:|---:|---:|
-| 🟢 `BE` | 867 | **+323.41$** | +0.37$ |
-| 🟢 `TP3(c)` | 54 | **+72.76$** | +1.35$ |
+| 🟢 `BE` | 872 | **+328.07$** | +0.38$ |
+| 🟢 `TP1(c)` | 55 | **+98.19$** | +1.79$ |
+| 🟢 `TP1(t)` | 55 | **+98.10$** | +1.78$ |
 | 🟢 `TP5(t)` | 23 | **+67.12$** | +2.92$ |
+| 🟡 `TP3(c)` | 54 | **+40.05$** | +0.74$ |
+| 🟡 `TP1(a)` | 48 | **+33.96$** | +0.71$ |
 | 🟡 `MANUAL_MODE_SWITCH_REAL` | 33 | **+29.89$** | +0.91$ |
-| 🟡 `TP4` | 20 | **+28.69$** | +1.43$ |
-| 🟡 `TP1` | 29 | **+19.43$** | +0.67$ |
-| 🟡 `TP3` | 8 | **+11.33$** | +1.42$ |
+| 🟡 `force_paper_to_real_aggr` | 81 | **+27.05$** | +0.33$ |
+| 🟡 `TP1` | 18 | **+24.53$** | +1.36$ |
 | 🟡 `TP5(a)` | 5 | **+8.54$** | +1.71$ |
-| 🟡 `TP5` | 2 | **+5.40$** | +2.70$ |
-| 🟡 `TP2` | 4 | **+2.28$** | +0.57$ |
+| 🟡 `TP2` | 1 | **+0.98$** | +0.98$ |
 | 🟠 `FORCE_FANOUT_RESET` | 8 | **-0.02$** | -0.00$ |
-| 🟠 `FORCE` | 55 | **-18.06$** | -0.33$ |
-| 🔴 `SL` | 1137 | **-1002.37$** | -0.88$ |
+| 🟠 `ORPHAN_RECONCILED` | 6 | **-0.24$** | -0.04$ |
+| 🟠 `CONSOLIDATED` | 12 | **-0.37$** | -0.03$ |
+| 🟠 `FORCE` | 1 | **-0.48$** | -0.48$ |
+| 🔴 `SL` | 1275 | **-1214.32$** | -0.95$ |
 
 ## 🏆 Top 15 winning symbols
 
 | Symbol | Trades | Net PnL |
 |---|---:|---:|
-| 🟢 `JTOUSDT` | 21 | **+4.82$** |
-| 🟢 `SPXUSDT` | 12 | **+4.76$** |
+| 🟢 `BCHUSDT` | 31 | **+13.31$** |
+| 🟢 `GRASSUSDT` | 13 | **+8.01$** |
+| 🟢 `JTOUSDT` | 25 | **+7.11$** |
+| 🟢 `ARBUSDT` | 24 | **+5.75$** |
 | 🟢 `BIGTIMEUSDT` | 1 | **+4.73$** |
+| 🟢 `JASMYUSDT` | 13 | **+4.70$** |
+| 🟢 `EPICUSDT` | 3 | **+4.28$** |
 | 🟢 `THETAUSDT` | 1 | **+4.17$** |
-| 🟢 `PYTHUSDT` | 5 | **+3.70$** |
+| 🟢 `ENAUSDT` | 28 | **+3.84$** |
+| 🟢 `HANAUSDT` | 2 | **+3.65$** |
+| 🟢 `SEIUSDT` | 17 | **+3.63$** |
 | 🟢 `AZTECUSDT` | 3 | **+3.59$** |
-| 🟢 `JASMYUSDT` | 11 | **+3.21$** |
+| 🟢 `SOONUSDT` | 4 | **+3.29$** |
+| 🟢 `PIPPINUSDT` | 6 | **+3.17$** |
 | 🟢 `COMPUSDT` | 2 | **+3.11$** |
-| 🟢 `BLURUSDT` | 5 | **+2.82$** |
-| 🟢 `FHEUSDT` | 7 | **+2.80$** |
-| 🟢 `GOATUSDT` | 6 | **+2.77$** |
-| 🟢 `ZAMAUSDT` | 2 | **+2.56$** |
-| 🟢 `AXSUSDT` | 7 | **+2.52$** |
-| 🟢 `STXUSDT` | 10 | **+2.34$** |
-| 🟢 `RAVEUSDT` | 8 | **+2.34$** |
 
 ## 💀 Top 15 losing symbols
 
 | Symbol | Trades | Net PnL |
 |---|---:|---:|
-| 🔴 `NEARUSDT` | 44 | **-18.51$** |
-| 🔴 `DOGEUSDT` | 33 | **-18.01$** |
-| 🔴 `HBARUSDT` | 26 | **-17.66$** |
-| 🔴 `PENGUUSDT` | 26 | **-16.25$** |
-| 🔴 `HYPEUSDT` | 54 | **-14.79$** |
-| 🔴 `VVVUSDT` | 48 | **-13.73$** |
-| 🔴 `BTCUSDT` | 26 | **-13.49$** |
-| 🔴 `LITUSDT` | 23 | **-13.14$** |
-| 🔴 `SOLUSDT` | 32 | **-12.77$** |
-| 🔴 `FARTCOINUSDT` | 18 | **-11.21$** |
-| 🔴 `CHZUSDT` | 16 | **-11.17$** |
-| 🔴 `INJUSDT` | 42 | **-11.02$** |
-| 🔴 `ETHUSDT` | 29 | **-10.71$** |
-| 🔴 `ASTERUSDT` | 30 | **-10.71$** |
-| 🔴 `DASHUSDT` | 31 | **-10.23$** |
+| 🔴 `TAOUSDT` | 45 | **-23.75$** |
+| 🔴 `NEARUSDT` | 45 | **-20.65$** |
+| 🔴 `WLDUSDT` | 39 | **-18.25$** |
+| 🔴 `PENGUUSDT` | 29 | **-17.78$** |
+| 🔴 `XMRUSDT` | 29 | **-17.21$** |
+| 🔴 `DOGEUSDT` | 42 | **-17.15$** |
+| 🔴 `BNBUSDT` | 33 | **-15.61$** |
+| 🔴 `DASHUSDT` | 37 | **-15.44$** |
+| 🔴 `SOLUSDT` | 39 | **-14.22$** |
+| 🔴 `LINKUSDT` | 39 | **-13.47$** |
+| 🔴 `VVVUSDT` | 52 | **-13.29$** |
+| 🔴 `AAVEUSDT` | 27 | **-12.57$** |
+| 🔴 `LITUSDT` | 34 | **-12.43$** |
+| 🔴 `BEATUSDT` | 14 | **-11.37$** |
+| 🔴 `INJUSDT` | 49 | **-11.07$** |
 
 ## 📊 Most traded symbols
 
 | Symbol | Trades | Net PnL |
 |---|---:|---:|
-| 🟠 `HYPEUSDT` | 54 | **-14.79$** |
-| 🟠 `VVVUSDT` | 48 | **-13.73$** |
-| 🟠 `NEARUSDT` | 44 | **-18.51$** |
-| 🟠 `INJUSDT` | 42 | **-11.02$** |
-| 🟠 `TAOUSDT` | 40 | **-9.96$** |
-| 🟠 `ZECUSDT` | 39 | **-7.82$** |
-| 🟠 `WLDUSDT` | 37 | **-9.89$** |
-| 🟠 `LINKUSDT` | 34 | **-6.61$** |
-| 🟠 `ONDOUSDT` | 33 | **-7.07$** |
-| 🟠 `DOGEUSDT` | 33 | **-18.01$** |
+| 🟠 `HYPEUSDT` | 56 | **-10.49$** |
+| 🟠 `VVVUSDT` | 52 | **-13.29$** |
+| 🟠 `INJUSDT` | 49 | **-11.07$** |
+| 🟠 `ZECUSDT` | 48 | **-3.33$** |
+| 🟠 `NEARUSDT` | 45 | **-20.65$** |
+| 🟠 `TAOUSDT` | 45 | **-23.75$** |
+| 🟠 `CLUSDT` | 43 | **-2.12$** |
+| 🟠 `DOGEUSDT` | 42 | **-17.15$** |
+| 🟠 `ASTERUSDT` | 39 | **-10.63$** |
+| 🟠 `LINKUSDT` | 39 | **-13.47$** |
 
 ## 🔗 Top combinations (by trade count)
 
 | Combo | Trades | Net PnL |
 |---|---:|---:|
-| 🔴 `SL` ↔ `CONSERVATIVE` | 744 | **-643.06$** |
-| 🟢 `BE` ↔ `CONSERVATIVE` | 639 | **+248.60$** |
-| 🔴 `SL` ↔ `TREND` | 247 | **-219.23$** |
-| 🔴 `SL` ↔ `AGGRESSIVE` | 146 | **-140.07$** |
-| 🟡 `BE` ↔ `AGGRESSIVE` | 118 | **+37.19$** |
-| 🟡 `BE` ↔ `TREND` | 110 | **+37.62$** |
-| 🟢 `TP3(c)` ↔ `CONSERVATIVE` | 54 | **+72.76$** |
-| 🟠 `FORCE` ↔ `CONSERVATIVE` | 50 | **-17.19$** |
-| 🟠 `CONSERVATIVE` ↔ `HYPEUSDT` | 31 | **-6.01$** |
-| 🟡 `TP1` ↔ `CONSERVATIVE` | 29 | **+19.43$** |
-| 🟠 `SL` ↔ `HYPEUSDT` | 28 | **-26.05$** |
-| 🟠 `SL` ↔ `NEARUSDT` | 28 | **-24.97$** |
-| 🟠 `CONSERVATIVE` ↔ `VVVUSDT` | 26 | **-5.55$** |
-| 🟠 `CONSERVATIVE` ↔ `WLDUSDT` | 26 | **-4.16$** |
-| 🟠 `CONSERVATIVE` ↔ `ZECUSDT` | 26 | **-5.62$** |
+| 🔴 `SL` ↔ `CONSERVATIVE` | 700 | **-672.71$** |
+| 🟢 `BE` ↔ `CONSERVATIVE` | 616 | **+252.87$** |
+| 🔴 `SL` ↔ `TREND` | 361 | **-328.11$** |
+| 🔴 `SL` ↔ `AGGRESSIVE` | 214 | **-213.49$** |
+| 🟡 `BE` ↔ `AGGRESSIVE` | 150 | **+37.24$** |
+| 🟡 `BE` ↔ `TREND` | 106 | **+37.95$** |
+| 🟢 `TP1(c)` ↔ `CONSERVATIVE` | 55 | **+98.19$** |
+| 🟢 `TP1(t)` ↔ `TREND` | 55 | **+98.10$** |
+| 🟡 `TP3(c)` ↔ `CONSERVATIVE` | 54 | **+40.05$** |
+| 🟡 `TP1(a)` ↔ `AGGRESSIVE` | 48 | **+33.96$** |
+| 🟡 `force_paper_to_real_aggr` ↔ `CONSERVATIVE` | 33 | **+13.64$** |
+| 🟡 `force_paper_to_real_aggr` ↔ `TREND` | 32 | **+13.05$** |
+| 🟠 `SL` ↔ `NEARUSDT` | 30 | **-29.01$** |
+| 🟠 `SL` ↔ `HYPEUSDT` | 29 | **-29.19$** |
+| 🟠 `SL` ↔ `TAOUSDT` | 29 | **-29.94$** |

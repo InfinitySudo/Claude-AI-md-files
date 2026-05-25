@@ -1,8 +1,8 @@
 # OnTime digest
 
-Generated **2026-05-21 23:08 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-05-25 04:37 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
-**183 nodes** (818 edges) — 🏗 65 project · 👷 62 worker · 📦 56 material
+**183 nodes** (820 edges) — 🏗 65 project · 👷 62 worker · 📦 56 material
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 
@@ -10,21 +10,21 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 
 | Worker | Role | Hours |
 |---|---|---:|
-| `Oleksandr Poliakov` | installer | **2416.7** |
-| `Maksym Moskalyk` | installer | **2371.3** |
-| `Oleksey Sherbakov` | foreman | **2334.2** |
-| `Pavlo Kosts` | installer | **2321.4** |
+| `Oleksandr Poliakov` | installer | **2434.7** |
+| `Maksym Moskalyk` | installer | **2389.3** |
+| `Oleksey Sherbakov` | foreman | **2340.0** |
+| `Pavlo Kosts` | installer | **2330.4** |
 | `Mykhailo Martynenko` | installer | **2295.3** |
-| `Oleksandr Lopatetskyi` | installer | **2237.4** |
-| `Mykola Korobeinykov` | foreman | **2234.0** |
-| `Artem Huridov` | foreman | **2213.7** |
-| `Igor Chekmak` | installer | **2187.6** |
+| `Oleksandr Lopatetskyi` | installer | **2246.4** |
+| `Mykola Korobeinykov` | foreman | **2243.0** |
+| `Artem Huridov` | foreman | **2222.7** |
+| `Igor Chekmak` | installer | **2196.6** |
 | `Dmytro Kurinnyi` | installer | **2186.1** |
 | `Stanislav Bodnaruk` | foreman | **2178.3** |
-| `Serhii Lopatetskyi` | installer | **2132.7** |
-| `Taras Ivanets` | installer | **2116.2** |
-| `Valerii Stelmakh` | installer | **2103.2** |
-| `Bogdan Tkhoryk` | foreman | **2091.0** |
+| `Serhii Lopatetskyi` | installer | **2141.7** |
+| `Taras Ivanets` | installer | **2125.2** |
+| `Valerii Stelmakh` | installer | **2112.2** |
+| `Bogdan Tkhoryk` | foreman | **2096.9** |
 
 ## 🏗 Top projects (by labour hours)
 
@@ -40,8 +40,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Pinegate Park Ihor K 04.02.2026` | **1794.0** | 8 |
 | `Sage Hill Commercial Development Bldg 600 ` | **1770.5** | 9 |
 | `Livingston (Bldg A) ` | **1689.7** | 14 |
+| `RimRock` | **1573.6** | 10 |
 | `Sage Hill Commercial Development Bldg 100 18.08.2025 Nikolay K` | **1496.5** | 6 |
-| `RimRock` | **1493.1** | 9 |
 | `Sage_Hill_Commercial_Development_Bldg_200_20_05_2025_Nikolay_K` | **1461.5** | 5 |
 | `Logel 3700 Seton Bldg 3 Brick Bogdan 18.11.2025` | **1371.8** | 11 |
 | `Sage Hill Commercial Development Bldg 400` | **1167.4** | 7 |
