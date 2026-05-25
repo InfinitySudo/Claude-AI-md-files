@@ -1361,7 +1361,7 @@
       "type": "project",
       "summary": "Working pipeline to scrape Roofmart ProZone invoices and import line items as priced materials. 92 SKUs imported 2026-04-24 covering 63/70 invoices.",
       "size": 2107,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777092596.899846
     },
     {
@@ -1394,7 +1394,7 @@
       "type": "feedback",
       "summary": "ProZone (Salesforce LWC) automation: locator.click(force=True) bypasses visibility checks, but bot-detection blocks new popups after ~50 clicks per session.",
       "size": 1778,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777092623.3209977
     },
     {
@@ -2016,6 +2016,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_cockpit_unversioned.md",
+      "id": "feedback-cockpit-unversioned",
+      "name": "feedback-cockpit-unversioned",
+      "title": "Feedback Cockpit Unversioned",
+      "type": "memory",
+      "summary": "/var/www/dashboard/cockpit.html не в git — все правки только на диске. Backup перед правкой обязателен. Auto-mode classifier блокирует правки этого пути без явного allow от Артёма.",
+      "size": 1010,
+      "status_icon": "🟢",
+      "mtime": 1779685219.182454
+    },
+    {
       "id": "feedback-dashboard-v1-v2",
       "name": "feedback-dashboard-v1-v2",
       "title": "feedback-dashboard-v1-v2",
@@ -2093,6 +2104,16 @@
       "id": "feedback-no-routine-confirms",
       "name": "feedback-no-routine-confirms",
       "title": "feedback-no-routine-confirms",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-orphan-residual-recovery",
+      "name": "feedback-orphan-residual-recovery",
+      "title": "feedback-orphan-residual-recovery",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2960,6 +2981,17 @@
       "mtime": 0
     },
     {
+      "file": "project_cockpit_zen_mode.md",
+      "id": "project-cockpit-zen-mode",
+      "name": "project-cockpit-zen-mode",
+      "title": "Project Cockpit Zen Mode",
+      "type": "memory",
+      "summary": "\"cockpit.html (Command Center dashboard) имеет 3 режима скрытия — ZEN (hide bottom panels), col-collapsed (hide left column), full hyper-zen (Z+C). Hotkeys Z, C. Planet orbits эллиптические по всему э",
+      "size": 1933,
+      "status_icon": "🟢",
+      "mtime": 1779685239.2584817
+    },
+    {
       "id": "project-dashboard-apply-chain",
       "name": "project-dashboard-apply-chain",
       "title": "project-dashboard-apply-chain",
@@ -3103,6 +3135,17 @@
       "mtime": 0
     },
     {
+      "file": "project_paper_double_count_resolved.md",
+      "id": "project-paper-double-count-resolved",
+      "name": "project-paper-double-count-resolved",
+      "title": "Project Paper Double Count Resolved",
+      "type": "memory",
+      "summary": "\"Paper-simulator до 2026-05-24 удваивал realized_pnl_usd для TP1(*) close с close_pct=1.0 — _partial_close писал full chunk PnL в _realized, _close_trade пересчитывал и СКЛАДЫВАЛ. Пофикшено commit cf6",
+      "size": 2153,
+      "status_icon": "🟢",
+      "mtime": 1779685260.577511
+    },
+    {
       "id": "project-pyramid-fix-gerchik-trading-agent",
       "name": "project-pyramid-fix-gerchik-trading-agent",
       "title": "project-pyramid-fix-gerchik-trading-agent",
@@ -3132,6 +3175,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_real_trades_consolidation_done.md",
+      "id": "project-real-trades-consolidation-done",
+      "name": "project-real-trades-consolidation-done",
+      "title": "Project Real Trades Consolidation Done",
+      "type": "memory",
+      "summary": "2026-05-24 одношот consolidation 25 phantom real_trades rows → 7 master + 12 CONSOLIDATED + 6 ORPHAN_RECONCILED. Script scripts/consolidate_real_aggregated_rows.py (commit d349d6a) — для будущих случа",
+      "size": 1777,
+      "status_icon": "🟢",
+      "mtime": 1779685277.157534
     },
     {
       "id": "project-realized-pnl-column",
@@ -3217,6 +3271,16 @@
       "mtime": 1779600406.2185
     },
     {
+      "id": "project-wrestling-camp-payment",
+      "name": "project-wrestling-camp-payment",
+      "title": "project-wrestling-camp-payment",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "project_wrestling_i18n_10langs.md",
       "id": "project-wrestling-i18n-10langs",
       "name": "project-wrestling-i18n-10langs",
@@ -3226,6 +3290,17 @@
       "size": 1818,
       "status_icon": "🟢",
       "mtime": 1779403768.2569566
+    },
+    {
+      "file": "project_wrestling_mobile_launch.md",
+      "id": "project-wrestling-mobile-launch",
+      "name": "project-wrestling-mobile-launch",
+      "title": "Project Wrestling Mobile Launch",
+      "type": "memory",
+      "summary": "\"Wrestling-Performance-Tracker готов к публикации в AppStore/GooglePlay. Capacitor v7 + Android платформа + signed AAB локально на VPS. iOS через Codemagic cloud-Mac (без личного Mac). От Артёма: Appl",
+      "size": 3136,
+      "status_icon": "🟢",
+      "mtime": 1779685303.8695707
     },
     {
       "file": "project_wrestling_pill_nav.md",
@@ -3259,6 +3334,16 @@
       "size": 3371,
       "status_icon": "🟢",
       "mtime": 1779255283.9822147
+    },
+    {
+      "id": "project-wrestling-v2",
+      "name": "project-wrestling-v2",
+      "title": "project-wrestling-v2",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "project_10k_strategy",
@@ -4306,6 +4391,14 @@
       "target": "project_session_2026_05_17_full"
     },
     {
+      "source": "feedback-cockpit-unversioned",
+      "target": "project-dashboard-v2"
+    },
+    {
+      "source": "feedback-cockpit-unversioned",
+      "target": "project-unversioned-prod-state"
+    },
+    {
       "source": "dashboard-v2-deploy-script",
       "target": "feedback-dashboard-v1-v2"
     },
@@ -4682,6 +4775,14 @@
       "target": "trading-mode-routing"
     },
     {
+      "source": "project-cockpit-zen-mode",
+      "target": "feedback-cockpit-unversioned"
+    },
+    {
+      "source": "project-cockpit-zen-mode",
+      "target": "project-dashboard-v2"
+    },
+    {
       "source": "project-dashboard-be-sl-tabs",
       "target": "project-be-per-strategy-experiment"
     },
@@ -4826,6 +4927,14 @@
       "target": "feedback-real-trades-truth"
     },
     {
+      "source": "project-paper-double-count-resolved",
+      "target": "feedback-funnel-vs-close-reason"
+    },
+    {
+      "source": "project-paper-double-count-resolved",
+      "target": "feedback-real-trades-fee-semantics"
+    },
+    {
       "source": "pc2-homelab-active",
       "target": "feedback_pc1_ssh_quirks"
     },
@@ -4868,6 +4977,14 @@
     {
       "source": "real-trades-baseline",
       "target": "real-trades-truth"
+    },
+    {
+      "source": "project-real-trades-consolidation-done",
+      "target": "feedback-orphan-residual-recovery"
+    },
+    {
+      "source": "project-real-trades-consolidation-done",
+      "target": "project-real-global-guard-limitation"
     },
     {
       "source": "ru-smb-agency-plan",
@@ -5138,6 +5255,18 @@
       "target": "project_wrestling_v2"
     },
     {
+      "source": "project-wrestling-mobile-launch",
+      "target": "project-wrestling-camp-payment"
+    },
+    {
+      "source": "project-wrestling-mobile-launch",
+      "target": "project-wrestling-i18n-10langs"
+    },
+    {
+      "source": "project-wrestling-mobile-launch",
+      "target": "project-wrestling-v2"
+    },
+    {
       "source": "project-wrestling-pill-nav",
       "target": "project_wrestling_i18n_9langs"
     },
@@ -5175,16 +5304,16 @@
     }
   ],
   "stats": {
-    "files": 261,
-    "nodes": 397,
-    "edges": 235,
+    "files": 266,
+    "nodes": 405,
+    "edges": 246,
     "by_type": {
       "feedback": 81,
-      "memory": 90,
+      "memory": 95,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 136
+      "stub": 139
     }
   }
 }
