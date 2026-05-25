@@ -69,6 +69,7 @@
 - [CV-trace over AI](feedback_cv_trace_over_ai.md) — на blueprints OpenCV findContours даёт pixel-precise контуры; AI Vision стабильно рисует bbox'ы; OnTime endpoint /ai-trace = CV+AI hybrid
 - [Estimator AI Memory](project_estimator_ai_memory.md) — .md файлы в /root/ontime/backend/estimator_memory/, общие для TG бота и OnTime UI; lessons/rules/vendors/materials/projects
 - [Estimator Links](project_estimator_links.md) — estimate_projects ↔ stack_projects через project_links table; разные нумерации остались, но связаны
+- [Estimator Assemblies](project_estimator_assemblies.md) — multi-layer cladding stacks: assembly_templates + estimate_takeoffs.assembly_id; BOM разворачивает layers
 - [Estimating Industry Rules](project_estimating_industry_rules.md) — formulas + waste factors + accessory ratios + catalog mapping для BOM engine
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
