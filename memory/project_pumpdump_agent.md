@@ -11,7 +11,13 @@ metadata:
 
 **Repo:** https://github.com/InfinitySudo/PumpDumpAI_Agent (private)
 **Local path:** `/root/PumpDumpAI_Agent`
-**Status (2026-05-26):** Phase 1 PAPER live. Code merged (34/34 pytest), systemd `pumpdump.service` running, http :8004 (8003 занят voice-tutor), Space_Live tile auto-poll. Sub4 keys в `.env` (gitignored). RR floor = 5R per trade; agent scales TPs out by signal conviction (vol×price_change) до 2.5×.
+**Status (2026-05-26 Phase 1.5):** PAPER live. **568 USDT-perp символов** через 3 WS connections (shard'инг по 400 топиков). Code 48/48 pytest, systemd `pumpdump.service`, http :8004 (8003 занят voice-tutor), Space_Live tile auto-poll. Sub4 keys в `.env` (gitignored). RR floor = 5R per trade; conviction-scaler 1.0→2.5×.
+
+**Trade lifecycle полный:** `src/tracker.py` ведёт open positions, considers TP partials / SL / BE arming / time-stop / gap slippage, пишет в journal `trade_close` с r_realized (NET), gross/fees/fee_breakdown/funding, peak/trough_pnl_pct, tp_funnel.
+
+**Fees (PAPER == REAL):** per-leg тарифы из config.execution + risk.{maker,taker}_rate. Maker 0.018% для entry/TP когда order_type=Limit, Taker 0.055% для SL (hardlock) и market-close. Funding 0.0001/8h accruует только если позиция держится >480min. **Защита от double-count** (как в 4Bots `feedback-real-trades-fee-semantics`): realized_pnl_usd = GROSS, fees_usd = single accumulator, net = gross - fees вычисляется ОДИН раз в `_finalize`, флаг `_finalized` блокирует повторное закрытие, r_realized derives from NET.
+
+**100% SL:** три слоя — (1) `sl_force_market_only=true` в config; (2) `executor.set_sl_tp()` всегда вызывает `set_trading_stop(Market, MarkPrice, Full, sl_size=100)` независимо от sl_order_type; (3) `tracker.watchdog_check()` каждые 30s в REAL — если позиция открыта на Bybit но SL ордера нет → emergency `close_market`. Gap-aware fill в tracker: при flash-crash через SL fill_price = реальный тик (хуже SL), не trigger — честный PAPER.
 **Variant chosen by Artem:** C — Self-tuning agent (RL-lite + journal-driven weekly tuner with walk-forward + ±15%/week governor).
 
 ## Архитектура (one-paragraph)
