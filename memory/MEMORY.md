@@ -125,6 +125,7 @@
 - [Session 2026-05-25 WET games + select](project_session_2026_05_25_wet_games_select.md) — multi-select phrase в reader+chat, /play Word+Letter games, corrector→SONNET, no-cache + /reload (faefabe). TODO: book progress не сохраняется
 - [Session 2026-05-26 Estimator UI](project_session_2026_05_26_estimator_ui.md) — Feature Requests UI создание+фото (4f262e5/f81a614), заметные `+` кнопки в Memory разделе (7d59e18)
 - [Session 2026-05-26 Wrestling app-policy](project_session_2026_05_26_wrestling_app_policy.md) — 421573b: app-policy/geo/camp-verify/roll-call/extra-tasks/sparring-i18n/leagues-tours/analysis-unique/norm-finalize, 18 файлов
+- [Session 2026-05-26 Wrestler card + Competitions](project_session_2026_05_26_wrestler_card_competitions.md) — 33bcc18: карта борця (share→approve), Соревнования вкладка, Pro in-app rating, parental consent <18, Constant ToS/Privacy
 - [i18n fallback trap](feedback_i18n_fallback_trap.md) — `t('key') || 'Default'` НЕ работает в react-i18next: t() возвращает ключ-строку как truthy. Класть ключ в en.json или 2-й арг t()
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
 - [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor

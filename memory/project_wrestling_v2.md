@@ -94,6 +94,14 @@ originSessionId: 4bf9c010-6bf6-4410-b91f-d3731633751f
 - **RankingsWidget** — top-5 на CoachDashboard с разбивкой N/S/A/An.
 - **Подробности**: см. [[session-2026-05-19-wrestling-coach-toolkit]].
 
+### Что добавлено 2026-05-26 (commit 33bcc18) — Wrestler card + Competitions + Pro rating + Parental consent + Constant ToS
+- **Wrestler card (карта борця)** — `users.{hometown,wrestler_level,year_started_wrestling,bio,card_shared_at,card_approved_at,card_approved_by,card_rejected_reason}`. ProfilePage hero «на свой лад»: rotating holo border, Constant red-triangle chip, country, ⚡N-win streak, ✓ verified от тренера. Tabs Home/Results. Share workflow: athlete → coach approve/reject → community-visible. Endpoints `/api/profile/{uid}/wrestler-card`, `/matches`, `/share-card`, `/api/coach/card-reviews`, `/api/profile/{uid}/review-card`.
+- **Competitions (Соревнования)** — отдельная club-scoped вкладка `/competitions`: тренер постит выезд с fee/payment_link/instructions; атлет выбирает возраст+вес, submit→approve→mark paid. Только участники клуба видят roster.
+- **Pro in-app rating** — `GET /api/pro/rating?country=&weight_class=&age_group=` агрегирует W/L/win_pct/BW% из finished tournament_matches с обеими сторонами=registered. `InAppRatingCard` в LigaProPage с фильтрами.
+- **Parental consent под-18** — `RegisterBody` принимает `date_of_birth` + `parent_*`. Если age<18 → required parent name/email, token, email родителю с consent-link. `/parental-consent` страница + App.jsx `ConsentGate` блокирует UI пока родитель не подтвердил (poll /me 30s).
+- **ToS / Privacy** — заменён generic `DEFAULT_APP_POLICY` на текст Constant Calgary Wrestling Club (PIPEDA, Alberta law); startup bump'ает версию.
+- **Подробности**: [[session-2026-05-26-wrestler-card-competitions]].
+
 ### Что добавлено 2026-05-26 (commit 421573b) — Platform-policy + Geo + Camp verify + Sessions UX
 - **App-wide policy** — `app_policies` + `users.app_policy_accepted_version`; `/api/app-policy` (public) и `/api/admin/app-policy` (super-admin update). **Тренер тоже подписывает** при регистрации.
 - **Club-policy не auto-seed** — новые клубы получают пустой policy, тренер пишет сам.

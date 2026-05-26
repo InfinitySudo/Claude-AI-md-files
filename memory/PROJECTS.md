@@ -1,6 +1,6 @@
 # Projects digest
 
-Generated **2026-05-26T19:44:26+00:00** — load this at the start of a new session for a 30-second overview.
+Generated **2026-05-26T20:17:01+00:00** — load this at the start of a new session for a 30-second overview.
 
 **22 projects** — 🟢 11 live · 🟡 8 dev · 🔴 3 paused
 
@@ -8,6 +8,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 ## ⏱ Recent activity
 
+- `2026-05-26T14:16` **Wrestling-Performance-Tracker** `8c98ea7` — feat(branding): coach uploads club logo, header uses it instead of icon-192
+- `2026-05-26T14:12` **Wrestling-Performance-Tracker** `33bcc18` — feat: wrestler card + competitions + Pro in-app rating + parental consent + new ToS/Privac
+- `2026-05-26T13:48` **Claude-AI-md-files** `cfa0560` — memory: regenerate PROJECTS.md + MEMORY_DIGEST after Wrestling 421573b
 - `2026-05-26T13:42` **Claude-AI-md-files** `64ef20b` — memory: 2026-05-26 Wrestling app-policy + geo + camp-verify session
 - `2026-05-26T13:38` **Wrestling-Performance-Tracker** `421573b` — feat: app policy + geo signup + camp admin-verify + roll-call/extra-tasks
 - `2026-05-26T11:13` **ontime** `7d59e18` — fix(estimator-memory): obvious "+ New" buttons — old + icon was easy to miss
@@ -15,9 +18,6 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - `2026-05-26T10:56` **ontime** `4f262e5` — feat(feature-requests): create form in UI with title/desc/photos
 - `2026-05-26T10:28` **4BotsBybit-Trading** `61e9297` — fix(blacklist): real_trades only — paper losses no longer block real trading
 - `2026-05-26T02:33` **Claude-AI-md-files** `7bffda2` — memory: pumpdump drilldown page + nginx /pumpdump/ proxy + first SL on 1000TAGUSDT
-- `2026-05-26T02:30` **Space_Live** `e40dc68` — feat: pumpdump.html drilldown — KPIs/funnel/recent trades; tile clicks land here, not on G
-- `2026-05-26T02:26` **Space_Live** `7608ae9` — feat(cockpit): clickable PUMP&DUMP panel + same-origin /pumpdump/stats + red dots when off
-- `2026-05-26T02:18` **Claude-AI-md-files** `9657641` — memory: cockpit-unversioned drift lesson + pumpdump UI integration done
 
 ## 🔑 Shared resources (rotate-with-care)
 
@@ -30,25 +30,25 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 ## 🧠 Recent memory edits
 
+- `2026-05-26T13:48` memory: regenerate PROJECTS.md + MEMORY_DIGEST after Wrestling 421573b — `MEMORY_DIGEST.md`, `PROJECTS.md`
 - `2026-05-26T13:42` memory: 2026-05-26 Wrestling app-policy + geo + camp-verify session — `MEMORY.md`, `feedback_i18n_fallback_trap.md`, `project_session_2026_05_26_wrestling_app_policy.md`, `project_wrestling_v2.md`
 - `2026-05-26T02:33` memory: pumpdump drilldown page + nginx /pumpdump/ proxy + first SL on 1000TAGUSDT — `project_pumpdump_agent.md`
 - `2026-05-26T02:18` memory: cockpit-unversioned drift lesson + pumpdump UI integration done — `feedback_cockpit_unversioned.md`, `project_pumpdump_agent.md`
 - `2026-05-26T01:56` memory: pumpdump Phase 1.5 — 568 syms + tracker + per-leg fees + 100% SL — `project_pumpdump_agent.md`
-- `2026-05-26T01:43` memory: pumpdump_agent Phase 1 live (RR≥5R, conviction scaling, :8004) — `project_pumpdump_agent.md`
 
 ## ⏲ Scheduled jobs
 
-- `gerchik-health.timer` — next: Tue 2026-05-26 13:44:37
-- `sysstat-collect.timer` — next: Tue 2026-05-26 13:50:00
-- `prometheus-node-exporter-apt.timer` — next: Tue 2026-05-26 13:56:07
-- `prometheus-node-exporter-nvme.timer` — next: Tue 2026-05-26 13:56:07
-- `prometheus-node-exporter-smartmon.timer` — next: Tue 2026-05-26 13:56:07
-- `bybit-executions-sync.timer` — next: Tue 2026-05-26 14:00:00
-- `bybit-risk-officer.timer` — next: Tue 2026-05-26 14:00:00
-- `wife-english-tutor-digest.timer` — next: Tue 2026-05-26 14:00:00
-- `wife-english-tutor-reminder.timer` — next: Tue 2026-05-26 14:00:00
-- `graph-rebuild.timer` — next: Tue 2026-05-26 14:13:08
+- `gerchik-health.timer` — next: Tue 2026-05-26 14:19:52
+- `sysstat-collect.timer` — next: Tue 2026-05-26 14:20:00
+- `prometheus-node-exporter-apt.timer` — next: Tue 2026-05-26 14:26:07
+- `prometheus-node-exporter-nvme.timer` — next: Tue 2026-05-26 14:26:07
+- `prometheus-node-exporter-smartmon.timer` — next: Tue 2026-05-26 14:26:07
+- `graph-rebuild.timer` — next: Tue 2026-05-26 14:43:54
 - `fwupd-refresh.timer` — next: Tue 2026-05-26 14:44:27
+- `bybit-executions-sync.timer` — next: Tue 2026-05-26 15:00:00
+- `bybit-risk-officer.timer` — next: Tue 2026-05-26 15:00:00
+- `wife-english-tutor-digest.timer` — next: Tue 2026-05-26 15:00:00
+- `wife-english-tutor-reminder.timer` — next: Tue 2026-05-26 15:00:00
 - `bybit-divergence-monitor.timer` — next: Tue 2026-05-26 16:00:00
 - `gerchik-daily-snapshot.timer` — next: Tue 2026-05-26 17:55:11
 - `bybit-claude-hourly.timer` — next: Tue 2026-05-26 18:00:00
@@ -93,17 +93,17 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > Wrestling Performance Tracker
 
-- **Local:** `/root/Wrestling-Performance-Tracker` (457.1 MB) · CLAUDE.md ✓
+- **Local:** `/root/Wrestling-Performance-Tracker` (457.3 MB) · CLAUDE.md ✓
 - **Lang:** JavaScript · **Last push:** 2026-05-26 · **Vis:** PRIVATE
 - **Services:** `wrestling-api`✓
 - **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)]
-- **Memory (38):** [[MEMORY_DIGEST]], [[ONTIME_DIGEST]], [[PROJECTS]], [[TRADING_DIGEST]], [[TUTOR_DIGEST]], [[feedback_cv_trace_over_ai]], [[feedback_i18n_fallback_trap]], [[feedback_narrative_before_details]]…
+- **Memory (39):** [[MEMORY_DIGEST]], [[ONTIME_DIGEST]], [[PROJECTS]], [[TRADING_DIGEST]], [[TUTOR_DIGEST]], [[feedback_cv_trace_over_ai]], [[feedback_i18n_fallback_trap]], [[feedback_narrative_before_details]]…
 
 ### [OnTime](https://github.com/InfinitySudo/OnTime)
 
 > OnTime — PWA project deadline & hours tracker for siding crews (TSA)
 
-- **Local:** `/root/ontime` (12869.8 MB) · CLAUDE.md ✓
+- **Local:** `/root/ontime` (12869.9 MB) · CLAUDE.md ✓
 - **Lang:** Python · **Last push:** 2026-05-26 · **Vis:** PRIVATE
 - **Services:** `invoice-sync`✗, `ocr-followup`✗, `ontime-api`✓, `ontime-bot`✓, `roofmart-weekly`✗
 - **Hosts:** `ontime.management` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)]
@@ -114,7 +114,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > Advanced ByBit Trading Bot with Signal Detection, Risk Management, VARIANT 3 (ATR+Volume), Paper/Real Trading, PostgreSQL Integration
 
-- **Local:** `/root/4BotsBybit-Trading` (205.5 MB) · CLAUDE.md ✓
+- **Local:** `/root/4BotsBybit-Trading` (209.0 MB) · CLAUDE.md ✓
 - **Lang:** Python · **Last push:** 2026-05-26 · **Vis:** PRIVATE
 - **Services:** `agent-levels-tg-bot`✓, `bybit-anomaly-detector`✗, `bybit-auto-blacklist`✗, `bybit-claude-hourly`✗, `bybit-claude-watchdog`✗, `bybit-control-bot`✓, `bybit-daily-summary`✗, `bybit-db-backup`✗, `bybit-divergence-monitor`✗, `bybit-executions-sync`✗, `bybit-ga-weekly`✗, `bybit-meta-retrain`✗, `bybit-risk-officer`✗, `bybit-signalbot`✓, `bybit-strategy-switcher`✓, `bybit-tradingbot`✓, `dashboard-api`✓
 - **Hosts:** —
@@ -131,7 +131,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Services:** `pumpdump`✓
 - **Hosts:** `_` [down]
 - **.env keys:** `ANTHROPIC_API_KEY`, `BYBIT_API_KEY`, `BYBIT_API_SECRET`, `BYBIT_SUB_ACCOUNT_NAME`, `BYBIT_TESTNET`, `CONFIG_PATH`, `DASHBOARD_PORT`, `DATA_DIR`, `HALT_SECRET`, `INITIAL_CAPITAL_USD`…
-- **Memory (1):** [[project_pumpdump_agent]]
+- **Memory (2):** [[PROJECTS]], [[project_pumpdump_agent]]
 
 ### [gerchik-trading-agent](https://github.com/InfinitySudo/gerchik-trading-agent)
 
@@ -148,7 +148,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > Персональный AI-учитель английского языка для русскоязычной начинающей.
 
-- **Local:** `/root/wife-english-tutor` (80.9 MB)
+- **Local:** `/root/wife-english-tutor` (81.0 MB)
 - **Lang:** Python · **Last push:** 2026-05-26 · **Vis:** PRIVATE
 - **Services:** `wife-english-tutor-digest`✗, `wife-english-tutor-reminder`✗, `wife-english-tutor-web`✓, `wife-english-tutor`✓
 - **Hosts:** —
@@ -160,19 +160,19 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > Personal AI assistant for Artem: email triage (Gmail), agency lead inbox, TG bot UI, Claude planner with approval flow
 
-- **Local:** `/root/MypersonalAIassistent` (231.5 MB)
+- **Local:** `/root/MypersonalAIassistent` (231.7 MB)
 - **Lang:** Python · **Last push:** 2026-05-22 · **Vis:** PRIVATE
 - **Services:** `mai-api`✓, `mai-bot`✓, `mai-morning-digest`✗, `mai-poller`✓
 - **Hosts:** `ontime.management` [200 (/api/health)]
 - **DB:** `mai.db`
 - **.env keys:** `ACCOUNT_1_HOST`, `ACCOUNT_1_LABEL`, `ACCOUNT_1_PASS`, `ACCOUNT_1_PORT`, `ACCOUNT_1_USER`, `ACCOUNT_2_HOST`, `ACCOUNT_2_LABEL`, `ACCOUNT_2_PASS`, `ACCOUNT_2_PORT`, `ACCOUNT_2_USER`…
-- **Memory (2):** [[MEMORY_DIGEST]], [[project_mai_assistant]]
+- **Memory (3):** [[MEMORY_DIGEST]], [[PROJECTS]], [[project_mai_assistant]]
 
 ### [son-french-tutor](https://github.com/InfinitySudo/son-french-tutor)
 
 > AI French tutor for Andrii (Artem's son, A1-A2) — Telegram bot + PWA mini app
 
-- **Local:** `/root/son-french-tutor` (59.4 MB)
+- **Local:** `/root/son-french-tutor` (59.5 MB)
 - **Lang:** Python · **Last push:** 2026-05-17 · **Vis:** PRIVATE
 - **Services:** `son-french-tutor-digest`✗, `son-french-tutor-reminder`✗, `son-french-tutor-web`✓, `son-french-tutor`✓
 - **Hosts:** —
@@ -194,7 +194,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > Voice-first AI tutor in Telegram: 5-lesson generated mini-courses on any topic, hands-free Whisper+Claude+TTS loop with memory between lessons
 
-- **Local:** `/root/voice-tutor` (1942.0 MB) · CLAUDE.md ✓
+- **Local:** `/root/voice-tutor` (1942.1 MB) · CLAUDE.md ✓
 - **Lang:** Python · **Last push:** 2026-05-15 · **Vis:** PRIVATE
 - **Services:** `son-french-tutor-digest`✗, `son-french-tutor-reminder`✗, `son-french-tutor-web`✓, `son-french-tutor`✓, `voice-tutor-web`✓, `voice-tutor`✓, `wife-english-tutor-digest`✗, `wife-english-tutor-reminder`✗, `wife-english-tutor-web`✓, `wife-english-tutor`✓
 - **Hosts:** —
@@ -234,7 +234,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Lang:** HTML · **Last push:** 2026-05-26 · **Vis:** PRIVATE
 - **Services:** —
 - **Hosts:** —
-- **Memory (5):** [[MEMORY_DIGEST]], [[feedback_cockpit_unversioned]], [[project_pumpdump_agent]], [[project_space_live]], [[project_wallets_all_endpoint]]
+- **Memory (6):** [[MEMORY_DIGEST]], [[PROJECTS]], [[feedback_cockpit_unversioned]], [[project_pumpdump_agent]], [[project_space_live]], [[project_wallets_all_endpoint]]
 
 ### [wrestling-tracker](https://github.com/InfinitySudo/wrestling-tracker)
 
@@ -244,7 +244,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Lang:** — · **Last push:** 2026-05-20 · **Vis:** PUBLIC
 - **Services:** —
 - **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
-- **Memory (3):** [[project_wrestling_i18n_10langs]], [[project_wrestling_tracker]], [[project_wrestling_v2]]
+- **Memory (4):** [[PROJECTS]], [[project_wrestling_i18n_10langs]], [[project_wrestling_tracker]], [[project_wrestling_v2]]
 
 ### [trading-bots-platform](https://github.com/InfinitySudo/trading-bots-platform)
 
@@ -254,6 +254,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Lang:** — · **Last push:** 2026-05-20 · **Vis:** PUBLIC
 - **Services:** —
 - **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
+- **Memory (1):** [[PROJECTS]]
 
 ### [ontime-platform](https://github.com/InfinitySudo/ontime-platform)
 
@@ -263,12 +264,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 - **Lang:** — · **Last push:** 2026-05-20 · **Vis:** PUBLIC
 - **Services:** —
 - **Hosts:** `_` [down], `constantwrestling.cloud` [404 (/api/health)], `ontime.management` [200 (/api/health)], `son.constantwrestling.cloud` [200 (/api/health)], `teacher1.constantwrestling.cloud` [200 (/api/health)], `voice.constantwrestling.cloud` [200 (/api/health)]
+- **Memory (1):** [[PROJECTS]]
 
 ### [graph-system](https://github.com/InfinitySudo/graph-system)
 
 > Knowledge graphs for memory, trading, tutors, OnTime — start with memory_graph
 
-- **Local:** `/root/graph-system` (0.8 MB)
+- **Local:** `/root/graph-system` (0.9 MB)
 - **Lang:** HTML · **Last push:** 2026-05-15 · **Vis:** PRIVATE
 - **Services:** `graph-rebuild`✗
 - **Hosts:** —
@@ -288,7 +290,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/projects-graph/>
 
 > English teacher / CELPIP prep app
 
-- **Local:** `/root/English-Teacher-CELPIP` (104.4 MB) · CLAUDE.md ✓
+- **Local:** `/root/English-Teacher-CELPIP` (104.5 MB) · CLAUDE.md ✓
 - **Lang:** Python · **Last push:** 2026-05-02 · **Vis:** PRIVATE
 - **Services:** `celpip-bot@`✗, `celpip-reminder@`✗
 - **Hosts:** —

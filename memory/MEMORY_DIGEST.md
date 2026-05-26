@@ -1,8 +1,8 @@
 # Memory digest
 
-Generated **2026-05-26 19:44 UTC**.
+Generated **2026-05-26 20:16 UTC**.
 
-**446 nodes** (283 files, 304 edges) — 📝 163 stub · · 112 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**447 nodes** (284 files, 307 edges) — 📝 163 stub · · 113 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
@@ -58,7 +58,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-05-26 19:41` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
+- `2026-05-26 20:16` [[session-2026-05-26-wrestler-card-competitions]] · 🟢 today
+- `2026-05-26 20:13` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
 - `2026-05-26 19:40` [[i18n-fallback-trap]] · 🟢 today
 - `2026-05-26 19:40` [[session-2026-05-26-wrestling-app-policy]] · 🟢 today
 - `2026-05-26 18:33` [[session-2026-05-26-estimator-ui]] · 🟢 today
@@ -72,7 +73,6 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - `2026-05-26 03:37` [[project-session-2026-05-25-wet-games-select]] · 🟢 today
 - `2026-05-26 00:53` [[feedback-wet-corrector-sonnet]] · 🟢 today
 - `2026-05-25 23:52` [[estimator-assemblies]] · 🟢 today
-- `2026-05-25 23:07` [[estimator-links]] · 🟢 today
 
 ## 📚 Index by type
 
@@ -242,7 +242,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (112)
+### · memory (113)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -338,6 +338,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[session-2026-05-19-wrestling-coach-toolkit]] — "Wrestling app — club policy, groups, password reset, live sparring scoring, EN/RU/PL i18n, birthday reminder daemon (co
 - [[session-2026-05-21-tp-redesign]] — "2026-05-21 переход всех 3 стратегий на 100% close на TP1=2R + BE off на CONS/TREND + EMA Gate 1H/200 on. Reasoning, мет
 - [[session-2026-05-26-estimator-ui]] — OnTime estimator UI улучшения — Feature Requests с фото + заметные кнопки в Memory разделе (commits 4f262e5..7d59e18)
+- [[session-2026-05-26-wrestler-card-competitions]] — Wrestling app — карта борця + Competitions tab + Pro in-app rating + parental consent под-18 + Constant Wrestling ToS/Pr
 - [[session-2026-05-26-wrestling-app-policy]] — "Wrestling app — большой проход 2026-05-26 — app-policy, geo-signup, camp admin-verify, roll-call, extra-tasks, sparring
 - [[session-wallet-baseline-traps-wallet-transfers]] — "Drawdown guard сравнивает live wallet с `session_start_wallet_usd` — любой sub-account transfer / withdraw читается как
 - [[silero-torchaudio-install-quirks]] — "Silero + torchaudio require two deps that are NOT pulled in by `pip install torch torchaudio` — install will silently s
