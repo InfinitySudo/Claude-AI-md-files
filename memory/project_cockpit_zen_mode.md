@@ -37,4 +37,15 @@ State сохраняется в localStorage (`spacelive-zen`, `spacelive-col-co
 - AGENTS-список (#agents-list) — естественная высота, col-left scrollable (overflow-y: scroll) с зелёным scrollbar
 - PAPER DELTA timeframe label апдейтится через `setText('paper-period', PERIOD)`
 
-Связано: [[feedback-cockpit-unversioned]], [[project-dashboard-v2]].
+## 2026-05-25 — Cockpit стал REAL-only
+
+Артём попросил «приборную панель только real». Изменения (бэкап `cockpit.html.bak.20260525_220918`):
+
+- **PAPER DELTA tile** скрыт через `style="display:none"` (HTML на ~line 1145). JS продолжает вызывать `setText('paper-pnl', ...)` — на скрытом id ничего не ломает, удалять не нужно.
+- **FX-вспышки** (`fireFxForNewTrades`) больше не реагируют на paper-сделки — убран `...paperRecent.map(...)` из `all` массива.
+- **LIVE STREAM marquee** (`refreshMarquee`) пропускает paper события — убран `for (const t of paperRecent.slice(0, 8))` блок.
+- **PNL DELTA chart** (`/api/v2/charts/equity`) фильтрует series: `const REAL_STRATS = new Set(['aggressive'])`. Это hardcode согласно текущему hybrid mode (CONS=paper, TREND=paper, AGGR=real); если режим поменяется, обнови set или фетчни per-strategy mode из API.
+
+Цифры теперь honest: AGGR real net за 30d = −$13.22 (раньше отображалось −$34.95 из-за double-count fees — см. [[feedback-real-trades-fee-semantics]]).
+
+Связано: [[feedback-cockpit-unversioned]], [[project-dashboard-v2]], [[feedback-real-trades-fee-semantics]].

@@ -115,3 +115,25 @@ sweep'а от 2026-05-17 — sweep не подобрал `_compute_trading_state
 
 **Правило**: проверять каждую функцию которая делает aggregation по real_trades,
 не доверять «sweep уже прошёл» — каждый новый PR может добавить ещё одно место.
+
+## 2026-05-25 — 12..17-е места: 6 endpoint'ов dashboard_api_v3
+
+Sweep пропустил эти места потому что они появились ПОСЛЕ 2026-05-17. Артём заметил расхождение: wallet растёт, P&L отрицательный. AGGR real за период since 2026-05-21: dashboard −$34.95, true net −$13.22 (Δ = fees $21.72 за 173 trades).
+
+Где fix'ил (commit `658e9db`):
+- `/api/v2/be-compare` — net, gross_win, gross_loss, wins_n
+- `/api/v2/be-recommend` — net, gross_win, gross_loss
+- `/api/v2/sl-analysis` — per-strategy net + top-magnets net
+- `/api/v2/diagnostics-overview` — per_hour, top_winners, top_losers, close_reasons, headline total
+- `/api/v2/charts/equity` — per-strategy cumulative (для PNL DELTA в cockpit)
+- `/api/v2/charts/distribution` — per-trade net для histogram
+
+Добавлен **локальный helper в dashboard_api_v3.py**: `_net_pnl_expr(table, prefix='')` — возвращает SQL expression, который для `real_trades`/`real_trades_compat` отдаёт `COALESCE(realized_pnl_usd, gross_pnl_usd)` (без вычета fees), для остальных — `(COALESCE(...) - COALESCE(fees_paid_usd,0))`. Зеркало `stats_manager._net_pnl_sql` но без import (не все endpoint'ы имеют stats_mgr в scope).
+
+`_REAL_TABLES = ('real_trades', 'real_trades_compat')` — единая константа.
+
+**Документация-комментарий main_bot_v3 weekly DD docstring тоже исправлен** — там код был правильный, но docstring врал ("realized − fees"). Теперь docstring явно говорит что real уже NET.
+
+Cockpit `/var/www/dashboard/cockpit.html` стал real-only — PNL DELTA фильтрует серии равны `['aggressive']` (hardcode для текущего hybrid mode CONS=paper, TREND=paper, AGGR=real).
+
+Связано: [[project-cockpit-zen-mode]].
