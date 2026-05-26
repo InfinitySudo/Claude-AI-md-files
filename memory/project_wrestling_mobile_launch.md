@@ -42,3 +42,23 @@ VPS-stack: OpenJDK 21 (apt), Android SDK 34 в `/opt/android-sdk/` (cmdline-tool
 - `/root/secrets/constantwrestling-release.env` — пароли. Тоже бэкап.
 
 Связано: [[project-wrestling-v2]], [[project-wrestling-i18n-10langs]], [[project-wrestling-camp-payment]].
+
+---
+
+## 2026-05-26 — App Store launch prep (commit 204a370)
+- `LAUNCH_FRIDAY.md` в repo — step-by-step что Артём должен сделать в ASC + Codemagic для пятничного релиза 29 May 2026.
+- `public/legal/{privacy,terms}.html` обновлены под Constant ToS/Privacy (PIPEDA, Alberta law). URLs `constantwrestling.cloud/legal/{privacy,terms}.html` отдают 200 — Apple требует.
+- `codemagic.yaml` теперь шаг **"Patch Info.plist"** вставляет все NS*UsageDescription + `ITSAppUsesNonExemptEncryption=false` автоматически на каждый iOS build → закрыты основные rejection-причины.
+- Demo data на prod: `demo-promo@constantwrestling.cloud` / `DemoReview2026!` (coach, owner of "Demo Wrestling Club" id=6, invite `P7HF03PT`) + `demo-athlete-1` / `demo-athlete-2` тем же паролем. Seeded `/tmp/seed_demo.py` (idempotent — можно повторно запускать; пароли сбрасываются bcrypt'ом).
+- Screenshots `marketing/screenshots/ios/{6.5,6.9}/` (5 PNGs each, web-viewport через Playwright).
+- `marketing/store_copy.md` — appended "What's new v2026.05.29" + Apple Review notes (sign-in info + reviewer flow + export compliance + age rating 12+).
+
+**Что осталось руками Артёму:**
+1. ASC → API key (Admin) → Codemagic integration с именем точно `app_store_connect_artem`.
+2. ASC → My Apps → New App для `cloud.constantwrestling.app`; забить `apple_id` в `codemagic.yaml` поле `APP_STORE_APP_ID`.
+3. ASC fill metadata (Subtitle / Promotional / Description / Keywords / Privacy URL / Terms URL / Age 12+ / Category Sports → Health & Fitness) — текст в `store_copy.md`.
+4. ASC upload screenshots из `marketing/screenshots/ios/`.
+5. Push в master → Codemagic auto-build → TestFlight Internal → smoke на iPhone.
+6. ASC → Submit for Review, выбрать **Manually release this version** (важно — иначе автоматически выкатится сразу после approve).
+7. Optionally request expedited review с обоснованием "Friday 29 May coordinated launch".
+8. Friday 29 May → Release this version → live через 1-24 ч.
