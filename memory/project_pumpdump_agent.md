@@ -13,10 +13,22 @@ metadata:
 **Local path:** `/root/PumpDumpAI_Agent`
 **Status (2026-05-26 Phase 1.5+UI):** PAPER live. **568 USDT-perp символов** через 3 WS connections (shard'инг по 400 топиков). Code 48/48 pytest, systemd `pumpdump.service`, http :8004 c CORS (8003 занят voice-tutor). Sub4 keys в `.env` (gitignored). RR floor = 5R per trade; conviction-scaler 1.0→2.5×.
 
-**Space_Live integration (commit Space_Live `43f1587`):**
-- **cockpit.html** — `PUMP&DUMP AGENT` big-panel на месте PAPER DELTA (между LIVE TRADING и AI_TRADING_AGENT). 5-секундный poll `http://127.0.0.1:8004/stats` через `refreshPumpDumpPanel()`. PNL DELTA chart `REAL_STRATS = {aggressive, pumpdump}` — paper исключён.
-- **strategies.html** — 4-я карточка в `AI Agents · Sub-2 / Sub-3 / Sub-4` (🚀 Pump&Dump Agent, PAPER · sub-4).
-- **Hardlearned:** cockpit.html prod (`/var/www/dashboard/cockpit.html`) держит unversioned фичи (ZEN/HIDE/orbits) — НЕ затирать через `cp source → prod` без diff. См. `[[feedback-cockpit-unversioned]]` updated 2026-05-26.
+**Space_Live integration (commits Space_Live `43f1587` → `e40dc68`):**
+- **cockpit.html** — `PUMP&DUMP AGENT` big-panel на месте PAPER DELTA (между LIVE TRADING и AI_TRADING_AGENT). 5-секундный poll **`/pumpdump/stats`** (same-origin) через `refreshPumpDumpPanel()`. PNL DELTA chart `REAL_STRATS = {aggressive, pumpdump}` — paper исключён. Карточка кликабельна → `pumpdump.html`.
+- **strategies.html** — 4-я карточка в `AI Agents · Sub-2 / Sub-3 / Sub-4` (🚀 Pump&Dump Agent, PAPER · sub-4), клик → `pumpdump.html`.
+- **pumpdump.html** — drilldown: 6 KPI tiles (Net/Day/Detect/Trades/WR/Open), TP funnel (TP1/2/3/BE/SL/TimeStop/Force), таблица recent trades (Time/Symbol/Dir/Side/Exit/R/Net$/MFE%/MAE%), Status panel. Polls `/pumpdump/stats` каждые 5s. Покрыта no-cache nginx regex.
+- **Honest status dots:** все 4 главные panel'и имеют динамические `.status-dot.live` / `.status-dot.down` — green только если endpoint ответил, red если нет. LIVE TRADING dot подвязан на `/api/v2/strategy/AGGRESSIVE`, PUMP&DUMP — на `/pumpdump/stats`. AGENTS list при 404 от `/api/agents-health` показывает все agent-items как `.unknown` (grey), не fake-зелёные.
+
+**nginx proxy (`/etc/nginx/sites-available/dashboard`):**
+- `location /pumpdump/ { auth_basic off; proxy_pass http://127.0.0.1:8004/; }` — same-origin для browser fetch (раньше `fetch('http://127.0.0.1:8004')` падал так как браузер искал localhost клиента, а не VPS).
+- `location ~* ^/(cockpit|strategies|pumpdump|...)\.html$` — no-cache headers.
+
+**Первая paper-сделка (2026-05-26 02:04 UTC):**
+- 1000TAGUSDT pump→LONG, entry $1.5813, lev 35×, SL@$1.5418 (−2.5%), TPs [5R/8R/10R]
+- Closed по SL: net −$0.56 (−0.56R), MFE 0%, MAE −2.87% (gap-fill, anti-slippage сработал)
+- TP funnel: `sl: 1, tp1: 0` — typical fakeout
+
+**Hardlearned:** cockpit.html prod (`/var/www/dashboard/cockpit.html`) держит unversioned фичи (ZEN/HIDE/orbits) — НЕ затирать через `cp source → prod` без diff. См. `[[feedback-cockpit-unversioned]]` updated 2026-05-26.
 
 **Trade lifecycle полный:** `src/tracker.py` ведёт open positions, considers TP partials / SL / BE arming / time-stop / gap slippage, пишет в journal `trade_close` с r_realized (NET), gross/fees/fee_breakdown/funding, peak/trough_pnl_pct, tp_funnel.
 
