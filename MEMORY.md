@@ -17,6 +17,7 @@
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
 - [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
 - [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
+- [WET corrector = SONNET](feedback_wet_corrector_sonnet.md) — reply_for_turn использует SONNET; HAIKU ленится и правит только 1-2 предложения из 5
 - [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
@@ -117,6 +118,7 @@
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
+- [Session 2026-05-25 WET games + select](project_session_2026_05_25_wet_games_select.md) — multi-select phrase в reader+chat, /play Word+Letter games, corrector→SONNET, no-cache + /reload (faefabe). TODO: book progress не сохраняется
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
 - [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor
 - [BE Per-Strategy A/B/C](project_be_per_strategy_experiment.md) — CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5 + shadow=no-BE; не трогать 30d, выбрать победителя по PF/net
