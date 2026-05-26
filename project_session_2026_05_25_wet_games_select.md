@@ -34,7 +34,9 @@ metadata:
 **5. UI на английском**
 - `/play` целиком на английском (Build the sentence / Build the word / Check / Undo / Hint / Next / Add to vocab); русским остаётся только translation_ru как подсказка в letters-игре.
 
-**TODO (известные жалобы):**
-- Прогресс прочитанных книг не сохраняется (жена 2026-05-25) — `set_book_progress` есть в reading.py, но из read.html никогда не вызывается. Надо: вызвать `POST /api/books/{slug}/progress` (или эквивалент) при открытии главы / при достижении конца главы. Не пофикшено в этой сессии.
+**Фикс прогресса книг (a6fa68f):**
+- Жена жаловалась — прогресс не двигается. Причина: `set_book_progress` существовал в reading.py, но из read.html никто не звал → таблица `book_progress` не обновлялась.
+- Добавил `POST /api/books/{slug}/progress` с MAX-семантикой (возврат к ранней главе не сбрасывает счётчик).
+- `read.html` `showChapter()` теперь зовёт `saveBookProgress` при каждом открытии + патчит локальный `state.progress` для немедленного обновления полоски в списке книг.
 
 Связано: [[project_progress]], [[feedback_wet_corrector_sonnet]], [[feedback_pwa_stale_bundle]].
