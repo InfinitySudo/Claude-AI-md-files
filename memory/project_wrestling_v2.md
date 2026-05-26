@@ -94,5 +94,18 @@ originSessionId: 4bf9c010-6bf6-4410-b91f-d3731633751f
 - **RankingsWidget** — top-5 на CoachDashboard с разбивкой N/S/A/An.
 - **Подробности**: см. [[session-2026-05-19-wrestling-coach-toolkit]].
 
+### Что добавлено 2026-05-26 (commit 421573b) — Platform-policy + Geo + Camp verify + Sessions UX
+- **App-wide policy** — `app_policies` + `users.app_policy_accepted_version`; `/api/app-policy` (public) и `/api/admin/app-policy` (super-admin update). **Тренер тоже подписывает** при регистрации.
+- **Club-policy не auto-seed** — новые клубы получают пустой policy, тренер пишет сам.
+- **Geo на регистрации** — `country` + `region` обязательны для всех; `timezone` авто из `Intl.DateTimeFormat`. 📍 use-my-location через Nominatim.
+- **Camps admin-verify** — `contact_phone/email/country/region` обязательны, `socials_url` опц.; `admin_status='pending_admin'` → супер-админ approve/reject (`/api/admin/camps/{id}/verify`); фильтры по country в UI; бейдж PENDING/REJECTED.
+- **Sessions** — `session_extra_tasks` + `session_signups` + `session_extra_task_confirms`; endpoints sign-up/roll-call/extra-task confirm; SessionPage с панелями Roll-call и Bonus tasks. Группа тренировки — All members или из `user_groups` (Manage Groups), без жёсткого Kids/Junior/Senior.
+- **Analysis** — UNIQUE(session_id, athlete_email); upsert при submitted/rejected; reject через `coach_review='REJECT:…'` или `points_awarded<0` открывает повторную правку учеником.
+- **Norms** — `/api/norms/finalize` батч-эвент: лидер=max_points, –1 за каждое место, overall ranking bonus синтетической строкой.
+- **Sparring i18n** — `format_round_robin / format_single_elim / bracket_single_elim / matches_round_robin / regenerate_confirm` во всех 10 языках. TournamentsPage не имеет хардкода RU.
+- **Leagues tours** — `<select>` 1..5 вместо `<input type=number>` в Create и Edit.
+- **Client robustness** — `api/client.js` парсит JSON безопасно (фиксит «Unexpected token 'I'» из 500/HTML), убран `navigate('/coach')` (роута не было → пустой Layout с лого).
+- **Подробности**: [[session-2026-05-26-wrestling-app-policy]], [[i18n-fallback-trap]].
+
 **Why:** Артём — тренер wrestling клуба Constant Calgary Wrestling Club, приложение для управления клубом и мотивации спортсменов.
 **How to apply:** nginx проксирует /api/ на :8001; `npm run build` деплоит в dist/; `sudo systemctl restart wrestling-api` для бэкенда.
