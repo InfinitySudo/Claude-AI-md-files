@@ -213,7 +213,85 @@ R_win_min = [(1 - WR) × R_loss + fee_round_trip] / WR
 - Увеличить risk-per-trade или leverage → fees scale линейно с notional, fee/R ratio тот же
 - Поднять TP1 до 2.5R+ → MFE p95 paper = 1.84%, недостижимо в >90% сделок
 
-## 13. Симуляция SL/TP вариантов на 341 paper AGGR trades (since 2026-05-10)
+## 13. Реальная математика на 161 real AGGR trades (since 2026-05-21)
+
+**Источник истины — не симуляция, а наши фактические сделки.** 1R мерим по SL closes (там qty не уменьшен партиалом) → **avg 1R = $0.871** (не $0.61 как ошибочно писал раньше — то было среднее по всем закрытиям включая partial qty).
+
+### Per-bucket факты (n=161, исключая 18 noise rows: CONSOLIDATED/ORPHAN):
+
+| Bucket | n | freq | avg $/trade | sum $ | avg 1R | fee/trade |
+|---|---:|---:|---:|---:|---:|---:|
+| SL | 72 | 45% | −0.988 | −71.15 | $0.871 | $0.140 |
+| BE | 58 | 36% | +0.137 | +7.93 | $0.270 (partial) | $0.107 |
+| TP1 | 30 | 19% | +1.661 | +49.82 | $0.654 (partial) | $0.174 |
+| **TOTAL** | **161** | — | **−0.083** | **−13.36** | — | — |
+
+- Net per trade: **−$0.083** (наблюдаемый −$0.076 учитывая 18 noise rows + 1 FORCE)
+- Total fees AGGR real: **$22.38** на 179 trades = **$0.125/trade**
+- **Без fees**: gross был бы **+$8.76** (mечтательно близко к break-even)
+
+### Break-even formula at current mix (45% SL / 36% BE / 19% TP):
+
+```
+need_TP_win × 0.19 = avg_SL_loss × 0.45 − avg_BE_win × 0.36
+need_TP_win = ($0.988 × 0.45 − $0.137 × 0.36) / 0.19 = $2.08
+```
+
+При текущей частоте hits — нужен **TP1 win $2.08** (сейчас $1.66). Это эквивалентно **TP1 = 2.39R** (а не 1.5R как было). **3R — overshoot**, потому что увеличение TP в R снижает hit-rate пропорционально.
+
+### Что значит Артёмово изменение 2026-05-26 (TP1 1.5R→3R, BE 1.3/0.9→2.5/1.6) для тех же 161 trades
+
+Используя `peak_pnl_pct` real_trades (= max favorable % для wins, max adverse для losses):
+- **Сколько достигают TP1=3R (price move ≥ 3.3% при avg SL=1.10%)**:
+  - Из 30 текущих TP-bucket: **18 trades** имели peak ≥ 3R (60% from current TP-winners)
+  - Из 58 BE-bucket: **2 trades** имели peak ≥ 3R (рудиментарно)
+  - Из 72 SL-bucket: **0** (peak max +0.559%)
+  - **Итог: 20/161 = 12.4% TP hit-rate (vs 18.6% old)**
+
+- **BE_activation=2.5% при avg SL=1.10%**:
+  - Из 58 BE-bucket: **0 trades** имели peak ≥ 2.5% (max peak BE=1.496%)
+  - Из 30 TP-bucket: **12 trades** имели peak ≥ 2.5%
+  - **BE armed только в ~7% сделок (vs 36% old)** — это значит почти все BE-кандидаты идут в SL по полному 1R
+
+- **Оценка нового NET на тех же 161 trades**: ≈ **−$95** (vs OLD observed −$14).
+  - 20 TP × $2.61 = +$52
+  - ~6 BE wins (из 12 ex-TP с armed BE, половина retrace до BE) × $1.27 = +$7.60
+  - 134 SL (72 + 56 ex-BE без защиты + 6 ex-TP не дотянувшие) × $-0.988 = $-132
+  - Fees ~$22
+
+**Вывод**: новые настройки 2026-05-26 хуже старых в 7x по убытку. **Основная причина — BE_act=2.5% слишком высокий**, BE-защита не работает. Если оставлять TP=3R, BE_act обязательно снизить до ~1.3% (offset ~0.9%) → потеряем 4 BE-bucket-trades которые сейчас выходят в +1.3..1.6%, зато не проиграем 56 BE-trades которые без защиты пойдут в SL.
+
+### Ответ на вопрос «уменьшить SL до 15% ATR — увеличит ли TP1?»
+
+**ДА, увеличит — но мало**, потому что TP1 в % движения = R × SL_pct. При SL=15%ATR=0.66% → TP1=3R = **1.98%** (vs 3.30% при 25%ATR). Цене нужно меньше пройти.
+
+На real-данных peak distribution:
+- peak ≥ 1.98% (= TP1=3R с узким SL): из TP-bucket 22 trades, из BE-bucket 0, из SL 0 → ~23/161 = **14.3% TP hit-rate**
+- vs **12.4%** при SL=25%ATR + TP1=3R
+
+Прирост TP-rate +2 пункта (с 12.4% до 14.3%) = **+3 trades которые станут TP**. Win добавит ≈ $3 × $2.61 × 0.6 = +$4.7. НО **больше false SL-trigger**: peak/trough в real broken proxy, нельзя точно посчитать. На paper статистике (см. § ниже) каждое снижение SL добавляет 5–8% к SL-rate.
+
+### Ограничение анализа
+
+`peak_pnl_pct` и `trough_pnl_pct` в `real_trades` хранят **одно и то же значение** (final extreme в направлении exit). Для wins → max favorable. Для losses → max adverse. **Нет MAE для wins** (не знаем как глубоко цена ходила против перед TP) и **нет MFE для losses** (не знаем доходила ли цена до favorable territory перед SL). Это значит точную симуляцию «что было бы при SL=15%ATR» можно делать только на:
+- (a) paper trades (peak/trough там корректные, той же signals pool)
+- (b) bars history per trade (требует Bybit API per-trade, медленно)
+
+### Симуляция на 341 paper AGGR trades (proxy)
+
+См. предыдущую версию таблицы для деталей. Краткие выводы:
+- OLD (SL=25%ATR, TP1=1.5R, BE=1.3/0.9): paper gross −0.13R, лучшая из «реалистичных»
+- CHANGED 2026-05-26 (TP1=3R, BE=2.5/1.6): paper gross −0.44R — подтверждает что новые настройки хуже
+- Лучшие найденные: **SL=10%ATR + TP1=3R + BE=1.0/0.6** (paper gross +0.13R, ~break-even на maker fees)
+- **Главный рычаг — fees, не SL ширина**. Maker-only execution превращает большинство сценариев в break-even.
+
+### Disclaimer для будущих сессий
+- Real expectancy = **факт**, paper = **proxy** (те же signals, но другие BE/TP логики применялись).
+- Цифры NEW настроек = **оценка**, не наблюдение. Точно узнаем через ~50 real trades после restart.
+
+---
+
+## 14. Старая секция: симуляция на 341 paper AGGR trades (since 2026-05-10) — для справки
 
 Метод: для каждого paper trade взять peak_pnl_pct (MFE %) + trough_pnl_pct (MAE %) + timing → симулировать исход при разных SL/TP/BE. **`be_activation_pct` в % от entry (НЕ R), `tp_ratios` в R-multiples**. Sanity-check: OLD reproduces ~real paper close_reason mix.
 
