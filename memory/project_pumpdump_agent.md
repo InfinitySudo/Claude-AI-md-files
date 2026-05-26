@@ -11,7 +11,7 @@ metadata:
 
 **Repo:** https://github.com/InfinitySudo/PumpDumpAI_Agent (private)
 **Local path:** `/root/PumpDumpAI_Agent`
-**Status (2026-05-26):** Planning phase — `docs/PLAN.md` написан, кода нет.
+**Status (2026-05-26):** Phase 1 PAPER live. Code merged (34/34 pytest), systemd `pumpdump.service` running, http :8004 (8003 занят voice-tutor), Space_Live tile auto-poll. Sub4 keys в `.env` (gitignored). RR floor = 5R per trade; agent scales TPs out by signal conviction (vol×price_change) до 2.5×.
 **Variant chosen by Artem:** C — Self-tuning agent (RL-lite + journal-driven weekly tuner with walk-forward + ±15%/week governor).
 
 ## Архитектура (one-paragraph)
@@ -47,6 +47,14 @@ Kill switches: 5% daily DD halt, 3 SL streak → 24h blacklist, WS disconnect >2
 ## Monitoring
 
 Space_Live cockpit (`/root/Space_Live/public/cockpit.html`) — новая sub-tile `PUMP_DUMP_AGENT` рядом с AI_TRADING_AGENT и AI_COPY_TRADING. Polls `http://127.0.0.1:8003/stats` (PumpDumpAI_Agent http_server, контракт в `docs/PLAN.md §8`). Сейчас graceful fallback "planning phase" — серая точка, все KPI "—", без console errors. Загорится сразу после Phase-1 deploy.
+
+**Port :8004** (не 8003 — `:8003` уже занят voice-tutor uvicorn на этом VPS, см. journal `lsof -i :8003`). Polls обновлены в cockpit + .env + PLAN.md.
+
+**RR≥5R + conviction scaling (Артём 2026-05-26):**
+- `tp.min_total_R = 5.0` (hard floor в `RiskManager.calc_sl_tp` перед любым cluster override)
+- `tp.conviction_scaling`: vol_ratio 5×→20× и |price_change| 3%→10% → linear scale 1.0→2.5×
+- per cluster TP defaults: bluechip [5,8,12], mid_cap [5,10,18], meme [5,12,25], low_cap [5,10,20]
+- `calc_sl_tp` returns 4-tuple (sl, tps, dist, **conviction_scale**); main.py пишет scale в journal `params_used.conviction_scale` для будущего tuner анализа
 
 Контракт `/stats`:
 ```json
