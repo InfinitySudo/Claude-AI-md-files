@@ -6,6 +6,7 @@
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
 - [⚡ Trading Critical Params](project_trading_critical_params.md) — SINGLE SOURCE: mode/risk/SL formula (ATR×0.25)/TP/BE/fees/caps + real R-metrics + break-even formulas. READ FIRST для любого trading-анализа
+- [Pump&Dump AI Agent](project_pumpdump_agent.md) — отдельный self-tuning агент под пампы/дампы, Bybit sub4. Planning phase 2026-05-26: PLAN.md в repo InfinitySudo/PumpDumpAI_Agent, tile в Space_Live cockpit, Phase-1 кода ждёт approval
 - [Trading Analysis Protocol](feedback_trading_analysis_protocol.md) — перед RR/break-even/SL/fees анализом — Read [[project-trading-critical-params]]; не гадать настройки (была ошибка "0.8× ATR" 2026-05-26)
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
 - [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
