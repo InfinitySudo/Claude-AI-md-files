@@ -11,7 +11,12 @@ metadata:
 
 **Repo:** https://github.com/InfinitySudo/PumpDumpAI_Agent (private)
 **Local path:** `/root/PumpDumpAI_Agent`
-**Status (2026-05-26 Phase 1.5):** PAPER live. **568 USDT-perp символов** через 3 WS connections (shard'инг по 400 топиков). Code 48/48 pytest, systemd `pumpdump.service`, http :8004 (8003 занят voice-tutor), Space_Live tile auto-poll. Sub4 keys в `.env` (gitignored). RR floor = 5R per trade; conviction-scaler 1.0→2.5×.
+**Status (2026-05-26 Phase 1.5+UI):** PAPER live. **568 USDT-perp символов** через 3 WS connections (shard'инг по 400 топиков). Code 48/48 pytest, systemd `pumpdump.service`, http :8004 c CORS (8003 занят voice-tutor). Sub4 keys в `.env` (gitignored). RR floor = 5R per trade; conviction-scaler 1.0→2.5×.
+
+**Space_Live integration (commit Space_Live `43f1587`):**
+- **cockpit.html** — `PUMP&DUMP AGENT` big-panel на месте PAPER DELTA (между LIVE TRADING и AI_TRADING_AGENT). 5-секундный poll `http://127.0.0.1:8004/stats` через `refreshPumpDumpPanel()`. PNL DELTA chart `REAL_STRATS = {aggressive, pumpdump}` — paper исключён.
+- **strategies.html** — 4-я карточка в `AI Agents · Sub-2 / Sub-3 / Sub-4` (🚀 Pump&Dump Agent, PAPER · sub-4).
+- **Hardlearned:** cockpit.html prod (`/var/www/dashboard/cockpit.html`) держит unversioned фичи (ZEN/HIDE/orbits) — НЕ затирать через `cp source → prod` без diff. См. `[[feedback-cockpit-unversioned]]` updated 2026-05-26.
 
 **Trade lifecycle полный:** `src/tracker.py` ведёт open positions, considers TP partials / SL / BE arming / time-stop / gap slippage, пишет в journal `trade_close` с r_realized (NET), gross/fees/fee_breakdown/funding, peak/trough_pnl_pct, tp_funnel.
 
