@@ -349,13 +349,30 @@ need_TP_win = ($0.988 × 0.45 − $0.137 × 0.36) / 0.19 = $2.08
 - **Экономия $0.093/trade × 180/мес = $16.7/мес**
 - Это **больше всего наблюдаемого убытка** при сохранении других настроек
 
-### План реализации (PLAN MODE, как требует CLAUDE.md)
-1. Включить `tp_order_type: Limit` через dashboard endpoint (1 коммит)
-2. Расширить `bybit_api.set_trading_stop` чтобы передавать `slLimitPrice` (1 коммит) + изменить `order_executor_v3.py` чтобы вызывать с `sl_order_type=Limit`
-3. Самый сложный шаг: заменить `place_market_order` на `place_order(Limit, PostOnly)` для entry + fallback на market через 5s timeout
-4. A/B тест: 20 real trades с maker, сравнить с baseline
+### Статус реализации (2026-05-26, после PLAN MODE)
 
-Реализация — отдельная задача, требует PLAN MODE подтверждения от Артёма (по правилу 4BotsBybit-Trading/CLAUDE.md).
+| Phase | Что | Статус | Commit |
+|---|---|---|---|
+| 1 | `tp_order_type: Limit` через dashboard endpoint | ✅ применено | dashboard apply 2026-05-26 |
+| 2a | `place_sl_trigger_order()` — conditional reduceOnly Limit SL + fallback Market | ✅ код в master | `6163afe` |
+| 2b | `place_postonly_limit_order()` — PostOnly Limit entry + market fallback на timeout | ✅ код в master | `6163afe` |
+| 2c | SETTINGS_REGISTRY: `sl_order_type`, `sl_limit_offset_pct`, `entry_order_type`, `entry_limit_timeout_sec` | ✅ код в master | `6163afe` |
+| 3 | `/api/v2/fees/breakdown` endpoint + `maker_ratio_est` | ✅ код в master | `0599150` |
+| — | **Активация флагов** `sl_order_type=Limit` + `entry_order_type=Limit` через dashboard | ⏸ NOT YET (опт-ин) | — |
+
+**Дефолты — Market.** Активация через dashboard:
+```
+POST /api/settings/sl_order_type    {"value": "Limit"}
+POST /api/settings/entry_order_type {"value": "Limit"}
+```
+Откат симметрично — `{"value": "Market"}` + рестарт `bybit-tradingbot`.
+
+**Verification:**
+- `python3 -m pytest tests/test_order_executor_maker.py -v` — 10 tests pass (payload structure)
+- `python3 -m pytest` — 230 tests pass full suite
+- Endpoint smoke: `curl /api/v2/fees/breakdown?source=real&days=30` → AGGR baseline fee_bps=6.97, maker_ratio=0% (pure-taker), потенциал $17.49/30d
+
+**Мониторинг после активации:** maker_ratio_est должен расти с ~0.30 (только TP-maker, как сейчас) до ~0.65-0.80 (TP+SL+entry maker, с fallback'ами).
 
 ---
 
