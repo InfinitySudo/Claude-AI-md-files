@@ -49,3 +49,12 @@ originSessionId: c0b57883-23e3-4a7e-a819-07a5b403c8f9
 - Voice-input в TG → voice-only reply (см. feedback_voice_chain_autoplay.md)
 - `/memory` `/forget <id>` `/forget all` `/reset` — управление памятью
 - `/voice` или menu-button «🎙 Live» открывают Mini App
+
+**Multimodal handlers (добавлено 2026-05-07):**
+- Photo/screenshot → vision (Haiku, MAX_IMAGE_BYTES=3.5 MB)
+- Audio file (mp3/m4a) → Whisper → voice reply (как и voice notes)
+- Video / video-note (кружочек) / animation (GIF) → ffmpeg вытягивает 1 frame в 1s + audio track; кадр в vision, аудио через Whisper, оба склеиваются в один turn
+- Sticker → image vision (animated `.tgs` пропускаются)
+- Document branch на mime: image/* → vision; application/pdf → Sonnet через document block (MAX_PDF_BYTES=20 MB); audio/* → Whisper; text/code → читается inline, обрезается до 30 000 символов
+- Все handlers используют общий `_reply_to(update, text, voice_only, images=, pdf=, model=)` — медиа-blocks подставляются в **последнее** user-сообщение `history` после загрузки из DB, в DB сохраняется только текстовая пометка (`[фото]`, `[PDF name]`, и т.д.)
+- System-prompt инструктирует не повторять служебные теги в ответе

@@ -1,21 +1,23 @@
 ---
-name: Hybrid trading mode (CONS=paper, TREND/AGGR=real)
-description: 2026-04-23 the system runs PER-STRATEGY routing — CONS still paper (until GA delivers profitable params), TREND/AGGR live on Bybit mainnet
+name: Full REAL trading mode (all strategies live since 2026-05-15)
+description: 2026-05-15 — Артём флипнул всё в REAL (CONS+TREND+AGGR). Paper заморожен с снапшотом +$137.98 CONS / +$66.59 TREND. Дальше real.
 type: feedback
 originSessionId: 140ba16f-5e2e-494a-890b-d8dc107dddde
 ---
-**Updated 2026-04-23**: The system is no longer a simple PAPER/REAL
-flag. It's hybrid: per-strategy routing.
+**Updated 2026-05-15**: Полный REAL. 33 open paper закрыты по mark-price (net +$23.86, `close_reason='MANUAL_MODE_SWITCH_REAL'`). real_trades — чистый старт. Hybrid-механизм остался в коде на случай возврата.
 
 ## Current state
 
-- `trading_mode.mode = 'PAPER'` (global fallback) but
-- `trading_mode.per_strategy = {CONSERVATIVE: PAPER, TREND: REAL,
-  AGGRESSIVE: REAL}` overrides per signal.
-- `current_strategy = TREND`, `strategy_mode = MANUAL` (set
-  2026-04-23) — first TREND signal will fire a REAL Bybit order.
-- Bybit wallet **$200.92 USDT** (Артём пополнил с $100.38 →
-  $200.92 на 2026-04-23). 0 open positions on exchange.
+- `trading_mode.mode = 'REAL'` AND `trading_mode.per_strategy = {CONS:REAL, TREND:REAL, AGGR:REAL}`.
+- `simulated_trades` заморожен; новых open paper нет, аналитика бот'а перешла на `real_trades`.
+- Pre-switch baseline (paper, 2026-05-15): CONS 996+26 trades +$137.98 / TREND 135+7 trades +$66.59 / AGGR 12 trades +$3.35.
+- Backup конфига перед свитчем: `config/trading_v3_artem.json.bak_20260515_080243`.
+
+## Историческое состояние (до 2026-05-15)
+
+- 2026-04-23 → hybrid mode (CONS=paper, TREND/AGGR=real, wallet $200.92).
+- 2026-05-09 → откатили TREND/AGGR обратно в paper для GA-тренировки.
+- 2026-05-15 → full REAL.
 
 ## Why hybrid
 

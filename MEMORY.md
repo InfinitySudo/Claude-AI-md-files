@@ -5,8 +5,12 @@
 - [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
+- [⚡ Trading Critical Params](project_trading_critical_params.md) — SINGLE SOURCE: mode/risk/SL formula (ATR×0.25)/TP/BE/fees/caps + real R-metrics + break-even formulas. READ FIRST для любого trading-анализа
+- [Pump&Dump AI Agent](project_pumpdump_agent.md) — отдельный self-tuning агент под пампы/дампы, Bybit sub4. Planning phase 2026-05-26: PLAN.md в repo InfinitySudo/PumpDumpAI_Agent, tile в Space_Live cockpit, Phase-1 кода ждёт approval
+- [Trading Analysis Protocol](feedback_trading_analysis_protocol.md) — перед RR/break-even/SL/fees анализом — Read [[project-trading-critical-params]]; не гадать настройки (была ошибка "0.8× ATR" 2026-05-26)
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
 - [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
+- [agent_levels 6h cooldown](feedback_agent_levels_cooldown.md) — после fill/expired блокируем повтор (symbol, side, level_type, price) на 6h; иначе BNB 651.67 спамит 4 копии в день
 - [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
 - [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
@@ -119,6 +123,12 @@
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
 - [Session 2026-05-25 WET games + select](project_session_2026_05_25_wet_games_select.md) — multi-select phrase в reader+chat, /play Word+Letter games, corrector→SONNET, no-cache + /reload (faefabe). TODO: book progress не сохраняется
+- [Session 2026-05-26 Estimator UI](project_session_2026_05_26_estimator_ui.md) — Feature Requests UI создание+фото (4f262e5/f81a614), заметные `+` кнопки в Memory разделе (7d59e18)
+- [Session 2026-05-26 Wrestling app-policy](project_session_2026_05_26_wrestling_app_policy.md) — 421573b: app-policy/geo/camp-verify/roll-call/extra-tasks/sparring-i18n/leagues-tours/analysis-unique/norm-finalize, 18 файлов
+- [Session 2026-05-26 Wrestler card + Competitions](project_session_2026_05_26_wrestler_card_competitions.md) — 33bcc18: карта борця (share→approve), Соревнования вкладка, Pro in-app rating, parental consent <18, Constant ToS/Privacy
+- [Session 2026-05-27 Wrestling v1.0 submit + v1.0.1](project_session_2026_05_27_wrestling_v1_0_submit.md) — Apple submission acf3e653 (build 79860157, manual release); v1.0.1 sparring location+cross-club apply на prod web (8ff3456); грабли Capacitor URL/ATT/iPad family
+- [Session 2026-05-27 Wrestling v1.0.1 follow-up](project_session_2026_05_27_wrestling_v1_0_1_followup.md) — recovery от NameError:List + owner push на application + Discover region/city chips + Sparring tab state-save (commit 0621ad4)
+- [i18n fallback trap](feedback_i18n_fallback_trap.md) — `t('key') || 'Default'` НЕ работает в react-i18next: t() возвращает ключ-строку как truthy. Класть ключ в en.json или 2-й арг t()
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
 - [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor
 - [BE Per-Strategy A/B/C](project_be_per_strategy_experiment.md) — CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5 + shadow=no-BE; не трогать 30d, выбрать победителя по PF/net

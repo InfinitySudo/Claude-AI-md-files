@@ -18,6 +18,14 @@ metadata:
 
 Tech stack: NetworkX in batch + Cytoscape.js front (built-in `cose` layout — fcose UMD on unpkg is broken, see commit `edbaf49`). Generic template at `tools/_template/graph_generic.html` to avoid the trading-template trap where missing `data.stats.total_pnl` killed tutor/ontime rendering silently.
 
+**2026-05-15 upgrade — all 5 graphs now have:**
+- Auto-digest `.md` in memory dir: `PROJECTS.md`, `MEMORY_DIGEST.md`, `TRADING_DIGEST.md`, `ONTIME_DIGEST.md`, `TUTOR_DIGEST.md` (indexed in MEMORY.md)
+- `status_icon` per node (🟢/🟡/🟠/🔴/⚫/📝) → memory=mtime recency, trading=net PnL sign, ontime=weight totals, tutor=mastery/activity
+- Shared sortable table-view toggle (📊 Table button) via `/graphs-shared/table_view.js` — nginx alias to `/var/www/graphs-shared/`
+- Richer side-panel: memory splits incoming vs outgoing wiki-links, trading shows avg PnL per trade, ontime+tutor label edge kinds
+- Hub button counts (`/graphs/`) auto-refresh from fresh JSONs each rebuild via `tools/graphs_hub/refresh_counts.py`
+- Hub tab order: Memory, Projects, Trading, OnTime, Tutor
+
 **PROJECTS.md auto-digest** — `tools/projects_graph/build_graph.py` regenerates it every 30 min (systemd timer `graph-rebuild.timer` runs `rebuild-all.sh`). Sections: Recent activity (10 commits), Shared resources (creds-only, symlinked .env skipped), Recent memory edits, Scheduled jobs, per-project block with status icon (🟢/🟡/🔴/⚫), host health-checks, README excerpts, linked memories.
 
 `PROJECTS.md` lives both in `~/.claude/projects/-root/memory/` (auto-loaded into every new session) AND mirrored to `Claude-AI-md-files/` repo. MEMORY.md line 1 points to it with "🗂 Projects digest — START HERE".

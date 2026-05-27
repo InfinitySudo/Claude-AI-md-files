@@ -1,22 +1,36 @@
 ---
 name: Hybrid trading mode (per-strategy paper/real routing)
-description: trading_mode is no longer global — per_strategy map routes each signal to paper_simulator or real_executor based on its strategy
+description: Per-strategy routing machinery still in code, but as of 2026-05-15 ALL three strategies = REAL (full live mode). Hybrid mechanism kept for future paper-shadowing.
 type: project
 originSessionId: 140ba16f-5e2e-494a-890b-d8dc107dddde
 ---
-Activated 2026-04-23 after backfilled fees showed CONS net-loss
-(-$13.22 / 838 trades / PF 0.96) while TREND was net-positive
-(+$41.42 / 62 trades / PF 1.94). Flipping a single global REAL flag
-would have sent the unprofitable strategy live too — instead each
-strategy gets its own routing.
 
-## Config (`config/trading_v3_artem.json`)
+## Current state 2026-05-15
+
+**FULL REAL** — Артём переключил через ControlBot menu, я доправил `per_strategy` в JSON и закрыл 33 open paper-сделки по mark-price (net +$23.86, `close_reason='MANUAL_MODE_SWITCH_REAL'`). Paper-таблица заморожена, real_trades = чистый старт.
 
 ```json
 "trading_mode": {
-  "mode": "PAPER",                    // global fallback
-  "per_strategy": {
-    "CONSERVATIVE": "PAPER",
+  "mode": "REAL",
+  "per_strategy": {"CONSERVATIVE": "REAL", "TREND": "REAL", "AGGRESSIVE": "REAL"}
+}
+```
+
+Backup pre-switch: `config/trading_v3_artem.json.bak_20260515_080243`.
+
+## История
+
+Activated 2026-04-23 after backfilled fees showed CONS net-loss
+(-$13.22 / 838 trades / PF 0.96) while TREND was net-positive
+(+$41.42 / 62 trades / PF 1.94). На 2026-05-09 после MFE-калибровки CONS вернули в paper, потом 2026-05-15 — full real.
+
+## Config shape (`config/trading_v3_artem.json`)
+
+```json
+"trading_mode": {
+  "mode": "REAL",                     // global fallback
+  "per_strategy": {                   // overrides per strategy
+    "CONSERVATIVE": "REAL",
     "TREND":        "REAL",
     "AGGRESSIVE":   "REAL"
   }

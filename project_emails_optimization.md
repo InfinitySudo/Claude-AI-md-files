@@ -34,16 +34,26 @@ originSessionId: f06d9554-9cc1-46e7-aaf0-3f92102afc52
 **systemd units (все active):**
 - emails-bot.service (Артём, TEST_MODE=1)
 - emails-bot-tim.service (Тим, LIVE)
-- emails-poller.service (60s)
+- emails-poller.service (3600s, было 60s — менял 2026-05-07 по жалобе Тима)
 - emails-followups.timer (OnCalendar=09:00 daily)
 - emails-morning-digest.timer (OnCalendar=07:00 daily)
+
+## 2026-05-07 — Tim UX wave (commits bc0bf70, e20f681)
+Тим жаловался: «застрявшие карточки нельзя удалить», «бьёт каждую минуту», «триаж думает что Airbnb-emails это reply, хотя я инициатор и жду гостя».
+
+- **🗑 Delete button** на каждой card (bot.py + poller.py keyboard); user_action='deleted'.
+- **/pause + /resume** — inline menu: 1h / 2h / 4h / Until 8am Calgary / Indefinite. paused_until per chat_id в bot_state. Auto-resume по таймеру с пушем "🔔 Notifications back on. N cards waiting" — Тим не может забыть включить.
+- **POLL_INTERVAL_SEC 60 → 3600**.
+- **Airbnb / platform automation rules в triage prompt:** express@airbnb.com, noreply@booking.com и т.п. → mute (info) или delegate с draft="Open Airbnb app and respond there"; никогда urgent/reply. "RE:" subject ≠ нужен ответ. Переклассифицировано 259 старых airbnb-записей через подписку Артёма (claude_auth.py OAuth), 0 errors.
+- **PAUSE_INDEFINITE sentinel** = '9999-12-31T23:59:59+00:00'; не auto-resumes.
+- **db.init() добавлен в poller.main()** — schema migrations работают даже если bot-процесс запустится позже.
 
 **DB schema:** добавлены колонки `project_id`, `urgent_subcategory` (миграция в `db.init()`); индекс `idx_emails_project`. Старые ~6750 писем — без project_id (NULL); только новые получат теги. Можно при желании сделать one-shot re-triage только по pending non-mute (~1089 писем).
 
 **Ещё НЕ сделано:**
 - Stage 5: Delegate forwarding к ассистенту (нужен TG_ASSISTANT_USERNAME + чат от Тима)
 
-**Последний commit:** `bea2c29` (stages 6/7/8)
+**Последний commit:** `e20f681` (Tim UX wave — Delete + /pause + interval bump + airbnb triage rules)
 **Репо:** github.com/InfinitySudo/emails-optimization (private)
 **Live VPS пути:** `/root/emails-optimization/`, БД `/root/emails-optimization/emails.db`
 
