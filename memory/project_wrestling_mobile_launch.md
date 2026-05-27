@@ -62,3 +62,10 @@ VPS-stack: OpenJDK 21 (apt), Android SDK 34 в `/opt/android-sdk/` (cmdline-tool
 6. ASC → Submit for Review, выбрать **Manually release this version** (важно — иначе автоматически выкатится сразу после approve).
 7. Optionally request expedited review с обоснованием "Friday 29 May coordinated launch".
 8. Friday 29 May → Release this version → live через 1-24 ч.
+
+---
+
+## 2026-05-27 00:09 MDT — Submitted ✅
+- Submission ID `acf3e653-945d-4d42-b25e-725d6d081e58`, build 79860157 (Codemagic #8, commit `2385b9b`), Manual release.
+- v1.0.1 backbone (Sparrings location + cross-club apply) уже на prod web (`8ff3456`); ждёт когда Apple одобрит v1.0.
+- Подробности сессии: [[project-session-2026-05-27-wrestling-v1-0-submit]].
