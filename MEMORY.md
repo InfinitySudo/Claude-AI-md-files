@@ -11,11 +11,13 @@
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
 - [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
 - [agent_levels 6h cooldown](feedback_agent_levels_cooldown.md) — после fill/expired блокируем повтор (symbol, side, level_type, price) на 6h; иначе BNB 651.67 спамит 4 копии в день
+- [agent_levels SL_ATR history](feedback_agent_levels_sl_atr.md) — 1.5→0.7 (2026-05-18)→0.2 (2026-05-27); риск wick-out vs больше setups через RR≥3 фильтр
 - [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
 - [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
 - [Strict Plan Rules](feedback_strict_plan_rules.md) — план обязателен + прогресс-бар + без болтовни + вопросы только при блоке; инжектится UserPromptSubmit hook'ом
+- [One Tweak At A Time](feedback_one_tweak_at_a_time.md) — torговые правки по одной + измерение, не пачкой; «знать что помогло, а не навалить всё»
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
 - [nginx /uploads/ regex trap](feedback_nginx_uploads_regex_trap.md) — голый `location /uploads/` пожирается regex `\.(jpg|png)$` → 404; нужен `^~ /uploads/`
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
@@ -70,6 +72,8 @@
 - [Estimating Phase A AI-assist](project_estimating_phase_a.md) — 2026-05-25: siding-estimator-bot @TSA_EstimatorBot + Stack mirror + learned_rules в BOM + Similar panel в OnTime
 - [Estimating без Vision API](feedback_estimating_no_api.md) — extraction только regex + ручной ✏️; Vision не предлагать (решение 2026-05-04). ⚠ Применимо только к auto-extraction metadata, НЕ к tracing.
 - [AI Vision Trace разрешено](feedback_ai_trace_enabled.md) — 2026-05-25: AI auto-trace polygons в SheetEditorPage (Уровень 2 — draft+проверка); кнопка 🤖 AI Trace, использует Claude Sonnet 4.6 Vision
+- [Estimating metric support](feedback_estimating_metric.md) — 2026-05-27: SheetEditorPage CalibrationModal toggle imperial/metric; AI prompt детектит unit; px_per_ft единый в БД (всегда per FOOT)
+- [AI Trace teaching](project_ai_trace_teach.md) — 2026-05-27: Артём обводит вручную → кнопка «Teach AI» → ai_trace_examples table → few-shot reference в Sonnet prompt при следующих trace
 - [Estimator Anthropic key scoped](feedback_anthropic_key_scoped_estimator.md) — TSA_ESTIMATOR_ANTHROPIC_KEY только для ai_trace.py; не читать ANTHROPIC_API_KEY в других модулях OnTime
 - [CV-trace over AI](feedback_cv_trace_over_ai.md) — на blueprints OpenCV findContours даёт pixel-precise контуры; AI Vision стабильно рисует bbox'ы; OnTime endpoint /ai-trace = CV+AI hybrid
 - [Estimator AI Memory](project_estimator_ai_memory.md) — .md файлы в /root/ontime/backend/estimator_memory/, общие для TG бота и OnTime UI; lessons/rules/vendors/materials/projects
@@ -128,6 +132,7 @@
 - [Session 2026-05-26 Wrestler card + Competitions](project_session_2026_05_26_wrestler_card_competitions.md) — 33bcc18: карта борця (share→approve), Соревнования вкладка, Pro in-app rating, parental consent <18, Constant ToS/Privacy
 - [Session 2026-05-27 Wrestling v1.0 submit + v1.0.1](project_session_2026_05_27_wrestling_v1_0_submit.md) — Apple submission acf3e653 (build 79860157, manual release); v1.0.1 sparring location+cross-club apply на prod web (8ff3456); грабли Capacitor URL/ATT/iPad family
 - [Session 2026-05-27 Wrestling v1.0.1 follow-up](project_session_2026_05_27_wrestling_v1_0_1_followup.md) — recovery от NameError:List + owner push на application + Discover region/city chips + Sparring tab state-save (commit 0621ad4)
+- [Session 2026-05-28 OnTime Orders + PDF](project_session_2026_05_28_ontime_orders.md) — commit 07e0a07: ProjectsPage search/sort, OrdersTab inline-edit + multi-select bulk PO + material_requests, POErrorBoundary, PDF DejaVu Sans для кириллицы, @mention расширен, Artem PM учётка (id=8)
 - [i18n fallback trap](feedback_i18n_fallback_trap.md) — `t('key') || 'Default'` НЕ работает в react-i18next: t() возвращает ключ-строку как truthy. Класть ключ в en.json или 2-й арг t()
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
 - [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor
