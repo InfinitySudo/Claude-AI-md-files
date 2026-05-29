@@ -11,11 +11,13 @@
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
 - [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
 - [agent_levels 6h cooldown](feedback_agent_levels_cooldown.md) — после fill/expired блокируем повтор (symbol, side, level_type, price) на 6h; иначе BNB 651.67 спамит 4 копии в день
+- [agent_levels SL_ATR history](feedback_agent_levels_sl_atr.md) — 1.5→0.7 (2026-05-18)→0.2 (2026-05-27); риск wick-out vs больше setups через RR≥3 фильтр
 - [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
 - [Migration bypass CLAUDE.md](feedback_bybit_migration_bypass.md) — правки .env, stop, close-real — ТОЛЬКО при явном разрешении Артёма на миграцию
 - [Project Progress](project_progress.md) — What's done, what's TODO, key architecture decisions, important file paths
 - [User Profile](user_artem.md) — Artem, crypto trader + wrestling coach, Russian, prefers action over discussion
 - [Strict Plan Rules](feedback_strict_plan_rules.md) — план обязателен + прогресс-бар + без болтовни + вопросы только при блоке; инжектится UserPromptSubmit hook'ом
+- [One Tweak At A Time](feedback_one_tweak_at_a_time.md) — torговые правки по одной + измерение, не пачкой; «знать что помогло, а не навалить всё»
 - [Deploy State](project_deploy_state.md) — Live VPS: ports, processes, nginx config, what runs where
 - [nginx /uploads/ regex trap](feedback_nginx_uploads_regex_trap.md) — голый `location /uploads/` пожирается regex `\.(jpg|png)$` → 404; нужен `^~ /uploads/`
 - [Dashboard Startup Gotchas](feedback_dashboard_startup.md) — Don't start API with test env vars; nginx had conflicting configs
@@ -70,6 +72,8 @@
 - [Estimating Phase A AI-assist](project_estimating_phase_a.md) — 2026-05-25: siding-estimator-bot @TSA_EstimatorBot + Stack mirror + learned_rules в BOM + Similar panel в OnTime
 - [Estimating без Vision API](feedback_estimating_no_api.md) — extraction только regex + ручной ✏️; Vision не предлагать (решение 2026-05-04). ⚠ Применимо только к auto-extraction metadata, НЕ к tracing.
 - [AI Vision Trace разрешено](feedback_ai_trace_enabled.md) — 2026-05-25: AI auto-trace polygons в SheetEditorPage (Уровень 2 — draft+проверка); кнопка 🤖 AI Trace, использует Claude Sonnet 4.6 Vision
+- [Estimating metric support](feedback_estimating_metric.md) — 2026-05-27: SheetEditorPage CalibrationModal toggle imperial/metric; AI prompt детектит unit; px_per_ft единый в БД (всегда per FOOT)
+- [AI Trace teaching](project_ai_trace_teach.md) — 2026-05-27: Артём обводит вручную → кнопка «Teach AI» → ai_trace_examples table → few-shot reference в Sonnet prompt при следующих trace
 - [Estimator Anthropic key scoped](feedback_anthropic_key_scoped_estimator.md) — TSA_ESTIMATOR_ANTHROPIC_KEY только для ai_trace.py; не читать ANTHROPIC_API_KEY в других модулях OnTime
 - [CV-trace over AI](feedback_cv_trace_over_ai.md) — на blueprints OpenCV findContours даёт pixel-precise контуры; AI Vision стабильно рисует bbox'ы; OnTime endpoint /ai-trace = CV+AI hybrid
 - [Estimator AI Memory](project_estimator_ai_memory.md) — .md файлы в /root/ontime/backend/estimator_memory/, общие для TG бота и OnTime UI; lessons/rules/vendors/materials/projects
@@ -109,7 +113,8 @@
 - [OnTime Timesheet Tab](project_tsa_timesheet.md) — /timesheet 3-view: Matrix (workers×days), By Allocation, Anomalies; require_finance
 - [Billable Hours Dedup](feedback_billable_hours_dedup.md) — `_billable_hours_map`: report wins per (uid,day) — не (uid,pid,day); человек не на двух объектах одновременно
 - [Timesheet=Payroll unified](feedback_timesheet_payroll_unified.md) — 2026-05-25: timesheet/matrix + by-allocation теперь применяют switched_project exception и 12h cap (как payroll); фикс расхождений у Igor/Yaroslav
-- [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab
+- [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab; +PO expansion 2026-05-29 (attachments/SMTP/rich fields)
+- [Session 2026-05-29 OnTime PO push + Work Plan](project_session_2026_05_29_ontime_po.md) — commit 9747361 (PO workflow) + June Work Plan PDFs; Workers now = daily_reports не sessions
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
 - [REAL global-guard limit](project_real_global_guard_limitation.md) — с 2026-05-24 любая real-pos на символе блочит другую страту; при multi-strategy-real напомнить про виртуальную per-strategy книгу
@@ -122,11 +127,15 @@
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
+- [Wrestling Account Deletion](project_wrestling_account_deletion.md) — Apple 5.1.1(v): DELETE /api/me?confirm=true анонимизирует users; Danger Zone в ProfilePage; live на web (3972f62), в iOS войдёт при пересабмите
+- [Wrestling SMTP](project_wrestling_smtp.md) — 2026-05-29: parental-consent/reset письма не слались (SMTP не настроен); починено systemd drop-in (Gmail borysiukartem55); конфиг вне git (секрет)
 - [Session 2026-05-25 WET games + select](project_session_2026_05_25_wet_games_select.md) — multi-select phrase в reader+chat, /play Word+Letter games, corrector→SONNET, no-cache + /reload (faefabe). TODO: book progress не сохраняется
 - [Session 2026-05-26 Estimator UI](project_session_2026_05_26_estimator_ui.md) — Feature Requests UI создание+фото (4f262e5/f81a614), заметные `+` кнопки в Memory разделе (7d59e18)
 - [Session 2026-05-26 Wrestling app-policy](project_session_2026_05_26_wrestling_app_policy.md) — 421573b: app-policy/geo/camp-verify/roll-call/extra-tasks/sparring-i18n/leagues-tours/analysis-unique/norm-finalize, 18 файлов
 - [Session 2026-05-26 Wrestler card + Competitions](project_session_2026_05_26_wrestler_card_competitions.md) — 33bcc18: карта борця (share→approve), Соревнования вкладка, Pro in-app rating, parental consent <18, Constant ToS/Privacy
 - [Session 2026-05-27 Wrestling v1.0 submit + v1.0.1](project_session_2026_05_27_wrestling_v1_0_submit.md) — Apple submission acf3e653 (build 79860157, manual release); v1.0.1 sparring location+cross-club apply на prod web (8ff3456); грабли Capacitor URL/ATT/iPad family
+- [Session 2026-05-27 Wrestling v1.0.1 follow-up](project_session_2026_05_27_wrestling_v1_0_1_followup.md) — recovery от NameError:List + owner push на application + Discover region/city chips + Sparring tab state-save (commit 0621ad4)
+- [Session 2026-05-28 OnTime Orders + PDF](project_session_2026_05_28_ontime_orders.md) — commit 07e0a07: ProjectsPage search/sort, OrdersTab inline-edit + multi-select bulk PO + material_requests, POErrorBoundary, PDF DejaVu Sans для кириллицы, @mention расширен, Artem PM учётка (id=8)
 - [i18n fallback trap](feedback_i18n_fallback_trap.md) — `t('key') || 'Default'` НЕ работает в react-i18next: t() возвращает ключ-строку как truthy. Класть ключ в en.json или 2-й арг t()
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
 - [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor
@@ -149,6 +158,7 @@
 - [GA Walk-Forward](project_ga_walk_forward_todo.md) — ACTIVE с 2026-04-25: 70/30 train/test split в evaluate(), fitness=test−K·saturating(train−test)
 - [GA Unrealistic TPs](feedback_ga_unrealistic_tps.md) — GA выдаёт TP 13-48R, реал MFE ~2%; сверять с MFE до apply, чинить через time-stop+MFE-cap
 - [GA Under Review](project_ga_under_review.md) — 2026-05-13 Артём на грани отказа от GA; не запускать без запроса; fix-vs-kill решение pending
+- [BTC Regime Gate](project_btc_regime_gate.md) — 2026-05-29: блок контртренд-LONG пока BTC<4H EMA200 (все страты, paper+real); toggle btc_regime_enabled в Settings, дефолт ON; дополняет per-symbol EMA-gate
 - [MFE Calibration](project_mfe_calibration.md) — 📐 MFE tab + /api/mfe/* — data-driven TP-тюнинг из реальной peak_pnl_pct; используй вместо GA; CONS+TREND applied 2026-05-13
 - [Funnel vs Close Reason](feedback_funnel_vs_close_reason.md) — TP-funnel ячейки overlap (trigger events); mutually exclusive разбивка — только close_reason
 - [Labor vs Purchase Materials](feedback_ontime_labor_vs_purchase.md) — два РАЗНЫХ вида материалов в OnTime; install rates ≠ vendor prices; не маскировать одно другим

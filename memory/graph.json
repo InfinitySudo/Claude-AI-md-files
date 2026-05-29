@@ -8,7 +8,7 @@
       "type": "project",
       "summary": "Ranked paths to $10k+/mo using AI, tailored to Artem's assets. Discussed 2026-04-16. TG channel picked as parallel track; primary product path still OnTime productization.",
       "size": 2792,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777223934.1093357
     },
     {
@@ -52,7 +52,7 @@
       "type": "feedback",
       "summary": "На real BE-protection реализован отдельным monitor'ом в reconciler — paper держит свою логику, real использует Bybit set_trading_stop",
       "size": 1214,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777497879.8273196
     },
     {
@@ -85,7 +85,7 @@
       "type": "feedback",
       "summary": "Billable service tasks must transit service → to_invoice → (accounting) → complete; service role cannot skip to complete",
       "size": 1946,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777406252.3384995
     },
     {
@@ -129,7 +129,7 @@
       "type": "feedback",
       "summary": "bybit_api.py _request(\"GET\") signs sorted params but used to send unsorted — silent 401 on auth-required endpoints with non-alphabetical insertion order",
       "size": 1069,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777495803.3159764
     },
     {
@@ -217,7 +217,7 @@
       "type": "feedback",
       "summary": "PostgreSQL `timestamp without time zone` columns store UTC; passing `datetime.now()` silently drops the most recent UTC_offset hours of data",
       "size": 1258,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777138159.0097053
     },
     {
@@ -305,7 +305,7 @@
       "type": "project",
       "summary": "order_executor_wrapper auto-closes <10% qty residuals from server-side TP rounding to prevent orphan dust forever",
       "size": 1151,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777495818.1850343
     },
     {
@@ -448,7 +448,7 @@
       "type": "project",
       "summary": "Train/test split inside evaluate() — fitness graded on out-of-sample TEST, with saturating penalty when TRAIN diverges",
       "size": 2142,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777140268.541423
     },
     {
@@ -558,7 +558,7 @@
       "type": "project",
       "summary": "OnTime invoice@threestonesalliance.ca IMAP → DB → Vendor Prices + Canonical Materials grid. 23 regex parsers, 2079/2945 invoices parsed (71%), $2.42M of $3M spend. Daily cron. Updated 2026-04-28.",
       "size": 5662,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777402162.9132807
     },
     {
@@ -569,7 +569,7 @@
       "type": "project",
       "summary": "One-shot systemd timer 2026-05-12 10:00 Calgary — Tesseract OCR re-parse over failed vendor_invoices, then canonicalize, TG report",
       "size": 1769,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777402980.387907
     },
     {
@@ -690,7 +690,7 @@
       "type": "feedback",
       "summary": "В OnTime invoice pipeline НЕ использовать Claude/OpenAI API. Только regex per-vendor parsers как сделали для Roofmart.",
       "size": 921,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777394859.3572977
     },
     {
@@ -756,7 +756,7 @@
       "type": "feedback",
       "summary": "Archive в OnTime означает мусор/cancelled/тест, а не \"спрятать завершённый проект\"",
       "size": 1196,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777444431.4037404
     },
     {
@@ -767,7 +767,7 @@
       "type": "feedback",
       "summary": "Saving a project with shorter material list silently wipes ALL prior BOM rows on that project — DELETE-then-INSERT pattern in _set_project_materials",
       "size": 1004,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777167148.5281503
     },
     {
@@ -844,7 +844,7 @@
       "type": "project",
       "summary": "Shortage tracking on PO line items — Foreman flow for short-shipped deliveries with wait/reorder/resolved actions",
       "size": 1949,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777164015.202271
     },
     {
@@ -877,7 +877,7 @@
       "type": "feedback",
       "summary": "Форман на мобильном теряет primary-action кнопки — `hidden lg:inline` режет подписи, иконки тонут в шапке",
       "size": 1079,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777310667.9663553
     },
     {
@@ -921,7 +921,7 @@
       "type": "feedback",
       "summary": "Two distinct kinds of \"materials\" in OnTime — labor install rates vs vendor purchase prices. Never mix them.",
       "size": 1339,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777161155.580644
     },
     {
@@ -965,7 +965,7 @@
       "type": "feedback",
       "summary": "project_installers надо считать source-of-truth для крю; legacy-импорт его не заполнил, авто-pin в /api/reports + backfill закрывают дыру",
       "size": 1181,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777479446.4731286
     },
     {
@@ -1031,7 +1031,7 @@
       "type": "project",
       "summary": "Перемещение работника между active projects — три пути: pull-now (one-tap, foreman target), transfer-request (worker сам сдаёт отчёт), и оригинальный 409-блок если caller не имеет прав",
       "size": 3731,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777480353.4872758
     },
     {
@@ -1086,7 +1086,7 @@
       "type": "feedback",
       "summary": "When labor catalog is replaced wholesale, old archived materials point to new canonical ones via canonical_id; installed_qty queries union both",
       "size": 1575,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777167180.9602976
     },
     {
@@ -1141,7 +1141,7 @@
       "type": "project",
       "summary": "В OnTime `hourly_wage` (roster) — что получает работник; для бюджета и team-activity labour используется loaded cost через `_wage_to_cost(wage)`",
       "size": 2351,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777181068.4800947
     },
     {
@@ -1372,7 +1372,7 @@
       "type": "feedback",
       "summary": "SQLite datetime('now') пишет с пробелом, Python datetime.isoformat() пишет с T — лексикографическое сравнение режет записи в день cutoff'а",
       "size": 1369,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777264860.4237735
     },
     {
@@ -1438,7 +1438,7 @@
       "type": "project",
       "summary": "Production symbols.json state, tier structure, and full Bybit USDT-perp universe archive",
       "size": 1816,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777498367.9834623
     },
     {
@@ -1614,7 +1614,7 @@
       "type": "project",
       "summary": "Unified /api/trading-state widget on real.html for \"is real on?\" — endpoints, semantics, pause/resume mechanics",
       "size": 2304,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777495791.4329305
     },
     {
@@ -1701,9 +1701,9 @@
       "title": "Wrestling App V2 — Multi Club + Full Features",
       "type": "project",
       "summary": "Major v2 rewrite done 2026-04-13; multi-club, proportional norms, analysis, profile with socials, club branding",
-      "size": 5322,
+      "size": 8812,
       "status_icon": "🟢",
-      "mtime": 1779234922.359175
+      "mtime": 1779826423.1690803
     },
     {
       "file": "project_wrestling_camp_payment.md",
@@ -1713,7 +1713,7 @@
       "type": "project",
       "summary": "Camp оплата через Square checkout link с двусторонней confirm-flow (без Square Webhooks API)",
       "size": 1740,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777233438.2918148
     },
     {
@@ -1761,6 +1761,17 @@
       "mtime": 1779492347.257408
     },
     {
+      "file": "feedback_agent_levels_cooldown.md",
+      "id": "agent-levels-cooldown",
+      "name": "agent-levels-cooldown",
+      "title": "Agent Levels Cooldown",
+      "type": "memory",
+      "summary": "\"AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level блокирует. existing_active guard ловит только status='placed', нужна отдельная пров",
+      "size": 1733,
+      "status_icon": "🟢",
+      "mtime": 1779771591.7574053
+    },
+    {
       "file": "feedback_agent_levels_guards.md",
       "id": "agent-levels-guards-chain",
       "name": "agent-levels-guards-chain",
@@ -1768,7 +1779,7 @@
       "type": "memory",
       "summary": "Полная цепочка фильтров в gerchik-trading-agent place_level() — 9 guards в порядке исполнения + DB колонки + что сохраняется",
       "size": 2950,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779210467.9678042
     },
     {
@@ -1779,8 +1790,19 @@
       "type": "memory",
       "summary": "\"gerchik-trading-agent — любой новый caller place_level() ОБЯЗАН использовать tg_notified_at gate перед send_level_notification, иначе TG спамится дублями.\"",
       "size": 1457,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779221612.5235474
+    },
+    {
+      "file": "feedback_anthropic_key_scoped_estimator.md",
+      "id": "anthropic-key-scoped-estimator",
+      "name": "anthropic-key-scoped-estimator",
+      "title": "Anthropic Key Scoped Estimator",
+      "type": "memory",
+      "summary": "ANTHROPIC_API_KEY запрещён в OnTime — только TSA_ESTIMATOR_ANTHROPIC_KEY и только в ai_trace.py",
+      "size": 950,
+      "status_icon": "🟢",
+      "mtime": 1779736818.7910738
     },
     {
       "file": "feedback_avatar_video_calibration.md",
@@ -1843,8 +1865,19 @@
       "type": "memory",
       "summary": "\"Полный snapshot всех настроек dashboard на момент чистого старта fan-out эксперимента (CONS-real, TREND-paper, AGGR-paper)\"",
       "size": 2177,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779147044.8874695
+    },
+    {
+      "file": "feedback_cv_trace_over_ai.md",
+      "id": "cv-trace-over-ai",
+      "name": "cv-trace-over-ai",
+      "title": "Cv Trace Over Ai",
+      "type": "memory",
+      "summary": "\"На blueprints OpenCV findContours > AI Vision для polygon-trace; Sonnet рисует bbox'ы вместо контуров\"",
+      "size": 1567,
+      "status_icon": "🟢",
+      "mtime": 1779737433.0147507
     },
     {
       "file": "feedback_dashboard_v2_deploy.md",
@@ -1922,6 +1955,39 @@
       "mtime": 0
     },
     {
+      "file": "project_estimator_ai_memory.md",
+      "id": "estimator-ai-memory",
+      "name": "estimator-ai-memory",
+      "title": "Estimator Ai Memory",
+      "type": "memory",
+      "summary": ".md memory shared между OnTime backend и TG ботом @TSA_EstimatorBot",
+      "size": 1387,
+      "status_icon": "🟢",
+      "mtime": 1779746474.9802163
+    },
+    {
+      "file": "project_estimator_assemblies.md",
+      "id": "estimator-assemblies",
+      "name": "estimator-assemblies",
+      "title": "Estimator Assemblies",
+      "type": "memory",
+      "summary": "Multi-layer cladding stacks per takeoff — assembly_templates table + BOM разворот",
+      "size": 2562,
+      "status_icon": "🟢",
+      "mtime": 1779753169.8774152
+    },
+    {
+      "file": "project_estimator_links.md",
+      "id": "estimator-links",
+      "name": "estimator-links",
+      "title": "Estimator Links",
+      "type": "memory",
+      "summary": "estimate_projects (OnTime PDF) ↔ stack_projects (TG bot Excel BOM) связаны через project_links",
+      "size": 1781,
+      "status_icon": "🟢",
+      "mtime": 1779750462.79188
+    },
+    {
       "id": "fanout-architecture-2026-05-18",
       "name": "fanout-architecture-2026-05-18",
       "title": "fanout-architecture-2026-05-18",
@@ -1930,6 +1996,38 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_agent_levels_sl_atr.md",
+      "id": "feedback-agent-levels-sl-atr",
+      "name": "feedback-agent-levels-sl-atr",
+      "title": "Feedback Agent Levels Sl Atr",
+      "type": "memory",
+      "summary": "История изменений SL_ATR_MULT в gerchik-trading-agent — компромисс между шириной SL (защита от wick-out) и пропускной способностью через RR_MIN=3.0 фильтр.",
+      "size": 1522,
+      "status_icon": "🟢",
+      "mtime": 1779916400.4735203
+    },
+    {
+      "id": "feedback-agent-levels-tg-dedup",
+      "name": "feedback-agent-levels-tg-dedup",
+      "title": "feedback-agent-levels-tg-dedup",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_ai_trace_enabled.md",
+      "id": "feedback-ai-trace-enabled",
+      "name": "feedback-ai-trace-enabled",
+      "title": "Feedback Ai Trace Enabled",
+      "type": "memory",
+      "summary": "Vision-tracing для OnTime estimating РАЗРЕШЕНО Артёмом 2026-05-25 (Уровень 2 — AI draft + ручная проверка)",
+      "size": 1573,
+      "status_icon": "🟢",
+      "mtime": 1779734510.1827457
     },
     {
       "file": "feedback_anthropic_oauth_authtoken.md",
@@ -1956,6 +2054,16 @@
       "id": "feedback-be-on-real",
       "name": "feedback-be-on-real",
       "title": "feedback-be-on-real",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-billable-hours-dedup",
+      "name": "feedback-billable-hours-dedup",
+      "title": "feedback-billable-hours-dedup",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2022,9 +2130,19 @@
       "title": "Feedback Cockpit Unversioned",
       "type": "memory",
       "summary": "/var/www/dashboard/cockpit.html не в git — все правки только на диске. Backup перед правкой обязателен. Auto-mode classifier блокирует правки этого пути без явного allow от Артёма.",
-      "size": 1010,
+      "size": 1676,
       "status_icon": "🟢",
-      "mtime": 1779685219.182454
+      "mtime": 1779783461.3666003
+    },
+    {
+      "id": "feedback-cv-trace-over-ai",
+      "name": "feedback-cv-trace-over-ai",
+      "title": "feedback-cv-trace-over-ai",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "feedback-dashboard-v1-v2",
@@ -2047,9 +2165,50 @@
       "mtime": 0
     },
     {
+      "id": "feedback-dd-guard-paper-skip",
+      "name": "feedback-dd-guard-paper-skip",
+      "title": "feedback-dd-guard-paper-skip",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback-emails-agent-handle-button",
       "name": "feedback-emails-agent-handle-button",
       "title": "feedback-emails-agent-handle-button",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_estimating_metric.md",
+      "id": "feedback-estimating-metric",
+      "name": "feedback-estimating-metric",
+      "title": "Feedback Estimating Metric",
+      "type": "memory",
+      "summary": "\"OnTime Estimating поддерживает и imperial и metric чертежи. Внутренняя единица — всегда px_per_ft (футы), но UI и AI prompt принимают оба типа input/output.\"",
+      "size": 1960,
+      "status_icon": "🟢",
+      "mtime": 1779917761.2075546
+    },
+    {
+      "id": "feedback-estimating-no-api",
+      "name": "feedback-estimating-no-api",
+      "title": "feedback-estimating-no-api",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-fastapi-route-order",
+      "name": "feedback-fastapi-route-order",
+      "title": "feedback-fastapi-route-order",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2066,6 +2225,16 @@
       "size": 1511,
       "status_icon": "🟡",
       "mtime": 1778696175.9423335
+    },
+    {
+      "id": "feedback-ga-fitness-overfit",
+      "name": "feedback-ga-fitness-overfit",
+      "title": "feedback-ga-fitness-overfit",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "file": "feedback_ga_unrealistic_tps.md",
@@ -2090,6 +2259,16 @@
       "mtime": 1778695706.3432534
     },
     {
+      "id": "feedback-i18n-fallback-trap",
+      "name": "feedback-i18n-fallback-trap",
+      "title": "feedback-i18n-fallback-trap",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_nginx_uploads_regex_trap.md",
       "id": "feedback-nginx-uploads-regex-trap",
       "name": "feedback-nginx-uploads-regex-trap",
@@ -2097,13 +2276,34 @@
       "type": "memory",
       "summary": "\"nginx `location ~* \\\\.(jpg|png|jpeg)$ {try_files $uri =404}` перехватывает /uploads/*.jpg и 404'ит — нужен `location ^~ /uploads/`\"",
       "size": 890,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779238759.9091337
     },
     {
       "id": "feedback-no-routine-confirms",
       "name": "feedback-no-routine-confirms",
       "title": "feedback-no-routine-confirms",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_one_tweak_at_a_time.md",
+      "id": "feedback-one-tweak-at-a-time",
+      "name": "feedback-one-tweak-at-a-time",
+      "title": "Feedback One Tweak At A Time",
+      "type": "memory",
+      "summary": "\"Артём предпочитает менять торговые параметры по одному и измерять эффект, а не наваливать пачку изменений сразу. Применимо к 4Bots, PumpDumpAI_Agent, GA, MFE — любой trading-настройке.\"",
+      "size": 1029,
+      "status_icon": "🟢",
+      "mtime": 1779909935.1352892
+    },
+    {
+      "id": "feedback-ontime-bom-replace-trap",
+      "name": "feedback-ontime-bom-replace-trap",
+      "title": "feedback-ontime-bom-replace-trap",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2149,7 +2349,7 @@
       "type": "memory",
       "summary": "Wrestling PWA сбрасывает кэш через CACHE bump в sw.js. НЕ делать auto-reload по controllerchange/sw-activated (loop). Self-heal через React Query onError с TTL gate.",
       "size": 2089,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779255323.6405852
     },
     {
@@ -2203,15 +2403,25 @@
       "mtime": 0
     },
     {
+      "id": "feedback-session-baseline-transfers",
+      "name": "feedback-session-baseline-transfers",
+      "title": "feedback-session-baseline-transfers",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "file": "feedback_signalbot_dead_pg_conn.md",
       "id": "feedback-signalbot-dead-pg-conn",
       "name": "feedback-signalbot-dead-pg-conn",
       "title": "Feedback Signalbot Dead Pg Conn",
       "type": "memory",
-      "summary": "\"psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_queue/accepted_signals/signal-обработка тихо теряются → бот не торгует. Fix задепло",
-      "size": 4490,
+      "summary": "\"psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_queue/accepted_signals/signal-обработка тихо теряются → бот не торгует. Fix #1-4 за",
+      "size": 5189,
       "status_icon": "🟢",
-      "mtime": 1779432973.793575
+      "mtime": 1780015383.5925944
     },
     {
       "id": "feedback-sqlite-isoformat-trap",
@@ -2254,6 +2464,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_timesheet_payroll_unified.md",
+      "id": "feedback-timesheet-payroll-unified",
+      "name": "feedback-timesheet-payroll-unified",
+      "title": "Feedback Timesheet Payroll Unified",
+      "type": "memory",
+      "summary": "Timesheet таб использует ТЕ ЖЕ правила что payroll _billable_hours_map — switched_project exception + 12h cap (унифицировано 2026-05-25)",
+      "size": 1701,
+      "status_icon": "🟢",
+      "mtime": 1779734248.1332927
+    },
+    {
       "file": "feedback_toast_pointer_events.md",
       "id": "feedback-toast-pointer-events",
       "name": "feedback-toast-pointer-events",
@@ -2263,6 +2484,27 @@
       "size": 913,
       "status_icon": "🟡",
       "mtime": 1778694808.2835047
+    },
+    {
+      "file": "feedback_trading_analysis_protocol.md",
+      "id": "feedback-trading-analysis-protocol",
+      "name": "feedback-trading-analysis-protocol",
+      "title": "Feedback Trading Analysis Protocol",
+      "type": "memory",
+      "summary": "Перед любым trading-анализом (RR/break-even/SL/PnL/fees/blacklist) ОБЯЗАН прочитать project_trading_critical_params.md и текущие bot_settings — не гадать настройки из головы.",
+      "size": 2027,
+      "status_icon": "🟢",
+      "mtime": 1779775975.7945702
+    },
+    {
+      "id": "feedback-trading-config-live-source",
+      "name": "feedback-trading-config-live-source",
+      "title": "feedback-trading-config-live-source",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "feedback-tts-pc1-mandarin",
@@ -2285,9 +2527,40 @@
       "mtime": 0
     },
     {
+      "file": "feedback_wet_corrector_sonnet.md",
+      "id": "feedback-wet-corrector-sonnet",
+      "name": "feedback-wet-corrector-sonnet",
+      "title": "Feedback Wet Corrector Sonnet",
+      "type": "memory",
+      "summary": "\"wife-english-tutor: reply_for_turn использует SONNET, не HAIKU; иначе модель ленится и правит 1-2 предложения из 5\"",
+      "size": 672,
+      "status_icon": "🟢",
+      "mtime": 1779756799.6893694
+    },
+    {
       "id": "feedback_agent_levels_guards",
       "name": "feedback_agent_levels_guards",
       "title": "feedback_agent_levels_guards",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_ai_trace_enabled",
+      "name": "feedback_ai_trace_enabled",
+      "title": "feedback_ai_trace_enabled",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_anthropic_key_scoped_estimator",
+      "name": "feedback_anthropic_key_scoped_estimator",
+      "title": "feedback_anthropic_key_scoped_estimator",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2475,6 +2748,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_pwa_stale_bundle",
+      "name": "feedback_pwa_stale_bundle",
+      "title": "feedback_pwa_stale_bundle",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_query_write_swallow",
       "name": "feedback_query_write_swallow",
       "title": "feedback_query_write_swallow",
@@ -2565,6 +2848,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_wet_corrector_sonnet",
+      "name": "feedback_wet_corrector_sonnet",
+      "title": "feedback_wet_corrector_sonnet",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_wet_word_lookup_slow",
       "name": "feedback_wet_word_lookup_slow",
       "title": "feedback_wet_word_lookup_slow",
@@ -2625,7 +2918,7 @@
       "type": "memory",
       "summary": "\"Модуль auto_flipper.py — переворачивает зарегистрированные counter-trend позиции при возврате к BE+комиссии; state, как добавлять кандидаты\"",
       "size": 1626,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779210485.7597694
     },
     {
@@ -2647,7 +2940,7 @@
       "type": "memory",
       "summary": "Большая сессия 2026-05-19 — 9 фильтров в agent_levels + auto_flipper + BNB ручной flip; контекст рынка и какие коммиты пушнуты",
       "size": 2424,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779210512.9177196
     },
     {
@@ -2712,6 +3005,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_i18n_fallback_trap.md",
+      "id": "i18n-fallback-trap",
+      "name": "i18n-fallback-trap",
+      "title": "I18N Fallback Trap",
+      "type": "memory",
+      "summary": "\"react-i18next `t('key') || 'Default'` НЕ работает — t() возвращает сам ключ как truthy при отсутствии перевода, fallback никогда не срабатывает. UI показывает буквально 'login.country'.\"",
+      "size": 1327,
+      "status_icon": "🟢",
+      "mtime": 1779824453.3486874
     },
     {
       "file": "feedback_logger_utc_label.md",
@@ -2871,7 +3175,7 @@
       "type": "memory",
       "summary": "549 paper BE-trades пересчитаны с be_price вместо peak; Grafana panels получили hybrid_baseline filter",
       "size": 2303,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779158584.709035
     },
     {
@@ -2882,7 +3186,7 @@
       "type": "memory",
       "summary": "paper-симулятор закрывает BE на be_price (symmetry с real); до 2026-05-19 закрывал на current_price (peak) → 4-5× инфляция PnL",
       "size": 1853,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779153747.597286
     },
     {
@@ -2926,8 +3230,19 @@
       "type": "memory",
       "summary": "\"AI Agent Levels system — Bybit pending-orders as visual chart lines, full SL/TP/fill-handler pipeline + Telegram bot, deployed 2026-05-18\"",
       "size": 6331,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779167953.9459116
+    },
+    {
+      "file": "project_ai_trace_teach.md",
+      "id": "project-ai-trace-teach",
+      "name": "project-ai-trace-teach",
+      "title": "Project Ai Trace Teach",
+      "type": "memory",
+      "summary": "\"AI Trace учится по правильно обведённым sheet'ам. Артём (или эстиматор) обводит руками → кнопка «Teach AI» → пример сохраняется в ai_trace_examples → следующий AI Trace получает его в Sonnet prompt к",
+      "size": 2555,
+      "status_icon": "🟢",
+      "mtime": 1779920404.5291028
     },
     {
       "id": "project-baseline-v2-2026-05-08",
@@ -2957,8 +3272,19 @@
       "type": "memory",
       "summary": "\"2026-05-21 — Артём руками выставил 3 РАЗНЫХ BE-конфига (CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5) как параллельный A/B/C-тест. После 30+ дней данных выбрать «победителя» и унифицировать.\"",
       "size": 3914,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779415089.0427432
+    },
+    {
+      "file": "project_btc_regime_gate.md",
+      "id": "project-btc-regime-gate",
+      "name": "project-btc-regime-gate",
+      "title": "Project Btc Regime Gate",
+      "type": "memory",
+      "summary": "\"BTC-led market-regime фильтр (2026-05-29): пока BTC ниже 4H EMA200 — контртренд-LONG по всем символам/стратегиям блокируется (reject BTC_REGIME_LONG_BLOCK), шорты идут. Дополняет per-symbol EMA-gate.",
+      "size": 1899,
+      "status_icon": "🟢",
+      "mtime": 1780023581.3576558
     },
     {
       "id": "project-bybit-3sub-architecture",
@@ -2987,9 +3313,9 @@
       "title": "Project Cockpit Zen Mode",
       "type": "memory",
       "summary": "\"cockpit.html (Command Center dashboard) имеет 3 режима скрытия — ZEN (hide bottom panels), col-collapsed (hide left column), full hyper-zen (Z+C). Hotkeys Z, C. Planet orbits эллиптические по всему э",
-      "size": 1933,
+      "size": 2972,
       "status_icon": "🟢",
-      "mtime": 1779685239.2584817
+      "mtime": 1779771569.3364773
     },
     {
       "id": "project-dashboard-apply-chain",
@@ -3009,13 +3335,74 @@
       "type": "memory",
       "summary": "\"2026-05-21 — добавлены 2 новых toptab в v2 dashboard: BE A/B/C comparison + SL-analysis + rule-based BE recommendation engine. /api/v2/be-compare, /api/v2/be-recommend, /api/v2/be-apply, /api/v2/sl-a",
       "size": 4302,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779416090.7447832
     },
     {
       "id": "project-dashboard-v2",
       "name": "project-dashboard-v2",
       "title": "project-dashboard-v2",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-estimating-industry-rules",
+      "name": "project-estimating-industry-rules",
+      "title": "project-estimating-industry-rules",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_estimating_phase_a.md",
+      "id": "project-estimating-phase-a",
+      "name": "project-estimating-phase-a",
+      "title": "Project Estimating Phase A",
+      "type": "memory",
+      "summary": "Phase A AI-assist для OnTime Estimating — 2026-05-25; siding-estimator-bot + Stack mirror + learned_rules в BOM",
+      "size": 3166,
+      "status_icon": "🟢",
+      "mtime": 1779728773.3297913
+    },
+    {
+      "id": "project-estimator-ai-memory",
+      "name": "project-estimator-ai-memory",
+      "title": "project-estimator-ai-memory",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-estimator-assemblies",
+      "name": "project-estimator-assemblies",
+      "title": "project-estimator-assemblies",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-estimator-links",
+      "name": "project-estimator-links",
+      "title": "project-estimator-links",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-fees-accounting",
+      "name": "project-fees-accounting",
+      "title": "project-fees-accounting",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3050,7 +3437,7 @@
       "type": "memory",
       "summary": "\"GA на грани отказа 2026-05-13 — выдаёт нереалистичные TP, тратит время; решение fix-vs-kill pending\"",
       "size": 2483,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779147474.6753216
     },
     {
@@ -3146,6 +3533,17 @@
       "mtime": 1779685260.577511
     },
     {
+      "file": "project_pumpdump_agent.md",
+      "id": "project-pumpdump-agent",
+      "name": "project-pumpdump-agent",
+      "title": "Project Pumpdump Agent",
+      "type": "memory",
+      "summary": "\"Pump&Dump AI Agent — отдельный self-tuning торговый агент под пампы/дампы, отдельный Bybit sub4. Сейчас planning phase: PLAN.md в репо ждёт approval перед Phase-1 paper кодом.\"",
+      "size": 7586,
+      "status_icon": "🟢",
+      "mtime": 1779784381.9256108
+    },
+    {
       "id": "project-pyramid-fix-gerchik-trading-agent",
       "name": "project-pyramid-fix-gerchik-trading-agent",
       "title": "project-pyramid-fix-gerchik-trading-agent",
@@ -3198,6 +3596,69 @@
       "mtime": 0
     },
     {
+      "id": "project-session-2026-05-19-wrestling-coach-toolkit",
+      "name": "project-session-2026-05-19-wrestling-coach-toolkit",
+      "title": "project-session-2026-05-19-wrestling-coach-toolkit",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-session-2026-05-21-tp-redesign",
+      "name": "project-session-2026-05-21-tp-redesign",
+      "title": "project-session-2026-05-21-tp-redesign",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_session_2026_05_25_wet_games_select.md",
+      "id": "project-session-2026-05-25-wet-games-select",
+      "name": "project-session-2026-05-25-wet-games-select",
+      "title": "Project Session 2026 05 25 Wet Games Select",
+      "type": "memory",
+      "summary": "\"WET 2026-05-25 — multi-select phrase в reader+chat, игра /play (Words+Letters), корректор-SONNET, no-cache + /reload\"",
+      "size": 2546,
+      "status_icon": "🟢",
+      "mtime": 1779766622.5209773
+    },
+    {
+      "id": "project-session-2026-05-26-wrestler-card-competitions",
+      "name": "project-session-2026-05-26-wrestler-card-competitions",
+      "title": "project-session-2026-05-26-wrestler-card-competitions",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_session_2026_05_27_wrestling_v1_0_submit.md",
+      "id": "project-session-2026-05-27-wrestling-v1-0-submit",
+      "name": "project-session-2026-05-27-wrestling-v1-0-submit",
+      "title": "Project Session 2026 05 27 Wrestling V1 0 Submit",
+      "type": "memory",
+      "summary": "\"Wrestling-Performance-Tracker v1.0 отправлен в App Store (Submission ID acf3e653-945d-4d42-b25e-725d6d081e58, build 79860157 = Codemagic build #8, commit 2385b9b). v1.0.1 backbone (Sparrings location",
+      "size": 4840,
+      "status_icon": "🟢",
+      "mtime": 1779862221.6289303
+    },
+    {
+      "file": "project_session_2026_05_28_ontime_orders.md",
+      "id": "project-session-2026-05-28-ontime-orders",
+      "name": "project-session-2026-05-28-ontime-orders",
+      "title": "Project Session 2026 05 28 Ontime Orders",
+      "type": "memory",
+      "summary": "2026-05-28 OnTime session — orders inline-edit + bulk PO + material_requests + PDF cyrillic + ProjectsPage search/sort + mention whitelist + estimator bot users + Artem PM",
+      "size": 4598,
+      "status_icon": "🟢",
+      "mtime": 1780009484.8432934
+    },
+    {
       "file": "project_space_live.md",
       "id": "project-space-live",
       "name": "project-space-live",
@@ -3216,7 +3677,7 @@
       "type": "memory",
       "summary": "TODO — мониторинг «куда доходят сигналы» после перехода на 100% close TP1=2R. Shadow ladder + MFE peak tracker + weekly auto-promote. Дизайн для будущей реализации.",
       "size": 3310,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779411400.491935
     },
     {
@@ -3230,9 +3691,60 @@
       "mtime": 0
     },
     {
+      "file": "project_trading_critical_params.md",
+      "id": "project-trading-critical-params",
+      "name": "project-trading-critical-params",
+      "title": "Project Trading Critical Params",
+      "type": "memory",
+      "summary": "\"Single source of truth — текущие торговые настройки 4BotsBybit (risk/leverage/SL формула/TP/fees), реальные R-метрики на real AGGR, формулы break-even. ОБЯЗАН читать перед любым анализом торговли.\"",
+      "size": 24781,
+      "status_icon": "🟢",
+      "mtime": 1779779433.9516773
+    },
+    {
       "id": "project-trading-state-softgate",
       "name": "project-trading-state-softgate",
       "title": "project-trading-state-softgate",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-tsa-estimating",
+      "name": "project-tsa-estimating",
+      "title": "project-tsa-estimating",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-tsa-procurement",
+      "name": "project-tsa-procurement",
+      "title": "project-tsa-procurement",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-tsa-timeline",
+      "name": "project-tsa-timeline",
+      "title": "project-tsa-timeline",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-tsa-timesheet",
+      "name": "project-tsa-timesheet",
+      "title": "project-tsa-timesheet",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3271,6 +3783,17 @@
       "mtime": 1779600406.2185
     },
     {
+      "file": "project_wrestling_account_deletion.md",
+      "id": "project-wrestling-account-deletion",
+      "name": "project-wrestling-account-deletion",
+      "title": "Project Wrestling Account Deletion",
+      "type": "memory",
+      "summary": "\"Wrestling app: self-service удаление аккаунта (Apple 5.1.1v). DELETE /api/me?confirm=true анонимизирует users-строку (не hard-delete). UI — Danger Zone в ProfilePage. Готово на web (commit 3972f62), ",
+      "size": 1512,
+      "status_icon": "🟢",
+      "mtime": 1780025696.1049654
+    },
+    {
       "id": "project-wrestling-camp-payment",
       "name": "project-wrestling-camp-payment",
       "title": "project-wrestling-camp-payment",
@@ -3288,7 +3811,7 @@
       "type": "memory",
       "summary": "Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода",
       "size": 1818,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779403768.2569566
     },
     {
@@ -3298,9 +3821,9 @@
       "title": "Project Wrestling Mobile Launch",
       "type": "memory",
       "summary": "\"Wrestling-Performance-Tracker готов к публикации в AppStore/GooglePlay. Capacitor v7 + Android платформа + signed AAB локально на VPS. iOS через Codemagic cloud-Mac (без личного Mac). От Артёма: Appl",
-      "size": 3136,
+      "size": 5447,
       "status_icon": "🟢",
-      "mtime": 1779685303.8695707
+      "mtime": 1779862229.0939817
     },
     {
       "file": "project_wrestling_pill_nav.md",
@@ -3310,8 +3833,19 @@
       "type": "memory",
       "summary": "\"Wrestling bottom-nav — pill-индикатор (framer-motion layoutId), горизонтальный скролл, safe-area-inset, авто-скролл активного таба\"",
       "size": 1319,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779241180.8374972
+    },
+    {
+      "file": "project_wrestling_smtp.md",
+      "id": "project-wrestling-smtp",
+      "name": "project-wrestling-smtp",
+      "title": "Project Wrestling Smtp",
+      "type": "memory",
+      "summary": "\"Wrestling app SMTP: до 2026-05-29 НЕ был сконфигурирован → parental-consent и password-reset письма не отправлялись (код только print). Починено через systemd drop-in (Gmail borysiukartem55). Конфиг ",
+      "size": 1680,
+      "status_icon": "🟢",
+      "mtime": 1780026721.4106874
     },
     {
       "file": "project_wrestling_super_admin.md",
@@ -3321,7 +3855,7 @@
       "type": "memory",
       "summary": "Cross-club super_admin view в wrestling app — Artem Borysiuk (id=17) + Art Papritskii (id=13)",
       "size": 2195,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779255303.3083954
     },
     {
@@ -3332,7 +3866,7 @@
       "type": "memory",
       "summary": "\"UWW Heracles-style live scoreboard в wrestling app — count-down, P shot-clock, FALL/VSU/VPO, INJ-time, cast to TV\"",
       "size": 3371,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779255283.9822147
     },
     {
@@ -3399,6 +3933,46 @@
       "id": "project_emails_optimization",
       "name": "project_emails_optimization",
       "title": "project_emails_optimization",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_estimating_industry_rules",
+      "name": "project_estimating_industry_rules",
+      "title": "project_estimating_industry_rules",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_estimating_phase_a",
+      "name": "project_estimating_phase_a",
+      "title": "project_estimating_phase_a",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_estimator_ai_memory",
+      "name": "project_estimator_ai_memory",
+      "title": "project_estimator_ai_memory",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_estimator_links",
+      "name": "project_estimator_links",
+      "title": "project_estimator_links",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3536,6 +4110,16 @@
       "mtime": 0
     },
     {
+      "id": "project_progress",
+      "name": "project_progress",
+      "title": "project_progress",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_realized_pnl_column",
       "name": "project_realized_pnl_column",
       "title": "project_realized_pnl_column",
@@ -3619,6 +4203,16 @@
       "id": "project_trading_state_softgate",
       "name": "project_trading_state_softgate",
       "title": "project_trading_state_softgate",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_tsa_estimating",
+      "name": "project_tsa_estimating",
+      "title": "project_tsa_estimating",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -3794,7 +4388,7 @@
       "type": "memory",
       "summary": "\"Артём планирует пополнить Bybit (sub1, TradingBot) до круглых $100 для CONS-real после чистого старта fan-out\"",
       "size": 1137,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779145958.1754804
     },
     {
@@ -3815,9 +4409,9 @@
       "title": "Real Trades Fee Semantics",
       "type": "memory",
       "summary": "\"В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающий net = realized − fees, на real-таблицах двойной счёт фи.\"",
-      "size": 6771,
+      "size": 8400,
       "status_icon": "🟢",
-      "mtime": 1779132248.7527816
+      "mtime": 1779771551.2065377
     },
     {
       "id": "real-trades-truth",
@@ -3869,7 +4463,7 @@
       "type": "memory",
       "summary": "Пошаговый план первого контракта через RU-SMB agency (AI-automation для русскоязычных SMB в Canada/US). Создан 2026-05-22 после Toptal waitlist.",
       "size": 4968,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779471682.9905457
     },
     {
@@ -3946,7 +4540,7 @@
       "type": "memory",
       "summary": "\"OnTime UX polish + accounting fixes session — 9 features pushed, key invariants for crew planning, billing hours, address links\"",
       "size": 4071,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779233367.0278718
     },
     {
@@ -3957,7 +4551,7 @@
       "type": "memory",
       "summary": "\"Wrestling app — club policy, groups, password reset, live sparring scoring, EN/RU/PL i18n, birthday reminder daemon (commit ddeee40)\"",
       "size": 4469,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779234904.982106
     },
     {
@@ -3968,8 +4562,52 @@
       "type": "memory",
       "summary": "\"2026-05-21 переход всех 3 стратегий на 100% close на TP1=2R + BE off на CONS/TREND + EMA Gate 1H/200 on. Reasoning, метрики до, что мониторить дальше.\"",
       "size": 2609,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779412616.1098402
+    },
+    {
+      "file": "project_session_2026_05_26_estimator_ui.md",
+      "id": "session-2026-05-26-estimator-ui",
+      "name": "session-2026-05-26-estimator-ui",
+      "title": "Session 2026 05 26 Estimator Ui",
+      "type": "memory",
+      "summary": "OnTime estimator UI улучшения — Feature Requests с фото + заметные кнопки в Memory разделе (commits 4f262e5..7d59e18)",
+      "size": 2407,
+      "status_icon": "🟢",
+      "mtime": 1779820390.3849523
+    },
+    {
+      "file": "project_session_2026_05_26_wrestler_card_competitions.md",
+      "id": "session-2026-05-26-wrestler-card-competitions",
+      "name": "session-2026-05-26-wrestler-card-competitions",
+      "title": "Session 2026 05 26 Wrestler Card Competitions",
+      "type": "memory",
+      "summary": "Wrestling app — карта борця + Competitions tab + Pro in-app rating + parental consent под-18 + Constant Wrestling ToS/Privacy. Commit 33bcc18.",
+      "size": 5430,
+      "status_icon": "🟢",
+      "mtime": 1779826604.416632
+    },
+    {
+      "file": "project_session_2026_05_26_wrestling_app_policy.md",
+      "id": "session-2026-05-26-wrestling-app-policy",
+      "name": "session-2026-05-26-wrestling-app-policy",
+      "title": "Session 2026 05 26 Wrestling App Policy",
+      "type": "memory",
+      "summary": "\"Wrestling app — большой проход 2026-05-26 — app-policy, geo-signup, camp admin-verify, roll-call, extra-tasks, sparring i18n, leagues tours select, analysis re-submit, norm finalize. Commit 421573b.\"",
+      "size": 6067,
+      "status_icon": "🟢",
+      "mtime": 1779824436.065608
+    },
+    {
+      "file": "project_session_2026_05_27_wrestling_v1_0_1_followup.md",
+      "id": "session-2026-05-27-wrestling-v1-0-1-followup",
+      "name": "session-2026-05-27-wrestling-v1-0-1-followup",
+      "title": "Session 2026 05 27 Wrestling V1 0 1 Followup",
+      "type": "memory",
+      "summary": "\"Wrestling v1.0.1 follow-up (commit 0621ad4) — owner push на application, Discover region/city chips, Sparring tab state-save через sessionStorage; плюс recovery от `NameError: List` краша backend\"",
+      "size": 3204,
+      "status_icon": "🟢",
+      "mtime": 1779864295.2849648
     },
     {
       "id": "session-baseline-transfers",
@@ -4055,7 +4693,7 @@
       "type": "feedback",
       "summary": "До 2026-04-29 _query вызывал fetchall() на любой SQL и возвращал [] на ошибке без commit — INSERT/UPDATE тихо откатывались",
       "size": 1409,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779121016.0778837
     },
     {
@@ -4142,7 +4780,7 @@
       "type": "memory",
       "summary": "\"Toptal поставил Артёма в waitlist 2026-05-22 — канал закрыт на 1-3 мес, не дёргать. Альтернативы в [[project_10k_strategy]].\"",
       "size": 904,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779471616.5921612
     },
     {
@@ -4319,6 +4957,14 @@
   ],
   "edges": [
     {
+      "source": "agent-levels-cooldown",
+      "target": "feedback-agent-levels-tg-dedup"
+    },
+    {
+      "source": "agent-levels-cooldown",
+      "target": "project-bybit-3sub-architecture"
+    },
+    {
       "source": "agent-levels-guards-chain",
       "target": "feedback_bybit_env_symlink"
     },
@@ -4331,12 +4977,32 @@
       "target": "project_gerchik_auto_flipper"
     },
     {
+      "source": "feedback-agent-levels-sl-atr",
+      "target": "feedback-one-tweak-at-a-time"
+    },
+    {
+      "source": "feedback-agent-levels-sl-atr",
+      "target": "project-pumpdump-agent"
+    },
+    {
       "source": "agent-levels-tg-dedup",
       "target": "bybit-3sub-architecture"
     },
     {
       "source": "agent-levels-tg-dedup",
       "target": "trading-spec"
+    },
+    {
+      "source": "feedback-ai-trace-enabled",
+      "target": "feedback-estimating-no-api"
+    },
+    {
+      "source": "anthropic-key-scoped-estimator",
+      "target": "feedback_ai_trace_enabled"
+    },
+    {
+      "source": "anthropic-key-scoped-estimator",
+      "target": "project_tsa_estimating"
     },
     {
       "source": "feedback-anthropic-oauth-authtoken",
@@ -4392,11 +5058,27 @@
     },
     {
       "source": "feedback-cockpit-unversioned",
+      "target": "project-cockpit-zen-mode"
+    },
+    {
+      "source": "feedback-cockpit-unversioned",
       "target": "project-dashboard-v2"
     },
     {
       "source": "feedback-cockpit-unversioned",
       "target": "project-unversioned-prod-state"
+    },
+    {
+      "source": "cv-trace-over-ai",
+      "target": "feedback_ai_trace_enabled"
+    },
+    {
+      "source": "cv-trace-over-ai",
+      "target": "feedback_anthropic_key_scoped_estimator"
+    },
+    {
+      "source": "cv-trace-over-ai",
+      "target": "project_tsa_estimating"
     },
     {
       "source": "dashboard-v2-deploy-script",
@@ -4425,6 +5107,22 @@
     {
       "source": "emails-agent-handle-button",
       "target": "tim-agent-plan"
+    },
+    {
+      "source": "feedback-estimating-metric",
+      "target": "feedback-ai-trace-enabled"
+    },
+    {
+      "source": "feedback-estimating-metric",
+      "target": "feedback-cv-trace-over-ai"
+    },
+    {
+      "source": "feedback-estimating-metric",
+      "target": "project-estimating-phase-a"
+    },
+    {
+      "source": "feedback-estimating-metric",
+      "target": "project-tsa-estimating"
     },
     {
       "source": "force-bucket-close-source",
@@ -4483,6 +5181,14 @@
       "target": "project-unversioned-prod-state"
     },
     {
+      "source": "i18n-fallback-trap",
+      "target": "project-wrestling-i18n-10langs"
+    },
+    {
+      "source": "i18n-fallback-trap",
+      "target": "session-2026-05-26-wrestling-app-policy"
+    },
+    {
       "source": "logger-utc-label-must-match",
       "target": "feedback-sqlite-isoformat-trap"
     },
@@ -4525,6 +5231,14 @@
     {
       "source": "oauth-force-refresh",
       "target": "feedback_voice_tutor_oauth_500"
+    },
+    {
+      "source": "feedback-one-tweak-at-a-time",
+      "target": "project-pumpdump-agent"
+    },
+    {
+      "source": "feedback-one-tweak-at-a-time",
+      "target": "project-trading-critical-params"
     },
     {
       "source": "orphan-residual-after-premature-close",
@@ -4601,6 +5315,10 @@
     {
       "source": "real-trades-fee-semantics",
       "target": "feedback-real-trades-truth"
+    },
+    {
+      "source": "real-trades-fee-semantics",
+      "target": "project-cockpit-zen-mode"
     },
     {
       "source": "real-trades-fee-semantics",
@@ -4683,8 +5401,24 @@
       "target": "project_voice_tutor"
     },
     {
+      "source": "feedback-timesheet-payroll-unified",
+      "target": "feedback-billable-hours-dedup"
+    },
+    {
+      "source": "feedback-timesheet-payroll-unified",
+      "target": "project-tsa-timesheet"
+    },
+    {
       "source": "feedback-toast-pointer-events",
       "target": "feedback-chartjs-unbounded-height"
+    },
+    {
+      "source": "feedback-trading-analysis-protocol",
+      "target": "feedback-trading-config-live-source"
+    },
+    {
+      "source": "feedback-trading-analysis-protocol",
+      "target": "project-trading-critical-params"
     },
     {
       "source": "tts-pc1-mandarin",
@@ -4719,6 +5453,14 @@
       "target": "project-trading-bot-spec"
     },
     {
+      "source": "feedback-wet-corrector-sonnet",
+      "target": "project_progress"
+    },
+    {
+      "source": "feedback-wet-corrector-sonnet",
+      "target": "user_artem"
+    },
+    {
       "source": "wet-word-lookup-slow",
       "target": "feedback_oauth_rate_limits"
     },
@@ -4739,8 +5481,40 @@
       "target": "project-claude-telegram-bot"
     },
     {
+      "source": "project-ai-trace-teach",
+      "target": "feedback-ai-trace-enabled"
+    },
+    {
+      "source": "project-ai-trace-teach",
+      "target": "feedback-cv-trace-over-ai"
+    },
+    {
+      "source": "project-ai-trace-teach",
+      "target": "feedback-estimating-metric"
+    },
+    {
+      "source": "project-ai-trace-teach",
+      "target": "project-estimator-ai-memory"
+    },
+    {
+      "source": "project-ai-trace-teach",
+      "target": "project-estimator-assemblies"
+    },
+    {
       "source": "project-be-per-strategy-experiment",
       "target": "project-tp-shadow-ladder"
+    },
+    {
+      "source": "project-btc-regime-gate",
+      "target": "feedback-trading-analysis-protocol"
+    },
+    {
+      "source": "project-btc-regime-gate",
+      "target": "project-session-2026-05-21-tp-redesign"
+    },
+    {
+      "source": "project-btc-regime-gate",
+      "target": "project-trading-critical-params"
     },
     {
       "source": "bybit-3-sub-architecture",
@@ -4780,6 +5554,10 @@
     },
     {
       "source": "project-cockpit-zen-mode",
+      "target": "feedback-real-trades-fee-semantics"
+    },
+    {
+      "source": "project-cockpit-zen-mode",
       "target": "project-dashboard-v2"
     },
     {
@@ -4793,6 +5571,54 @@
     {
       "source": "project-dashboard-be-sl-tabs",
       "target": "project-tp-shadow-ladder"
+    },
+    {
+      "source": "project-estimating-phase-a",
+      "target": "feedback-estimating-no-api"
+    },
+    {
+      "source": "project-estimating-phase-a",
+      "target": "project-estimating-industry-rules"
+    },
+    {
+      "source": "project-estimating-phase-a",
+      "target": "project-tsa-estimating"
+    },
+    {
+      "source": "project-estimating-phase-a",
+      "target": "project-tsa-timeline"
+    },
+    {
+      "source": "estimator-ai-memory",
+      "target": "project_estimating_industry_rules"
+    },
+    {
+      "source": "estimator-ai-memory",
+      "target": "project_estimating_phase_a"
+    },
+    {
+      "source": "estimator-ai-memory",
+      "target": "project_tsa_estimating"
+    },
+    {
+      "source": "estimator-assemblies",
+      "target": "project_estimating_industry_rules"
+    },
+    {
+      "source": "estimator-assemblies",
+      "target": "project_estimator_ai_memory"
+    },
+    {
+      "source": "estimator-assemblies",
+      "target": "project_estimator_links"
+    },
+    {
+      "source": "estimator-links",
+      "target": "project_estimator_ai_memory"
+    },
+    {
+      "source": "estimator-links",
+      "target": "project_tsa_estimating"
     },
     {
       "source": "ga-realism-overhaul-2026-05-13",
@@ -4945,6 +5771,30 @@
     {
       "source": "pc2-homelab-active",
       "target": "project_tutor_latency_pipeline"
+    },
+    {
+      "source": "project-pumpdump-agent",
+      "target": "feedback-cockpit-unversioned"
+    },
+    {
+      "source": "project-pumpdump-agent",
+      "target": "feedback-ga-fitness-overfit"
+    },
+    {
+      "source": "project-pumpdump-agent",
+      "target": "feedback-real-trades-truth"
+    },
+    {
+      "source": "project-pumpdump-agent",
+      "target": "project-bybit-3sub-architecture"
+    },
+    {
+      "source": "project-pumpdump-agent",
+      "target": "project-ga-under-review"
+    },
+    {
+      "source": "project-pumpdump-agent",
+      "target": "project-trading-critical-params"
     },
     {
       "source": "project-real-global-guard-limitation",
@@ -5171,6 +6021,82 @@
       "target": "project-tp-shadow-ladder"
     },
     {
+      "source": "project-session-2026-05-25-wet-games-select",
+      "target": "feedback_pwa_stale_bundle"
+    },
+    {
+      "source": "project-session-2026-05-25-wet-games-select",
+      "target": "feedback_wet_corrector_sonnet"
+    },
+    {
+      "source": "project-session-2026-05-25-wet-games-select",
+      "target": "project_progress"
+    },
+    {
+      "source": "session-2026-05-26-estimator-ui",
+      "target": "project-estimator-ai-memory"
+    },
+    {
+      "source": "session-2026-05-26-estimator-ui",
+      "target": "project-tsa-estimating"
+    },
+    {
+      "source": "session-2026-05-26-wrestler-card-competitions",
+      "target": "project-wrestling-v2"
+    },
+    {
+      "source": "session-2026-05-26-wrestler-card-competitions",
+      "target": "session-2026-05-26-wrestling-app-policy"
+    },
+    {
+      "source": "session-2026-05-26-wrestling-app-policy",
+      "target": "project-session-2026-05-19-wrestling-coach-toolkit"
+    },
+    {
+      "source": "session-2026-05-26-wrestling-app-policy",
+      "target": "project-wrestling-camp-payment"
+    },
+    {
+      "source": "session-2026-05-26-wrestling-app-policy",
+      "target": "project-wrestling-v2"
+    },
+    {
+      "source": "session-2026-05-27-wrestling-v1-0-1-followup",
+      "target": "project-session-2026-05-26-wrestler-card-competitions"
+    },
+    {
+      "source": "session-2026-05-27-wrestling-v1-0-1-followup",
+      "target": "project-wrestling-v2"
+    },
+    {
+      "source": "project-session-2026-05-27-wrestling-v1-0-submit",
+      "target": "project-session-2026-05-26-wrestler-card-competitions"
+    },
+    {
+      "source": "project-session-2026-05-27-wrestling-v1-0-submit",
+      "target": "project-wrestling-mobile-launch"
+    },
+    {
+      "source": "project-session-2026-05-27-wrestling-v1-0-submit",
+      "target": "project-wrestling-v2"
+    },
+    {
+      "source": "project-session-2026-05-28-ontime-orders",
+      "target": "feedback-fastapi-route-order"
+    },
+    {
+      "source": "project-session-2026-05-28-ontime-orders",
+      "target": "feedback-ontime-bom-replace-trap"
+    },
+    {
+      "source": "project-session-2026-05-28-ontime-orders",
+      "target": "project-estimator-links"
+    },
+    {
+      "source": "project-session-2026-05-28-ontime-orders",
+      "target": "project-tsa-procurement"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -5227,6 +6153,50 @@
       "target": "project-ga-under-review"
     },
     {
+      "source": "project-trading-critical-params",
+      "target": "feedback-dd-guard-paper-skip"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "feedback-real-trades-fee-semantics"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "feedback-session-baseline-transfers"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "feedback-trading-analysis-protocol"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-be-per-strategy-experiment"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-fees-accounting"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-hybrid-mode"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-mfe-calibration"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-real-global-guard-limitation"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-real-trades-baseline"
+    },
+    {
+      "source": "project-trading-critical-params",
+      "target": "project-tp-shadow-ladder"
+    },
+    {
       "source": "tutor-latency-pipeline",
       "target": "feedback_openai_base_url_shell_override"
     },
@@ -5247,12 +6217,24 @@
       "target": "project_tutor_latency_pipeline"
     },
     {
+      "source": "project-wrestling-account-deletion",
+      "target": "feedback-i18n-fallback-trap"
+    },
+    {
+      "source": "project-wrestling-account-deletion",
+      "target": "project-session-2026-05-27-wrestling-v1-0-submit"
+    },
+    {
       "source": "project-wrestling-i18n-10langs",
       "target": "feedback_nginx_uploads_regex_trap"
     },
     {
       "source": "project-wrestling-i18n-10langs",
       "target": "project_wrestling_v2"
+    },
+    {
+      "source": "project-wrestling-mobile-launch",
+      "target": "project-session-2026-05-27-wrestling-v1-0-submit"
     },
     {
       "source": "project-wrestling-mobile-launch",
@@ -5273,6 +6255,14 @@
     {
       "source": "project-wrestling-pill-nav",
       "target": "project_wrestling_v2"
+    },
+    {
+      "source": "project-wrestling-smtp",
+      "target": "feedback-cockpit-unversioned"
+    },
+    {
+      "source": "project-wrestling-smtp",
+      "target": "project-wrestling-account-deletion"
     },
     {
       "source": "project-wrestling-super-admin",
@@ -5300,20 +6290,32 @@
     },
     {
       "source": "Wrestling App v2 — Multi-club + Full Features",
+      "target": "i18n-fallback-trap"
+    },
+    {
+      "source": "Wrestling App v2 — Multi-club + Full Features",
       "target": "session-2026-05-19-wrestling-coach-toolkit"
+    },
+    {
+      "source": "Wrestling App v2 — Multi-club + Full Features",
+      "target": "session-2026-05-26-wrestler-card-competitions"
+    },
+    {
+      "source": "Wrestling App v2 — Multi-club + Full Features",
+      "target": "session-2026-05-26-wrestling-app-policy"
     }
   ],
   "stats": {
-    "files": 266,
-    "nodes": 405,
-    "edges": 246,
+    "files": 294,
+    "nodes": 466,
+    "edges": 337,
     "by_type": {
       "feedback": 81,
-      "memory": 95,
+      "memory": 123,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 139
+      "stub": 172
     }
   }
 }

@@ -1,8 +1,8 @@
 # Memory digest
 
-Generated **2026-05-26 20:16 UTC**.
+Generated **2026-05-29 22:42 UTC**.
 
-**447 nodes** (284 files, 307 edges) — 📝 163 stub · · 113 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**466 nodes** (294 files, 337 edges) — 📝 172 stub · · 123 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
@@ -12,19 +12,20 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_pc1_homelab_active]] ← 6 refs · 📝 stub
 - [[project_wrestling_v2]] ← 6 refs · 📝 stub
 - [[project-bybit-3sub-architecture]] ← 5 refs · 📝 stub
+- [[project-wrestling-v2]] ← 5 refs · 📝 stub
 - [[project_bybit_3sub_architecture]] ← 5 refs · 📝 stub
 - [[project_pc2_homelab_active]] ← 5 refs · 📝 stub
 - [[feedback-bybit-env-symlink]] ← 4 refs · · memory
 - [[feedback-real-trades-fee-semantics]] ← 4 refs · 📝 stub
 - [[feedback_real_trades_truth]] ← 4 refs · 📝 stub
-- [[feedback_tutor_tts_wiring]] ← 4 refs · 📝 stub
 
-## 📝 Stubs (163) — referenced but not yet written
+## 📝 Stubs (172) — referenced but not yet written
 
 - [[feedback-real-trades-truth]] ← 8 refs
 - [[project_pc1_homelab_active]] ← 6 refs
 - [[project_wrestling_v2]] ← 6 refs
 - [[project-bybit-3sub-architecture]] ← 5 refs
+- [[project-wrestling-v2]] ← 5 refs
 - [[project_bybit_3sub_architecture]] ← 5 refs
 - [[project_pc2_homelab_active]] ← 5 refs
 - [[feedback-real-trades-fee-semantics]] ← 4 refs
@@ -35,7 +36,6 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_react_hooks_order]] ← 3 refs
 - [[feedback_voice_tutor_oauth_500]] ← 3 refs
 - [[hybrid-mode]] ← 3 refs
-- [[project-dashboard-apply-chain]] ← 3 refs
 
 ## 🏝 Orphans (174) — no links in or out
 
@@ -58,25 +58,25 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-05-26 20:16` [[session-2026-05-26-wrestler-card-competitions]] · 🟢 today
-- `2026-05-26 20:13` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 today
-- `2026-05-26 19:40` [[i18n-fallback-trap]] · 🟢 today
-- `2026-05-26 19:40` [[session-2026-05-26-wrestling-app-policy]] · 🟢 today
-- `2026-05-26 18:33` [[session-2026-05-26-estimator-ui]] · 🟢 today
-- `2026-05-26 08:33` [[project-pumpdump-agent]] · 🟢 today
-- `2026-05-26 08:17` [[feedback-cockpit-unversioned]] · 🟢 today
-- `2026-05-26 07:10` [[project-trading-critical-params]] · 🟢 today
-- `2026-05-26 06:12` [[feedback-trading-analysis-protocol]] · 🟢 today
-- `2026-05-26 04:59` [[agent-levels-cooldown]] · 🟢 today
-- `2026-05-26 04:59` [[project-cockpit-zen-mode]] · 🟢 today
-- `2026-05-26 04:59` [[real-trades-fee-semantics]] · 🟢 today
-- `2026-05-26 03:37` [[project-session-2026-05-25-wet-games-select]] · 🟢 today
-- `2026-05-26 00:53` [[feedback-wet-corrector-sonnet]] · 🟢 today
-- `2026-05-25 23:52` [[estimator-assemblies]] · 🟢 today
+- `2026-05-29 03:52` [[project-wrestling-smtp]] · 🟢 today
+- `2026-05-29 03:34` [[project-wrestling-account-deletion]] · 🟢 today
+- `2026-05-29 02:59` [[project-btc-regime-gate]] · 🟢 today
+- `2026-05-29 00:43` [[feedback-signalbot-dead-pg-conn]] · 🟢 today
+- `2026-05-28 23:04` [[project-session-2026-05-28-ontime-orders]] · 🟢 today
+- `2026-05-27 22:20` [[project-ai-trace-teach]] · 🟢 this week
+- `2026-05-27 21:36` [[feedback-estimating-metric]] · 🟢 this week
+- `2026-05-27 21:13` [[feedback-agent-levels-sl-atr]] · 🟢 this week
+- `2026-05-27 19:25` [[feedback-one-tweak-at-a-time]] · 🟢 this week
+- `2026-05-27 06:44` [[session-2026-05-27-wrestling-v1-0-1-followup]] · 🟢 this week
+- `2026-05-27 06:10` [[project-wrestling-mobile-launch]] · 🟢 this week
+- `2026-05-27 06:10` [[project-session-2026-05-27-wrestling-v1-0-submit]] · 🟢 this week
+- `2026-05-26 20:16` [[session-2026-05-26-wrestler-card-competitions]] · 🟢 this week
+- `2026-05-26 20:13` [[Wrestling App v2 — Multi-club + Full Features]] · 🟢 this week
+- `2026-05-26 19:40` [[i18n-fallback-trap]] · 🟢 this week
 
 ## 📚 Index by type
 
-### 📝 stub (163)
+### 📝 stub (172)
 
 - [[bybit-3sub-architecture]] — (not written yet)
 - [[bybit-signing-order]] — (not written yet)
@@ -89,13 +89,17 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback-billable-hours-dedup]] — (not written yet)
 - [[feedback-bybit-ws-keepalive]] — (not written yet)
 - [[feedback-chartjs-unbounded-height]] — (not written yet)
+- [[feedback-cv-trace-over-ai]] — (not written yet)
 - [[feedback-dashboard-v1-v2]] — (not written yet)
 - [[feedback-dashboard-view-lock]] — (not written yet)
 - [[feedback-dd-guard-paper-skip]] — (not written yet)
 - [[feedback-emails-agent-handle-button]] — (not written yet)
 - [[feedback-estimating-no-api]] — (not written yet)
+- [[feedback-fastapi-route-order]] — (not written yet)
 - [[feedback-ga-fitness-overfit]] — (not written yet)
+- [[feedback-i18n-fallback-trap]] — (not written yet)
 - [[feedback-no-routine-confirms]] — (not written yet)
+- [[feedback-ontime-bom-replace-trap]] — (not written yet)
 - [[feedback-orphan-residual-recovery]] — (not written yet)
 - [[feedback-per-mode-dup-rule]] — (not written yet)
 - [[feedback-query-write-swallow]] — (not written yet)
@@ -160,6 +164,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-dashboard-v2]] — (not written yet)
 - [[project-estimating-industry-rules]] — (not written yet)
 - [[project-estimator-ai-memory]] — (not written yet)
+- [[project-estimator-assemblies]] — (not written yet)
+- [[project-estimator-links]] — (not written yet)
 - [[project-fees-accounting]] — (not written yet)
 - [[project-ga-optimizer]] — (not written yet)
 - [[project-ga-realism-overhaul]] — (not written yet)
@@ -174,9 +180,12 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-real-trades-baseline]] — (not written yet)
 - [[project-realized-pnl-column]] — (not written yet)
 - [[project-session-2026-05-19-wrestling-coach-toolkit]] — (not written yet)
+- [[project-session-2026-05-21-tp-redesign]] — (not written yet)
+- [[project-session-2026-05-26-wrestler-card-competitions]] — (not written yet)
 - [[project-trading-bot-spec]] — (not written yet)
 - [[project-trading-state-softgate]] — (not written yet)
 - [[project-tsa-estimating]] — (not written yet)
+- [[project-tsa-procurement]] — (not written yet)
 - [[project-tsa-timeline]] — (not written yet)
 - [[project-tsa-timesheet]] — (not written yet)
 - [[project-unversioned-prod-state]] — (not written yet)
@@ -242,7 +251,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (113)
+### · memory (123)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -261,16 +270,19 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[estimator-ai-memory]] — .md memory shared между OnTime backend и TG ботом @TSA_EstimatorBot
 - [[estimator-assemblies]] — Multi-layer cladding stacks per takeoff — assembly_templates table + BOM разворот
 - [[estimator-links]] — estimate_projects (OnTime PDF) ↔ stack_projects (TG bot Excel BOM) связаны через project_links
+- [[feedback-agent-levels-sl-atr]] — История изменений SL_ATR_MULT в gerchik-trading-agent — компромисс между шириной SL (защита от wick-out) и пропускной сп
 - [[feedback-ai-trace-enabled]] — Vision-tracing для OnTime estimating РАЗРЕШЕНО Артёмом 2026-05-25 (Уровень 2 — AI draft + ручная проверка)
 - [[feedback-anthropic-oauth-authtoken]] — anthropic.Anthropic(api_key=...) шлёт x-api-key; OAuth работает ТОЛЬКО через auth_token=. SDK 0.97.0+
 - [[feedback-bybit-env-symlink]] — "/root/gerchik-trading-agent/.env is a symlink to /root/4BotsBybit-Trading/.env — same file, two projects. Adding diverg
 - [[feedback-bybit-migration-bypass]] — "CLAUDE.md правила 4BotsBybit-Trading (нет правки .env, нет stop systemd, нет закрытия real-поз) — bypass-имо ТОЛЬКО при
 - [[feedback-bybit-tp-limit-quirks]] — Подводные камни Bybit set_trading_stop с tpOrderType=Limit и правильный аудит TP-ордеров через /v5/order/realtime
 - [[feedback-cockpit-unversioned]] — /var/www/dashboard/cockpit.html не в git — все правки только на диске. Backup перед правкой обязателен. Auto-mode classi
+- [[feedback-estimating-metric]] — "OnTime Estimating поддерживает и imperial и metric чертежи. Внутренняя единица — всегда px_per_ft (футы), но UI и AI pr
 - [[feedback-funnel-vs-close-reason]] — "TP Funnel cells = trigger events (overlap), а не разбиение closed-trades; сумма funnel'а > closed нормально, mutually e
 - [[feedback-ga-unrealistic-tps]] — "GA рекомендует TP в космосе (13R-48R), хотя реальная MFE доходит максимум ~2%; backtester засчитывает wick-касания на 5
 - [[feedback-grafana-v13-resource-table]] — "Grafana 13 хранит дашборды в новой `resource` таблице, не в `dashboard`; SQLite-фикс возможен с restart'ом сервера"
 - [[feedback-nginx-uploads-regex-trap]] — "nginx `location ~* \\.(jpg|png|jpeg)$ {try_files $uri =404}` перехватывает /uploads/*.jpg и 404'ит — нужен `location ^~
+- [[feedback-one-tweak-at-a-time]] — "Артём предпочитает менять торговые параметры по одному и измерять эффект, а не наваливать пачку изменений сразу. Примен
 - [[feedback-paper-in-real-trades]] — "real_trades таблица содержала paper-trades CONS/TREND из hybrid-режима — false-tripped weekly DD guard. Чистка через ar
 - [[feedback-pwa-stale-bundle]] — Wrestling PWA сбрасывает кэш через CACHE bump в sw.js. НЕ делать auto-reload по controllerchange/sw-activated (loop). Se
 - [[feedback-signalbot-dead-pg-conn]] — "psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_que
@@ -303,7 +315,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[pc2-homelab-active]] — "ПК2 (Art, RTX 3090 24GB) подключён 2026-05-12: Tailscale `borys@100.73.22.1`, SSH с ed25519 ключом, Ollama 11434 (qwen2
 - [[pg-dump-baseline-tables-require-grant-to-non-postgres-role]] — "db-backup сервис тихо клал zero-byte dumps 4 дня потому что pg_dump as `trading_bot` user не мог LOCK TABLE на `*_basel
 - [[project-agent-levels-2026-05-18]] — "AI Agent Levels system — Bybit pending-orders as visual chart lines, full SL/TP/fill-handler pipeline + Telegram bot, d
+- [[project-ai-trace-teach]] — "AI Trace учится по правильно обведённым sheet'ам. Артём (или эстиматор) обводит руками → кнопка «Teach AI» → пример сох
 - [[project-be-per-strategy-experiment]] — "2026-05-21 — Артём руками выставил 3 РАЗНЫХ BE-конфига (CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5) как параллельный A/B
+- [[project-btc-regime-gate]] — "BTC-led market-regime фильтр (2026-05-29): пока BTC ниже 4H EMA200 — контртренд-LONG по всем символам/стратегиям блокир
 - [[project-cockpit-zen-mode]] — "cockpit.html (Command Center dashboard) имеет 3 режима скрытия — ZEN (hide bottom panels), col-collapsed (hide left col
 - [[project-dashboard-be-sl-tabs]] — "2026-05-21 — добавлены 2 новых toptab в v2 dashboard: BE A/B/C comparison + SL-analysis + rule-based BE recommendation 
 - [[project-estimating-phase-a]] — Phase A AI-assist для OnTime Estimating — 2026-05-25; siding-estimator-bot + Stack mirror + learned_rules в BOM
@@ -314,13 +328,17 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-real-global-guard-limitation]] — REAL dup-check глобален (любая страта на символе блочит другую) с 2026-05-24 — Bybit One-Way agg. При переходе на multi-
 - [[project-real-trades-consolidation-done]] — 2026-05-24 одношот consolidation 25 phantom real_trades rows → 7 master + 12 CONSOLIDATED + 6 ORPHAN_RECONCILED. Script 
 - [[project-session-2026-05-25-wet-games-select]] — "WET 2026-05-25 — multi-select phrase в reader+chat, игра /play (Words+Letters), корректор-SONNET, no-cache + /reload"
+- [[project-session-2026-05-27-wrestling-v1-0-submit]] — "Wrestling-Performance-Tracker v1.0 отправлен в App Store (Submission ID acf3e653-945d-4d42-b25e-725d6d081e58, build 798
+- [[project-session-2026-05-28-ontime-orders]] — 2026-05-28 OnTime session — orders inline-edit + bulk PO + material_requests + PDF cyrillic + ProjectsPage search/sort +
 - [[project-space-live]] — "Trader cockpit — единая Bloomberg/Matrix-стиль панель 4BotsBybit + Gerchik + Copy + GA. Static HTML на :8080. /root/Spa
 - [[project-tp-shadow-ladder]] — TODO — мониторинг «куда доходят сигналы» после перехода на 100% close TP1=2R. Shadow ladder + MFE peak tracker + weekly 
 - [[project-trading-critical-params]] — "Single source of truth — текущие торговые настройки 4BotsBybit (risk/leverage/SL формула/TP/fees), реальные R-метрики н
 - [[project-wallets-all-endpoint]] — /api/v2/wallets-all — параллельно пуллит wallet для всех 3 sub-аккаунтов Bybit (TradingBot/Copy/AI). Подключён к cockpit
+- [[project-wrestling-account-deletion]] — "Wrestling app: self-service удаление аккаунта (Apple 5.1.1v). DELETE /api/me?confirm=true анонимизирует users-строку (н
 - [[project-wrestling-i18n-10langs]] — Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода
 - [[project-wrestling-mobile-launch]] — "Wrestling-Performance-Tracker готов к публикации в AppStore/GooglePlay. Capacitor v7 + Android платформа + signed AAB л
 - [[project-wrestling-pill-nav]] — "Wrestling bottom-nav — pill-индикатор (framer-motion layoutId), горизонтальный скролл, safe-area-inset, авто-скролл акт
+- [[project-wrestling-smtp]] — "Wrestling app SMTP: до 2026-05-29 НЕ был сконфигурирован → parental-consent и password-reset письма не отправлялись (ко
 - [[project-wrestling-super-admin]] — Cross-club super_admin view в wrestling app — Artem Borysiuk (id=17) + Art Papritskii (id=13)
 - [[project-wrestling-uww-scoreboard]] — "UWW Heracles-style live scoreboard в wrestling app — count-down, P shot-clock, FALL/VSU/VPO, INJ-time, cast to TV"
 - [[pyramid-fix-gerchik-trading-agent]] — "gerchik-trading-agent: one row per (symbol, mode) — add-on entries aggregate into the open row via weighted-avg, not se
@@ -340,6 +358,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[session-2026-05-26-estimator-ui]] — OnTime estimator UI улучшения — Feature Requests с фото + заметные кнопки в Memory разделе (commits 4f262e5..7d59e18)
 - [[session-2026-05-26-wrestler-card-competitions]] — Wrestling app — карта борця + Competitions tab + Pro in-app rating + parental consent под-18 + Constant Wrestling ToS/Pr
 - [[session-2026-05-26-wrestling-app-policy]] — "Wrestling app — большой проход 2026-05-26 — app-policy, geo-signup, camp admin-verify, roll-call, extra-tasks, sparring
+- [[session-2026-05-27-wrestling-v1-0-1-followup]] — "Wrestling v1.0.1 follow-up (commit 0621ad4) — owner push на application, Discover region/city chips, Sparring tab state
 - [[session-wallet-baseline-traps-wallet-transfers]] — "Drawdown guard сравнивает live wallet с `session_start_wallet_usd` — любой sub-account transfer / withdraw читается как
 - [[silero-torchaudio-install-quirks]] — "Silero + torchaudio require two deps that are NOT pulled in by `pip install torch torchaudio` — install will silently s
 - [[son-french-tutor-andrii]] — "TG-бот для Andrii (~11-14yo) учит французский A1-A2. Persona Sophie (нова voice), avatar talking_loop.mp4, streaming TT

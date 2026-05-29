@@ -1,6 +1,6 @@
 ---
 name: feedback-signalbot-dead-pg-conn
-description: "psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_queue/accepted_signals/signal-обработка тихо теряются → бот не торгует. Fix задеплоен в обоих ботах (signalbot commit 9d913b9, tradingbot commit 1d4917c) — 2-attempt retry + reconnect."
+description: "psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_queue/accepted_signals/signal-обработка тихо теряются → бот не торгует. Fix #1-4 задеплоены (signalbot 9d913b9, tradingbot 1d4917c, модули 605147e, self-heal-guard a887435). РЕЦИДИВ 2026-05-28: reconnect был, но guard 'if not self.db_conn: return' выходил ДО него когда conn=None после неудачного reconnect (PG моргнул) — пофикшено a887435."
 metadata: 
   node_type: memory
   type: feedback
@@ -59,6 +59,11 @@ systemctl restart bybit-signalbot
 - `price_monitor_v3.py`: импорт env_config, кеш `_db_params`, `_ensure_db_connection` helper, guards в 3 hot-path методах (`get_last_price`, `_update_ws_price_in_db`, `get_open_position_levels`). На dead conn — REST fallback (read) или silent return (write).
 - Тесты: 4 в `test_statistics_manager_reconnect.py` + 3 в `test_price_monitor_reconnect.py`. Full suite 197 pass.
 - Verified live: первый `🔄 StatsMgr direct conn reconnected` сработал в dashboard сразу после рестарта.
+
+**Code fix #4 — self-heal guard 2026-05-28 (commit `a887435`):**
+- РЕЦИДИВ: 2026-05-28 12:00 UTC PG моргнул (`Connection refused`, рестарт/блип). `_db_reconnect` упал → `self.db_conn=None`. С 11:25 до 00:32 (~13h) ноль строк в `signals_queue`, в логе `SAVING signal to DB: X` есть, но `SAVING FULL SIGNAL`/`FULL signal saved`/`DB reconnected` — ноль.
+- Корень: retry+reconnect жил ТОЛЬКО внутри `except` в `_save_signal_to_db`, но `if not self.db_conn: return` (стр.706) и `_get_current_strategy` (стр.644) выходили РАНЬШЕ, когда conn уже None → reconnect недостижим, None навсегда даже после подъёма PG.
+- Fix: оба guard'а теперь зовут `_db_reconnect(...)` перед return/fallback. 239 тестов pass.
 
 **TODO (не в фиксе):**
 - Healthcheck: если за 30 минут было >5 «🔥 СИГНАЛ» в логе но 0 в `signals_queue` → Telegram-алерт «PIPELINE DEAD». Можно через [[project_hourly_supervisor]].

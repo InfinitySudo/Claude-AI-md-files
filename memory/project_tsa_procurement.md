@@ -15,8 +15,8 @@ for a Calgary siding company.
 - Any procurement question → these are the tables/endpoints/roles to look at
   first, not a new integration.
 - New PO workflow logic lives in `_compute_po_stages()` in backend/main.py
-- Email send is mailto: only right now; real SMTP + QBO sync are phased for
-  later.
+- **SMTP email send is LIVE since 2026-05-29** (no longer mailto:); QBO sync still phased.
+  See "PO expansion 2026-05-29" section below.
 
 ## Schema (sqlite, backend/main.py)
 - `vendors` — name, contact, email/phone/address, category, payment_terms, archived
@@ -121,8 +121,23 @@ for a Calgary siding company.
 - Vendor mismatch confirm: if picker item is from different vendor than PO,
   asks foreman to switch vendor on this PO.
 
+## PO expansion 2026-05-29 (commit 9747361)
+Big PO workflow upgrade. Pushed после нескольких сессий без commit (поэтому ревизия большая).
+- **Attachments**: `po_attachments` table + `POST/GET/DELETE /api/purchase-orders/{id}/attachments`.
+- **Real SMTP send**: `POST /api/purchase-orders/{id}/send-email` шлёт PO PDF вендору (To+CC),
+  helpers `_smtp_config` / `_send_email` / `_split_emails`; пишет `sent_to_email`.
+  ⚠ SMTP-конфиг вне git (секрет) — как в [[project-wrestling-smtp]], читать из env/drop-in.
+- **Helpers**: `GET /api/purchase-orders/next-number` (preview номера), `GET /api/vendor-emails` (подсказки).
+- **Material flow**: `POST /api/projects/{pid}/materials/mark-all-delivered`, `DELETE /api/projects/{pid}/materials`.
+- **New purchase_orders columns**: title, order_type (standard/rental/hold_release/subcontract),
+  po_mode (issue/rfq/preack), vendor_contact, vendor_code, terms, field_contact_name,
+  need_by_window (asap/no_date/specific/am/pm), cc_recipients, billing_address, sent_to_email.
+- **Frontend**: ProcurementPage — полная PO-форма (новые поля, AM/PM need-by окна, attachments,
+  кнопка email send); OrdersTab расширенный inline-edit + material flow; правки ProjectForm,
+  ServicePage, AddressAutocomplete, ShiftPage, api/client.
+- po_mode=rfq закладывает RFQ-workflow (ещё не полный).
+
 ## Deferred (future phases)
-- Real SMTP email send (currently mailto: only)
 - QuickBooks Online bill sync on status `received` → `paid`
 - Bulk request (select multiple low materials → one PO per vendor)
 - RFQ workflow (get 3 quotes, compare, convert winner to PO)
