@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-05-27 06:24 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-05-29 23:12 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**649 nodes** (666 edges) — 📝 612 word · 📚 16 category · 📖 14 book · 👤 7 learner
+**675 nodes** (693 edges) — 📝 636 word · 📚 16 category · 📖 16 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -24,7 +24,6 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `again` — mastery 0, seen 1×
 - `blueprints` — mastery 0, seen 1×
 - `boss` — mastery 0, seen 1×
-- `busy` — mastery 0, seen 1×
 - `computer time` — mastery 0, seen 1×
 - `decent` — mastery 0, seen 1×
 - `discipline` — mastery 0, seen 1×
@@ -36,6 +35,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `hardest` — mastery 0, seen 1×
 - `help` — mastery 0, seen 1×
 - `lithuanian` — mastery 0, seen 1×
+- `managing` — mastery 0, seen 1×
 
 ### 📖 Books
 
@@ -68,14 +68,14 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 | Category | Mistakes (incl. repeats) |
 |---|---:|
 | `other` | **20** |
-| `tenses` | **10** |
+| `tenses` | **11** |
 | `vocabulary` | **8** |
 | `articles` | **5** |
 | `word_order` | **5** |
 | `agreement` | **1** |
 | `prepositions` | **1** |
 
-### 📝 Vocab — 415 words
+### 📝 Vocab — 440 words
 
 **Stuck (lowest mastery):**
 
@@ -85,26 +85,28 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `a beautiful fairy stood before pinocchio.` — mastery 0, seen 1×
 - `agree with` — mastery 0, seen 1×
 - `air fryer` — mastery 0, seen 1×
-- `amazing` — mastery 0, seen 1×
 - `aperol` — mastery 0, seen 1×
 - `arrive` — mastery 0, seen 1×
 - `babysitter` — mastery 0, seen 1×
 - `brain` — mastery 0, seen 1×
-- `break` — mastery 0, seen 1×
-- `busy` — mastery 0, seen 1×
-- `calm` — mastery 0, seen 1×
-- `caring` — mastery 0, seen 1×
+- `carries` — mastery 0, seen 1×
+- `chase` — mastery 0, seen 1×
+- `complained` — mastery 0, seen 1×
+- `counts` — mastery 0, seen 1×
+- `crossed off` — mastery 0, seen 1×
 
 ### 📖 Books
 
 | Book | Chapter |
 |---|---:|
 | `Alice in Wonderland` | 6 |
+| `The Gingerbread Man` | 5 |
+| `Goldilocks and the Three Bears` | 5 |
 | `My Day` | 5 |
 | `A Scandal in Bohemia` | 3 |
+| `Robin Hood` | 2 |
 | `A Christmas Carol` | 1 |
 | `Cinderella` | 1 |
-| `Goldilocks and the Three Bears` | 1 |
 
 ## 🇬🇧 Liliya (EN)
 
