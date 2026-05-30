@@ -975,9 +975,9 @@
       "title": "Ontime Procurement",
       "type": "project",
       "summary": "Vendors + Purchase Orders MVP added to OnTime 2026-04-24. Tiered approval by total, foreman self-serve below T1. Kojo replacement.",
-      "size": 6749,
-      "status_icon": "🟡",
-      "mtime": 1777921562.9498756
+      "size": 8074,
+      "status_icon": "🟢",
+      "mtime": 1780094890.0162845
     },
     {
       "file": "feedback_ontime_project_guard_sync.md",
@@ -1537,7 +1537,7 @@
       "type": "feedback",
       "summary": "KeyboardButton \"📅 /daily\" не дёргает CommandHandler в python-telegram-bot, и vocab/quiz-сессия залипает",
       "size": 1466,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777515247.5797746
     },
     {
@@ -1757,7 +1757,7 @@
       "type": "memory",
       "summary": "\"Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущен 2026-05-22.\"",
       "size": 2066,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779492347.257408
     },
     {
@@ -1996,6 +1996,27 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "id": "feedback-agent-levels-cooldown",
+      "name": "feedback-agent-levels-cooldown",
+      "title": "feedback-agent-levels-cooldown",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_agent_levels_leverage.md",
+      "id": "feedback-agent-levels-leverage",
+      "name": "feedback-agent-levels-leverage",
+      "title": "Feedback Agent Levels Leverage",
+      "type": "memory",
+      "summary": "\"agent_levels.place_level раньше не выставлял плечо → биржа держала стейловые значения (ETH 10x, BTC 88x); теперь форсит из gerchik_config.json\"",
+      "size": 1188,
+      "status_icon": "🟢",
+      "mtime": 1780096322.952082
     },
     {
       "file": "feedback_agent_levels_sl_atr.md",
@@ -2309,6 +2330,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_ontime_inline_edit_blur_trap.md",
+      "id": "feedback-ontime-inline-edit-blur-trap",
+      "name": "feedback-ontime-inline-edit-blur-trap",
+      "title": "Feedback Ontime Inline Edit Blur Trap",
+      "type": "memory",
+      "summary": "\"OnTime inline-поля — onChange пишет в task, а onBlur сравнивает e.target.value!==task.field → всегда equal → patch не вызывается, правки не сохраняются\"",
+      "size": 1153,
+      "status_icon": "🟢",
+      "mtime": 1780097200.6174684
     },
     {
       "id": "feedback-orphan-residual-recovery",
@@ -3036,7 +3068,7 @@
       "type": "memory",
       "summary": "MyPersonalAIassistent — личный AI-ассистент Артёма (отдельный от Тимы). 3 ящика + лендинг-заявки в @solo_inboxBot. https://github.com/InfinitySudo/MypersonalAIassistent",
       "size": 2425,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779492368.268421
     },
     {
@@ -3047,7 +3079,7 @@
       "type": "memory",
       "summary": "Как генерируются 3 кейс-видео для ontime.management/agency. gpt-4o-mini-tts + Playwright + ffmpeg + STT-validation.",
       "size": 3210,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779492398.9834442
     },
     {
@@ -3722,9 +3754,30 @@
       "mtime": 0
     },
     {
+      "file": "project_tsa_orders_queue_visibility.md",
+      "id": "project-tsa-orders-queue-visibility",
+      "name": "project-tsa-orders-queue-visibility",
+      "title": "Project Tsa Orders Queue Visibility",
+      "type": "memory",
+      "summary": "\"OnTime Procurement «Orders queue» = GET /purchase-orders?mine=true; менеджмент/закупки видят все PO компании, foreman — только свои; ловушка 5 учёток Артёма\"",
+      "size": 1635,
+      "status_icon": "🟢",
+      "mtime": 1780097726.020998
+    },
+    {
       "id": "project-tsa-procurement",
       "name": "project-tsa-procurement",
       "title": "project-tsa-procurement",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project-tsa-roles-access",
+      "name": "project-tsa-roles-access",
+      "title": "project-tsa-roles-access",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -4610,6 +4663,17 @@
       "mtime": 1779864295.2849648
     },
     {
+      "file": "project_session_2026_05_29_ontime_po.md",
+      "id": "session-2026-05-29-ontime-po-push-june-work-plan",
+      "name": "session-2026-05-29-ontime-po-push-june-work-plan",
+      "title": "Session 2026 05 29 Ontime Po Push June Work Plan",
+      "type": "memory",
+      "summary": "Late commit 9747361 of OnTime PO workflow (attachments/SMTP/rich fields) + June 2026 Work Plan PDFs (RU/EN) generated from tsa.db",
+      "size": 1929,
+      "status_icon": "🟢",
+      "mtime": 1780094912.467336
+    },
+    {
       "id": "session-baseline-transfers",
       "name": "session-baseline-transfers",
       "title": "session-baseline-transfers",
@@ -4811,7 +4875,7 @@
       "type": "memory",
       "summary": "\"PC1:8002 TTS — НЕ настоящий OpenAI, локальная модель с китайско-английским уклоном на русском. Для product-видео всегда cloud OpenAI.\"",
       "size": 1204,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779492413.6444569
     },
     {
@@ -4975,6 +5039,14 @@
     {
       "source": "agent-levels-guards-chain",
       "target": "project_gerchik_auto_flipper"
+    },
+    {
+      "source": "feedback-agent-levels-leverage",
+      "target": "feedback-agent-levels-cooldown"
+    },
+    {
+      "source": "feedback-agent-levels-leverage",
+      "target": "feedback-agent-levels-sl-atr"
     },
     {
       "source": "feedback-agent-levels-sl-atr",
@@ -5239,6 +5311,10 @@
     {
       "source": "feedback-one-tweak-at-a-time",
       "target": "project-trading-critical-params"
+    },
+    {
+      "source": "feedback-ontime-inline-edit-blur-trap",
+      "target": "i18n-fallback-trap"
     },
     {
       "source": "orphan-residual-after-premature-close",
@@ -6097,6 +6173,10 @@
       "target": "project-tsa-procurement"
     },
     {
+      "source": "session-2026-05-29-ontime-po-push-june-work-plan",
+      "target": "project-tsa-procurement"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -6195,6 +6275,22 @@
     {
       "source": "project-trading-critical-params",
       "target": "project-tp-shadow-ladder"
+    },
+    {
+      "source": "project-tsa-orders-queue-visibility",
+      "target": "feedback-fastapi-route-order"
+    },
+    {
+      "source": "project-tsa-orders-queue-visibility",
+      "target": "project-tsa-procurement"
+    },
+    {
+      "source": "project-tsa-orders-queue-visibility",
+      "target": "project-tsa-roles-access"
+    },
+    {
+      "source": "OnTime Procurement",
+      "target": "project-wrestling-smtp"
     },
     {
       "source": "tutor-latency-pipeline",
@@ -6306,16 +6402,16 @@
     }
   ],
   "stats": {
-    "files": 294,
-    "nodes": 466,
-    "edges": 337,
+    "files": 298,
+    "nodes": 472,
+    "edges": 345,
     "by_type": {
       "feedback": 81,
-      "memory": 123,
+      "memory": 127,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 172
+      "stub": 174
     }
   }
 }

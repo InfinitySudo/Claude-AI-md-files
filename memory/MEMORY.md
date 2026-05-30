@@ -10,6 +10,7 @@
 - [Trading Analysis Protocol](feedback_trading_analysis_protocol.md) — перед RR/break-even/SL/fees анализом — Read [[project-trading-critical-params]]; не гадать настройки (была ошибка "0.8× ATR" 2026-05-26)
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
 - [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
+- [agent_levels leverage force](feedback_agent_levels_leverage.md) — place_level раньше не выставлял плечо → стейловые ETH 10x/BTC 88x; fix 2026-05-29 форсит set_leverage из конфига
 - [agent_levels 6h cooldown](feedback_agent_levels_cooldown.md) — после fill/expired блокируем повтор (symbol, side, level_type, price) на 6h; иначе BNB 651.67 спамит 4 копии в день
 - [agent_levels SL_ATR history](feedback_agent_levels_sl_atr.md) — 1.5→0.7 (2026-05-18)→0.2 (2026-05-27); риск wick-out vs больше setups через RR≥3 фильтр
 - [.env symlink trap](feedback_bybit_env_symlink.md) — gerchik-trading-agent/.env → 4BotsBybit-Trading/.env (один файл); диверг через отдельные env-vars
@@ -24,6 +25,7 @@
 - [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
 - [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
 - [WET corrector = SONNET](feedback_wet_corrector_sonnet.md) — reply_for_turn использует SONNET; HAIKU ленится и правит только 1-2 предложения из 5
+- [Tutor OAuth auth_token trap](feedback_tutor_oauth_auth_token.md) — Claude в туторах через OAuth: клиент ОБЯЗАН auth_token= не api_key= (иначе 401); форки дрейфуют, diff claude_client.py первым делом; PC1 Kokoro/Ollama мёртвы → cloud OpenAI
 - [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
@@ -114,6 +116,7 @@
 - [Billable Hours Dedup](feedback_billable_hours_dedup.md) — `_billable_hours_map`: report wins per (uid,day) — не (uid,pid,day); человек не на двух объектах одновременно
 - [Timesheet=Payroll unified](feedback_timesheet_payroll_unified.md) — 2026-05-25: timesheet/matrix + by-allocation теперь применяют switched_project exception и 12h cap (как payroll); фикс расхождений у Igor/Yaroslav
 - [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab; +PO expansion 2026-05-29 (attachments/SMTP/rich fields)
+- [OnTime Orders queue visibility](project_tsa_orders_queue_visibility.md) — Queue = ?mine=true; менеджмент видит все PO компании, foreman только свои; ловушка 5 учёток Артёма (created_by); prod DB = backend/tsa.db
 - [Session 2026-05-29 OnTime PO push + Work Plan](project_session_2026_05_29_ontime_po.md) — commit 9747361 (PO workflow) + June Work Plan PDFs; Workers now = daily_reports не sessions
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
@@ -137,6 +140,7 @@
 - [Session 2026-05-27 Wrestling v1.0.1 follow-up](project_session_2026_05_27_wrestling_v1_0_1_followup.md) — recovery от NameError:List + owner push на application + Discover region/city chips + Sparring tab state-save (commit 0621ad4)
 - [Session 2026-05-28 OnTime Orders + PDF](project_session_2026_05_28_ontime_orders.md) — commit 07e0a07: ProjectsPage search/sort, OrdersTab inline-edit + multi-select bulk PO + material_requests, POErrorBoundary, PDF DejaVu Sans для кириллицы, @mention расширен, Artem PM учётка (id=8)
 - [i18n fallback trap](feedback_i18n_fallback_trap.md) — `t('key') || 'Default'` НЕ работает в react-i18next: t() возвращает ключ-строку как truthy. Класть ключ в en.json или 2-й арг t()
+- [OnTime inline-edit blur trap](feedback_ontime_inline_edit_blur_trap.md) — onChange пишет в task, onBlur сравнивает с тем же task → patch не вызывается, правки не сохраняются; сравнивать с savedRef снимком
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h
 - [TP Shadow Ladder TODO](project_tp_shadow_ladder.md) — мониторинг куда доходят сигналы после 100% TP1=2R; Shadow rows + MFE peak + weekly auto-tuner with governor
 - [BE Per-Strategy A/B/C](project_be_per_strategy_experiment.md) — CONS 1.6/0.6, TREND 1.8/0.8, AGGR 1.5/0.5 + shadow=no-BE; не трогать 30d, выбрать победителя по PF/net
