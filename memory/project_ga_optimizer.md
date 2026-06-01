@@ -55,3 +55,11 @@ originSessionId: 13ab97bb-8dfe-4655-b013-e399065cc3ba
 
 **Why:** Win rate 2.5% на live — нужна оптимизация параметров. GA — первый шаг перед Order Flow.
 **How to apply:** Всегда проверять что GA прогон не забился (процесс жив, CPU >0). Результаты приходят в TG автоматически.
+
+---
+
+## GPU percent-mode на PK1 — РАБОТАЕТ (2026-05-31, commit e915bca)
+`scripts/gpu/`: ga_optimizer_gpu.py GENES=25 (AGGR = a_tp1_percent + 2 BE), CUDA-кернел tp_mode + tp_price_abs precompute, pack_spec len 2*MAX_TPS+4 (tp_pcts vs tp_ratios по spec['tp_mode']). Smoke pop8/gen2 PID 5008 чистый: 0 Traceback/KeyError/NameError, results c **a_tp1_percent** (НЕ a_tp1_ratio), 22s. Полный pop40/gen30 PID 20116 (/tmp/full_pid.txt) идёт, 262 символа, gen0 max=-41.5. НЕ применять в боевые bot_settings без явного OK Артёма.
+Деплой: scp 3 файла → tkach@100.99.211.123:C:/Users/tkach/ga_gpu/, md5-verify MATCH, rm __pycache__. Запуск: run_ga.ps1 -Pop -Gens -Seed; живой PID в ga_run.current; results → ga_gpu_results.json.
+
+**⚠️ МЕТА-УРОК (важнее любого кода):** Edit в большом ПАРАЛЛЕЛЬНОМ батче, где хоть один вызов потом Cancelled, молча НЕ применяется ИЛИ применяется частично («file modified since read»). За сессию это случилось 4× — я коммитил недоприменённый pack_spec/GENES и ложно рапортовал «passed»; PK1 падал `KeyError: 'tp_ratios'`. **ПРАВИЛО: критичные правки делать НЕ в больших батчах; после каждой — отдельный grep/exec-verify; коммитить только после pytest + smoke. Не верить "Edit success"/"N passed" из батча, где были Cancelled.** Связано: [[feedback-one-tweak-at-a-time]].

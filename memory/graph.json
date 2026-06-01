@@ -173,7 +173,7 @@
       "type": "project",
       "summary": "Which services run where, ports, nginx routing, project directories — live production setup as of 2026-04-30 post-reboot",
       "size": 4236,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777569430.6142318
     },
     {
@@ -414,9 +414,9 @@
       "title": "Ga Optimizer For Trading Bot",
       "type": "project",
       "summary": "GA parameter optimization system — scripts, dashboard integration, auto-apply workflow, current applied state",
-      "size": 2279,
-      "status_icon": "🟠",
-      "mtime": 1776100233.3400116
+      "size": 3571,
+      "status_icon": "🟢",
+      "mtime": 1780258447.824088
     },
     {
       "file": "feedback_ga_prewarm_418.md",
@@ -998,7 +998,7 @@
       "type": "project",
       "summary": "Тиры + financial loss-gate (2026-04-29) + foreman-only rule (2026-04-30) — баллы только role=foreman",
       "size": 3164,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777575900.4856777
     },
     {
@@ -1009,7 +1009,7 @@
       "type": "project",
       "summary": "QA + warranty + standalone service ticket flow with kanban + checklist + categorized photos",
       "size": 2912,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777580751.1979382
     },
     {
@@ -1020,7 +1020,7 @@
       "type": "project",
       "summary": "/timesheet — единый контроль часов/cost по workers × days, allocation tree (project/service/delivery), anomalies feed. Доступ — hasFinanceView.",
       "size": 2000,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777669944.2703016
     },
     {
@@ -1284,7 +1284,7 @@
       "type": "feedback",
       "summary": "Adding useMemo/useState/useEffect AFTER `if (!task) return null` blanks the modal — Rules of Hooks violation",
       "size": 1332,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777573928.9544656
     },
     {
@@ -2058,7 +2058,7 @@
       "type": "memory",
       "summary": "anthropic.Anthropic(api_key=...) шлёт x-api-key; OAuth работает ТОЛЬКО через auth_token=. SDK 0.97.0+",
       "size": 1353,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779560583.4185252
     },
     {
@@ -2290,6 +2290,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_manual_close_mislabeled_tp1.md",
+      "id": "feedback-manual-close-mislabeled-tp1",
+      "name": "feedback-manual-close-mislabeled-tp1",
+      "title": "Feedback Manual Close Mislabeled Tp1",
+      "type": "memory",
+      "summary": "ручное закрытие прибыльной real-позиции reconciler помечает как TP1 — релейблить в MANUAL чтобы не пухла TP-воронка",
+      "size": 1149,
+      "status_icon": "🟢",
+      "mtime": 1780320700.6320786
+    },
+    {
       "file": "feedback_nginx_uploads_regex_trap.md",
       "id": "feedback-nginx-uploads-regex-trap",
       "name": "feedback-nginx-uploads-regex-trap",
@@ -2360,7 +2371,7 @@
       "type": "memory",
       "summary": "\"real_trades таблица содержала paper-trades CONS/TREND из hybrid-режима — false-tripped weekly DD guard. Чистка через archive+DELETE, не через ack-session-start.\"",
       "size": 1282,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779557358.3414097
     },
     {
@@ -2539,6 +2550,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_tradingbot_stale_settings_read.md",
+      "id": "feedback-tradingbot-stale-settings-read",
+      "name": "feedback-tradingbot-stale-settings-read",
+      "title": "Feedback Tradingbot Stale Settings Read",
+      "type": "memory",
+      "summary": "bybit-tradingbot читает DD-threshold из bot_settings стейлово — смена weekly_max_drawdown_pct через dashboard не применяется до рестарта сервиса",
+      "size": 1204,
+      "status_icon": "🟢",
+      "mtime": 1780320363.0552695
+    },
+    {
       "id": "feedback-tts-pc1-mandarin",
       "name": "feedback-tts-pc1-mandarin",
       "title": "feedback-tts-pc1-mandarin",
@@ -2547,6 +2569,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_tutor_oauth_auth_token.md",
+      "id": "feedback-tutor-oauth-auth-token",
+      "name": "feedback-tutor-oauth-auth-token",
+      "title": "Feedback Tutor Oauth Auth Token",
+      "type": "memory",
+      "summary": "\"Туторы (wife/son/voice) шлют Claude через OAuth-токен из /root/.claude/.credentials.json — клиент ОБЯЗАН использовать auth_token=, не api_key=, иначе 401 invalid x-api-key. Форки дрейфуют.\"",
+      "size": 1386,
+      "status_icon": "🟢",
+      "mtime": 1780115703.0379517
     },
     {
       "id": "feedback-tutor-tts-wiring",
@@ -2630,6 +2663,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_bybit_migration_bypass",
+      "name": "feedback_bybit_migration_bypass",
+      "title": "feedback_bybit_migration_bypass",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_bybit_signing_order",
       "name": "feedback_bybit_signing_order",
       "title": "feedback_bybit_signing_order",
@@ -2690,9 +2733,51 @@
       "mtime": 0
     },
     {
+      "file": "feedback_ga_binance_vs_bybit.md",
+      "id": "feedback_ga_binance_vs_bybit",
+      "name": "feedback_ga_binance_vs_bybit",
+      "title": "Feedback Ga Binance Vs Bybit",
+      "type": "memory",
+      "summary": "GA на Binance-данных давала ФАНТАСТИКУ (win 76%); на правильных Bybit-данных edge почти нулевой (win 24%) — всегда тренить GA на Bybit",
+      "size": 2089,
+      "status_icon": "🟢",
+      "mtime": 1780291168.4523706
+    },
+    {
       "id": "feedback_ga_fitness_overfit",
       "name": "feedback_ga_fitness_overfit",
       "title": "feedback_ga_fitness_overfit",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_ga_pk1_cache_refresh.md",
+      "id": "feedback_ga_pk1_cache_refresh",
+      "name": "feedback_ga_pk1_cache_refresh",
+      "title": "Feedback Ga Pk1 Cache Refresh",
+      "type": "memory",
+      "summary": "Как обновлять kline-кеш GA-GPU на PK1 и три ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill маскирует стале-кеш)",
+      "size": 2016,
+      "status_icon": "🟢",
+      "mtime": 1780260724.7948673
+    },
+    {
+      "id": "feedback_ga_prewarm_418",
+      "name": "feedback_ga_prewarm_418",
+      "title": "feedback_ga_prewarm_418",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_ga_symbols_single_source",
+      "name": "feedback_ga_symbols_single_source",
+      "title": "feedback_ga_symbols_single_source",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2723,6 +2808,16 @@
       "id": "feedback_oauth_rate_limits",
       "name": "feedback_oauth_rate_limits",
       "title": "feedback_oauth_rate_limits",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_one_tweak_at_a_time",
+      "name": "feedback_one_tweak_at_a_time",
+      "title": "feedback_one_tweak_at_a_time",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2763,6 +2858,27 @@
       "id": "feedback_openai_base_url_shell_override",
       "name": "feedback_openai_base_url_shell_override",
       "title": "feedback_openai_base_url_shell_override",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_openclaw_gateway_leak.md",
+      "id": "feedback_openclaw_gateway_leak",
+      "name": "feedback_openclaw_gateway_leak",
+      "title": "Feedback Openclaw Gateway Leak",
+      "type": "memory",
+      "summary": "openclaw-gateway.service течёт по памяти (~4ГБ за 2.5 дня); рестарт + добавлен swap 4ГБ на srv1476476",
+      "size": 1085,
+      "status_icon": "🟢",
+      "mtime": 1780151203.0992184
+    },
+    {
+      "id": "feedback_parallel_agents",
+      "name": "feedback_parallel_agents",
+      "title": "feedback_parallel_agents",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2830,6 +2946,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_session_baseline_transfers",
+      "name": "feedback_session_baseline_transfers",
+      "title": "feedback_session_baseline_transfers",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_telegram_keyboard_emoji",
       "name": "feedback_telegram_keyboard_emoji",
       "title": "feedback_telegram_keyboard_emoji",
@@ -2853,6 +2979,16 @@
       "id": "feedback_tim_english_only",
       "name": "feedback_tim_english_only",
       "title": "feedback_tim_english_only",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_trading_analysis_protocol",
+      "name": "feedback_trading_analysis_protocol",
+      "title": "feedback_trading_analysis_protocol",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2898,6 +3034,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_wrestling_capacitor_uploads_img.md",
+      "id": "feedback_wrestling_capacitor_uploads_img",
+      "name": "feedback_wrestling_capacitor_uploads_img",
+      "title": "Feedback Wrestling Capacitor Uploads Img",
+      "type": "memory",
+      "summary": "\"Wrestling iOS — фото /uploads показывают \\\"?\\\" в нативном app (WebView перехватывает same-origin img); фикс fetch→blob, отложен в 1.0.1\"",
+      "size": 2147,
+      "status_icon": "🟢",
+      "mtime": 1780155588.0258732
     },
     {
       "file": "feedback_force_bucket_close_source.md",
@@ -3561,7 +3708,7 @@
       "type": "memory",
       "summary": "\"Paper-simulator до 2026-05-24 удваивал realized_pnl_usd для TP1(*) close с close_pct=1.0 — _partial_close писал full chunk PnL в _realized, _close_trade пересчитывал и СКЛАДЫВАЛ. Пофикшено commit cf6",
       "size": 2153,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779685260.577511
     },
     {
@@ -3593,7 +3740,7 @@
       "type": "memory",
       "summary": "REAL dup-check глобален (любая страта на символе блочит другую) с 2026-05-24 — Bybit One-Way agg. При переходе на multi-strategy-real нужна виртуальная per-strategy книга поверх агрегированной Bybit-п",
       "size": 1341,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779642344.2789426
     },
     {
@@ -3614,7 +3761,7 @@
       "type": "memory",
       "summary": "2026-05-24 одношот consolidation 25 phantom real_trades rows → 7 master + 12 CONSOLIDATED + 6 ORPHAN_RECONCILED. Script scripts/consolidate_real_aggregated_rows.py (commit d349d6a) — для будущих случа",
       "size": 1777,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779685277.157534
     },
     {
@@ -3698,7 +3845,7 @@
       "type": "memory",
       "summary": "\"Trader cockpit — единая Bloomberg/Matrix-стиль панель 4BotsBybit + Gerchik + Copy + GA. Static HTML на :8080. /root/Space_Live, InfinitySudo/Space_Live, deploy → /var/www/dashboard/cockpit.html\"",
       "size": 4615,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779600433.6015902
     },
     {
@@ -3729,9 +3876,9 @@
       "title": "Project Trading Critical Params",
       "type": "memory",
       "summary": "\"Single source of truth — текущие торговые настройки 4BotsBybit (risk/leverage/SL формула/TP/fees), реальные R-метрики на real AGGR, формулы break-even. ОБЯЗАН читать перед любым анализом торговли.\"",
-      "size": 24781,
+      "size": 30782,
       "status_icon": "🟢",
-      "mtime": 1779779433.9516773
+      "mtime": 1780242123.8993244
     },
     {
       "id": "project-trading-state-softgate",
@@ -3832,7 +3979,7 @@
       "type": "memory",
       "summary": "/api/v2/wallets-all — параллельно пуллит wallet для всех 3 sub-аккаунтов Bybit (TradingBot/Copy/AI). Подключён к cockpit COMMAND CENTER и v2.html header.",
       "size": 2336,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779600406.2185
     },
     {
@@ -3943,6 +4090,17 @@
       "mtime": 0
     },
     {
+      "file": "project_aggr_no_edge_proven.md",
+      "id": "project_aggr_no_edge_proven",
+      "name": "project_aggr_no_edge_proven",
+      "title": "Project Aggr No Edge Proven",
+      "type": "memory",
+      "summary": "\"AGGR spike-momentum НЕ имеет устойчивого edge на крипте март-май 2026 — доказано 6 способами; проблема во ВХОДЕ, не в экзите; настройками в плюс не вывести\"",
+      "size": 2536,
+      "status_icon": "🟢",
+      "mtime": 1780293420.1006863
+    },
+    {
       "id": "project_backtest_findings",
       "name": "project_backtest_findings",
       "title": "project_backtest_findings",
@@ -3981,6 +4139,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_dd_guard_released_2026_06_01.md",
+      "id": "project_dd_guard_released_2026_06_01",
+      "name": "project_dd_guard_released_2026_06_01",
+      "title": "Project Dd Guard Released 2026 06 01",
+      "type": "memory",
+      "summary": "\"2026-06-01 Артём снял weekly DD-гард (25→40%) + форснул AGGRESSIVE real, хотя AGGR доказанно убыточна — осознанное риск-решение\"",
+      "size": 1887,
+      "status_icon": "🟢",
+      "mtime": 1780294422.2289338
     },
     {
       "id": "project_emails_optimization",
@@ -4173,6 +4342,16 @@
       "mtime": 0
     },
     {
+      "id": "project_real_trades_baseline",
+      "name": "project_real_trades_baseline",
+      "title": "project_real_trades_baseline",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_realized_pnl_column",
       "name": "project_realized_pnl_column",
       "title": "project_realized_pnl_column",
@@ -4201,6 +4380,27 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "id": "project_session_2026_05_27_wrestling_v1_0_submit",
+      "name": "project_session_2026_05_27_wrestling_v1_0_submit",
+      "title": "project_session_2026_05_27_wrestling_v1_0_submit",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_session_2026_05_30_wrestling_submit.md",
+      "id": "project_session_2026_05_30_wrestling_submit",
+      "name": "project_session_2026_05_30_wrestling_submit",
+      "title": "Project Session 2026 05 30 Wrestling Submit",
+      "type": "memory",
+      "summary": "\"Сессия 2026-05-30 (прервана): Wrestling v1.0 ресабмит — новые скриншоты iPhone+iPad загружены, письмо ревьюеру, фикс аватарок готов на ветке для 1.0.1\"",
+      "size": 1935,
+      "status_icon": "🟢",
+      "mtime": 1780163509.6964276
     },
     {
       "id": "project_son_french_tutor",
@@ -4246,6 +4446,16 @@
       "id": "project_toptal_waitlist",
       "name": "project_toptal_waitlist",
       "title": "project_toptal_waitlist",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_trading_critical_params",
+      "name": "project_trading_critical_params",
+      "title": "project_trading_critical_params",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -4351,6 +4561,27 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "id": "project_wrestling_account_deletion",
+      "name": "project_wrestling_account_deletion",
+      "title": "project_wrestling_account_deletion",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_wrestling_appstore_screenshots.md",
+      "id": "project_wrestling_appstore_screenshots",
+      "name": "project_wrestling_appstore_screenshots",
+      "title": "Project Wrestling Appstore Screenshots",
+      "type": "memory",
+      "summary": "\"Wrestling App Store скриншоты — Playwright-скрипты review_screens/{iphone,ipad13}.mjs + demo-аккаунт; регенерят реальные экраны в точные размеры одной командой\"",
+      "size": 1906,
+      "status_icon": "🟢",
+      "mtime": 1780163491.5853543
     },
     {
       "id": "project_wrestling_i18n_9langs",
@@ -5217,6 +5448,30 @@
       "target": "feedback-reports-win-rate"
     },
     {
+      "source": "feedback_ga_binance_vs_bybit",
+      "target": "feedback_ga_pk1_cache_refresh"
+    },
+    {
+      "source": "feedback_ga_binance_vs_bybit",
+      "target": "feedback_trading_analysis_protocol"
+    },
+    {
+      "source": "feedback_ga_binance_vs_bybit",
+      "target": "project_ga_optimizer"
+    },
+    {
+      "source": "feedback_ga_pk1_cache_refresh",
+      "target": "feedback_ga_prewarm_418"
+    },
+    {
+      "source": "feedback_ga_pk1_cache_refresh",
+      "target": "feedback_ga_symbols_single_source"
+    },
+    {
+      "source": "feedback_ga_pk1_cache_refresh",
+      "target": "project_ga_optimizer"
+    },
+    {
       "source": "feedback-ga-unrealistic-tps",
       "target": "project-ga-realism-overhaul"
     },
@@ -5273,6 +5528,14 @@
       "target": "feedback-systemd-oncalendar-local-time"
     },
     {
+      "source": "feedback-manual-close-mislabeled-tp1",
+      "target": "feedback-real-trades-fee-semantics"
+    },
+    {
+      "source": "feedback-manual-close-mislabeled-tp1",
+      "target": "project-trading-critical-params"
+    },
+    {
       "source": "migration-ghost-trades-2026-05-15",
       "target": "feedback-bybit-env-symlink"
     },
@@ -5315,6 +5578,10 @@
     {
       "source": "feedback-ontime-inline-edit-blur-trap",
       "target": "i18n-fallback-trap"
+    },
+    {
+      "source": "feedback_openclaw_gateway_leak",
+      "target": "feedback_parallel_agents"
     },
     {
       "source": "orphan-residual-after-premature-close",
@@ -5497,8 +5764,24 @@
       "target": "project-trading-critical-params"
     },
     {
+      "source": "feedback-tradingbot-stale-settings-read",
+      "target": "feedback-dashboard-view-lock"
+    },
+    {
+      "source": "feedback-tradingbot-stale-settings-read",
+      "target": "project-trading-critical-params"
+    },
+    {
       "source": "tts-pc1-mandarin",
       "target": "feedback_tutor_tts_wiring"
+    },
+    {
+      "source": "feedback-tutor-oauth-auth-token",
+      "target": "feedback-tts-pc1-mandarin"
+    },
+    {
+      "source": "feedback-tutor-oauth-auth-token",
+      "target": "feedback-wet-corrector-sonnet"
     },
     {
       "source": "tutor-tts-wiring",
@@ -5541,6 +5824,14 @@
       "target": "feedback_oauth_rate_limits"
     },
     {
+      "source": "feedback_wrestling_capacitor_uploads_img",
+      "target": "feedback_nginx_uploads_regex_trap"
+    },
+    {
+      "source": "feedback_wrestling_capacitor_uploads_img",
+      "target": "project_session_2026_05_27_wrestling_v1_0_submit"
+    },
+    {
       "source": "agency-landing",
       "target": "mai-assistant"
     },
@@ -5555,6 +5846,22 @@
     {
       "source": "project-agent-levels-2026-05-18",
       "target": "project-claude-telegram-bot"
+    },
+    {
+      "source": "project_aggr_no_edge_proven",
+      "target": "feedback_ga_binance_vs_bybit"
+    },
+    {
+      "source": "project_aggr_no_edge_proven",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "project_aggr_no_edge_proven",
+      "target": "project_real_trades_baseline"
+    },
+    {
+      "source": "project_aggr_no_edge_proven",
+      "target": "project_trading_critical_params"
     },
     {
       "source": "project-ai-trace-teach",
@@ -5649,6 +5956,26 @@
       "target": "project-tp-shadow-ladder"
     },
     {
+      "source": "project_dd_guard_released_2026_06_01",
+      "target": "feedback_bybit_migration_bypass"
+    },
+    {
+      "source": "project_dd_guard_released_2026_06_01",
+      "target": "feedback_dd_guard_paper_skip"
+    },
+    {
+      "source": "project_dd_guard_released_2026_06_01",
+      "target": "feedback_session_baseline_transfers"
+    },
+    {
+      "source": "project_dd_guard_released_2026_06_01",
+      "target": "project_aggr_no_edge_proven"
+    },
+    {
+      "source": "project_dd_guard_released_2026_06_01",
+      "target": "project_hybrid_mode"
+    },
+    {
       "source": "project-estimating-phase-a",
       "target": "feedback-estimating-no-api"
     },
@@ -5695,6 +6022,10 @@
     {
       "source": "estimator-links",
       "target": "project_tsa_estimating"
+    },
+    {
+      "source": "GA Optimizer for Trading Bot",
+      "target": "feedback-one-tweak-at-a-time"
     },
     {
       "source": "ga-realism-overhaul-2026-05-13",
@@ -6177,6 +6508,22 @@
       "target": "project-tsa-procurement"
     },
     {
+      "source": "project_session_2026_05_30_wrestling_submit",
+      "target": "feedback_wrestling_capacitor_uploads_img"
+    },
+    {
+      "source": "project_session_2026_05_30_wrestling_submit",
+      "target": "project_session_2026_05_27_wrestling_v1_0_submit"
+    },
+    {
+      "source": "project_session_2026_05_30_wrestling_submit",
+      "target": "project_wrestling_account_deletion"
+    },
+    {
+      "source": "project_session_2026_05_30_wrestling_submit",
+      "target": "project_wrestling_appstore_screenshots"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -6321,6 +6668,14 @@
       "target": "project-session-2026-05-27-wrestling-v1-0-submit"
     },
     {
+      "source": "project_wrestling_appstore_screenshots",
+      "target": "feedback_wrestling_capacitor_uploads_img"
+    },
+    {
+      "source": "project_wrestling_appstore_screenshots",
+      "target": "project_session_2026_05_27_wrestling_v1_0_submit"
+    },
+    {
       "source": "project-wrestling-i18n-10langs",
       "target": "feedback_nginx_uploads_regex_trap"
     },
@@ -6402,16 +6757,16 @@
     }
   ],
   "stats": {
-    "files": 298,
-    "nodes": 472,
-    "edges": 345,
+    "files": 309,
+    "nodes": 494,
+    "edges": 376,
     "by_type": {
       "feedback": 81,
-      "memory": 127,
+      "memory": 138,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 174
+      "stub": 185
     }
   }
 }
