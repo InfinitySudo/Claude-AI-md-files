@@ -25,9 +25,11 @@
 - [Dashboard 502 — view lock](feedback_dashboard_view_lock.md) — idle-in-tx у другого бота вешает DROP VIEW в _ensure_real_trades_compat_view; защищено lock_timeout=5s + idle_in_tx_session_timeout=60s
 - [Russian Cyrillic](feedback_russian_cyrillic.md) — Артём хочет, чтобы я отвечал на русском кириллицей, не транслитом
 - [WET corrector = SONNET](feedback_wet_corrector_sonnet.md) — reply_for_turn использует SONNET; HAIKU ленится и правит только 1-2 предложения из 5
+- [Tutor OAuth auth_token trap](feedback_tutor_oauth_auth_token.md) — Claude в туторах через OAuth: клиент ОБЯЗАН auth_token= не api_key= (иначе 401); форки дрейфуют, diff claude_client.py первым делом; PC1 Kokoro/Ollama мёртвы → cloud OpenAI
 - [Env Placeholders](feedback_env_placeholders.md) — trading_v3_artem.json хранит ${VAR}; оборачивать json.load в env_config.expand_env_vars
 - [ControlBot Shutdown Hook](feedback_controlbot_shutdown_hook.md) — kill ControlBot = SIGTERM всем торговым ботам; всегда проверять весь пул после рестарта
 - [Parallel Agents](feedback_parallel_agents.md) — OpenClaw runs on the same VPS; check for parallel agents before destructive ops
+- [openclaw-gateway leak](feedback_openclaw_gateway_leak.md) — gateway течёт ~4ГБ/2.5д на srv1476476; рестарт-команда + swap 4ГБ добавлен 2026-05-30; я на хосте локально (SSH не нужен)
 - [Paper vs Real Trading](feedback_paper_vs_real.md) — Hybrid mode 2026-04-23: CONS=paper, TREND/AGGR=real; wallet $200.92
 - [Trading Guards REAL only](feedback_dd_guard_paper_skip.md) — все risk-гарды (DD, blacklist, time-of-day) только для REAL; paper без блоков
 - [Signalbot dead PG conn](feedback_signalbot_dead_pg_conn.md) — после ~1.5d uptime _save_signal_to_db падает; сигналы в TG идут но в БД 0 → tradingbot ничего не открывает; fix: рестарт signalbot; TODO: reconnect в коде
@@ -115,10 +117,12 @@
 - [Billable Hours Dedup](feedback_billable_hours_dedup.md) — `_billable_hours_map`: report wins per (uid,day) — не (uid,pid,day); человек не на двух объектах одновременно
 - [Timesheet=Payroll unified](feedback_timesheet_payroll_unified.md) — 2026-05-25: timesheet/matrix + by-allocation теперь применяют switched_project exception и 12h cap (как payroll); фикс расхождений у Igor/Yaroslav
 - [OnTime Procurement](project_tsa_procurement.md) — vendors + POs с tiered approval (T1/T2/T3); replaces Kojo; /procurement + Orders tab; +PO expansion 2026-05-29 (attachments/SMTP/rich fields)
+- [OnTime OA Workflow](project_tsa_oa_workflow.md) — Order Acknowledgment: vendor подтверждает цены/материалы по PO; materials@ IMAP→Claude parse→сверка→pending_oa/oa_received/oa_verified/oa_mismatch; daily re-request max 5; нужен real .env.materials + TSA_OA_ANTHROPIC_KEY
 - [OnTime Orders queue visibility](project_tsa_orders_queue_visibility.md) — Queue = ?mine=true; менеджмент видит все PO компании, foreman только свои; ловушка 5 учёток Артёма (created_by); prod DB = backend/tsa.db
 - [Session 2026-05-29 OnTime PO push + Work Plan](project_session_2026_05_29_ontime_po.md) — commit 9747361 (PO workflow) + June Work Plan PDFs; Workers now = daily_reports не sessions
 - [FastAPI Route Collision](feedback_fastapi_route_order.md) — /api/reports/{rid} съедает любой sibling word → используй трёхсегментные пути для sub-resources
 - [Hybrid Trading Mode](project_hybrid_mode.md) — per_strategy paper/real routing in OrderExecutorWrapper; CONS=paper while GA tunes, TREND/AGGR=real
+- [Pause не стопит real](feedback_pause_button_doesnt_stop_real.md) — дашборд Pause пишет MANUAL/CONS, но real идёт по per_strategy в wrapper; настоящий стоп = per-strategy→PAPER
 - [REAL global-guard limit](project_real_global_guard_limitation.md) — с 2026-05-24 любая real-pos на символе блочит другую страту; при multi-strategy-real напомнить про виртуальную per-strategy книгу
 - [Paper double-count RESOLVED](project_paper_double_count_resolved.md) — _partial_close с close_pct=1 удваивал realized; пофикшено commit cf6e594 + backfill 195 rows
 - [Real_trades consolidation done](project_real_trades_consolidation_done.md) — script consolidate_real_aggregated_rows.py, 25 phantom rows → 7 master + 12 CONSOLIDATED + 6 ORPHAN
@@ -130,6 +134,9 @@
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
 - [Wrestling Account Deletion](project_wrestling_account_deletion.md) — Apple 5.1.1(v): DELETE /api/me?confirm=true анонимизирует users; Danger Zone в ProfilePage; live на web (3972f62), в iOS войдёт при пересабмите
+- [Wrestling App Store Screenshots](project_wrestling_appstore_screenshots.md) — review_screens/{iphone,ipad13}.mjs + demo-promo аккаунт регенерят реальные экраны в точные размеры (6.9/6.5/iPad13); dist стирается при build, PNG держать в review_screens
+- [Session 2026-05-30 Wrestling submit](project_session_2026_05_30_wrestling_submit.md) — v1.0 ресабмит после reject 2.3.3: новые скрины iPhone+iPad загружены, письмо ревьюеру (полный список+launch 10:00), фикс аватарок готов на ветке для 1.0.1
+- [Wrestling Capacitor /uploads img "?"](feedback_wrestling_capacitor_uploads_img.md) — фото профиля битые в нативном iOS (WebView перехватывает same-origin img, /uploads нет в бандле); фикс fetch→blob NetImage, отложен в 1.0.1
 - [Wrestling SMTP](project_wrestling_smtp.md) — 2026-05-29: parental-consent/reset письма не слались (SMTP не настроен); починено systemd drop-in (Gmail borysiukartem55); конфиг вне git (секрет)
 - [Session 2026-05-25 WET games + select](project_session_2026_05_25_wet_games_select.md) — multi-select phrase в reader+chat, /play Word+Letter games, corrector→SONNET, no-cache + /reload (faefabe). TODO: book progress не сохраняется
 - [Session 2026-05-26 Estimator UI](project_session_2026_05_26_estimator_ui.md) — Feature Requests UI создание+фото (4f262e5/f81a614), заметные `+` кнопки в Memory разделе (7d59e18)
@@ -146,6 +153,12 @@
 - [Fees Accounting](project_fees_accounting.md) — fees_paid_usd persistence (was silently dropped); backfill script; net = gross − fees everywhere
 - [GA Subprocess Detach](feedback_ga_subprocess_detach.md) — MUST use systemd-run --unit --slice для долгих Popen; start_new_session=True не спасает от cgroup-kill
 - [GA Prewarm 418 Handling](feedback_ga_prewarm_418.md) — Binance 418 = transient ban; retry+Retry-After, prewarm aborts >10% fails, no Bybit-5m fallback
+- [TradingBot stale settings read](feedback_tradingbot_stale_settings_read.md) — смена DD-threshold через dashboard НЕ применяется до рестарта bybit-tradingbot (стейловый idle-in-tx read на db_conn_ipc)
+- [Manual close mislabeled TP1](feedback_manual_close_mislabeled_tp1.md) — ручное закрытие прибыльной real-позиции reconciler штампует TP1; релейблить в MANUAL (close_source=manual_close, tp1_triggered=false)
+- [GA PK1 Cache Refresh](feedback_ga_pk1_cache_refresh.md) — обновление kline-кеша PK1 + 3 ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill); prefetch_pk1_gap.py
+- [GA Binance vs Bybit](feedback_ga_binance_vs_bybit.md) — ⚠️ GA на Binance = фантастика (win76%), на правильных Bybit-данных edge ~ноль (win24%, fitness −15); вход доказан 600/600 на Bybit; НЕ применять GA-параметры, spike2→6 макс на paper
+- [AGGR No Edge Proven](project_aggr_no_edge_proven.md) — 🔴 spike-momentum НЕ прибылен март-май 2026, доказано 6× (R:R 0.78→break-even WR 56% vs факт 48%); 90 TP/SL/BE + трейлинг + режим-фильтр = 0 прибыльных; проблема ВО ВХОДЕ; не крутить настройки, нужен другой тип входа
+- [DD Guard Released 2026-06-01](project_dd_guard_released_2026_06_01.md) — Артём снял weekly DD 25→40% + форснул AGGRESSIVE real (state LIVE/REAL), хоть AGGR убыточна; commit 9ea64af; weekly DD = скользящее 7д окно; откат: weekly=25 + mode=AUTO
 - [Per-Mode Dup Rule](feedback_per_mode_dup_rule.md) — dup-symbol check in process_signal filters by pos['mode']; paper-CONS doesn't block real-TREND
 - [Dashboard split DEPRECATED](project_dashboard_split.md) — старый paper/real split мёртв с 2026-05-05; заменён v2
 - [Dashboard V2 Per-Strategy](project_dashboard_v2.md) — /v2.html 6-tab UI: Stats/Charts/Control/GA/Symbols/Settings; /api/v2/* additive

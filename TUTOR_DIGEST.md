@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-05-29 23:12 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-06-02 22:22 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**675 nodes** (693 edges) — 📝 636 word · 📚 16 category · 📖 16 book · 👤 7 learner
+**725 nodes** (744 edges) — 📝 686 word · 📚 16 category · 📖 16 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -70,30 +70,30 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 | `other` | **20** |
 | `tenses` | **11** |
 | `vocabulary` | **8** |
+| `word_order` | **8** |
 | `articles` | **5** |
-| `word_order` | **5** |
 | `agreement` | **1** |
 | `prepositions` | **1** |
 
-### 📝 Vocab — 440 words
+### 📝 Vocab — 491 words
 
 **Stuck (lowest mastery):**
 
+- `chaos` — mastery 0, seen 2×
+- `confidence` — mastery 0, seen 2×
+- `foundation` — mastery 0, seen 2×
+- `hint` — mastery 0, seen 2×
 - `nausea` — mastery 0, seen 2×
 - `overall` — mastery 0, seen 2×
+- `racing` — mastery 0, seen 2×
+- `selfish` — mastery 0, seen 2×
+- `sharper` — mastery 0, seen 2×
 - `stomachache` — mastery 0, seen 2×
 - `a beautiful fairy stood before pinocchio.` — mastery 0, seen 1×
+- `advice` — mastery 0, seen 1×
 - `agree with` — mastery 0, seen 1×
 - `air fryer` — mastery 0, seen 1×
-- `aperol` — mastery 0, seen 1×
-- `arrive` — mastery 0, seen 1×
-- `babysitter` — mastery 0, seen 1×
-- `brain` — mastery 0, seen 1×
-- `carries` — mastery 0, seen 1×
-- `chase` — mastery 0, seen 1×
-- `complained` — mastery 0, seen 1×
-- `counts` — mastery 0, seen 1×
-- `crossed off` — mastery 0, seen 1×
+- `alone` — mastery 0, seen 1×
 
 ### 📖 Books
 
