@@ -1,6 +1,6 @@
 # OnTime digest
 
-Generated **2026-06-02 22:22 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-06-02 22:52 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
 **195 nodes** (816 edges) — 🏗 66 project · 📦 66 material · 👷 62 worker · 🏪 1 vendor
 
@@ -32,7 +32,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 |---|---:|---:|
 | `Broward_26_05_2025_Oleksii_Sh` | **8486.5** | 30 |
 | `Magna Bldg 1` | **7774.7** | 35 |
-| `Magna Bldg 2` | **7011.8** | 42 |
+| `Magna Bldg 2` | **7028.9** | 42 |
 | `Sage Walk Bldg 2 Nikolay K 15.12.2025` | **5034.0** | 31 |
 | `Arabella-Ophelia Mike K 04.09.2025` | **3843.0** | 13 |
 | `Livingston (Bldg A) ` | **2074.0** | 14 |

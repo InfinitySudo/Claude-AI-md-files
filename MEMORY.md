@@ -77,6 +77,7 @@
 - [AI Vision Trace разрешено](feedback_ai_trace_enabled.md) — 2026-05-25: AI auto-trace polygons в SheetEditorPage (Уровень 2 — draft+проверка); кнопка 🤖 AI Trace, использует Claude Sonnet 4.6 Vision
 - [Estimating metric support](feedback_estimating_metric.md) — 2026-05-27: SheetEditorPage CalibrationModal toggle imperial/metric; AI prompt детектит unit; px_per_ft единый в БД (всегда per FOOT)
 - [AI Trace teaching](project_ai_trace_teach.md) — 2026-05-27: Артём обводит вручную → кнопка «Teach AI» → ai_trace_examples table → few-shot reference в Sonnet prompt при следующих trace
+- [Estimator Agent Autonomy](project_estimator_agent_autonomy.md) — 2026-06-02: бот учится на правках (live_knowledge preload + save-on-correction + waste-override) и сам обмеряет (calibration-guard + /auto-trace, internal-secret); свой git-репо InfinitySudo/siding-estimator-bot; не тестилось на реальном эстимате
 - [Estimator Anthropic key scoped](feedback_anthropic_key_scoped_estimator.md) — TSA_ESTIMATOR_ANTHROPIC_KEY только для ai_trace.py; не читать ANTHROPIC_API_KEY в других модулях OnTime
 - [CV-trace over AI](feedback_cv_trace_over_ai.md) — на blueprints OpenCV findContours даёт pixel-precise контуры; AI Vision стабильно рисует bbox'ы; OnTime endpoint /ai-trace = CV+AI hybrid
 - [Estimator AI Memory](project_estimator_ai_memory.md) — .md файлы в /root/ontime/backend/estimator_memory/, общие для TG бота и OnTime UI; lessons/rules/vendors/materials/projects

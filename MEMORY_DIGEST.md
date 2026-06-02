@@ -1,6 +1,6 @@
 # Memory digest
 
-Generated **2026-06-02 22:22 UTC**.
+Generated **2026-06-02 22:52 UTC**.
 
 **500 nodes** (311 files, 382 edges) — 📝 189 stub · · 140 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
@@ -58,7 +58,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-06-02 21:56` [[project_tsa_oa_workflow]] · 🟢 today
+- `2026-06-02 22:27` [[project_tsa_oa_workflow]] · 🟢 today
 - `2026-06-02 02:48` [[feedback_pause_button_doesnt_stop_real]] · 🟢 today
 - `2026-06-01 13:31` [[feedback-manual-close-mislabeled-tp1]] · 🟢 this week
 - `2026-06-01 13:26` [[feedback-tradingbot-stale-settings-read]] · 🟢 this week
