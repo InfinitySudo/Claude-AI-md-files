@@ -23,6 +23,8 @@ metadata:
 
 **✅ SL Qty-invalid фикс задеплоен** (commit `2bf454c`, 295 pytest passed) — см. [[feedback-real-sl-qty-step]].
 
-**Не-блокеры на потом:** (1) баг промоутера выше; (2) `daily report → telegram`: `'NotificationManager' object has no attribute 'send_message'` (отчёт не уходит).
+**✅ Daily report исправлен (commit `8e28c19`).** Было 2 бага: (1) `daily_reporter.py` звал `self.telegram.send_message()`, а `self.telegram`=`NotificationManager` (метод `_send_telegram(text)`, не send_message) → AttributeError каждый день; (2) тело отчёта на легаси CONSERVATIVE/TREND — после миграции на 'Trader A–F' эти ключи пустые → нули. Теперь итерирует `trader_registry`, берёт real_trades/simulated_trades по `trader_real_enabled`, рендерит per-trader (trades/WR/PF/net, 💰real/📒paper). Smoke по живой БД — все 7 трейдеров корректно.
+
+**Не-блокеров не осталось** — все три бага сессии закрыты (SL Qty-invalid, промоутер-флап, daily-report).
 
 Связано: [[project-trader-model-10]], [[project-trading-critical-params]], [[feedback-pause-button-doesnt-stop-real]].
