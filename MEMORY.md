@@ -4,6 +4,9 @@
 - [🏗 OnTime digest](ONTIME_DIGEST.md) — top workers/projects/materials/vendors by hours+qty. Auto every 30 min.
 - [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
+- [10-Trader Model](project_trader_model_10.md) — 5 трейдеров A–E (fan-out) + opt-in авто-промоутер paper↔real; ⚠ живой дашборд = /var/www/dashboard/v2.html (НЕ в git)
+- [Session 2026-06-05 real-SL + promoter](project_session_2026_06_05_real_sl_promoter.md) — F=единственный real, C=paper, промоутер ВЫКЛ (флап-баг promote-paper/demote-real); план dual-real = разные суб-аккаунты
+- [Real SL qty_step](feedback_real_sl_qty_step.md) — conditional maker-SL/entry qty ОБЯЗАН floor к qty_step иначе Bybit 'Qty invalid' (10001); fix 2bf454c via _normalize_qty
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
 - [⚡ Trading Critical Params](project_trading_critical_params.md) — SINGLE SOURCE: mode/risk/SL formula (ATR×0.25)/TP/BE/fees/caps + real R-metrics + break-even formulas. READ FIRST для любого trading-анализа
 - [Pump&Dump AI Agent](project_pumpdump_agent.md) — отдельный self-tuning агент под пампы/дампы, Bybit sub4. Planning phase 2026-05-26: PLAN.md в repo InfinitySudo/PumpDumpAI_Agent, tile в Space_Live cockpit, Phase-1 кода ждёт approval
@@ -73,6 +76,10 @@
 - [OnTime Daily Reports](project_tsa_daily_reports.md) — схема отчётов, budget analytics, dual-source часы (отчёт > сессия), WORKDAY_HOURS=9
 - [OnTime Estimating](project_tsa_estimating.md) — Phase 1 готов 2026-05-04: upload PDF → render → PNG; tracing/AI/BOM ждут реальных blueprints
 - [Estimating Phase A AI-assist](project_estimating_phase_a.md) — 2026-05-25: siding-estimator-bot @TSA_EstimatorBot + Stack mirror + learned_rules в BOM + Similar panel в OnTime
+- [Estimator name lookup](feedback_estimator_name_lookup.md) — бот/AI резолвят проект по ИМЕНИ (find_estimate_by_name + /api/estimates/search), не просят числовой id; +корректные пути (ontime-api.service, backend/main.py)
+- [Calibration explainability](project_estimating_calibration_explainability.md) — calib_json хранит как получен px_per_ft; UI показывает metric+imperial breakdown + reference line; как AI меряет scale
+- [AI Trace overhaul](project_estimating_ai_trace.md) — classify coloured/linework gate, region-scoped per-elevation trace, material-labelled; linework→manual; 5 проектов разные
+- [Blueprint profiles](project_estimating_calibration_explainability.md) — 5 проектов: units/scale/coloured-vs-linework + правила (lesson project-blueprint-profiles.md)
 - [Estimating без Vision API](feedback_estimating_no_api.md) — extraction только regex + ручной ✏️; Vision не предлагать (решение 2026-05-04). ⚠ Применимо только к auto-extraction metadata, НЕ к tracing.
 - [AI Vision Trace разрешено](feedback_ai_trace_enabled.md) — 2026-05-25: AI auto-trace polygons в SheetEditorPage (Уровень 2 — draft+проверка); кнопка 🤖 AI Trace, использует Claude Sonnet 4.6 Vision
 - [Estimating metric support](feedback_estimating_metric.md) — 2026-05-27: SheetEditorPage CalibrationModal toggle imperial/metric; AI prompt детектит unit; px_per_ft единый в БД (всегда per FOOT)
@@ -85,6 +92,7 @@
 - [Estimator Assemblies](project_estimator_assemblies.md) — multi-layer cladding stacks: assembly_templates + estimate_takeoffs.assembly_id; BOM разворачивает layers
 - [Estimating Industry Rules](project_estimating_industry_rules.md) — formulas + waste factors + accessory ratios + catalog mapping для BOM engine
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
+- [OnTime Reopen Projects](project_tsa_reopen.md) — POST /projects/{id}/reopen возвращает done-проект в active без 48h-окна; кнопка «Сделать активным» (d88db62)
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
 - [OnTime No Confirms](feedback_no_confirms_ontime.md) — в OnTime разрешено всё, кроме удаления проектов
 - [OnTime Heartbeat & Time Policy](project_ontime_heartbeat.md) — 4 триггера закрытия (checkout/geofence/force/EOD 17:30) + unpaid lunch 12:00-12:30; bg sweep 60s
@@ -130,6 +138,7 @@
 - [Cockpit unversioned](feedback_cockpit_unversioned.md) — /var/www/dashboard/cockpit.html не в git; backup перед правкой; classifier требует allow от Артёма
 - [Cockpit zen-mode + planets](project_cockpit_zen_mode.md) — Z/C хоткеи для скрытия панелей; эллиптические орбиты планет по всему экрану; .stage растянута, фикс clamp
 - [Wrestling mobile launch](project_wrestling_mobile_launch.md) — Capacitor v7 + signed AAB готов на VPS; iOS через Codemagic без Mac; от Артёма Apple Dev $99 + Google Play $25
+- [Wrestling Google Play](project_wrestling_google_play.md) — Play-аккаунт individual (ID 4901449532864858506, ...55@gmail), age-gate 13+ (код+copy пофикшены), AAB versionCode 2, готовые ассеты, cheat-sheet листинга, closed-testing 20/14дней
 - [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
