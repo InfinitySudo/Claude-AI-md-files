@@ -19,7 +19,7 @@
       "type": "feedback",
       "summary": "ask_tim → ask_owner; имя в идентификаторе с маленькой буквы выглядит как ошибка в его имени",
       "size": 787,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778226700.941121
     },
     {
@@ -30,7 +30,7 @@
       "type": "feedback",
       "summary": "Артём не хочет пушить руками — Claude-сессии должны делать commit+push сразу, во всех репо включая trading",
       "size": 1604,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777746922.3396587
     },
     {
@@ -41,7 +41,7 @@
       "type": "feedback",
       "summary": "Обнаружено 2026-05-08: be_price_offset_pct=3.0 означало SL → entry+3% на LONG, фактически делало BE второй TP — реальный bug в GA-выводе/коде; правильные значения 0.1-0.5%",
       "size": 1305,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273137.3239524
     },
     {
@@ -107,7 +107,7 @@
       "type": "feedback",
       "summary": "websocket-client run_forever() требует ping_interval + supervisor-loop + idle watchdog — иначе SignalBot периодически замирает silent",
       "size": 1938,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778336252.3568642
     },
     {
@@ -261,7 +261,7 @@
       "type": "project",
       "summary": "PAPER/REAL split-page setup is dead since 2026-05-05; replaced by per-strategy v2. Memory kept as historical context only",
       "size": 1163,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778031655.4395332
     },
     {
@@ -316,7 +316,7 @@
       "type": "project",
       "summary": "AI-секретарь для входящей почты — триаж Claude + управление через TG; репо emails-optimization",
       "size": 5361,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778192839.5331235
     },
     {
@@ -327,7 +327,7 @@
       "type": "feedback",
       "summary": "При добавлении любой новой фичи в emails-optimization обновлять docs/tim_user_guide.md",
       "size": 1266,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778049735.2569382
     },
     {
@@ -338,7 +338,7 @@
       "type": "feedback",
       "summary": "При IMAP-чтении не сбрасывать \\Seen — хозяин ящика должен видеть, на что обратить внимание",
       "size": 846,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778046707.8413198
     },
     {
@@ -349,7 +349,7 @@
       "type": "feedback",
       "summary": "regex + ручной edit вместо Vision API для extraction; решено 2026-05-04 после теста на 3 архитекторских PDF",
       "size": 1137,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777937710.030133
     },
     {
@@ -404,7 +404,7 @@
       "type": "project",
       "summary": "GPU-port завершён 2026-05-08; canonical schema с train/test buckets; dashboard /api/ga/run target=pc1 + WMI detach + per-PID логи; first apply rank #1 cons+trend",
       "size": 4239,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273286.3458138
     },
     {
@@ -415,7 +415,7 @@
       "type": "project",
       "summary": "GA parameter optimization system — scripts, dashboard integration, auto-apply workflow, current applied state",
       "size": 3571,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780258447.824088
     },
     {
@@ -426,7 +426,7 @@
       "type": "feedback",
       "summary": "Binance returns HTTP 418 (not 429) under sustained load; prewarm now retries with Retry-After + aborts GA if >10% symbols fail",
       "size": 1307,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778095144.5298367
     },
     {
@@ -481,7 +481,7 @@
       "type": "project",
       "summary": "ПК1 настроен: Tailscale 100.99.211.123 + OpenSSH (root@vps→tkach@PC1) + Ollama as SYSTEM ScheduledTask; ПК2 ещё не подключен",
       "size": 6551,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778249352.6871774
     },
     {
@@ -503,7 +503,7 @@
       "type": "project",
       "summary": "Куда сейчас идут все Grafana trading alerts и как откатить",
       "size": 1287,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777866692.7442455
     },
     {
@@ -525,7 +525,7 @@
       "type": "project",
       "summary": "Сжатый layout TG-отчёта + clickable close-reasons → дашборд с фильтром",
       "size": 1756,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777866676.122235
     },
     {
@@ -536,7 +536,7 @@
       "type": "project",
       "summary": "2026-05-02 — старый opus/sonnet hourly agent заменён Python-скриптом; Claude (haiku) только при events>=1 или anomalies>=5; quiet час = 0 LLM calls",
       "size": 1939,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777746549.9013286
     },
     {
@@ -591,7 +591,7 @@
       "type": "project",
       "summary": "Полная цепочка reprice operations 2026-05-05 — pricing snapshot backfill + canonical mapping для archived legacy labor materials",
       "size": 3186,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778022628.5108721
     },
     {
@@ -624,7 +624,7 @@
       "type": "project",
       "summary": "peak_pnl_pct/trough_pnl_pct columns on simulated_trades+real_trades; paper updates per WS tick, real columns NULL until v2",
       "size": 2512,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778087349.8620534
     },
     {
@@ -635,7 +635,7 @@
       "type": "feedback",
       "summary": "Перед/после git push — записать в memory всё новое из сессии, потом синхронизировать в Claude-AI-md-files",
       "size": 1395,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777866653.138223
     },
     {
@@ -646,7 +646,7 @@
       "type": "project",
       "summary": "Активен 2026-05-08, AUC test 0.728, shadow mode (log_only=true); масштабирует position size DOWN-only по P(profitable)",
       "size": 2499,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273186.530246
     },
     {
@@ -657,7 +657,7 @@
       "type": "project",
       "summary": "2026-05-02 — Артём настроил структурный mobile-dev workflow чтобы избегать OpenClaw-style потерь контекста; CLAUDE.md в каждом активном проекте; общие правила в /root/.claude/MOBILE_RULES.md",
       "size": 2127,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777746477.9483557
     },
     {
@@ -668,7 +668,7 @@
       "type": "project",
       "summary": "Артём хочет персональный morning briefing (Gmail+Calendar+Drive+Otter); решение отложено до ответа Тима по emails-optimization",
       "size": 1264,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778099579.0784838
     },
     {
@@ -712,7 +712,7 @@
       "type": "feedback",
       "summary": "Markdown tables render as garbled text when forwarded in Telegram; use bullet lists in any doc Artem will copy/paste to Tim or other clients",
       "size": 820,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778224114.86277
     },
     {
@@ -723,7 +723,7 @@
       "type": "feedback",
       "summary": "Все боты Артёма share один OAuth token; opus/sonnet quotas в 5h окнах; trading_request заблокированный fallback ломал interactive UX; фикс 2026-05-02",
       "size": 2141,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777746516.5973365
     },
     {
@@ -789,7 +789,7 @@
       "type": "feedback",
       "summary": "Frontend CSS-переменные TSA — НЕ пиши --tsa-fg, в проекте --tsa-text",
       "size": 1015,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778106470.7040174
     },
     {
@@ -800,7 +800,7 @@
       "type": "feedback",
       "summary": "Early scans clamped to shift_start + ±15min snap к shift_end для чистых 9h/8h смен",
       "size": 1592,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778108135.5974557
     },
     {
@@ -822,7 +822,7 @@
       "type": "project",
       "summary": "Архитектура dailу-отчётов, budget analytics, team history в OnTime (после миграции 2026-04-17)",
       "size": 2363,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778017998.039077
     },
     {
@@ -855,7 +855,7 @@
       "type": "project",
       "summary": "AI-assisted siding takeoff tab — Phase 1 (upload+render) shipped 2026-05-04, Phase 2-3 pending real PDFs",
       "size": 5460,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777939881.1142354
     },
     {
@@ -943,7 +943,7 @@
       "type": "project",
       "summary": "Полный pipeline для маркетингового видео OnTime — где файлы, как пересобрать, что Артём выбрал в финальной версии.",
       "size": 4467,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777933570.4561856
     },
     {
@@ -954,7 +954,7 @@
       "type": "project",
       "summary": "PP-hours индикатор и forecast 88h/PP — куда смотреть и как алерт работает",
       "size": 1544,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778018034.311222
     },
     {
@@ -976,7 +976,7 @@
       "type": "project",
       "summary": "Vendors + Purchase Orders MVP added to OnTime 2026-04-24. Tiered approval by total, foreman self-serve below T1. Kojo replacement.",
       "size": 8074,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780094890.0162845
     },
     {
@@ -987,7 +987,7 @@
       "type": "feedback",
       "summary": "GET /api/projects/{pid} installer-guard и POST /api/reports crew-guard ОБЯЗАНЫ принимать одинаковую crew-evidence (pinned ∪ helper ∪ recent QR)",
       "size": 2161,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778121356.160475
     },
     {
@@ -1053,7 +1053,7 @@
       "type": "feedback",
       "summary": "/api/reports rejects 403 if user is not on the project crew; bypass paths and how to debug \"you are not on this project crew\" errors",
       "size": 1981,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778106775.7669199
     },
     {
@@ -1064,7 +1064,7 @@
       "type": "feedback",
       "summary": "При регистрации по email stub-юзер из легаси-импорта апгрейдится, а не создаётся новый",
       "size": 1861,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777856172.7655427
     },
     {
@@ -1097,7 +1097,7 @@
       "type": "project",
       "summary": "Per-recipient lang for notifications — где живёт инфра и какие call sites уже переведены",
       "size": 1493,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778101781.7827682
     },
     {
@@ -1108,7 +1108,7 @@
       "type": "project",
       "summary": "Management (pm/vp_construction/director) получают admin-equivalent capability во всём, кроме destructive и invite-code governance",
       "size": 4458,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778085089.5478344
     },
     {
@@ -1163,7 +1163,7 @@
       "type": "feedback",
       "summary": "0 чекинов за 24ч = выходной → ни digest'ов, ни напоминалок никому. Хардкод-календарей нет, гейт через _company_had_activity_24h",
       "size": 1627,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777857636.018145
     },
     {
@@ -1185,7 +1185,7 @@
       "type": "feedback",
       "summary": "Запоминания из 2026-05-08 при wiring PC1 GPU GA: 5 каскадных Windows-quirks; решение через WMI + per-PID log filenames + utf-8 reconfigure",
       "size": 1562,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273159.7340872
     },
     {
@@ -1218,7 +1218,7 @@
       "type": "project",
       "summary": "Установлен GFPGAN+RealESRGAN+LaMa+DeOldify+SadTalker в /root/photo_ai_venv; pipeline работает на CPU очень медленно — кандидат на миграцию на GPU homelab",
       "size": 2566,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778200739.6772935
     },
     {
@@ -1229,7 +1229,7 @@
       "type": "feedback",
       "summary": "Piper TTS глотает финальные согласные на коротких фразах; всегда добавляй apad pad_dur=1.0+ к выходу.",
       "size": 1023,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777875411.4437506
     },
     {
@@ -1295,7 +1295,7 @@
       "type": "feedback",
       "summary": "<select value=X> где X не значится в <option> молча показывает первый option — UI начинает врать про данные",
       "size": 1883,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777856892.5999005
     },
     {
@@ -1339,7 +1339,7 @@
       "type": "project",
       "summary": "/api/real-snapshot bundles wallet+open+realized 1h/24h/7d for hourly reports; uses Bybit truth, not DB",
       "size": 1408,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778089746.7599661
     },
     {
@@ -1350,7 +1350,7 @@
       "type": "project",
       "summary": "Активен 2026-05-08, hybrid scorecard+LLM gate, может только pause/resume через /api/trading-state; LLM-on-CAUTION временно OFF на 7 дней",
       "size": 2187,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273209.3493788
     },
     {
@@ -1383,7 +1383,7 @@
       "type": "project",
       "summary": "Audit trail of the 2026-05-05 redistribution that moved 78% of legacy \"Blue Skin\" reports into SOPRASEAL labor on Sage Hill Bldg 600",
       "size": 2198,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778020182.6496022
     },
     {
@@ -1405,7 +1405,7 @@
       "type": "project",
       "summary": "numeric ratios + workflow conventions for OnTime Estimating BOM engine — collected 2026-05-04",
       "size": 3502,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777938026.621346
     },
     {
@@ -1427,7 +1427,7 @@
       "type": "feedback",
       "summary": "Артём предпочитает чистую историю с отдельными коммитами на каждую фичу, даже когда я могу bundle для скорости",
       "size": 1160,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777854570.8709755
     },
     {
@@ -1449,7 +1449,7 @@
       "type": "project",
       "summary": "Точка отсчёта новой системы после большого rebuild сессии 2026-05-08; wallet, состав фичей, ключевые проблемы решённые в этой сессии",
       "size": 2247,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273117.8028333
     },
     {
@@ -1471,7 +1471,7 @@
       "type": "feedback",
       "summary": "@ControlByBitTradingBot теперь принимает /status /balance /pause /resume /help; auth через owner_id; добавлены в src/control_bot_simple_v3.py",
       "size": 1453,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273247.6305976
     },
     {
@@ -1482,7 +1482,7 @@
       "type": "feedback",
       "summary": "voice-tutor — на голосовой ввод отвечать только voice (без text-эха), чтобы TG автопроигрывал цепочку voice-сообщений в наушниках/CarPlay",
       "size": 1029,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777739257.0973668
     },
     {
@@ -1493,7 +1493,7 @@
       "type": "project",
       "summary": "Старый Django+TG-бот сервер TSA, откуда мигрировали данные в OnTime 2026-04-17",
       "size": 1668,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777915018.2893214
     },
     {
@@ -1526,7 +1526,7 @@
       "type": "project",
       "summary": "Каждую ночь подтягивает отчёты из старого Django+TG-бота в OnTime пока идёт параллельная работа",
       "size": 1638,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777915030.115362
     },
     {
@@ -1548,7 +1548,7 @@
       "type": "project",
       "summary": "AI-делегат для Тима внутри его TG бота; Week 1+2 production-ready 2026-05-08, остался только Calendar OAuth (Week 3)",
       "size": 4034,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778226688.428123
     },
     {
@@ -1559,7 +1559,7 @@
       "type": "feedback",
       "summary": "Все материалы, строки бота, документы для Тима — только English. Тим не понимает русский.",
       "size": 972,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778219991.4619365
     },
     {
@@ -1603,7 +1603,7 @@
       "type": "feedback",
       "summary": "Все risk-гарды в process_signal (main_bot_v3) применяются ТОЛЬКО к REAL-routed стратегиям; PAPER идёт без блоков",
       "size": 1468,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777909206.6866004
     },
     {
@@ -1636,7 +1636,7 @@
       "type": "project",
       "summary": "Все 10 systemd timer'ов trading-системы после rebuild сессии 2026-05-08 — что запускается, когда, зачем",
       "size": 2124,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778273230.286499
     },
     {
@@ -1702,7 +1702,7 @@
       "type": "project",
       "summary": "Major v2 rewrite done 2026-04-13; multi-club, proportional norms, analysis, profile with socials, club branding",
       "size": 8812,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779826423.1690803
     },
     {
@@ -1735,7 +1735,7 @@
       "type": "feedback",
       "summary": "norm_attempts table + drift in norm_standards (VARCHAR not FLOAT despite CREATE statement)",
       "size": 971,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778287378.7088168
     },
     {
@@ -1768,7 +1768,7 @@
       "type": "memory",
       "summary": "\"AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level блокирует. existing_active guard ловит только status='placed', нужна отдельная пров",
       "size": 1733,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779771591.7574053
     },
     {
@@ -1801,7 +1801,7 @@
       "type": "memory",
       "summary": "ANTHROPIC_API_KEY запрещён в OnTime — только TSA_ESTIMATOR_ANTHROPIC_KEY и только в ai_trace.py",
       "size": 950,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779736818.7910738
     },
     {
@@ -1833,9 +1833,9 @@
       "title": "Bybit 3 Sub Architecture",
       "type": "memory",
       "summary": "\"Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/AI-agent). UIDs, env var slots, .env symlink trap.\"",
-      "size": 2300,
-      "status_icon": "🟡",
-      "mtime": 1778980258.9179626
+      "size": 3039,
+      "status_icon": "🟢",
+      "mtime": 1780685794.5526705
     },
     {
       "id": "bybit-3sub-architecture",
@@ -1876,7 +1876,7 @@
       "type": "memory",
       "summary": "\"На blueprints OpenCV findContours > AI Vision для polygon-trace; Sonnet рисует bbox'ы вместо контуров\"",
       "size": 1567,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779737433.0147507
     },
     {
@@ -1941,7 +1941,7 @@
       "type": "feedback",
       "summary": "emails-bot (Артём mirror, TEST_MODE=1) и emails-bot-tim (продовый Тим) работают через один app.bot и одну emails.db; любые новые таблицы должны нести owner_chat_id",
       "size": 1276,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778224873.2929902
     },
     {
@@ -1962,7 +1962,7 @@
       "type": "memory",
       "summary": ".md memory shared между OnTime backend и TG ботом @TSA_EstimatorBot",
       "size": 1387,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779746474.9802163
     },
     {
@@ -1973,7 +1973,7 @@
       "type": "memory",
       "summary": "Multi-layer cladding stacks per takeoff — assembly_templates table + BOM разворот",
       "size": 2562,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779753169.8774152
     },
     {
@@ -1984,7 +1984,7 @@
       "type": "memory",
       "summary": "estimate_projects (OnTime PDF) ↔ stack_projects (TG bot Excel BOM) связаны через project_links",
       "size": 1781,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779750462.79188
     },
     {
@@ -2015,7 +2015,7 @@
       "type": "memory",
       "summary": "\"agent_levels.place_level раньше не выставлял плечо → биржа держала стейловые значения (ETH 10x, BTC 88x); теперь форсит из gerchik_config.json\"",
       "size": 1188,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780096322.952082
     },
     {
@@ -2026,7 +2026,7 @@
       "type": "memory",
       "summary": "История изменений SL_ATR_MULT в gerchik-trading-agent — компромисс между шириной SL (защита от wick-out) и пропускной способностью через RR_MIN=3.0 фильтр.",
       "size": 1522,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779916400.4735203
     },
     {
@@ -2047,7 +2047,7 @@
       "type": "memory",
       "summary": "Vision-tracing для OnTime estimating РАЗРЕШЕНО Артёмом 2026-05-25 (Уровень 2 — AI draft + ручная проверка)",
       "size": 1573,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779734510.1827457
     },
     {
@@ -2152,7 +2152,7 @@
       "type": "memory",
       "summary": "/var/www/dashboard/cockpit.html не в git — все правки только на диске. Backup перед правкой обязателен. Auto-mode classifier блокирует правки этого пути без явного allow от Артёма.",
       "size": 1676,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779783461.3666003
     },
     {
@@ -2213,7 +2213,7 @@
       "type": "memory",
       "summary": "\"OnTime Estimating поддерживает и imperial и metric чертежи. Внутренняя единица — всегда px_per_ft (футы), но UI и AI prompt принимают оба типа input/output.\"",
       "size": 1960,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779917761.2075546
     },
     {
@@ -2297,7 +2297,7 @@
       "type": "memory",
       "summary": "ручное закрытие прибыльной real-позиции reconciler помечает как TP1 — релейблить в MANUAL чтобы не пухла TP-воронка",
       "size": 1149,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780320700.6320786
     },
     {
@@ -2329,7 +2329,7 @@
       "type": "memory",
       "summary": "\"Артём предпочитает менять торговые параметры по одному и измерять эффект, а не наваливать пачку изменений сразу. Применимо к 4Bots, PumpDumpAI_Agent, GA, MFE — любой trading-настройке.\"",
       "size": 1029,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779909935.1352892
     },
     {
@@ -2350,7 +2350,7 @@
       "type": "memory",
       "summary": "\"OnTime inline-поля — onChange пишет в task, а onBlur сравнивает e.target.value!==task.field → всегда equal → patch не вызывается, правки не сохраняются\"",
       "size": 1153,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780097200.6174684
     },
     {
@@ -2373,6 +2373,16 @@
       "size": 1282,
       "status_icon": "🟡",
       "mtime": 1779557358.3414097
+    },
+    {
+      "id": "feedback-pause-button-doesnt-stop-real",
+      "name": "feedback-pause-button-doesnt-stop-real",
+      "title": "feedback-pause-button-doesnt-stop-real",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "feedback-per-mode-dup-rule",
@@ -2399,6 +2409,16 @@
       "id": "feedback-query-write-swallow",
       "name": "feedback-query-write-swallow",
       "title": "feedback-query-write-swallow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback-real-sl-qty-step",
+      "name": "feedback-real-sl-qty-step",
+      "title": "feedback-real-sl-qty-step",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2463,7 +2483,7 @@
       "type": "memory",
       "summary": "\"psycopg2-коннекты (signalbot self.db_conn + tradingbot self.db_conn_ipc) мрут после ~1.5d uptime — записи в signals_queue/accepted_signals/signal-обработка тихо теряются → бот не торгует. Fix #1-4 за",
       "size": 5189,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780015383.5925944
     },
     {
@@ -2514,7 +2534,7 @@
       "type": "memory",
       "summary": "Timesheet таб использует ТЕ ЖЕ правила что payroll _billable_hours_map — switched_project exception + 12h cap (унифицировано 2026-05-25)",
       "size": 1701,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779734248.1332927
     },
     {
@@ -2536,7 +2556,7 @@
       "type": "memory",
       "summary": "Перед любым trading-анализом (RR/break-even/SL/PnL/fees/blacklist) ОБЯЗАН прочитать project_trading_critical_params.md и текущие bot_settings — не гадать настройки из головы.",
       "size": 2027,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779775975.7945702
     },
     {
@@ -2557,7 +2577,7 @@
       "type": "memory",
       "summary": "bybit-tradingbot читает DD-threshold из bot_settings стейлово — смена weekly_max_drawdown_pct через dashboard не применяется до рестарта сервиса",
       "size": 1204,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780320363.0552695
     },
     {
@@ -2578,7 +2598,7 @@
       "type": "memory",
       "summary": "\"Туторы (wife/son/voice) шлют Claude через OAuth-токен из /root/.claude/.credentials.json — клиент ОБЯЗАН использовать auth_token=, не api_key=, иначе 401 invalid x-api-key. Форки дрейфуют.\"",
       "size": 1386,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780115703.0379517
     },
     {
@@ -2599,7 +2619,7 @@
       "type": "memory",
       "summary": "\"wife-english-tutor: reply_for_turn использует SONNET, не HAIKU; иначе модель ленится и правит 1-2 предложения из 5\"",
       "size": 672,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779756799.6893694
     },
     {
@@ -2683,9 +2703,40 @@
       "mtime": 0
     },
     {
+      "id": "feedback_bybit_tp_limit_quirks",
+      "name": "feedback_bybit_tp_limit_quirks",
+      "title": "feedback_bybit_tp_limit_quirks",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_bybit_ws_keepalive",
       "name": "feedback_bybit_ws_keepalive",
       "title": "feedback_bybit_ws_keepalive",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_conditional_order_cleanup.md",
+      "id": "feedback_conditional_order_cleanup",
+      "name": "feedback_conditional_order_cleanup",
+      "title": "Feedback Conditional Order Cleanup",
+      "type": "memory",
+      "summary": "conditional SL/TP через order/create не чистятся set_trading_stop(null); SL_VERIFY слеп к Limit-SL → дубли ×3 + сироты; fix fec3f90",
+      "size": 1618,
+      "status_icon": "🟢",
+      "mtime": 1780852944.6156662
+    },
+    {
+      "id": "feedback_cv_trace_over_ai",
+      "name": "feedback_cv_trace_over_ai",
+      "title": "feedback_cv_trace_over_ai",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2706,6 +2757,37 @@
       "id": "feedback_dd_guard_paper_skip",
       "name": "feedback_dd_guard_paper_skip",
       "title": "feedback_dd_guard_paper_skip",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_estimating_metric",
+      "name": "feedback_estimating_metric",
+      "title": "feedback_estimating_metric",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "feedback_estimator_name_lookup.md",
+      "id": "feedback_estimator_name_lookup",
+      "name": "feedback_estimator_name_lookup",
+      "title": "Feedback Estimator Name Lookup",
+      "type": "memory",
+      "summary": "Estimator bot+AI must resolve project NAME→estimate_id (find_estimate_by_name / GET /api/estimates/search); never ask human for numeric id",
+      "size": 3333,
+      "status_icon": "🟢",
+      "mtime": 1780593393.4154584
+    },
+    {
+      "id": "feedback_fastapi_route_order",
+      "name": "feedback_fastapi_route_order",
+      "title": "feedback_fastapi_route_order",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2740,7 +2822,7 @@
       "type": "memory",
       "summary": "GA на Binance-данных давала ФАНТАСТИКУ (win 76%); на правильных Bybit-данных edge почти нулевой (win 24%) — всегда тренить GA на Bybit",
       "size": 2089,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780291168.4523706
     },
     {
@@ -2754,6 +2836,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_ga_gross_vs_net.md",
+      "id": "feedback_ga_gross_vs_net",
+      "name": "feedback_ga_gross_vs_net",
+      "title": "Feedback Ga Gross Vs Net",
+      "type": "memory",
+      "summary": "\"GA-панель показывала GROSS PnL как \\\"net\\\"; реальный net после издержек уходит в минус — fitness честнее метрик\"",
+      "size": 1255,
+      "status_icon": "🟢",
+      "mtime": 1780767691.2100554
+    },
+    {
       "file": "feedback_ga_pk1_cache_refresh.md",
       "id": "feedback_ga_pk1_cache_refresh",
       "name": "feedback_ga_pk1_cache_refresh",
@@ -2761,7 +2854,7 @@
       "type": "memory",
       "summary": "Как обновлять kline-кеш GA-GPU на PK1 и три ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill маскирует стале-кеш)",
       "size": 2016,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780260724.7948673
     },
     {
@@ -2788,6 +2881,16 @@
       "id": "feedback_nginx_uploads_regex_trap",
       "name": "feedback_nginx_uploads_regex_trap",
       "title": "feedback_nginx_uploads_regex_trap",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_no_confirms_ontime",
+      "name": "feedback_no_confirms_ontime",
+      "title": "feedback_no_confirms_ontime",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2872,7 +2975,7 @@
       "type": "memory",
       "summary": "openclaw-gateway.service течёт по памяти (~4ГБ за 2.5 дня); рестарт + добавлен swap 4ГБ на srv1476476",
       "size": 1085,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780151203.0992184
     },
     {
@@ -2886,6 +2989,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_pause_button_doesnt_stop_real.md",
+      "id": "feedback_pause_button_doesnt_stop_real",
+      "name": "feedback_pause_button_doesnt_stop_real",
+      "title": "Feedback Pause Button Doesnt Stop Real",
+      "type": "memory",
+      "summary": "\"Дашборд \\\"Pause Trading\\\" НЕ останавливает real в hybrid-режиме; настоящий рычаг — per_strategy→PAPER\"",
+      "size": 1278,
+      "status_icon": "🟢",
+      "mtime": 1780368508.5676458
+    },
+    {
       "id": "feedback_pc1_ssh_quirks",
       "name": "feedback_pc1_ssh_quirks",
       "title": "feedback_pc1_ssh_quirks",
@@ -2894,6 +3008,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_pc2_cupy_ctk.md",
+      "id": "feedback_pc2_cupy_ctk",
+      "name": "feedback_pc2_cupy_ctk",
+      "title": "Feedback Pc2 Cupy Ctk",
+      "type": "memory",
+      "summary": "\"PC2 GA-GPU падал на старте eaSimple — cupy без CTK-хедеров; fix pip install cupy-cuda12x[ctk]\"",
+      "size": 814,
+      "status_icon": "🟢",
+      "mtime": 1780799569.8276236
     },
     {
       "id": "feedback_pwa_stale_bundle",
@@ -2934,6 +3059,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "feedback_real_sl_qty_step.md",
+      "id": "feedback_real_sl_qty_step",
+      "name": "feedback_real_sl_qty_step",
+      "title": "Feedback Real Sl Qty Step",
+      "type": "memory",
+      "summary": "\"Conditional maker-SL/entry qty ОБЯЗАН округляться к qty_step символа — иначе Bybit 'Qty invalid' (retCode 10001) и стоп падает на Market-fallback\"",
+      "size": 1828,
+      "status_icon": "🟢",
+      "mtime": 1780667151.9277892
     },
     {
       "id": "feedback_real_trades_truth",
@@ -3043,7 +3179,7 @@
       "type": "memory",
       "summary": "\"Wrestling iOS — фото /uploads показывают \\\"?\\\" в нативном app (WebView перехватывает same-origin img); фикс fetch→blob, отложен в 1.0.1\"",
       "size": 2147,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780155588.0258732
     },
     {
@@ -3193,7 +3329,7 @@
       "type": "memory",
       "summary": "\"react-i18next `t('key') || 'Default'` НЕ работает — t() возвращает сам ключ как truthy при отсутствии перевода, fallback никогда не срабатывает. UI показывает буквально 'login.country'.\"",
       "size": 1327,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779824453.3486874
     },
     {
@@ -3420,7 +3556,7 @@
       "type": "memory",
       "summary": "\"AI Trace учится по правильно обведённым sheet'ам. Артём (или эстиматор) обводит руками → кнопка «Teach AI» → пример сохраняется в ai_trace_examples → следующий AI Trace получает его в Sonnet prompt к",
       "size": 2555,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779920404.5291028
     },
     {
@@ -3462,7 +3598,7 @@
       "type": "memory",
       "summary": "\"BTC-led market-regime фильтр (2026-05-29): пока BTC ниже 4H EMA200 — контртренд-LONG по всем символам/стратегиям блокируется (reject BTC_REGIME_LONG_BLOCK), шорты идут. Дополняет per-symbol EMA-gate.",
       "size": 1899,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780023581.3576558
     },
     {
@@ -3493,7 +3629,7 @@
       "type": "memory",
       "summary": "\"cockpit.html (Command Center dashboard) имеет 3 режима скрытия — ZEN (hide bottom panels), col-collapsed (hide left column), full hyper-zen (Z+C). Hotkeys Z, C. Planet orbits эллиптические по всему э",
       "size": 2972,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779771569.3364773
     },
     {
@@ -3545,7 +3681,7 @@
       "type": "memory",
       "summary": "Phase A AI-assist для OnTime Estimating — 2026-05-25; siding-estimator-bot + Stack mirror + learned_rules в BOM",
       "size": 3166,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779728773.3297913
     },
     {
@@ -3718,9 +3854,9 @@
       "title": "Project Pumpdump Agent",
       "type": "memory",
       "summary": "\"Pump&Dump AI Agent — отдельный self-tuning торговый агент под пампы/дампы, отдельный Bybit sub4. Сейчас planning phase: PLAN.md в репо ждёт approval перед Phase-1 paper кодом.\"",
-      "size": 7586,
+      "size": 8900,
       "status_icon": "🟢",
-      "mtime": 1779784381.9256108
+      "mtime": 1780854280.6550632
     },
     {
       "id": "project-pyramid-fix-gerchik-trading-agent",
@@ -3802,7 +3938,7 @@
       "type": "memory",
       "summary": "\"WET 2026-05-25 — multi-select phrase в reader+chat, игра /play (Words+Letters), корректор-SONNET, no-cache + /reload\"",
       "size": 2546,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779766622.5209773
     },
     {
@@ -3823,7 +3959,7 @@
       "type": "memory",
       "summary": "\"Wrestling-Performance-Tracker v1.0 отправлен в App Store (Submission ID acf3e653-945d-4d42-b25e-725d6d081e58, build 79860157 = Codemagic build #8, commit 2385b9b). v1.0.1 backbone (Sparrings location",
       "size": 4840,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779862221.6289303
     },
     {
@@ -3834,8 +3970,18 @@
       "type": "memory",
       "summary": "2026-05-28 OnTime session — orders inline-edit + bulk PO + material_requests + PDF cyrillic + ProjectsPage search/sort + mention whitelist + estimator bot users + Artem PM",
       "size": 4598,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780009484.8432934
+    },
+    {
+      "id": "project-session-2026-06-05-real-sl-promoter",
+      "name": "project-session-2026-06-05-real-sl-promoter",
+      "title": "project-session-2026-06-05-real-sl-promoter",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "file": "project_space_live.md",
@@ -3860,6 +4006,17 @@
       "mtime": 1779411400.491935
     },
     {
+      "file": "project_trader_model_10.md",
+      "id": "project-trader-model-10",
+      "name": "project-trader-model-10",
+      "title": "Project Trader Model 10",
+      "type": "memory",
+      "summary": "\"10-трейдерная модель (5 paper A–E + real-двойники), opt-in авто-промоутер, и КАКОЙ файл — живой дашборд\"",
+      "size": 3306,
+      "status_icon": "🟢",
+      "mtime": 1780667185.6220067
+    },
+    {
       "id": "project-trading-bot-spec",
       "name": "project-trading-bot-spec",
       "title": "project-trading-bot-spec",
@@ -3877,7 +4034,7 @@
       "type": "memory",
       "summary": "\"Single source of truth — текущие торговые настройки 4BotsBybit (risk/leverage/SL формула/TP/fees), реальные R-метрики на real AGGR, формулы break-even. ОБЯЗАН читать перед любым анализом торговли.\"",
       "size": 30782,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780242123.8993244
     },
     {
@@ -3908,7 +4065,7 @@
       "type": "memory",
       "summary": "\"OnTime Procurement «Orders queue» = GET /purchase-orders?mine=true; менеджмент/закупки видят все PO компании, foreman — только свои; ловушка 5 учёток Артёма\"",
       "size": 1635,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780097726.020998
     },
     {
@@ -3990,7 +4147,7 @@
       "type": "memory",
       "summary": "\"Wrestling app: self-service удаление аккаунта (Apple 5.1.1v). DELETE /api/me?confirm=true анонимизирует users-строку (не hard-delete). UI — Danger Zone в ProfilePage. Готово на web (commit 3972f62), ",
       "size": 1512,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780025696.1049654
     },
     {
@@ -4002,6 +4159,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_wrestling_google_play.md",
+      "id": "project-wrestling-google-play",
+      "name": "project-wrestling-google-play",
+      "title": "Project Wrestling Google Play",
+      "type": "memory",
+      "summary": "\"Constant Wrestling — запуск в Google Play (с нуля 2026-06-03). Individual-аккаунт, age-gate 13+, готовые ассеты + AAB versionCode 2, closed-testing 20 тестеров/14 дней. Что заполнять в Create app/Sto",
+      "size": 4966,
+      "status_icon": "🟢",
+      "mtime": 1780550771.9884434
     },
     {
       "file": "project_wrestling_i18n_10langs.md",
@@ -4022,7 +4190,7 @@
       "type": "memory",
       "summary": "\"Wrestling-Performance-Tracker готов к публикации в AppStore/GooglePlay. Capacitor v7 + Android платформа + signed AAB локально на VPS. iOS через Codemagic cloud-Mac (без личного Mac). От Артёма: Appl",
       "size": 5447,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779862229.0939817
     },
     {
@@ -4044,7 +4212,7 @@
       "type": "memory",
       "summary": "\"Wrestling app SMTP: до 2026-05-29 НЕ был сконфигурирован → parental-consent и password-reset письма не отправлялись (код только print). Починено через systemd drop-in (Gmail borysiukartem55). Конфиг ",
       "size": 1680,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780026721.4106874
     },
     {
@@ -4097,8 +4265,18 @@
       "type": "memory",
       "summary": "\"AGGR spike-momentum НЕ имеет устойчивого edge на крипте март-май 2026 — доказано 6 способами; проблема во ВХОДЕ, не в экзите; настройками в плюс не вывести\"",
       "size": 2536,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780293420.1006863
+    },
+    {
+      "id": "project_ai_trace_teach",
+      "name": "project_ai_trace_teach",
+      "title": "project_ai_trace_teach",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
     },
     {
       "id": "project_backtest_findings",
@@ -4148,7 +4326,7 @@
       "type": "memory",
       "summary": "\"2026-06-01 Артём снял weekly DD-гард (25→40%) + форснул AGGRESSIVE real, хотя AGGR доказанно убыточна — осознанное риск-решение\"",
       "size": 1887,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780294422.2289338
     },
     {
@@ -4160,6 +4338,28 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_estimating_ai_trace.md",
+      "id": "project_estimating_ai_trace",
+      "name": "project_estimating_ai_trace",
+      "title": "Project Estimating Ai Trace",
+      "type": "memory",
+      "summary": "\"OnTime AI Trace overhaul — classify coloured/linework gate, region-scoped trace per elevation, material-labelled; works only on colour-filled sheets\"",
+      "size": 2489,
+      "status_icon": "🟢",
+      "mtime": 1780604708.4865234
+    },
+    {
+      "file": "project_estimating_calibration_explainability.md",
+      "id": "project_estimating_calibration_explainability",
+      "name": "project_estimating_calibration_explainability",
+      "title": "Project Estimating Calibration Explainability",
+      "type": "memory",
+      "summary": "OnTime estimating calibration is now verifiable — calib_json stores how px_per_ft was derived; UI shows metric+imperial breakdown + reference line",
+      "size": 3820,
+      "status_icon": "🟢",
+      "mtime": 1780600288.5908902
     },
     {
       "id": "project_estimating_industry_rules",
@@ -4180,6 +4380,17 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_estimator_agent_autonomy.md",
+      "id": "project_estimator_agent_autonomy",
+      "name": "project_estimator_agent_autonomy",
+      "title": "Project Estimator Agent Autonomy",
+      "type": "memory",
+      "summary": "\"Siding estimator AI agent — self-learning (rules) + autonomous measurement (trace) work, 2026-06-02\"",
+      "size": 2963,
+      "status_icon": "🟢",
+      "mtime": 1780441258.4538546
     },
     {
       "id": "project_estimator_ai_memory",
@@ -4222,6 +4433,28 @@
       "mtime": 0
     },
     {
+      "file": "project_ga_percoin_verdict.md",
+      "id": "project_ga_percoin_verdict",
+      "name": "project_ga_percoin_verdict",
+      "title": "Project Ga Percoin Verdict",
+      "type": "memory",
+      "summary": "\"Per-coin тест конфига-победителя GA E — эдж не мусор, но топит хвост убытков; узкое место = риск, не оптимизатор\"",
+      "size": 5821,
+      "status_icon": "🟢",
+      "mtime": 1780805346.1592555
+    },
+    {
+      "file": "project_ga_regime_feature.md",
+      "id": "project_ga_regime_feature",
+      "name": "project_ga_regime_feature",
+      "title": "Project Ga Regime Feature",
+      "type": "memory",
+      "summary": "Фича «Режим рынка» (Efficiency Ratio) — первый net-положительный эдж GA; ген + live-гейт + тумблеры",
+      "size": 4484,
+      "status_icon": "🟢",
+      "mtime": 1780781571.0251245
+    },
+    {
       "id": "project_gerchik_auto_flipper",
       "name": "project_gerchik_auto_flipper",
       "title": "project_gerchik_auto_flipper",
@@ -4255,6 +4488,16 @@
       "id": "project_hybrid_mode",
       "name": "project_hybrid_mode",
       "title": "project_hybrid_mode",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_invoice_ingestion",
+      "name": "project_invoice_ingestion",
+      "title": "project_invoice_ingestion",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -4322,6 +4565,17 @@
       "mtime": 0
     },
     {
+      "file": "project_per_trader_entry_split.md",
+      "id": "project_per_trader_entry_split",
+      "name": "project_per_trader_entry_split",
+      "title": "Project Per Trader Entry Split",
+      "type": "memory",
+      "summary": "\"Per-trader разделение входа (Фаза 1 = whitelist монет готов) + аналитика RR/MFE: длинный хвост = режим рынка, не символ; адаптивный R не бьёт R≈1\"",
+      "size": 15285,
+      "status_icon": "🟢",
+      "mtime": 1780704786.428218
+    },
+    {
       "id": "project_photo_restoration",
       "name": "project_photo_restoration",
       "title": "project_photo_restoration",
@@ -4335,6 +4589,48 @@
       "id": "project_progress",
       "name": "project_progress",
       "title": "project_progress",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_pumpdump_agent",
+      "name": "project_pumpdump_agent",
+      "title": "project_pumpdump_agent",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_pumpdump_selftuning.md",
+      "id": "project_pumpdump_selftuning",
+      "name": "project_pumpdump_selftuning",
+      "title": "Project Pumpdump Selftuning",
+      "type": "memory",
+      "summary": "PumpDumpAI self-tuning loop — replay engine + fee-aware BE + learning dashboard; GPU NOT used by design",
+      "size": 5580,
+      "status_icon": "🟢",
+      "mtime": 1780880775.4661653
+    },
+    {
+      "file": "project_pumpdump_semiauto.md",
+      "id": "project_pumpdump_semiauto",
+      "name": "project_pumpdump_semiauto",
+      "title": "Project Pumpdump Semiauto",
+      "type": "memory",
+      "summary": "\"PumpDumpAI перешёл на полуавтомат — дашборд-торговля (график, ордер-тикет, подсказки, drag SL/TP); старый детектор выключен\"",
+      "size": 2639,
+      "status_icon": "🟢",
+      "mtime": 1780896468.8785737
+    },
+    {
+      "id": "project_real_global_guard_limitation",
+      "name": "project_real_global_guard_limitation",
+      "title": "project_real_global_guard_limitation",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -4399,8 +4695,19 @@
       "type": "memory",
       "summary": "\"Сессия 2026-05-30 (прервана): Wrestling v1.0 ресабмит — новые скриншоты iPhone+iPad загружены, письмо ревьюеру, фикс аватарок готов на ветке для 1.0.1\"",
       "size": 1935,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780163509.6964276
+    },
+    {
+      "file": "project_session_2026_06_05_real_sl_promoter.md",
+      "id": "project_session_2026_06_05_real_sl_promoter",
+      "name": "project_session_2026_06_05_real_sl_promoter",
+      "title": "Project Session 2026 06 05 Real Sl Promoter",
+      "type": "memory",
+      "summary": "\"2026-06-05: F=real единственный, C=paper, автопромоутер ВЫКЛЮЧЕН (флап-баг), SL Qty-invalid фикс; план — F на отдельный суб для dual-real\"",
+      "size": 4688,
+      "status_icon": "🟢",
+      "mtime": 1780685809.1577218
     },
     {
       "id": "project_son_french_tutor",
@@ -4453,6 +4760,16 @@
       "mtime": 0
     },
     {
+      "id": "project_trader_model_10",
+      "name": "project_trader_model_10",
+      "title": "project_trader_model_10",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_trading_critical_params",
       "name": "project_trading_critical_params",
       "title": "project_trading_critical_params",
@@ -4481,6 +4798,48 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "file": "project_tsa_oa_workflow.md",
+      "id": "project_tsa_oa_workflow",
+      "name": "project_tsa_oa_workflow",
+      "title": "Project Tsa Oa Workflow",
+      "type": "memory",
+      "summary": "OnTime Order Acknowledgment (OA) workflow — vendor price/material confirmation against POs",
+      "size": 3712,
+      "status_icon": "🟢",
+      "mtime": 1780439267.1328146
+    },
+    {
+      "id": "project_tsa_orders_queue_visibility",
+      "name": "project_tsa_orders_queue_visibility",
+      "title": "project_tsa_orders_queue_visibility",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_tsa_procurement",
+      "name": "project_tsa_procurement",
+      "title": "project_tsa_procurement",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_tsa_reopen.md",
+      "id": "project_tsa_reopen",
+      "name": "project_tsa_reopen",
+      "title": "Project Tsa Reopen",
+      "type": "memory",
+      "summary": "OnTime — реактивация завершённых (done) проектов без 48h-окна",
+      "size": 831,
+      "status_icon": "🟢",
+      "mtime": 1780664193.1655958
     },
     {
       "id": "project_tsa_timeline",
@@ -4580,7 +4939,7 @@
       "type": "memory",
       "summary": "\"Wrestling App Store скриншоты — Playwright-скрипты review_screens/{iphone,ipad13}.mjs + demo-аккаунт; регенерят реальные экраны в точные размеры одной командой\"",
       "size": 1906,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780163491.5853543
     },
     {
@@ -4694,7 +5053,7 @@
       "type": "memory",
       "summary": "\"В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающий net = realized − fees, на real-таблицах двойной счёт фи.\"",
       "size": 8400,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779771551.2065377
     },
     {
@@ -4857,7 +5216,7 @@
       "type": "memory",
       "summary": "OnTime estimator UI улучшения — Feature Requests с фото + заметные кнопки в Memory разделе (commits 4f262e5..7d59e18)",
       "size": 2407,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779820390.3849523
     },
     {
@@ -4868,7 +5227,7 @@
       "type": "memory",
       "summary": "Wrestling app — карта борця + Competitions tab + Pro in-app rating + parental consent под-18 + Constant Wrestling ToS/Privacy. Commit 33bcc18.",
       "size": 5430,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779826604.416632
     },
     {
@@ -4879,7 +5238,7 @@
       "type": "memory",
       "summary": "\"Wrestling app — большой проход 2026-05-26 — app-policy, geo-signup, camp admin-verify, roll-call, extra-tasks, sparring i18n, leagues tours select, analysis re-submit, norm finalize. Commit 421573b.\"",
       "size": 6067,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779824436.065608
     },
     {
@@ -4890,7 +5249,7 @@
       "type": "memory",
       "summary": "\"Wrestling v1.0.1 follow-up (commit 0621ad4) — owner push на application, Discover region/city chips, Sparring tab state-save через sessionStorage; плюс recovery от `NameError: List` краша backend\"",
       "size": 3204,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1779864295.2849648
     },
     {
@@ -4901,7 +5260,7 @@
       "type": "memory",
       "summary": "Late commit 9747361 of OnTime PO workflow (attachments/SMTP/rich fields) + June 2026 Work Plan PDFs (RU/EN) generated from tsa.db",
       "size": 1929,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780094912.467336
     },
     {
@@ -5032,7 +5391,7 @@
       "type": "feedback",
       "summary": "2026-05-02 — попался: написал OnCalendar=18:00 думая UTC, systemd интерпретировал как local (Calgary MDT) → срабатывало в 6pm вместо ожидаемого",
       "size": 1205,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1777746554.4633281
     },
     {
@@ -5182,7 +5541,7 @@
       "type": "project",
       "summary": "Telegram голосовой собеседник + Mini App с continuous voice mode (VAD/barge-in); /root/voice-tutor; 2 systemd units; voice.constantwrestling.cloud",
       "size": 4528,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778195664.2021592
     },
     {
@@ -5372,6 +5731,18 @@
       "target": "project-unversioned-prod-state"
     },
     {
+      "source": "feedback_conditional_order_cleanup",
+      "target": "feedback_bybit_tp_limit_quirks"
+    },
+    {
+      "source": "feedback_conditional_order_cleanup",
+      "target": "feedback_real_sl_qty_step"
+    },
+    {
+      "source": "feedback_conditional_order_cleanup",
+      "target": "project_session_2026_06_05_real_sl_promoter"
+    },
+    {
       "source": "cv-trace-over-ai",
       "target": "feedback_ai_trace_enabled"
     },
@@ -5428,6 +5799,22 @@
       "target": "project-tsa-estimating"
     },
     {
+      "source": "feedback_estimator_name_lookup",
+      "target": "feedback_cv_trace_over_ai"
+    },
+    {
+      "source": "feedback_estimator_name_lookup",
+      "target": "feedback_fastapi_route_order"
+    },
+    {
+      "source": "feedback_estimator_name_lookup",
+      "target": "project_ai_trace_teach"
+    },
+    {
+      "source": "feedback_estimator_name_lookup",
+      "target": "project_estimator_ai_memory"
+    },
+    {
       "source": "force-bucket-close-source",
       "target": "feedback-be-on-real"
     },
@@ -5457,6 +5844,18 @@
     },
     {
       "source": "feedback_ga_binance_vs_bybit",
+      "target": "project_ga_optimizer"
+    },
+    {
+      "source": "feedback_ga_gross_vs_net",
+      "target": "feedback_ga_fitness_overfit"
+    },
+    {
+      "source": "feedback_ga_gross_vs_net",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "feedback_ga_gross_vs_net",
       "target": "project_ga_optimizer"
     },
     {
@@ -5628,6 +6027,14 @@
       "target": "project_hybrid_mode"
     },
     {
+      "source": "feedback_pause_button_doesnt_stop_real",
+      "target": "project_hybrid_mode"
+    },
+    {
+      "source": "feedback_pause_button_doesnt_stop_real",
+      "target": "project_real_global_guard_limitation"
+    },
+    {
       "source": "pc1-only-model-tags-trap-fallback-chain",
       "target": "project_pc1_homelab_active"
     },
@@ -5638,6 +6045,14 @@
     {
       "source": "pc1-only-model-tags-trap-fallback-chain",
       "target": "project_tutor_latency_pipeline"
+    },
+    {
+      "source": "feedback_pc2_cupy_ctk",
+      "target": "project_ga_regime_feature"
+    },
+    {
+      "source": "feedback_pc2_cupy_ctk",
+      "target": "project_trader_model_10"
     },
     {
       "source": "pg-dump-baseline-tables-require-grant-to-non-postgres-role",
@@ -5654,6 +6069,14 @@
     {
       "source": "feedback-pwa-stale-bundle",
       "target": "project_wrestling_v2"
+    },
+    {
+      "source": "feedback_real_sl_qty_step",
+      "target": "project-trader-model-10"
+    },
+    {
+      "source": "feedback_real_sl_qty_step",
+      "target": "project-trading-critical-params"
     },
     {
       "source": "real-trades-fee-semantics",
@@ -5916,6 +6339,10 @@
       "target": "project-pyramid-fix-gerchik-trading-agent"
     },
     {
+      "source": "bybit-3-sub-architecture",
+      "target": "project-session-2026-06-05-real-sl-promoter"
+    },
+    {
       "source": "clean-start-snapshot-2026-05-18",
       "target": "fanout-architecture-2026-05-18"
     },
@@ -5976,6 +6403,34 @@
       "target": "project_hybrid_mode"
     },
     {
+      "source": "project_estimating_ai_trace",
+      "target": "feedback_ai_trace_enabled"
+    },
+    {
+      "source": "project_estimating_ai_trace",
+      "target": "feedback_cv_trace_over_ai"
+    },
+    {
+      "source": "project_estimating_ai_trace",
+      "target": "project_ai_trace_teach"
+    },
+    {
+      "source": "project_estimating_ai_trace",
+      "target": "project_estimating_calibration_explainability"
+    },
+    {
+      "source": "project_estimating_calibration_explainability",
+      "target": "feedback_cv_trace_over_ai"
+    },
+    {
+      "source": "project_estimating_calibration_explainability",
+      "target": "feedback_estimating_metric"
+    },
+    {
+      "source": "project_estimating_calibration_explainability",
+      "target": "feedback_estimator_name_lookup"
+    },
+    {
       "source": "project-estimating-phase-a",
       "target": "feedback-estimating-no-api"
     },
@@ -5990,6 +6445,26 @@
     {
       "source": "project-estimating-phase-a",
       "target": "project-tsa-timeline"
+    },
+    {
+      "source": "project_estimator_agent_autonomy",
+      "target": "feedback_anthropic_key_scoped_estimator"
+    },
+    {
+      "source": "project_estimator_agent_autonomy",
+      "target": "feedback_cv_trace_over_ai"
+    },
+    {
+      "source": "project_estimator_agent_autonomy",
+      "target": "project_ai_trace_teach"
+    },
+    {
+      "source": "project_estimator_agent_autonomy",
+      "target": "project_estimating_industry_rules"
+    },
+    {
+      "source": "project_estimator_agent_autonomy",
+      "target": "project_estimator_ai_memory"
     },
     {
       "source": "estimator-ai-memory",
@@ -6028,6 +6503,18 @@
       "target": "feedback-one-tweak-at-a-time"
     },
     {
+      "source": "project_ga_percoin_verdict",
+      "target": "feedback_pc2_cupy_ctk"
+    },
+    {
+      "source": "project_ga_percoin_verdict",
+      "target": "project_ga_regime_feature"
+    },
+    {
+      "source": "project_ga_percoin_verdict",
+      "target": "project_trader_model_10"
+    },
+    {
       "source": "ga-realism-overhaul-2026-05-13",
       "target": "feedback_ga_apply_full_chain"
     },
@@ -6054,6 +6541,18 @@
     {
       "source": "ga-realism-overhaul-2026-05-13",
       "target": "project_pc2_homelab_active"
+    },
+    {
+      "source": "project_ga_regime_feature",
+      "target": "feedback_ga_gross_vs_net"
+    },
+    {
+      "source": "project_ga_regime_feature",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "project_ga_regime_feature",
+      "target": "project_ga_optimizer"
     },
     {
       "source": "project-ga-under-review",
@@ -6180,6 +6679,14 @@
       "target": "project_tutor_latency_pipeline"
     },
     {
+      "source": "project_per_trader_entry_split",
+      "target": "project-session-2026-06-05-real-sl-promoter"
+    },
+    {
+      "source": "project_per_trader_entry_split",
+      "target": "project-trader-model-10"
+    },
+    {
       "source": "project-pumpdump-agent",
       "target": "feedback-cockpit-unversioned"
     },
@@ -6202,6 +6709,26 @@
     {
       "source": "project-pumpdump-agent",
       "target": "project-trading-critical-params"
+    },
+    {
+      "source": "project_pumpdump_selftuning",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "project_pumpdump_selftuning",
+      "target": "project_ga_percoin_verdict"
+    },
+    {
+      "source": "project_pumpdump_selftuning",
+      "target": "project_pumpdump_agent"
+    },
+    {
+      "source": "project_pumpdump_semiauto",
+      "target": "project_pumpdump_agent"
+    },
+    {
+      "source": "project_pumpdump_semiauto",
+      "target": "project_pumpdump_selftuning"
     },
     {
       "source": "project-real-global-guard-limitation",
@@ -6524,6 +7051,30 @@
       "target": "project_wrestling_appstore_screenshots"
     },
     {
+      "source": "project_session_2026_06_05_real_sl_promoter",
+      "target": "feedback-pause-button-doesnt-stop-real"
+    },
+    {
+      "source": "project_session_2026_06_05_real_sl_promoter",
+      "target": "feedback-real-sl-qty-step"
+    },
+    {
+      "source": "project_session_2026_06_05_real_sl_promoter",
+      "target": "project-bybit-3sub-architecture"
+    },
+    {
+      "source": "project_session_2026_06_05_real_sl_promoter",
+      "target": "project-real-global-guard-limitation"
+    },
+    {
+      "source": "project_session_2026_06_05_real_sl_promoter",
+      "target": "project-trader-model-10"
+    },
+    {
+      "source": "project_session_2026_06_05_real_sl_promoter",
+      "target": "project-trading-critical-params"
+    },
+    {
       "source": "son-french-tutor-andrii",
       "target": "feedback_voice_tutor_oauth_500"
     },
@@ -6580,6 +7131,18 @@
       "target": "project-ga-under-review"
     },
     {
+      "source": "project-trader-model-10",
+      "target": "feedback-real-sl-qty-step"
+    },
+    {
+      "source": "project-trader-model-10",
+      "target": "project-hybrid-mode"
+    },
+    {
+      "source": "project-trader-model-10",
+      "target": "project-session-2026-06-05-real-sl-promoter"
+    },
+    {
       "source": "project-trading-critical-params",
       "target": "feedback-dd-guard-paper-skip"
     },
@@ -6624,6 +7187,22 @@
       "target": "project-tp-shadow-ladder"
     },
     {
+      "source": "project_tsa_oa_workflow",
+      "target": "feedback_anthropic_key_scoped_estimator"
+    },
+    {
+      "source": "project_tsa_oa_workflow",
+      "target": "project_invoice_ingestion"
+    },
+    {
+      "source": "project_tsa_oa_workflow",
+      "target": "project_tsa_orders_queue_visibility"
+    },
+    {
+      "source": "project_tsa_oa_workflow",
+      "target": "project_tsa_procurement"
+    },
+    {
       "source": "project-tsa-orders-queue-visibility",
       "target": "feedback-fastapi-route-order"
     },
@@ -6638,6 +7217,18 @@
     {
       "source": "OnTime Procurement",
       "target": "project-wrestling-smtp"
+    },
+    {
+      "source": "project_tsa_reopen",
+      "target": "feedback_no_confirms_ontime"
+    },
+    {
+      "source": "project_tsa_reopen",
+      "target": "project_ontime_heartbeat"
+    },
+    {
+      "source": "project_tsa_reopen",
+      "target": "project_tsa_timeline"
     },
     {
       "source": "tutor-latency-pipeline",
@@ -6674,6 +7265,18 @@
     {
       "source": "project_wrestling_appstore_screenshots",
       "target": "project_session_2026_05_27_wrestling_v1_0_submit"
+    },
+    {
+      "source": "project-wrestling-google-play",
+      "target": "project-wrestling-camp-payment"
+    },
+    {
+      "source": "project-wrestling-google-play",
+      "target": "project-wrestling-mobile-launch"
+    },
+    {
+      "source": "project-wrestling-google-play",
+      "target": "project-wrestling-v2"
     },
     {
       "source": "project-wrestling-i18n-10langs",
@@ -6757,16 +7360,16 @@
     }
   ],
   "stats": {
-    "files": 309,
-    "nodes": 494,
-    "edges": 376,
+    "files": 328,
+    "nodes": 528,
+    "edges": 437,
     "by_type": {
       "feedback": 81,
-      "memory": 138,
+      "memory": 157,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 185
+      "stub": 200
     }
   }
 }

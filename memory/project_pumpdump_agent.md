@@ -41,6 +41,10 @@ metadata:
 
 Bybit WS streams 1-min klines + tickers → `detector` flags volume×price spikes (≥5× volume baseline + ≥3% price move in 15min + 0.62/0.38 buy/sell imbalance + 6h cooldown) → `ai_brain` (Sonnet 4.6 veto layer, 4s timeout) confirms or rejects → `risk_manager` (порт из 4BotsBybit risk_manager_v3.py, slimmed ~150 строк) сайзит позицию с hard caps + daily DD gate → `executor` (использует 4Bots `bybit_api.py`) ставит entry/SL/TP с maker-mode флагами из parent (commit `6163afe`). Каждый closed trade → `data/journal.jsonl`; nightly tuner per-cluster re-fits 4 parameters (risk_usd, sl_pct, tp_R[0], spike_threshold) с walk-forward + min 20 trades/cluster gate.
 
+**REVERSE_DIRECTION (fade) УДАЛЁН 2026-06-07 (commit `851af64`):** фейд pump→SHORT/dump→LONG слил **−$153.59 / WR 12% за 424 сделки** (pump −$80, dump −$74) → Артём «толку нет». Снят код + env-флаг + systemd drop-in `pumpdump.service.d/reverse.conf`. Направление снова натуральное pump→LONG/dump→SHORT. ⚠ натуральное тоже исторически ~14% WR (ради этого и пробовали fade) — момент-вход слаб в обе стороны; основная ставка теперь на absorption_reversal ниже.
+
+**Absorption-reversal LONG (2026-06-07, commit `5f6de52`, ВКЛ в agent.json):** новый opt-in режим входа в `detector._maybe_emit` — LONG у основания ПОСЛЕ флипа тейкер-потока в покупки (продажи «поглощены») и старта роста от флеш-лоу, с жёстким капом цены входа `low×(1+entry_band_pct)` чтобы не догонять. Условия: drop≥8% в базу, imbalance≥0.62 за 3м, рост≥1%, vol≥3× (свой порог, ниже 5× пампа), last_price≤cap. `Signal.max_entry_price` → main прокидывает как PostOnly-limit (executor уже умеет). Калибровано по скрину BEATUSDT (база 2.0878→cap~2.36). Аппроксимация: нет L2-стакана (только publicTrade+kline) → absorption по тейкер-флоу; L2 (`orderbook.50`) = v2. Тесты: 4 новых в test_detector (13 pass). ⚠ pre-existing fail `test_tracker::test_funding_zero_for_short_trades` — не связан. Параметры в `config/agent.json` detection.absorption_reversal.
+
 ## Capital phasing (Bybit sub4 = pumpdump)
 
 | Phase | Capital | Gate | Goal |
