@@ -1,6 +1,6 @@
 # OnTime digest
 
-Generated **2026-06-08 14:53 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-06-08 20:29 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
 **222 nodes** (857 edges) — 📦 91 material · 🏗 68 project · 👷 62 worker · 🏪 1 vendor
 

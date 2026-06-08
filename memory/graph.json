@@ -745,7 +745,7 @@
       "type": "project",
       "summary": "27 апреля 2026 утром был отключён домен ontime.management → check-in не работал; всем 26 рабочим вручную проставили 9.0h",
       "size": 884,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778339366.5819283
     },
     {
@@ -778,7 +778,7 @@
       "type": "feedback",
       "summary": "report wins per (uid, day) — не per (uid, pid, day); человек не может быть на двух объектах одновременно",
       "size": 3132,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778341757.5380936
     },
     {
@@ -888,7 +888,7 @@
       "type": "project",
       "summary": "Primary-foreman cost вынесен в company overhead, project P&L = earned − crew salary; cutoff 2026-01-01; only users.role='foreman'",
       "size": 3331,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778349275.3080206
     },
     {
@@ -1042,7 +1042,7 @@
       "type": "feedback",
       "summary": "Open-session live projection MUST subtract 12:00-12:30 lunch like closed sessions, иначе reports разъезжаются от payroll",
       "size": 1381,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778338824.4488833
     },
     {
@@ -1130,7 +1130,7 @@
       "type": "feedback",
       "summary": "SALARIED_ROLES={'delivery','service'} — их wage helpers возвращают None, чтобы все cost loops автоматом skipали этих людей",
       "size": 1142,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778347985.3692586
     },
     {
@@ -1746,7 +1746,7 @@
       "type": "feedback",
       "summary": "Не считать today_open отдельно поверх bmap — _session_minutes_safe уже возвращает live минуты для open sessions",
       "size": 1212,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778342571.8714707
     },
     {
@@ -4623,9 +4623,9 @@
       "title": "Project Pumpdump Semiauto",
       "type": "memory",
       "summary": "\"PumpDumpAI перешёл на полуавтомат — дашборд-торговля (график, ордер-тикет, подсказки, drag SL/TP); старый детектор выключен\"",
-      "size": 2639,
+      "size": 7329,
       "status_icon": "🟢",
-      "mtime": 1780896468.8785737
+      "mtime": 1780945062.9072306
     },
     {
       "id": "project_real_global_guard_limitation",

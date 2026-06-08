@@ -1,6 +1,6 @@
 # Memory digest
 
-Generated **2026-06-08 14:53 UTC**.
+Generated **2026-06-08 20:29 UTC**.
 
 **528 nodes** (328 files, 437 edges) — 📝 200 stub · · 157 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
@@ -58,10 +58,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-06-08 05:27` [[project_pumpdump_semiauto]] · 🟢 today
+- `2026-06-08 18:57` [[project_pumpdump_semiauto]] · 🟢 today
 - `2026-06-08 01:06` [[project_pumpdump_selftuning]] · 🟢 today
-- `2026-06-07 17:44` [[project-pumpdump-agent]] · 🟢 today
-- `2026-06-07 17:22` [[feedback_conditional_order_cleanup]] · 🟢 today
+- `2026-06-07 17:44` [[project-pumpdump-agent]] · 🟢 this week
+- `2026-06-07 17:22` [[feedback_conditional_order_cleanup]] · 🟢 this week
 - `2026-06-07 04:09` [[project_ga_percoin_verdict]] · 🟢 this week
 - `2026-06-07 02:32` [[feedback_pc2_cupy_ctk]] · 🟢 this week
 - `2026-06-06 21:32` [[project_ga_regime_feature]] · 🟢 this week
