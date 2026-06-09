@@ -195,7 +195,7 @@
       "type": "feedback",
       "summary": "Dashboard-api виснет на старте если другой бот держит idle-in-transaction lock на real_trades_compat; защищено двумя слоями",
       "size": 1889,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778381151.029441
     },
     {
@@ -239,7 +239,7 @@
       "type": "project",
       "summary": "Unified per-strategy dashboard at /v2.html — kills paper/real split confusion; v1 still live until cutover",
       "size": 4379,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778365162.9360774
     },
     {
@@ -272,7 +272,7 @@
       "type": "feedback",
       "summary": "Two dashboards live in parallel until v2 polished; editing the wrong one or the wrong layer (repo vs deploy) silently breaks prod",
       "size": 3857,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778365169.9301088
     },
     {
@@ -514,7 +514,7 @@
       "type": "feedback",
       "summary": "max_position_usd_per_symbol режется через position×leverage; dashboard hardcoded forced_real игнорирует JSON per_strategy",
       "size": 2158,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778385796.6535604
     },
     {
@@ -1075,7 +1075,7 @@
       "type": "project",
       "summary": "Big-day rundown — что трогали в OnTime 2026-05-09: lunch bug → hourly billing → foreman overhead split → consistency fixes",
       "size": 4414,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778363528.6704853
     },
     {
@@ -1416,7 +1416,7 @@
       "type": "feedback",
       "summary": "Три скрытых бага в signal_bot_v3_websocket.py: interim бары как закрытые, hardcoded [-6:] vs ws_config['volume_avg_bars'], недостаточный REST-warmup",
       "size": 2648,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778383674.0815597
     },
     {
@@ -1658,7 +1658,7 @@
       "type": "feedback",
       "summary": "Перед использованием/запуском любого файла, скачанного из GitHub releases / HuggingFace / npm / pip / любого внешнего источника — провести базовую проверку на вирусы и валидность",
       "size": 2777,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778374016.4108553
     },
     {
@@ -1680,7 +1680,7 @@
       "type": "project",
       "summary": "@EnglishTecherTutorBot теперь поправляет ошибку В НАЧАЛЕ ответа (тег [FIX]...[/FIX]), потом продолжает беседу — для голоса и текста",
       "size": 1303,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778367109.5122545
     },
     {
@@ -2878,6 +2878,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_logout_network_blip.md",
+      "id": "feedback_logout_network_blip",
+      "name": "feedback_logout_network_blip",
+      "title": "Feedback Logout Network Blip",
+      "type": "memory",
+      "summary": "OnTime вылетал в логин после простоя — сетевой сбой при resume стирал валидный токен; не трогать токен на network-ошибках",
+      "size": 1208,
+      "status_icon": "🟢",
+      "mtime": 1780960440.5457923
+    },
+    {
       "id": "feedback_nginx_uploads_regex_trap",
       "name": "feedback_nginx_uploads_regex_trap",
       "title": "feedback_nginx_uploads_regex_trap",
@@ -2928,6 +2939,16 @@
       "mtime": 0
     },
     {
+      "id": "feedback_ontime_canonical_id",
+      "name": "feedback_ontime_canonical_id",
+      "title": "feedback_ontime_canonical_id",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "feedback_ontime_foreman_mobile_actions",
       "name": "feedback_ontime_foreman_mobile_actions",
       "title": "feedback_ontime_foreman_mobile_actions",
@@ -2941,6 +2962,16 @@
       "id": "feedback_ontime_pin_crew_invariant",
       "name": "feedback_ontime_pin_crew_invariant",
       "title": "feedback_ontime_pin_crew_invariant",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_ontime_report_crew_guard",
+      "name": "feedback_ontime_report_crew_guard",
+      "title": "feedback_ontime_report_crew_guard",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -2996,7 +3027,7 @@
       "type": "memory",
       "summary": "\"Дашборд \\\"Pause Trading\\\" НЕ останавливает real в hybrid-режиме; настоящий рычаг — per_strategy→PAPER\"",
       "size": 1278,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780368508.5676458
     },
     {
@@ -3019,6 +3050,17 @@
       "size": 814,
       "status_icon": "🟢",
       "mtime": 1780799569.8276236
+    },
+    {
+      "file": "feedback_pumpdump_offline_maybe_emit.md",
+      "id": "feedback_pumpdump_offline_maybe_emit",
+      "name": "feedback_pumpdump_offline_maybe_emit",
+      "title": "Feedback Pumpdump Offline Maybe Emit",
+      "type": "memory",
+      "summary": "Панель pumpdump уходит в OFFLINE из-за CPU-спина _maybe_emit (O(N) на каждом трейде); фикс emit_throttle_ms",
+      "size": 1786,
+      "status_icon": "🟢",
+      "mtime": 1780979612.4673712
     },
     {
       "id": "feedback_pwa_stale_bundle",
@@ -4623,9 +4665,9 @@
       "title": "Project Pumpdump Semiauto",
       "type": "memory",
       "summary": "\"PumpDumpAI перешёл на полуавтомат — дашборд-торговля (график, ордер-тикет, подсказки, drag SL/TP); старый детектор выключен\"",
-      "size": 7329,
+      "size": 8305,
       "status_icon": "🟢",
-      "mtime": 1780945062.9072306
+      "mtime": 1780951967.3089492
     },
     {
       "id": "project_real_global_guard_limitation",
@@ -4790,6 +4832,16 @@
       "mtime": 0
     },
     {
+      "id": "project_tsa_daily_reports",
+      "name": "project_tsa_daily_reports",
+      "title": "project_tsa_daily_reports",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_tsa_estimating",
       "name": "project_tsa_estimating",
       "title": "project_tsa_estimating",
@@ -4842,6 +4894,17 @@
       "mtime": 1780664193.1655958
     },
     {
+      "file": "project_tsa_self_switch_project.md",
+      "id": "project_tsa_self_switch_project",
+      "name": "project_tsa_self_switch_project",
+      "title": "Project Tsa Self Switch Project",
+      "type": "memory",
+      "summary": "OnTime — installer/helper сам переводит себя между объектами; при работе сегодня обязан сначала сдать отчёт; форман не дёргается",
+      "size": 1613,
+      "status_icon": "🟢",
+      "mtime": 1780960426.5757396
+    },
+    {
       "id": "project_tsa_timeline",
       "name": "project_tsa_timeline",
       "title": "project_tsa_timeline",
@@ -4860,6 +4923,27 @@
       "size": 0,
       "status_icon": "📝",
       "mtime": 0
+    },
+    {
+      "id": "project_tsa_transfer_flow",
+      "name": "project_tsa_transfer_flow",
+      "title": "project_tsa_transfer_flow",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "file": "project_tsa_worker_material_breakdown.md",
+      "id": "project_tsa_worker_material_breakdown",
+      "name": "project_tsa_worker_material_breakdown",
+      "title": "Project Tsa Worker Material Breakdown",
+      "type": "memory",
+      "summary": "\"OnTime Team activity — клик по работнику = разбивка установленных материалов, время, % бюджета + лидерборд per-material с окнами дат\"",
+      "size": 1909,
+      "status_icon": "🟢",
+      "mtime": 1780960449.5708265
     },
     {
       "id": "project_tutor_latency_pipeline",
@@ -6063,6 +6147,10 @@
       "target": "project_unversioned_prod_state"
     },
     {
+      "source": "feedback_pumpdump_offline_maybe_emit",
+      "target": "project_pumpdump_semiauto"
+    },
+    {
       "source": "feedback-pwa-stale-bundle",
       "target": "project_wrestling_super_admin"
     },
@@ -7231,6 +7319,34 @@
       "target": "project_tsa_timeline"
     },
     {
+      "source": "project_tsa_self_switch_project",
+      "target": "feedback_ontime_report_crew_guard"
+    },
+    {
+      "source": "project_tsa_self_switch_project",
+      "target": "project_ontime_heartbeat"
+    },
+    {
+      "source": "project_tsa_self_switch_project",
+      "target": "project_tsa_transfer_flow"
+    },
+    {
+      "source": "project_tsa_worker_material_breakdown",
+      "target": "feedback_ontime_canonical_id"
+    },
+    {
+      "source": "project_tsa_worker_material_breakdown",
+      "target": "project_ontime_wage_cost"
+    },
+    {
+      "source": "project_tsa_worker_material_breakdown",
+      "target": "project_tsa_daily_reports"
+    },
+    {
+      "source": "project_tsa_worker_material_breakdown",
+      "target": "project_tsa_timeline"
+    },
+    {
       "source": "tutor-latency-pipeline",
       "target": "feedback_openai_base_url_shell_override"
     },
@@ -7360,16 +7476,16 @@
     }
   ],
   "stats": {
-    "files": 328,
-    "nodes": 528,
-    "edges": 437,
+    "files": 332,
+    "nodes": 536,
+    "edges": 445,
     "by_type": {
       "feedback": 81,
-      "memory": 157,
+      "memory": 161,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 200
+      "stub": 204
     }
   }
 }

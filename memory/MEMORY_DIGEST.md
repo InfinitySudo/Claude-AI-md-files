@@ -1,8 +1,8 @@
 # Memory digest
 
-Generated **2026-06-08 20:29 UTC**.
+Generated **2026-06-09 04:38 UTC**.
 
-**528 nodes** (328 files, 437 edges) — 📝 200 stub · · 157 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**536 nodes** (332 files, 445 edges) — 📝 204 stub · · 161 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
@@ -19,7 +19,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_ga_optimizer]] ← 5 refs · 📝 stub
 - [[project_pc2_homelab_active]] ← 5 refs · 📝 stub
 
-## 📝 Stubs (200) — referenced but not yet written
+## 📝 Stubs (204) — referenced but not yet written
 
 - [[feedback-real-trades-truth]] ← 8 refs
 - [[project-bybit-3sub-architecture]] ← 6 refs
@@ -37,7 +37,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-hybrid-mode]] ← 4 refs
 - [[project_estimator_ai_memory]] ← 4 refs
 
-## 🏝 Orphans (172) — no links in or out
+## 🏝 Orphans (173) — no links in or out
 
 - [[$10k/mo Strategy (Artem)]] · 🗂 project
 - [[Action-type identifiers — никаких имён людей в коде]] · ⚠️ feedback
@@ -54,12 +54,16 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[Chart.js freezes browser without bounded parent height]] · ⚠️ feedback
 - [[Claude Telegram Bot repo]] · 🗂 project
 - [[ControlBot при shutdown убивает все торговые боты]] · ⚠️ feedback
-- … and 157 more
+- … and 158 more
 
 ## ⏱ Recently edited
 
-- `2026-06-08 18:57` [[project_pumpdump_semiauto]] · 🟢 today
-- `2026-06-08 01:06` [[project_pumpdump_selftuning]] · 🟢 today
+- `2026-06-09 04:33` [[feedback_pumpdump_offline_maybe_emit]] · 🟢 today
+- `2026-06-08 23:14` [[project_tsa_worker_material_breakdown]] · 🟢 today
+- `2026-06-08 23:14` [[feedback_logout_network_blip]] · 🟢 today
+- `2026-06-08 23:13` [[project_tsa_self_switch_project]] · 🟢 today
+- `2026-06-08 20:52` [[project_pumpdump_semiauto]] · 🟢 today
+- `2026-06-08 01:06` [[project_pumpdump_selftuning]] · 🟢 this week
 - `2026-06-07 17:44` [[project-pumpdump-agent]] · 🟢 this week
 - `2026-06-07 17:22` [[feedback_conditional_order_cleanup]] · 🟢 this week
 - `2026-06-07 04:09` [[project_ga_percoin_verdict]] · 🟢 this week
@@ -69,14 +73,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - `2026-06-06 00:13` [[project_per_trader_entry_split]] · 🟢 this week
 - `2026-06-05 18:56` [[project_session_2026_06_05_real_sl_promoter]] · 🟢 this week
 - `2026-06-05 18:56` [[bybit-3-sub-architecture]] · 🟢 this week
-- `2026-06-05 13:46` [[project-trader-model-10]] · 🟢 this week
-- `2026-06-05 13:45` [[feedback_real_sl_qty_step]] · 🟢 this week
-- `2026-06-05 12:56` [[project_tsa_reopen]] · 🟢 this week
-- `2026-06-04 20:25` [[project_estimating_ai_trace]] · 🟢 this week
 
 ## 📚 Index by type
 
-### 📝 stub (200)
+### 📝 stub (204)
 
 - [[bybit-3sub-architecture]] — (not written yet)
 - [[bybit-signing-order]] — (not written yet)
@@ -143,8 +143,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_oauth_force_refresh]] — (not written yet)
 - [[feedback_oauth_rate_limits]] — (not written yet)
 - [[feedback_one_tweak_at_a_time]] — (not written yet)
+- [[feedback_ontime_canonical_id]] — (not written yet)
 - [[feedback_ontime_foreman_mobile_actions]] — (not written yet)
 - [[feedback_ontime_pin_crew_invariant]] — (not written yet)
+- [[feedback_ontime_report_crew_guard]] — (not written yet)
 - [[feedback_openai_base_url_shell]] — (not written yet)
 - [[feedback_openai_base_url_shell_override]] — (not written yet)
 - [[feedback_parallel_agents]] — (not written yet)
@@ -250,11 +252,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_trader_model_10]] — (not written yet)
 - [[project_trading_critical_params]] — (not written yet)
 - [[project_trading_state_softgate]] — (not written yet)
+- [[project_tsa_daily_reports]] — (not written yet)
 - [[project_tsa_estimating]] — (not written yet)
 - [[project_tsa_orders_queue_visibility]] — (not written yet)
 - [[project_tsa_procurement]] — (not written yet)
 - [[project_tsa_timeline]] — (not written yet)
 - [[project_tsa_timesheet]] — (not written yet)
+- [[project_tsa_transfer_flow]] — (not written yet)
 - [[project_tutor_latency_pipeline]] — (not written yet)
 - [[project_tutor_live_tools]] — (not written yet)
 - [[project_unversioned_prod_state]] — (not written yet)
@@ -279,7 +283,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (157)
+### · memory (161)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -328,9 +332,11 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_ga_binance_vs_bybit]] — GA на Binance-данных давала ФАНТАСТИКУ (win 76%); на правильных Bybit-данных edge почти нулевой (win 24%) — всегда трени
 - [[feedback_ga_gross_vs_net]] — "GA-панель показывала GROSS PnL как \"net\"; реальный net после издержек уходит в минус — fitness честнее метрик"
 - [[feedback_ga_pk1_cache_refresh]] — Как обновлять kline-кеш GA-GPU на PK1 и три ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill маскирует стале-ке
+- [[feedback_logout_network_blip]] — OnTime вылетал в логин после простоя — сетевой сбой при resume стирал валидный токен; не трогать токен на network-ошибка
 - [[feedback_openclaw_gateway_leak]] — openclaw-gateway.service течёт по памяти (~4ГБ за 2.5 дня); рестарт + добавлен swap 4ГБ на srv1476476
 - [[feedback_pause_button_doesnt_stop_real]] — "Дашборд \"Pause Trading\" НЕ останавливает real в hybrid-режиме; настоящий рычаг — per_strategy→PAPER"
 - [[feedback_pc2_cupy_ctk]] — "PC2 GA-GPU падал на старте eaSimple — cupy без CTK-хедеров; fix pip install cupy-cuda12x[ctk]"
+- [[feedback_pumpdump_offline_maybe_emit]] — Панель pumpdump уходит в OFFLINE из-за CPU-спина _maybe_emit (O(N) на каждом трейде); фикс emit_throttle_ms
 - [[feedback_real_sl_qty_step]] — "Conditional maker-SL/entry qty ОБЯЗАН округляться к qty_step символа — иначе Bybit 'Qty invalid' (retCode 10001) и стоп
 - [[feedback_wrestling_capacitor_uploads_img]] — "Wrestling iOS — фото /uploads показывают \"?\" в нативном app (WebView перехватывает same-origin img); фикс fetch→blob,
 - [[force-bucket-close-source]] — "real_trades.close_reason has 5 values now: TP{N}/SL/BE/LIQ/FORCE. close_source column tracks classification origin. FOR
@@ -401,6 +407,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_session_2026_06_05_real_sl_promoter]] — "2026-06-05: F=real единственный, C=paper, автопромоутер ВЫКЛЮЧЕН (флап-баг), SL Qty-invalid фикс; план — F на отдельный
 - [[project_tsa_oa_workflow]] — OnTime Order Acknowledgment (OA) workflow — vendor price/material confirmation against POs
 - [[project_tsa_reopen]] — OnTime — реактивация завершённых (done) проектов без 48h-окна
+- [[project_tsa_self_switch_project]] — OnTime — installer/helper сам переводит себя между объектами; при работе сегодня обязан сначала сдать отчёт; форман не д
+- [[project_tsa_worker_material_breakdown]] — "OnTime Team activity — клик по работнику = разбивка установленных материалов, время, % бюджета + лидерборд per-material
 - [[project_wrestling_appstore_screenshots]] — "Wrestling App Store скриншоты — Playwright-скрипты review_screens/{iphone,ipad13}.mjs + demo-аккаунт; регенерят реальны
 - [[pyramid-fix-gerchik-trading-agent]] — "gerchik-trading-agent: one row per (symbol, mode) — add-on entries aggregate into the open row via weighted-avg, not se
 - [[real-topup-2026-05-18]] — "Артём планирует пополнить Bybit (sub1, TradingBot) до круглых $100 для CONS-real после чистого старта fan-out"
