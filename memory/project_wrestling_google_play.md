@@ -41,9 +41,16 @@ metadata:
 - App access (для ревью): `demo-promo@constantwrestling.cloud` / `DemoReview2026!` (+ demo-athlete-1/-2 тем же паролем).
 - Earning money: **Yes → Other** (Square camp payments — реальная услуга, внешний платёж легален). Подписку на функции, если будет → ОБЯЗАНА идти через Google Play Billing, не Square.
 
+### Прогресс 2026-06-09 (App content + релиз заведён)
+- **Все 10 деклараций App content ЗАКРЫТЫ** («You've caught up with everything»): Privacy policy, Ads=No, Sign-in details (demo-promo creds + full-access чек), Content ratings (IARC → Everyone/PEGI 3, категория «All other app types»), Target audience (13–15/16–17/18+, appeal to children=No), Data safety, Advertising ID=No (нет ads-SDK, AD_ID нет в merged manifest), Government=No, Financial features=None, Health=None.
+- **Data safety**: собираем Name/Email/User IDs (App functionality+Account management, required, не ephemeral) + Photos (App functionality, **Users can choose** — аватар опционален) + Crash logs (Analytics); encrypted in transit=Yes; не шерим третьим лицам; удаление аккаунта=Yes по URL ниже.
+- **Delete account URL** (требует Data safety): создал `public/legal/delete-account.html` (in-app Profile→Delete + email constantcwc@gmail.com), задеплоен в `dist/legal/` (nginx), коммит **c9b9869** ветка `fix/avatar-capacitor-1.0.1`. URL: `https://constantwrestling.cloud/legal/delete-account.html`. Реальная функция удаления подтверждена в коде: фронт ProfilePage.jsx `DELETE /api/me?confirm=true` → backend `@app.delete('/api/me')` main.py:2630.
+- **Closed testing track «Alpha»**: драфт-релиз **1.0.1 (2)** создан (AAB залит), страны = Select all, release notes заполнены. **ЗАСТРЯЛИ на шаге Testers**: нужно ≥12 email’ов в Email list + feedback email constantcwc@gmail.com, затем Send for review.
+- ⚠️ Тестерам нужны именно их **email-адреса** (Google-аккаунты) — opt-in ссылка одна не работает, Google сверяет email открывшего по списку.
+
 ### Closed testing (обязательно для individual, до production)
-- Нужно **≥20 тестеров**, реально opted-in по ссылке, держать **непрерывно 14 дней** → потом «Apply for production access» → ревью несколько дней.
-- 14-дневный отсчёт стартует **от момента вступления 20 тестеров**, не от регистрации аккаунта.
+- ⚠️ ОБНОВЛЕНО 2026-06-09: Google снизил порог до **≥12 тестеров** (раньше было 20), реально opted-in по ссылке, держать **непрерывно 14 дней** → потом «Apply for production access» → ревью несколько дней. Дашборд показывает «at least 12 testers».
+- 14-дневный отсчёт стартует **от момента вступления 12 тестеров**, не от регистрации аккаунта.
 - Тестеры — **только @gmail.com / Google-аккаунт** и **Android** (iPhone не считается). Цель ≈25 с запасом.
 - Opt-in ссылка (`play.google.com/apps/testing/cloud.constantwrestling.app`) появляется ТОЛЬКО после Create app → Closed testing track → добавления тестеров. Рекомендация: собрать тестеров в **Google Group**, одну группу добавить в трек.
 - Сообщения для клубного чата (RU/EN сбор Gmail + инвайт с opt-in) уже составлены в этой сессии.
