@@ -4,6 +4,13 @@
 - [🏗 OnTime digest](ONTIME_DIGEST.md) — top workers/projects/materials/vendors by hours+qty. Auto every 30 min.
 - [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
+- [SL zero-position race](feedback_sl_zero_position_race.md) — SL не встаёт при гонке вход↔SL (Bybit 10001); ретрай set_trading_stop после size>0; ⚠ env BYBIT_API_KEY=test_key_123 ловушка (force-load, не setdefault)
+- [Gerchik example numbers](feedback_gerchik_example_numbers.md) — числа-примеры из курса (90-100→95) НЕ зашивать в формулы; кодировать общий метод (VWAP), литералы только реальные пороги
+- [Gerchik strategy extraction](project_gerchik_strategy_extraction.md) — AI-агент по методу Герчика: 9 типов уровней + предпосылки (поджатие/отн.сила/ширина/энергия), paper под systemd, OAuth-судья, панели :8080
+- [Gerchik turnover partial-day](feedback_gerchik_turnover_partial_day.md) — главный throughput-киллер: turnover_usd по неполному текущему D-бару занижал ликвидность 3-4× → ликвид-монеты не проходили is_tradeable; fix=среднее полных дней, tradeable 6→25, вселенная 20→33
+- [Gerchik подвиды пробоя](project_gerchik_proboi_subtypes.md) — пробой·{с базой/с лету/с закреплением} (proboi_subtype) + разрез by_setup_type + панель; рефлектор отложен (нет закрытых сделок)
+- [Gerchik «Почему пропущено»](project_gerchik_skip_transparency.md) — SkipLedger + Decision.code + trace: per-symbol×strategy причины скипа за цикл, /api/skips + панель; живьём 53 no_level_near/24 not_tradeable/12 no_trigger/10 in_position
+- [Xvfb x11grab -draw_mouse 0](feedback_xvfb_x11grab_draw_mouse.md) — ffmpeg x11grab под headless Xvfb падает «query xcb pointer» → -draw_mouse 0; симптом mp4 ~4.6с-обрубок при OK-плеере
 - [10-Trader Model](project_trader_model_10.md) — 5 трейдеров A–E (fan-out) + opt-in авто-промоутер paper↔real; ⚠ живой дашборд = /var/www/dashboard/v2.html (НЕ в git)
 - [PC2 cupy CTK](feedback_pc2_cupy_ctk.md) — PC2 GA-GPU крэшил на eaSimple без CUDA-хедеров; fix pip install cupy-cuda12x[ctk]; PC2 параллель теперь работает end-to-end
 - [GA per-coin вердикт](project_ga_percoin_verdict.md) — конфиг E: 78% монет+ (median+), но basket −21 из-за хвоста убытков (топ-5 = −32); узкое место риск-модель не оптимизатор; GA не хлам но не деплоебелен
@@ -150,6 +157,7 @@
 - [Wrestling Google Play](project_wrestling_google_play.md) — Play-аккаунт individual (ID 4901449532864858506, ...55@gmail), age-gate 13+ (код+copy пофикшены), AAB versionCode 2, готовые ассеты, cheat-sheet листинга, closed-testing 20/14дней
 - [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
+- [Gerchik Strategy Extraction](project_gerchik_strategy_extraction.md) — извлечение метода Герчика из LMS-видеокурса (VdoCipher DRM → Xvfb-рендер → Whisper large-v3 на PC1/PC2 GPU, 2x) → playbook `/root/gerchik_memory/` → детекторы для Pump&Dump (paper); оркестратор на 82 урока
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
 - [Wrestling Account Deletion](project_wrestling_account_deletion.md) — Apple 5.1.1(v): DELETE /api/me?confirm=true анонимизирует users; Danger Zone в ProfilePage; live на web (3972f62), в iOS войдёт при пересабмите
