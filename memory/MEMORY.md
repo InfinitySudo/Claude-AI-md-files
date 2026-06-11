@@ -107,6 +107,7 @@
 - [Estimator Links](project_estimator_links.md) — estimate_projects ↔ stack_projects через project_links table; разные нумерации остались, но связаны
 - [Estimator Assemblies](project_estimator_assemblies.md) — multi-layer cladding stacks: assembly_templates + estimate_takeoffs.assembly_id; BOM разворачивает layers
 - [Estimating Industry Rules](project_estimating_industry_rules.md) — formulas + waste factors + accessory ratios + catalog mapping для BOM engine
+- [OnTime Doc Share + Drive](project_ontime_doc_share_drive.md) — раздача blueprint (TG/email/print/Drive), per-user отправитель (Артём→artempm@), тяжёлые файлы ссылкой (Gmail 25МБ); Drive ПОДКЛЮЧЕН (проект ontime-499115)
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
 - [OnTime Reopen Projects](project_tsa_reopen.md) — POST /projects/{id}/reopen возвращает done-проект в active без 48h-окна; кнопка «Сделать активным» (d88db62)
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump

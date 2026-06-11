@@ -1930,7 +1930,7 @@
       "type": "memory",
       "summary": "🤖 AI Plan button on every triage card → fires Claude planner with email thread context; lives in bot.py:_build_keyboard + poller.py:_send_card + agent_handlers.start_email_delegation",
       "size": 828,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778572483.6933634
     },
     {
@@ -2878,6 +2878,28 @@
       "mtime": 0
     },
     {
+      "file": "feedback_gerchik_example_numbers.md",
+      "id": "feedback_gerchik_example_numbers",
+      "name": "feedback_gerchik_example_numbers",
+      "title": "Feedback Gerchik Example Numbers",
+      "type": "memory",
+      "summary": "\"Числа из курса Герчика вроде «90-100 → 95» — иллюстративные примеры, НЕ зашивать в формулы детекторов\"",
+      "size": 825,
+      "status_icon": "🟢",
+      "mtime": 1781145984.387729
+    },
+    {
+      "file": "feedback_gerchik_turnover_partial_day.md",
+      "id": "feedback_gerchik_turnover_partial_day",
+      "name": "feedback_gerchik_turnover_partial_day",
+      "title": "Feedback Gerchik Turnover Partial Day",
+      "type": "memory",
+      "summary": "\"Gerchik throughput-киллер — turnover_usd считал оборот по неполному текущему D-бару (занижение 3-4×), фикс = среднее полных дней\"",
+      "size": 1083,
+      "status_icon": "🟢",
+      "mtime": 1781158972.6424425
+    },
+    {
       "file": "feedback_logout_network_blip.md",
       "id": "feedback_logout_network_blip",
       "name": "feedback_logout_network_blip",
@@ -3134,6 +3156,17 @@
       "mtime": 0
     },
     {
+      "file": "feedback_sl_zero_position_race.md",
+      "id": "feedback_sl_zero_position_race",
+      "name": "feedback_sl_zero_position_race",
+      "title": "Feedback Sl Zero Position Race",
+      "type": "memory",
+      "summary": "\"SL не встаёт при гонке вход↔SL (Bybit 10001 'zero position'); set_trading_stop надо ретраить после появления size>0\"",
+      "size": 3143,
+      "status_icon": "🟢",
+      "mtime": 1781157300.9576604
+    },
+    {
       "id": "feedback_telegram_keyboard_emoji",
       "name": "feedback_telegram_keyboard_emoji",
       "title": "feedback_telegram_keyboard_emoji",
@@ -3225,6 +3258,17 @@
       "mtime": 1780155588.0258732
     },
     {
+      "file": "feedback_xvfb_x11grab_draw_mouse.md",
+      "id": "feedback_xvfb_x11grab_draw_mouse",
+      "name": "feedback_xvfb_x11grab_draw_mouse",
+      "title": "Feedback Xvfb X11Grab Draw Mouse",
+      "type": "memory",
+      "summary": "ffmpeg x11grab под Xvfb падает «Failed to query xcb pointer» — нужен -draw_mouse 0",
+      "size": 697,
+      "status_icon": "🟢",
+      "mtime": 1781184785.543705
+    },
+    {
       "file": "feedback_force_bucket_close_source.md",
       "id": "force-bucket-close-source",
       "name": "force-bucket-close-source",
@@ -3286,7 +3330,7 @@
       "type": "memory",
       "summary": "real_leverage 88× в gerchik душит scanner через liquidation_buffer filter; снижено до 35× 2026-05-12; ожидается рост частоты signals на Layer 1",
       "size": 1181,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778574021.2624104
     },
     {
@@ -3436,7 +3480,7 @@
       "type": "memory",
       "summary": "\"Tutor-боты должны выдавать ОТДЕЛЬНЫЙ [FIX] на каждое ошибочное предложение учащегося, а не схлопывать в один; русский input обрабатывается всегда\"",
       "size": 1758,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778558340.1844194
     },
     {
@@ -4209,9 +4253,9 @@
       "title": "Project Wrestling Google Play",
       "type": "memory",
       "summary": "\"Constant Wrestling — запуск в Google Play (с нуля 2026-06-03). Individual-аккаунт, age-gate 13+, готовые ассеты + AAB versionCode 2, closed-testing 20 тестеров/14 дней. Что заполнять в Create app/Sto",
-      "size": 5067,
+      "size": 6680,
       "status_icon": "🟢",
-      "mtime": 1781048309.9065912
+      "mtime": 1781069951.1145644
     },
     {
       "file": "project_wrestling_i18n_10langs.md",
@@ -4517,6 +4561,39 @@
       "mtime": 0
     },
     {
+      "file": "project_gerchik_proboi_subtypes.md",
+      "id": "project_gerchik_proboi_subtypes",
+      "name": "project_gerchik_proboi_subtypes",
+      "title": "Project Gerchik Proboi Subtypes",
+      "type": "memory",
+      "summary": "Gerchik-агент — подвиды пробоя (с базой/с лету/с закреплением) + разрез аналитики by_setup_type",
+      "size": 946,
+      "status_icon": "🟢",
+      "mtime": 1781158294.4513345
+    },
+    {
+      "file": "project_gerchik_skip_transparency.md",
+      "id": "project_gerchik_skip_transparency",
+      "name": "project_gerchik_skip_transparency",
+      "title": "Project Gerchik Skip Transparency",
+      "type": "memory",
+      "summary": "\"Gerchik paper-агент — панель «Почему пропущено»: per-symbol×strategy причины скипа за цикл сканера\"",
+      "size": 1415,
+      "status_icon": "🟢",
+      "mtime": 1781160061.4744208
+    },
+    {
+      "file": "project_gerchik_strategy_extraction.md",
+      "id": "project_gerchik_strategy_extraction",
+      "name": "project_gerchik_strategy_extraction",
+      "title": "Project Gerchik Strategy Extraction",
+      "type": "memory",
+      "summary": "Извлечение торговой стратегии А.М. Герчика из видеокурса LMS → playbook → детекторы для Pump&Dump бота (paper)",
+      "size": 15115,
+      "status_icon": "🟢",
+      "mtime": 1781185233.8866475
+    },
+    {
       "id": "project_hourly_supervisor",
       "name": "project_hourly_supervisor",
       "title": "project_hourly_supervisor",
@@ -4547,6 +4624,16 @@
       "mtime": 0
     },
     {
+      "id": "project_mai_assistant",
+      "name": "project_mai_assistant",
+      "title": "project_mai_assistant",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_mfe_calibration",
       "name": "project_mfe_calibration",
       "title": "project_mfe_calibration",
@@ -4567,6 +4654,17 @@
       "mtime": 0
     },
     {
+      "file": "project_ontime_doc_share_drive.md",
+      "id": "project_ontime_doc_share_drive",
+      "name": "project_ontime_doc_share_drive",
+      "title": "Project Ontime Doc Share Drive",
+      "type": "memory",
+      "summary": "\"OnTime Documents — раздача blueprint (TG/email/print/Drive), per-user отправитель, тяжёлые файлы ссылкой, Drive ждёт OAuth-ключи\"",
+      "size": 2127,
+      "status_icon": "🟢",
+      "mtime": 1781191414.5346096
+    },
+    {
       "id": "project_ontime_heartbeat",
       "name": "project_ontime_heartbeat",
       "title": "project_ontime_heartbeat",
@@ -4580,6 +4678,16 @@
       "id": "project_ontime_wage_cost",
       "name": "project_ontime_wage_cost",
       "title": "project_ontime_wage_cost",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_paper_double_count_resolved",
+      "name": "project_paper_double_count_resolved",
+      "title": "project_paper_double_count_resolved",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -4665,9 +4773,9 @@
       "title": "Project Pumpdump Semiauto",
       "type": "memory",
       "summary": "\"PumpDumpAI перешёл на полуавтомат — дашборд-торговля (график, ордер-тикет, подсказки, drag SL/TP); старый детектор выключен\"",
-      "size": 8305,
+      "size": 12787,
       "status_icon": "🟢",
-      "mtime": 1780951967.3089492
+      "mtime": 1781116637.4674573
     },
     {
       "id": "project_real_global_guard_limitation",
@@ -5497,7 +5605,7 @@
       "type": "memory",
       "summary": "\"В TG-ботах с tutor pattern reply_markup=QUICK_KB надо вешать на free-chat ответы, а не только на /start — иначе юзер, который пишет сразу 'привет' без /start, не увидит кнопок\"",
       "size": 1378,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778559621.2589927
     },
     {
@@ -5967,6 +6075,14 @@
       "target": "project-mfe-mae-tracking"
     },
     {
+      "source": "feedback_gerchik_example_numbers",
+      "target": "feedback_trading_analysis_protocol"
+    },
+    {
+      "source": "feedback_gerchik_example_numbers",
+      "target": "project_gerchik_strategy_extraction"
+    },
+    {
       "source": "gerchik-leverage-88-too-high",
       "target": "gerchik-trading-agent"
     },
@@ -5981,6 +6097,18 @@
     {
       "source": "gerchik-signals-decision-varchar",
       "target": "project-gerchik-bot"
+    },
+    {
+      "source": "feedback_gerchik_turnover_partial_day",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "feedback_gerchik_turnover_partial_day",
+      "target": "project_gerchik_proboi_subtypes"
+    },
+    {
+      "source": "feedback_gerchik_turnover_partial_day",
+      "target": "project_gerchik_strategy_extraction"
     },
     {
       "source": "feedback-grafana-v13-resource-table",
@@ -6215,6 +6343,22 @@
       "target": "project_voice_tutor"
     },
     {
+      "source": "feedback_sl_zero_position_race",
+      "target": "feedback_bybit_migration_bypass"
+    },
+    {
+      "source": "feedback_sl_zero_position_race",
+      "target": "feedback_bybit_tp_limit_quirks"
+    },
+    {
+      "source": "feedback_sl_zero_position_race",
+      "target": "feedback_conditional_order_cleanup"
+    },
+    {
+      "source": "feedback_sl_zero_position_race",
+      "target": "feedback_real_sl_qty_step"
+    },
+    {
       "source": "streams-a-b-c-terminology",
       "target": "feedback-real-trades-truth"
     },
@@ -6341,6 +6485,10 @@
     {
       "source": "feedback_wrestling_capacitor_uploads_img",
       "target": "project_session_2026_05_27_wrestling_v1_0_submit"
+    },
+    {
+      "source": "feedback_xvfb_x11grab_draw_mouse",
+      "target": "project_gerchik_strategy_extraction"
     },
     {
       "source": "agency-landing",
@@ -6675,6 +6823,14 @@
       "target": "project_bybit_3sub_architecture"
     },
     {
+      "source": "project_gerchik_proboi_subtypes",
+      "target": "feedback_gerchik_example_numbers"
+    },
+    {
+      "source": "project_gerchik_proboi_subtypes",
+      "target": "project_gerchik_strategy_extraction"
+    },
+    {
       "source": "gerchik-session-2026-05-19",
       "target": "feedback_agent_levels_guards"
     },
@@ -6689,6 +6845,50 @@
     {
       "source": "gerchik-session-2026-05-19",
       "target": "project_gerchik_bot"
+    },
+    {
+      "source": "project_gerchik_skip_transparency",
+      "target": "feedback_gerchik_turnover_partial_day"
+    },
+    {
+      "source": "project_gerchik_skip_transparency",
+      "target": "project_gerchik_proboi_subtypes"
+    },
+    {
+      "source": "project_gerchik_skip_transparency",
+      "target": "project_gerchik_strategy_extraction"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "feedback_nginx_uploads_regex_trap"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "feedback_sl_zero_position_race"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "project_paper_double_count_resolved"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "project_pumpdump_selftuning"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "project_real_trades_baseline"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "project_session_2026_06_05_real_sl_promoter"
+    },
+    {
+      "source": "project_gerchik_strategy_extraction",
+      "target": "project_trader_model_10"
     },
     {
       "source": "graph-system",
@@ -6729,6 +6929,18 @@
     {
       "source": "ollama-race-shadow-emails-triage",
       "target": "project_pc2_homelab_active"
+    },
+    {
+      "source": "project_ontime_doc_share_drive",
+      "target": "feedback_dashboard_startup"
+    },
+    {
+      "source": "project_ontime_doc_share_drive",
+      "target": "project_mai_assistant"
+    },
+    {
+      "source": "project_ontime_doc_share_drive",
+      "target": "project_tsa_timeline"
     },
     {
       "source": "orphan-safety-nets",
@@ -7476,16 +7688,16 @@
     }
   ],
   "stats": {
-    "files": 332,
-    "nodes": 536,
-    "edges": 445,
+    "files": 340,
+    "nodes": 546,
+    "edges": 471,
     "by_type": {
       "feedback": 81,
-      "memory": 161,
+      "memory": 169,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 204
+      "stub": 206
     }
   }
 }
