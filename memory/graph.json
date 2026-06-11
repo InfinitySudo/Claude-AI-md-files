@@ -4660,9 +4660,9 @@
       "title": "Project Ontime Doc Share Drive",
       "type": "memory",
       "summary": "\"OnTime Documents — раздача blueprint (TG/email/print/Drive), per-user отправитель, тяжёлые файлы ссылкой, Drive ждёт OAuth-ключи\"",
-      "size": 2127,
+      "size": 2195,
       "status_icon": "🟢",
-      "mtime": 1781191414.5346096
+      "mtime": 1781193465.9161253
     },
     {
       "id": "project_ontime_heartbeat",
