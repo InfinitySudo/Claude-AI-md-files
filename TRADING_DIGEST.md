@@ -1,6 +1,6 @@
 # Trading digest
 
-Generated **2026-06-12 00:24 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
+Generated **2026-06-12 00:54 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
 
 **6546 trades** · net PnL **-1354.86$** 🔴 · 251 nodes · 1713 edges
 

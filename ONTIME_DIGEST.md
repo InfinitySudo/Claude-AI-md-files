@@ -1,8 +1,8 @@
 # OnTime digest
 
-Generated **2026-06-12 00:24 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-06-12 00:54 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
-**223 nodes** (865 edges) — 📦 91 material · 🏗 69 project · 👷 62 worker · 🏪 1 vendor
+**223 nodes** (866 edges) — 📦 91 material · 🏗 69 project · 👷 62 worker · 🏪 1 vendor
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 
@@ -13,7 +13,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Maksym Moskalyk` | installer | **2477.5** |
 | `Oleksandr Poliakov` | installer | **2471.4** |
 | `Oleksey Sherbakov` | foreman | **2417.1** |
-| `Pavlo Kosts` | installer | **2406.7** |
+| `Pavlo Kosts` | installer | **2415.7** |
 | `Mykhailo Martynenko` | installer | **2393.1** |
 | `Oleksandr Lopatetskyi` | installer | **2322.1** |
 | `Mykola Korobeinykov` | foreman | **2319.2** |
@@ -40,7 +40,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Cornerview_Bldg_1-13_BRICK_06_02_2025_Vasilii_V` | **2026.4** | 6 |
 | `Pinegate Park Ihor K 04.02.2026` | **1794.0** | 8 |
 | `Sage Hill Commercial Development Bldg 600 ` | **1779.5** | 9 |
-| `RimRock` | **1704.7** | 10 |
+| `RimRock` | **1713.7** | 10 |
 | `Sage Hill Commercial Development Bldg 100 18.08.2025 Nikolay K` | **1496.5** | 6 |
 | `Sage_Hill_Commercial_Development_Bldg_200_20_05_2025_Nikolay_K` | **1461.5** | 5 |
 | `Logel 3700 Seton Bldg 3 Brick Bogdan 18.11.2025` | **1371.8** | 11 |
