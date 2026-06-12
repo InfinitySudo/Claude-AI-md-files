@@ -25,6 +25,10 @@ metadata:
 
 **✅ Daily report исправлен (commit `8e28c19`).** Было 2 бага: (1) `daily_reporter.py` звал `self.telegram.send_message()`, а `self.telegram`=`NotificationManager` (метод `_send_telegram(text)`, не send_message) → AttributeError каждый день; (2) тело отчёта на легаси CONSERVATIVE/TREND — после миграции на 'Trader A–F' эти ключи пустые → нули. Теперь итерирует `trader_registry`, берёт real_trades/simulated_trades по `trader_real_enabled`, рендерит per-trader (trades/WR/PF/net, 💰real/📒paper). Smoke по живой БД — все 7 трейдеров корректно.
 
+**✅ 2026-06-05 18:5x — F переведён на отдельный суб-аккаунт sub4 (commit `3c8b7b7`).** Артём выдал ключ нового суба (uid 567356487, note "Trader_F", ~$100). Введены env `BYBIT_REAL_API_KEY/SECRET` (env_config, фоллбэк на sub1); `real_executor` (main_bot_v3:127) и `_bybit_signed_get` дашборда (account/positions/realized/real-snapshot) переключены на них; sub4 добавлен в `_BYBIT_SUBS`. 303 pytest passed. sub1 на момент переключения был пуст (легаси C-позиции уже доехали — ничего не осиротили).
+**⚠ Промоутер на рестарте сразу ДЕМОУТНУЛ F** (судил всю real-историю F: 28 сделок net −$5.22, т.к. у F не было `trader_promoted_at`). Артём выбрал «чистый старт»: проставил `trader_promoted_at[trader_f]=now` (атомарно в JSON — API для этого нет) → промоутер судит F только по новым сделкам sub4 → dry-run `hold` (0 сделок с promote). Затем F → REAL через `/api/v2/traders/trader_f/mode`. F снова real на sub4.
+**⚠ Это НЕ per-trader routing** — `real_executor` один глобальный, теперь на sub4. Любой 2-й real-трейдер тоже сел бы на sub4 → та же One-Way коллизия. Защита: выставил `max_concurrent_real=1` (было 3). Полная изоляция = per-trader executor routing, отложено. См. [[project-bybit-3sub-architecture]], [[project-real-global-guard-limitation]].
+
 **Не-блокеров не осталось** — все три бага сессии закрыты (SL Qty-invalid, промоутер-флап, daily-report).
 
 Связано: [[project-trader-model-10]], [[project-trading-critical-params]], [[feedback-pause-button-doesnt-stop-real]].

@@ -1,8 +1,8 @@
 # OnTime digest
 
-Generated **2026-06-05 13:31 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-06-12 00:24 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
-**222 nodes** (853 edges) — 📦 91 material · 🏗 68 project · 👷 62 worker · 🏪 1 vendor
+**223 nodes** (865 edges) — 📦 91 material · 🏗 69 project · 👷 62 worker · 🏪 1 vendor
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 
@@ -10,21 +10,21 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 
 | Worker | Role | Hours |
 |---|---|---:|
+| `Maksym Moskalyk` | installer | **2477.5** |
 | `Oleksandr Poliakov` | installer | **2471.4** |
-| `Maksym Moskalyk` | installer | **2443.2** |
-| `Pavlo Kosts` | installer | **2375.4** |
-| `Oleksey Sherbakov` | foreman | **2374.6** |
-| `Mykhailo Martynenko` | installer | **2348.1** |
-| `Mykola Korobeinykov` | foreman | **2288.0** |
-| `Oleksandr Lopatetskyi` | installer | **2281.3** |
-| `Artem Huridov` | foreman | **2248.5** |
-| `Igor Chekmak` | installer | **2232.9** |
-| `Stanislav Bodnaruk` | foreman | **2193.8** |
-| `Taras Ivanets` | installer | **2188.2** |
-| `Dmytro Kurinnyi` | installer | **2186.1** |
-| `Serhii Lopatetskyi` | installer | **2176.6** |
-| `Bogdan Tkhoryk` | foreman | **2156.4** |
-| `Valerii Stelmakh` | installer | **2153.1** |
+| `Oleksey Sherbakov` | foreman | **2417.1** |
+| `Pavlo Kosts` | installer | **2406.7** |
+| `Mykhailo Martynenko` | installer | **2393.1** |
+| `Oleksandr Lopatetskyi` | installer | **2322.1** |
+| `Mykola Korobeinykov` | foreman | **2319.2** |
+| `Igor Chekmak` | installer | **2284.3** |
+| `Artem Huridov` | foreman | **2283.7** |
+| `Taras Ivanets` | installer | **2241.0** |
+| `Stanislav Bodnaruk` | foreman | **2237.9** |
+| `Serhii Lopatetskyi` | installer | **2218.4** |
+| `Dmytro Kurinnyi` | installer | **2213.1** |
+| `Bogdan Tkhoryk` | foreman | **2193.7** |
+| `Valerii Stelmakh` | installer | **2186.2** |
 
 ## 🏗 Top projects (by labour hours)
 
@@ -32,19 +32,19 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 |---|---:|---:|
 | `Broward_26_05_2025_Oleksii_Sh` | **8486.5** | 30 |
 | `Magna Bldg 1` | **7774.7** | 35 |
-| `Magna Bldg 2` | **7060.3** | 42 |
+| `Magna Bldg 2` | **7134.2** | 42 |
 | `Sage Walk Bldg 2 Nikolay K 15.12.2025` | **5034.0** | 31 |
 | `Arabella-Ophelia Mike K 04.09.2025` | **3843.0** | 13 |
-| `Livingston (Bldg A) ` | **2222.9** | 14 |
+| `Livingston (Bldg A) ` | **2439.2** | 14 |
 | `Sage_Hill_Commercial_Development_Bldg_500_05_05_2025_Nikolay_K` | **2031.5** | 7 |
 | `Cornerview_Bldg_1-13_BRICK_06_02_2025_Vasilii_V` | **2026.4** | 6 |
 | `Pinegate Park Ihor K 04.02.2026` | **1794.0** | 8 |
 | `Sage Hill Commercial Development Bldg 600 ` | **1779.5** | 9 |
-| `RimRock` | **1657.6** | 10 |
+| `RimRock` | **1704.7** | 10 |
 | `Sage Hill Commercial Development Bldg 100 18.08.2025 Nikolay K` | **1496.5** | 6 |
 | `Sage_Hill_Commercial_Development_Bldg_200_20_05_2025_Nikolay_K` | **1461.5** | 5 |
 | `Logel 3700 Seton Bldg 3 Brick Bogdan 18.11.2025` | **1371.8** | 11 |
-| `Sage Hill Commercial Development Bldg 400` | **1212.4** | 7 |
+| `Sage Hill Commercial Development Bldg 400` | **1318.7** | 7 |
 
 ## 📦 Top materials (by qty across projects)
 

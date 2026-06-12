@@ -4,12 +4,25 @@
 - [🏗 OnTime digest](ONTIME_DIGEST.md) — top workers/projects/materials/vendors by hours+qty. Auto every 30 min.
 - [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
+- [SL zero-position race](feedback_sl_zero_position_race.md) — SL не встаёт при гонке вход↔SL (Bybit 10001); ретрай set_trading_stop после size>0; ⚠ env BYBIT_API_KEY=test_key_123 ловушка (force-load, не setdefault)
+- [Gerchik example numbers](feedback_gerchik_example_numbers.md) — числа-примеры из курса (90-100→95) НЕ зашивать в формулы; кодировать общий метод (VWAP), литералы только реальные пороги
+- [Gerchik strategy extraction](project_gerchik_strategy_extraction.md) — AI-агент по методу Герчика: 9 типов уровней + предпосылки (поджатие/отн.сила/ширина/энергия), paper под systemd, OAuth-судья, панели :8080
+- [Gerchik turnover partial-day](feedback_gerchik_turnover_partial_day.md) — главный throughput-киллер: turnover_usd по неполному текущему D-бару занижал ликвидность 3-4× → ликвид-монеты не проходили is_tradeable; fix=среднее полных дней, tradeable 6→25, вселенная 20→33
+- [Gerchik подвиды пробоя](project_gerchik_proboi_subtypes.md) — пробой·{с базой/с лету/с закреплением} (proboi_subtype) + разрез by_setup_type + панель; рефлектор отложен (нет закрытых сделок)
+- [Gerchik «Почему пропущено»](project_gerchik_skip_transparency.md) — SkipLedger + Decision.code + trace: per-symbol×strategy причины скипа за цикл, /api/skips + панель; живьём 53 no_level_near/24 not_tradeable/12 no_trigger/10 in_position
+- [Xvfb x11grab -draw_mouse 0](feedback_xvfb_x11grab_draw_mouse.md) — ffmpeg x11grab под headless Xvfb падает «query xcb pointer» → -draw_mouse 0; симптом mp4 ~4.6с-обрубок при OK-плеере
 - [10-Trader Model](project_trader_model_10.md) — 5 трейдеров A–E (fan-out) + opt-in авто-промоутер paper↔real; ⚠ живой дашборд = /var/www/dashboard/v2.html (НЕ в git)
+- [PC2 cupy CTK](feedback_pc2_cupy_ctk.md) — PC2 GA-GPU крэшил на eaSimple без CUDA-хедеров; fix pip install cupy-cuda12x[ctk]; PC2 параллель теперь работает end-to-end
+- [GA per-coin вердикт](project_ga_percoin_verdict.md) — конфиг E: 78% монет+ (median+), но basket −21 из-за хвоста убытков (топ-5 = −32); узкое место риск-модель не оптимизатор; GA не хлам но не деплоебелен
+- [Per-Trader Entry Split](project_per_trader_entry_split.md) — Фаза 1 (whitelist монет per-trader) готова; +аналитика: длинный хвост=режим рынка не символ, адаптивный R не бьёт R≈1, STRONG/WEAK инвертирован
 - [Session 2026-06-05 real-SL + promoter](project_session_2026_06_05_real_sl_promoter.md) — F=единственный real, C=paper, промоутер ВЫКЛ (флап-баг promote-paper/demote-real); план dual-real = разные суб-аккаунты
 - [Real SL qty_step](feedback_real_sl_qty_step.md) — conditional maker-SL/entry qty ОБЯЗАН floor к qty_step иначе Bybit 'Qty invalid' (10001); fix 2bf454c via _normalize_qty
 - [Trading Bot Full Spec](project_trading_spec.md) — 4 bots: SignalBot, TradingBot, ControlBot, SmartBot for Bybit futures with 2 strategies
 - [⚡ Trading Critical Params](project_trading_critical_params.md) — SINGLE SOURCE: mode/risk/SL formula (ATR×0.25)/TP/BE/fees/caps + real R-metrics + break-even formulas. READ FIRST для любого trading-анализа
 - [Pump&Dump AI Agent](project_pumpdump_agent.md) — отдельный self-tuning агент под пампы/дампы, Bybit sub4. Planning phase 2026-05-26: PLAN.md в repo InfinitySudo/PumpDumpAI_Agent, tile в Space_Live cockpit, Phase-1 кода ждёт approval
+- [PumpDump semi-auto](project_pumpdump_semiauto.md) — полуавтомат: дашборд-торговля (график TV-lite, ордер-тикет market/limit, подсказки Take/Skip, drag SL/TP→биржа, live PnL); старый детектор OFF; только :8080
+- [PumpDump OFFLINE root-cause](feedback_pumpdump_offline_maybe_emit.md) — панель уходила в OFFLINE: _maybe_emit O(N) на каждом трейде сатурировал CPU→event-loop хэнг→watchdog рестарт; fix emit_throttle_ms (живой, не закоммичен); историю свечей видно через ТФ D/W
+- [PumpDump self-tuning](project_pumpdump_selftuning.md) — replay-движок (MFE/MAE) + fee-aware BE (after_tp1, +0.4% net) + tuner per-cluster TP/global BE + walk-forward + /tune-now + Learning панель; GPU НЕ нужен (малые данные); живой fit −0.68
 - [Trading Analysis Protocol](feedback_trading_analysis_protocol.md) — перед RR/break-even/SL/fees анализом — Read [[project-trading-critical-params]]; не гадать настройки (была ошибка "0.8× ATR" 2026-05-26)
 - [Bybit 3-Sub Architecture](project_bybit_3sub_architecture.md) — с 2026-05-15: sub1=TradingBot, sub2=Gerchik copy, sub3=AI-agent; UIDs + env-vars
 - [agent_levels TG dedup](feedback_agent_levels_tg_dedup.md) — place_level возвращает existing id; caller ОБЯЗАН делать tg_notified_at-claim перед send_level_notification
@@ -47,6 +60,7 @@
 - [Toast Pointer Events](feedback_toast_pointer_events.md) — opacity:0 без pointer-events:none молча ест клики по tabs под ним
 - [real_trades Schema](project_real_trades_schema.md) — narrower than simulated_trades; get_alltime_stats crashes on missing columns
 - [Bybit TP-Limit Quirks](feedback_bybit_tp_limit_quirks.md) — tpLimitPrice required, Full mode только Market, TP должен быть за MarkPrice, аудит через /v5/order/realtime
+- [Conditional Order Cleanup](feedback_conditional_order_cleanup.md) — conditional SL/TP (order/create) не чистятся set_trading_stop(null); SL_VERIFY слеп к Limit-SL → дубли ×3 + сироты; cancel_conditional_orders + грейс reconciler; fix fec3f90
 - [Signal Config Path Trap](feedback_signal_bot_config_path.md) — src/ is real, root is orphan; always use env_config.SIGNAL_BOT_CONFIG_PATH
 - [SignalBot Bar Logic](feedback_signal_bar_logic.md) — confirm=True only, slice по ws_config volume_avg_bars/trend_bars (не [-6:]), REST-warmup 5m
 - [HARD CAP + Dashboard PAPER](feedback_hard_cap_double_count.md) — risk_manager position×leverage = двойной счёт; dashboard _v2_resolve_source хардкод игнорировал per_strategy JSON
@@ -61,7 +75,10 @@
 - [Trading Config Live Source](feedback_trading_config_live_source.md) — Артём правит настройки через dashboard; всегда читать актуальные значения из JSON+bot_settings, не из памяти
 - [Dashboard-First Workflow](feedback_dashboard_first_workflow.md) — GA-прогоны и похожие операции запускать через dashboard endpoint, не CLI; это заодно валидирует UI
 - [Dashboard GA + Filters](project_dashboard_ga_section.md) — GA section, strategy wins highlight, status chips, max_drawdown setting
+- [GA Gross vs Net](feedback_ga_gross_vs_net.md) — GA-панель показывала GROSS как "net"; реальный net после издержек (fee+slip+funding ≈0.32%/сд) в минусе; смотреть NET+fitness, не gross (fix 60df8ee)
+- [GA Regime Feature](project_ga_regime_feature.md) — фича «Режим рынка» (Efficiency Ratio≥0.56) на E: net −244%→+29.77%, train≈test; ген+live-гейт+тумблеры (дефолт выкл); ⚠ CUDA KERNEL_SRC только ASCII (cp1252 на PC1)
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling Play closed test](project_wrestling_play_closed_test.md) — Google Play Alpha 1.0.1(2) cloud.constantwrestling.app; ⚠ 14-дн окно стартует с момента когда ≥12 из 13 РЕАЛЬНО opted-in (не с добавления email); CSV без заголовка
 - [Wrestling i18n 10 langs](project_wrestling_i18n_10langs.md) — en/ru/uk/pl/ar/fa/zh/ja/pa/es + RTL + header dropdown; sub-components нуждаются в собственном useTranslation
 - [Wrestling pill bottom-nav](project_wrestling_pill_nav.md) — framer-motion layoutId pill + scroll + safe-area + auto-scroll active
 - [Wrestling UWW Scoreboard](project_wrestling_uww_scoreboard.md) — Heracles-style live table: count-down, P shot-clock, FALL/VSU/VPO, INJ, cast TV
@@ -91,6 +108,8 @@
 - [Estimator Links](project_estimator_links.md) — estimate_projects ↔ stack_projects через project_links table; разные нумерации остались, но связаны
 - [Estimator Assemblies](project_estimator_assemblies.md) — multi-layer cladding stacks: assembly_templates + estimate_takeoffs.assembly_id; BOM разворачивает layers
 - [Estimating Industry Rules](project_estimating_industry_rules.md) — formulas + waste factors + accessory ratios + catalog mapping для BOM engine
+- [OnTime Phase Billing](project_ontime_phase_billing.md) — граница фазы почасовка→установка (install_start_date): часы до даты × ставку (T&M), с даты жгут бюджет; 3 места P&L держать в синке
+- [OnTime Doc Share + Drive](project_ontime_doc_share_drive.md) — раздача blueprint (TG/email/print/Drive), per-user отправитель (Артём→artempm@), тяжёлые файлы ссылкой (Gmail 25МБ); Drive ПОДКЛЮЧЕН (проект ontime-499115)
 - [OnTime Invite Codes](project_tsa_invite_codes.md) — 4 кода в `.env.bot` для admin/foreman/service/delivery; не помнить значения, читать из файла
 - [OnTime Reopen Projects](project_tsa_reopen.md) — POST /projects/{id}/reopen возвращает done-проект в active без 48h-окна; кнопка «Сделать активным» (d88db62)
 - [Legacy DB Safety](feedback_legacy_db_safety.md) — `migration/*.db` в gitignore, никогда не коммитить production dump
@@ -141,6 +160,7 @@
 - [Wrestling Google Play](project_wrestling_google_play.md) — Play-аккаунт individual (ID 4901449532864858506, ...55@gmail), age-gate 13+ (код+copy пофикшены), AAB versionCode 2, готовые ассеты, cheat-sheet листинга, closed-testing 20/14дней
 - [Real Trades Baseline](project_real_trades_baseline.md) — копим real CONS, не активируем ML/Risk Officer/R-up до 300-500 trades; анализ на real, не paper
 - [Session 2026-05-17 full](project_session_2026_05_17_full.md) — strict-rules hook + mobile tutors fixes + trading config (max_order/BL/hours/tp_Limit/fallback_TP/Sonnet) + Insights tab + Telethon scaffold
+- [Gerchik Strategy Extraction](project_gerchik_strategy_extraction.md) — извлечение метода Герчика из LMS-видеокурса (VdoCipher DRM → Xvfb-рендер → Whisper large-v3 на PC1/PC2 GPU, 2x) → playbook `/root/gerchik_memory/` → детекторы для Pump&Dump (paper); оркестратор на 82 урока
 - [Session 2026-05-19 OnTime polish](project_session_2026_05_19_ontime_polish.md) — OT-panel sort/filter, planning crew includes ghosts, lunch+9h cap для live sessions, backfill reports, service-task timer, delivery lifts + external refuels
 - [Session 2026-05-19 Wrestling coach toolkit](project_session_2026_05_19_wrestling_coach_toolkit.md) — club policy + signing, user_groups, password reset, sparring live scoring, birthday daemon, EN/RU/PL i18n (commit ddeee40)
 - [Wrestling Account Deletion](project_wrestling_account_deletion.md) — Apple 5.1.1(v): DELETE /api/me?confirm=true анонимизирует users; Danger Zone в ProfilePage; live на web (3972f62), в iOS войдёт при пересабмите
@@ -155,6 +175,9 @@
 - [Session 2026-05-27 Wrestling v1.0 submit + v1.0.1](project_session_2026_05_27_wrestling_v1_0_submit.md) — Apple submission acf3e653 (build 79860157, manual release); v1.0.1 sparring location+cross-club apply на prod web (8ff3456); грабли Capacitor URL/ATT/iPad family
 - [Session 2026-05-27 Wrestling v1.0.1 follow-up](project_session_2026_05_27_wrestling_v1_0_1_followup.md) — recovery от NameError:List + owner push на application + Discover region/city chips + Sparring tab state-save (commit 0621ad4)
 - [Session 2026-05-28 OnTime Orders + PDF](project_session_2026_05_28_ontime_orders.md) — commit 07e0a07: ProjectsPage search/sort, OrdersTab inline-edit + multi-select bulk PO + material_requests, POErrorBoundary, PDF DejaVu Sans для кириллицы, @mention расширен, Artem PM учётка (id=8)
+- [OnTime Worker Material Breakdown](project_tsa_worker_material_breakdown.md) — клик по работнику в Team activity → материалы/время/% бюджета + per-material лидерборд + окна дат (от начала/неделя/месяц); backend material-breakdown + leaderboard endpoints
+- [OnTime Self-Switch Project](project_tsa_self_switch_project.md) — installer/helper сам переходит между объектами без формана; при работе сегодня — обязательный отчёт перед уходом; switchable-projects + switch-project endpoints
+- [OnTime logout network-blip fix](feedback_logout_network_blip.md) — вылет в логин после простоя: сетевой сбой при resume стирал валидный токен; не чистить токен на network-ошибках, только на 401; TTL 30д
 - [i18n fallback trap](feedback_i18n_fallback_trap.md) — `t('key') || 'Default'` НЕ работает в react-i18next: t() возвращает ключ-строку как truthy. Класть ключ в en.json или 2-й арг t()
 - [OnTime inline-edit blur trap](feedback_ontime_inline_edit_blur_trap.md) — onChange пишет в task, onBlur сравнивает с тем же task → patch не вызывается, правки не сохраняются; сравнивать с savedRef снимком
 - [Session 2026-05-21 TP-redesign](project_session_2026_05_21_tp_redesign.md) — все 3 strats: 100% close на TP1=2R, BE off CONS/TREND, EMA Gate on; математика, мониторинг 24-48h

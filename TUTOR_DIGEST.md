@@ -1,8 +1,8 @@
 # Tutor digest
 
-Generated **2026-06-05 13:31 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
+Generated **2026-06-12 00:24 UTC**. Sources: Lilia (wife-english-tutor) + Andrei (son-french-tutor).
 
-**725 nodes** (744 edges) — 📝 686 word · 📚 16 category · 📖 16 book · 👤 7 learner
+**773 nodes** (793 edges) — 📝 734 word · 📚 16 category · 📖 16 book · 👤 7 learner
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 
@@ -69,13 +69,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 |---|---:|
 | `other` | **20** |
 | `tenses` | **11** |
-| `vocabulary` | **8** |
-| `word_order` | **8** |
+| `vocabulary` | **9** |
+| `word_order` | **9** |
 | `articles` | **5** |
 | `agreement` | **1** |
 | `prepositions` | **1** |
 
-### 📝 Vocab — 491 words
+### 📝 Vocab — 540 words
 
 **Stuck (lowest mastery):**
 
@@ -90,21 +90,21 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/tutor-graph/>
 - `sharper` — mastery 0, seen 2×
 - `stomachache` — mastery 0, seen 2×
 - `a beautiful fairy stood before pinocchio.` — mastery 0, seen 1×
+- `absent` — mastery 0, seen 1×
 - `advice` — mastery 0, seen 1×
 - `agree with` — mastery 0, seen 1×
-- `air fryer` — mastery 0, seen 1×
-- `alone` — mastery 0, seen 1×
+- `aimed` — mastery 0, seen 1×
 
 ### 📖 Books
 
 | Book | Chapter |
 |---|---:|
 | `Alice in Wonderland` | 6 |
+| `Robin Hood` | 6 |
 | `The Gingerbread Man` | 5 |
 | `Goldilocks and the Three Bears` | 5 |
 | `My Day` | 5 |
 | `A Scandal in Bohemia` | 3 |
-| `Robin Hood` | 2 |
 | `A Christmas Carol` | 1 |
 | `Cinderella` | 1 |
 

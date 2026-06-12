@@ -14,6 +14,9 @@ metadata:
 | 563399107 | sub1 | TradingBot (main_bot_v3) | `BYBIT_API_KEY` / `BYBIT_API_SECRET` |
 | 563470305 | sub2 | Gerchik copy-executor + signals_bot | `BYBIT_GERCHIK_API_KEY` / `BYBIT_GERCHIK_API_SECRET` |
 | 539929753 | sub3 | AI-agent (gerchik-trading-agent main) | `BYBIT_AI_AGENT_API_KEY` / `BYBIT_AI_AGENT_API_SECRET` |
+| 567356487 | sub4 | **Real trading (Trader F)** — note "Trader_F", ~$100 | `BYBIT_REAL_API_KEY` / `BYBIT_REAL_API_SECRET` |
+
+**2026-06-05 — добавлен sub4 для real-трейдинга (Trader F).** Глобальный `real_executor` (`main_bot_v3.py:127`) и live-чтения дашборда (`_bybit_signed_get`) теперь на `BYBIT_REAL_*` (фоллбэк на sub1 если не задано). Commit `3c8b7b7`. ⚠ Это НЕ per-trader routing: `real_executor` один, поэтому ЛЮБОЙ real-трейдер идёт на sub4. Защита от коллизии 2-х real на sub4 = `max_concurrent_real=1` (выставлен). Полная изоляция (F на sub4, C на sub1 одновременно) требует per-trader executor routing — отложено. sub4 добавлен в `_BYBIT_SUBS` (dashboard wallets-all). Детали: [[project-session-2026-06-05-real-sl-promoter]].
 
 Старые отжившие аккаунты:
 - uid 539929753 раньше был общим для TradingBot+AI-agent (один кошелёк, конфликт margin) — теперь чисто AI-agent через отдельный sub3 ключ.
