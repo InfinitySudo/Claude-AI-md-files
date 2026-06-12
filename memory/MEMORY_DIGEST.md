@@ -1,30 +1,30 @@
 # Memory digest
 
-Generated **2026-06-11 16:16 UTC**.
+Generated **2026-06-12 22:19 UTC**.
 
-**546 nodes** (340 files, 471 edges) — 📝 206 stub · · 169 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**556 nodes** (348 files, 493 edges) — 📝 208 stub · · 177 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## 🌟 Hub nodes (most referenced)
 
 - [[feedback-real-trades-truth]] ← 8 refs · 📝 stub
+- [[feedback_one_tweak_at_a_time]] ← 8 refs · 📝 stub
 - [[project-trading-critical-params]] ← 8 refs · · memory
-- [[feedback_one_tweak_at_a_time]] ← 6 refs · 📝 stub
+- [[project-wrestling-v2]] ← 7 refs · 📝 stub
+- [[project_gerchik_strategy_extraction]] ← 7 refs · · memory
 - [[project-bybit-3sub-architecture]] ← 6 refs · 📝 stub
-- [[project-wrestling-v2]] ← 6 refs · 📝 stub
 - [[project_pc1_homelab_active]] ← 6 refs · 📝 stub
 - [[project_wrestling_v2]] ← 6 refs · 📝 stub
 - [[feedback-real-trades-fee-semantics]] ← 5 refs · 📝 stub
 - [[project_bybit_3sub_architecture]] ← 5 refs · 📝 stub
-- [[project_ga_optimizer]] ← 5 refs · 📝 stub
 
-## 📝 Stubs (206) — referenced but not yet written
+## 📝 Stubs (208) — referenced but not yet written
 
 - [[feedback-real-trades-truth]] ← 8 refs
-- [[feedback_one_tweak_at_a_time]] ← 6 refs
+- [[feedback_one_tweak_at_a_time]] ← 8 refs
+- [[project-wrestling-v2]] ← 7 refs
 - [[project-bybit-3sub-architecture]] ← 6 refs
-- [[project-wrestling-v2]] ← 6 refs
 - [[project_pc1_homelab_active]] ← 6 refs
 - [[project_wrestling_v2]] ← 6 refs
 - [[feedback-real-trades-fee-semantics]] ← 5 refs
@@ -58,25 +58,25 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
-- `2026-06-11 15:57` [[project_ontime_doc_share_drive]] · 🟢 today
-- `2026-06-11 13:40` [[project_gerchik_strategy_extraction]] · 🟢 today
-- `2026-06-11 13:33` [[feedback_xvfb_x11grab_draw_mouse]] · 🟢 today
-- `2026-06-11 06:41` [[project_gerchik_skip_transparency]] · 🟢 today
-- `2026-06-11 06:22` [[feedback_gerchik_turnover_partial_day]] · 🟢 today
-- `2026-06-11 06:11` [[project_gerchik_proboi_subtypes]] · 🟢 today
-- `2026-06-11 05:55` [[feedback_sl_zero_position_race]] · 🟢 today
-- `2026-06-11 02:46` [[feedback_gerchik_example_numbers]] · 🟢 today
-- `2026-06-10 18:37` [[project_pumpdump_semiauto]] · 🟢 today
-- `2026-06-10 05:39` [[project-wrestling-google-play]] · 🟢 this week
-- `2026-06-09 04:33` [[feedback_pumpdump_offline_maybe_emit]] · 🟢 this week
-- `2026-06-08 23:14` [[project_tsa_worker_material_breakdown]] · 🟢 this week
-- `2026-06-08 23:14` [[feedback_logout_network_blip]] · 🟢 this week
-- `2026-06-08 23:13` [[project_tsa_self_switch_project]] · 🟢 this week
-- `2026-06-08 01:06` [[project_pumpdump_selftuning]] · 🟢 this week
+- `2026-06-12 22:14` [[project_gerchik_checklist_gate]] · 🟢 today
+- `2026-06-12 21:41` [[feedback_gerchik_exit_tp_sl_only]] · 🟢 today
+- `2026-06-12 20:44` [[feedback_manual_ticket_sl_race]] · 🟢 today
+- `2026-06-12 20:05` [[project_gerchik_chart_levels]] · 🟢 today
+- `2026-06-12 18:26` [[feedback_gerchik_proboi_side_inversion]] · 🟢 today
+- `2026-06-12 18:08` [[reference_codemagic_api]] · 🟢 today
+- `2026-06-12 01:02` [[project-wrestling-play-closed-test]] · 🟢 today
+- `2026-06-11 16:24` [[project_ontime_phase_billing]] · 🟢 this week
+- `2026-06-11 15:57` [[project_ontime_doc_share_drive]] · 🟢 this week
+- `2026-06-11 13:40` [[project_gerchik_strategy_extraction]] · 🟢 this week
+- `2026-06-11 13:33` [[feedback_xvfb_x11grab_draw_mouse]] · 🟢 this week
+- `2026-06-11 06:41` [[project_gerchik_skip_transparency]] · 🟢 this week
+- `2026-06-11 06:22` [[feedback_gerchik_turnover_partial_day]] · 🟢 this week
+- `2026-06-11 06:11` [[project_gerchik_proboi_subtypes]] · 🟢 this week
+- `2026-06-11 05:55` [[feedback_sl_zero_position_race]] · 🟢 this week
 
 ## 📚 Index by type
 
-### 📝 stub (206)
+### 📝 stub (208)
 
 - [[bybit-3sub-architecture]] — (not written yet)
 - [[bybit-signing-order]] — (not written yet)
@@ -269,7 +269,9 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_wife_english_tutor]] — (not written yet)
 - [[project_wrestling_account_deletion]] — (not written yet)
 - [[project_wrestling_i18n_9langs]] — (not written yet)
+- [[project_wrestling_mobile_launch]] — (not written yet)
 - [[project_wrestling_pill_nav]] — (not written yet)
+- [[project_wrestling_play_closed_test]] — (not written yet)
 - [[project_wrestling_super_admin]] — (not written yet)
 - [[project_wrestling_uww_scoreboard]] — (not written yet)
 - [[project_wrestling_v2]] — (not written yet)
@@ -285,7 +287,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (169)
+### · memory (177)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -335,8 +337,11 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_ga_gross_vs_net]] — "GA-панель показывала GROSS PnL как \"net\"; реальный net после издержек уходит в минус — fitness честнее метрик"
 - [[feedback_ga_pk1_cache_refresh]] — Как обновлять kline-кеш GA-GPU на PK1 и три ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill маскирует стале-ке
 - [[feedback_gerchik_example_numbers]] — "Числа из курса Герчика вроде «90-100 → 95» — иллюстративные примеры, НЕ зашивать в формулы детекторов"
+- [[feedback_gerchik_exit_tp_sl_only]] — База выхода Герчика = TP(≥3R)/SL без БУ/трейла/лесенки; БУ@1R выключен
+- [[feedback_gerchik_proboi_side_inversion]] — "Баг side-инверсии пробоя в Gerchik paper-агенте — сторону решает стратегия, не level.kind"
 - [[feedback_gerchik_turnover_partial_day]] — "Gerchik throughput-киллер — turnover_usd считал оборот по неполному текущему D-бару (занижение 3-4×), фикс = среднее по
 - [[feedback_logout_network_blip]] — OnTime вылетал в логин после простоя — сетевой сбой при resume стирал валидный токен; не трогать токен на network-ошибка
+- [[feedback_manual_ticket_sl_race]] — Manual-тикет pumpdump ставил вход place_entry без подтверждения филла → SL race 10001
 - [[feedback_openclaw_gateway_leak]] — openclaw-gateway.service течёт по памяти (~4ГБ за 2.5 дня); рестарт + добавлен swap 4ГБ на srv1476476
 - [[feedback_pause_button_doesnt_stop_real]] — "Дашборд \"Pause Trading\" НЕ останавливает real в hybrid-режиме; настоящий рычаг — per_strategy→PAPER"
 - [[feedback_pc2_cupy_ctk]] — "PC2 GA-GPU падал на старте eaSimple — cupy без CTK-хедеров; fix pip install cupy-cuda12x[ctk]"
@@ -396,6 +401,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project-wrestling-i18n-10langs]] — Wrestling tracker поддерживает 10 языков (en/ru/uk/pl/ar/fa/zh/ja/pa/es) с RTL и header-dropdown для смены без выхода
 - [[project-wrestling-mobile-launch]] — "Wrestling-Performance-Tracker готов к публикации в AppStore/GooglePlay. Capacitor v7 + Android платформа + signed AAB л
 - [[project-wrestling-pill-nav]] — "Wrestling bottom-nav — pill-индикатор (framer-motion layoutId), горизонтальный скролл, safe-area-inset, авто-скролл акт
+- [[project-wrestling-play-closed-test]] — "Constant Wrestling — Google Play closed test (Alpha) статус, дедлайн 14 дней / 12 тестеров до продакшена"
 - [[project-wrestling-smtp]] — "Wrestling app SMTP: до 2026-05-29 НЕ был сконфигурирован → parental-consent и password-reset письма не отправлялись (ко
 - [[project-wrestling-super-admin]] — Cross-club super_admin view в wrestling app — Artem Borysiuk (id=17) + Art Papritskii (id=13)
 - [[project-wrestling-uww-scoreboard]] — "UWW Heracles-style live scoreboard в wrestling app — count-down, P shot-clock, FALL/VSU/VPO, INJ-time, cast to TV"
@@ -406,10 +412,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_estimator_agent_autonomy]] — "Siding estimator AI agent — self-learning (rules) + autonomous measurement (trace) work, 2026-06-02"
 - [[project_ga_percoin_verdict]] — "Per-coin тест конфига-победителя GA E — эдж не мусор, но топит хвост убытков; узкое место = риск, не оптимизатор"
 - [[project_ga_regime_feature]] — Фича «Режим рынка» (Efficiency Ratio) — первый net-положительный эдж GA; ген + live-гейт + тумблеры
+- [[project_gerchik_chart_levels]] — "Уровни Герчика на панели агента — единый источник chart_levels(), held-фильтр только для отбоя"
+- [[project_gerchik_checklist_gate]] — "Чек-лист предпосылок Герчика по стилю + гейт ≥50%, edge=доля выполненных"
 - [[project_gerchik_proboi_subtypes]] — Gerchik-агент — подвиды пробоя (с базой/с лету/с закреплением) + разрез аналитики by_setup_type
 - [[project_gerchik_skip_transparency]] — "Gerchik paper-агент — панель «Почему пропущено»: per-symbol×strategy причины скипа за цикл сканера"
 - [[project_gerchik_strategy_extraction]] — Извлечение торговой стратегии А.М. Герчика из видеокурса LMS → playbook → детекторы для Pump&Dump бота (paper)
 - [[project_ontime_doc_share_drive]] — "OnTime Documents — раздача blueprint (TG/email/print/Drive), per-user отправитель, тяжёлые файлы ссылкой, Drive ждёт OA
+- [[project_ontime_phase_billing]] — "OnTime — граница фазы проекта почасовка→установка (install_start_date); часы до даты биллятся по ставке, с даты жгут бю
 - [[project_per_trader_entry_split]] — "Per-trader разделение входа (Фаза 1 = whitelist монет готов) + аналитика RR/MFE: длинный хвост = режим рынка, не символ
 - [[project_pumpdump_selftuning]] — PumpDumpAI self-tuning loop — replay engine + fee-aware BE + learning dashboard; GPU NOT used by design
 - [[project_pumpdump_semiauto]] — "PumpDumpAI перешёл на полуавтомат — дашборд-торговля (график, ордер-тикет, подсказки, drag SL/TP); старый детектор выкл
@@ -424,6 +433,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[real-topup-2026-05-18]] — "Артём планирует пополнить Bybit (sub1, TradingBot) до круглых $100 для CONS-real после чистого старта fan-out"
 - [[real-trades-baseline]] — План набора REAL сделок и условия переключения анализа/ML с paper на real
 - [[real-trades-fee-semantics]] — "В real_trades.realized_pnl_usd хранится УЖЕ NET (Bybit closedPnl); в simulated_trades — GROSS. Любой агрегатор, считающ
+- [[reference_codemagic_api]] — Codemagic API token + appId/workflow для Wrestling — запуск и проверка iOS/Android сборок
 - [[ru-smb-agency-plan]] — Пошаговый план первого контракта через RU-SMB agency (AI-automation для русскоязычных SMB в Canada/US). Создан 2026-05-2
 - [[session-2026-05-14-emails-perf-photo]] — "Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal,
 - [[session-2026-05-14-tutors]] — Big session — wife/son tutor overhaul (OAuth fix + live tools + 6-level CEFR library + EWA-style UI + Alyona avatar + Sa

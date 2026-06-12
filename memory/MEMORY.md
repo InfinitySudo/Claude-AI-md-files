@@ -4,12 +4,17 @@
 - [🏗 OnTime digest](ONTIME_DIGEST.md) — top workers/projects/materials/vendors by hours+qty. Auto every 30 min.
 - [📚 Tutor digest](TUTOR_DIGEST.md) — per-learner mistake categories + stuck vocab + book progress. Auto every 30 min.
 - [Graph System](project_graph_system.md) — 5 graphs (memory/trading/tutor/ontime/projects) + auto digests for all 5. How to add new modules.
+- [Codemagic API](reference_codemagic_api.md) — токен+appId+workflow для Wrestling сборок; ⚠ push не триггерит (запуск вручную через API); Android блокер = нет keystore_constantwrestling
 - [SL zero-position race](feedback_sl_zero_position_race.md) — SL не встаёт при гонке вход↔SL (Bybit 10001); ретрай set_trading_stop после size>0; ⚠ env BYBIT_API_KEY=test_key_123 ловушка (force-load, не setdefault)
 - [Gerchik example numbers](feedback_gerchik_example_numbers.md) — числа-примеры из курса (90-100→95) НЕ зашивать в формулы; кодировать общий метод (VWAP), литералы только реальные пороги
 - [Gerchik strategy extraction](project_gerchik_strategy_extraction.md) — AI-агент по методу Герчика: 9 типов уровней + предпосылки (поджатие/отн.сила/ширина/энергия), paper под systemd, OAuth-судья, панели :8080
 - [Gerchik turnover partial-day](feedback_gerchik_turnover_partial_day.md) — главный throughput-киллер: turnover_usd по неполному текущему D-бару занижал ликвидность 3-4× → ликвид-монеты не проходили is_tradeable; fix=среднее полных дней, tradeable 6→25, вселенная 20→33
 - [Gerchik подвиды пробоя](project_gerchik_proboi_subtypes.md) — пробой·{с базой/с лету/с закреплением} (proboi_subtype) + разрез by_setup_type + панель; рефлектор отложен (нет закрытых сделок)
 - [Gerchik «Почему пропущено»](project_gerchik_skip_transparency.md) — SkipLedger + Decision.code + trace: per-symbol×strategy причины скипа за цикл, /api/skips + панель; живьём 53 no_level_near/24 not_tradeable/12 no_trigger/10 in_position
+- [Gerchik уровни на графике](project_gerchik_chart_levels.md) — chart_levels() единый источник «уровни как видит агент» (выше И ниже цены); held-фильтр §5 только для отбоя не глобально; trend_break=БСУ «первый уровень курса»; Level.type+подписи; панель рисовала урезанный набор → не было поддержек снизу (fix 917c0d0)
+- [Gerchik чек-лист гейт](project_gerchik_checklist_gate.md) — per-стиль чек-лист предпосылок из СЫРЫХ транскриптов + гейт ≥50%→вход, edge=доля; 4 кита [b7f60d3]; новые детекторы close/open-vs-ATR-уровня, 3-й отказ, заражённость [757c3cc2]; виден в описании сделки (1e302a6)
+- [Gerchik выход TP/SL only](feedback_gerchik_exit_tp_sl_only.md) — база выхода = TP(≥3R)/SL, БУ@1R выключен (ломал «1×+3R перекрывает 3 стопа»); лесенка/трейл/БУ есть в курсе но как ПРОДВИНУТОЕ ([01251b30]/[069c4600]/[503ef59e]), не дефолт; своды переакцентировали (fix e763bd4)
+- [Gerchik пробой side-инверсия](feedback_gerchik_proboi_side_inversion.md) — сторону решает стратегия (PreThesis.side), НЕ level.kind; _side_from_level_kind верен только для отбоя/ЛП; пробой инвертировал → фейк +1R рунэвей DOGEUSDT 116 сделок + 429-шторм; fix 2026-06-12 +геом-гейт
 - [Xvfb x11grab -draw_mouse 0](feedback_xvfb_x11grab_draw_mouse.md) — ffmpeg x11grab под headless Xvfb падает «query xcb pointer» → -draw_mouse 0; симптом mp4 ~4.6с-обрубок при OK-плеере
 - [10-Trader Model](project_trader_model_10.md) — 5 трейдеров A–E (fan-out) + opt-in авто-промоутер paper↔real; ⚠ живой дашборд = /var/www/dashboard/v2.html (НЕ в git)
 - [PC2 cupy CTK](feedback_pc2_cupy_ctk.md) — PC2 GA-GPU крэшил на eaSimple без CUDA-хедеров; fix pip install cupy-cuda12x[ctk]; PC2 параллель теперь работает end-to-end
@@ -78,6 +83,7 @@
 - [GA Gross vs Net](feedback_ga_gross_vs_net.md) — GA-панель показывала GROSS как "net"; реальный net после издержек (fee+slip+funding ≈0.32%/сд) в минусе; смотреть NET+fitness, не gross (fix 60df8ee)
 - [GA Regime Feature](project_ga_regime_feature.md) — фича «Режим рынка» (Efficiency Ratio≥0.56) на E: net −244%→+29.77%, train≈test; ген+live-гейт+тумблеры (дефолт выкл); ⚠ CUDA KERNEL_SRC только ASCII (cp1252 на PC1)
 - [Wrestling Tracker v2](project_wrestling_v2.md) — Multi-club PWA: norms, analysis, profile+socials, share card, Constant Wrestling branding
+- [Wrestling Play closed test](project_wrestling_play_closed_test.md) — Google Play Alpha 1.0.1(2) cloud.constantwrestling.app; ⚠ 14-дн окно стартует с момента когда ≥12 из 13 РЕАЛЬНО opted-in (не с добавления email); CSV без заголовка
 - [Wrestling i18n 10 langs](project_wrestling_i18n_10langs.md) — en/ru/uk/pl/ar/fa/zh/ja/pa/es + RTL + header dropdown; sub-components нуждаются в собственном useTranslation
 - [Wrestling pill bottom-nav](project_wrestling_pill_nav.md) — framer-motion layoutId pill + scroll + safe-area + auto-scroll active
 - [Wrestling UWW Scoreboard](project_wrestling_uww_scoreboard.md) — Heracles-style live table: count-down, P shot-clock, FALL/VSU/VPO, INJ, cast TV
