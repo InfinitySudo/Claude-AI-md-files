@@ -1669,7 +1669,7 @@
       "type": "project",
       "summary": "AI-учитель английского @EnglishTecherTutorBot. Persona Алёна Николаевна (shimmer). Latency pipeline ported 2026-05-12 (Haiku + streaming TTS + STT race). Max_tokens 1200 — развёрнутые ответы (Lilia пр",
       "size": 4772,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778646173.1537929
     },
     {
@@ -1812,7 +1812,7 @@
       "type": "memory",
       "summary": "\"OpenCV Haar cascade автоопределяет scale + y-offset чтобы голова на SadTalker/Wav2Lip output matched то же место на статичной фотке. Recipe — снять frame ffmpeg, detect face bbox в обоих, посчитать `",
       "size": 2146,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778646229.1368532
     },
     {
@@ -1834,7 +1834,7 @@
       "type": "memory",
       "summary": "\"Bybit account isolation after 2026-05-15 migration — 3 sub-accounts each isolated to one bot (TradingBot/Gerchik copy/AI-agent). UIDs, env var slots, .env symlink trap.\"",
       "size": 3039,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780685794.5526705
     },
     {
@@ -2244,7 +2244,7 @@
       "type": "memory",
       "summary": "\"TP Funnel cells = trigger events (overlap), а не разбиение closed-trades; сумма funnel'а > closed нормально, mutually exclusive — только close_reason\"",
       "size": 1511,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778696175.9423335
     },
     {
@@ -2265,7 +2265,7 @@
       "type": "memory",
       "summary": "\"GA рекомендует TP в космосе (13R-48R), хотя реальная MFE доходит максимум ~2%; backtester засчитывает wick-касания на 5m, реал так не работает\"",
       "size": 1130,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778693684.7086225
     },
     {
@@ -2276,7 +2276,7 @@
       "type": "memory",
       "summary": "\"Grafana 13 хранит дашборды в новой `resource` таблице, не в `dashboard`; SQLite-фикс возможен с restart'ом сервера\"",
       "size": 2143,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778695706.3432534
     },
     {
@@ -2545,7 +2545,7 @@
       "type": "memory",
       "summary": "Toast/snackbar с opacity:0 без pointer-events:none молча съедает клики по элементам под ним",
       "size": 913,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778694808.2835047
     },
     {
@@ -2781,7 +2781,7 @@
       "type": "memory",
       "summary": "Estimator bot+AI must resolve project NAME→estimate_id (find_estimate_by_name / GET /api/estimates/search); never ask human for numeric id",
       "size": 3333,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780593393.4154584
     },
     {
@@ -2889,6 +2889,50 @@
       "mtime": 1781145984.387729
     },
     {
+      "file": "feedback_gerchik_exit_tp_sl_only.md",
+      "id": "feedback_gerchik_exit_tp_sl_only",
+      "name": "feedback_gerchik_exit_tp_sl_only",
+      "title": "Feedback Gerchik Exit Tp Sl Only",
+      "type": "memory",
+      "summary": "База выхода Герчика = TP(≥3R)/SL без БУ/трейла/лесенки; БУ@1R выключен",
+      "size": 1311,
+      "status_icon": "🟢",
+      "mtime": 1781300470.4945903
+    },
+    {
+      "file": "feedback_gerchik_lp_early_entry_refuted.md",
+      "id": "feedback_gerchik_lp_early_entry_refuted",
+      "name": "feedback_gerchik_lp_early_entry_refuted",
+      "title": "Feedback Gerchik Lp Early Entry Refuted",
+      "type": "memory",
+      "summary": "\"Бэктест опроверг «ранний вход» в ЛП — ретест ±0.5% это эдж, не баг; не катить early-entry\"",
+      "size": 3583,
+      "status_icon": "🟢",
+      "mtime": 1781329108.2193444
+    },
+    {
+      "file": "feedback_gerchik_otboi_held_window.md",
+      "id": "feedback_gerchik_otboi_held_window",
+      "name": "feedback_gerchik_otboi_held_window",
+      "title": "Feedback Gerchik Otboi Held Window",
+      "type": "memory",
+      "summary": "Отбой давал 0 сделок — held-фильтр «не пробит за всю историю» зануляет отбой в крипте; fix=окно 60 D",
+      "size": 1448,
+      "status_icon": "🟢",
+      "mtime": 1781335696.2864947
+    },
+    {
+      "file": "feedback_gerchik_proboi_side_inversion.md",
+      "id": "feedback_gerchik_proboi_side_inversion",
+      "name": "feedback_gerchik_proboi_side_inversion",
+      "title": "Feedback Gerchik Proboi Side Inversion",
+      "type": "memory",
+      "summary": "\"Баг side-инверсии пробоя в Gerchik paper-агенте — сторону решает стратегия, не level.kind\"",
+      "size": 1130,
+      "status_icon": "🟢",
+      "mtime": 1781288805.0662608
+    },
+    {
       "file": "feedback_gerchik_turnover_partial_day.md",
       "id": "feedback_gerchik_turnover_partial_day",
       "name": "feedback_gerchik_turnover_partial_day",
@@ -2900,6 +2944,17 @@
       "mtime": 1781158972.6424425
     },
     {
+      "file": "feedback_gerchik_window_dual_role_limit.md",
+      "id": "feedback_gerchik_window_dual_role_limit",
+      "name": "feedback_gerchik_window_dual_role_limit",
+      "title": "Feedback Gerchik Window Dual Role Limit",
+      "type": "memory",
+      "summary": "LEVEL_PROXIMITY в live = радиус рассмотрения (не только цена фила); 0.2% душил throughput; решение — лимитник у уровня",
+      "size": 1890,
+      "status_icon": "🟢",
+      "mtime": 1781333174.897413
+    },
+    {
       "file": "feedback_logout_network_blip.md",
       "id": "feedback_logout_network_blip",
       "name": "feedback_logout_network_blip",
@@ -2909,6 +2964,17 @@
       "size": 1208,
       "status_icon": "🟢",
       "mtime": 1780960440.5457923
+    },
+    {
+      "file": "feedback_manual_ticket_sl_race.md",
+      "id": "feedback_manual_ticket_sl_race",
+      "name": "feedback_manual_ticket_sl_race",
+      "title": "Feedback Manual Ticket Sl Race",
+      "type": "memory",
+      "summary": "Manual-тикет pumpdump ставил вход place_entry без подтверждения филла → SL race 10001",
+      "size": 1489,
+      "status_icon": "🟢",
+      "mtime": 1781297047.5441422
     },
     {
       "id": "feedback_nginx_uploads_regex_trap",
@@ -3132,7 +3198,7 @@
       "type": "memory",
       "summary": "\"Conditional maker-SL/entry qty ОБЯЗАН округляться к qty_step символа — иначе Bybit 'Qty invalid' (retCode 10001) и стоп падает на Market-fallback\"",
       "size": 1828,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780667151.9277892
     },
     {
@@ -3287,7 +3353,7 @@
       "type": "memory",
       "summary": "\"На ПК1 GA backtester (pipeline.evaluate_strategy) сейчас выдаёт 0 trades при любых params — daily ATR=0 для всех 60k signals. Root cause: arr_d_hl всё нули. Cache stale или loader name-mismatch. Phas",
       "size": 1924,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778653923.310657
     },
     {
@@ -3298,7 +3364,7 @@
       "type": "memory",
       "summary": "Overhaul GA backtester (4 фазы + 2.5) сделанный в одной длинной сессии 2026-05-12/13. Sharpe annualised + costs + live constraints + BTC/ETH/SOL blacklist + per-symbol PnL breakdown. GA recommendation",
       "size": 5231,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778655765.5419695
     },
     {
@@ -3532,7 +3598,7 @@
       "type": "memory",
       "summary": "\"PK1+PK2 LLM race helper в emails-bot, shadow-режим против Claude Haiku triage с 2026-05-13\"",
       "size": 2240,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778730710.8662417
     },
     {
@@ -3543,7 +3609,7 @@
       "type": "memory",
       "summary": "\"VPS shell env содержит `OPENAI_BASE_URL=https://api.deepseek.com/v1` — OpenAI Python client его подхватывает по умолчанию и роутит на DeepSeek (404 на /audio/speech, /audio/transcriptions). Лечится я",
       "size": 1628,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778646213.982835
     },
     {
@@ -3899,7 +3965,7 @@
       "type": "memory",
       "summary": "📐 MFE tab в dashboard v2 — data-driven TP-тюнинг из реальной peak_pnl_pct distribution; альтернатива GA mirage-у",
       "size": 2051,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778696164.2623062
     },
     {
@@ -4099,7 +4165,7 @@
       "type": "memory",
       "summary": "\"10-трейдерная модель (5 paper A–E + real-двойники), opt-in авто-промоутер, и КАКОЙ файл — живой дашборд\"",
       "size": 3306,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780667185.6220067
     },
     {
@@ -4291,6 +4357,17 @@
       "mtime": 1779241180.8374972
     },
     {
+      "file": "project_wrestling_play_closed_test.md",
+      "id": "project-wrestling-play-closed-test",
+      "name": "project-wrestling-play-closed-test",
+      "title": "Project Wrestling Play Closed Test",
+      "type": "memory",
+      "summary": "\"Constant Wrestling — Google Play closed test (Alpha) статус, дедлайн 14 дней / 12 тестеров до продакшена\"",
+      "size": 3507,
+      "status_icon": "🟢",
+      "mtime": 1781226169.2856677
+    },
+    {
       "file": "project_wrestling_smtp.md",
       "id": "project-wrestling-smtp",
       "name": "project-wrestling-smtp",
@@ -4433,7 +4510,7 @@
       "type": "memory",
       "summary": "\"OnTime AI Trace overhaul — classify coloured/linework gate, region-scoped trace per elevation, material-labelled; works only on colour-filled sheets\"",
       "size": 2489,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780604708.4865234
     },
     {
@@ -4444,7 +4521,7 @@
       "type": "memory",
       "summary": "OnTime estimating calibration is now verifiable — calib_json stores how px_per_ft was derived; UI shows metric+imperial breakdown + reference line",
       "size": 3820,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780600288.5908902
     },
     {
@@ -4561,6 +4638,39 @@
       "mtime": 0
     },
     {
+      "file": "project_gerchik_chart_levels.md",
+      "id": "project_gerchik_chart_levels",
+      "name": "project_gerchik_chart_levels",
+      "title": "Project Gerchik Chart Levels",
+      "type": "memory",
+      "summary": "\"Уровни Герчика на панели агента — единый источник chart_levels(), held-фильтр только для отбоя\"",
+      "size": 2074,
+      "status_icon": "🟢",
+      "mtime": 1781294741.749419
+    },
+    {
+      "file": "project_gerchik_checklist_gate.md",
+      "id": "project_gerchik_checklist_gate",
+      "name": "project_gerchik_checklist_gate",
+      "title": "Project Gerchik Checklist Gate",
+      "type": "memory",
+      "summary": "\"Чек-лист предпосылок Герчика по стилю + гейт ≥50%, edge=доля выполненных\"",
+      "size": 1686,
+      "status_icon": "🟢",
+      "mtime": 1781302457.5144904
+    },
+    {
+      "file": "project_gerchik_instrument_selection.md",
+      "id": "project_gerchik_instrument_selection",
+      "name": "project_gerchik_instrument_selection",
+      "title": "Project Gerchik Instrument Selection",
+      "type": "memory",
+      "summary": "Критерии отбора монет по Герчику (урок b95db6ef) + наш фильтр is_tradeable; порог $50M на Bybit венчурно-строгий",
+      "size": 3687,
+      "status_icon": "🟢",
+      "mtime": 1781331411.725825
+    },
+    {
       "file": "project_gerchik_proboi_subtypes.md",
       "id": "project_gerchik_proboi_subtypes",
       "name": "project_gerchik_proboi_subtypes",
@@ -4675,6 +4785,17 @@
       "mtime": 0
     },
     {
+      "file": "project_ontime_phase_billing.md",
+      "id": "project_ontime_phase_billing",
+      "name": "project_ontime_phase_billing",
+      "title": "Project Ontime Phase Billing",
+      "type": "memory",
+      "summary": "\"OnTime — граница фазы проекта почасовка→установка (install_start_date); часы до даты биллятся по ставке, с даты жгут бюджет\"",
+      "size": 1344,
+      "status_icon": "🟢",
+      "mtime": 1781195084.5023308
+    },
+    {
       "id": "project_ontime_wage_cost",
       "name": "project_ontime_wage_cost",
       "title": "project_ontime_wage_cost",
@@ -4722,7 +4843,7 @@
       "type": "memory",
       "summary": "\"Per-trader разделение входа (Фаза 1 = whitelist монет готов) + аналитика RR/MFE: длинный хвост = режим рынка, не символ; адаптивный R не бьёт R≈1\"",
       "size": 15285,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780704786.428218
     },
     {
@@ -4856,7 +4977,7 @@
       "type": "memory",
       "summary": "\"2026-06-05: F=real единственный, C=paper, автопромоутер ВЫКЛЮЧЕН (флап-баг), SL Qty-invalid фикс; план — F на отдельный суб для dual-real\"",
       "size": 4688,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780685809.1577218
     },
     {
@@ -4998,7 +5119,7 @@
       "type": "memory",
       "summary": "OnTime — реактивация завершённых (done) проектов без 48h-окна",
       "size": 831,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780664193.1655958
     },
     {
@@ -5145,9 +5266,29 @@
       "mtime": 0
     },
     {
+      "id": "project_wrestling_mobile_launch",
+      "name": "project_wrestling_mobile_launch",
+      "title": "project_wrestling_mobile_launch",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
       "id": "project_wrestling_pill_nav",
       "name": "project_wrestling_pill_nav",
       "title": "project_wrestling_pill_nav",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "project_wrestling_play_closed_test",
+      "name": "project_wrestling_play_closed_test",
+      "title": "project_wrestling_play_closed_test",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -5289,6 +5430,17 @@
       "size": 2266,
       "status_icon": "🟠",
       "mtime": 1775926839.7734272
+    },
+    {
+      "file": "reference_codemagic_api.md",
+      "id": "reference_codemagic_api",
+      "name": "reference_codemagic_api",
+      "title": "Reference Codemagic Api",
+      "type": "memory",
+      "summary": "Codemagic API token + appId/workflow для Wrestling — запуск и проверка iOS/Android сборок",
+      "size": 3407,
+      "status_icon": "🟢",
+      "mtime": 1781287697.1432853
     },
     {
       "file": "project_ru_smb_agency_plan.md",
@@ -5517,7 +5669,7 @@
       "type": "memory",
       "summary": "\"TG-бот для Andrii (~11-14yo) учит французский A1-A2. Persona Sophie (нова voice), avatar talking_loop.mp4, streaming TTS pipeline 2-3s latency. Bot id 8341136914.\"",
       "size": 3501,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778646166.555787
     },
     {
@@ -5528,7 +5680,7 @@
       "type": "memory",
       "summary": "\"Live talking avatar для @FrenchTuporBot/@EnglishTecherTutorBot — фотореалистичный портрет + лип-синк MP4 на каждый ответ; pipeline 2026-05-12, Wav2Lip миграция pending\"",
       "size": 6796,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778641430.9165013
     },
     {
@@ -5668,7 +5820,7 @@
       "type": "feedback",
       "summary": "voice-tutor / wife-english-tutor / son-french-tutor ловят 401 invalid x-api-key из-за race с DexClaud за общий credentials.json — fix: drop-cache-and-reread (lifted from DexClaud), не force-refresh",
       "size": 3743,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778623869.0550544
     },
     {
@@ -5679,7 +5831,7 @@
       "type": "memory",
       "summary": "\"4-фазная оптимизация /api/voice в tutor ботах (son/wife): Haiku + asyncio.gather + sentence split + LLM streaming + STT race + TTS streaming endpoint. 8s → 2-4s.\"",
       "size": 4267,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778655010.0975795
     },
     {
@@ -6083,12 +6235,60 @@
       "target": "project_gerchik_strategy_extraction"
     },
     {
+      "source": "feedback_gerchik_exit_tp_sl_only",
+      "target": "feedback_gerchik_example_numbers"
+    },
+    {
+      "source": "feedback_gerchik_exit_tp_sl_only",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "feedback_gerchik_exit_tp_sl_only",
+      "target": "project_gerchik_chart_levels"
+    },
+    {
       "source": "gerchik-leverage-88-too-high",
       "target": "gerchik-trading-agent"
     },
     {
       "source": "gerchik-leverage-88-too-high",
       "target": "real-trades-truth"
+    },
+    {
+      "source": "feedback_gerchik_lp_early_entry_refuted",
+      "target": "feedback_gerchik_example_numbers"
+    },
+    {
+      "source": "feedback_gerchik_lp_early_entry_refuted",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "feedback_gerchik_lp_early_entry_refuted",
+      "target": "project_gerchik_strategy_extraction"
+    },
+    {
+      "source": "feedback_gerchik_otboi_held_window",
+      "target": "feedback_gerchik_turnover_partial_day"
+    },
+    {
+      "source": "feedback_gerchik_otboi_held_window",
+      "target": "feedback_gerchik_window_dual_role_limit"
+    },
+    {
+      "source": "feedback_gerchik_otboi_held_window",
+      "target": "project_gerchik_instrument_selection"
+    },
+    {
+      "source": "feedback_gerchik_proboi_side_inversion",
+      "target": "feedback_one_tweak_at_a_time"
+    },
+    {
+      "source": "feedback_gerchik_proboi_side_inversion",
+      "target": "project_gerchik_proboi_subtypes"
+    },
+    {
+      "source": "feedback_gerchik_proboi_side_inversion",
+      "target": "project_gerchik_strategy_extraction"
     },
     {
       "source": "gerchik-signals-decision-varchar",
@@ -6109,6 +6309,14 @@
     {
       "source": "feedback_gerchik_turnover_partial_day",
       "target": "project_gerchik_strategy_extraction"
+    },
+    {
+      "source": "feedback_gerchik_window_dual_role_limit",
+      "target": "feedback_gerchik_lp_early_entry_refuted"
+    },
+    {
+      "source": "feedback_gerchik_window_dual_role_limit",
+      "target": "project_gerchik_instrument_selection"
     },
     {
       "source": "feedback-grafana-v13-resource-table",
@@ -6145,6 +6353,22 @@
     {
       "source": "feedback-manual-close-mislabeled-tp1",
       "target": "project-trading-critical-params"
+    },
+    {
+      "source": "feedback_manual_ticket_sl_race",
+      "target": "feedback_bybit_migration_bypass"
+    },
+    {
+      "source": "feedback_manual_ticket_sl_race",
+      "target": "feedback_conditional_order_cleanup"
+    },
+    {
+      "source": "feedback_manual_ticket_sl_race",
+      "target": "feedback_real_sl_qty_step"
+    },
+    {
+      "source": "feedback_manual_ticket_sl_race",
+      "target": "feedback_sl_zero_position_race"
     },
     {
       "source": "migration-ghost-trades-2026-05-15",
@@ -6823,6 +7047,38 @@
       "target": "project_bybit_3sub_architecture"
     },
     {
+      "source": "project_gerchik_chart_levels",
+      "target": "project_gerchik_proboi_subtypes"
+    },
+    {
+      "source": "project_gerchik_chart_levels",
+      "target": "project_gerchik_strategy_extraction"
+    },
+    {
+      "source": "project_gerchik_checklist_gate",
+      "target": "feedback_gerchik_exit_tp_sl_only"
+    },
+    {
+      "source": "project_gerchik_checklist_gate",
+      "target": "feedback_gerchik_proboi_side_inversion"
+    },
+    {
+      "source": "project_gerchik_checklist_gate",
+      "target": "project_gerchik_chart_levels"
+    },
+    {
+      "source": "project_gerchik_instrument_selection",
+      "target": "feedback_gerchik_lp_early_entry_refuted"
+    },
+    {
+      "source": "project_gerchik_instrument_selection",
+      "target": "feedback_gerchik_turnover_partial_day"
+    },
+    {
+      "source": "project_gerchik_instrument_selection",
+      "target": "project_gerchik_strategy_extraction"
+    },
+    {
       "source": "project_gerchik_proboi_subtypes",
       "target": "feedback_gerchik_example_numbers"
     },
@@ -6941,6 +7197,18 @@
     {
       "source": "project_ontime_doc_share_drive",
       "target": "project_tsa_timeline"
+    },
+    {
+      "source": "project_ontime_phase_billing",
+      "target": "feedback_billable_hours_dedup"
+    },
+    {
+      "source": "project_ontime_phase_billing",
+      "target": "project_ontime_wage_cost"
+    },
+    {
+      "source": "project_ontime_phase_billing",
+      "target": "project_tsa_daily_reports"
     },
     {
       "source": "orphan-safety-nets",
@@ -7639,6 +7907,14 @@
       "target": "project_wrestling_v2"
     },
     {
+      "source": "project-wrestling-play-closed-test",
+      "target": "project-claude-telegram-bot"
+    },
+    {
+      "source": "project-wrestling-play-closed-test",
+      "target": "project-wrestling-v2"
+    },
+    {
       "source": "project-wrestling-smtp",
       "target": "feedback-cockpit-unversioned"
     },
@@ -7685,19 +7961,27 @@
     {
       "source": "Wrestling App v2 — Multi-club + Full Features",
       "target": "session-2026-05-26-wrestling-app-policy"
+    },
+    {
+      "source": "reference_codemagic_api",
+      "target": "project_wrestling_mobile_launch"
+    },
+    {
+      "source": "reference_codemagic_api",
+      "target": "project_wrestling_play_closed_test"
     }
   ],
   "stats": {
-    "files": 340,
-    "nodes": 546,
-    "edges": 471,
+    "files": 352,
+    "nodes": 560,
+    "edges": 504,
     "by_type": {
       "feedback": 81,
-      "memory": 169,
+      "memory": 181,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 206
+      "stub": 208
     }
   }
 }

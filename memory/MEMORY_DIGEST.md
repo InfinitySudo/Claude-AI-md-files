@@ -1,18 +1,18 @@
 # Memory digest
 
-Generated **2026-06-12 22:19 UTC**.
+Generated **2026-06-13 07:30 UTC**.
 
-**556 nodes** (348 files, 493 edges) — 📝 208 stub · · 177 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**560 nodes** (352 files, 504 edges) — 📝 208 stub · · 181 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## 🌟 Hub nodes (most referenced)
 
+- [[feedback_one_tweak_at_a_time]] ← 9 refs · 📝 stub
+- [[project_gerchik_strategy_extraction]] ← 9 refs · · memory
 - [[feedback-real-trades-truth]] ← 8 refs · 📝 stub
-- [[feedback_one_tweak_at_a_time]] ← 8 refs · 📝 stub
 - [[project-trading-critical-params]] ← 8 refs · · memory
 - [[project-wrestling-v2]] ← 7 refs · 📝 stub
-- [[project_gerchik_strategy_extraction]] ← 7 refs · · memory
 - [[project-bybit-3sub-architecture]] ← 6 refs · 📝 stub
 - [[project_pc1_homelab_active]] ← 6 refs · 📝 stub
 - [[project_wrestling_v2]] ← 6 refs · 📝 stub
@@ -21,8 +21,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## 📝 Stubs (208) — referenced but not yet written
 
+- [[feedback_one_tweak_at_a_time]] ← 9 refs
 - [[feedback-real-trades-truth]] ← 8 refs
-- [[feedback_one_tweak_at_a_time]] ← 8 refs
 - [[project-wrestling-v2]] ← 7 refs
 - [[project-bybit-3sub-architecture]] ← 6 refs
 - [[project_pc1_homelab_active]] ← 6 refs
@@ -58,21 +58,21 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
+- `2026-06-13 07:28` [[feedback_gerchik_otboi_held_window]] · 🟢 today
+- `2026-06-13 06:46` [[feedback_gerchik_window_dual_role_limit]] · 🟢 today
+- `2026-06-13 06:16` [[project_gerchik_instrument_selection]] · 🟢 today
+- `2026-06-13 05:38` [[feedback_gerchik_lp_early_entry_refuted]] · 🟢 today
 - `2026-06-12 22:14` [[project_gerchik_checklist_gate]] · 🟢 today
 - `2026-06-12 21:41` [[feedback_gerchik_exit_tp_sl_only]] · 🟢 today
 - `2026-06-12 20:44` [[feedback_manual_ticket_sl_race]] · 🟢 today
 - `2026-06-12 20:05` [[project_gerchik_chart_levels]] · 🟢 today
 - `2026-06-12 18:26` [[feedback_gerchik_proboi_side_inversion]] · 🟢 today
 - `2026-06-12 18:08` [[reference_codemagic_api]] · 🟢 today
-- `2026-06-12 01:02` [[project-wrestling-play-closed-test]] · 🟢 today
+- `2026-06-12 01:02` [[project-wrestling-play-closed-test]] · 🟢 this week
 - `2026-06-11 16:24` [[project_ontime_phase_billing]] · 🟢 this week
 - `2026-06-11 15:57` [[project_ontime_doc_share_drive]] · 🟢 this week
 - `2026-06-11 13:40` [[project_gerchik_strategy_extraction]] · 🟢 this week
 - `2026-06-11 13:33` [[feedback_xvfb_x11grab_draw_mouse]] · 🟢 this week
-- `2026-06-11 06:41` [[project_gerchik_skip_transparency]] · 🟢 this week
-- `2026-06-11 06:22` [[feedback_gerchik_turnover_partial_day]] · 🟢 this week
-- `2026-06-11 06:11` [[project_gerchik_proboi_subtypes]] · 🟢 this week
-- `2026-06-11 05:55` [[feedback_sl_zero_position_race]] · 🟢 this week
 
 ## 📚 Index by type
 
@@ -287,7 +287,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (177)
+### · memory (181)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -338,8 +338,11 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_ga_pk1_cache_refresh]] — Как обновлять kline-кеш GA-GPU на PK1 и три ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill маскирует стале-ке
 - [[feedback_gerchik_example_numbers]] — "Числа из курса Герчика вроде «90-100 → 95» — иллюстративные примеры, НЕ зашивать в формулы детекторов"
 - [[feedback_gerchik_exit_tp_sl_only]] — База выхода Герчика = TP(≥3R)/SL без БУ/трейла/лесенки; БУ@1R выключен
+- [[feedback_gerchik_lp_early_entry_refuted]] — "Бэктест опроверг «ранний вход» в ЛП — ретест ±0.5% это эдж, не баг; не катить early-entry"
+- [[feedback_gerchik_otboi_held_window]] — Отбой давал 0 сделок — held-фильтр «не пробит за всю историю» зануляет отбой в крипте; fix=окно 60 D
 - [[feedback_gerchik_proboi_side_inversion]] — "Баг side-инверсии пробоя в Gerchik paper-агенте — сторону решает стратегия, не level.kind"
 - [[feedback_gerchik_turnover_partial_day]] — "Gerchik throughput-киллер — turnover_usd считал оборот по неполному текущему D-бару (занижение 3-4×), фикс = среднее по
+- [[feedback_gerchik_window_dual_role_limit]] — LEVEL_PROXIMITY в live = радиус рассмотрения (не только цена фила); 0.2% душил throughput; решение — лимитник у уровня
 - [[feedback_logout_network_blip]] — OnTime вылетал в логин после простоя — сетевой сбой при resume стирал валидный токен; не трогать токен на network-ошибка
 - [[feedback_manual_ticket_sl_race]] — Manual-тикет pumpdump ставил вход place_entry без подтверждения филла → SL race 10001
 - [[feedback_openclaw_gateway_leak]] — openclaw-gateway.service течёт по памяти (~4ГБ за 2.5 дня); рестарт + добавлен swap 4ГБ на srv1476476
@@ -414,6 +417,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_ga_regime_feature]] — Фича «Режим рынка» (Efficiency Ratio) — первый net-положительный эдж GA; ген + live-гейт + тумблеры
 - [[project_gerchik_chart_levels]] — "Уровни Герчика на панели агента — единый источник chart_levels(), held-фильтр только для отбоя"
 - [[project_gerchik_checklist_gate]] — "Чек-лист предпосылок Герчика по стилю + гейт ≥50%, edge=доля выполненных"
+- [[project_gerchik_instrument_selection]] — Критерии отбора монет по Герчику (урок b95db6ef) + наш фильтр is_tradeable; порог $50M на Bybit венчурно-строгий
 - [[project_gerchik_proboi_subtypes]] — Gerchik-агент — подвиды пробоя (с базой/с лету/с закреплением) + разрез аналитики by_setup_type
 - [[project_gerchik_skip_transparency]] — "Gerchik paper-агент — панель «Почему пропущено»: per-symbol×strategy причины скипа за цикл сканера"
 - [[project_gerchik_strategy_extraction]] — Извлечение торговой стратегии А.М. Герчика из видеокурса LMS → playbook → детекторы для Pump&Dump бота (paper)
