@@ -1,8 +1,8 @@
 # Memory digest
 
-Generated **2026-06-13 07:30 UTC**.
+Generated **2026-06-13 16:40 UTC**.
 
-**560 nodes** (352 files, 504 edges) — 📝 208 stub · · 181 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**563 nodes** (354 files, 509 edges) — 📝 209 stub · · 183 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
@@ -19,7 +19,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback-real-trades-fee-semantics]] ← 5 refs · 📝 stub
 - [[project_bybit_3sub_architecture]] ← 5 refs · 📝 stub
 
-## 📝 Stubs (208) — referenced but not yet written
+## 📝 Stubs (209) — referenced but not yet written
 
 - [[feedback_one_tweak_at_a_time]] ← 9 refs
 - [[feedback-real-trades-truth]] ← 8 refs
@@ -58,6 +58,8 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
+- `2026-06-13 16:35` [[project_gerchik_style_selection_gates]] · 🟢 today
+- `2026-06-13 15:56` [[feedback_gerchik_judge_oauth_429_fade_gate]] · 🟢 today
 - `2026-06-13 07:28` [[feedback_gerchik_otboi_held_window]] · 🟢 today
 - `2026-06-13 06:46` [[feedback_gerchik_window_dual_role_limit]] · 🟢 today
 - `2026-06-13 06:16` [[project_gerchik_instrument_selection]] · 🟢 today
@@ -71,12 +73,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - `2026-06-12 01:02` [[project-wrestling-play-closed-test]] · 🟢 this week
 - `2026-06-11 16:24` [[project_ontime_phase_billing]] · 🟢 this week
 - `2026-06-11 15:57` [[project_ontime_doc_share_drive]] · 🟢 this week
-- `2026-06-11 13:40` [[project_gerchik_strategy_extraction]] · 🟢 this week
-- `2026-06-11 13:33` [[feedback_xvfb_x11grab_draw_mouse]] · 🟢 this week
 
 ## 📚 Index by type
 
-### 📝 stub (208)
+### 📝 stub (209)
 
 - [[bybit-3sub-architecture]] — (not written yet)
 - [[bybit-signing-order]] — (not written yet)
@@ -161,6 +161,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_tg_persistent_keyboard]] — (not written yet)
 - [[feedback_tim_english_only]] — (not written yet)
 - [[feedback_trading_analysis_protocol]] — (not written yet)
+- [[feedback_tutor_oauth_auth_token]] — (not written yet)
 - [[feedback_tutor_tts_wiring]] — (not written yet)
 - [[feedback_voice_tutor_oauth_500]] — (not written yet)
 - [[feedback_wet_corrector_sonnet]] — (not written yet)
@@ -287,7 +288,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (181)
+### · memory (183)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -338,6 +339,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_ga_pk1_cache_refresh]] — Как обновлять kline-кеш GA-GPU на PK1 и три ловушки (dashboard_symbols.txt / хардкод-окно / zero-fill маскирует стале-ке
 - [[feedback_gerchik_example_numbers]] — "Числа из курса Герчика вроде «90-100 → 95» — иллюстративные примеры, НЕ зашивать в формулы детекторов"
 - [[feedback_gerchik_exit_tp_sl_only]] — База выхода Герчика = TP(≥3R)/SL без БУ/трейла/лесенки; БУ@1R выключен
+- [[feedback_gerchik_judge_oauth_429_fade_gate]] — "Gerchik судья — API-ключ удалён ($5/0 пользы), OAuth 429 серверный → rule-судья; +фейд-гейт против шорта в ракету"
 - [[feedback_gerchik_lp_early_entry_refuted]] — "Бэктест опроверг «ранний вход» в ЛП — ретест ±0.5% это эдж, не баг; не катить early-entry"
 - [[feedback_gerchik_otboi_held_window]] — Отбой давал 0 сделок — held-фильтр «не пробит за всю историю» зануляет отбой в крипте; fix=окно 60 D
 - [[feedback_gerchik_proboi_side_inversion]] — "Баг side-инверсии пробоя в Gerchik paper-агенте — сторону решает стратегия, не level.kind"
@@ -421,6 +423,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_gerchik_proboi_subtypes]] — Gerchik-агент — подвиды пробоя (с базой/с лету/с закреплением) + разрез аналитики by_setup_type
 - [[project_gerchik_skip_transparency]] — "Gerchik paper-агент — панель «Почему пропущено»: per-symbol×strategy причины скипа за цикл сканера"
 - [[project_gerchik_strategy_extraction]] — Извлечение торговой стратегии А.М. Герчика из видеокурса LMS → playbook → детекторы для Pump&Dump бота (paper)
+- [[project_gerchik_style_selection_gates]] — "Выбор стиля (пробой/отбой/ЛП) — раньше 3 движка слепо параллельно; добавлены гейты режима курса (ближний→пробой, дальни
 - [[project_ontime_doc_share_drive]] — "OnTime Documents — раздача blueprint (TG/email/print/Drive), per-user отправитель, тяжёлые файлы ссылкой, Drive ждёт OA
 - [[project_ontime_phase_billing]] — "OnTime — граница фазы проекта почасовка→установка (install_start_date); часы до даты биллятся по ставке, с даты жгут бю
 - [[project_per_trader_entry_split]] — "Per-trader разделение входа (Фаза 1 = whitelist монет готов) + аналитика RR/MFE: длинный хвост = режим рынка, не символ

@@ -2900,6 +2900,17 @@
       "mtime": 1781300470.4945903
     },
     {
+      "file": "feedback_gerchik_judge_oauth_429_fade_gate.md",
+      "id": "feedback_gerchik_judge_oauth_429_fade_gate",
+      "name": "feedback_gerchik_judge_oauth_429_fade_gate",
+      "title": "Feedback Gerchik Judge Oauth 429 Fade Gate",
+      "type": "memory",
+      "summary": "\"Gerchik судья — API-ключ удалён ($5/0 пользы), OAuth 429 серверный → rule-судья; +фейд-гейт против шорта в ракету\"",
+      "size": 2034,
+      "status_icon": "🟢",
+      "mtime": 1781366186.8676279
+    },
+    {
       "file": "feedback_gerchik_lp_early_entry_refuted.md",
       "id": "feedback_gerchik_lp_early_entry_refuted",
       "name": "feedback_gerchik_lp_early_entry_refuted",
@@ -3266,6 +3277,16 @@
       "id": "feedback_trading_analysis_protocol",
       "name": "feedback_trading_analysis_protocol",
       "title": "feedback_trading_analysis_protocol",
+      "type": "stub",
+      "summary": "(not written yet)",
+      "size": 0,
+      "status_icon": "📝",
+      "mtime": 0
+    },
+    {
+      "id": "feedback_tutor_oauth_auth_token",
+      "name": "feedback_tutor_oauth_auth_token",
+      "title": "feedback_tutor_oauth_auth_token",
       "type": "stub",
       "summary": "(not written yet)",
       "size": 0,
@@ -4704,6 +4725,17 @@
       "mtime": 1781185233.8866475
     },
     {
+      "file": "project_gerchik_style_selection_gates.md",
+      "id": "project_gerchik_style_selection_gates",
+      "name": "project_gerchik_style_selection_gates",
+      "title": "Project Gerchik Style Selection Gates",
+      "type": "memory",
+      "summary": "\"Выбор стиля (пробой/отбой/ЛП) — раньше 3 движка слепо параллельно; добавлены гейты режима курса (ближний→пробой, дальний→фейд)\"",
+      "size": 1538,
+      "status_icon": "🟢",
+      "mtime": 1781368514.0386598
+    },
+    {
       "id": "project_hourly_supervisor",
       "name": "project_hourly_supervisor",
       "title": "project_hourly_supervisor",
@@ -5461,7 +5493,7 @@
       "type": "memory",
       "summary": "\"Checkpoint сессии 2026-05-13/14 — perf-overhaul emails-bot, Calendar OAuth, photo-restoration на PK1 GPU, tim_proposal, фикс tutor-ботов\"",
       "size": 6859,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778765885.0915382
     },
     {
@@ -5842,7 +5874,7 @@
       "type": "memory",
       "summary": "\"wife-english-tutor has Anthropic tool-use for live BTC/ETH price (Bybit) and weather (wttr.in); don't let bot answer market/weather from LLM memory\"",
       "size": 1584,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778775596.9601917
     },
     {
@@ -6245,6 +6277,14 @@
     {
       "source": "feedback_gerchik_exit_tp_sl_only",
       "target": "project_gerchik_chart_levels"
+    },
+    {
+      "source": "feedback_gerchik_judge_oauth_429_fade_gate",
+      "target": "feedback_tutor_oauth_auth_token"
+    },
+    {
+      "source": "feedback_gerchik_judge_oauth_429_fade_gate",
+      "target": "project_gerchik_instrument_selection"
     },
     {
       "source": "gerchik-leverage-88-too-high",
@@ -7147,6 +7187,18 @@
       "target": "project_trader_model_10"
     },
     {
+      "source": "project_gerchik_style_selection_gates",
+      "target": "feedback_gerchik_judge_oauth_429_fade_gate"
+    },
+    {
+      "source": "project_gerchik_style_selection_gates",
+      "target": "feedback_gerchik_otboi_held_window"
+    },
+    {
+      "source": "project_gerchik_style_selection_gates",
+      "target": "project_gerchik_instrument_selection"
+    },
+    {
       "source": "graph-system",
       "target": "project_fees_accounting"
     },
@@ -7972,16 +8024,16 @@
     }
   ],
   "stats": {
-    "files": 352,
-    "nodes": 560,
-    "edges": 504,
+    "files": 354,
+    "nodes": 563,
+    "edges": 509,
     "by_type": {
       "feedback": 81,
-      "memory": 181,
+      "memory": 183,
       "project": 88,
       "reference": 1,
       "user": 1,
-      "stub": 208
+      "stub": 209
     }
   }
 }
