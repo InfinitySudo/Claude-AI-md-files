@@ -1,8 +1,8 @@
 # Trading digest
 
-Generated **2026-06-13 16:40 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
+Generated **2026-06-14 02:50 UTC**. Net PnL = `realized_pnl_usd − fees_paid_usd`. Baseline: `2026-05-10 05:42:10 UTC`.
 
-**6710 trades** · net PnL **-1333.94$** 🔴 · 251 nodes · 1727 edges
+**6745 trades** · net PnL **-1368.95$** 🔴 · 251 nodes · 1727 edges
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
@@ -10,13 +10,13 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
 | Strategy | Trades | Net PnL | Avg |
 |---|---:|---:|---:|
-| 🔴 `Trader 0` | 366 | **-54.89$** | -0.15$ |
-| 🔴 `Trader E` | 377 | **-70.48$** | -0.19$ |
-| 🔴 `Trader D` | 363 | **-72.27$** | -0.20$ |
-| 🔴 `Trader F` | 338 | **-76.42$** | -0.23$ |
-| 🔴 `Trader A` | 2164 | **-334.48$** | -0.15$ |
-| 🔴 `Trader C` | 1633 | **-356.77$** | -0.22$ |
-| 🔴 `Trader B` | 1469 | **-368.63$** | -0.25$ |
+| 🔴 `Trader 0` | 372 | **-60.90$** | -0.16$ |
+| 🔴 `Trader E` | 383 | **-76.48$** | -0.20$ |
+| 🔴 `Trader D` | 369 | **-78.27$** | -0.21$ |
+| 🔴 `Trader F` | 343 | **-81.42$** | -0.24$ |
+| 🔴 `Trader A` | 2165 | **-335.48$** | -0.15$ |
+| 🔴 `Trader C` | 1639 | **-362.77$** | -0.22$ |
+| 🔴 `Trader B` | 1474 | **-373.63$** | -0.25$ |
 
 ## 🛑 Close reasons
 
@@ -41,17 +41,17 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | 🟠 `ORPHAN_RECONCILED` | 6 | **-0.24$** | -0.04$ |
 | 🟠 `CONSOLIDATED` | 12 | **-0.37$** | -0.03$ |
 | 🟠 `TRAIL_SHADOW` | 105 | **-22.31$** | -0.21$ |
-| 🔴 `SL` | 3787 | **-3681.61$** | -0.97$ |
+| 🔴 `SL` | 3822 | **-3716.62$** | -0.97$ |
 
 ## 🏆 Top 15 winning symbols
 
 | Symbol | Trades | Net PnL |
 |---|---:|---:|
-| 🟢 `CLUSDT` | 87 | **+11.63$** |
 | 🟢 `GRASSUSDT` | 27 | **+10.78$** |
 | 🟢 `STRKUSDT` | 44 | **+8.53$** |
 | 🟢 `SAHARAUSDT` | 15 | **+8.19$** |
 | 🟢 `SEIUSDT` | 39 | **+7.86$** |
+| 🟢 `CLUSDT` | 92 | **+6.63$** |
 | 🟢 `JASMYUSDT` | 16 | **+6.24$** |
 | 🟢 `KAITOUSDT` | 18 | **+6.04$** |
 | 🟢 `PRLUSDT` | 9 | **+5.58$** |
@@ -67,10 +67,10 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
 | Symbol | Trades | Net PnL |
 |---|---:|---:|
-| 🔴 `ZECUSDT` | 209 | **-73.79$** |
-| 🔴 `XRPUSDT` | 182 | **-63.09$** |
+| 🔴 `ZECUSDT` | 214 | **-78.79$** |
+| 🔴 `XRPUSDT` | 187 | **-68.09$** |
+| 🔴 `ETHUSDT` | 169 | **-65.17$** |
 | 🔴 `TAOUSDT` | 148 | **-61.84$** |
-| 🔴 `ETHUSDT` | 163 | **-59.18$** |
 | 🔴 `AVAXUSDT` | 158 | **-58.92$** |
 | 🔴 `DASHUSDT` | 98 | **-49.33$** |
 | 🔴 `SUIUSDT` | 141 | **-43.34$** |
@@ -79,7 +79,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 | 🔴 `PENGUUSDT` | 60 | **-35.70$** |
 | 🔴 `AAVEUSDT` | 64 | **-35.37$** |
 | 🔴 `TONUSDT` | 141 | **-34.54$** |
-| 🔴 `HYPEUSDT` | 183 | **-30.23$** |
+| 🔴 `HYPEUSDT` | 184 | **-31.23$** |
 | 🔴 `SOLUSDT` | 184 | **-29.75$** |
 | 🔴 `INJUSDT` | 118 | **-29.49$** |
 
@@ -87,33 +87,33 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/trading-graph/>
 
 | Symbol | Trades | Net PnL |
 |---|---:|---:|
-| 🔴 `ZECUSDT` | 209 | **-73.79$** |
+| 🔴 `ZECUSDT` | 214 | **-78.79$** |
+| 🔴 `XRPUSDT` | 187 | **-68.09$** |
 | 🟠 `SOLUSDT` | 184 | **-29.75$** |
-| 🟠 `HYPEUSDT` | 183 | **-30.23$** |
-| 🔴 `XRPUSDT` | 182 | **-63.09$** |
+| 🟠 `HYPEUSDT` | 184 | **-31.23$** |
 | 🟠 `NEARUSDT` | 181 | **-13.90$** |
-| 🟠 `DOGEUSDT` | 167 | **-22.46$** |
-| 🔴 `ETHUSDT` | 163 | **-59.18$** |
+| 🟠 `DOGEUSDT` | 173 | **-28.46$** |
+| 🔴 `ETHUSDT` | 169 | **-65.17$** |
 | 🟠 `WLDUSDT` | 158 | **-18.42$** |
 | 🔴 `AVAXUSDT` | 158 | **-58.92$** |
-| 🟡 `ONDOUSDT` | 148 | **+2.85$** |
+| 🟠 `BTCUSDT` | 150 | **-26.53$** |
 
 ## 🔗 Top combinations (by trade count)
 
 | Combo | Trades | Net PnL |
 |---|---:|---:|
-| 🔴 `SL` ↔ `Trader A` | 1122 | **-1007.83$** |
-| 🔴 `SL` ↔ `Trader B` | 856 | **-787.82$** |
+| 🔴 `SL` ↔ `Trader A` | 1123 | **-1008.83$** |
+| 🔴 `SL` ↔ `Trader B` | 861 | **-792.83$** |
 | 🟢 `BE` ↔ `Trader A` | 807 | **+349.52$** |
-| 🔴 `SL` ↔ `Trader C` | 795 | **-875.46$** |
+| 🔴 `SL` ↔ `Trader C` | 801 | **-881.47$** |
 | 🟢 `BE` ↔ `Trader B` | 466 | **+162.43$** |
 | 🟢 `BE` ↔ `Trader C` | 346 | **+85.49$** |
-| 🔴 `SL` ↔ `Trader E` | 267 | **-264.42$** |
-| 🔴 `SL` ↔ `Trader 0` | 261 | **-258.55$** |
-| 🔴 `SL` ↔ `Trader D` | 257 | **-254.44$** |
+| 🔴 `SL` ↔ `Trader E` | 273 | **-270.42$** |
+| 🔴 `SL` ↔ `Trader 0` | 267 | **-264.55$** |
+| 🔴 `SL` ↔ `Trader D` | 263 | **-260.44$** |
 | 🟢 `TP1(a)` ↔ `Trader C` | 237 | **+294.38$** |
-| 🔴 `SL` ↔ `Trader F` | 229 | **-233.08$** |
-| 🔴 `SL` ↔ `XRPUSDT` | 129 | **-127.69$** |
-| 🔴 `SL` ↔ `ZECUSDT` | 125 | **-120.13$** |
+| 🔴 `SL` ↔ `Trader F` | 234 | **-238.08$** |
+| 🔴 `SL` ↔ `XRPUSDT` | 134 | **-132.70$** |
+| 🔴 `SL` ↔ `ZECUSDT` | 130 | **-125.14$** |
+| 🔴 `SL` ↔ `ETHUSDT` | 123 | **-122.89$** |
 | 🔴 `SL` ↔ `SOLUSDT` | 121 | **-125.95$** |
-| 🔴 `SL` ↔ `HYPEUSDT` | 117 | **-117.13$** |

@@ -1,8 +1,8 @@
 # Memory digest
 
-Generated **2026-06-13 16:40 UTC**.
+Generated **2026-06-14 02:50 UTC**.
 
-**563 nodes** (354 files, 509 edges) — 📝 209 stub · · 183 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
+**565 nodes** (356 files, 513 edges) — 📝 209 stub · · 185 memory · 🗂 88 project · ⚠️ 81 feedback · 🔗 1 reference · 👤 1 user
 
 Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
@@ -58,21 +58,21 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 
 ## ⏱ Recently edited
 
+- `2026-06-14 02:41` [[feedback_pumpdump_real_qty_reconcile_dust]] · 🟢 today
+- `2026-06-13 17:01` [[project_gerchik_checklist_expanded]] · 🟢 today
 - `2026-06-13 16:35` [[project_gerchik_style_selection_gates]] · 🟢 today
 - `2026-06-13 15:56` [[feedback_gerchik_judge_oauth_429_fade_gate]] · 🟢 today
 - `2026-06-13 07:28` [[feedback_gerchik_otboi_held_window]] · 🟢 today
 - `2026-06-13 06:46` [[feedback_gerchik_window_dual_role_limit]] · 🟢 today
 - `2026-06-13 06:16` [[project_gerchik_instrument_selection]] · 🟢 today
 - `2026-06-13 05:38` [[feedback_gerchik_lp_early_entry_refuted]] · 🟢 today
-- `2026-06-12 22:14` [[project_gerchik_checklist_gate]] · 🟢 today
-- `2026-06-12 21:41` [[feedback_gerchik_exit_tp_sl_only]] · 🟢 today
-- `2026-06-12 20:44` [[feedback_manual_ticket_sl_race]] · 🟢 today
-- `2026-06-12 20:05` [[project_gerchik_chart_levels]] · 🟢 today
-- `2026-06-12 18:26` [[feedback_gerchik_proboi_side_inversion]] · 🟢 today
-- `2026-06-12 18:08` [[reference_codemagic_api]] · 🟢 today
+- `2026-06-12 22:14` [[project_gerchik_checklist_gate]] · 🟢 this week
+- `2026-06-12 21:41` [[feedback_gerchik_exit_tp_sl_only]] · 🟢 this week
+- `2026-06-12 20:44` [[feedback_manual_ticket_sl_race]] · 🟢 this week
+- `2026-06-12 20:05` [[project_gerchik_chart_levels]] · 🟢 this week
+- `2026-06-12 18:26` [[feedback_gerchik_proboi_side_inversion]] · 🟢 this week
+- `2026-06-12 18:08` [[reference_codemagic_api]] · 🟢 this week
 - `2026-06-12 01:02` [[project-wrestling-play-closed-test]] · 🟢 this week
-- `2026-06-11 16:24` [[project_ontime_phase_billing]] · 🟢 this week
-- `2026-06-11 15:57` [[project_ontime_doc_share_drive]] · 🟢 this week
 
 ## 📚 Index by type
 
@@ -288,7 +288,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[wiki-link]] — (not written yet)
 - [[wiki-links]] — (not written yet)
 
-### · memory (183)
+### · memory (185)
 
 - [[agency-landing]] — "Лендинг RU-SMB agency на ontime.management/agency — 7 пакетов, форма заявки, 3 кейс-видео, кликабельные карточки. Запущ
 - [[agent-levels-cooldown]] — "AI Trading Agent (sub3) пересоздавал тот же уровень через 5-15 минут после fill/expired — 6h cooldown в place_level бло
@@ -351,6 +351,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[feedback_pause_button_doesnt_stop_real]] — "Дашборд \"Pause Trading\" НЕ останавливает real в hybrid-режиме; настоящий рычаг — per_strategy→PAPER"
 - [[feedback_pc2_cupy_ctk]] — "PC2 GA-GPU падал на старте eaSimple — cupy без CTK-хедеров; fix pip install cupy-cuda12x[ctk]"
 - [[feedback_pumpdump_offline_maybe_emit]] — Панель pumpdump уходит в OFFLINE из-за CPU-спина _maybe_emit (O(N) на каждом трейде); фикс emit_throttle_ms
+- [[feedback_pumpdump_real_qty_reconcile_dust]] — "PumpDump REAL — close-PnL в журнале берётся из ВНУТРЕННЕЙ модели TP/BE, а не из реального closedPnl Bybit → расхождение
 - [[feedback_real_sl_qty_step]] — "Conditional maker-SL/entry qty ОБЯЗАН округляться к qty_step символа — иначе Bybit 'Qty invalid' (retCode 10001) и стоп
 - [[feedback_sl_zero_position_race]] — "SL не встаёт при гонке вход↔SL (Bybit 10001 'zero position'); set_trading_stop надо ретраить после появления size>0"
 - [[feedback_wrestling_capacitor_uploads_img]] — "Wrestling iOS — фото /uploads показывают \"?\" в нативном app (WebView перехватывает same-origin img); фикс fetch→blob,
@@ -418,6 +419,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/memory-graph/>
 - [[project_ga_percoin_verdict]] — "Per-coin тест конфига-победителя GA E — эдж не мусор, но топит хвост убытков; узкое место = риск, не оптимизатор"
 - [[project_ga_regime_feature]] — Фича «Режим рынка» (Efficiency Ratio) — первый net-положительный эдж GA; ген + live-гейт + тумблеры
 - [[project_gerchik_chart_levels]] — "Уровни Герчика на панели агента — единый источник chart_levels(), held-фильтр только для отбоя"
+- [[project_gerchik_checklist_expanded]] — "Чек-лист предпосылок дозакрыт под списки Артёма — +9 детекторов (close-под-экстремум, откат, консолидация, дистрибуция,
 - [[project_gerchik_checklist_gate]] — "Чек-лист предпосылок Герчика по стилю + гейт ≥50%, edge=доля выполненных"
 - [[project_gerchik_instrument_selection]] — Критерии отбора монет по Герчику (урок b95db6ef) + наш фильтр is_tradeable; порог $50M на Bybit венчурно-строгий
 - [[project_gerchik_proboi_subtypes]] — Gerchik-агент — подвиды пробоя (с базой/с лету/с закреплением) + разрез аналитики by_setup_type

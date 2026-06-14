@@ -1174,7 +1174,7 @@
       "type": "project",
       "summary": "Что доступно на ПК1 Артёма (RTX 3090, Tailscale 100.99.211.123) для тяжёлых задач — SSH, Ollama, faster-whisper, autostart",
       "size": 8327,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778811617.9377737
     },
     {
@@ -2843,7 +2843,7 @@
       "type": "memory",
       "summary": "\"GA-панель показывала GROSS PnL как \\\"net\\\"; реальный net после издержек уходит в минус — fitness честнее метрик\"",
       "size": 1255,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780767691.2100554
     },
     {
@@ -3147,7 +3147,7 @@
       "type": "memory",
       "summary": "\"PC2 GA-GPU падал на старте eaSimple — cupy без CTK-хедеров; fix pip install cupy-cuda12x[ctk]\"",
       "size": 814,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780799569.8276236
     },
     {
@@ -3160,6 +3160,17 @@
       "size": 1786,
       "status_icon": "🟢",
       "mtime": 1780979612.4673712
+    },
+    {
+      "file": "feedback_pumpdump_real_qty_reconcile_dust.md",
+      "id": "feedback_pumpdump_real_qty_reconcile_dust",
+      "name": "feedback_pumpdump_real_qty_reconcile_dust",
+      "title": "Feedback Pumpdump Real Qty Reconcile Dust",
+      "type": "memory",
+      "summary": "\"PumpDump REAL — close-PnL в журнале берётся из ВНУТРЕННЕЙ модели TP/BE, а не из реального closedPnl Bybit → расхождение; +dust после TP3\"",
+      "size": 1815,
+      "status_icon": "🟢",
+      "mtime": 1781404871.4616172
     },
     {
       "id": "feedback_pwa_stale_bundle",
@@ -3608,7 +3619,7 @@
       "type": "memory",
       "summary": "\"When Claude returns 401, the 401-handler must call refresh API even if disk expiresAt is in the future — Anthropic revokes tokens before formal expiry under parallel usage\"",
       "size": 1538,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778784781.2098856
     },
     {
@@ -4635,7 +4646,7 @@
       "type": "memory",
       "summary": "Фича «Режим рынка» (Efficiency Ratio) — первый net-положительный эдж GA; ген + live-гейт + тумблеры",
       "size": 4484,
-      "status_icon": "🟢",
+      "status_icon": "🟡",
       "mtime": 1780781571.0251245
     },
     {
@@ -4668,6 +4679,17 @@
       "size": 2074,
       "status_icon": "🟢",
       "mtime": 1781294741.749419
+    },
+    {
+      "file": "project_gerchik_checklist_expanded.md",
+      "id": "project_gerchik_checklist_expanded",
+      "name": "project_gerchik_checklist_expanded",
+      "title": "Project Gerchik Checklist Expanded",
+      "type": "memory",
+      "summary": "\"Чек-лист предпосылок дозакрыт под списки Артёма — +9 детекторов (close-под-экстремум, откат, консолидация, дистрибуция, задёрг…); checklist_min 0.5→0.45\"",
+      "size": 1437,
+      "status_icon": "🟢",
+      "mtime": 1781370075.8251338
     },
     {
       "file": "project_gerchik_checklist_gate.md",
@@ -5504,7 +5526,7 @@
       "type": "memory",
       "summary": "Big session — wife/son tutor overhaul (OAuth fix + live tools + 6-level CEFR library + EWA-style UI + Alyona avatar + SadTalker on PC1 GPU)",
       "size": 2563,
-      "status_icon": "🟡",
+      "status_icon": "🟠",
       "mtime": 1778786295.3761096
     },
     {
@@ -6543,6 +6565,14 @@
       "target": "project_pumpdump_semiauto"
     },
     {
+      "source": "feedback_pumpdump_real_qty_reconcile_dust",
+      "target": "feedback_sl_zero_position_race"
+    },
+    {
+      "source": "feedback_pumpdump_real_qty_reconcile_dust",
+      "target": "project_pumpdump_semiauto"
+    },
+    {
       "source": "feedback-pwa-stale-bundle",
       "target": "project_wrestling_super_admin"
     },
@@ -7093,6 +7123,14 @@
     {
       "source": "project_gerchik_chart_levels",
       "target": "project_gerchik_strategy_extraction"
+    },
+    {
+      "source": "project_gerchik_checklist_expanded",
+      "target": "project_gerchik_checklist_gate"
+    },
+    {
+      "source": "project_gerchik_checklist_expanded",
+      "target": "project_gerchik_style_selection_gates"
     },
     {
       "source": "project_gerchik_checklist_gate",
@@ -8024,12 +8062,12 @@
     }
   ],
   "stats": {
-    "files": 354,
-    "nodes": 563,
-    "edges": 509,
+    "files": 356,
+    "nodes": 565,
+    "edges": 513,
     "by_type": {
       "feedback": 81,
-      "memory": 183,
+      "memory": 185,
       "project": 88,
       "reference": 1,
       "user": 1,

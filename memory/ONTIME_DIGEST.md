@@ -1,6 +1,6 @@
 # OnTime digest
 
-Generated **2026-06-13 16:40 UTC**. Source: `/root/ontime/backend/tsa.db`.
+Generated **2026-06-14 02:50 UTC**. Source: `/root/ontime/backend/tsa.db`.
 
 **223 nodes** (869 edges) — 📦 91 material · 🏗 69 project · 👷 62 worker · 🏪 1 vendor
 
@@ -15,15 +15,15 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Pavlo Kosts` | installer | **2424.3** |
 | `Oleksey Sherbakov` | foreman | **2421.8** |
 | `Mykhailo Martynenko` | installer | **2401.2** |
-| `Oleksandr Lopatetskyi` | installer | **2329.9** |
+| `Oleksandr Lopatetskyi` | installer | **2338.9** |
 | `Mykola Korobeinykov` | foreman | **2326.4** |
+| `Artem Huridov` | foreman | **2300.9** |
 | `Igor Chekmak` | installer | **2292.2** |
-| `Artem Huridov` | foreman | **2291.9** |
 | `Taras Ivanets` | installer | **2250.0** |
 | `Stanislav Bodnaruk` | foreman | **2246.9** |
-| `Serhii Lopatetskyi` | installer | **2226.3** |
+| `Serhii Lopatetskyi` | installer | **2235.3** |
 | `Dmytro Kurinnyi` | installer | **2222.0** |
-| `Bogdan Tkhoryk` | foreman | **2202.7** |
+| `Bogdan Tkhoryk` | foreman | **2211.7** |
 | `Valerii Stelmakh` | installer | **2194.3** |
 
 ## 🏗 Top projects (by labour hours)
@@ -35,7 +35,7 @@ Interactive graph: <https://teacher1.constantwrestling.cloud/ontime-graph/>
 | `Magna Bldg 2` | **7151.2** | 42 |
 | `Sage Walk Bldg 2 Nikolay K 15.12.2025` | **5034.0** | 31 |
 | `Arabella-Ophelia Mike K 04.09.2025` | **3843.0** | 13 |
-| `Livingston (Bldg A) ` | **2475.3** | 14 |
+| `Livingston (Bldg A) ` | **2520.3** | 14 |
 | `Sage_Hill_Commercial_Development_Bldg_500_05_05_2025_Nikolay_K` | **2031.5** | 7 |
 | `Cornerview_Bldg_1-13_BRICK_06_02_2025_Vasilii_V` | **2026.4** | 6 |
 | `Pinegate Park Ihor K 04.02.2026` | **1794.0** | 8 |
